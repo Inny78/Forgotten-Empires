@@ -1,0 +1,20 @@
+﻿l_japanese:
+# Only anomalies here
+# Scope: planet, from = ship
+# The scanner spots objects, the sensors detect signals
+
+# Moved content
+ scfe_belltower_category: "Desert signal"
+ scfe_belltower_desc: "The scanners of the §B[From.GetName]§! have found some energy readings coming from what seems to be a lone building on this desert planet. The crew is preparing an expedition to investigate it."
+ scfe_tower_city_category: "Unexpected tower"
+ scfe_tower_city_category_desc: "The scanners of the §B[From.GetName]§! have picked up something unexpected in this gas giant: a monumental tower is emerging from the clouds."
+
+# 3.10 start here
+ scfe_reverse_engine_category: "Buried civilization"
+ scfe_reverse_engine_desc: "The scanners of the §B[From.GetName]§! have detected a signal deep under the surface of a devastated world. §G[From.GetLeaderName]§! wants to send an expedition on §Y[Root.GetName]§! to dig to its source."
+ scfe_failed_hive_category: "Ruined Civilization"
+ scfe_failed_hive_desc: "The scanners of the §B[From.GetName]§! have detected the ruins of an advanced civilization on §Y[Root.GetName]§!. §G[From.GetLeaderName]§! and his crew are eager to investigate."
+ scfe_lonely_shroud_category: "An impossible message"
+ scfe_lonely_shroud_category_desc: "Our science vessel §B[Root.GetName]§! has stumbled upon a shrouded world in the depths of this system. As it draws closer, anomalous emissions pique the crew's curiosity. Could there be a hidden intelligence trying to communicate with us on this cursed world?"
+ scfe_abandoned_category: "$crashed_ship_asteroid_category$"
+ scfe_abandoned_category_desc: "Our science team has spotted a crashed ship on this asteroid."

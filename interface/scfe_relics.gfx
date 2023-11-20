@@ -1,0 +1,75 @@
+spriteTypes = {
+	### relics ###
+	SpriteType = {
+		name = "GFX_relic_ASP_music_of_the_universe"
+		texturefile = "gfx/interface/icons/relics/r_ASP_music_of_the_universe.dds"			
+		effectFile = "gfx/FX/buttonstate.shader"
+		animation = {
+			animationmaskfile = "gfx/interface/icons/relics/r_ASP_music_of_the_universe_shine.dds"			
+			animationtexturefile = "gfx/interface/icons/relics/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 4				# in seconds
+			animationdelay = 1.5			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+    	name = "GFX_relic_protagonist_of_the_show"
+    	texturefile = "gfx/interface/icons/relics/r_protagonist_of_the_show.dds"			
+    	effectFile = "gfx/FX/buttonstate.shader"
+    	animation = {
+        	animationmaskfile = "gfx/interface/icons/relics/r_protagonist_of_the_show_shine.dds"			
+        	animationtexturefile = "gfx/interface/icons/relics/glow_overlay.dds" 	# <- the animated file
+        	animationrotation = -180.0		# -90 clockwise 90 counterclockwise(by default)
+        	animationlooping = yes			# yes or no ;)
+        	animationtime = 3				# in seconds
+       		animationdelay = 0			# in seconds
+        	animationblendmode = "add"       #add, multiply, overlay
+        	animationtype = "rotating"      #scrolling, rotating, pulsing
+        	animationrotationoffset = { x = 0.0 y = 0.0 }
+        	animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+	}
+	SpriteType = {
+    	name = "GFX_relic_alshigan_engine"
+    	texturefile = "gfx/interface/icons/relics/r_alshigan_engine.dds"			
+    	effectFile = "gfx/FX/buttonstate.shader"
+    	animation = {
+        	animationmaskfile = "gfx/interface/icons/relics/r_alshigan_engine_shine.dds"
+        	animationtexturefile = "gfx/interface/icons/relics/glow_overlay.dds" 	# <- the animated file
+        	animationrotation = -180.0		# -90 clockwise 90 counterclockwise(by default)
+        	animationlooping = yes			# yes or no ;)
+        	animationtime = 3				# in seconds
+       		animationdelay = 0			# in seconds
+        	animationblendmode = "add"       #add, multiply, overlay
+        	animationtype = "rotating"      #scrolling, rotating, pulsing
+        	animationrotationoffset = { x = 0.0 y = 0.0 }
+        	animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_relic_znkar_engine"
+		texturefile = "gfx/interface/icons/relics/r_scfe_znkar_distortion_generator.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		animation = {
+			animationmaskfile = "gfx/interface/icons/relics/r_scfe_znkar_distortion_generator_shine.dds"
+			animationtexturefile = "gfx/interface/icons/relics/glow_overlay.dds" 	# <- the animated file
+			animationrotation = -180.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 3				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "rotating"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+}

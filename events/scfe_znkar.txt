@@ -1,0 +1,388 @@
+namespace = scfe_znkar
+
+country_event = {
+    id = scfe_znkar.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = znkar_start_country
+        home_planet = {
+            save_event_target_as = znkar_start_planet
+            set_planet_flag = znkar_observation
+        }
+        set_global_flag = scfe_had_znkar
+    }
+}
+
+planet_event = {
+    id = scfe_znkar.2
+    title = scfe_znkar.2.name
+    desc = scfe_znkar.2.desc
+    picture = GFX_evt_space_station
+    show_sound = event_red_alert
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        has_global_flag = scfe_had_znkar
+        has_planet_flag = znkar_observation
+    }
+    option = {
+        name = WORRYING
+        enable_special_project = {
+            name = SCFE_ZNKAR_STATION_PROJECT_1
+            location = this
+            owner = event_target:znkar_start_country
+        }
+    }
+}
+
+country_event = {
+    id = scfe_znkar.3
+    title = scfe_znkar.3.name
+    desc = scfe_znkar.3.desc
+    picture = GFX_evt_space_station
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        country_event = { id = scfe_znkar.4 days = 10 }
+    }
+
+    after = {
+        set_country_flag = scfe_znkar_warned
+    }
+}
+
+country_event = {
+    id = scfe_znkar.4
+    title = scfe_znkar.4.name
+    desc = scfe_znkar.4.desc
+    picture = GFX_evt_space_station
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_znkar.4.a
+        small_artifact_reward = yes
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+        add_event_chain_counter = {
+            event_chain = "scfe_znkar_chain"
+            counter = "scfe_znkar_artifacts"
+            amount = 1
+        }
+        closest_system = {
+            min_steps = 4
+            max_steps = 15
+            limit = {
+                scfe_is_valid_system = yes
+                any_system_planet = {
+                    scfe_is_nuked = yes
+                    has_moon = yes
+                    has_anomaly = no
+                    NOT = { exists = owner }
+                    any_moon = {
+                        OR = {
+                            scfe_is_frozen = yes
+                            scfe_is_barren = yes
+                            scfe_is_barren_cold = yes
+                        }
+                        has_anomaly = no
+                    }
+                }
+            }
+            random_system_planet = {
+                limit = {
+                    scfe_is_valid_system = yes
+                    scfe_is_nuked = yes
+                    has_moon = yes
+                    has_anomaly = no
+                    NOT = { exists = owner }
+                    any_moon = {
+                        OR = {
+                            scfe_is_frozen = yes
+                            scfe_is_barren = yes
+                            scfe_is_barren_cold = yes
+                        }
+                        has_anomaly = no
+                    }
+                }
+                enable_special_project = {
+                    name = SCFE_ZNKAR_NUKED_PROJECT
+                    location = this
+                    owner = event_target:znkar_start_country
+                }
+                hidden_effect = {
+                    set_name = scfe_znkar_pakrta
+                    save_event_target_as = scfe_znkar_nuked
+                    random_moon = {
+                        limit = {
+                            OR = {
+                                scfe_is_frozen = yes
+                                scfe_is_barren = yes
+                                scfe_is_barren_cold = yes
+                            }
+                            has_anomaly = no
+                        }
+                        set_name = scfe_znkar_dantiy
+                        save_event_target_as = scfe_znkar_nuked_moon
+                    }
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = scfe_znkar.5
+    title = scfe_znkar.5.name
+    desc = scfe_znkar.5.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+    }
+}
+
+country_event = {
+    id = scfe_znkar.6
+    title = scfe_znkar.6.name
+    desc = scfe_znkar.6.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        event_target:scfe_znkar_nuked = {
+            create_archaeological_site = scfe_znkar_dig
+        }
+    }
+}
+
+country_event = {
+    id = scfe_znkar.7
+    title = scfe_znkar.7.name
+    desc = scfe_znkar.7.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        small_artifact_reward = yes
+        add_event_chain_counter = {
+            event_chain = "scfe_znkar_chain"
+            counter = "scfe_znkar_artifacts"
+            amount = 1
+        }
+    }
+}
+
+country_event = {
+    id = scfe_znkar.8
+    title = scfe_znkar.7.name
+    desc = scfe_znkar.8.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        add_event_chain_counter = {
+            event_chain = "scfe_znkar_chain"
+            counter = "scfe_znkar_artifacts"
+            amount = 1
+        }
+    }
+}
+
+country_event = {
+    id = scfe_znkar.9
+    title = scfe_znkar.9.name
+    desc = {
+        trigger = { has_first_contact_dlc = no }
+        text = scfe_znkar.9.desc_1
+    }
+    desc = {
+        trigger = {
+            has_first_contact_dlc = yes
+            has_technology = tech_cloaking_3
+        }
+        text = scfe_znkar.9.desc_2
+    }
+    desc = {
+        trigger = {
+            has_first_contact_dlc = yes
+            NOR = {
+                has_technology = tech_cloaking_1
+                has_technology = tech_cloaking_2
+                has_technology = tech_cloaking_3
+            }
+        }
+        text = scfe_znkar.9.desc_3
+    }
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_mystic_reveal_light
+    is_triggered_only = yes
+
+    option = {
+        name = AMAZING
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier2unityreward
+            min = @tier2unitymin
+            max = @tier2unitymax
+        }
+        end_event_chain = scfe_znkar_chain
+    }
+    after = {
+        if = {
+            limit = {
+                has_first_contact_dlc = yes
+                NOT = { has_technology = tech_cloaking_3 }
+            }
+            scfe_give_next_cloaking_tech = yes
+        }
+    }
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_znkar_dig
+
+fleet_event = {
+    id = scfe_znkar_dig.1
+    title = scfe_znkar_dig.1.name
+    desc = scfe_znkar_dig.1.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+    option = {
+        name = INTERESTING
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_znkar_dig.2
+    title = scfe_znkar_dig.2.name
+    desc = scfe_znkar_dig.2.desc
+    picture = GFX_evt_collapsing_roof
+    show_sound = event_default
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+    option = {
+        name = DIG
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_znkar_dig.3
+    title = scfe_znkar_dig.3.name
+    desc = scfe_znkar_dig.3.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+    option = {
+        name = CURIOUS
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_znkar_dig.4
+    title = scfe_znkar_dig.4.name
+    desc = scfe_znkar_dig.4.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_default
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+    option = {
+        name = INTRIGUING
+        medium_artifact_reward = yes
+        owner = {
+            if = {
+                limit = { is_unfriendly = no }
+                add_modifier = { modifier = scfe_znkar_observation_tech days = -1 }
+            }
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier3researchreward
+                min = @tier3researchmin
+                max = @tier3researchmax
+            }
+            add_event_chain_counter = {
+                event_chain = "scfe_znkar_chain"
+                counter = "scfe_znkar_artifacts"
+                amount = 1
+            }
+        }
+        event_target:scfe_znkar_nuked_moon = {
+            enable_special_project = {
+                name = SCFE_ZNKAR_NUKED_MOON_PROJECT
+                owner = event_target:znkar_start_country
+            }
+        }
+    }
+}

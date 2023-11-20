@@ -1,0 +1,90 @@
+special_project = {
+    key = "SCFE_ZNKAR_STATION_PROJECT_1"
+    cost = 0
+    days_to_research = 30
+    tech_department = society_technology
+    picture = GFX_evt_space_station
+    location = yes
+	event_chain = scfe_znkar_chain
+    event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        owner = { country_event = { id = scfe_znkar.3 } }
+    }
+}
+special_project = {
+    key = "SCFE_ZNKAR_NUKED_PROJECT"
+    cost = 0
+    days_to_research = 60
+    tech_department = engineering_technology
+    picture = GFX_evt_city_ruins
+    location = yes
+	event_chain = scfe_znkar_chain
+     event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_progress_25 = {
+        owner = { country_event = { id = scfe_znkar.5 } }
+    }
+
+    on_success = {
+        owner = { country_event = { id = scfe_znkar.6 } }
+    }
+}
+
+special_project = {
+    key = "SCFE_ZNKAR_NUKED_MOON_PROJECT"
+    cost = 0
+    days_to_research = 60
+    tech_department = physics_technology
+    picture = GFX_evt_city_ruins
+    location = yes
+	event_chain = scfe_znkar_chain
+    event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_progress_50 = {
+        owner = { country_event = { id = scfe_znkar.7 } }
+    }
+
+    on_success = {
+        owner = { country_event = { id = scfe_znkar.8 } }
+    }
+}
+
+special_project = {
+    key = "SCFE_ZNKAR_RELIC_ANALYSIS"
+    cost = 0
+    days_to_research = 60
+    tech_department = physics_technology
+    picture = GFX_evt_city_ruins
+    location = yes
+    event_chain = scfe_znkar_chain
+    event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        owner = { country_event = { id = scfe_znkar.9 } }
+    }
+}

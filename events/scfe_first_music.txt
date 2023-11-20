@@ -1,0 +1,108 @@
+namespace = scfe_first_music
+
+### Archaeology: The First Music
+
+# Anomaly: Spawn Site
+ship_event = {
+	id = scfe_first_music.1
+	title = scfe_first_music.1.name
+	desc = scfe_first_music.1.desc
+	picture = GFX_evt_scfe_junim_anomaly
+	show_sound = event_ship_bridge
+	location = from
+	
+	is_triggered_only = yes
+
+	immediate = {
+		from = { clear_deposits = yes }
+	}
+
+	option = {
+		name = CURIOUS
+		from = { create_archaeological_site = scfe_site_the_first_music }
+	}
+}
+
+# Special project: Signal Analysis of Machine
+ship_event = {
+	id = scfe_first_music.4
+	title = scfe_first_music.4.name
+	desc = scfe_first_music.4.desc
+	picture = GFX_evt_scfe_lifeseeded_03
+	show_sound = event_ai_started
+
+	is_triggered_only = yes
+	
+	option = {
+		name = scfe_first_music.4.a
+		small_artifact_reward = yes
+		owner = {
+			add_relic = r_scfe_music_of_the_universe
+			add_modifier = {
+				modifier = scfe_Fiat_Lux
+				years = 20
+			}
+		}
+	}
+}
+
+#################################### DIG SITE ####################################
+
+# Stage 1 - The Ancient Planet
+fleet_event = {
+	id = scfe_first_music.2
+	title = scfe_first_music.2.name
+	desc = scfe_first_music.2.desc
+	picture = GFX_evt_scfe_lifeseeded_02
+	show_sound = event_collapsing_ruins
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 2 - The Spherical Object
+fleet_event = {
+	id = scfe_first_music.3
+	title = scfe_first_music.3.name
+	desc = scfe_first_music.3.desc
+	picture = GFX_evt_scfe_lifeseeded_01
+	show_sound = event_sensor_ping
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+	
+	option = {
+		name = scfe_first_music.3.a
+		small_artifact_reward = yes
+		from.planet = {
+			enable_special_project = {
+				name = "SCFE_SIGNAL_ANALYSIS_OF_MACHINE_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+}

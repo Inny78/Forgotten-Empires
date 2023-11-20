@@ -1,0 +1,286 @@
+namespace = scfe_belltower
+
+ship_event = {
+	id = scfe_belltower.1
+	title = scfe_belltower.1.name
+	desc = scfe_belltower.1.desc
+	picture = GFX_evt_scfe_dunes
+	show_sound = event_ship_bridge
+	location = from
+
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			create_archaeological_site = scfe_belltower_dig
+		}
+	}
+	option = {
+		name = INTERESTING
+	}
+}
+
+country_event = {
+	id = scfe_belltower.2
+	title = scfe_belltower.2.name
+	desc = scfe_belltower.2.desc
+	picture = GFX_evt_mysterious_signal
+	show_sound = event_ship_bridge
+	location = ROOT
+
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = CONTINUE
+		country_event = { id = scfe_belltower.3 }
+	}
+}
+
+country_event = {
+	id = scfe_belltower.3
+	title = scfe_belltower.2.name
+	desc = {
+		trigger = { scfe_is_heavy_metal = no }
+		text = scfe_belltower.3a.desc
+	}
+	desc = {
+		trigger = { scfe_is_heavy_metal = yes }
+		text = scfe_belltower.3b.desc
+	}
+	desc = {
+		trigger = { is_hive_empire = yes }
+		text = scfe_belltower.3c.desc
+	}
+	picture = GFX_evt_mysterious_signal
+	show_sound = event_ship_bridge
+	location = ROOT
+
+	is_triggered_only = yes
+	option = {
+		name = CURIOUS
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier2unityreward
+			min = @tier2unitymin
+			max = @tier2unitymax
+		}
+	}
+
+}
+
+country_event = {
+	id = scfe_belltower.4
+	title = scfe_belltower.2.name
+	desc = scfe_belltower.2.desc
+	picture = GFX_evt_mysterious_signal
+	show_sound = event_ship_bridge
+	location = ROOT
+
+	is_triggered_only = yes
+	option = {
+		name = CONTINUE
+		country_event = { id = scfe_belltower.5 }
+	}
+}
+
+country_event = {
+	id = scfe_belltower.5
+	title = scfe_belltower.2.name
+	desc = {
+		trigger = { scfe_is_heavy_metal = no }
+		text = scfe_belltower.4a.desc
+	}
+	desc = {
+		trigger = { scfe_is_heavy_metal = yes }
+		text = scfe_belltower.3b.desc
+	}
+	desc = {
+		trigger = { is_hive_empire = yes }
+		text = scfe_belltower.3c.desc
+	}
+	picture = GFX_evt_mysterious_signal
+	show_sound = event_ship_bridge
+	location = ROOT
+
+	is_triggered_only = yes
+	immediate = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier2unityreward
+			min = @tier2unitymin
+			max = @tier2unitymax
+		}
+	}
+	option = {
+		name = CURIOUS
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_belltower_dig
+
+fleet_event = {
+	id =  scfe_belltower_dig.1
+	title = scfe_belltower_dig.1.name
+	desc = scfe_belltower_dig.1.desc
+	picture = GFX_evt_archaeology_camp
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_belltower_dig.2
+	title = scfe_belltower_dig.2.name
+	desc = scfe_belltower_dig.2.desc
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_belltower_dig.3
+	title = scfe_belltower_dig.3.name
+	desc = scfe_belltower_dig.3.desc
+	picture = GFX_evt_archaeological_dig
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_belltower_dig.4
+	title = scfe_belltower_dig.4.name
+	desc = scfe_belltower_dig.4.desc
+	picture = GFX_evt_ancient_databank
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_belltower_dig.5
+	title = scfe_belltower_dig.5.name
+	desc = scfe_belltower_dig.5.desc
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	option = {
+		name = scfe_belltower_dig.5.a
+		medium_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+		owner = { country_event = { id = scfe_belltower.2 days = 5 } }
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_empire = prev.owner }
+				is_ai = no
+			}
+			country_event = { id = scfe_belltower.4 days = 5 }
+		}
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_empire = prev.owner }
+				is_ai = yes
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+	}
+}

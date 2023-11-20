@@ -1,0 +1,200 @@
+namespace = scfe_biggest_show_init
+
+ship_event = {
+	id = scfe_biggest_show_init.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		years_passed > 26
+		owner = {
+			is_ai = no
+		}
+		solar_system = {
+			NOT = { exists = space_owner }
+			any_system_planet = {
+				scfe_is_moon_of_gas_giant = yes
+				OR = {
+					scfe_is_continental = yes
+					scfe_is_tropical = yes
+					scfe_is_tundra = yes
+					scfe_is_savannah = yes
+				}
+				has_anomaly = no
+				has_owner = no
+			}
+			scfe_is_valid_system = yes
+		}
+	}
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				limit = { scfe_is_moon_of_gas_giant = yes has_anomaly = no }
+				change_pc = pc_relic
+				reset_planet = yes
+				clear_deposits = yes
+				add_deposit = d_relic_dense_ruins
+				add_deposit = d_collapsed_spire
+				add_deposit = d_massive_crevice
+				add_deposit = d_shattered_solar_array
+				add_deposit = d_flooded_reactor_pits
+				add_deposit = d_crumbling_mining_tunnels
+				add_deposit = d_relic_metal_boneyard
+				create_archaeological_site = scfe_site_biggest_show_of_world
+			}
+		}
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_biggest_show
+
+#biggest show of the world #https://gall.dcinside.com/mgallery/board/view/?id=stellaris&no=8304
+
+#automaton
+fleet_event = {
+	id = scfe_biggest_show.1
+	title = scfe_biggest_show.1.name
+	desc = scfe_biggest_show.1.desc
+	picture = GFX_evt_alien_city
+	show_sound = event_alien_nature
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#show of puppets
+fleet_event = {
+	id = scfe_biggest_show.2
+	title = scfe_biggest_show.2.name
+	desc = scfe_biggest_show.2.desc
+	picture = GFX_evt_hive_mind
+	show_sound = event_pre_ftl_civilization
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#awakening
+fleet_event = {
+	id =  scfe_biggest_show.3
+	title = scfe_biggest_show.3.name
+	desc = scfe_biggest_show.3.desc
+	picture = GFX_evt_generator_powerup
+	show_sound = event_energy_field
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#show of life
+fleet_event = {
+	id = scfe_biggest_show.4
+	title = scfe_biggest_show.4.name
+	desc = scfe_biggest_show.4.desc
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_radio_chatter
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#protagonist of the world
+fleet_event = {
+	id = scfe_biggest_show.5
+	title = scfe_biggest_show.5.name
+	desc = scfe_biggest_show.5.desc
+	picture = GFX_evt_news_room
+	show_sound = event_ghost_town
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#bad end
+fleet_event = {
+	id = scfe_biggest_show.6
+	title = scfe_biggest_show.6.name
+	desc = scfe_biggest_show.6.desc
+	picture = GFX_evt_scanning_remains
+	show_sound = event_ship_explosion
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = scfe_biggest_show.6.a
+		owner = {
+			add_relic = r_scfe_protagonist_of_the_show
+		}
+	}
+}

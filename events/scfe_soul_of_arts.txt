@@ -1,0 +1,292 @@
+namespace = scfe_soul_of_the_art_init
+
+ship_event = {
+	id = scfe_soul_of_the_art_init.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = scfe_had_soulofarts }
+		years_passed > 27
+		owner = {
+			is_ai = no
+		}
+		solar_system = {
+			NOT = { exists = space_owner }
+			any_system_planet = {
+				scfe_is_nuked = yes
+				has_anomaly = no
+			}
+			scfe_is_valid_system = yes
+		}
+	}
+	immediate = {
+		set_global_flag = scfe_had_soulofarts
+		solar_system = {
+			random_system_planet = {
+				limit = { scfe_is_nuked = yes has_anomaly = no }
+				set_planet_entity = {
+					picture = pc_nuked_colorful
+					entity = asp_color_nuked_planet_01_entity
+				}
+				# Protection flags
+				set_planet_flag = cant_terraform_planet
+				set_planet_flag = has_megastructure
+				create_ambient_object = {
+					type = "medium_debris_01_object" #there are numerous 'debris that are believed to be battleships' of ancient civilization
+					entity_offset_height = -15
+					location = prev
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+				create_ambient_object = {
+					type = "large_debris_object" #covered in countless metal fragments, evidently of artificial structures
+					entity_offset_height = -14
+					location = prev
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+				clear_blockers = yes
+				clear_deposits = yes
+				add_deposit = d_relic_metal_boneyard
+				add_deposit = d_abandoned_mining_tunnels
+				add_deposit = d_hot_springs
+				add_deposit = d_searing_desert
+				add_deposit = d_underwater_vent
+				add_deposit = d_underwater_vent
+				create_archaeological_site = scfe_site_soul_of_the_art
+			}
+		}
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_soul_of_the_art
+
+#soul of the art #https://gall.dcinside.com/mgallery/board/view?id=stellaris&no=8338
+
+#fleet remains
+fleet_event = {
+	id = scfe_soul_of_the_art.1
+	title = scfe_soul_of_the_art.1.name
+	desc = scfe_soul_of_the_art.1.desc
+	picture = GFX_evt_ruined_system
+	show_sound = event_space_battle
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		medium_artifact_reward = yes
+	}
+}
+#colorful ruins
+fleet_event = {
+	id = scfe_soul_of_the_art.2
+	title = scfe_soul_of_the_art.2.name
+	desc = scfe_soul_of_the_art.2.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_wind_ruins
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#painted rmains
+fleet_event = {
+	id = scfe_soul_of_the_art.3
+	title = scfe_soul_of_the_art.3.name
+	desc = scfe_soul_of_the_art.3.desc
+	picture = GFX_evt_dead_city
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		owner = {
+			add_resource = {
+				minerals = 500
+			}
+		}
+	}
+}
+#the discord
+fleet_event = {
+	id = scfe_soul_of_the_art.4
+	title = scfe_soul_of_the_art.4.name
+	desc = scfe_soul_of_the_art.4.desc
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_alien_signal
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		owner = {
+			add_resource = {
+				society_research = 500
+			}
+		}
+	}
+}
+#research facility
+fleet_event = {
+	id = scfe_soul_of_the_art.5
+	title = scfe_soul_of_the_art.5.name
+	desc = scfe_soul_of_the_art.5.desc
+	picture = GFX_evt_sapient_AI
+	show_sound = event_door_opening
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#the end
+fleet_event = {
+	id = scfe_soul_of_the_art.6
+	title = scfe_soul_of_the_art.6.name
+	desc = scfe_soul_of_the_art.6.desc
+	picture = GFX_evt_planet_beam
+	show_sound = distance_god_ray_fire_layer_1
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = {
+			set_site_progress_locked = no
+			planet = {
+				remove_planet_flag = cant_terraform_planet
+				remove_planet_flag = has_megastructure
+			}
+		}
+	}
+
+	option = {
+		name = scfe_soul_of_the_art.6.a
+		large_artifact_reward = yes
+		owner = {
+			if = {
+				limit = {
+					has_technology = tech_colossus
+					has_country_flag = colossus_project
+					is_spiritualist = yes
+					OR = {
+						AND = {
+							NOT = { host_has_dlc = Utopia }
+							has_technology = tech_telepathy
+						}
+						AND = {
+							host_has_dlc = Utopia
+							has_ascension_perk = ap_mind_over_matter
+						}
+					}
+					NOT = { has_technology = tech_pk_godray }
+				}
+				custom_tooltip = scfe_soul_of_the_art.6.a.tooltip #reward description
+			}
+			else = {
+				custom_tooltip = scfe_soul_of_the_art.6.a.tooltip_alt #reward description alt
+			}
+		}
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						has_technology = tech_colossus
+						has_country_flag = colossus_project
+						is_spiritualist = yes
+						OR = {
+							AND = {
+								NOT = { host_has_dlc = Utopia }
+								has_technology = tech_telepathy
+							}
+							AND = {
+								host_has_dlc = Utopia
+								has_ascension_perk = ap_mind_over_matter
+							}
+						}
+						NOT = { has_technology = tech_pk_godray }
+					}
+					add_research_option = tech_pk_godray
+					add_tech_progress = { tech = tech_pk_godray progress = 0.5 }
+				}
+			}
+			from.planet = {
+				add_deposit = scfe_d_society_20
+			}
+		}
+	}
+}

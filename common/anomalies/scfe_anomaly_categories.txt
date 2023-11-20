@@ -1,0 +1,210 @@
+# Scope: planet, from = ship
+
+# The Belltower
+scfe_belltower_category = {
+	desc = scfe_belltower_desc
+	picture = GFX_evt_scfe_dunes
+	level = 8
+	max_once_global = yes
+	spawn_chance = {
+		modifier = {
+			add = 1
+			solar_system = {
+				NOT = {
+					any_system_planet = {
+						exists = archaeological_site
+					}
+				}
+			}
+			scfe_is_desertic = yes
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				OR = {
+					is_ai = yes
+					is_gestalt = yes
+				}
+			}
+		}
+	}
+	on_success = scfe_belltower.1
+}
+
+# The Failed Hive
+scfe_failed_hive_category = {
+	desc = scfe_failed_hive_desc
+	picture = GFX_evt_alien_ruins
+	level = 6
+	max_once_global = yes
+	spawn_chance = {
+		modifier = {
+			add = 1
+			habitable_planet = yes
+			solar_system = {
+				NOT = {
+					any_system_planet = {
+						exists = archaeological_site
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				OR = {
+					is_ai = yes
+					is_unfriendly = yes
+				}
+			}
+		}
+	}
+	on_success = scfe_failed_hive.1
+}
+
+
+# The Reverse Engine
+scfe_reverse_engine_category = {
+	desc = scfe_reverse_engine_desc
+	picture = GFX_evt_cold_barren
+	level = 8
+	max_once_global = yes
+	spawn_chance = {
+		modifier = {
+			add = 1
+			OR = {
+				scfe_is_barren = yes
+				scfe_is_barren_cold = yes
+			}
+			solar_system = {
+				NOT = {
+					any_system_planet = {
+						exists = archaeological_site
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				is_ai = yes
+			}
+		}
+	}
+	on_success = scfe_reverse_engine.1
+}
+
+# Unexpected Tower
+scfe_tower_city_category = {
+	desc = scfe_tower_city_category_desc
+	picture = GFX_evt_gas_giant
+	max_once_global = yes
+	level = 6
+	spawn_chance = {
+		modifier = {
+			add = 1
+			scfe_is_gas_giant = yes
+			solar_system = {
+				NOT = {
+					any_system_planet = {
+						exists = archaeological_site
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				is_ai = yes
+			}
+		}
+	}
+	on_success = scfe_tower_city.1
+}
+
+# The Lonely Presence
+scfe_lonely_shroud_category = {
+	desc = scfe_lonely_shroud_category_desc
+	picture = GFX_evt_shrouded_planet
+	max_once_global = yes
+	level = 10
+	spawn_chance = {
+		modifier = {
+			add = 1
+			is_planet_class = pc_shrouded
+			has_planet_flag = scfe_lonely_planet
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				is_ai = yes
+			}
+		}
+	}
+	on_success = scfe_lonely_shroud.2
+}
+
+# War-Torn Planet
+scfe_war_torn_category = {
+	desc = scfe_war_torn_category_desc
+	picture = GFX_evt_alien_ruins
+	max_once_global = yes
+	level = 6
+	spawn_chance = {
+		modifier = {
+			add = 1
+			years_passed > 30
+			OR = {
+				scfe_is_continental = yes
+				scfe_is_desertic = yes
+				scfe_is_tundra = yes
+				scfe_is_savannah = yes
+			}
+			solar_system = {
+				NOT = {
+					any_system_planet = {
+						exists = archaeological_site
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				OR = {
+					is_ai = yes
+					has_origin = origin_incohesive
+				}
+			}
+		}
+	}
+	on_success = scfe_war_torn.1
+}
+
+############################## Archaeology Story Pack ##############################
+
+##### The First Music #####
+
+scfe_the_first_music_anomaly = {
+	desc = scfe_the_first_music_anomaly_desc
+	picture = GFX_evt_scfe_junim_anomaly
+	level = 6
+
+	max_once_global = yes
+
+	spawn_chance = {
+		modifier = {
+			add = 20
+			OR = {
+				scfe_is_barren = yes
+				scfe_is_barren_cold = yes
+				scfe_is_frozen = yes
+				scfe_is_toxic = yes
+			}
+			scfe_is_valid_system = yes
+			has_anomaly = no
+			NOT = { exists = archaeological_site }
+		}
+	}
+	on_success = scfe_first_music.1
+}

@@ -1,0 +1,463 @@
+# The Alshigans
+namespace = scfe_alshigans_init
+
+ship_event = {
+	id = scfe_alshigans_init.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = scfe_had_alshigans }
+		owner = {
+			is_ai = no
+			has_country_flag = scfe_alshigans_possible
+		}
+		solar_system = {
+			NOT = { exists = space_owner }
+			any_system_planet = {
+				is_asteroid = yes
+				has_anomaly = no
+			}
+			scfe_is_valid_system = yes
+		}
+	}
+	immediate = {
+		set_global_flag = scfe_had_alshigans
+		solar_system = {
+			random_system_planet = {
+				limit = { is_asteroid = yes has_anomaly = no }
+				set_planet_flag = scfe_alshigans_start
+				save_event_target_as = scfe_alshigans_asteroid
+			}
+		}
+		owner = { country_event = { id = scfe_alshigans_init.2 } }
+	}
+}
+
+country_event = {
+	id = scfe_alshigans_init.2
+	title = scfe_alshigans_init.2.name
+	desc = scfe_alshigans_init.2.desc
+	picture = GFX_evt_archaeological_dig
+	show_sound = event_default
+	is_triggered_only = yes
+	location = event_target:scfe_alshigans_asteroid
+
+	option = {
+		name = INTERESTING
+		begin_event_chain = {
+			event_chain = "scfe_alshigans_chain"
+			target = this
+		}
+		event_target:scfe_alshigans_asteroid = {
+			enable_special_project = {
+				name = SCFE_ALSHIGANS_ASTEROID_PROJECT
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+
+namespace = scfe_alshigans
+
+# Asteroid
+ship_event = {
+	id = scfe_alshigans.1
+	title = scfe_alshigans.1.name
+	desc = scfe_alshigans.1.desc
+	picture = GFX_evt_scfe_asteroid
+	show_sound = event_default
+	location = root
+	is_triggered_only = yes
+
+	option = {
+		name = CURIOUS
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "scfe_alshigans_chain"
+				counter = "scfe_alshigans_artifacts"
+				amount = 1
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			country_event = { id = scfe_alshigans.7 days = 5 }
+		}
+	}
+}
+
+# Savannah
+ship_event = {
+	id = scfe_alshigans.2
+	title = scfe_alshigans.2.name
+	desc = scfe_alshigans.2.desc
+	picture = GFX_evt_scfe_savannah_planet
+	show_sound = event_default
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+		event_target:scfe_alshigans_savannah = {
+			add_modifier = { modifier = scfe_savannah_ruins days = -1 }
+			add_modifier = { modifier = wasteland_infrastructure days = -1 }
+		}
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "scfe_alshigans_chain"
+				counter = "scfe_alshigans_artifacts"
+				amount = 1
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			country_event = { id = scfe_alshigans.8 days = 5 }
+		}
+	}
+}
+
+# Alpine
+ship_event = {
+	id = scfe_alshigans.3
+	title = scfe_alshigans.3.name
+	desc = scfe_alshigans.3.desc
+	picture = GFX_evt_scfe_alshigans_alpine
+	show_sound = event_default
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+		event_target:scfe_alshigans_alpine = {
+			add_modifier = { modifier = scfe_alpine_ruins days = -1 }
+			add_modifier = { modifier = wasteland_infrastructure days = -1 }
+		}
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "scfe_alshigans_chain"
+				counter = "scfe_alshigans_artifacts"
+				amount = 1
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				medium_artifact_reward = yes
+			}
+			country_event = { id = scfe_alshigans.9 days = 5 }
+		}
+	}
+}
+
+# Jungle
+ship_event = {
+	id = scfe_alshigans.4
+	title = scfe_alshigans.4.name
+	desc = scfe_alshigans.4.desc
+	picture = GFX_evt_tropical
+	show_sound = event_default
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = PECULIAR
+		event_target:scfe_alshigans_jungle = {
+			add_modifier = { modifier = scfe_jungle_ruins days = -1 }
+			add_modifier = { modifier = wasteland_infrastructure days = -1 }
+		}
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "scfe_alshigans_chain"
+				counter = "scfe_alshigans_artifacts"
+				amount = 1
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			country_event = { id = scfe_alshigans.10 days = 5 }
+		}
+	}
+}
+
+# Moon
+ship_event = {
+	id = scfe_alshigans.5
+	title = scfe_alshigans.5.name
+	desc = scfe_alshigans.5.desc
+	picture = GFX_evt_barren_dig_site
+	show_sound = event_default
+	location = root
+	is_triggered_only = yes
+
+	option = {
+		name = CONTINUE
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "scfe_alshigans_chain"
+				counter = "scfe_alshigans_artifacts"
+				amount = 1
+			}
+		}
+		ship_event = { id = scfe_alshigans.6 days = 15 }
+	}
+}
+
+# Computer
+ship_event = {
+	id = scfe_alshigans.6
+	title = scfe_alshigans.6.name
+	desc = scfe_alshigans.6.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_default
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = DISTURBING
+		owner = {
+			end_event_chain = "scfe_alshigans_chain"
+			if = {
+				limit = { has_ancrel = yes }
+				medium_artifact_reward = yes
+			}
+			add_relic = r_scfe_alshigan_engine
+		}
+
+		event_target:scfe_alshigans_moon = {
+			add_deposit = d_physics_5
+			add_deposit = d_engineering_5
+		}
+		hidden_effect = {
+			owner = { set_country_flag = alshigans_precursors_done }
+			if = {
+				limit = {
+					owner = {
+						is_xenophobe = no
+						is_gestalt = no
+					}
+				}
+				owner = {
+					country_event = { id = scfe_alshigans.11 days = 50 }
+				}
+			}
+		}
+	}
+}
+
+# Asteroid lore
+country_event = {
+	id = scfe_alshigans.7
+	title = scfe_alshigans.asteroid.name
+	desc = scfe_alshigans.asteroid.desc
+	picture = GFX_evt_scfe_asteroid
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+	after = {
+		closest_system = {
+			min_steps = 1
+			max_steps = 15
+			limit = {
+				scfe_is_valid_system = yes
+				any_system_planet = {
+					scfe_is_savannah = yes
+					has_anomaly = no
+					NOT = { exists = owner }
+				}
+			}
+			random_system_planet = {
+				limit = {
+					scfe_is_savannah = yes
+					has_anomaly = no
+					NOT = { exists = owner }
+				}
+				enable_special_project = {
+					name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
+					location = this
+					owner = root
+				}
+				set_name = scfe_alshigans_velaen
+				save_event_target_as = scfe_alshigans_savannah
+			}
+		}
+	}
+}
+
+# Savannah lore
+country_event = {
+	id = scfe_alshigans.8
+	title = scfe_alshigans_savannah.name
+	desc = scfe_alshigans_savannah.desc
+	picture = GFX_evt_scfe_savannah_planet
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+	after = {
+		event_target:scfe_alshigans_asteroid = {
+			closest_system = {
+				min_steps = 1
+				max_steps = 15
+				limit = {
+					scfe_is_valid_system = yes
+					any_system_planet = {
+						scfe_is_alpine = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_alpine = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+					}
+					enable_special_project = {
+						name = SCFE_ALSHIGANS_ALPINE_PROJECT
+						location = this
+						owner = root
+					}
+					set_name = scfe_alshigans_uuladir
+					save_event_target_as = scfe_alshigans_alpine
+				}
+			}
+		}
+	}
+}
+
+# Alpine lore
+country_event = {
+	id = scfe_alshigans.9
+	title = scfe_alshigans.alpine.name
+	desc = scfe_alshigans.alpine.desc
+	picture = GFX_evt_scfe_alshigans_alpine
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+	after = {
+		event_target:scfe_alshigans_asteroid = {
+			closest_system = {
+				min_steps = 1
+				max_steps = 15
+				limit = {
+					scfe_is_valid_system = yes
+					any_system_planet = {
+						scfe_is_tropical = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_tropical = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+					}
+					enable_special_project = {
+						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+						location = this
+						owner = root
+					}
+					set_name = scfe_alshigans_demearen
+					save_event_target_as = scfe_alshigans_jungle
+				}
+			}
+		}
+	}
+}
+
+# Jungle lore
+country_event = {
+	id = scfe_alshigans.10
+	title = scfe_alshigans_jungle.name
+	desc = scfe_alshigans_jungle.desc
+	picture = GFX_evt_tropical
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+	after = {
+		event_target:scfe_alshigans_asteroid = {
+			closest_system = {
+				min_steps = 1
+				max_steps = 15
+				limit = {
+					scfe_is_valid_system = yes
+					any_system_planet = {
+						scfe_is_barren = yes
+						is_moon = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_barren = yes
+						is_moon = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+					}
+					enable_special_project = {
+						name = SCFE_ALSHIGANS_MOON_PROJECT
+						location = this
+						owner = root
+					}
+					set_name = scfe_alshigans_yutela
+					save_event_target_as = scfe_alshigans_moon
+				}
+			}
+		}
+	}
+}
+
+# New sports
+country_event = {
+	id = scfe_alshigans.11
+	title = scfe_alshigans.11.name
+	desc = scfe_alshigans.11.desc
+	picture = GFX_evt_ship_travel
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_planet = {
+			limit = { is_colony = yes num_pops > 5 }
+			weights = {
+				base = 1
+				modifier = {
+					factor = 0.1
+					is_capital = yes
+				}
+				modifier = {
+					factor = 100
+					is_capital = no
+				}
+			}
+			save_event_target_as = scfe_ships_race
+		}
+	}
+
+	option = {
+		name = CURIOUS
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier1unityreward
+			min = @tier1unitymin
+			max = @tier1unitymax
+		}
+		event_target:scfe_ships_race = {
+			add_modifier = { modifier = scfe_ships_race days = -1 }
+		}
+	}
+}

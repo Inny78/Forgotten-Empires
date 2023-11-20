@@ -1,0 +1,123 @@
+namespace = scfe_lonely_shroud
+
+# The Lonely Presence
+
+ship_event = {
+	id = scfe_lonely_shroud.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		mid_game_years_passed = 5
+		owner = { is_ai = no }
+		solar_system = {
+			NOT = { exists = space_owner }
+			has_special_star_flag_trigger = no
+			any_system_planet = {
+				scfe_is_uninhabitable = yes
+				has_anomaly = no
+				NOT = { exists = archaeological_site }
+				is_surveyed = {
+					who = root.owner
+					status = no
+				}
+			}
+		}
+	}
+
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				limit = {
+					scfe_is_uninhabitable = yes
+					has_anomaly = no
+					NOT = { exists = archaeological_site }
+					is_surveyed = {
+						who = root.owner
+						status = no
+					}
+				}
+				change_pc = pc_shrouded
+				clear_planet_modifiers = yes
+				clear_deposits = yes
+				set_planet_flag = scfe_lonely_planet
+				save_event_target_as = scfe_lonely_planet
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = scfe_lonely_shroud.2
+	is_triggered_only = yes
+	title = scfe_lonely_shroud.2.name
+	desc = scfe_lonely_shroud.2.desc
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_sensor_ping
+	location = from
+	option = {
+		name = CURIOUS
+		enable_special_project = {
+			name = SCFE_LONELY_SHROUD_PROJECT
+			location = event_target:scfe_lonely_planet
+			owner = root
+		}
+	}
+	after = {
+		owner = { add_resource = { unity = -100 } }
+	}
+}
+
+ship_event = {
+	id = scfe_lonely_shroud.3
+	is_triggered_only = yes
+	title = scfe_lonely_shroud.3.name
+	desc = scfe_lonely_shroud.3.desc
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_sensor_ping
+	location = from
+	option = {
+		exclusive_trigger = { owner = { is_hive_empire = yes } }
+		name = scfe_lonely_shroud.3.th
+		event_target:scfe_lonely_planet = {
+			change_pc = pc_hive
+			reroll_planet_modifiers = yes
+			reroll_deposits = yes
+		}
+	}
+	option = {
+		exclusive_trigger = { owner = { is_mechanical_empire = yes } }
+		name = scfe_lonely_shroud.3.tm
+		event_target:scfe_lonely_planet = {
+			change_pc = pc_machine
+			reroll_planet_modifiers = yes
+			reroll_deposits = yes
+		}
+	}
+	option = {
+		name = scfe_lonely_shroud.3.tb
+		event_target:scfe_lonely_planet = {
+			change_pc = pc_gaia
+			reroll_planet_modifiers = yes
+			reroll_deposits = yes
+		}
+	}
+	after = {
+		owner = { add_resource = { unity = -100 } }
+	}
+}
+
+planet_event = {
+	id = scfe_lonely_shroud.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = scfe_lonely_planet
+		is_colony = yes
+	}
+	immediate = {
+		add_modifier = {
+			modifier = scfe_lonely_presence days = -1
+		}
+		owner = { add_resource = { unity = -100 } }
+	}
+}

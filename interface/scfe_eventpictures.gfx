@@ -1,0 +1,381 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_scfe_alshigans_barren"
+		texturefile = "gfx/event_pictures/scfe_alshigans_barren.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_alshigans_alpine"
+		texturefile = "gfx/event_pictures/scfe_alpine_planet.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_alshigans_jungle"
+		texturefile = "gfx/event_pictures/scfe_alshigans_jungle.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_asteroid"
+		texturefile = "gfx/event_pictures/scfe_asteroid.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_crashed_ship"
+		texturefile = "gfx/event_pictures/scfe_crashed_ship.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_dunes"
+		texturefile = "gfx/event_pictures/scfe_dunes.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_mangrove"
+		texturefile = "gfx/event_pictures/scfe_mangrove.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_savannah_planet"
+		texturefile = "gfx/event_pictures/scfe_savannah_planet.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	### Archaeology Story Pack ###
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_intro"
+		texturefile = "gfx/event_pictures/scfe_samchigui_intro.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_first"
+		texturefile = "gfx/event_pictures/scfe_samchigui_first.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_second"
+		texturefile = "gfx/event_pictures/scfe_samchigui_second.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_third"
+		texturefile = "gfx/event_pictures/scfe_samchigui_third.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_fourth"
+		texturefile = "gfx/event_pictures/scfe_samchigui_fourth.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_fifth"
+		texturefile = "gfx/event_pictures/scfe_samchigui_fifth.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_sixth"
+		texturefile = "gfx/event_pictures/scfe_samchigui_sixth.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_samchigui_seventh"
+		texturefile = "gfx/event_pictures/scfe_samchigui_seventh.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_junim_anomaly"
+		texturefile = "gfx/event_pictures/scfe_junim_anomaly.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_01"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_01.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_02"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_02.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_specialprojects"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_specialprojects.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_03"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_03.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_04"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_04.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_05"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_05.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_06"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_06.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_lifeseeded_07"
+		texturefile = "gfx/event_pictures/scfe_lifeseeded_07.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_soul_of_the_art_intro"
+		texturefile = "gfx/event_pictures/scfe_soul_of_the_art_intro.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.20"
+		texturefile = "gfx/event_pictures/scfe.20.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.22"
+		texturefile = "gfx/event_pictures/scfe.22.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.23"
+		texturefile = "gfx/event_pictures/scfe.23.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.24"
+		texturefile = "gfx/event_pictures/scfe.24.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.25"
+		texturefile = "gfx/event_pictures/scfe.25.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.26"
+		texturefile = "gfx/event_pictures/scfe.26.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.29"
+		texturefile = "gfx/event_pictures/scfe.29.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.30"
+		texturefile = "gfx/event_pictures/scfe.30.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.31"
+		texturefile = "gfx/event_pictures/scfe.31.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.32"
+		texturefile = "gfx/event_pictures/scfe.32.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.33"
+		texturefile = "gfx/event_pictures/scfe.33.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.35"
+		texturefile = "gfx/event_pictures/scfe.35.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.36"
+		texturefile = "gfx/event_pictures/scfe.36.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.39.2"
+		texturefile = "gfx/event_pictures/scfe.39.2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.40.1"
+		texturefile = "gfx/event_pictures/scfe.40.1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.40.3"
+		texturefile = "gfx/event_pictures/scfe.40.3.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_site_biggest_show_of_world"
+		texturefile = "gfx/event_pictures/scfe_site_biggest_show_of_world.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_site_tomb_of_dead_whale"
+		texturefile = "gfx/event_pictures/scfe_site_tomb_of_dead_whale.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_site_king_of_underground_city"
+		texturefile = "gfx/event_pictures/scfe_site_king_of_underground_city.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.54"
+		texturefile = "gfx/event_pictures/scfe.54.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.55"
+		texturefile = "gfx/event_pictures/scfe.55.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.56"
+		texturefile = "gfx/event_pictures/scfe.56.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.57"
+		texturefile = "gfx/event_pictures/scfe.57.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.59"
+		texturefile = "gfx/event_pictures/scfe.59.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.60"
+		texturefile = "gfx/event_pictures/scfe.60.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.61"
+		texturefile = "gfx/event_pictures/scfe.61.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.62"
+		texturefile = "gfx/event_pictures/scfe.62.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.63"
+		texturefile = "gfx/event_pictures/scfe.63.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.64"
+		texturefile = "gfx/event_pictures/scfe.64.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.68"
+		texturefile = "gfx/event_pictures/scfe.68.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.72"
+		texturefile = "gfx/event_pictures/scfe.72.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.76"
+		texturefile = "gfx/event_pictures/scfe.76.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.90"
+		texturefile = "gfx/event_pictures/scfe.90.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.91"
+		texturefile = "gfx/event_pictures/scfe.91.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.92"
+		texturefile = "gfx/event_pictures/scfe.92.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.94"
+		texturefile = "gfx/event_pictures/scfe.94.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe.98"
+		texturefile = "gfx/event_pictures/scfe.98.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

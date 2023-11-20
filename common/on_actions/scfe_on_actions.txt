@@ -1,0 +1,58 @@
+on_entering_system_first_time = {
+	events = {
+		scfe_lonely_shroud.1
+		scfe_alshigans_init.1
+		scfe_biggest_show_init.1
+		scfe_soul_of_the_art_init.1
+		scfe_tomb_of_dead_whales_init.1
+		scfe_king_underground_init.1
+	}
+}
+on_colonized = {
+	events = {
+		scfe_lonely_shroud.4
+	}
+}
+
+# ASP
+on_colony_2_years_old = {
+	events = {
+	}
+	random_events = {
+		### Archaeology Colony Sites
+		6 = scfe_when_the_world_sings.1 # When the world sings
+	}
+}
+on_colony_3_years_old = {
+	events = {
+	}
+	random_events = {
+		### Archaeology Colony Sites
+		8 = scfe_when_the_world_sings.1 # When the world sings
+	}
+}
+on_colony_4_years_old = {
+	events = {
+	}
+	random_events = {
+		### Archaeology Colony Sites
+		10 = scfe_when_the_world_sings.1 # When the world sings
+	}
+}
+on_colony_5_years_old = {
+	events = {
+	}
+	random_events = {
+		### Archaeology Colony Sites
+		10 = scfe_when_the_world_sings.1 # When the world sings
+	}
+}
+
+on_decade_pulse_country = {
+	events = {
+		scfe_engine.1
+		scfe_engine.2
+		scfe_engine.3
+
+	}
+}

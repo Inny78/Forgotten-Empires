@@ -1,0 +1,23 @@
+scfe_give_next_cloaking_tech = {
+    if = {
+        limit = {
+            NOT = { has_technology = tech_cloaking_1 }
+        }
+        add_research_option = tech_cloaking_1
+        add_tech_progress = { tech = tech_cloaking_1 progress = 0.1 }
+    }
+    else_if = {
+        limit = {
+            NOT = { has_technology = tech_cloaking_2 }
+        }
+        add_research_option = tech_cloaking_2
+        add_tech_progress = { tech = tech_cloaking_2 progress = 0.1 }
+    }
+    else_if = {
+        limit = {
+            NOT = { has_technology = tech_cloaking_3 }
+        }
+        add_research_option = tech_cloaking_3
+        add_tech_progress = { tech = tech_cloaking_3 progress = 0.1 }
+    }
+}

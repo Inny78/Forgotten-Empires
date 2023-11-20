@@ -1,0 +1,282 @@
+namespace = scfe_failed_hive
+
+ship_event = {
+	id = scfe_failed_hive.1
+	title = scfe_failed_hive.1.name
+	desc = scfe_failed_hive.1.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = event_default
+	location = FROM
+	is_triggered_only = yes
+
+	immediate = {
+		from = {
+			create_archaeological_site = scfe_failed_hive_dig
+		}
+	}
+
+	option = {
+		name = FASCINATING
+	}
+}
+
+country_event = {
+	id = scfe_failed_hive.2
+	title = scfe_failed_hive.2.name
+	picture = GFX_evt_announcement
+	show_sound = event_announcement
+	desc = {
+		exclusive_trigger = {
+			is_hive_empire = yes
+		}
+		text = scfe_failed_hive.2.desc_1
+	}
+	desc = {
+		exclusive_trigger = {
+			OR = {
+				is_xenophile = yes
+				is_pacifist = yes
+				is_egalitarian = yes
+				is_spiritualist = yes
+			}
+		}
+		text = scfe_failed_hive.2.desc_2
+	}
+	desc = {
+		exclusive_trigger = {
+			OR = {
+				is_militarist = yes
+				is_authoritarian = yes
+			}
+		}
+		text = scfe_failed_hive.2.desc_3
+	}
+	desc = {
+		exclusive_trigger = {
+			is_xenophobe = yes
+		}
+		text = scfe_failed_hive.2.desc_4
+	}
+	desc = {
+		exclusive_trigger = {
+			is_megacorp = yes
+		}
+		text = scfe_failed_hive.2.desc_5
+	}
+	desc = {
+		exclusive_trigger = {
+			is_machine_empire = yes
+		}
+		text = scfe_failed_hive.2.desc_6
+	}
+	is_triggered_only = yes
+	option = {
+		name = AMAZING
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier2unityreward
+			min = @tier2unitymin
+			max = @tier2unitymax
+		}
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_failed_hive_dig
+
+fleet_event = {
+	id =  scfe_failed_hive_dig.1
+	title = scfe_failed_hive_dig.1.name
+	desc = scfe_failed_hive_dig.1.desc
+	picture = GFX_evt_pirates_attacking_cargo
+	show_sound = event_space_battle
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_failed_hive_dig.2
+	title = scfe_failed_hive_dig.2.name
+	desc = scfe_failed_hive_dig.2.desc
+	picture = GFX_evt_announcement
+	show_sound = event_default
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_failed_hive_dig.3
+	title = scfe_failed_hive_dig.3.name
+	desc = scfe_failed_hive_dig.3.desc
+	picture = GFX_evt_archaeological_dig
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_failed_hive_dig.4
+	title = scfe_failed_hive_dig.4.name
+	desc = scfe_failed_hive_dig.4.desc
+	picture = GFX_evt_ancient_databank
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_failed_hive_dig.5
+	title = scfe_failed_hive_dig.5.name
+	desc = scfe_failed_hive_dig.5.desc
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	option = {
+		name = scfe_failed_hive_dig.5.a
+		custom_tooltip = scfe_failed_hive.1.t
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	option = {
+		name = scfe_failed_hive_dig.5.b
+		custom_tooltip = scfe_failed_hive.1.t
+		exclusive_trigger = {
+			owner = { is_xenophobe = yes }
+		}
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	option = {
+		name = scfe_failed_hive_dig.5.b
+		custom_tooltip = scfe_failed_hive.1.t
+		exclusive_trigger = {
+			owner = { is_gestalt = yes }
+		}
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						is_hive_empire = yes
+						is_xenophile = yes
+						is_pacifist = yes
+						is_egalitarian = yes
+						is_spiritualist = yes
+						is_militarist = yes
+						is_authoritarian = yes
+						is_xenophobe = yes
+						is_megacorp = yes
+						is_machine_empire = yes
+					}
+				}
+			}
+			owner = { country_event = { id = scfe_failed_hive.2 days = 5 } }
+		}
+	}
+}

@@ -1,0 +1,104 @@
+special_project = {
+	key = "SCFE_ALSHIGANS_ASTEROID_PROJECT"
+	event_chain = scfe_alshigans_chain
+	cost = 0
+	days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_scfe_asteroid
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 4
+	}
+	
+	on_success = {
+		ship_event = { id = scfe_alshigans.1 }
+	}
+}
+
+special_project = {
+	key = "SCFE_ALSHIGANS_SAVANNAH_PROJECT"
+	event_chain = scfe_alshigans_chain
+	cost = 0
+	days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_savannah
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 4
+	}
+	
+	on_success = {
+		ship_event = { id = scfe_alshigans.2 }
+	}
+}
+
+special_project = {
+	key = "SCFE_ALSHIGANS_ALPINE_PROJECT"
+	event_chain = scfe_alshigans_chain
+	cost = 0
+	days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_scfe_alshigans_alpine
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 4
+	}
+	
+	on_success = {
+		ship_event = { id = scfe_alshigans.3 }
+	}
+}
+
+special_project = {
+	key = "SCFE_ALSHIGANS_JUNGLE_PROJECT"
+	event_chain = scfe_alshigans_chain
+	cost = 0
+	days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_scfe_alshigans_jungle
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 4
+	}
+	
+	on_success = {
+		ship_event = { id = scfe_alshigans.4 }
+	}
+}
+
+special_project = {
+	key = "SCFE_ALSHIGANS_MOON_PROJECT"
+	event_chain = scfe_alshigans_chain
+	cost = 0
+	days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_scfe_alshigans_barren
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 4
+	}
+	
+	on_success = {
+		ship_event = { id = scfe_alshigans.5 }
+	}
+}

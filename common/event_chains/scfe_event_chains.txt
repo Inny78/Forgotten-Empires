@@ -1,0 +1,18 @@
+scfe_alshigans_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_alshigans_artifacts = {
+			max = 5
+		}
+	}
+}
+scfe_znkar_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_znkar_artifacts = {
+			max = 4
+		}
+	}
+}

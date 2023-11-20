@@ -1,0 +1,149 @@
+namespace = scfe_galactic_wanderers
+
+country_event = {
+	id = scfe_galactic_wanderers.1
+	is_triggered_only = yes
+	fire_only_once = yes
+	hide_window = yes
+	immediate = {
+		set_global_flag = scfe_had_galwand
+		save_event_target_as = scfe_monument_country
+		random_planet_within_border = {
+			limit = { scfe_is_valid_moon = yes }
+			save_event_target_as = scfe_galactic_monument
+		}
+		country_event = { id = scfe_galactic_wanderers.2 days = 300 random = 200 }
+	}
+}
+
+country_event = {
+	id = scfe_galactic_wanderers.2
+	is_triggered_only = yes
+	title = scfe_galactic_wanderers.2.name
+	desc = scfe_galactic_wanderers.2.desc
+	picture = GFX_evt_alien_ruins
+	show_sound = event_laboratory_sound
+
+	option = {
+		name = INTERESTING
+		enable_special_project = {
+			name = SCFE_MONUMENT_PROJECT
+			location = event_target:scfe_galactic_monument
+			owner = root
+		}
+	}
+}
+country_event = {
+	id = scfe_galactic_wanderers.3
+	is_triggered_only = yes
+	title = scfe_galactic_wanderers.3.name
+	desc = scfe_galactic_wanderers.3.desc
+	picture = GFX_evt_alien_hieroglyphics
+	show_sound = event_dig_site
+
+	option = {
+		name = CONTINUE
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+		if = {
+			limit = { has_ancrel = yes }
+			medium_artifact_reward = yes
+		}
+		country_event = { id = scfe_galactic_wanderers.4 days = 10 }
+	}
+}
+country_event = {
+	id = scfe_galactic_wanderers.4
+	is_triggered_only = yes
+	title = scfe_galactic_wanderers.4.name
+	desc = scfe_galactic_wanderers.4.desc
+	picture = GFX_evt_alien_hieroglyphics
+	show_sound = event_dig_site
+
+	option = {
+		name = scfe_galactic_wanderers.4.a
+		trigger = { is_xenophile = no }
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier3unityreward
+			min = @tier3unitymin
+			max = @tier3unitymax
+		}
+	}
+	option = {
+		name = scfe_galactic_wanderers.4.b
+		trigger = { is_xenophobe = no }
+		add_resource = {
+			influence = 100
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier2unityreward
+			min = @tier2unitymin
+			max = @tier2unitymax
+		}
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					has_communications = prev
+					is_ai = no
+					is_unfriendly = no
+					NOT = { is_same_empire = prev }
+				}
+				add_trust = { amount = 20 who = event_target:scfe_monument_country }
+				country_event = { id = scfe_galactic_wanderers.5 }
+			}
+			every_playable_country = {
+				limit = {
+					has_communications = prev
+					is_ai = yes
+					is_unfriendly = no
+					NOT = { is_same_empire = prev }
+				}
+				add_trust = { amount = 20 who = event_target:scfe_monument_country }
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = scfe_galactic_wanderers.5
+	is_triggered_only = yes
+	title = scfe_galactic_wanderers.5.name
+	desc = scfe_galactic_wanderers.5.desc
+	picture = GFX_evt_communication_event
+	show_sound = event_encrypted_comms
+
+	option = {
+		name = CONTINUE
+		country_event = { id = scfe_galactic_wanderers.6 }
+	}
+}
+country_event = {
+	id = scfe_galactic_wanderers.6
+	is_triggered_only = yes
+	title = scfe_galactic_wanderers.5.name
+	desc = scfe_galactic_wanderers.6.desc
+	picture = GFX_evt_communication_event
+	show_sound = event_encrypted_comms
+
+	option = {
+		name = INTERESTING
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier3unityreward
+			min = @tier3unitymin
+			max = @tier3unitymax
+		}
+	}
+}

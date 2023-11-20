@@ -1,0 +1,20 @@
+# Galactic Monument
+special_project = {
+	key = "SCFE_MONUMENT_PROJECT"
+	cost = 0
+	days_to_research = 150
+	tech_department = society_technology
+	picture = GFX_evt_alien_ruins
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 3
+	}
+	
+	on_success = {
+		owner = { country_event = { id = scfe_galactic_wanderers.3 } }
+	}
+}

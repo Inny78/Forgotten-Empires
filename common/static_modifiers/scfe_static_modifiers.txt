@@ -1,0 +1,130 @@
+scfe_lonely_presence = {
+	planet_jobs_unity_produces_mult = -0.10
+	pop_happiness = 0.10
+	planet_jobs_society_research_produces_mult = 0.10
+	icon = "gfx/interface/icons/planet_modifiers/scfe_lonely_shroud.dds"
+	icon_frame = 2
+}
+scfe_jungle_ruins = {
+	planet_artisans_consumer_goods_produces_add = 1
+	planet_jobs_society_research_produces_mult = 0.20
+	planet_buildings_cost_mult = 0.20
+	icon = "gfx/interface/icons/planet_modifiers/scfe_jungle_ruins.dds"
+	icon_frame = 2
+}
+scfe_savannah_ruins = {
+	planet_artisans_consumer_goods_produces_add = 1
+	planet_jobs_society_research_produces_mult = 0.10
+	biological_pop_happiness = -0.10
+	icon = "gfx/interface/icons/planet_modifiers/scfe_savannah_ruins.dds"
+	icon_frame = 2
+}
+scfe_alpine_ruins = {
+	planet_max_districts_add = 2
+	planet_max_buildings_add = 1
+	icon = "gfx/interface/icons/planet_modifiers/scfe_alpine_ruins.dds"
+	icon_frame = 1
+}
+scfe_ships_race = {
+	planet_jobs_unity_produces_mult = 0.10
+	pop_happiness = 0.10
+	planet_artisans_consumer_goods_produces_add = 1
+	icon = "gfx/interface/icons/planet_modifiers/scfe_ships_race.dds"
+	icon_frame = 1
+}
+scfe_alshigan_engine_activated = {
+	weapon_type_energy_weapon_damage_mult = 0.30
+	ship_shield_damage_mult = 0.20
+	ship_shield_penetration_mult = 0.20
+	ship_evasion_mult = 0.10
+	icon = "gfx/interface/icons/modifiers/scfe_alshigan_engines.dds"
+	icon_frame = 1
+}
+scfe_clone_prowess = {
+	army_health = 0.1
+	army_damage_mult = 0.1
+	army_morale = 0.1
+	icon = "gfx/interface/icons/modifiers/scfe_clone_prowess.dds"
+	icon_frame = 1
+}
+scfe_znkar_relic_1 = {
+	ship_shield_mult = 0.3
+	ship_evasion_mult = 0.3
+	ship_shield_hardening_add = 0.2
+	ship_speed_mult = 0.2
+	icon = "gfx/interface/icons/modifiers/scfe_znkar_relic_activated.dds"
+	icon_frame = 1
+}
+scfe_znkar_relic_2 = {
+	ship_shield_mult = 0.2
+	ship_evasion_mult = 0.2
+	ship_shield_hardening_add = 0.1
+	ship_cloaking_detection_add = 2
+	ship_cloaking_strength_add = 2
+	icon = "gfx/interface/icons/modifiers/scfe_znkar_relic_activated.dds"
+	icon_frame = 1
+}
+scfe_znkar_observation_tech = {
+	station_observers_society_research_produces_mult = 0.2
+	station_observers_unity_produces_mult = 0.1
+	icon = "gfx/interface/icons/modifiers/scfe_znkar_observation_tech.dds"
+	icon_frame = 1
+}
+
+# Archaeology Story Pack
+
+# When the world sings
+scfe_singing_planet = {
+	pop_happiness = 0.10
+	planet_immigration_pull_mult = 0.25
+	planet_jobs_unity_produces_mult = 0.15
+	icon = "gfx/interface/icons/planet_modifiers/scfe_singing_planet.dds"
+	icon_frame = 1
+}
+scfe_screaming_planet = {
+	pop_happiness = -0.10
+	planet_jobs_society_research_produces_mult = 0.50
+	icon = "gfx/interface/icons/planet_modifiers/scfe_screaming_planet.dds"
+	icon_frame = 2
+}
+
+# The First Music
+scfe_Fiat_Lux = {
+	pop_happiness = 0.05
+	planet_stability_add = 5
+	icon = "gfx/interface/icons/planet_modifiers/scfe_singing_planet.dds"
+	icon_frame = 1
+}
+scfe_music_of_the_universe_modifier = {
+	planet_jobs_energy_produces_mult = 0.20
+	pop_happiness = 0.10
+}
+
+# biggest_show_of_world
+scfe_protagonist_of_the_show_relic_activated = {
+	planet_pops_consumer_goods_upkeep_mult = -0.2
+}
+
+# tomb_of_dead_whale
+scfe_whale_fossil = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_impacts.dds"
+	icon_frame = 2
+	planet_jobs_society_research_produces_mult = 0.25
+	planet_jobs_minerals_produces_mult = -0.25
+}
+scfe_site_whale_lesson = {
+	country_society_research_produces_mult = 0.1
+}
+scfe_whale_hunt = {
+	damage_vs_country_type_tiyanki_mult = 0.25
+	damage_vs_country_type_guardian_elderly_tiyanki_mult = 0.25
+	country_unity_produces_mult = 0.1
+}
+
+# king_of_underground_city
+scfe_ancient_terraforming_technology = {
+	terraforming_cost_mult = -0.2
+}
+scfe_tomb_of_the_king = {
+	pop_ethic_authoritarian_attraction_mult = 2
+}

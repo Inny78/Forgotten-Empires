@@ -1,0 +1,296 @@
+namespace = scfe_reverse_engine
+
+ship_event = {
+	id = scfe_reverse_engine.1
+	title = scfe_reverse_engine.1.name
+	desc = scfe_reverse_engine.1.desc
+	picture = GFX_evt_cold_barren
+	show_sound = event_ship_bridge
+	location = ROOT
+
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			create_archaeological_site = scfe_reverse_engine_dig
+			save_event_target_as = reverse_engine_planet
+		}
+	}
+	option = {
+		trigger = { owner = { is_hive_empire = no } }
+		name = scfe_reverse_engine.1.a
+	}
+	option = {
+		trigger = { owner = { is_hive_empire = yes } }
+		name = scfe_reverse_engine.1.b
+	}
+}
+
+country_event = {
+	id = scfe_reverse_engine.2
+	title = scfe_reverse_engine.2.name
+	desc = scfe_reverse_engine.2.desc
+	picture = GFX_evt_communication_event
+	show_sound = event_ship_bridge
+	is_triggered_only = yes
+
+	option = {
+		name = CURIOUS
+		hidden_effect = {
+			country_event = {
+				id = scfe_reverse_engine.3 days = 500
+			}
+		}
+	}
+}
+
+country_event = {
+	id = scfe_reverse_engine.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:reverse_engine_planet
+			}
+			event_target:reverse_engine_planet = {
+				planet_event = { id = scfe_reverse_engine.4 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = scfe_reverse_engine.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				event_target:reversia_country = {
+					is_machine_empire = no
+					is_hive_empire = no
+				}
+			}
+			change_pc = pc_gaia
+		}
+		else_if = {
+			limit = {
+				event_target:reversia_country = {
+					is_machine_empire = yes
+				}
+			}
+			change_pc = pc_machine
+		}
+		else = {
+			change_pc = pc_hive
+		}
+		reroll_deposits = yes
+		reroll_planet_modifiers = yes
+		remove_planet_flag = cant_terraform_planet
+		remove_planet_flag = has_megastructure
+		set_name = scfe_reversia
+		if = {
+			limit = { exists = archaeological_site }
+			archaeological_site = { save_event_target_as = scfe_destroy_site }
+			destroy_archaeological_site = event_target:scfe_destroy_site
+		}
+	}
+	after = {
+		event_target:reversia_country = {
+			country_event = {
+				id = scfe_reverse_engine.5 days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = scfe_reverse_engine.5
+	title = scfe_reverse_engine.5.name
+	desc = scfe_reverse_engine.5.desc
+	picture = GFX_evt_communication_event
+	show_sound = event_conversation
+	location = event_target:reverse_engine_planet
+	is_triggered_only = yes
+
+	option = {
+		exclusive_trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
+		name = scfe_reverse_engine.5.a
+		custom_tooltip = scfe_reverse_engine.5.tb
+	}
+	option = {
+		exclusive_trigger = {
+			is_machine_empire = yes
+		}
+		name = scfe_reverse_engine.5.a
+		custom_tooltip = scfe_reverse_engine.5.tm
+	}
+	option = {
+		exclusive_trigger = {
+			is_hive_empire = yes
+		}
+		name = scfe_reverse_engine.5.a
+		custom_tooltip = scfe_reverse_engine.5.th
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_reverse_engine_dig
+
+fleet_event = {
+	id =  scfe_reverse_engine_dig.1
+	title = scfe_reverse_engine_dig.4.name
+	picture = GFX_evt_exploding_planet
+	show_sound = event_super_explosion
+	desc = {
+		trigger = {
+			owner = { scfe_is_heavy_metal = no }
+		}
+		text = scfe_reverse_engine_dig.4.desc_1
+	}
+	desc = {
+		trigger = {
+			owner = { scfe_is_heavy_metal = yes }
+		}
+		text = scfe_reverse_engine_dig.4.desc_2
+	}
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		trigger = { owner = { is_hive_empire = no } }
+		name = scfe_reverse_engine_dig.4.a
+		medium_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	option = {
+		trigger = { owner = { is_hive_empire = yes } }
+		name = scfe_reverse_engine_dig.4.a
+		medium_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_reverse_engine_dig.2
+	title = scfe_reverse_engine_dig.3.name
+	desc = scfe_reverse_engine_dig.3.desc
+	picture = GFX_evt_archaeology_camp
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = scfe_reverse_engine_dig.3.a
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_reverse_engine_dig.3
+	title = scfe_reverse_engine_dig.2.name
+	desc = scfe_reverse_engine_dig.2.desc
+	picture = GFX_evt_derelict_interior
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = scfe_reverse_engine_dig.2.a
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id =  scfe_reverse_engine_dig.4
+	title = scfe_reverse_engine_dig.1.name
+	desc = scfe_reverse_engine_dig.1.desc
+	picture = GFX_evt_hidden_door
+	show_sound = event_whispering
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = {
+			set_site_progress_locked = no
+			planet = { change_pc = pc_shattered }
+			hidden_effect = {
+				owner = { save_event_target_as = reversia_country }
+				planet = {
+					reset_planet = yes
+					clear_planet_modifiers = yes
+					set_planet_flag = has_megastructure
+					set_planet_flag = cant_terraform_planet
+				}
+			}
+		}
+		owner = { country_event = { id = scfe_reverse_engine.2 days = 5 } }
+	}
+	option = {
+		name = scfe_reverse_engine_dig.1.a
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}

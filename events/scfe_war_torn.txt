@@ -1,0 +1,212 @@
+# War-Torn Planet
+
+namespace = scfe_war_torn
+
+ship_event = {
+	id = scfe_war_torn.1
+	title = scfe_war_torn.1.name
+	desc = scfe_war_torn.1.desc
+	picture = GFX_evt_alien_ruins
+	show_sound = event_ship_bridge
+	location = FROM
+	is_triggered_only = yes
+
+	option = {
+		name = INTRIGUING
+	}
+}
+
+country_event = {
+	id = scfe_war_torn.2
+	title = scfe_war_torn.2.name
+	desc = scfe_war_torn.2.desc
+	picture = GFX_evt_alien_ruins
+	show_sound = event_ship_bridge
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+}
+
+country_event = {
+	id = scfe_war_torn.3
+	title = scfe_war_torn.3.name
+	desc = scfe_war_torn.3.desc
+	picture = GFX_evt_alien_ruins
+	show_sound = event_ship_bridge
+	is_triggered_only = yes
+
+	option = {
+		name = CURIOUS
+		add_modifier = { modifier = scfe_clone_prowess days = -1 }
+		set_country_flag = war_torn_done
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_war_torn_dig
+
+fleet_event = {
+	id = scfe_war_torn_dig.1
+	title = scfe_war_torn_dig.1.name
+	desc = scfe_war_torn_dig.1.desc
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = FROM
+	is_triggered_only = yes
+
+	option = {
+		name = INTRIGUING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = scfe_war_torn_dig.2
+	title = scfe_war_torn_dig.2.name
+	desc = scfe_war_torn_dig.2.desc
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = FROM
+	is_triggered_only = yes
+
+	option = {
+		name = scfe_war_torn_dig.2.a
+		exclusive_trigger = { owner = { has_origin = origin_clone_army } }
+		small_artifact_reward = yes
+	}
+	option = {
+		exclusive_trigger = { owner = { NOT = { has_origin = origin_clone_army } } }
+		name = scfe_war_torn_dig.2.b
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = scfe_war_torn_dig.3
+	title = scfe_war_torn_dig.3.name
+	desc = {
+		trigger = { owner = { has_origin = origin_clone_army } }
+		text = scfe_war_torn_dig.3.desc_1
+	}
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_origin = origin_clone_army }
+				has_technology = tech_gene_banks
+			}
+		}
+		text = scfe_war_torn_dig.3.desc_2
+	}
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_origin = origin_clone_army }
+				NOT = { has_technology = tech_gene_banks }
+			}
+		}
+		text = scfe_war_torn_dig.3.desc_3
+	}
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = FROM
+	is_triggered_only = yes
+
+	option = {
+		name = INTRIGUING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = scfe_war_torn_dig.4
+	title = scfe_war_torn_dig.4.name
+	desc = scfe_war_torn_dig.4.desc
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = FROM
+	is_triggered_only = yes
+
+	option = {
+		name = INTRIGUING
+		small_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+			country_event = { id = scfe_war_torn.2 }
+		}
+	}
+	after = {
+		closest_system = {
+			min_steps = 1
+			max_steps = 15
+			limit = {
+				scfe_is_valid_system = yes
+				any_system_planet = {
+					uninhabitable_regular_planet = yes
+					has_anomaly = no
+					NOT = { exists = owner }
+				}
+			}
+			enable_special_project = {
+				name = SCFE_WAR_TORN_PROJECT_1
+				location = this
+				owner = root
+			}
+			if = {
+				limit = {
+					NOT = { owner = { has_origin = origin_clone_army } }
+				}
+				owner = {
+					country_event = { id = war_torn_lore.1 days = 5 }
+				}
+			}
+		}
+	}
+}
+
+namespace = war_torn_lore
+
+country_event = {
+	id = war_torn_lore.1
+	title = scfe_war_torn_lore.1.name
+	desc = scfe_war_torn_lore.1.desc
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = FROM
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+}

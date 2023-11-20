@@ -1,0 +1,19 @@
+## Signal Analysis of Machine(The First Music)
+special_project = {
+	key = "SCFE_SIGNAL_ANALYSIS_OF_MACHINE_PROJECT"
+	picture = GFX_evt_scfe_lifeseeded_specialprojects
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	tech_department = physics_technology
+	days_to_research = 1800
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		ship_event = { id = scfe_first_music.4 }
+	}
+}

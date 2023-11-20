@@ -1,0 +1,43 @@
+scfe_d_society_20 = {
+	is_for_colonizable = yes
+	icon = d_metal_boneyard
+    
+	resources = {
+		category = planet_deposits
+		produces = {
+			society_research = 20
+		}
+    }	
+
+	drop_weight = {
+		weight = 0
+	}
+}
+#ASP_site_tomb_of_dead_whale
+scfe_d_exotic_gases_layers = {
+	is_for_colonizable = yes
+	icon = d_gaseous_eruption
+	category = deposit_cat_rare
+
+	planet_modifier = { 
+		building_gas_extractors_max = 3
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+#ASP_site_king_of_underground_city
+scfe_d_ancient_underground_city = {
+	is_for_colonizable = yes
+	icon = d_mining_tunnels
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		planet_max_districts_add = 4
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

@@ -1,0 +1,64 @@
+#biggest show of the world #https://gall.dcinside.com/mgallery/board/view/?id=stellaris&no=8304
+scfe_site_biggest_show_of_world = {
+	desc = "scfe_site_biggest_show_of_world_desc"
+	picture = GFX_evt_scfe_site_biggest_show_of_world
+	max_instances = 1
+	stages = 6
+	weight = {
+		base = 0
+	}
+
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+		owner = { is_ai = no }
+	}
+
+	visible = {
+		scfe_dig_site_visible_trigger = yes
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	on_create = {
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_C1
+		event = scfe_biggest_show.1
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_C2
+		event = scfe_biggest_show.2
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_C3
+		event = scfe_biggest_show.3
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_C4
+		event = scfe_biggest_show.4
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_C5
+		event = scfe_biggest_show.5
+	}
+	stage = {
+		difficulty = 7
+		icon = GFX_archaeology_runes_C6
+		event = scfe_biggest_show.6
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

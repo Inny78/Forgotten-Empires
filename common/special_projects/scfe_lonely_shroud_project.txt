@@ -1,0 +1,20 @@
+# Tracking the shroud signal
+special_project = {
+	key = "SCFE_LONELY_SHROUD_PROJECT"
+	cost = 0
+	days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_shrouded_planet
+	location = yes
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 4
+	}
+	
+	on_success = {
+		ship_event = { id = scfe_lonely_shroud.3 }
+	}
+}

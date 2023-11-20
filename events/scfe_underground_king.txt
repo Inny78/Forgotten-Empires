@@ -1,0 +1,207 @@
+namespace = scfe_king_underground_init
+
+ship_event = {
+	id = scfe_king_underground_init.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = scfe_had_kingunderground }
+		years_passed > 28
+		owner = {
+			is_ai = no
+		}
+		solar_system = {
+			NOT = { exists = space_owner }
+			any_system_planet = {
+				scfe_is_desertic = yes
+				has_anomaly = no
+			}
+			scfe_is_valid_system = yes
+		}
+	}
+	immediate = {
+		set_global_flag = scfe_had_kingunderground
+		solar_system = {
+			random_system_planet = {
+				limit = { scfe_is_desertic = yes has_anomaly = no }
+				create_archaeological_site = scfe_site_king_of_underground_city
+			}
+		}
+	}
+}
+
+#################################### DIG SITE ####################################
+
+namespace = scfe_king_of_underground_city
+
+#the king of underground city #https://gall.dcinside.com/mgallery/board/view/?id=stellaris&no=10739
+
+#underground city
+fleet_event = {
+	id = scfe_king_of_underground_city.1
+	title = scfe_king_of_underground_city.1.name
+	desc = scfe_king_of_underground_city.1.desc
+	picture = GFX_evt_scfe.54
+	show_sound = event_drilling
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#endless records
+fleet_event = {
+	id = scfe_king_of_underground_city.2
+	title = scfe_king_of_underground_city.2.name
+	desc = scfe_king_of_underground_city.2.desc
+	picture = GFX_evt_scfe.55
+	show_sound = event_pre_ftl_civilization
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+#core archive
+fleet_event = {
+	id = scfe_king_of_underground_city.3
+	title = scfe_king_of_underground_city.3.name
+	desc = scfe_king_of_underground_city.3.desc
+	picture = GFX_evt_scfe.56
+	show_sound = event_administrative_work
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = DIG
+		medium_artifact_reward = yes
+	}
+}
+#throne
+fleet_event = {
+	id = scfe_king_of_underground_city.4
+	title = scfe_king_of_underground_city.4.name
+	desc = scfe_king_of_underground_city.4.desc
+	picture = GFX_evt_scfe.57
+	show_sound = event_bad_omen
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = scfe_king_of_underground_city.4.a
+		trigger = {
+			owner = {
+				is_hive_empire = no
+				is_mechanical_empire = no
+			}
+		}
+		from.planet = {
+			change_pc = pc_gaia
+			hidden_effect = {
+				reset_planet = yes
+				reroll_planet_modifiers = yes
+			}
+		}
+	}
+	option = {
+		name = scfe_king_of_underground_city.4.a
+		trigger = {
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		from.planet = {
+			change_pc = pc_hive
+			hidden_effect = {
+				reset_planet = yes
+				reroll_planet_modifiers = yes
+			}
+		}
+	}
+	option = {
+		name = scfe_king_of_underground_city.4.a
+		trigger = {
+			owner = {
+				is_mechanical_empire = yes
+			}
+		}
+		from.planet = {
+			change_pc = pc_machine
+			hidden_effect = {
+				reset_planet = yes
+				reroll_planet_modifiers = yes
+			}
+		}
+	}
+	option = {
+		name = scfe_king_of_underground_city.4.b
+		owner = {
+			if = {
+				limit = { has_technology = tech_terrestrial_sculpting }
+				add_modifier = { modifier = scfe_ancient_terraforming_technology days = -1 }
+			}
+			else = {
+				give_technology = { tech = tech_terrestrial_sculpting }
+				add_modifier = { modifier = scfe_ancient_terraforming_technology days = -1 }
+			}
+		}
+	}
+	option = {
+		name = scfe_king_of_underground_city.4.c
+		trigger = {
+			owner = {
+				is_authoritarian = yes
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 10000
+				influence = 300
+			}
+		}
+		from.planet = {
+			add_modifier = { modifier = scfe_tomb_of_the_king days = -1 }
+		}
+	}
+}

@@ -1,0 +1,100 @@
+# Core of the mod, will deal with launching the events instead of relying on MTTH
+
+namespace = scfe_engine
+
+# Galactic Wanderers
+country_event = {
+	id = scfe_engine.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = scfe_had_galwand }
+		is_ai = no
+		is_homicidal = no
+		OR = {
+			AND = {
+				has_comms_with_alien_empire = yes
+				years_passed > 50
+			}
+			has_global_flag = scfe_force_galwand
+		}
+		any_planet_within_border = {
+			scfe_is_valid_moon = yes
+		}
+	}
+	immediate = {
+		set_global_flag = scfe_had_galwand
+		if = {
+			limit = { has_global_flag = scfe_force_galwand }
+			country_event = { id = scfe_galactic_wanderers.1 }
+		}
+		else = {
+			random_list = {
+				50 = { country_event = { id = scfe_galactic_wanderers.1 } }
+				50 = {}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = scfe_engine.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = scfe_had_znkar }
+		is_ai = no
+		NOT = { has_origin = origin_incohesive }
+		NOT = { has_origin = origin_shoulders_of_giants }
+		OR = {
+			years_passed > 30
+			has_global_flag = scfe_force_znkar
+		}
+		has_met_primitives = yes
+		AND = {
+			exists = home_planet
+			home_planet = { is_artificial = no }
+		}
+	}
+	immediate = {
+		if = {
+			limit = { has_global_flag = scfe_force_znkar }
+			country_event = { id = scfe_znkar.1 days = 100 random = 200 }
+		}
+		else = {
+			random_list = {
+				50 = { country_event = { id = scfe_znkar.1 days = 100 random = 200 } }
+				50 = {}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = scfe_engine.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		years_passed > 25
+		NOT = { has_global_flag = scfe_had_alshigans }
+		is_ai = no
+		NOT = { has_origin = origin_incohesive }
+		OR = {
+			years_passed > 25
+			has_global_flag = scfe_force_alshigans
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { has_global_flag = scfe_force_alshigans }
+			set_country_flag = scfe_alshigans_possible
+		}
+		else = {
+			random_list = {
+				50 = { set_country_flag = scfe_alshigans_possible }
+				50 = {}
+			}
+		}
+	}
+}

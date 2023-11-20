@@ -1,0 +1,166 @@
+namespace = scfe_when_the_world_sings
+
+### Archaeology: When the world sings 
+
+# Spawn Site
+planet_event = {
+	id = scfe_when_the_world_sings.1
+	title = scfe_when_the_world_sings.1.name
+	desc = scfe_when_the_world_sings.1.desc
+	picture = GFX_evt_scfe_samchigui_intro
+	show_sound = event_dig_site
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+
+	trigger = {
+		habitable_planet_not_urban = yes
+		is_artificial = no
+		NOR = {
+			exists = archaeological_site
+			has_global_flag = arc_scfe_when_the_world_sings
+			has_planet_flag = colony_event
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = arc_scfe_when_the_world_sings
+		set_planet_flag = colony_event
+	}
+	
+	option = {
+		name = CURIOUS
+		create_archaeological_site = scfe_site_when_the_world_sings
+	}
+}
+
+#################################### DIG SITE ####################################
+
+# Stage 1 - Source of the Music
+fleet_event = {
+	id = scfe_when_the_world_sings.2
+	title = scfe_when_the_world_sings.2.name
+	desc = scfe_when_the_world_sings.2.desc
+	picture = GFX_evt_scfe_samchigui_first
+	show_sound = event_whispering
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 2 - Planet-Scale Research Project
+fleet_event = {
+	id = scfe_when_the_world_sings.3
+	title = scfe_when_the_world_sings.3.name
+	desc = scfe_when_the_world_sings.3.desc
+	picture = GFX_evt_scfe_samchigui_second
+	show_sound = event_energy_field
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 3 - The Blooming Project
+fleet_event = {
+	id = scfe_when_the_world_sings.4
+	title = scfe_when_the_world_sings.4.name
+	desc = scfe_when_the_world_sings.4.desc
+	picture = GFX_evt_scfe_samchigui_third
+	show_sound = event_metal_fatigue
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+
+# Stage 4 - The Giant Consciousness
+fleet_event = {
+	id = scfe_when_the_world_sings.5
+	title = scfe_when_the_world_sings.5.name
+	desc = scfe_when_the_world_sings.5.desc
+	picture = GFX_evt_scfe_samchigui_fourth
+	show_sound = event_screams
+	
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = scfe_when_the_world_sings.5.a
+		medium_artifact_reward = yes
+		from.planet = {
+			add_modifier = {
+				modifier = scfe_singing_planet
+				days = -1
+			}
+		}
+	}
+
+	option = {
+		name = scfe_when_the_world_sings.5.b
+		large_artifact_reward = yes
+		from.planet = {
+			add_modifier = {
+				modifier = scfe_screaming_planet
+				days = -1
+			}
+		}
+	}
+}
