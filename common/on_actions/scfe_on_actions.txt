@@ -8,6 +8,11 @@ on_entering_system_first_time = {
 		scfe_king_underground_init.1
 	}
 }
+on_game_start = {
+	events = {
+		scfe_game_start.1
+	}
+}
 on_colonized = {
 	events = {
 		scfe_lonely_shroud.4

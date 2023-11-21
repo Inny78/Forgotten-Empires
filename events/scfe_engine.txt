@@ -1,5 +1,65 @@
 # Core of the mod, will deal with launching the events instead of relying on MTTH
 
+namespace = scfe_game_start
+
+event = {
+	id = scfe_game_start.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		event_target:global_event_country = {
+			country_event = { id = scfe_game_start.2 days = 10 }
+		}
+	}
+}
+
+# Delayed so mods can set the force flags.
+country_event = {
+	id = scfe_game_start.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	# 50% of blocking these events
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = scfe_force_galwand }
+			}
+			random_list = {
+				50 = {
+					set_global_flag = scfe_had_galwand
+				}
+				50 = {}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = scfe_force_alshigans }
+			}
+			random_list = {
+				50 = {
+					set_global_flag = scfe_had_alshigans
+				}
+				50 = {}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = scfe_force_znkar }
+			}
+			random_list = {
+				50 = {
+					set_global_flag = scfe_had_znkar
+				}
+				50 = {}
+			}
+		}
+	}
+}
+
 namespace = scfe_engine
 
 # Galactic Wanderers
@@ -7,16 +67,14 @@ country_event = {
 	id = scfe_engine.1
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 	trigger = {
 		NOT = { has_global_flag = scfe_had_galwand }
 		is_ai = no
 		is_homicidal = no
-		OR = {
-			AND = {
-				has_comms_with_alien_empire = yes
-				years_passed > 50
-			}
-			has_global_flag = scfe_force_galwand
+		AND = {
+			has_comms_with_alien_empire = yes
+			years_passed > 50
 		}
 		any_planet_within_border = {
 			scfe_is_valid_moon = yes
@@ -24,16 +82,7 @@ country_event = {
 	}
 	immediate = {
 		set_global_flag = scfe_had_galwand
-		if = {
-			limit = { has_global_flag = scfe_force_galwand }
-			country_event = { id = scfe_galactic_wanderers.1 }
-		}
-		else = {
-			random_list = {
-				50 = { country_event = { id = scfe_galactic_wanderers.1 } }
-				50 = {}
-			}
-		}
+		country_event = { id = scfe_galactic_wanderers.1 days = 30 random = 30 }
 	}
 }
 
@@ -41,32 +90,34 @@ country_event = {
 	id = scfe_engine.2
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 	trigger = {
 		NOT = { has_global_flag = scfe_had_znkar }
 		is_ai = no
-		NOT = { has_origin = origin_incohesive }
-		NOT = { has_origin = origin_shoulders_of_giants }
-		OR = {
-			years_passed > 30
-			has_global_flag = scfe_force_znkar
+		NOR = {
+			has_origin = origin_incohesive
+			has_origin = origin_shoulders_of_giants
+			has_origin = origin_doomsday
+			has_origin = origin_broken_shackles
+			has_origin = origin_demonic_incursion
+			has_origin = origin_fear_of_the_dark
+			has_origin = origin_separatists
+			has_origin = origin_lost_colony
 		}
+		years_passed > 30
 		has_met_primitives = yes
 		AND = {
 			exists = home_planet
-			home_planet = { is_artificial = no }
+			home_planet = {
+				is_artificial = no
+				owner = {
+					is_same_empire = root
+				}
+			}
 		}
 	}
 	immediate = {
-		if = {
-			limit = { has_global_flag = scfe_force_znkar }
-			country_event = { id = scfe_znkar.1 days = 100 random = 200 }
-		}
-		else = {
-			random_list = {
-				50 = { country_event = { id = scfe_znkar.1 days = 100 random = 200 } }
-				50 = {}
-			}
-		}
+		country_event = { id = scfe_znkar.1 days = 100 random = 200 }
 	}
 }
 
@@ -74,27 +125,16 @@ country_event = {
 	id = scfe_engine.3
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 	trigger = {
 		years_passed > 25
 		NOT = { has_global_flag = scfe_had_alshigans }
 		is_ai = no
 		NOT = { has_origin = origin_incohesive }
-		OR = {
-			years_passed > 25
-			has_global_flag = scfe_force_alshigans
-		}
+		years_passed > 25
 	}
 
 	immediate = {
-		if = {
-			limit = { has_global_flag = scfe_force_alshigans }
-			set_country_flag = scfe_alshigans_possible
-		}
-		else = {
-			random_list = {
-				50 = { set_country_flag = scfe_alshigans_possible }
-				50 = {}
-			}
-		}
+		set_country_flag = scfe_alshigans_possible
 	}
 }
