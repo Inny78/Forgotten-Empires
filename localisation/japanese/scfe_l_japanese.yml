@@ -165,7 +165,7 @@
  scfe_alshigans_scan: "We need to scan the ruins of this planet to find something of interest."
  scfe_alshigans.6.t: "The research contained in this facility will keep our scientists busy for a long time."
  SCFE_ALSHIGANS_ASTEROID_PROJECT: "$crashed_ship_asteroid_category$"
- SCFE_ALSHIGANS_SASTEROID_PROJECT_DESC: "$$crashed_ship_asteroid_category_desc$"
+ SCFE_ALSHIGANS_SASTEROID_PROJECT_DESC: "$crashed_ship_asteroid_category_desc$"
  SCFE_ALSHIGANS_SAVANNAH_PROJECT: "Savannah ruins"
  SCFE_ALSHIGANS_SAVANNAH_PROJECT_DESC: "$scfe_alshigans_scan$"
  SCFE_ALSHIGANS_ALPINE_PROJECT: "Alpine ruins"
