@@ -13,8 +13,8 @@
  scfe_d_society_20_desc: ""
  scfe_d_exotic_gases_layers: "Exotic Gases Layers"
  scfe_d_exotic_gases_layers_desc: "£exotic_gases£"
- scfe_d_ancient_underground_city : "Ancient Underground City"
- scfe_d_ancient_underground_city_desc : "This giant city was built by a civilization that once existed on the planet. Surprisingly, it is still intact and large enough to hold a lot of population."
+ scfe_d_ancient_underground_city: "Ancient Underground City"
+ scfe_d_ancient_underground_city_desc: "This giant city was built by a civilization that once existed on the planet. Surprisingly, it is still intact and large enough to hold a lot of population."
 
  # Biggest Show of the World
  scfe_site_biggest_show_of_world: "Biggest Show of the World"

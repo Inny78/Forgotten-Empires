@@ -14,8 +14,8 @@
  scfe_d_society_20_desc: ""
  scfe_d_exotic_gases_layers: "Слои экзотических газов"
  scfe_d_exotic_gases_layers_desc: ""
- scfe_d_ancient_underground_city : "Древний подземный город"
- scfe_d_ancient_underground_city_desc : "Этот гигантский город был построен цивилизацией, когда-то существовавшей на планете. Удивительно, но он все еще цел и достаточно велик, чтобы вместить большое количество населения."
+ scfe_d_ancient_underground_city: "Древний подземный город"
+ scfe_d_ancient_underground_city_desc: "Этот гигантский город был построен цивилизацией, когда-то существовавшей на планете. Удивительно, но он все еще цел и достаточно велик, чтобы вместить большое количество населения."
 
 # Biggest Show of the World
  scfe_site_biggest_show_of_world: "Крупнейшее шоу в мире"

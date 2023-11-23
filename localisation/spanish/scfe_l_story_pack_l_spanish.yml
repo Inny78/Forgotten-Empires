@@ -14,8 +14,8 @@
  scfe_d_society_20_desc: ""
  scfe_d_exotic_gases_layers: "Estrato de Gases Exóticos"
  scfe_d_exotic_gases_layers_desc: ""
- scfe_d_ancient_underground_city : "Antigua Ciudad Subterránea"
- scfe_d_ancient_underground_city_desc : "Esta ciudad gigante fue construida por una civilización que alguna vez existió en el planeta. Sorprendentemente, todavía está intacto y es lo suficientemente grande como para albergar a una gran cantidad de población."
+ scfe_d_ancient_underground_city: "Antigua Ciudad Subterránea"
+ scfe_d_ancient_underground_city_desc: "Esta ciudad gigante fue construida por una civilización que alguna vez existió en el planeta. Sorprendentemente, todavía está intacto y es lo suficientemente grande como para albergar a una gran cantidad de población."
 
 # Biggest Show of the World
  scfe_site_biggest_show_of_world: "El espectáculo más grande del mundo"

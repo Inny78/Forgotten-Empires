@@ -13,8 +13,8 @@
  scfe_d_society_20_desc: ""
  scfe_d_exotic_gases_layers: "이종 가스 퇴적층"
  scfe_d_exotic_gases_layers_desc: ""
- scfe_d_ancient_underground_city : "고대의 지하 도시"
- scfe_d_ancient_underground_city_desc : "한때 이 행성에 살던 종족이 건설한 거대한 지하 도시는 아직도 유지되고 있으며, 많은 인구가 거주할 수 있을 만큼 넓습니다."
+ scfe_d_ancient_underground_city: "고대의 지하 도시"
+ scfe_d_ancient_underground_city_desc: "한때 이 행성에 살던 종족이 건설한 거대한 지하 도시는 아직도 유지되고 있으며, 많은 인구가 거주할 수 있을 만큼 넓습니다."
 
 # Biggest Show of the World
  scfe_site_biggest_show_of_world: "지상 최대의 쇼"
