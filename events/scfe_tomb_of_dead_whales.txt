@@ -1,4 +1,4 @@
-namescape = scfe_tomb_of_dead_whales_init
+namespace = scfe_tomb_of_dead_whales_init
 
 ship_event = {
 	id = scfe_tomb_of_dead_whales_init.1

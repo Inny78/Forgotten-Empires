@@ -114,15 +114,12 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		exclusive_trigger = {
-			is_machine_empire = no
-			is_hive_empire = no
-		}
 		name = scfe_reverse_engine.5.a
 		custom_tooltip = scfe_reverse_engine.5.tb
 	}
 	option = {
 		exclusive_trigger = {
+			has_synthethic_dawn = yes
 			is_machine_empire = yes
 		}
 		name = scfe_reverse_engine.5.a
@@ -130,6 +127,7 @@ country_event = {
 	}
 	option = {
 		exclusive_trigger = {
+			has_utopia = yes
 			is_hive_empire = yes
 		}
 		name = scfe_reverse_engine.5.a

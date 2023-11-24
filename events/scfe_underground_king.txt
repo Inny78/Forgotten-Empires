@@ -130,12 +130,6 @@ fleet_event = {
 
 	option = {
 		name = scfe_king_of_underground_city.4.a
-		trigger = {
-			owner = {
-				is_hive_empire = no
-				is_mechanical_empire = no
-			}
-		}
 		from.planet = {
 			change_pc = pc_gaia
 			hidden_effect = {
@@ -146,7 +140,8 @@ fleet_event = {
 	}
 	option = {
 		name = scfe_king_of_underground_city.4.a
-		trigger = {
+		exclusive_trigger = {
+			has_utopia = yes
 			owner = {
 				is_hive_empire = yes
 			}
@@ -161,7 +156,8 @@ fleet_event = {
 	}
 	option = {
 		name = scfe_king_of_underground_city.4.a
-		trigger = {
+		exclusive_trigger = {
+			host_has_dlc = "synthetic dawn story pack"
 			owner = {
 				is_mechanical_empire = yes
 			}
