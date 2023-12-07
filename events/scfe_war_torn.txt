@@ -172,25 +172,30 @@ fleet_event = {
 			max_steps = 15
 			limit = {
 				scfe_is_valid_system = yes
+				scfe_is_valid_owner = yes
 				any_system_planet = {
 					uninhabitable_regular_planet = yes
 					has_anomaly = no
-					NOT = { exists = owner }
+					has_owner = no
+					NOT = { has_planet_flag = has_megastructure }
 				}
 			}
-			enable_special_project = {
-				name = SCFE_WAR_TORN_PROJECT_1
-				location = this
-				owner = root
-			}
-			if = {
+			random_system_planet = {
 				limit = {
-					NOT = { owner = { has_origin = origin_clone_army } }
+					uninhabitable_regular_planet = yes
+					has_anomaly = no
+					has_owner = no
+					NOT = { has_planet_flag = has_megastructure }
 				}
-				owner = {
-					country_event = { id = war_torn_lore.1 days = 5 }
+				enable_special_project = {
+					name = SCFE_WAR_TORN_PROJECT_1
+					location = this
+					owner = root
 				}
 			}
+		}
+		owner = {
+			country_event = { id = war_torn_lore.1 days = 5 }
 		}
 	}
 }
@@ -200,7 +205,18 @@ namespace = war_torn_lore
 country_event = {
 	id = war_torn_lore.1
 	title = scfe_war_torn_lore.1.name
-	desc = scfe_war_torn_lore.1.desc
+	desc = {
+		trigger = {
+			has_origin = origin_clone_army
+		}
+		text = scfe_war_torn_lore.1.desc_c
+	}
+	desc = {
+		trigger = {
+			NOT = { has_origin = origin_clone_army }
+		}
+		text = scfe_war_torn_lore.1.desc
+	}
 	picture = GFX_evt_ground_combat
 	show_sound = event_ground_battle
 	location = FROM

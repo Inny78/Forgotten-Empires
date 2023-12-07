@@ -1,0 +1,81 @@
+namespace = scfe_vanishing_act
+
+ship_event = {
+    id = scfe_vanishing_act.1
+    title = scfe_vanishing_act.1.name
+    desc = scfe_vanishing_act.1.desc
+    picture = GFX_evt_space_station
+    show_sound = event_ship_bridge
+
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+
+namespace = scfe_vanishing_act_dig
+
+fleet_event = {
+    id = scfe_vanishing_act_dig.1
+    title = scfe_vanishing_act_dig.1.name
+    desc = scfe_vanishing_act_dig.1.desc
+    picture = GFX_evt_space_station
+    show_sound = event_ship_bridge
+
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_vanishing_act_dig.2
+    title = scfe_vanishing_act_dig.2.name
+    desc = scfe_vanishing_act_dig.2.desc
+    picture = GFX_evt_alien_city
+    show_sound = event_ship_bridge
+
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_vanishing_act_dig.3
+    title = scfe_vanishing_act_dig.3.name
+    desc = scfe_vanishing_act_dig.3.desc
+    picture = GFX_evt_alien_city
+    show_sound = event_ship_bridge
+
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_vanishing_act_dig.4
+    title = scfe_vanishing_act_dig.4.name
+    desc = scfe_vanishing_act_dig.4.desc
+    picture = GFX_evt_a_rift_in_space
+    show_sound = event_ship_bridge
+
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_vanishing_act_dig.4.a
+        medium_artifact_reward = yes
+        from.planet = {
+            change_pc = pc_shrouded
+            add_deposit = d_zro_deposit_3
+        }
+    }
+}

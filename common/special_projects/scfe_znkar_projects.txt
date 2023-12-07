@@ -4,6 +4,7 @@ special_project = {
     days_to_research = 30
     tech_department = society_technology
     picture = GFX_evt_space_station
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
     location = yes
 	event_chain = scfe_znkar_chain
     event_scope = ship_event
@@ -24,6 +25,7 @@ special_project = {
     days_to_research = 60
     tech_department = engineering_technology
     picture = GFX_evt_city_ruins
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
     location = yes
 	event_chain = scfe_znkar_chain
      event_scope = ship_event
@@ -49,6 +51,7 @@ special_project = {
     days_to_research = 60
     tech_department = physics_technology
     picture = GFX_evt_city_ruins
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
     location = yes
 	event_chain = scfe_znkar_chain
     event_scope = ship_event
@@ -74,6 +77,7 @@ special_project = {
     days_to_research = 60
     tech_department = physics_technology
     picture = GFX_evt_city_ruins
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
     location = yes
     event_chain = scfe_znkar_chain
     event_scope = ship_event
@@ -87,4 +91,22 @@ special_project = {
     on_success = {
         owner = { country_event = { id = scfe_znkar.9 } }
     }
+}
+
+special_project = {
+	key = "SCFE_ZNKAR_SECRETS"
+	cost = @tier1cost3
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_star_chart
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+	location = yes
+	event_scope = country_event
+
+	requirements = {
+	}
+	
+	on_success = {
+		country_event = { id = scfe_znkar.10 }
+	}
 }

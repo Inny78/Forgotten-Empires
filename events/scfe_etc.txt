@@ -1,0 +1,65 @@
+namespace = scfe_etc
+
+ship_event = {
+    id = scfe_etc.2
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            is_ai = no
+            has_country_flag = scfe_precursor_set_coprean
+        }
+        from = {
+            solar_system = {
+                scfe_is_valid_system = yes
+            }
+            has_anomaly = no
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+            NOR = {
+                exists = archaeological_site
+                has_planet_flag = precursor_world
+                has_global_flag = scfe_precursor_coprean_start
+            }
+        }
+    }
+
+    immediate = {
+        from = { create_archaeological_site = scfe_coprean_constitution_site_1 }
+    }
+}
+ship_event = {
+    id = scfe_etc.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            is_ai = no
+            has_country_flag = scfe_precursor_set_astanine
+        }
+        from = {
+            solar_system = {
+                scfe_is_valid_system = yes
+            }
+            has_anomaly = no
+            OR = {
+                is_colonizable = yes
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+            NOR = {
+                exists = archaeological_site
+                has_planet_flag = precursor_world
+                has_global_flag = scfe_precursor_astanine_start
+            }
+        }
+    }
+
+    immediate = {
+        from = { create_archaeological_site = scfe_astanine_site_1 }
+    }
+}

@@ -12,12 +12,12 @@ ship_event = {
 			has_country_flag = scfe_alshigans_possible
 		}
 		solar_system = {
-			NOT = { exists = space_owner }
+			scfe_is_valid_system = yes
+			scfe_is_valid_owner = yes
 			any_system_planet = {
 				is_asteroid = yes
 				has_anomaly = no
 			}
-			scfe_is_valid_system = yes
 		}
 	}
 	immediate = {
@@ -26,7 +26,7 @@ ship_event = {
 			random_system_planet = {
 				limit = { is_asteroid = yes has_anomaly = no }
 				set_planet_flag = scfe_alshigans_start
-				save_event_target_as = scfe_alshigans_asteroid
+				save_global_event_target_as = scfe_alshigans_asteroid
 			}
 		}
 		owner = { country_event = { id = scfe_alshigans_init.2 } }
@@ -82,7 +82,7 @@ ship_event = {
 				limit = { has_ancrel = yes }
 				small_artifact_reward = yes
 			}
-			country_event = { id = scfe_alshigans.7 days = 5 }
+			country_event = { id = scfe_alshigans.7 days = 1 }
 		}
 	}
 }
@@ -113,7 +113,7 @@ ship_event = {
 				limit = { has_ancrel = yes }
 				small_artifact_reward = yes
 			}
-			country_event = { id = scfe_alshigans.8 days = 5 }
+			country_event = { id = scfe_alshigans.8 days = 1 }
 		}
 	}
 }
@@ -144,7 +144,7 @@ ship_event = {
 				limit = { has_ancrel = yes }
 				medium_artifact_reward = yes
 			}
-			country_event = { id = scfe_alshigans.9 days = 5 }
+			country_event = { id = scfe_alshigans.9 days = 1 }
 		}
 	}
 }
@@ -175,7 +175,7 @@ ship_event = {
 				limit = { has_ancrel = yes }
 				small_artifact_reward = yes
 			}
-			country_event = { id = scfe_alshigans.10 days = 5 }
+			country_event = { id = scfe_alshigans.10 days = 1 }
 		}
 	}
 }
@@ -229,6 +229,11 @@ ship_event = {
 			add_deposit = d_engineering_5
 		}
 		hidden_effect = {
+			clear_global_event_target = scfe_alshigans_asteroid
+			clear_global_event_target = scfe_alshigans_jungle
+			clear_global_event_target = scfe_alshigans_alpine
+			clear_global_event_target = scfe_alshigans_savannah
+			clear_global_event_target = scfe_alshigans_moon
 			owner = { set_country_flag = alshigans_precursors_done }
 			if = {
 				limit = {
@@ -238,7 +243,7 @@ ship_event = {
 					}
 				}
 				owner = {
-					country_event = { id = scfe_alshigans.11 days = 50 }
+					country_event = { id = scfe_alshigans.11 days = 10 }
 				}
 			}
 		}
@@ -263,6 +268,7 @@ country_event = {
 			max_steps = 15
 			limit = {
 				scfe_is_valid_system = yes
+				scfe_is_valid_owner = yes
 				any_system_planet = {
 					scfe_is_savannah = yes
 					has_anomaly = no
@@ -274,14 +280,53 @@ country_event = {
 					scfe_is_savannah = yes
 					has_anomaly = no
 					NOT = { exists = owner }
+					NOT = { exists = archaeological_site }
 				}
+				set_planet_flag = precursor_world
 				enable_special_project = {
 					name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
 					location = this
 					owner = root
 				}
 				set_name = scfe_alshigans_velaen
-				save_event_target_as = scfe_alshigans_savannah
+				save_global_event_target_as = scfe_alshigans_savannah
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = event_target:scfe_alshigans_savannah }
+			}
+			closest_system = {
+				min_steps = 1
+				max_steps = 20
+				limit = {
+					scfe_is_valid_system = yes
+					scfe_is_valid_owner = yes
+					any_system_planet = {
+						scfe_is_uninhabitable = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_uninhabitable = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
+					}
+					change_pc = pc_savannah
+					reset_planet = yes
+					set_planet_flag = precursor_world
+					enable_special_project = {
+						name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
+						location = this
+						owner = root
+					}
+					set_name = scfe_alshigans_velaen
+					save_global_event_target_as = scfe_alshigans_alpine
+				}
 			}
 		}
 	}
@@ -292,7 +337,7 @@ country_event = {
 	id = scfe_alshigans.8
 	title = scfe_alshigans_savannah.name
 	desc = scfe_alshigans_savannah.desc
-	picture = GFX_evt_scfe_savannah_planet
+	picture = GFX_evt_ship_travel
 	show_sound = event_default
 	is_triggered_only = yes
 
@@ -306,10 +351,12 @@ country_event = {
 				max_steps = 15
 				limit = {
 					scfe_is_valid_system = yes
+					scfe_is_valid_owner = yes
 					any_system_planet = {
 						scfe_is_alpine = yes
 						has_anomaly = no
 						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
 					}
 				}
 				random_system_planet = {
@@ -317,14 +364,53 @@ country_event = {
 						scfe_is_alpine = yes
 						has_anomaly = no
 						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
 					}
+					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_ALPINE_PROJECT
 						location = this
 						owner = root
 					}
 					set_name = scfe_alshigans_uuladir
-					save_event_target_as = scfe_alshigans_alpine
+					save_global_event_target_as = scfe_alshigans_alpine
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = event_target:scfe_alshigans_alpine }
+			}
+			closest_system = {
+				min_steps = 1
+				max_steps = 20
+				limit = {
+					scfe_is_valid_system = yes
+					scfe_is_valid_owner = yes
+					any_system_planet = {
+						scfe_is_uninhabitable = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_uninhabitable = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
+					}
+					change_pc = pc_alpine
+					reset_planet = yes
+					set_planet_flag = precursor_world
+					enable_special_project = {
+						name = SCFE_ALSHIGANS_ALPINE_PROJECT
+						location = this
+						owner = root
+					}
+					set_name = scfe_alshigans_uuladir
+					save_global_event_target_as = scfe_alshigans_alpine
 				}
 			}
 		}
@@ -350,10 +436,12 @@ country_event = {
 				max_steps = 15
 				limit = {
 					scfe_is_valid_system = yes
+					scfe_is_valid_owner = yes
 					any_system_planet = {
 						scfe_is_tropical = yes
 						has_anomaly = no
 						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
 					}
 				}
 				random_system_planet = {
@@ -361,14 +449,53 @@ country_event = {
 						scfe_is_tropical = yes
 						has_anomaly = no
 						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
 					}
+					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
 						location = this
 						owner = root
 					}
 					set_name = scfe_alshigans_demearen
-					save_event_target_as = scfe_alshigans_jungle
+					save_global_event_target_as = scfe_alshigans_jungle
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = event_target:scfe_alshigans_jungle }
+			}
+			closest_system = {
+				min_steps = 1
+				max_steps = 20
+				limit = {
+					scfe_is_valid_system = yes
+					scfe_is_valid_owner = yes
+					any_system_planet = {
+						scfe_is_uninhabitable = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_uninhabitable = yes
+						has_anomaly = no
+						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
+					}
+					change_pc = pc_tropical
+					reset_planet = yes
+					set_planet_flag = precursor_world
+					enable_special_project = {
+						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+						location = this
+						owner = root
+					}
+					set_name = scfe_alshigans_demearen
+					save_global_event_target_as = scfe_alshigans_jungle
 				}
 			}
 		}
@@ -394,11 +521,13 @@ country_event = {
 				max_steps = 15
 				limit = {
 					scfe_is_valid_system = yes
+					scfe_is_valid_owner = yes
 					any_system_planet = {
 						scfe_is_barren = yes
 						is_moon = yes
 						has_anomaly = no
 						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
 					}
 				}
 				random_system_planet = {
@@ -407,14 +536,16 @@ country_event = {
 						is_moon = yes
 						has_anomaly = no
 						NOT = { exists = owner }
+						NOT = { exists = archaeological_site }
 					}
+					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_MOON_PROJECT
 						location = this
 						owner = root
 					}
 					set_name = scfe_alshigans_yutela
-					save_event_target_as = scfe_alshigans_moon
+					save_global_event_target_as = scfe_alshigans_moon
 				}
 			}
 		}
@@ -459,5 +590,17 @@ country_event = {
 		event_target:scfe_ships_race = {
 			add_modifier = { modifier = scfe_ships_race days = -1 }
 		}
+	}
+}
+
+country_event = {
+	id = scfe_alshigans.12
+	title = scfe_alshigans.12.name
+	desc = scfe_alshigans.12.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
 	}
 }

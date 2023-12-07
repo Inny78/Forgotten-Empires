@@ -8,7 +8,7 @@ scfe_belltower_category = {
 	max_once_global = yes
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 10
 			solar_system = {
 				NOT = {
 					any_system_planet = {
@@ -35,11 +35,11 @@ scfe_belltower_category = {
 scfe_failed_hive_category = {
 	desc = scfe_failed_hive_desc
 	picture = GFX_evt_alien_ruins
-	level = 6
+	level = 7
 	max_once_global = yes
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 10
 			habitable_planet = yes
 			solar_system = {
 				NOT = {
@@ -71,7 +71,7 @@ scfe_reverse_engine_category = {
 	max_once_global = yes
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 10
 			OR = {
 				scfe_is_barren = yes
 				scfe_is_barren_cold = yes
@@ -102,7 +102,7 @@ scfe_tower_city_category = {
 	level = 6
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 10
 			scfe_is_gas_giant = yes
 			solar_system = {
 				NOT = {
@@ -130,7 +130,7 @@ scfe_lonely_shroud_category = {
 	level = 10
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 10
 			is_planet_class = pc_shrouded
 			has_planet_flag = scfe_lonely_planet
 		}
@@ -152,7 +152,7 @@ scfe_war_torn_category = {
 	level = 6
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 10
 			years_passed > 30
 			OR = {
 				scfe_is_continental = yes
@@ -181,6 +181,34 @@ scfe_war_torn_category = {
 	on_success = scfe_war_torn.1
 }
 
+scfe_vanishing_act_category = {
+	desc = scfe_vanishing_act_category_desc
+	picture = GFX_evt_space_station
+	level = 6
+	max_once_global = yes
+	spawn_chance = {
+		modifier = {
+			add = 20
+			years_passed = 10
+			solar_system = { scfe_is_valid_system = yes }
+			NOT = { exists = archaeological_site }
+			OR = {
+				scfe_is_alpine = yes
+				scfe_is_continental = yes
+				scfe_is_desertic = yes
+				scfe_is_savannah = yes
+				scfe_is_tundra = yes
+			}
+		}
+	}
+	on_spawn = {
+		clear_deposits = yes
+		clear_planet_modifiers = yes
+	}
+	on_success = scfe_vanishing_act.1
+}
+
+
 ############################## Archaeology Story Pack ##############################
 
 ##### The First Music #####
@@ -207,4 +235,131 @@ scfe_the_first_music_anomaly = {
 		}
 	}
 	on_success = scfe_first_music.1
+}
+
+############################## Strange Worlds ##############################
+scfe_woorskyr_world_category = {
+	desc = scfe_woorskyr_world_category_desc
+	picture = GFX_evt_giant_tree
+	level = 8
+	spawn_chance = {
+		modifier = {
+			add = 100
+			has_planet_flag = pf_woorskyr_world
+		}
+	}
+	on_success = scfe_woorskyr_world.1
+}
+scfe_koeleothan_world_category = {
+	desc = scfe_koeleothan_world_category_desc
+	picture = GFX_evt_ocean
+	level = 8
+	spawn_chance = {
+		modifier = {
+			add = 100
+			has_planet_flag = pf_koeleothan_world
+		}
+	}
+	on_success = scfe_koeleothan.1
+}
+
+scfe_xenograss_world_category = {
+	desc = scfe_xenograss_world_category_desc
+	picture = GFX_evt_tundra
+	level = 8
+	spawn_chance = {
+		modifier = {
+			add = 100
+			has_planet_flag = pf_xenograss_world
+		}
+		modifier = {
+			factor = 0
+			owner = { has_country_flag = cf_xenograss_found }
+		}
+	}
+	on_success = scfe_xenograss.1
+}
+
+scfe_quantumpearl_world_category = {
+	desc = scfe_quantumpearl_world_category_desc
+	picture = GFX_evt_desert
+	level = 8
+	spawn_chance = {
+		modifier = {
+			add = 100
+			has_planet_flag = pf_quantumpearl_world
+		}
+	}
+	on_success = scfe_quantumpearl.1
+}
+
+
+scfe_beetle_world_category = {
+	desc = scfe_beetle_world_category_desc
+	picture = GFX_evt_tropical
+	level = 8
+	spawn_chance = {
+		modifier = {
+			add = 100
+			has_planet_flag = pf_beetle_world
+		}
+	}
+	on_success = scfe_beetleswarm.1
+}
+
+scfe_sless_alliance_anomaly_1 = {
+	desc = "scfe_sless_alliance_anomaly_1_desc"
+	picture = GFX_evt_city_ruins
+	level = 6
+
+	spawn_chance = {
+		modifier = {
+			add = 100
+			from.owner = {
+				is_ai = no
+				has_country_flag = scfe_precursor_set_sless
+			}
+			has_anomaly = no
+			OR = {
+				scfe_is_barren = yes
+				scfe_is_barren_cold = yes
+				scfe_is_nuked = yes
+			}
+			solar_system = {
+				exists = star
+				NOR = {
+					has_star_flag = empire_cluster
+					is_fe_cluster = yes
+				}
+				any_system_planet = {
+					NOT = { exists = archaeological_site }
+				}
+			}
+			NOR = {
+				has_planet_flag = precursor_world
+				has_global_flag = scfe_precursor_sless_start
+			}
+		}
+	}
+
+	on_spawn = {
+		set_global_flag = scfe_precursor_sless_start
+		set_planet_flag = precursor_world
+		set_planet_flag = scfe_sless_colony
+		set_planet_flag = scfe_sless_100_world
+
+		create_ambient_object = {
+			type = abandoned_starbase_01_object
+			use_3d_location = yes
+			entity_offset = { min = 7 max = 7 }
+			entity_offset_height = { min = 7 max = 7 }
+			location = root
+		}
+		if = {
+			limit = { scfe_is_nuked = yes }
+			add_modifier = { modifier = wasteland_infrastructure }
+		}
+	}
+
+	on_success = scfe_sless.1
 }

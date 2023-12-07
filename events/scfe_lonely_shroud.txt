@@ -59,7 +59,7 @@ ship_event = {
 		enable_special_project = {
 			name = SCFE_LONELY_SHROUD_PROJECT
 			location = event_target:scfe_lonely_planet
-			owner = root
+			owner = owner
 		}
 	}
 	after = {
@@ -85,7 +85,7 @@ ship_event = {
 		}
 	}
 	option = {
-		exclusive_trigger = { owner = { is_mechanical_empire = yes } host_has_dlc = "synthetic dawn story pack" }
+		exclusive_trigger = { owner = { is_mechanical_empire = yes } has_synthethic_dawn = yes }
 		name = scfe_lonely_shroud.3.tm
 		event_target:scfe_lonely_planet = {
 			change_pc = pc_machine

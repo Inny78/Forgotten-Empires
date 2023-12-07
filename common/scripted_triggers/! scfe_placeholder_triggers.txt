@@ -62,3 +62,4 @@ pd_is_savannah = { always = no }
 pd_is_tropical = { always = no }
 pd_is_tundra = { always = no }
 urmazin_system = { always = no }
+has_PreSelect_active = { always = no }

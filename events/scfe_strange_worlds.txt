@@ -1,0 +1,237 @@
+namespace = scfe_woorskyr_world
+
+ship_event = {
+    id = scfe_woorskyr_world.1
+    title = scfe_woorskyr_world.1.name
+    desc = scfe_woorskyr_world.1.desc
+    picture = GFX_evt_giant_tree
+    show_sound = event_ship_bridge
+    location = root
+
+    is_triggered_only = yes
+
+    immediate = {
+        owner = {
+            set_country_flag = cf_woorskyr_found
+        }
+    }
+
+    option = {
+        name = scfe_woorskyr_world.1.a
+        owner = {
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+    }
+}
+
+namespace = scfe_koeleothan
+ship_event = {
+    id = scfe_koeleothan.1
+    title = scfe_koeleothan.1.name
+    desc = scfe_koeleothan.1.desc
+    picture = GFX_evt_huge_shoals
+    show_sound = event_ship_bridge
+    location = ROOT
+
+    is_triggered_only = yes
+
+    immediate = {
+        owner = {
+            set_country_flag = cf_koeleothan_found
+        }
+    }
+
+    option = {
+        name = "scfe_koeleothan.1.a"
+        owner = {
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+    }
+}
+
+namespace = scfe_xenograss
+
+ship_event = {
+    id = scfe_xenograss.1
+    title = scfe_xenograss.1.name
+    desc = scfe_xenograss.1.desc
+    picture = GFX_evt_purple_grass
+    show_sound = event_ship_bridge
+    location = ROOT
+
+    is_triggered_only = yes
+
+    immediate = {
+        owner = {
+            set_country_flag = cf_xenograss_found
+        }
+    }
+
+    option = {
+        name = scfe_xenograss.1.a
+        owner = {
+            add_monthly_resource_mult = {
+                resource = engineering_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+    }
+}
+
+namespace = scfe_quantumpearl
+
+ship_event = {
+    id = scfe_quantumpearl.1
+    title = scfe_quantumpearl.1.name
+    desc = scfe_quantumpearl.1.desc
+    picture = GFX_evt_quantum_link
+    show_sound = event_ship_bridge
+    location = ROOT
+
+    is_triggered_only = yes
+
+    immediate = {
+        owner = {
+            set_country_flag = cf_quantumpearls_found
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+    }
+
+    option = {
+        name = scfe_quantumpearl.1.a
+    }
+}
+
+namespace = scfe_beetleswarm
+
+ship_event = {
+    id = scfe_beetleswarm.1
+    title = scfe_beetleswarm.1.name
+    desc = scfe_beetleswarm.1.desc
+    picture = GFX_evt_beetle_swarm
+    show_sound = event_ship_bridge
+    location = ROOT
+
+    is_triggered_only = yes
+
+    immediate = {
+        owner = {
+            set_country_flag = cf_beetle_found
+        }
+    }
+
+    option = {
+        name = "scfe_beetleswarm.1.a"
+        exclusive_trigger = {
+            owner = { is_spiritualist = no }
+        }
+        owner = {
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+    }
+    option = {
+        name = "scfe_beetleswarm.1.b"
+        exclusive_trigger = {
+            owner = { is_spiritualist = yes }
+        }
+        owner = {
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+    }
+}
+
+namespace = scfe_strange_on_actions
+# on_planet_transfer
+planet_event = {
+    id = scfe_strange_on_actions.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { planet_has_beetle_deposit = yes }
+        from = { NOT = { has_country_flag = cf_beetle_found } }
+    }
+
+    immediate = {
+        from = { set_country_flag = cf_beetle_found }
+    }
+}
+planet_event = {
+    id = scfe_strange_on_actions.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        root = { planet_has_koeleothan_deposit = yes }
+        from = { NOT = { has_country_flag = cf_koeleothan_found } }
+    }
+
+    immediate = {
+        from = { set_country_flag = cf_koeleothan_found }
+    }
+}
+planet_event = {
+    id = scfe_strange_on_actions.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        root = { planet_has_quantumpearl_deposit = yes }
+        from = { NOT = { has_country_flag = cf_quantumpearls_found } }
+    }
+
+    immediate = {
+        from = { set_country_flag = cf_quantumpearls_found }
+    }
+}
+planet_event = {
+    id = scfe_strange_on_actions.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        root = { planet_has_woorskyr_deposit = yes }
+        from = { NOT = { has_country_flag = cf_woorskyr_found } }
+    }
+
+    immediate = {
+        from = { set_country_flag = cf_woorskyr_found }
+    }
+}
+planet_event = {
+    id = scfe_strange_on_actions.5
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        root = { planet_has_xenograss_deposit = yes }
+        from = { NOT = { has_country_flag = cf_xenograss_found } }
+    }
+
+    immediate = {
+        from = { set_country_flag = cf_xenograss_found }
+    }
+}

@@ -5,6 +5,7 @@ special_project = {
 	days_to_research = 200
 	tech_department = society_technology
 	picture = GFX_evt_scfe_asteroid
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
 	location = yes
 	event_scope = ship_event
 
@@ -26,6 +27,7 @@ special_project = {
 	days_to_research = 200
 	tech_department = society_technology
 	picture = GFX_evt_savannah
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
 	location = yes
 	event_scope = ship_event
 
@@ -47,6 +49,7 @@ special_project = {
 	days_to_research = 200
 	tech_department = society_technology
 	picture = GFX_evt_scfe_alshigans_alpine
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
 	location = yes
 	event_scope = ship_event
 
@@ -68,6 +71,7 @@ special_project = {
 	days_to_research = 200
 	tech_department = society_technology
 	picture = GFX_evt_scfe_alshigans_jungle
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
 	location = yes
 	event_scope = ship_event
 
@@ -89,6 +93,7 @@ special_project = {
 	days_to_research = 200
 	tech_department = society_technology
 	picture = GFX_evt_scfe_alshigans_barren
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
 	location = yes
 	event_scope = ship_event
 
@@ -100,5 +105,23 @@ special_project = {
 	
 	on_success = {
 		ship_event = { id = scfe_alshigans.5 }
+	}
+}
+
+special_project = {
+	key = "SCFE_ALSHIGANS_SECRETS"
+	cost = @tier1cost3
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_star_chart
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+	location = yes
+	event_scope = country_event
+
+	requirements = {
+	}
+	
+	on_success = {
+		country_event = { id = scfe_alshigans.11 }
 	}
 }

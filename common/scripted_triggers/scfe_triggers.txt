@@ -9,6 +9,7 @@ scfe_dig_site_default_spawn_rules = {
 			has_star_flag = precursor_system
 			has_special_star_flag_trigger = yes
 			is_fe_cluster = yes
+			is_marauder_cluster = yes
 			has_star_flag = drone_home_system
 			has_star_flag = chosen_system
 			has_star_flag = outercluster
@@ -24,6 +25,7 @@ scfe_dig_site_default_spawn_rules = {
 		}
 	}
 	has_anomaly = no
+	NOT = { has_planet_flag = precursor_world }
 	NOT = { exists = archaeological_site }
 }
 
@@ -37,6 +39,7 @@ scfe_dig_site_visible_trigger = {
 }
 
 scfe_is_general_planet = {
+	is_artificial = no
 	OR = {
 		habitable_planet = yes
 		scfe_is_uninhabitable = yes
@@ -111,18 +114,6 @@ scfe_is_gas_giant = {
 	}
 }
 
-scfe_is_scientist_cautious = {
-	OR = {
-		has_trait = leader_trait_roamer
-		has_trait = leader_trait_chosen
-		has_trait = leader_trait_curator
-		has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
-		has_trait_tier1or2or3 = { TRAIT = leader_trait_slippery }
-		has_trait_tier1or2or3 = { TRAIT = leader_trait_observant }
-		has_leader_flag = leader_death_events_blocked
-	}
-}
-
 scfe_is_heavy_metal = {
 	OR = {
 		is_mechanical_empire = yes
@@ -160,19 +151,11 @@ scfe_is_valid_system = {
 			everchanging_system = yes
 			any_system_planet = {
 				OR = {
-					exists = archaeological_site
 					has_planet_flag = hatchling_egg
 					has_planet_flag = suppress_archaeological_sites
 				}
 			}
 		}
-	}
-}
-
-scfe_is_modern_age = {
-	OR = {
-		has_pre_ftl_age = industrial_age
-		has_pre_ftl_age = machine_age
 	}
 }
 
@@ -322,5 +305,133 @@ scfe_is_nuked = {
 		# Planetary Diversity
 		is_pd_nuked = yes
 		pd_is_planet_class_nuked = yes
+	}
+}
+
+has_woorskyr_deposit = {
+	any_owned_planet = {
+		has_deposit = d_woorskyr_hub
+	}
+}
+has_koeleothan_deposit = {
+	any_owned_planet = {
+		has_deposit = d_koeleothan
+	}
+}
+has_quantumpearl_deposit = {
+	any_owned_planet = {
+		has_deposit = d_quantumpearl
+	}
+}
+has_xenograss_deposit = {
+	any_owned_planet = {
+		has_deposit = d_xenograss
+	}
+}
+has_beetle_deposit = {
+	any_owned_planet = {
+		has_deposit = d_beetle_swarm
+	}
+}
+has_xenograss_building = {
+	any_owned_planet = {
+		has_building = building_xenograss_processor
+	}
+}
+has_quantumpearl_building = {
+	any_owned_planet = {
+		OR = {
+			has_building = building_pearl_borehole_site
+			has_building = building_pearl_borehole_site_2
+			has_building = building_pearl_borehole_site_3
+		}
+	}
+}
+
+planet_has_woorskyr_deposit = { has_deposit = d_woorskyr_hub }
+planet_has_koeleothan_deposit = { has_deposit = d_koeleothan }
+planet_has_quantumpearl_deposit = { has_deposit = d_quantumpearl }
+planet_has_xenograss_deposit = { has_deposit = d_xenograss }
+planet_has_beetle_deposit = { has_deposit = d_beetle_swarm }
+
+scfe_is_valid_owner = {
+	OR = {
+		has_owner = no
+		AND = {
+			exists = space_owner
+			space_owner = { is_same_value = root.owner }
+		}
+	}
+}
+
+# Precursor Story Pack
+scfe_sless_digsite_spawn_rules = {
+	exists = star
+	scfe_is_valid_owner = yes
+	NOR = {
+		is_same_value = root.solar_system
+		any_system_planet = {
+			OR = {
+				is_capital = yes #there should be no capital world in the system
+				has_planet_flag = precursor_world
+				has_planet_flag = scfe_sless_colony
+			}
+		}
+	}
+	any_system_planet = {
+		has_anomaly = no
+		OR = {
+			scfe_is_barren = yes
+			scfe_is_barren_cold = yes
+			scfe_is_nuked = yes
+		}
+		NOT = { exists = archaeological_site }
+	}
+}
+scfe_coprean_digsite_spawn_rules = {
+	exists = star
+	scfe_is_valid_owner = yes
+	NOR = {
+		is_same_value = root.solar_system
+		any_system_planet = {
+			OR = {
+				is_capital = yes
+				has_planet_flag = precursor_world
+				has_planet_flag = scfe_coprean_colony
+			}
+		}
+	}
+	any_system_planet = {
+		has_anomaly = no
+		NOT = { exists = archaeological_site }
+	}
+}
+scfe_astanine_digsite_spawn_rules = {
+	exists = star
+	scfe_is_valid_owner = yes
+	NOR = {
+		is_same_value = root.solar_system
+		any_system_planet = {
+			OR = {
+				is_capital = yes
+				has_planet_flag = precursor_world
+				has_planet_flag = scfe_astanine_colony
+			}
+		}
+	}
+	any_system_planet = {
+		is_star = no
+		has_anomaly = no
+		uninhabitable_regular_planet = yes
+		NOT = {
+			exists = archaeological_site
+		}
+	}
+}
+
+scfe_is_tfpanet = {
+	OR = {
+		has_modifier = terraforming_candidate
+		has_modifier = toxic_terraforming_candidate
 	}
 }

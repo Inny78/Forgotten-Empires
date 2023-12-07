@@ -16,3 +16,30 @@ scfe_znkar_chain = {
 		}
 	}
 }
+scfe_sless_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_sless_colonies = {
+			max = 3
+		}
+	}
+}
+scfe_coprean_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_coprean_colonies = {
+			max = 3
+		}
+	}
+}
+scfe_astanine_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_astanine_colonies = {
+			max = 4
+		}
+	}
+}

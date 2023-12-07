@@ -1,0 +1,74 @@
+decision_scfe_astanine_last_projector = {
+    owned_planets_only = yes
+
+    resources = {
+        category = decisions
+        cost = {
+            unity = 150
+        }
+    }
+
+    potential = {
+        owner = { has_modifier = mod_r_scfe_astanine_last_projector }
+        NOR = {
+            has_modifier = mod_decision_scfe_astanine_last_projector
+            has_modifier = mod_decision_scfe_astanine_last_projector_gestalt
+        }
+    }
+
+    allow = {
+        owner = {
+            NOT = {
+                any_owned_planet = {
+                    OR = {
+                        has_modifier = mod_decision_scfe_astanine_last_projector
+                        has_modifier = mod_decision_scfe_astanine_last_projector_gestalt
+                    }
+                }
+            }
+        }
+    }
+
+    effect = {
+        if = {
+            limit = { owner = { has_ethic = ethic_gestalt_consciousness } }
+            add_modifier = { modifier = mod_decision_scfe_astanine_last_projector_gestalt days = 3600 }
+            else = {
+                add_modifier = { modifier = mod_decision_scfe_astanine_last_projector days = 3600 }
+            }
+        }
+    }
+
+    ai_weight = {
+        weight = 0
+    }
+}
+decision_scfe_astanine_last_projector_remove = {
+    owned_planets_only = yes
+
+    resources = {
+        category = decisions
+    }
+
+    potential = {
+        OR = {
+            has_modifier = mod_decision_scfe_astanine_last_projector
+            has_modifier = mod_decision_scfe_astanine_last_projector_gestalt
+        }
+    }
+
+    effect = {
+        if = {
+            limit = { has_modifier = mod_decision_scfe_astanine_last_projector }
+            remove_modifier = mod_decision_scfe_astanine_last_projector
+        }
+        if = {
+            limit = { has_modifier = mod_decision_scfe_astanine_last_projector_gestalt }
+            remove_modifier = mod_decision_scfe_astanine_last_projector_gestalt
+        }
+    }
+
+    ai_weight = {
+        weight = 0
+    }
+}

@@ -1,5 +1,5 @@
 pc_nuked_colorful = {
-	entity = "asp_color_nuked_planet"
+	entity = "scfe_color_nuked_planet"
 	entity_scale = @planet_standard_scale
 	icon = GFX_planet_type_nuked
 

@@ -1,0 +1,17 @@
+spriteTypes = {
+
+	### ship parts ###
+	spriteType = {
+		name = "GFX_ship_part_scfe_astanine_hologram"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_inspiring_presence.dds"
+	}
+
+    ### technologies ###
+
+	spriteType = {
+		name = "GFX_tech_scfe_astanine_hologram"
+		texturefile = "gfx/interface/icons/technologies/tech_scfe_astanine_hologram.dds"
+		alwaystransparent = yes
+	}
+
+}

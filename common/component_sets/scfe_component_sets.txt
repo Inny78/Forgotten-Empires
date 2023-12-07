@@ -1,0 +1,6 @@
+component_set = {
+    key = "SCFE_ASTANINE_HOLOGRAM"
+
+    icon = "GFX_ship_part_scfe_astanine_hologram"
+    icon_frame = 1
+}

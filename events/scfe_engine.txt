@@ -9,53 +9,167 @@ event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = {
+				# Check if precursor menu is not active
+				has_PreSelect_active = no
+				NOT = { has_origin = origin_incohesive }
+			}
+			event_target:global_event_country = {
+				country_event = { id = scfe_game_start.2 days = 10 }
+			}
+		}
+	}
+	after = {
 		event_target:global_event_country = {
-			country_event = { id = scfe_game_start.2 days = 10 }
+			country_event = { id = scfe_game_start.4 days = 10 }
 		}
 	}
 }
 
-# Delayed so mods can set the force flags.
 country_event = {
 	id = scfe_game_start.2
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
 
-	# 50% of blocking these events
 	immediate = {
-		if = {
+		random_playable_country = {
 			limit = {
-				NOT = { has_global_flag = scfe_force_galwand }
-			}
-			random_list = {
-				50 = {
-					set_global_flag = scfe_had_galwand
+				is_ai = no
+				NOR = {
+					has_origin = origin_shoulders_of_giants
+					has_origin = origin_doomsday
+					has_origin = origin_broken_shackles
+					has_origin = origin_demonic_incursion
+					has_origin = origin_fear_of_the_dark
+					has_origin = origin_separatists
+					has_origin = origin_lost_colony
 				}
-				50 = {}
+			}
+			if = {
+				limit = { is_multiplayer = yes }
+				set_country_flag = scfe_znkar_possible
+			}
+			else = {
+				random_list = {
+					50 = { }
+					50 = { set_country_flag = scfe_znkar_possible }
+				}
 			}
 		}
-		if = {
+		random_playable_country = {
 			limit = {
-				NOT = { has_global_flag = scfe_force_alshigans }
+				is_ai = no
+				NOT = { has_country_flag = scfe_znkar_possible}
 			}
-			random_list = {
-				50 = {
-					set_global_flag = scfe_had_alshigans
+			if = {
+				limit = { is_multiplayer = yes }
+				set_country_flag = scfe_alshigan_possible
+			}
+			else = {
+				random_list = {
+					50 = { }
+					50 = { set_country_flag = scfe_alshigan_possible }
 				}
-				50 = {}
 			}
 		}
-		if = {
+		random_playable_country = {
 			limit = {
-				NOT = { has_global_flag = scfe_force_znkar }
+				is_ai = no
+				is_homicidal = no
 			}
-			random_list = {
-				50 = {
-					set_global_flag = scfe_had_znkar
+			set_country_flag = scfe_galwand_possible
+		}
+		# Precursor Story Pack
+		while = {
+			random_playable_country = {
+				limit = {
+					is_ai = no
+					NOR = {
+						has_country_flag = scfe_precursor_set_sless
+						has_country_flag = scfe_precursor_set_coprean
+						has_country_flag = scfe_precursor_set_astanine
+						has_country_flag = scfe_alshigan_possible
+						has_country_flag = scfe_znkar_possible
+					}
 				}
-				50 = {}
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							any_country = {
+								is_ai = no
+								has_country_flag = scfe_precursor_set_sless
+							}
+						}
+						set_country_flag = scfe_precursor_set_sless
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							any_country = {
+								is_ai = no
+								has_country_flag = scfe_precursor_set_coprean
+							}
+						}
+						set_country_flag = scfe_precursor_set_coprean
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							any_country = {
+								is_ai = no
+								has_country_flag = scfe_precursor_set_astanine
+							}
+						}
+						set_country_flag = scfe_precursor_set_astanine
+					}
+				}
 			}
+			count = 3
+		}
+	}
+}
+
+country_event = {
+	id = scfe_game_start.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		while = {
+			random_system = {
+				limit = {
+					NOT = { exists = owner }
+					scfe_is_valid_system = yes
+					any_system_planet = {
+						scfe_is_barren = yes
+						NOT = { has_modifier = terraforming_candidate }
+						has_anomaly = no
+						is_moon = no
+					}
+					NOT = {
+						any_neighbor_system = {
+							OR = {
+								exists = owner
+								scfe_is_valid_system = no
+							}
+						}
+					}
+				}
+				random_system_planet = {
+					limit = {
+						scfe_is_barren = yes
+						NOT = { has_modifier = terraforming_candidate }
+						has_anomaly = no
+						is_moon = no
+					}
+					change_pc = pc_nuked
+					reset_planet = yes
+					clear_deposits = yes
+				}
+			}
+			count = 3
 		}
 	}
 }
@@ -69,9 +183,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		NOT = { has_global_flag = scfe_had_galwand }
-		is_ai = no
-		is_homicidal = no
+		has_country_flag = scfe_galwand_possible
 		AND = {
 			has_comms_with_alien_empire = yes
 			years_passed > 50
@@ -81,46 +193,43 @@ country_event = {
 		}
 	}
 	immediate = {
-		set_global_flag = scfe_had_galwand
+		remove_country_flag = scfe_galwand_possible
 		country_event = { id = scfe_galactic_wanderers.1 days = 30 random = 30 }
 	}
 }
 
+# Z'nkar
 country_event = {
 	id = scfe_engine.2
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		NOT = { has_global_flag = scfe_had_znkar }
-		is_ai = no
-		NOR = {
-			has_origin = origin_incohesive
-			has_origin = origin_shoulders_of_giants
-			has_origin = origin_doomsday
-			has_origin = origin_broken_shackles
-			has_origin = origin_demonic_incursion
-			has_origin = origin_fear_of_the_dark
-			has_origin = origin_separatists
-			has_origin = origin_lost_colony
-		}
+		has_country_flag = scfe_znkar_possible
 		years_passed > 30
 		has_met_primitives = yes
 		AND = {
 			exists = home_planet
 			home_planet = {
 				is_artificial = no
+				# Still owning your homeworld
 				owner = {
+					is_same_empire = root
+				}
+				# Homeworld not currently occupied
+				controller = {
 					is_same_empire = root
 				}
 			}
 		}
 	}
 	immediate = {
+		remove_country_flag = scfe_znkar_possible
 		country_event = { id = scfe_znkar.1 days = 100 random = 200 }
 	}
 }
 
+# Alshigans
 country_event = {
 	id = scfe_engine.3
 	hide_window = yes
@@ -128,13 +237,11 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		years_passed > 25
-		NOT = { has_global_flag = scfe_had_alshigans }
-		is_ai = no
-		NOT = { has_origin = origin_incohesive }
-		years_passed > 25
+		has_country_flag = scfe_alshigan_possible
 	}
 
 	immediate = {
+		remove_country_flag = scfe_alshigan_possible
 		set_country_flag = scfe_alshigans_possible
 	}
 }

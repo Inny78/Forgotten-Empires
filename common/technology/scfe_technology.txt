@@ -1,0 +1,489 @@
+tech_koeleothan_utilization = {
+	cost = @tier2cost1
+	area = society
+	category = { psionics }
+	tier = 2
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_koeleothan_found }
+			NOT = {
+				has_koeleothan_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_koeleothan_found
+		}
+		modifier = {
+			factor = 3
+			has_koeleothan_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_koeleothan_found }
+			NOT = {
+				has_koeleothan_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_koeleothan_found
+		}
+		modifier = {
+			factor = 3
+			has_koeleothan_deposit = yes
+		}
+	}
+}
+
+tech_quantumpearls_exploitation = {
+	cost = @tier2cost1
+	area = engineering
+	category = { field_manipulation }
+	tier = 2
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_quantumpearls_found }
+			NOT = {
+				has_quantumpearl_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_quantumpearls_found
+		}
+		modifier = {
+			factor = 3
+			has_quantumpearl_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_quantumpearls_found }
+			NOT = {
+				has_quantumpearl_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_quantumpearls_found
+		}
+		modifier = {
+			factor = 3
+			has_quantumpearl_deposit = yes
+		}
+	}
+}
+
+tech_xenograss_harvesting = {
+	cost = @tier2cost1
+	area = engineering
+	category = { biology }
+	tier = 2
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_xenograss_found }
+			NOT = {
+				has_xenograss_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_xenograss_found
+		}
+		modifier = {
+			factor = 3
+			has_xenograss_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_xenograss_found }
+			NOT = {
+				has_xenograss_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_xenograss_found
+		}
+		modifier = {
+			factor = 3
+			has_xenograss_deposit = yes
+		}
+	}
+}
+
+tech_woorskyr_habitation = {
+	cost = @tier2cost1
+	area = society
+	category = { new_worlds }
+	tier = 2
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+}
+
+tech_woorskyr_bark_farm = {
+	cost = @tier2cost1
+	area = society
+	category = { new_worlds }
+	tier = 2
+	icon = tech_woorskyr_habitation
+	weight = @tier2weight1
+	prerequisites = { tech_woorskyr_habitation }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+}
+
+tech_woorskyr_biofuel_refinery = {
+	cost = @tier2cost1
+	area = society
+	category = { new_worlds }
+	tier = 2
+	icon = tech_woorskyr_habitation
+	weight = @tier2weight1
+	prerequisites = { tech_woorskyr_habitation }
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+}
+
+tech_woorskyr_bioenergy_plant = {
+	cost = @tier2cost1
+	area = society
+	category = { new_worlds }
+	tier = 2
+	icon = tech_woorskyr_habitation
+	weight = @tier2weight1
+	prerequisites = { tech_woorskyr_habitation }
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+}
+
+tech_woorskyr_growth_monitoring_center = {
+	cost = @tier2cost1
+	area = society
+	category = { new_worlds }
+	tier = 2
+	icon = tech_woorskyr_habitation
+	weight = @tier2weight1
+	prerequisites = { tech_woorskyr_habitation }
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+}
+
+tech_woorskyr_ship_foundry = {
+	cost = @tier2cost1
+	area = society
+	category = { new_worlds }
+	tier = 2
+	icon = tech_woorskyr_habitation
+	weight = @tier2weight1
+	prerequisites = { tech_woorskyr_bark_farm tech_xenograss_harvesting }
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_woorskyr_found }
+			NOT = {
+				has_woorskyr_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_woorskyr_found
+		}
+		modifier = {
+			factor = 3
+			has_woorskyr_deposit = yes
+		}
+	}
+}
+
+tech_beetle_exploitation = {
+	cost = @tier2cost1
+	area = physics
+	category = { field_manipulation }
+	tier = 2
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_beetle_found }
+			NOT = {
+				has_beetle_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_beetle_found
+		}
+		modifier = {
+			factor = 3
+			has_beetle_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cf_beetle_found }
+			NOT = {
+				has_beetle_deposit = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cf_beetle_found
+		}
+		modifier = {
+			factor = 3
+			has_beetle_deposit = yes
+		}
+	}
+}
+
+tech_beetle_exploitation_2 = {
+	cost = @tier1cost2
+	area = physics
+	category = { field_manipulation }
+	prerequisites = { "tech_beetle_exploitation" }
+	tier = 2
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_statecraft }
+		}
+		modifier = {
+			factor = 0
+			is_spiritualist = no
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_statecraft }
+		}
+	}
+}
+
+# Precursor Story Pack
+tech_scfe_astanine_hologram = {
+	cost = 0
+	area = physics
+	tier = 4
+	category = { particles }
+	weight = 0
+
+	ai_weight = {
+		weight = 0
+	}
+}

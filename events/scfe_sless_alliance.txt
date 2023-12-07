@@ -1,0 +1,497 @@
+namespace = scfe_sless
+
+planet_event = {
+    id = scfe_sless.100
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        has_planet_flag = scfe_sless_100_world
+    }
+
+    immediate = {
+        while = {
+            add_district = district_city
+            count = 5
+        }
+        add_district = district_mining
+        add_building = building_capital
+    }
+}
+#sless intro
+ship_event = {
+    id = scfe_sless.1
+    title = "scfe_sless.1.name"
+    desc = "scfe_sless.1.desc"
+    picture = GFX_evt_ancient_alien_temple
+    location = from
+
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_sless.1.a
+        owner = { begin_event_chain = { event_chain = scfe_sless_chain } }
+        from = { create_archaeological_site = scfe_sless_alliance_site_1 }
+    }
+}
+#sless dig site 1
+#chapter 1
+fleet_event = {
+    id = scfe_sless.2
+    title = "scfe_sless.2.name"
+    desc = "scfe_sless.2.desc"
+    picture = GFX_evt_tradestation_interior
+    show_sound = event_pre_ftl_civilization
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.2.a
+        small_artifact_reward = yes
+    }
+    option = {
+        name = scfe_sless.2.b
+        trigger = {
+            owner = {
+                is_xenophile = yes
+            }
+        }
+        small_artifact_reward = yes
+    }
+    option = {
+        name = scfe_sless.2.c
+        trigger = {
+            owner = {
+                is_xenophobe = yes
+            }
+        }
+        small_artifact_reward = yes
+    }
+}
+#chapter 2
+fleet_event = {
+    id = scfe_sless.3
+    title = "scfe_sless.3.name"
+    desc = "scfe_sless.3.desc"
+    picture = GFX_evt_ruined_system
+    show_sound = event_wind_ruins
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+        closest_system = {
+            limit = { scfe_sless_digsite_spawn_rules = yes }
+            min_steps = 1
+            max_steps = 20
+            random_system_planet = {
+                limit = {
+                    has_anomaly = no
+                    OR = {
+                        scfe_is_barren = yes
+                        scfe_is_barren_cold = yes
+                        scfe_is_nuked = yes
+                    }
+                    NOT = { exists = archaeological_site }
+                }
+                save_event_target_as = scfe_sless_colony_2
+            }
+        }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.3.a
+        medium_artifact_reward = yes
+        event_target:scfe_sless_colony_2 = {
+            enable_special_project = {
+                name = "SCFE_SLESS_ALLIANCE_PROJECT_1"
+                location = this
+                owner = root.owner
+            }
+        }
+    }
+}
+#sless dig site 2 intro
+ship_event = {
+    id = scfe_sless.4
+    title = "scfe_sless.4.name"
+    desc = "scfe_sless.4.desc"
+    picture = GFX_evt_metropolis
+    location = fromfrom
+
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_sless.4.a
+        small_artifact_reward = yes
+        owner = {
+            add_event_chain_counter = {
+                event_chain = scfe_sless_chain
+                counter = scfe_sless_colonies
+                amount = 1
+            }
+        }
+        fromfrom = {
+            set_planet_flag = scfe_sless_colony
+            create_archaeological_site = scfe_sless_alliance_site_2
+        }
+    }
+}
+#sless dig site 2
+#chapter 1
+fleet_event = {
+    id = scfe_sless.5
+    title = "scfe_sless.5.name"
+    desc = "scfe_sless.5.desc"
+    picture = GFX_evt_zro_5
+    show_sound = event_drilling
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.5.a
+        small_artifact_reward = yes
+        owner = {
+            add_resource = {
+                society_research = 150
+            }
+        }
+    }
+}
+#chapter 2
+fleet_event = {
+    id = scfe_sless.6
+    title = "scfe_sless.6.name"
+    desc = "scfe_sless.6.desc"
+    picture = GFX_evt_genetic_modification
+    show_sound = event_engineered_evolution
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.6.a
+        small_artifact_reward = yes
+    }
+}
+#chapter 3
+fleet_event = {
+    id = scfe_sless.7
+    title = "scfe_sless.7.name"
+    desc = "scfe_sless.7.desc"
+    picture = GFX_evt_interior_battle
+    show_sound = event_ground_battle
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.7.a
+        small_artifact_reward = yes
+    }
+}
+#chapter 4
+fleet_event = {
+    id = scfe_sless.8
+    title = "scfe_sless.8.name"
+    desc = "scfe_sless.8.desc"
+    picture = GFX_evt_disease_outbreak
+    show_sound = event_planetary_riot
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+        closest_system = {
+            limit = { scfe_sless_digsite_spawn_rules = yes }
+            min_steps = 1
+            max_steps = 20
+            random_system_planet = {
+                limit = {
+                    has_anomaly = no
+                    OR = {
+                        scfe_is_barren = yes
+                        scfe_is_barren_cold = yes
+                        scfe_is_nuked = yes
+                    }
+                    NOT = { exists = archaeological_site }
+                }
+                save_event_target_as = scfe_sless_colony_3
+            }
+        }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.8.a
+        small_artifact_reward = yes
+        event_target:scfe_sless_colony_3 = {
+            enable_special_project = {
+                name = "SCFE_SLESS_ALLIANCE_PROJECT_2"
+                location = this
+                owner = root.owner
+            }
+        }
+    }
+}
+
+ship_event = {
+    id = scfe_sless.9
+    title = "scfe_sless.9.name"
+    desc = "scfe_sless.9.desc"
+    picture = GFX_evt_archaeology_camp
+    location = fromfrom
+
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_sless.9.a
+        medium_artifact_reward = yes
+        owner = {
+            add_event_chain_counter = {
+                event_chain = scfe_sless_chain
+                counter = scfe_sless_colonies
+                amount = 1
+            }
+        }
+        fromfrom = {
+            set_planet_flag = scfe_sless_colony
+            create_archaeological_site = scfe_sless_alliance_site_3
+        }
+    }
+}
+#sless dig site 3
+#chapter 1
+fleet_event = {
+    id = scfe_sless.10
+    title = "scfe_sless.10.name"
+    desc = "scfe_sless.10.desc"
+    picture = GFX_evt_circuitry_modification
+    show_sound = event_evolution_mastery
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.10.a
+        small_artifact_reward = yes
+        owner = {
+            add_resource = { society_research = 500 }
+        }
+    }
+}
+#chapter 2
+fleet_event = {
+    id = scfe_sless.11
+    title = "scfe_sless.11.name"
+    desc = "scfe_sless.11.desc"
+    picture = GFX_evt_clones
+    show_sound = event_laboratory_sound
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.11.a
+        small_artifact_reward = yes
+        owner = {
+            add_resource = { society_research = 500 }
+            if = {
+                limit = { NOT = { has_technology = tech_gene_tailoring } }
+                give_technology = { tech = tech_gene_tailoring message = no }
+            }
+        }
+    }
+}
+#chapter 3
+fleet_event = {
+    id = scfe_sless.12
+    title = "scfe_sless.12.name"
+    desc = "scfe_sless.12.desc"
+    picture = GFX_evt_cybernetics
+    show_sound = event_dangerous_animals
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_sless.12.a
+        medium_artifact_reward = yes
+        owner = {
+            country_event = { id = scfe_sless.13 }
+        }
+    }
+}
+#sless dig site 4 intro
+country_event = {
+    id = scfe_sless.13
+    title = "scfe_sless.13.name"
+    desc = "scfe_sless.13.desc"
+    picture = GFX_evt_star_chart
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = { NOT = { exists = event_target:scfe_sless_home_planet } }
+            random_system_within_border = {
+                limit = { any_system_planet = { has_planet_flag = scfe_sless_colony } }
+                set_spawn_system_batch = begin
+                spawn_system = {
+                    max_jumps = 0
+                    min_distance = 10
+                    max_distance = 40
+                    initializer = "scfe_sless_home_system"
+                }
+                set_spawn_system_batch = end
+            }
+        }
+    }
+
+    option = {
+        name = scfe_sless.13.a
+        create_point_of_interest = {
+            id = scfe_sless_hidden_planet_1
+            name = "scfe_sless_colony_4_coordinates_poi"
+            desc = "scfe_sless_colony_4_coordinates_desc"
+            event_chain = scfe_sless_chain
+            location = event_target:scfe_sless_home_planet
+        }
+        add_event_chain_counter = {
+            event_chain = scfe_sless_chain
+            counter = scfe_sless_colonies
+            amount = 1
+        }
+    }
+}
+#sless dig site 4
+#chapter 1
+fleet_event = {
+    id = scfe_sless.14
+    title = "scfe_sless.14.name"
+    desc = "scfe_sless.14.desc"
+    picture = GFX_evt_burning_settlement
+    show_sound = event_bad_omen
+
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+        large_artifact_reward = yes
+        owner = {
+            end_event_chain = scfe_sless_chain
+            custom_tooltip = scfe_sless.14.a.tooltip
+            add_resource = {
+                society_research = 1000
+                unity = 9999
+            }
+            add_relic = r_scfe_sless_gene_template
+            add_random_research_option = {
+                add_progress = 0.99
+                area = society
+                category = biology
+                tier = 2
+                ignore_prereqs = no
+            }
+        }
+        hidden_effect = {
+            owner = { set_country_flag = scfe_precursor_sless_finished }
+        }
+    }
+
+    option = {
+        name = scfe_sless.14.a
+        exclusive_trigger = { NOT = { owner = { has_ascension_perk = ap_engineered_evolution } } }
+    }
+    option = {
+        name = scfe_sless.14.b
+        exclusive_trigger = { owner = { has_ascension_perk = ap_engineered_evolution } }
+    }
+}
+#SCFE_PRECURSOR_SLESS_SECRETS effect event
+country_event = {
+    id = scfe_sless.15
+    title = "scfe_sless.15.name"
+    desc = "scfe_sless.15.desc"
+    picture = GFX_evt_cybernetics
+
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_sless.15.a
+        owner = {
+            add_modifier = { modifier = mod_scfe_precursor_sless_secrets days = -1 }
+        }
+    }
+}

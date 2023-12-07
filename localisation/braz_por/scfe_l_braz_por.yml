@@ -1,13 +1,13 @@
 ﻿l_braz_por:
 
- # Scopes: Root = ship, From = planet
+# Scopes: Root = ship, From = planet
 
- # Gigas compatibility
+# Gigas compatibility
  origin_incohesive: "Away on an Island"
  origin_incohesive_desc: "This civilisation developed entirely on a bleak lifeless world, in a space far away from space."
 
- # Moved content
- # Galactic Wanderers
+# Moved content
+# Galactic Wanderers
  scfe_galactic_wanderers.2.name: "Lunar Monument"
  scfe_galactic_wanderers.2.desc: "A remote moon on the outskirts of your empire has suddenly gained the attention of your scientists. A peculiar anomaly detection has revealed the existence of an isolated monument, untouched by time, sitting amidst the desolation of the lunar landscape. Your science team, intrigued by this discovery, has decided to mount an expedition to investigate this enigmatic structure."
  SCFE_MONUMENT_PROJECT: "Lunar Monument Investigation"
@@ -22,7 +22,7 @@
  scfe_galactic_wanderers.5.desc: "In the uncharted depths of space, we stumbled upon a monument, an ancient testament to the ambitions and dreams of a civilization that once roamed the stars. This monument is a beacon of hope, a reminder that even in the vastness of the universe, our potential knows no bounds."
  scfe_galactic_wanderers.6.desc: "The inscriptions on this monument recount the trials and triumphs of this ancient civilization. Their message is clear: \n\n§l"To those who follow in our cosmic footsteps, know that the stars hold infinite wonders. We leave behind this testament of our journey, a monument to remind you that even in the face of the unknown, you can rise to the same heights as we did. Never give up, for the universe is your playground, and your destiny among the stars is boundless.§!\n\nWe believe that the significance of this discovery extends beyond the boundaries of our own civilization. It is a message that resonates with all who aspire to explore, learn, and expand their horizons among the stars."
 
- # Unexpected tower (Farewell Horizontal)
+# Unexpected tower (Farewell Horizontal)
  scfe_tower_city.1.name: "Giant tower"
  scfe_tower_city.1.desc: "From the depths of the gas giant emerges a colossal cylinder crafted from metal and concrete. What's even more captivating is the city ruins perched atop this towering spire, with villages clinging precariously to its sides. To embark on an expedition into this enigmatic realm, we recognized the need for substantial resources. It was thus decided to establish a base camp within an open expanse of the city, serving as our launching point for exploration."
  # Archaeology site starts here
@@ -40,7 +40,7 @@
  scfe_tower_city_dig.4t: "This ancient building is a feat of engineering that will keep our scientists busy for centuries."
  scfe_tower_city_dig.4b: "We're sitting on a huge pile of alloys."
 
- # The Belltower
+# The Belltower
  scfe_belltower.1.name: "Desert tower"
  scfe_belltower.1.desc: "Landing near the building proved to be more challenging than anticipated, given its location at the heart of an expansive region of shifting sands. The crew resorted to employing the ship's sampling lasers to vitrify a substantial area, creating a suitable landing zone. Regrettably, the building now lies mostly buried beneath the sand, with only its conical peak visible above the surface. §G[Root.GetLeaderName]§! suggests establishing a camp for excavation and exploration of the structure."
  # Archaeology site starts here
@@ -50,7 +50,7 @@
  scfe_belltower_dig.1.desc: "Now that we have established our camp and constructed pathways above the sand, we have conducted a thorough examination of the building's apex. It appears to resonate in unison with the energy source detected within. This resonance generates a protective force field, rendering the surface impervious to our attempts to breach it. Our only viable option is to dig down toward a sizable entrance our sensors have pinpointed approximately 70 meters below us."
  scfe_belltower_dig.2.name: "The door"
  scfe_belltower_dig.2.desc: "After successfully stabilizing the sand, we meticulously excavated our way downward, gradually unveiling the intricate facade of the tower. In the dead of night, we finally arrived at a massive metallic door adorned with numerous engravings depicting a variety of alien races paying homage to a stylized sun. Currently, our challenge lies in deciphering the means to open these doors, as they remain impervious to our tools, much like the rest of the tower."
- scfe_belltower_dig.3.name: "The belltower"
+ scfe_belltower_dig.3.name: "The Belltower"
  scfe_belltower_dig.3.desc: "As the first rays of dawn graced the desert, the sunlight bathed the door, causing the sun engraving to flash in response and initiating its opening. The crew proceeded with caution, stepping into the tower with a sense of uncertainty. What they encountered within was far from their expectations-a labyrinthine complex of machinery humming with pulsating energy, extending upward toward what appeared to be a colossal bell. Without hesitation, §G[Root.GetLeaderName]§! issued orders for an immediate study of this enigmatic device."
  scfe_belltower_dig.4.name: "Signal tower"
  scfe_belltower_dig.4.desc: "Our scientists conducted a thorough examination of the building's interior but found no data or recordings. The machinery within resembles a communication tower, much like our own but on a colossal scale. It appears to be connected to the hyperlane system of our galaxy. However, the intriguing aspect is that it's currently dormant, not transmitting any signals. While the rest of the tower has been in operation for countless millennia, the emitter remains deactivated."
@@ -64,11 +64,11 @@
  scfe_belltower.3c.desc: "The communication system we use to contact the rest of the galaxy suddenly activates itself and resonates with an exquisite bell sound, captivating our hive mind for a few precious seconds as it touches the very depths of our soul. Then, as swiftly as it had appeared, it vanishes forever. No recording device could capture a trace of it, leaving it to exist solely in our collective memory."
  scfe_belltower.4a.desc: "Every communication device suddenly resonates with an exquisite bell sound, captivating everyone for a few precious seconds as it touches the very depths of our souls. Then, as swiftly as it had appeared, it vanished forever. No recording device could capture a trace of it, leaving it to exist solely in the collective memory of our people."
 
- # 3.10 stuff
+# 3.10 stuff
 
- # The Reverse Engine
+# The Reverse Engine
  scfe_reverse_engine.1.name: "A lost civilization"
- scfe_reverse_engine.1.desc: "A closer study of §RINTERFERENCE§! ...it was previously inhabited, but its orbit §RINTERFERENCE§! ...meteors thorougly devastated its surface. \n\nWe §RINTERFERENCE§! ...in order to start to dig our way to the signal. We're also picking up intense bursts of exotic §RINTERFERENCE§!."
+ scfe_reverse_engine.1.desc: "A closer study of §RINTERFERENCE§! ...it was previously inhabited, but its orbit §RINTERFERENCE§! ...meteors thoroughly devastated its surface. \n\nWe §RINTERFERENCE§! ...in order to start to dig our way to the signal. We're also picking up intense bursts of exotic §RINTERFERENCE§!."
  scfe_reverse_engine.1.a: "Amplify your signal first!"
  scfe_reverse_engine.1.b: "Interference? How is this even possible?"
  scfe_reverse_engine_dig: "The Reverse Engine"
@@ -93,12 +93,12 @@
  scfe_reverse_engine_dig.3.a: "Am I getting these reports in reverse order?"
  scfe_reverse_engine_dig.4.name: "The Factory"
  scfe_reverse_engine_dig.4.desc_1: "As we reached the factory's core, our scanners detected a sudden, intense surge of radiation. Fortunately, our protective suits proved effective in shielding us from any harmful effects due to its brief duration. In the center of the room, an empty space was encircled by inactive fabrication machines. Suddenly, our communicators crackled to life with a chilling, alien voice announcing that the §SReverse Engine§! had been sent back in time, causing a destabilization of the bunker's reactor. It advised us to flee before it was too late. We rushed back to our ship, departing the planet just as it is shattered by a massive explosion."
- scfe_reverse_engine_dig.4.desc_2: "As we reached the factory's core, our scanners detected a sudden, intense surge of radiation. Fortunately, our robust construction and shielding mechanisms effectively protected us from any harmful effects due to its brief duration. In the center of the room, an empty space was encircled by inactive fabrication machines. Suddenly, our communicators crackled to life with a chilling, alien voice announcing that the §SReverse Engine§! had been sent back in time, causing a destabilization of the bunker's reactor. It advised us to flee before it was too late. We rushed back to our ship, departing the planet just as it is shattered by a massive explosion."
+ scfe_reverse_engine_dig.4.desc_2: "As we reached the factory's core, our scanners detected a sudden, intense surge of radiation. Fortunately, our robust construction and shielding mechanisms effectively protected us from any harmful effects due to its brief duration. In the center of the room, an empty space was encircled by inactive fabrication machines.\nSuddenly, our communicators crackled to life with a chilling, alien voice announcing that the §SReverse Engine§! had been sent back in time, causing a destabilization of the bunker's reactor. It advised us to flee before it was too late. We rushed back to our ship, departing the planet just as it is shattered by a massive explosion."
  scfe_reverse_engine_dig.4.a: "Where's the rest of the report?"
  scfe_reverse_engine.dig.4.b: "I feel a weird disconnection with the team."
  scfe_reversia: "Reversia"
 
- # The Failed Hive
+# The Failed Hive
  scfe_failed_hive.1.name: "War-torn ruins"
  scfe_failed_hive.1.desc: "The remnants of this advanced civilization bear clear indications of a devastating conflict. Widespread and intense battles seem to have engulfed the entire planet, leading §G[Root.GetLeaderName]§! to propose that it was a global civil war. Given the vast expanse of these ruins, [root.leader.getHerHim] recommends setting up a base camp to conduct a thorough exploration."
  scfe_failed_hive.1.t: "We have to make a declaration."
@@ -132,13 +132,13 @@
  scfe_failed_hive_dig.5.b: "Pathetic."
  scfe_failed_hive_dig.5.c: "We could have taught them so much about our unity."
 
- # The Lonely Presence
+# The Lonely Presence
  scfe_lonely_shroud.2.name: "An Elusive Signal"
  scfe_lonely_shroud.2.desc: "A faint and erratic signal emanates from the planet, eluding our instruments as it shifts rapidly across its surface. To analyze it effectively, we must commit time to track its elusive path."
  SCFE_LONELY_SHROUD_PROJECT: "Tracking the shrouded signal"
  SCFE_LONELY_SHROUD_PROJECT_DESC: "Our science ship pursues the faint signal emanating from the shrouded world, following it all around the planet."
  scfe_lonely_shroud.3.name: "Shroud signal locked!"
- scfe_lonely_shroud.3.desc: "§G[Root.GetLeaderName]§! ordered the ship to come closer to the dangerous turbulences of the untamed shroud energies of this strange world. As the ship finally stops and focus its sensors, all the systems are overwhelmed with a massive signal resonating through every speaker and covering every screen:\n\n§GCome!§! §HExpand!§! §MLove!§! §BLive!§! §HProsper!§! §RDie!§! §GFeel!§!\n\n§GCome! Come! I am so lonely... Locked here between my domain and this cold materiality... Come! Come! COME!§!\n\nThe message escalates in volume until it's almost unbearable, then abruptly ceases. As the crew regains composure, the main screen reveals a breathtaking sight: the shroud energies dissipate, unveiling a magnificent world."
+ scfe_lonely_shroud.3.desc: "§G[Root.GetLeaderName]§! ordered the ship to come closer to the dangerous turbulence of the untamed shroud energies of this strange world. As the ship finally stops and focus its sensors, all the systems are overwhelmed with a massive signal resonating through every speaker and covering every screen:\n\n§GCome!§! §HExpand!§! §MLove!§! §BLive!§! §HProsper!§! §RDie!§! §GFeel!§!\n\n§GCome! Come! I am so lonely... Locked here between my domain and this cold materiality... Come! Come! COME!§!\n\nThe message escalates in volume until it's almost unbearable, then abruptly ceases. As the crew regains composure, the main screen reveals a breathtaking sight: the shroud energies dissipate, unveiling a magnificent world."
  scfe_lonely_shroud.op: "Is this world safe, though?"
  # tooltip, depending on the species/empire type:
  scfe_lonely_shroud.3.tb: "The planet reveals itself as a gaia world."
@@ -174,6 +174,10 @@
  SCFE_ALSHIGANS_JUNGLE_PROJECT_DESC: "$scfe_alshigans_scan$"
  SCFE_ALSHIGANS_MOON_PROJECT: "Moon research center"
  SCFE_ALSHIGANS_MOON_PROJECT_DESC: "There must be something to find here."
+ scfe_alshigans_velaen: "Velaen"
+ scfe_alshigans_uuladir: "Uuladir"
+ scfe_alshigans_demearen: "Demearen"
+ scfe_alshigans_yutela: "Yutela"
  scfe_savannah_ruins: "Savannah ruins"
  scfe_savannah_ruins_desc: "Desolate ruins of a fallen civilization."
  scfe_alpine_ruins: "Alpine ruins"
@@ -185,12 +189,14 @@
  scfe_alshigans.asteroid.desc: "The Alshigans, an avian species, commenced their galactic exploration eight centuries ago. Their remarkable adaptability enabled them to colonize a diverse array of planets, potentially facilitating a rapid expansion across the stars. However, their progress was hindered by their primitive FTL technology. Despite their resourcefulness, they developed a functional engine based on an unconventional concept nobody would have thought to study. Regrettably, this approach led to a dead end, permitting only short-range travels before requiring several days for engine recharging."
  scfe_alshigans_savannah.name: "Trails in the sky"
  scfe_alshigans_savannah.desc: "Though certainly unconventional, the spatial propulsion engines of the Alshigian ships were a remarkable sight, leaving a lengthy trail of pure energy in their wake as they traversed the skies. This awe-inspiring spectacle was undoubtedly visible from the ground. However, the lingering hazard of this energy trail taking several minutes to dissipate necessitated cautious course plotting by the pilots."
- scfe_alshigans.alpine.name: "Alshigia"
+ scfe_alshigans.alpine.name: "Uuladir, Capital of the Alshigans"
  scfe_alshigans.alpine.desc: "Our initial exploration of the abandoned mountainous capital belonging to the Alshigians revealed a staggering architectural mastery, intricately carved from its peaks down to the valleys below. Many buildings are an amazing feat of engineering, incorporating the environment instead of replacing it. Their adaptability wasn't only a product of their biology, but it also came from their dedication to preserve the environment and integrate it to their very lives instead of dominating it."
  scfe_alshigans_jungle.name: "Alone in space"
  scfe_alshigans_jungle.desc: "For all their eagerness to explore the galaxy, the Alshigians never crossed paths with another spacefaring empire. Records allude to the discovery of a primitive species within a distant system, sparking considerable enthusiasm. However, this encounter prompted the enactment of a law prohibiting any further entry into that system to avert disrupting the indigenous species' development. The unmistakable presence of Alshigian ships rendered them too conspicuous for covert travel, leading to the imposition of stringent restrictions to prevent further interference."
  scfe_alshigans.11.name: "New sports competition"
  scfe_alshigans.11.desc: "Reports have surfaced from §Y[scfe_ships_race.GetName]§! detailing the inception of a new sports competition: an interplanetary race employing ships retrofitted with Alshigan engines. The spectacle is undeniably remarkable, even to the unaided eye, evoking a sense that, at the very least, a fragment of this vanished species' experiences lives again."
+ scfe_alshigans.12.name: "Secrets of the Alshigans"
+ scfe_alshigans.12.desc: ""
  scfe_ships_race: "Alshigan Ships Race"
  scfe_ships_race_desc: "An interplanetary race employing ships retrofitted with Alshigan engines is organized here. The spectacle is undeniably remarkable, even to the unaided eye."
  scfe_alshigans_engines: "Alshigan Engines"
@@ -198,8 +204,13 @@
  scfe_alshigans_chain_title: "Precursors - The Alshigans"
  scfe_alshigans_chain_desc: "$scfe_alshigans_init.2.desc$"
  scfe_alshigans_artifacts: "Alshigans Artifacts Recovered"
+ scfe_alshigan_engine_activated: "Alshigan Engine Activated"
+ r_scfe_alshigan_engine: "Alshigan Engine"
+ r_scfe_alshigan_engine_desc: "We've retrieved one of the peculiar engines formerly utilized by the Alshigans. Although less efficient compared to our current models, it operates using entirely novel concepts of energy manipulation."
+ SCFE_ALSHIGANS_SECRETS: "Delve into the Secrets of the Alshigans"
+ SCFE_ALSHIGANS_SECRETS_DESC: "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the Alshigans to our own."
 
- # War-Torn Planet
+# War-Torn Planet
  scfe_war_torn.1.name: "A war-torn empire"
  scfe_war_torn.1.desc: "Information gleaned from scattered remnants indicates that §Y[From.GetName]§! was formerly the stronghold of a militaristic space empire embroiled in a fierce conflict approximately 700 years ago. The planet's current state starkly portrays the merciless nature of this ancient war. Despite the severe bombardment, our team has observed a nearly intact fortress nestled deep within a mountain and suggests establishing a camp to commence its exploration."
  scfe_war_torn.2.name: "Vault content analyzed"
@@ -222,12 +233,65 @@
  scfe_war_torn_dig.4.desc: "Deep within the fortress rests what was once an imposing vault, now breached like the other defenses encountered during our journey. Anticipating an empty chamber, our expectations were partly confirmed: the central section of the vault is entirely bare, indicating that whatever was there has been forcefully removed. The remaining portion of the vault is occupied by metallic crates housing enigmatic devices, which will require an extensive analysis process to unravel their mysteries."
  scfe_war_torn_lore.1.name: "The Clone Soldiers"
  scfe_war_torn_lore.1.desc: "As detailed in the stronghold's database, the clone soldiers were dreaded adversaries for valid reasons. Engineered through genetic enhancements to be virtually unstoppable, they constituted an endlessly replenishable army rapidly cultivated in vats and dispatched to battle across the galaxy. They were pawns, obviously, for a greater power, yet no information regarding their masters was discernible within the records."
+ scfe_war_torn_lore.1.desc_c: "As detailed in the stronghold's database, our fellow clone soldiers were dreaded adversaries for valid reasons. Engineered through genetic enhancements to be virtually unstoppable, they constituted an endlessly replenishable army rapidly cultivated in vats and dispatched to battle across the galaxy. Like us, they were pawns for a greater power, yet no information regarding our masters was discernible within the records."
+ scfe_war_torn_lore.1.a: "That's a shame."
  SCFE_WAR_TORN_PROJECT_1: "Ancient Trail"
  SCFE_WAR_TORN_PROJECT_1_DESC: "We followed the coordinates found in the stronghold to this system. We now need to find if there's any remaining trace of the clones."
  scfe_clone_prowess: "Clone soldiers inspiration"
  scfe_clone_prowess_desc: "The remarkable prowess and expertise exhibited by the ancient clone soldiers have served as an inspiration for our armies to strive for improvement. We have initiated new training programs and are meticulously studying novel strategies to ensure a seamless path to victory over our adversaries."
 
- # The Z'nkar Watchers
- # Ancient observation station discovered, chasing their trail to unveil their story
- scfe_znkar_watchers.1.name : ""
- scfe_znkar_watchers.1.desc: ""
+# The Z'nkar Watchers (Invisible War)
+ scfe_znkar_chain_title: "Precursors - The Z'nkar"
+ scfe_znkar_chain_desc: "An ancient civilization has set up an observation post over our homeworld millenia ago. We aim to discover who they were and what was their fate."
+ scfe_znkar_artifacts: "Z'nkar Artifacts Recovered"
+ SCFE_ZNKAR_STATION_PROJECT_1: "Exploration of the observation post"
+ SCFE_ZNKAR_STATION_PROJECT_1_DESC: "A previously undetected alien structure has just appeared in orbit around our homeworld. Our sensors indicate that this object was cloaked until moments ago, when it suddenly became visible due to an apparent system failure.\nInitial scans suggest that this is an observation station of unknown origin. It appears to have been concealed above our planet for an indeterminate period, possibly observing our civilization. The station currently shows no signs of activity and seems to be abandoned.\nWe're dispatching an expedition team to investigate this station."
+ SCFE_ZNKAR_NUKED_PROJECT: "Ruined Z'nkar planet"
+ SCFE_ZNKAR_NUKED_PROJECT_DESC: "We arrived at the coordinates of the Z'nkar recall order. Scans are ongoing to detect a trace leading to further clues."
+ SCFE_ZNKAR_NUKED_MOON_PROJECT: "Z'nkar Moon Base"
+ SCFE_ZNKAR_NUKED_MOON_PROJECT_DESC: "The Z'nkar surveillance team retreated to a clandestine base on the moon, possibly as a last stand or to preserve their legacy. We need to uncover what they were up to."
+ SCFE_ZNKAR_RELIC_ANALYSIS: "Z'kar relic analysis"
+ SCFE_ZNKAR_RELIC_ANALYSIS_DESC: "As we prepare to study the Z'nkar relic brought back from the moon base, its dormant state presents a compelling enigma. Preliminary observations during our journey home revealed an unexpected interaction between the relic and our vessel. It appears to have enhanced our ship's shield capabilities and propulsion efficiency, suggesting an advanced form of energy manipulation or augmentation technology. The crucial question now is the effects of its activation. This relic, activated by the Z'nkar before their final departure, holds untapped secrets."
+ scfe_znkar_pakrta: "Pakr'ta"
+ scfe_znkar_dantiy: "Da'ntiy"
+ scfe_znkar.2.name: "Red Alert!"
+ scfe_znkar.2.desc: "A previously undetected alien structure has just appeared in orbit around §Y[znkar_start_planet.GetName]§!. Our sensors indicate that this object was cloaked until moments ago, when it suddenly became visible due to an apparent system failure.\nInitial scans suggest that this is an observation station of unknown origin. It appears to have been concealed above our planet for an indeterminate period, possibly observing our civilization. The station currently shows no signs of activity and seems to be abandoned.\nWe strongly recommend dispatching an expedition team to investigate this station."
+ scfe_znkar.3.name: "Abandoned Observation Station"
+ scfe_znkar.3.desc: "The exploration team dispatched to the recently uncloaked alien observation station has confirmed the structure's ancient and abandoned state. Pervasive signs of decay are evident throughout, with numerous system failures escalating over time. Upon accessing the control center, our scientists encountered a treasure trove of historical data.\nThe station's archives contain extensive recordings of our distant ancestors, dating back millennia, offering a unique window into our past. However, no recent observations were found, suggesting a long period of inactivity. We also found the name of our watchers: the Z'nkar."
+ scfe_znkar.4.name: "Observation Station Computers"
+ scfe_znkar.4.desc: "Further analysis of the control center's data revealed a startling discovery: an urgent recall order had been issued to the station's personnel. This directive was so immediate that it precluded any dismantling or decommissioning of the station. The crew hastily evacuated, leaving for a destination our scientists managed to extract from the station's fading databases, just moments before a complete shutdown of its power core.\nThis last piece of information may be the key to uncovering the origins and motives of the civilization that once watched over us."
+ scfe_znkar.4.a: "Dismantle the station to prevent any accident"
+ scfe_znkar.5.name: "Ruined Z'nkar planet"
+ scfe_znkar.5.desc: "Upon arrival at the designated coordinates, we are met with a stark reality: the planet, once teeming with life, now lies in ruin, its surface scarred by the remnants of a catastrophic war. A thick layer of nuclear winter shrouds the land, and radiation levels are critically high. Our initial scans are underway, seeking any signs of past civilization or clues to the urgent evacuation of the observation station."
+ scfe_znkar.6.name: "Z'nkar Site Found"
+ scfe_znkar.6.desc: "Our scans have detected a faint but distinct energy signature emanating from a cluster of dilapidated structures. Given the extensive devastation on the planet's surface and the precarious state of these buildings, we have decided to establish a secure base camp equipped with necessary materials for excavation and stabilization"
+ scfe_znkar.7.name: "Z'nkar Moon Base"
+ scfe_znkar.7.desc: "Our latest venture on the moon has led us to a once-concealed base, now partially exposed due to an ancient asteroid impact. Thanks to the extensive damage and the long passage of time, the base's defensive systems are no longer operational, allowing us unimpeded access. After navigating through the ravaged corridors, we have successfully breached the computer room. Here lies the heart of the base: intact databanks, which hold the potential to unveil the final strategies and hopes of the Z'nkar civilization. The answers we seek about the final plan of the Z'nkar and the identity of their mysterious enemies may soon be within our grasp."
+ scfe_znkar.8.name: "Invisible War"
+ scfe_znkar.8.desc: "Our exploration of the Z'nkar moon base has unearthed a pivotal aspect of their history. The Z'nkar, once a militaristic society, had transitioned towards a more peaceful existence, relegating their most potent and dangerous technologies to this moon base. The central discovery is the existence of an immense, cloaked vessel - a technological marvel that challenges our current understanding. The surveillance team's ultimate mission was to board this invisible colossus and shadow their assailants, following them back to their own world.\nSadly, further details of their journey and its outcome remain lost to time, and the weapon storage area has suffered the most from the asteroid impact. Among the wreckage, we have recovered one intact artifact: a prototype device of unknown function. This relic will be transported back for comprehensive analysis. This marks the end of our on-site investigation, leaving us with a poignant reflection on the rise and fall of a once-great civilization."
+ scfe_znkar.9.name: "Z'nkar Distortion Engine"
+ scfe_znkar.9.desc_1: "Our extensive analysis has led to a breakthrough understanding of the Z'nkar relic, now designated as the §HZ'nkar Distortion Engine§!. This technological marvel demonstrates the advanced capabilities of the precursors. Its primary function appears to involve manipulating the state of subspace surrounding our ships, resulting in enhanced engine performance. This modification extends to our shielding systems as well, significantly bolstering their defensive capabilities against attacks. The introduction of the Z'nkar distortion engine into our fleet represents a substantial tactical advantage over our adversaries. As long as they're not invisible..."
+ scfe_znkar.9.desc_2: "Our in-depth analysis of the Z'nkar relic, termed the 'Z'nkar distortion engine,' reveals its profound technological significance. This device has the ability to subtly modify the subspace environment around our ships, thereby enhancing engine performance. The engine also interacts with our cloaking generators, substantially improving their efficiency. Furthermore, an intriguing aspect of this relic is its capability to disrupt and unveil cloaked ships within its range, compelling enemy vessels to reveal themselves. This feature adds a strategic layer to our stealth operations and defensive maneuvers. It's a poignant realization that such a transformative technology was consigned to storage by the Z'nkar, potentially altering the course of their fate."
+ scfe_znkar.9.desc_3:  "Our in-depth analysis of the Z'nkar relic, termed the §HZ'nkar distortion engine§!, reveals its profound technological significance. This device has the ability to subtly modify the subspace environment around our ships, thereby enhancing engine performance. The engine also interacts with cloaking generators, substantially improving their efficiency. Furthermore, an intriguing aspect of this relic is its capability to disrupt and unveil cloaked ships within its range, compelling enemy vessels to reveal themselves. This feature adds a strategic layer to our stealth operations and defensive maneuvers. It's a poignant realization that such a transformative technology was consigned to storage by the Z'nkar, potentially altering the course of their fate.\nThanks to our analysis of this device, we have gained new knowledge on cloaking technology."
+ scfe_znkar.10.name: "Secrets of the Z'nkar"
+ scfe_znkar.10.desc: ""
+ scfe_znkar_relic_1: "Z'nkar Distortion Engine"
+ scfe_znkar_relic_1_desc: "This technological marvel demonstrates the advanced capabilities of the precursors. Its primary function appears to involve manipulating the state of subspace surrounding our ships, resulting in enhanced performance."
+ scfe_znkar_relic_2: "$scfe_znkar_relic_1$"
+ scfe_znkar_relic_2_desc: "$scfe_znkar_relic_1_desc$"
+ scfe_znkar_observation_tech: "Z'nkar Observation Techniques"
+ scfe_znkar_observation_tech_desc: "The Z'nkar had a lot of experience on observing the primitive civilizations and we can make good use of their accumulated knowledge."
+ r_scfe_znkar_distortion_generator: "Z'nkar Distortion Engine"
+ r_scfe_znkar_distortion_generator_desc: "$scfe_znkar_relic_1_desc$"
+ scfe_znkar_dig: "Z'nkar Buildings Excavation"
+ scfe_znkar_dig_desc: "$scfe_znkar.6.desc$"
+ scfe_znkar_dig.1.name: "Base camp"
+ scfe_znkar_dig.1.desc: "With the establishment of our radiation-shielded base camp, we are now primed to commence the excavation of the debris-laden site. Our advanced scanners have mapped out a network of rooms and corridors beneath the ruins, suggesting a significant underground structure. However, the precise origin of the detected energy signal remains elusive, masked by the surrounding rubble and interference. As we prepare to delve into the depths, we proceed with caution, mindful of the potential risks and the mysteries that await us in the shadows of this once-thriving world."
+ scfe_znkar_dig.2.name: "Underground Complex"
+ scfe_znkar_dig.2.desc: "Our efforts have led us to a remarkable discovery: an underground complex, unearthed through meticulous excavation. Due to the unstable nature of the structure, we have deployed drones for initial exploration. They have relayed back images of a large, circular chamber, replete with screens and computing devices. Remarkably, this room, bearing the hallmarks of a war room, remains operational, emitting the energy signal we've been tracking. This finding marks a significant breakthrough, pinpointing the epicenter of our investigation. While we work to secure safe access for our team, this active hub holds the promise of uncovering the secrets of this world's catastrophic fate."
+ scfe_znkar_dig.3.name: "The War Room"
+ scfe_znkar_dig.3.desc: "After a period of careful preparations, we have finally entered the war room. Our initial observations suggest that this complex was not originally intended for military purposes. It appears to have been a central node for the collection and analysis of data from numerous observation stations, like the one above our homeworld, indicating a vast surveillance network that spanned several solar systems. The screens, now displaying only static, are silent testaments to the last remnants of an empire unprepared for conflict. The use of this facility, likely a civilian establishment, as a makeshift military center hints at the Z'nkar's possible pacifist nature or a desperate repurposing following early military infrastructure losses. The comprehensive analysis of the data gathered here will require time, but it is poised to unravel the mysteries of this empire and its unanticipated demise."
+ scfe_znkar_dig.4.name: "Invisible Enemy"
+ scfe_znkar_dig.4.desc: "The war room's archives have unfolded a harrowing tale of the Z'nkar's downfall. They were blindsided by an unseen foe, possessing cloaking technology far superior to their own. These adversaries struck with lethal precision, crippling the Z'nkar's defenses before disappearing. Anticipating a second, more devastating attack, the Z'nkar initiated a desperate evacuation to save their populace. Meanwhile, the surveillance team retreated to a clandestine base on the moon, possibly as a last stand or to preserve their legacy. Tragically, the evacuation was still underway when an overwhelming enemy fleet returned, raining destruction upon the planet until it was left in ruins. We are now redirecting our exploration to the moon, hoping to uncover more about the Z'nkar's last efforts and the identity of their mysterious aggressors."
+ SCFE_ZNKAR_SECRETS: "Delve into the Secrets of the Z'nkar"
+ SCFE_ZNKAR_SECRETS_DESC: "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the Z'nkar to our own."

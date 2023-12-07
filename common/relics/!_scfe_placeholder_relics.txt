@@ -1,9 +1,0 @@
-# Irony this is a placeholder file please ignore it
-r_aspmod_geocentric_device = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_aspmod_parasite_machine = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_aspmod_parasite_machine_2 = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_aspmod_the_replicator = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_pspmod_sless_gene_template = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_pspmod_diary_of_innovo = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_pspmod_astanine_last_projector = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
-r_memorex = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }

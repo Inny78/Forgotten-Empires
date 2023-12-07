@@ -378,4 +378,41 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_evt_giant_tree"
+		texturefile = "gfx/event_pictures/scfe_giant_tree.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_huge_shoals"
+		texturefile = "gfx/event_pictures/scfe_huge_shoals.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_purple_grass"
+		texturefile = "gfx/event_pictures/scfe_purple_grass.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_quantum_link"
+		texturefile = "gfx/event_pictures/scfe_quantum_link.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_beetle_swarm"
+		texturefile = "gfx/event_pictures/scfe_beetle_swarm.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	# Precursor Story Pack
+	spriteType = {
+		name = "GFX_evt_scfe_coprean_constitution_site_1"
+		texturefile = "gfx/event_pictures/scfe_coprean_constitution_site_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
 }

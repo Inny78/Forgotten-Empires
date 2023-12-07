@@ -26,7 +26,7 @@ ship_event = {
 				limit = { scfe_is_nuked = yes has_anomaly = no }
 				set_planet_entity = {
 					picture = pc_nuked_colorful
-					entity = asp_color_nuked_planet_01_entity
+					entity = scfe_color_nuked_planet_01_entity
 				}
 				# Protection flags
 				set_planet_flag = cant_terraform_planet
