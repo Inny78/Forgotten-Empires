@@ -515,3 +515,7 @@
  SCFE_ASTANINE_HOLOGRAM_DESC: "Adapted for installation on ships, these projectors can create precise decoys mirroring friendly vessels. This results in enemy fire being misdirected towards these illusions, thus enhancing the survival chances of our actual fleet."
  tech_scfe_astanine_hologram: "$SCFE_ASTANINE_HOLOGRAM$"
  tech_scfe_astanine_hologram_desc: "$SCFE_ASTANINE_HOLOGRAM_DESC$"
+
+ # Added post 3.10.3
+ scfe_coprean_fake_terraforming: "Fake Terraforming"
+ scfe_coprean_fake_terraforming_desc: "Every plant on the planet is an artificial construct. Exotic trees, mountains adorned with autumn hues, swaying flowers, and myriad unnamed weeds - each is a meticulously crafted plastic replica, coated for preservation."

@@ -137,15 +137,19 @@ fleet_event = {
         name = DIG
         small_artifact_reward = yes
         from.planet = {
-            change_pc = pc_continental
+            change_pc = pc_barren
+            set_planet_entity = {
+                entity = continental_planet_01_entity
+            }
             hidden_effect = {
                 if = {
                     limit = { planet_size > 25 }
                     set_planet_size = 25
                 }
-                reset_planet = yes
+                clear_planet_modifiers = yes
+                clear_deposits = yes
             }
-            add_modifier = { modifier = lush_planet days = -1 }
+            add_modifier = { modifier = scfe_coprean_fake_terraforming days = -1 }
         }
     }
 }

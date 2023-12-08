@@ -191,3 +191,7 @@ mod_decision_scfe_astanine_last_projector_gestalt = {
 mod_scfe_precursor_astanine_secrets = {
 	all_technology_research_speed = 0.2
 }
+scfe_coprean_fake_terraforming = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+	icon_frame = 4
+}

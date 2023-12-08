@@ -104,3 +104,7 @@
  scfe_beetleswarm.1.desc: "After concluding their field study of the beetle, our researchers have made a fascinating discovery: the insect, now termed the Zrogate Beetle, possesses psychic abilities. It can extend its sensory perception far beyond the physical realm. Moreover, due to its unique biological composition, the Zrogate Beetle can be seamlessly integrated into our existing sensor systems with appropriate training."
  scfe_beetleswarm.1.a: "Let them watch then, and let us learn."
  scfe_beetleswarm.1.b: "A gift from the divine for sure."
+
+ # Added post 3.10.3
+ scfe_coprean_fake_terraforming: "Fake Terraforming"
+ scfe_coprean_fake_terraforming_desc: "Every plant on the planet is an artificial construct. Exotic trees, mountains adorned with autumn hues, swaying flowers, and myriad unnamed weeds - each is a meticulously crafted plastic replica, coated for preservation."

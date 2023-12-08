@@ -514,3 +514,7 @@
  SCFE_ASTANINE_HOLOGRAM_DESC:0 "함선에 장착하기 위해 개량된 이 영사기는 아군 함선과 똑같은 모습의 소형 디코이를 만들어 조종할 수 있습니다. 결과적으로 적함의 화력 낭비를 유도해 아군 함선들의 생존성을 늘립니다."
  tech_scfe_astanine_hologram:0 "$SCFE_ASTANINE_HOLOGRAM$"
  tech_scfe_astanine_hologram_desc:0 "$SCFE_ASTANINE_HOLOGRAM_DESC$"
+
+ # Added post 3.10.3
+ scfe_coprean_fake_terraforming: "$scfe_coprean_constitution.5.name$"
+ scfe_coprean_fake_terraforming_desc: "Every plant on the planet is an artificial construct. Exotic trees, mountains adorned with autumn hues, swaying flowers, and myriad unnamed weeds - each is a meticulously crafted plastic replica, coated for preservation."

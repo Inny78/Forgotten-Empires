@@ -426,7 +426,7 @@ country_event = {
                         }
                     }
                     change_pc = pc_nuked
-                    change_planet_size = 14
+                    set_planet_size = 14
                     clear_planet_modifiers = yes
                     clear_deposits = yes
                     enable_special_project = {
