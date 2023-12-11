@@ -544,6 +544,7 @@ country_event = {
     option = {
         name = scfe_coprean_constitution.16.c
         trigger = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+        set_country_flag = scfe_innovo
         remove_modifier = mod_scfe_precursor_coprean_secrets
         hidden_effect = {
             if = {

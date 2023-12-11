@@ -185,6 +185,10 @@ building_woorskyr_growth_monitoring_center = {
         planet_orbital_bombardment_damage = -0.1
     }
 
+    country_modifier = {
+        category_biology_research_speed_mult = 0.1
+    }
+
     prerequisites = {
         "tech_woorskyr_growth_monitoring_center"
     }
