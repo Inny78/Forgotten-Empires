@@ -13,7 +13,6 @@ event = {
 			limit = {
 				# Check if precursor menu is not active
 				has_PreSelect_active = no
-				NOT = { has_origin = origin_incohesive }
 			}
 			event_target:global_event_country = {
 				country_event = { id = scfe_game_start.2 days = 10 }
@@ -44,6 +43,7 @@ country_event = {
 					has_origin = origin_fear_of_the_dark
 					has_origin = origin_separatists
 					has_origin = origin_lost_colony
+					has_origin = origin_incohesive
 				}
 			}
 			if = {
@@ -85,6 +85,7 @@ country_event = {
 			random_playable_country = {
 				limit = {
 					is_ai = no
+					NOT = { has_origin = origin_incohesive }
 					NOR = {
 						has_country_flag = scfe_precursor_set_sless
 						has_country_flag = scfe_precursor_set_coprean
