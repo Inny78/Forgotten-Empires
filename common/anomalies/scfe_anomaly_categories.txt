@@ -272,10 +272,6 @@ scfe_xenograss_world_category = {
 			add = 100
 			has_planet_flag = pf_xenograss_world
 		}
-		modifier = {
-			factor = 0
-			owner = { has_country_flag = cf_xenograss_found }
-		}
 	}
 	on_success = scfe_xenograss.1
 }
