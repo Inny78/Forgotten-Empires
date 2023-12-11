@@ -298,7 +298,7 @@ fleet_event = {
         }
         custom_tooltip = scfe_coprean_constitution.8.a.tooltip
         hidden_effect = {
-            from.planet = { set_planet_flag = SCFE_coprean_constitution_site_3_locked }
+            from.planet = { set_planet_flag = scfe_coprean_constitution_site_3_locked }
         }
     }
 }
@@ -819,7 +819,9 @@ ship_event = {
         name = scfe_coprean_constitution.17.a
         custom_tooltip = scfe_coprean_constitution.17.a.tooltip
         hidden_effect = {
-            fromfrom = { remove_planet_flag = SCFE_coprean_constitution_site_3_locked }
+            fromfrom = {
+                remove_planet_flag = scfe_coprean_constitution_site_3_locked
+            }
         }
     }
 }
