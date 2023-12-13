@@ -1,13 +1,13 @@
 ﻿l_russian:
 
-# Scopes: Root = ship, From = planet
+ # Scopes: Root = ship, From = planet
 
-# Gigas compatibility
+ # Gigas compatibility
  origin_incohesive: "Away on an Island"
  origin_incohesive_desc: "This civilisation developed entirely on a bleak lifeless world, in a space far away from space."
 
-# Moved content
-# Galactic Wanderers
+ # Moved content
+ # Galactic Wanderers
  scfe_galactic_wanderers.2.name: "Lunar Monument"
  scfe_galactic_wanderers.2.desc: "A remote moon on the outskirts of your empire has suddenly gained the attention of your scientists. A peculiar anomaly detection has revealed the existence of an isolated monument, untouched by time, sitting amidst the desolation of the lunar landscape. Your science team, intrigued by this discovery, has decided to mount an expedition to investigate this enigmatic structure."
  SCFE_MONUMENT_PROJECT: "Lunar Monument Investigation"
@@ -22,7 +22,7 @@
  scfe_galactic_wanderers.5.desc: "In the uncharted depths of space, we stumbled upon a monument, an ancient testament to the ambitions and dreams of a civilization that once roamed the stars. This monument is a beacon of hope, a reminder that even in the vastness of the universe, our potential knows no bounds."
  scfe_galactic_wanderers.6.desc: "The inscriptions on this monument recount the trials and triumphs of this ancient civilization. Their message is clear: \n\n§l"To those who follow in our cosmic footsteps, know that the stars hold infinite wonders. We leave behind this testament of our journey, a monument to remind you that even in the face of the unknown, you can rise to the same heights as we did. Never give up, for the universe is your playground, and your destiny among the stars is boundless.§!\n\nWe believe that the significance of this discovery extends beyond the boundaries of our own civilization. It is a message that resonates with all who aspire to explore, learn, and expand their horizons among the stars."
 
-# Unexpected tower (Farewell Horizontal)
+ # Unexpected tower (Farewell Horizontal)
  scfe_tower_city.1.name: "Giant tower"
  scfe_tower_city.1.desc: "From the depths of the gas giant emerges a colossal cylinder crafted from metal and concrete. What's even more captivating is the city ruins perched atop this towering spire, with villages clinging precariously to its sides. To embark on an expedition into this enigmatic realm, we recognized the need for substantial resources. It was thus decided to establish a base camp within an open expanse of the city, serving as our launching point for exploration."
  # Archaeology site starts here
@@ -40,7 +40,7 @@
  scfe_tower_city_dig.4t: "This ancient building is a feat of engineering that will keep our scientists busy for centuries."
  scfe_tower_city_dig.4b: "We're sitting on a huge pile of alloys."
 
-# The Belltower
+ # The Belltower
  scfe_belltower.1.name: "Desert tower"
  scfe_belltower.1.desc: "Landing near the building proved to be more challenging than anticipated, given its location at the heart of an expansive region of shifting sands. The crew resorted to employing the ship's sampling lasers to vitrify a substantial area, creating a suitable landing zone. Regrettably, the building now lies mostly buried beneath the sand, with only its conical peak visible above the surface. §G[Root.GetLeaderName]§! suggests establishing a camp for excavation and exploration of the structure."
  # Archaeology site starts here
@@ -64,9 +64,9 @@
  scfe_belltower.3c.desc: "The communication system we use to contact the rest of the galaxy suddenly activates itself and resonates with an exquisite bell sound, captivating our hive mind for a few precious seconds as it touches the very depths of our soul. Then, as swiftly as it had appeared, it vanishes forever. No recording device could capture a trace of it, leaving it to exist solely in our collective memory."
  scfe_belltower.4a.desc: "Every communication device suddenly resonates with an exquisite bell sound, captivating everyone for a few precious seconds as it touches the very depths of our souls. Then, as swiftly as it had appeared, it vanished forever. No recording device could capture a trace of it, leaving it to exist solely in the collective memory of our people."
 
-# 3.10 stuff
+ # 3.10 stuff
 
-# The Reverse Engine
+ # The Reverse Engine
  scfe_reverse_engine.1.name: "A lost civilization"
  scfe_reverse_engine.1.desc: "A closer study of §RINTERFERENCE§! ...it was previously inhabited, but its orbit §RINTERFERENCE§! ...meteors thoroughly devastated its surface. \n\nWe §RINTERFERENCE§! ...in order to start to dig our way to the signal. We're also picking up intense bursts of exotic §RINTERFERENCE§!."
  scfe_reverse_engine.1.a: "Amplify your signal first!"
@@ -98,7 +98,7 @@
  scfe_reverse_engine.dig.4.b: "I feel a weird disconnection with the team."
  scfe_reversia: "Reversia"
 
-# The Failed Hive
+ # The Failed Hive
  scfe_failed_hive.1.name: "War-torn ruins"
  scfe_failed_hive.1.desc: "The remnants of this advanced civilization bear clear indications of a devastating conflict. Widespread and intense battles seem to have engulfed the entire planet, leading §G[Root.GetLeaderName]§! to propose that it was a global civil war. Given the vast expanse of these ruins, [root.leader.getHerHim] recommends setting up a base camp to conduct a thorough exploration."
  scfe_failed_hive.1.t: "We have to make a declaration."
@@ -132,7 +132,7 @@
  scfe_failed_hive_dig.5.b: "Pathetic."
  scfe_failed_hive_dig.5.c: "We could have taught them so much about our unity."
 
-# The Lonely Presence
+ # The Lonely Presence
  scfe_lonely_shroud.2.name: "An Elusive Signal"
  scfe_lonely_shroud.2.desc: "A faint and erratic signal emanates from the planet, eluding our instruments as it shifts rapidly across its surface. To analyze it effectively, we must commit time to track its elusive path."
  SCFE_LONELY_SHROUD_PROJECT: "Tracking the shrouded signal"
@@ -210,7 +210,7 @@
  SCFE_ALSHIGANS_SECRETS: "Delve into the Secrets of the Alshigans"
  SCFE_ALSHIGANS_SECRETS_DESC: "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the Alshigans to our own."
 
-# War-Torn Planet
+ # War-Torn Planet
  scfe_war_torn.1.name: "A war-torn empire"
  scfe_war_torn.1.desc: "Information gleaned from scattered remnants indicates that §Y[From.GetName]§! was formerly the stronghold of a militaristic space empire embroiled in a fierce conflict approximately 700 years ago. The planet's current state starkly portrays the merciless nature of this ancient war. Despite the severe bombardment, our team has observed a nearly intact fortress nestled deep within a mountain and suggests establishing a camp to commence its exploration."
  scfe_war_torn.2.name: "Vault content analyzed"
@@ -240,7 +240,7 @@
  scfe_clone_prowess: "Clone soldiers inspiration"
  scfe_clone_prowess_desc: "The remarkable prowess and expertise exhibited by the ancient clone soldiers have served as an inspiration for our armies to strive for improvement. We have initiated new training programs and are meticulously studying novel strategies to ensure a seamless path to victory over our adversaries."
 
-# The Z'nkar Watchers (Invisible War)
+ # The Z'nkar Watchers (Invisible War)
  scfe_znkar_chain_title: "Precursors - The Z'nkar"
  scfe_znkar_chain_desc: "An ancient civilization has set up an observation post over our homeworld millenia ago. We aim to discover who they were and what was their fate."
  scfe_znkar_artifacts: "Z'nkar Artifacts Recovered"
@@ -264,7 +264,7 @@
  scfe_znkar.5.name: "Ruined Z'nkar planet"
  scfe_znkar.5.desc: "Upon arrival at the designated coordinates, we are met with a stark reality: the planet, once teeming with life, now lies in ruin, its surface scarred by the remnants of a catastrophic war. A thick layer of nuclear winter shrouds the land, and radiation levels are critically high. Our initial scans are underway, seeking any signs of past civilization or clues to the urgent evacuation of the observation station."
  scfe_znkar.6.name: "Z'nkar Site Found"
- scfe_znkar.6.desc: "Our scans have detected a faint but distinct energy signature emanating from a cluster of dilapidated structures. Given the extensive devastation on the planet's surface and the precarious state of these buildings, we have decided to establish a secure base camp equipped with necessary materials for excavation and stabilization"
+ scfe_znkar.6.desc: "Our scans have detected a faint but distinct energy signature emanating from a cluster of dilapidated structures. Given the extensive devastation on the planet's surface and the precarious state of these buildings, we have decided to establish a secure base camp equipped with necessary materials for excavation and stabilization."
  scfe_znkar.7.name: "Z'nkar Moon Base"
  scfe_znkar.7.desc: "Our latest venture on the moon has led us to a once-concealed base, now partially exposed due to an ancient asteroid impact. Thanks to the extensive damage and the long passage of time, the base's defensive systems are no longer operational, allowing us unimpeded access. After navigating through the ravaged corridors, we have successfully breached the computer room. Here lies the heart of the base: intact databanks, which hold the potential to unveil the final strategies and hopes of the Z'nkar civilization. The answers we seek about the final plan of the Z'nkar and the identity of their mysterious enemies may soon be within our grasp."
  scfe_znkar.8.name: "Invisible War"
@@ -295,3 +295,18 @@
  scfe_znkar_dig.4.desc: "The war room's archives have unfolded a harrowing tale of the Z'nkar's downfall. They were blindsided by an unseen foe, possessing cloaking technology far superior to their own. These adversaries struck with lethal precision, crippling the Z'nkar's defenses before disappearing. Anticipating a second, more devastating attack, the Z'nkar initiated a desperate evacuation to save their populace. Meanwhile, the surveillance team retreated to a clandestine base on the moon, possibly as a last stand or to preserve their legacy. Tragically, the evacuation was still underway when an overwhelming enemy fleet returned, raining destruction upon the planet until it was left in ruins. We are now redirecting our exploration to the moon, hoping to uncover more about the Z'nkar's last efforts and the identity of their mysterious aggressors."
  SCFE_ZNKAR_SECRETS: "Delve into the Secrets of the Z'nkar"
  SCFE_ZNKAR_SECRETS_DESC: "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the Z'nkar to our own."
+
+ # Vanishing Act
+ scfe_vanishing_act.1.name: "Initial Assessment Report"
+ scfe_vanishing_act.1.desc: "Upon entering the orbit of §Y[From.GetName]§!, our vessel has identified multiple indicators of an advanced civilization. The presence of numerous artificial satellites and several large space stations in stable orbits is a clear testament to the technological capabilities of the inhabitants. Remarkably, these structures appear intact and functional, but show no sign of activity.\nMoreover, a comprehensive scan of the planet presents a perplexing scenario. Despite the visible urban infrastructure on the surface, including sprawling cities and complex transportation networks, there is a complete absence of any electromagnetic transmissions, typically characteristic of advanced societies. Even more perplexing, our scanners have failed to detect signs of life or any movement on the surface. This eerie silence raises significant questions about the status of the civilization and merits further investigation. We are preparing to initiate a closer reconnaissance mission to gather more data on this unusual and unsettling situation."
+ scfe_vanishing_act_dig: "Vanishing Act"
+ scfe_vanishing_act_dig_desc: "We discovered a world devoid of its inhabitants. What happened here? We must investigate this mystery."
+ scfe_vanishing_act_dig.1.name: "Empty Stations"
+ scfe_vanishing_act_dig.1.desc: "During our exploration of the nearest space station orbiting §Y[From.Planet.GetName]§!, we encountered a series of bewildering discoveries. The station, while structurally intact and fully operational, was completely devoid of inhabitants. It appears as though the crew and occupants departed abruptly, or more unsettlingly, vanished, just prior to our arrival. Personal belongings, operational consoles, and life support systems are all in a state suggesting a sudden, unanticipated exodus.\nThe most alarming discovery, however, pertains to the docked spacecrafts. Every docking bay is occupied, indicating a mass return of all ships to the station. Analysis of the vessels' black boxes reveals that each ship's automated systems were triggered to execute a standard emergency protocol: return and dock at the nearest station in the event of pilot unresponsiveness. This protocol activation suggests a simultaneous and widespread event affecting all pilots and crew members.\nWe are currently departing the space station to commence a direct exploration of the planet's surface, specifically targeting urban centers for further investigation. The nature of this phenomenon remains deeply perplexing, with no immediate explanation for the sudden disappearance of an entire civilization. Caution and thorough analysis will be our guiding principles as we proceed."
+ scfe_vanishing_act_dig.2.name: "The City of a Thousand Songs"
+ scfe_vanishing_act_dig.2.desc: "Upon landing near a major urban center on §Y[From.Planet.GetName]§!, we have commenced an extensive ground exploration. The city is a vast ghost town, mirroring the unsettling abandonment witnessed on the space station, but on a far grander scale. Streets are lined with stationary vehicles, and dwellings show signs of abrupt desertion. The infrastructure and technology level of the Vaanclars, as we have come to identify the planet's inhabitants, is impressively advanced, yet eerily silent.\nOur translators have successfully deciphered the Vaanclar language, allowing us access to their digital archives. Interestingly, the Vaanclars did not rely on visual perception; instead, they developed a sophisticated form of echolocation, using a symphony of sounds to navigate and interact with their environment. This unique sensory approach means there are no visual records or images of the Vaanclars or their disappearance. We have located what appears to be a major archive facility, potentially housing extensive historical and scientific data. We are preparing to enter this archive with the hope of uncovering more information about the Vaanclar civilization and the circumstances surrounding their mysterious vanishing."
+ scfe_vanishing_act_dig.3.name: "Investigation at the Vaanclar Archive"
+ scfe_vanishing_act_dig.3.desc: "Our investigation within the Vaanclar archive has provided crucial insights, albeit shrouded in the mystery of this civilization's sensory perception. The archives, meticulously maintained and remarkably comprehensive, offer a wealth of knowledge, although much of it is attuned to sensory experiences alien to us. Nonetheless, our technology has allowed us to decode the basic content of their records.\nThe most significant discovery pertains to a recent and monumental scientific endeavor described as §Hlistening to a greater chant§!. This phrase is associated to an experiment conducted at a primary research center.\nIt seems that the entire Vaanclar population was engrossed with this project. The records abruptly end following the initiation of this experiment, with no further updates or outcomes documented. This sudden cessation of records coincides with the timeline of their disappearance. We are now en route to the specified research center in hopes of uncovering more concrete information regarding this experiment and its potential consequences."
+ scfe_vanishing_act_dig.4.name: "The Greater Chant"
+ scfe_vanishing_act_dig.4.desc: "Our exploration of the Vaanclar Research Center has led us to a groundbreaking discovery. The facility, a testament to the Vaanclars' mastery of sonic sciences, was primarily focused on harnessing harmonics to potentially breach the boundaries of our known reality. The center's extensive records, still accessible through their operational systems, detail an ambitious and unprecedented experiment: to use a chorus of psionically gifted individuals to emit a chant capable of piercing through to higher dimensions.\nUpon successfully unlocking the central chamber of the research center, we encountered a phenomenon beyond our current scientific understanding. Inside an isolated vault, we were met with an overwhelming and inexplicable sound – a harmonious choir that seemed to consist of billions of voices, and a tear in the fabric of reality at the heart of this chamber. However, as we delved deeper, the tear began to show signs of instability, compelling us to evacuate the area swiftly to ensure our safety.\nThe most haunting aspect of this encounter, as we ran to our ship, was the realization that the voices comprising this otherworldly chorus were unmistakably Vaanclar - and they came from beyond the rift."
+ scfe_vanishing_act_dig.4.a: "Ominous."

@@ -195,3 +195,13 @@ scfe_coprean_fake_terraforming = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
 	icon_frame = 4
 }
+ziaskehorn_relic_active = {
+	army_damage_mult = 1.0
+	army_morale_damage_mult = 1.0
+	army_collateral_damage_mult = 0.35
+}
+scfe_embers_of_ziaskehorn = {
+	planet_army_build_speed_mult = -0.1
+	army_morale = -0.1
+	icon_frame = 3
+}

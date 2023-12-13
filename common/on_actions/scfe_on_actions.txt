@@ -86,5 +86,6 @@ on_survey_planet = {
 	events = {
 		scfe_etc.2
 		scfe_etc.3
+		scfe_ziaskehorn.1
 	}
 }

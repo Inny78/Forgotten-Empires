@@ -1,13 +1,13 @@
 ﻿l_korean:
 
-# Scopes: Root = ship, From = planet
+ # Scopes: Root = ship, From = planet
 
-# Gigas compatibility
+ # Gigas compatibility
  origin_incohesive: "Away on an Island"
  origin_incohesive_desc: "This civilisation developed entirely on a bleak lifeless world, in a space far away from space."
 
-# Moved content
-# Galactic Wanderers
+ # Moved content
+ # Galactic Wanderers
  scfe_galactic_wanderers.2.name: "Lunar Monument"
  scfe_galactic_wanderers.2.desc: "A remote moon on the outskirts of your empire has suddenly gained the attention of your scientists. A peculiar anomaly detection has revealed the existence of an isolated monument, untouched by time, sitting amidst the desolation of the lunar landscape. Your science team, intrigued by this discovery, has decided to mount an expedition to investigate this enigmatic structure."
  SCFE_MONUMENT_PROJECT: "Lunar Monument Investigation"
@@ -22,7 +22,7 @@
  scfe_galactic_wanderers.5.desc: "In the uncharted depths of space, we stumbled upon a monument, an ancient testament to the ambitions and dreams of a civilization that once roamed the stars. This monument is a beacon of hope, a reminder that even in the vastness of the universe, our potential knows no bounds."
  scfe_galactic_wanderers.6.desc: "The inscriptions on this monument recount the trials and triumphs of this ancient civilization. Their message is clear: \n\n§l"To those who follow in our cosmic footsteps, know that the stars hold infinite wonders. We leave behind this testament of our journey, a monument to remind you that even in the face of the unknown, you can rise to the same heights as we did. Never give up, for the universe is your playground, and your destiny among the stars is boundless.§!\n\nWe believe that the significance of this discovery extends beyond the boundaries of our own civilization. It is a message that resonates with all who aspire to explore, learn, and expand their horizons among the stars."
 
-# Unexpected tower (Farewell Horizontal)
+ # Unexpected tower (Farewell Horizontal)
  scfe_tower_city.1.name: "Giant tower"
  scfe_tower_city.1.desc: "From the depths of the gas giant emerges a colossal cylinder crafted from metal and concrete. What's even more captivating is the city ruins perched atop this towering spire, with villages clinging precariously to its sides. To embark on an expedition into this enigmatic realm, we recognized the need for substantial resources. It was thus decided to establish a base camp within an open expanse of the city, serving as our launching point for exploration."
  # Archaeology site starts here
@@ -40,7 +40,7 @@
  scfe_tower_city_dig.4t: "This ancient building is a feat of engineering that will keep our scientists busy for centuries."
  scfe_tower_city_dig.4b: "We're sitting on a huge pile of alloys."
 
-# The Belltower
+ # The Belltower
  scfe_belltower.1.name: "Desert tower"
  scfe_belltower.1.desc: "Landing near the building proved to be more challenging than anticipated, given its location at the heart of an expansive region of shifting sands. The crew resorted to employing the ship's sampling lasers to vitrify a substantial area, creating a suitable landing zone. Regrettably, the building now lies mostly buried beneath the sand, with only its conical peak visible above the surface. §G[Root.GetLeaderName]§! suggests establishing a camp for excavation and exploration of the structure."
  # Archaeology site starts here
@@ -64,9 +64,9 @@
  scfe_belltower.3c.desc: "The communication system we use to contact the rest of the galaxy suddenly activates itself and resonates with an exquisite bell sound, captivating our hive mind for a few precious seconds as it touches the very depths of our soul. Then, as swiftly as it had appeared, it vanishes forever. No recording device could capture a trace of it, leaving it to exist solely in our collective memory."
  scfe_belltower.4a.desc: "Every communication device suddenly resonates with an exquisite bell sound, captivating everyone for a few precious seconds as it touches the very depths of our souls. Then, as swiftly as it had appeared, it vanished forever. No recording device could capture a trace of it, leaving it to exist solely in the collective memory of our people."
 
-# 3.10 stuff
+ # 3.10 stuff
 
-# The Reverse Engine
+ # The Reverse Engine
  scfe_reverse_engine.1.name: "A lost civilization"
  scfe_reverse_engine.1.desc: "A closer study of §RINTERFERENCE§! ...it was previously inhabited, but its orbit §RINTERFERENCE§! ...meteors thoroughly devastated its surface. \n\nWe §RINTERFERENCE§! ...in order to start to dig our way to the signal. We're also picking up intense bursts of exotic §RINTERFERENCE§!."
  scfe_reverse_engine.1.a: "Amplify your signal first!"
@@ -98,7 +98,7 @@
  scfe_reverse_engine.dig.4.b: "I feel a weird disconnection with the team."
  scfe_reversia: "Reversia"
 
-# The Failed Hive
+ # The Failed Hive
  scfe_failed_hive.1.name: "War-torn ruins"
  scfe_failed_hive.1.desc: "The remnants of this advanced civilization bear clear indications of a devastating conflict. Widespread and intense battles seem to have engulfed the entire planet, leading §G[Root.GetLeaderName]§! to propose that it was a global civil war. Given the vast expanse of these ruins, [root.leader.getHerHim] recommends setting up a base camp to conduct a thorough exploration."
  scfe_failed_hive.1.t: "We have to make a declaration."
@@ -132,7 +132,7 @@
  scfe_failed_hive_dig.5.b: "Pathetic."
  scfe_failed_hive_dig.5.c: "We could have taught them so much about our unity."
 
-# The Lonely Presence
+ # The Lonely Presence
  scfe_lonely_shroud.2.name: "An Elusive Signal"
  scfe_lonely_shroud.2.desc: "A faint and erratic signal emanates from the planet, eluding our instruments as it shifts rapidly across its surface. To analyze it effectively, we must commit time to track its elusive path."
  SCFE_LONELY_SHROUD_PROJECT: "Tracking the shrouded signal"
@@ -210,7 +210,7 @@
  SCFE_ALSHIGANS_SECRETS: "Delve into the Secrets of the Alshigans"
  SCFE_ALSHIGANS_SECRETS_DESC: "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the Alshigans to our own."
 
-# War-Torn Planet
+ # War-Torn Planet
  scfe_war_torn.1.name: "A war-torn empire"
  scfe_war_torn.1.desc: "Information gleaned from scattered remnants indicates that §Y[From.GetName]§! was formerly the stronghold of a militaristic space empire embroiled in a fierce conflict approximately 700 years ago. The planet's current state starkly portrays the merciless nature of this ancient war. Despite the severe bombardment, our team has observed a nearly intact fortress nestled deep within a mountain and suggests establishing a camp to commence its exploration."
  scfe_war_torn.2.name: "Vault content analyzed"
@@ -240,7 +240,7 @@
  scfe_clone_prowess: "Clone soldiers inspiration"
  scfe_clone_prowess_desc: "The remarkable prowess and expertise exhibited by the ancient clone soldiers have served as an inspiration for our armies to strive for improvement. We have initiated new training programs and are meticulously studying novel strategies to ensure a seamless path to victory over our adversaries."
 
-# The Z'nkar Watchers (Invisible War)
+ # The Z'nkar Watchers (Invisible War)
  scfe_znkar_chain_title: "Precursors - The Z'nkar"
  scfe_znkar_chain_desc: "An ancient civilization has set up an observation post over our homeworld millenia ago. We aim to discover who they were and what was their fate."
  scfe_znkar_artifacts: "Z'nkar Artifacts Recovered"
@@ -264,7 +264,7 @@
  scfe_znkar.5.name: "Ruined Z'nkar planet"
  scfe_znkar.5.desc: "Upon arrival at the designated coordinates, we are met with a stark reality: the planet, once teeming with life, now lies in ruin, its surface scarred by the remnants of a catastrophic war. A thick layer of nuclear winter shrouds the land, and radiation levels are critically high. Our initial scans are underway, seeking any signs of past civilization or clues to the urgent evacuation of the observation station."
  scfe_znkar.6.name: "Z'nkar Site Found"
- scfe_znkar.6.desc: "Our scans have detected a faint but distinct energy signature emanating from a cluster of dilapidated structures. Given the extensive devastation on the planet's surface and the precarious state of these buildings, we have decided to establish a secure base camp equipped with necessary materials for excavation and stabilization"
+ scfe_znkar.6.desc: "Our scans have detected a faint but distinct energy signature emanating from a cluster of dilapidated structures. Given the extensive devastation on the planet's surface and the precarious state of these buildings, we have decided to establish a secure base camp equipped with necessary materials for excavation and stabilization."
  scfe_znkar.7.name: "Z'nkar Moon Base"
  scfe_znkar.7.desc: "Our latest venture on the moon has led us to a once-concealed base, now partially exposed due to an ancient asteroid impact. Thanks to the extensive damage and the long passage of time, the base's defensive systems are no longer operational, allowing us unimpeded access. After navigating through the ravaged corridors, we have successfully breached the computer room. Here lies the heart of the base: intact databanks, which hold the potential to unveil the final strategies and hopes of the Z'nkar civilization. The answers we seek about the final plan of the Z'nkar and the identity of their mysterious enemies may soon be within our grasp."
  scfe_znkar.8.name: "Invisible War"
@@ -295,3 +295,53 @@
  scfe_znkar_dig.4.desc: "The war room's archives have unfolded a harrowing tale of the Z'nkar's downfall. They were blindsided by an unseen foe, possessing cloaking technology far superior to their own. These adversaries struck with lethal precision, crippling the Z'nkar's defenses before disappearing. Anticipating a second, more devastating attack, the Z'nkar initiated a desperate evacuation to save their populace. Meanwhile, the surveillance team retreated to a clandestine base on the moon, possibly as a last stand or to preserve their legacy. Tragically, the evacuation was still underway when an overwhelming enemy fleet returned, raining destruction upon the planet until it was left in ruins. We are now redirecting our exploration to the moon, hoping to uncover more about the Z'nkar's last efforts and the identity of their mysterious aggressors."
  SCFE_ZNKAR_SECRETS: "Delve into the Secrets of the Z'nkar"
  SCFE_ZNKAR_SECRETS_DESC: "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the Z'nkar to our own."
+
+ # Vanishing Act
+ scfe_vanishing_act.1.name: "Initial Assessment Report"
+ scfe_vanishing_act.1.desc: "Upon entering the orbit of §Y[From.GetName]§!, our vessel has identified multiple indicators of an advanced civilization. The presence of numerous artificial satellites and several large space stations in stable orbits is a clear testament to the technological capabilities of the inhabitants. Remarkably, these structures appear intact and functional, but show no sign of activity.\nMoreover, a comprehensive scan of the planet presents a perplexing scenario. Despite the visible urban infrastructure on the surface, including sprawling cities and complex transportation networks, there is a complete absence of any electromagnetic transmissions, typically characteristic of advanced societies. Even more perplexing, our scanners have failed to detect signs of life or any movement on the surface. This eerie silence raises significant questions about the status of the civilization and merits further investigation. We are preparing to initiate a closer reconnaissance mission to gather more data on this unusual and unsettling situation."
+ scfe_vanishing_act_dig: "Vanishing Act"
+ scfe_vanishing_act_dig_desc: "We discovered a world devoid of its inhabitants. What happened here? We must investigate this mystery."
+ scfe_vanishing_act_dig.1.name: "Empty Stations"
+ scfe_vanishing_act_dig.1.desc: "During our exploration of the nearest space station orbiting §Y[From.Planet.GetName]§!, we encountered a series of bewildering discoveries. The station, while structurally intact and fully operational, was completely devoid of inhabitants. It appears as though the crew and occupants departed abruptly, or more unsettlingly, vanished, just prior to our arrival. Personal belongings, operational consoles, and life support systems are all in a state suggesting a sudden, unanticipated exodus.\nThe most alarming discovery, however, pertains to the docked spacecrafts. Every docking bay is occupied, indicating a mass return of all ships to the station. Analysis of the vessels' black boxes reveals that each ship's automated systems were triggered to execute a standard emergency protocol: return and dock at the nearest station in the event of pilot unresponsiveness. This protocol activation suggests a simultaneous and widespread event affecting all pilots and crew members.\nWe are currently departing the space station to commence a direct exploration of the planet's surface, specifically targeting urban centers for further investigation. The nature of this phenomenon remains deeply perplexing, with no immediate explanation for the sudden disappearance of an entire civilization. Caution and thorough analysis will be our guiding principles as we proceed."
+ scfe_vanishing_act_dig.2.name: "The City of a Thousand Songs"
+ scfe_vanishing_act_dig.2.desc: "Upon landing near a major urban center on §Y[From.Planet.GetName]§!, we have commenced an extensive ground exploration. The city is a vast ghost town, mirroring the unsettling abandonment witnessed on the space station, but on a far grander scale. Streets are lined with stationary vehicles, and dwellings show signs of abrupt desertion. The infrastructure and technology level of the Vaanclars, as we have come to identify the planet's inhabitants, is impressively advanced, yet eerily silent.\nOur translators have successfully deciphered the Vaanclar language, allowing us access to their digital archives. Interestingly, the Vaanclars did not rely on visual perception; instead, they developed a sophisticated form of echolocation, using a symphony of sounds to navigate and interact with their environment. This unique sensory approach means there are no visual records or images of the Vaanclars or their disappearance. We have located what appears to be a major archive facility, potentially housing extensive historical and scientific data. We are preparing to enter this archive with the hope of uncovering more information about the Vaanclar civilization and the circumstances surrounding their mysterious vanishing."
+ scfe_vanishing_act_dig.3.name: "Investigation at the Vaanclar Archive"
+ scfe_vanishing_act_dig.3.desc: "Our investigation within the Vaanclar archive has provided crucial insights, albeit shrouded in the mystery of this civilization's sensory perception. The archives, meticulously maintained and remarkably comprehensive, offer a wealth of knowledge, although much of it is attuned to sensory experiences alien to us. Nonetheless, our technology has allowed us to decode the basic content of their records.\nThe most significant discovery pertains to a recent and monumental scientific endeavor described as §Hlistening to a greater chant§!. This phrase is associated to an experiment conducted at a primary research center.\nIt seems that the entire Vaanclar population was engrossed with this project. The records abruptly end following the initiation of this experiment, with no further updates or outcomes documented. This sudden cessation of records coincides with the timeline of their disappearance. We are now en route to the specified research center in hopes of uncovering more concrete information regarding this experiment and its potential consequences."
+ scfe_vanishing_act_dig.4.name: "The Greater Chant"
+ scfe_vanishing_act_dig.4.desc: "Our exploration of the Vaanclar Research Center has led us to a groundbreaking discovery. The facility, a testament to the Vaanclars' mastery of sonic sciences, was primarily focused on harnessing harmonics to potentially breach the boundaries of our known reality. The center's extensive records, still accessible through their operational systems, detail an ambitious and unprecedented experiment: to use a chorus of psionically gifted individuals to emit a chant capable of piercing through to higher dimensions.\nUpon successfully unlocking the central chamber of the research center, we encountered a phenomenon beyond our current scientific understanding. Inside an isolated vault, we were met with an overwhelming and inexplicable sound – a harmonious choir that seemed to consist of billions of voices, and a tear in the fabric of reality at the heart of this chamber. However, as we delved deeper, the tear began to show signs of instability, compelling us to evacuate the area swiftly to ensure our safety.\nThe most haunting aspect of this encounter, as we ran to our ship, was the realization that the voices comprising this otherworldly chorus were unmistakably Vaanclar - and they came from beyond the rift."
+ scfe_vanishing_act_dig.4.a: "Ominous."
+
+ # Ziaskehorn: an Ancient Relics Story
+
+ r_ziaskehorn_fire: "Ziaskehorn Flame"
+ r_ziaskehorn_fire_desc: "Excerpt, Prophecies of Zia (Pehizidii Tablet of Origins, 1st Edition, Unpublished):\n\nZiaskehorn Flame (Section 12)\nGiving kindling to the Flame and letting the Fires of Ziaskehorn burn uncontrollably would wipe out all life on the planet and plunge it into a tectonically unstable death as lava pours out of the oceans and fire rains from the skies. The Flame can, however, be controlled and mastered by an individual, unless that individual (FRAGMENT DESTROYED), granting unimaginable power. Afterward, however, the (FRAGMENT DESTROYED)."
+ ziaskehorn_relic_active: "Burning fires of Ziaskehorn"
+ ziaskehorn.01.name: "Igniting the Flame"
+ ziaskehorn.01.desc: "As the Flame clung to its newly found kindling, it quickly spread into the Fires of Ziaskehorn. Almost immediately, our generals felt the heat of the newly living Fires spreading through their bodies. The aftermath is an array of unimaginably powerful armies, enhanced by the Fires of Ziaskehorn, able to use its power in their combats."
+ ziaskehorn.02.name: "Too Much To Handle"
+ ziaskehorn.02.desc: "As the power bestowed by the Ziaskehorn Flame left our armies, it left with more than it came with. All of our generals have perished, consumed by the Fires of Ziaskehorn. All that is left is simply their ashes, strewn about by the vivacity of the power that they once yielded."
+ ziaskehorn.02.tooltip: "All of our generals perish."
+ ziaskehorn_digsite: "The Fires of Ziaskehorn"
+ ziaskehorn_digsite_desc: "The surface of [From.Planet.GetName] was once inhabited, but today it is nothing more than an inhospitable, volcanic rock. The pre-FTL civilization that once lived on the planet was advanced enough to create and send a few satellites around their home.\n\nThere is, however, no sign of them. All that remains are large cities slowly melting away. Perhaps there is something to be learned from these past occupants?"
+ ziaskehorn.99.name: "Life Under Lava"
+ ziaskehorn.99.desc: "Preliminary surveys of [FROMFROM.Planet.GetName] uncovered significant evidence that the planet was once inhabited. Large urban centers rest torn apart and overran by flowing lava, significantly damaged and slowly melting. Evidence of atomic-level technology was also found, indicating a fairly advanced pre-FTL civilization. Our scientific community urges us that the history of this ancient species be dug up, as basic surface scans reveal little."
+ ziaskehorn.11.name: "A Fiery End"
+ ziaskehorn.11.desc: "Preliminary investigations down on [From.Planet.GetName] indicate that the current volcanic state of the planet is due to a cataclysmic event that occurred some 311,000 years ago. The archeological team was able to decipher the language and communications technology used by the inhabitants.\n\nThe last communications throughout the planet revolve around a single word: Ziaskehorn.\n\nAt this point, it is still unclear why this event occurred. It is also ever-more intriguing that some of the communications decoded by Science Officer [Root.GetLeaderName]'s team talk of Ziaskehorn before its occurrence, leading to the theory that this event may have been a long time coming."
+ ziaskehorn.11.a: "See what else you can find."
+ ziaskehorn.12.name: "War Never Changes"
+ ziaskehorn.12.desc: "Delving deeper into the scorched remains of [From.Planet.GetName], the dig team has recovered fragments of the recent history of the inhabitants of the planet, now known as the Phezidii. For the better part of one-hundred years, four Phezidiian countries were locked in a state of indiscriminate total war among each other.\n\nIn response to the technological progression into the Atomic Age of one of the countries, the Aztiel Commonwealth, their main rival, the Nipa, sought something of equal power to maintain their fighting chance in the century-long conflict. Apparently the Nipa found their new weapon in ancient Phezidiian religious texts. The Fires of Ziaskehorn.\n\nScience Officer [Root.GetLeaderName] theorizes that the Nippa may have unleashed an ancient weapon hidden in the roots of [From.Planet.GetName]."
+ ziaskehorn.12.a: "Keep digging!"
+ ziaskehorn.13.name: "Ancient Gods"
+ ziaskehorn.13.desc: "Having been able to uncover some of the ancient texts hidden away in the remnants of [From.Planet.GetName] describing the Fires of Ziaskehorn, we have found new information on the entire scenario.\n\nThe Fires of Ziaskehorn are a two-thousand year old prophecy depicting the end of the world, first seen in early Phezidiian writing and religion. The Fires would ignite after an individual had received the Ziaskehorn Flame (or ember, there was much debate back then) from the ancient Phezidiian goddess of fire, Zia. Apparently Zia would have given the flame to an individual in the hopes of ending a great conflict, which early Phezidiian monks knew not of.\n\nKeeping with the prophecy, that individual had, since the moment they were born, always been destined to receive the Flame from Zia and unleash Ziaskehorn."
+ ziaskehorn.13.a: "Disconcerting."
+ ziaskehorn.14.name: "The Ziaskehorn Flame"
+ ziaskehorn.14.desc: "As Science Officer [Root.GetLeaderName] has suspected, the Nippa, in the hopes of winning the ever-lasting battle against the Aztiel Commonwealth searched for the Fires of Ziaskehorn and came across the prophesied event during which the goddess Zia gave the Ziaskehorn Flame away in order to end the war.\n\nUnable to control the power unleashed by the ignition of the Fires of Ziaskehorn, the Fires quickly consumed the entire planet, killing all inhabitants and rendering its surface completely volcanic. The prophecy was concluded. Ziaskehorn had unfolded across the planet.\n\nAlthough many questions are left unanswered; such as whether or not there may one day be life on the surface of [From.Planet.GetName], or who the supposed gods were (as the last traces of Phezidii society had completely abandoned religion during the incessant conflict), one of the questions that was answered was if anything was left of the Ziaskehorn Flame.\n\nOur [Root.Owner.GetArchaeologistPlural] working at a digsite near a large crater on the surface of [From.Planet.GetName] say that they were able to recover what appears to be a supernatural orb. The Ziaskehorn Flame."
+ ziaskehorn.14.a: "Fascinating."
+ ziaskehorn.21.name: "Curse of the Ziaskehorn Flame"
+ ziaskehorn.21.desc: "While excavating the ruins on [From.Planet.GetName], Science Officer §H[Root.GetLeaderName]§! felt a chilling sensation throughout their entire body. Albeit odd on a planet as blazing as is sun, [Root.Leader.GetHeShe] assures us that they are fine. The rest of the digsite team, however, disagrees. Our Science Officer is nothing more than a shadow of the great leader they once were, slowly withering away."
+ ziaskehorn.22.name: "Volcanic Eruption"
+ ziaskehorn.22.desc: "Many [Root.Owner.GetArchaeologistPlural] were recently killed when a volcano erupted near the digsite on [From.Planet.GetName]. §H[Root.GetLeaderName]§! emerged unscathed from the aftermath, but work at the site has been momentarily halted as the expedition teams attempt to re-establish order and cleanup the remaining debris."
+ ziaskehorn.23.name: "Hot Room"
+ ziaskehorn.23.desc: "Our [Root.Owner.GetArchaeologistPlural] working on [From.Planet.GetName] have stumbled into a building with thick, hot fog densly clouding every room within it. It's unclear whether or not this is due to the planet's volcanic surface or past events. Nevertheless, Science Officer [Root.GetLeaderName] assures us this will help the team with uncovering the past secrets of [From.Planet.GetName]."
+ Ziaskehorn.24.name: "Magma Overflow"
+ ziaskehorn.24.desc: "Our archaeological expedition on [From.Planet.GetName] has encountered significant difficulties while attempting to dig through some of the urban area taken over by the burning surface of the planet. Science Officer [Root.GetLeaderName] reports that they require some resources and equipment in order to remove a severe overflow of underground magma and continue with the exploration or risk momentarily halting all work at the digsite."
