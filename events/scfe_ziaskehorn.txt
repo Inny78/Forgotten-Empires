@@ -299,29 +299,50 @@ country_event = {
             add_modifier = { modifier = scfe_embers_of_ziaskehorn days = 360 }
             every_owned_leader = {
                 limit = { leader_class = commander }
-                # kill_leader = { class = commander show_notification = yes }
+                # Traits cleanup
                 if = {
-                    limit = {
-                        has_trait = leader_trait_restrained
-                    }
+                    limit = { has_trait = leader_trait_restrained }
                     remove_trait = leader_trait_restrained
                 }
                 else_if = {
-                    limit = {
-                        has_trait = leader_trait_restrained_2
-                    }
+                    limit = { has_trait = leader_trait_restrained_2 }
                     remove_trait = leader_trait_restrained_2
                 }
                 if = {
-                    limit = {
-                        has_trait = leader_trait_victory_or_death
-                    }
+                    limit = { has_trait = leader_trait_nervous }
+                    remove_trait = leader_trait_nervous
+                }
+                else_if = {
+                    limit = { has_trait = leader_trait_nervous_2 }
+                    remove_trait = leader_trait_nervous_2
+                }
+                if = {
+                    limit = { has_trait = leader_trait_lethargic }
+                    remove_trait = leader_trait_lethargic
+                }
+                else_if = {
+                    limit = { has_trait = leader_trait_lethargic_2 }
+                    remove_trait = leader_trait_lethargic_2
+                }
+                # Adding Victory or Death
+                if = {
+                    limit = { has_trait = leader_trait_victory_or_death }
                     remove_trait = leader_trait_victory_or_death
-                    add_trait = leader_trait_victory_or_death_2
+                    add_trait_no_notify = leader_trait_victory_or_death_2
                 }
                 else_if = {
                     limit = { NOT = { has_trait = leader_trait_victory_or_death_2 } }
-                    add_trait = leader_trait_victory_or_death
+                    add_trait_no_notify = leader_trait_victory_or_death
+                }
+                # Adding Reckless
+                if = {
+                    limit = { has_trait = leader_trait_reckless }
+                    remove_trait = leader_trait_reckless
+                    add_trait_no_notify = leader_trait_reckless_2
+                }
+                else_if = {
+                    limit = { NOT = { has_trait = leader_trait_reckless_2 } }
+                    add_trait_no_notify = leader_trait_reckless
                 }
             }
         }

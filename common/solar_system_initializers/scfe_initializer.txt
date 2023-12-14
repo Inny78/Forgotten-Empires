@@ -308,10 +308,10 @@ scfe_astanine_home_system = {
             has_ring = no
 
             init_effect = {
-                set_planet_entity = {
-                    entity = "habitat_phase_03_entity"
-                    graphical_culture = mammalian_01
-                }
+#                set_planet_entity = {
+#                    entity = "orbital_habitat"
+#                    graphical_culture = mammalian_01
+#                }
                 set_name = "Name_new_astania"
                 clear_blockers = yes
                 set_planet_flag = megastructure
@@ -369,6 +369,7 @@ strange_init_01 = {
 
         init_effect = {
             set_planet_flag = pf_koeleothan_world
+            set_planet_flag = wp_pfe_ignore_planet_flag
             add_deposit = d_koeleothan
         }
     }
@@ -410,6 +411,7 @@ strange_init_02 = {
 
         init_effect = {
             set_planet_flag = pf_quantumpearl_world
+            set_planet_flag = wp_pfe_ignore_planet_flag
             add_deposit = d_quantumpearl
         }
     }
@@ -451,6 +453,7 @@ strange_init_03 = {
 
         init_effect = {
             set_planet_flag = pf_woorskyr_world
+            set_planet_flag = wp_pfe_ignore_planet_flag
             add_modifier = {
                 modifier = "scfe_woorskyr_tree_network"
                 days = -1
@@ -496,6 +499,7 @@ strange_init_04 = {
 
         init_effect = {
             set_planet_flag = pf_xenograss_world
+            set_planet_flag = wp_pfe_ignore_planet_flag
             add_deposit = d_xenograss
         }
     }
@@ -537,6 +541,7 @@ strange_init_05 = {
 
         init_effect = {
             set_planet_flag = pf_beetle_world
+            set_planet_flag = wp_pfe_ignore_planet_flag
             add_deposit = d_beetle_swarm
         }
     }
