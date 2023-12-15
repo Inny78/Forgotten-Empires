@@ -290,17 +290,20 @@ country_event = {
         add_relic = r_scfe_znkar_distortion_generator
     }
     after = {
-        if = {
-            limit = {
-                has_first_contact_dlc = yes
-                NOT = { has_technology = tech_cloaking_3 }
+        hidden_effect = {
+            set_country_flag = znkar_precursors_done
+            if = {
+                limit = {
+                    has_first_contact_dlc = yes
+                    NOT = { has_technology = tech_cloaking_3 }
+                }
+                scfe_give_next_cloaking_tech = yes
             }
-            scfe_give_next_cloaking_tech = yes
+            clear_global_event_target = scfe_znkar_nuked
+            clear_global_event_target = scfe_znkar_nuked_moon
+            clear_global_event_target = znkar_start_country
+            clear_global_event_target = znkar_start_planet
         }
-        clear_global_event_target = scfe_znkar_nuked
-        clear_global_event_target = scfe_znkar_nuked_moon
-        clear_global_event_target = znkar_start_country
-        clear_global_event_target = znkar_start_planet
     }
 }
 
@@ -312,7 +315,8 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = INTERESTING
+        name = EXCELLENT
+        add_modifier = { modifier = scfe_znkar_administration_methods days = -1 }
     }
 }
 
@@ -456,6 +460,21 @@ country_event = {
     }
 }
 
+country_event = {
+    id = scfe_znkar.30
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        is_ai = no
+        has_relic = r_scfe_znkar_distortion_generator
+        NOT = { has_country_flag = znkar_precursors_done }
+    }
+
+    immediate = {
+        set_country_flag = znkar_precursors_done
+    }
+}
 
 #################################### DIG SITE ####################################
 

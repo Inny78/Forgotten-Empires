@@ -94,7 +94,7 @@ special_project = {
 }
 
 special_project = {
-	key = "SCFE_ZNKAR_SECRETS"
+	key = "SCFE_PRECURSOR_ZNKAR_SECRETS"
 	cost = @tier1cost3
 	days_to_research = 0
 	tech_department = society_technology

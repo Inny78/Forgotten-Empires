@@ -109,7 +109,7 @@ special_project = {
 }
 
 special_project = {
-	key = "SCFE_ALSHIGANS_SECRETS"
+	key = "SCFE_PRECURSOR_ALSHIGANS_SECRETS"
 	cost = @tier1cost3
 	days_to_research = 0
 	tech_department = society_technology
@@ -122,6 +122,6 @@ special_project = {
 	}
 	
 	on_success = {
-		country_event = { id = scfe_alshigans.11 }
+		country_event = { id = scfe_alshigans.12 }
 	}
 }

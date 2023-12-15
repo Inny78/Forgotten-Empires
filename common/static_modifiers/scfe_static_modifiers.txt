@@ -40,6 +40,12 @@ scfe_alshigan_engine_activated = {
 	icon = "gfx/interface/icons/modifiers/scfe_alshigan_engines.dds"
 	icon_frame = 1
 }
+scfe_alshigan_architecture = {
+	planet_building_build_speed_mult = 0.1
+	planet_colony_development_speed_mult = 0.2
+	icon = "gfx/interface/icons/modifiers/scfe_alshigan_architecture.dds"
+	icon_frame = 1
+}
 scfe_clone_prowess = {
 	army_health = 0.1
 	army_damage_mult = 0.1
@@ -63,6 +69,11 @@ scfe_znkar_relic_2 = {
 	ship_cloaking_strength_add = 2
 	icon = "gfx/interface/icons/modifiers/scfe_znkar_relic_activated.dds"
 	icon_frame = 1
+}
+scfe_znkar_administration_methods = {
+	empire_size_colonies_mult = -0.1
+	empire_size_districts_mult = -0.1
+	tradition_cost_empire_size_mult = -0.1
 }
 scfe_znkar_observation_tech = {
 	station_observers_society_research_produces_mult = 0.2

@@ -601,6 +601,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = INTERESTING
+		name = EXCELLENT
+		add_modifier = { modifier = scfe_alshigan_architecture days = -1 }
 	}
 }

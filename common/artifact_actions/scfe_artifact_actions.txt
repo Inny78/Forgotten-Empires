@@ -13,6 +13,7 @@ artifact_scfe_precursor_sless_research = {
     potential = {
         has_country_flag = scfe_precursor_sless_finished
         NOT = { has_country_flag = scfe_precursor_sless_research_started }
+        has_ancrel = yes
     }
 
     effect = {
@@ -23,6 +24,7 @@ artifact_scfe_precursor_sless_research = {
         }
         hidden_effect = {
             set_country_flag = scfe_precursor_sless_research_started
+            country_event = { id = ancrel.10040 }
         }
     }
 }
@@ -41,6 +43,7 @@ artifact_scfe_precursor_coprean_research = {
     potential = {
         has_country_flag = scfe_precursor_coprean_finished
         NOT = { has_country_flag = scfe_precursor_coprean_research_started }
+        has_ancrel = yes
     }
 
     effect = {
@@ -51,6 +54,7 @@ artifact_scfe_precursor_coprean_research = {
         }
         hidden_effect = {
             set_country_flag = scfe_precursor_coprean_research_started
+            country_event = { id = ancrel.10040 }
         }
     }
 }
@@ -69,6 +73,7 @@ artifact_scfe_precursor_astanine_research = {
     potential = {
         has_country_flag = scfe_precursor_astanine_finished
         NOT = { has_country_flag = scfe_precursor_astanine_research_started }
+        has_ancrel = yes
     }
 
     effect = {
@@ -79,6 +84,59 @@ artifact_scfe_precursor_astanine_research = {
         }
         hidden_effect = {
             set_country_flag = scfe_precursor_astanine_research_started
+            country_event = { id = ancrel.10040 }
+        }
+    }
+}
+artifact_scfe_precursor_alshigans_research = {
+    resources = {
+        category = artifact_actions
+        cost = {
+            minor_artifacts = 50
+        }
+    }
+
+    potential = {
+        has_country_flag = alshigans_precursors_done
+        NOT = { has_country_flag = scfe_precursor_alshigans_research_started }
+        has_ancrel = yes
+    }
+
+    effect = {
+        enable_special_project = {
+            name = "SCFE_PRECURSOR_ALSHIGANS_SECRETS"
+            location = capital_scope
+            owner = ROOT
+        }
+        hidden_effect = {
+            set_country_flag = scfe_precursor_alshigans_research_started
+            country_event = { id = ancrel.10040 }
+        }
+    }
+}
+artifact_scfe_precursor_znkar_research = {
+    resources = {
+        category = artifact_actions
+        cost = {
+            minor_artifacts = 50
+        }
+    }
+
+    potential = {
+        has_country_flag = znkar_precursors_done
+        NOT = { has_country_flag = scfe_precursor_znkar_research_started }
+        has_ancrel = yes
+    }
+
+    effect = {
+        enable_special_project = {
+            name = "SCFE_PRECURSOR_ZNKAR_SECRETS"
+            location = capital_scope
+            owner = ROOT
+        }
+        hidden_effect = {
+            set_country_flag = scfe_precursor_znkar_research_started
+            country_event = { id = ancrel.10040 }
         }
     }
 }
