@@ -42,9 +42,9 @@ r_scfe_music_of_the_universe = {
 
 	# Possible check for activation
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_music_of_the_universe
 		}
 	}
 }
@@ -81,9 +81,9 @@ r_scfe_protagonist_of_the_show = {
 
 	# Possible check for activation
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_protagonist_of_the_show
 		}
 	}
 }
@@ -122,9 +122,9 @@ r_scfe_alshigan_engine = {
 
 	# Possible check for activation
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_alshigan_engine
 		}
 	}
 }
@@ -171,9 +171,9 @@ r_scfe_znkar_distortion_generator = {
 
 	# Possible check for activation
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_znkar_distortion_generator
 		}
 	}
 }
@@ -246,9 +246,9 @@ r_scfe_sless_gene_template = {
 	}
 
 	possible = {
-		custom_tooltip = {
-			fail_text = "scfe_requires_relic_no_cooldown"
-			NOT = { has_modifier = scfe_relic_activation_cooldown }
+		inline_script = {
+			script = relics/scfe_activation_checks
+			RELIC = r_scfe_sless_gene_template
 		}
 	}
 }
@@ -293,9 +293,9 @@ r_scfe_diary_of_innovo = {
 
 	# Possible check for activation
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_diary_of_innovo
 		}
 	}
 }
@@ -339,9 +339,9 @@ r_scfe_astanine_last_projector = {
 
 	# Possible check for activation
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_astanine_last_projector
 		}
 	}
 }
@@ -388,9 +388,9 @@ r_ziaskehorn_fire = {
 		}
 	}
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_relic_no_cooldown"
-			NOT = { has_modifier = relic_activation_cooldown }
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_astanine_last_projector
 		}
 	}
 }
