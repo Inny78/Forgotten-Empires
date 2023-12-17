@@ -465,3 +465,16 @@ has_precursor_intro = {
 		has_origin = origin_incohesive
 	}
 }
+
+is_valid_origin_for_znkar = {
+	NOR = {
+		has_origin = origin_shoulders_of_giants
+		has_origin = origin_doomsday
+		has_origin = origin_broken_shackles
+		has_origin = origin_demonic_incursion
+		has_origin = origin_separatists
+		has_origin = origin_lost_colony
+		# Gigas exclusion
+		has_origin = origin_incohesive
+	}
+}

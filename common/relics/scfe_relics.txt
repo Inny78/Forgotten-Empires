@@ -239,7 +239,7 @@ r_scfe_sless_gene_template = {
 		custom_tooltip = scfe_special_relic_cooldown_info
 		hidden_effect = {
 			add_modifier = {
-				modifier = "scfe_relic_activation_cooldown"
+				modifier = "relic_activation_cooldown"
 				days = 1800 #1 year = 4 army
 			}
 		}
@@ -247,7 +247,7 @@ r_scfe_sless_gene_template = {
 
 	possible = {
 		inline_script = {
-			script = relics/scfe_activation_checks
+			script = relics/activation_checks
 			RELIC = r_scfe_sless_gene_template
 		}
 	}

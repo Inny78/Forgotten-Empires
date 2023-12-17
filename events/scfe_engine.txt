@@ -35,16 +35,7 @@ country_event = {
 		random_playable_country = {
 			limit = {
 				is_ai = no
-				NOR = {
-					has_origin = origin_shoulders_of_giants
-					has_origin = origin_doomsday
-					has_origin = origin_broken_shackles
-					has_origin = origin_demonic_incursion
-					has_origin = origin_fear_of_the_dark
-					has_origin = origin_separatists
-					has_origin = origin_lost_colony
-					has_origin = origin_incohesive
-				}
+				is_valid_origin_for_znkar = yes
 			}
 			if = {
 				limit = { is_multiplayer = yes }
@@ -76,7 +67,7 @@ country_event = {
 		random_playable_country = {
 			limit = {
 				is_ai = no
-				is_homicidal = no
+				is_unfriendly = no
 			}
 			set_country_flag = scfe_galwand_possible
 		}

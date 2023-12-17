@@ -104,6 +104,11 @@ scfe_tower_city_category = {
 		modifier = {
 			add = 10
 			scfe_is_gas_giant = yes
+			has_moon = yes
+			any_moon = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_deposit_for = shipclass_science_ship }
+			}
 			solar_system = {
 				NOT = {
 					any_system_planet = {
@@ -130,7 +135,7 @@ scfe_lonely_shroud_category = {
 	level = 10
 	spawn_chance = {
 		modifier = {
-			add = 10
+			add = 100
 			is_planet_class = pc_shrouded
 			has_planet_flag = scfe_lonely_planet
 		}

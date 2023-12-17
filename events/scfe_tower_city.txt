@@ -163,7 +163,11 @@ fleet_event = {
 			}
 		}
 		from = {
-			planet = {
+			random_moon = {
+				limit = {
+					uninhabitable_regular_planet = yes
+					NOT = { has_deposit_for = shipclass_science_ship }
+				}
 				add_deposit = d_alloys_5
 			}
 		}

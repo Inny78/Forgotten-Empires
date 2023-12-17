@@ -7,7 +7,7 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		mid_game_years_passed = 5
+		years_passed > 50
 		owner = { is_ai = no }
 		solar_system = {
 			NOT = { exists = space_owner }
@@ -40,7 +40,7 @@ ship_event = {
 				clear_planet_modifiers = yes
 				clear_deposits = yes
 				set_planet_flag = scfe_lonely_planet
-				save_event_target_as = scfe_lonely_planet
+				save_global_event_target_as = scfe_lonely_planet
 			}
 		}
 	}
