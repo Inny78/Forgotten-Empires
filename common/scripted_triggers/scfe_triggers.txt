@@ -478,3 +478,14 @@ is_valid_origin_for_znkar = {
 		has_origin = origin_incohesive
 	}
 }
+
+# Planet scope
+has_any_strange_worlds_deposit = {
+	OR = {
+		planet_has_woorskyr_deposit = yes
+		planet_has_beetle_deposit = yes
+		planet_has_koeleothan_deposit = yes
+		planet_has_quantumpearl_deposit = yes
+		planet_has_xenograss_deposit = yes
+	}
+}

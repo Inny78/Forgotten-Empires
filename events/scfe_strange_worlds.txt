@@ -235,3 +235,729 @@ planet_event = {
         from = { set_country_flag = cf_xenograss_found }
     }
 }
+
+#################################### Planet Killer on_action events ####################################
+
+# Woorskyr tree cracked
+planet_event = {
+    id = scfe_strange_on_actions.10
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_woorskyr_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_woorskyr_hub
+            remove_modifier = scfe_woorskyr_tree_network
+        }
+        from.owner = { country_event = { id = scfe_strange_events.10 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = {
+                country_event = { id = scfe_strange_events.10 }
+            }
+        }
+    }
+}
+# Woorskyr tree bathed
+planet_event = {
+    id = scfe_strange_on_actions.11
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_woorskyr_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_woorskyr_hub
+            remove_modifier = scfe_woorskyr_tree_network
+        }
+        from.owner = { country_event = { id = scfe_strange_events.11 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = {
+                country_event = { id = scfe_strange_events.11 }
+            }
+        }
+    }
+    after = {
+        if = {
+            limit = { exists = root.owner }
+            every_owned_pop = { kill_pop = yes }
+            remove_all_buildings = yes
+            destroy_colony = yes
+        }
+        change_pc = pc_barren
+        clear_planet_modifiers = yes
+        clear_deposits = yes
+        add_modifier = { modifier = terraforming_candidate days = -1 }
+    }
+}
+# Woorskyr tree drowned
+planet_event = {
+    id = scfe_strange_on_actions.12
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_woorskyr_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_woorskyr_hub
+            remove_modifier = scfe_woorskyr_tree_network
+        }
+        from.owner = { country_event = { id = scfe_strange_events.12 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = {
+                country_event = { id = scfe_strange_events.12 }
+            }
+        }
+    }
+}
+# Woorskyr tree toxified
+planet_event = {
+    id = scfe_strange_on_actions.13
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_woorskyr_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_woorskyr_hub
+            remove_modifier = scfe_woorskyr_tree_network
+        }
+        from.owner = { country_event = { id = scfe_strange_events.13 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = {
+                country_event = { id = scfe_strange_events.13 }
+            }
+        }
+    }
+}
+
+# Koeleothans cracked
+planet_event = {
+    id = scfe_strange_on_actions.20
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_koeleothan_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_koeleothan
+        }
+        from.owner = {
+            country_event = { id = scfe_strange_events.20 }
+        }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.20 } }
+        }
+    }
+}
+# Koeleothans swept
+planet_event = {
+    id = scfe_strange_on_actions.21
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_koeleothan_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_koeleothan
+        }
+        from.owner = {
+            country_event = { id = scfe_strange_events.21 }
+        }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.21 } }
+        }
+    }
+}
+# Koeleothans toxified
+planet_event = {
+    id = scfe_strange_on_actions.22
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_koeleothan_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_koeleothan
+        }
+        from.owner = {
+            country_event = { id = scfe_strange_events.22 }
+        }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.22 } }
+        }
+    }
+}
+
+# Quantum Pearls cracked or bathed
+planet_event = {
+    id = scfe_strange_on_actions.30
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_quantumpearl_deposit = yes }
+    }
+
+    immediate = {
+        root = { save_global_event_target_as = scfe_quantum_target }
+        from.owner = {
+            country_event = { id = scfe_strange_events.1 }
+        }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.1 } }
+        }
+        destroy_fleet = from
+        every_fleet_in_orbit = { destroy_fleet = this }
+    }
+}
+# Quantum Pearls shielded
+planet_event = {
+    id = scfe_strange_on_actions.31
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_quantumpearl_deposit = yes }
+    }
+
+    immediate = {
+        root = { save_global_event_target_as = scfe_quantum_target }
+        from.owner = {
+            country_event = { id = scfe_strange_events.2 }
+        }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.2 } }
+        }
+        destroy_fleet = from
+        every_fleet_in_orbit = { destroy_fleet = this }
+    }
+}
+
+# Beetle Swarm cracked
+planet_event = {
+    id = scfe_strange_on_actions.40
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_beetle_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_beetle_swarm
+        }
+        from.owner = { country_event = { id = scfe_strange_events.30 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.30 } }
+        }
+    }
+}
+# Beetles bathed
+planet_event = {
+    id = scfe_strange_on_actions.41
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_beetle_deposit = yes }
+    }
+
+    immediate = {
+        from.owner = { country_event = { id = scfe_strange_events.31 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.31 } }
+        }
+    }
+}
+# Beetles drowned
+planet_event = {
+    id = scfe_strange_on_actions.42
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_beetle_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_beetle_swarm
+        }
+        from.owner = { country_event = { id = scfe_strange_events.30 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.30 } }
+        }
+    }
+}
+# Beetles toxified
+planet_event = {
+    id = scfe_strange_on_actions.43
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_beetle_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_beetle_swarm
+        }
+        from.owner = { country_event = { id = scfe_strange_events.33 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.33 } }
+        }
+    }
+}
+
+# Xenograss cracked
+planet_event = {
+    id = scfe_strange_on_actions.50
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_xenograss_deposit = yes }
+    }
+
+    immediate = {
+        root = {
+            remove_deposit = d_xenograss
+        }
+        from.owner = { country_event = { id = scfe_strange_events.40 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.40 } }
+        }
+    }
+}
+# Xenograss swept
+planet_event = {
+    id = scfe_strange_on_actions.51
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_xenograss_deposit = yes }
+    }
+
+    immediate = {
+        from.owner = { country_event = { id = scfe_strange_events.41 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.41 } }
+        }
+    }
+}
+# Xenograss drowned
+planet_event = {
+    id = scfe_strange_on_actions.52
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_xenograss_deposit = yes }
+    }
+
+    immediate = {
+        from.owner = { country_event = { id = scfe_strange_events.42 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.42 } }
+        }
+    }
+}
+# Xenograss toxified
+planet_event = {
+    id = scfe_strange_on_actions.53
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_xenograss_deposit = yes }
+    }
+
+    immediate = {
+        from.owner = { country_event = { id = scfe_strange_events.43 } }
+        if = {
+            limit = {
+                exists = root.owner
+                root.owner = { NOT = { is_same_value = from.owner } }
+            }
+            root.owner = { country_event = { id = scfe_strange_events.43 } }
+        }
+    }
+}
+
+# Nanites overcome everything but quantum pearls
+planet_event = {
+    id = scfe_strange_on_actions.60
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        root = { has_any_strange_worlds_deposit = yes }
+    }
+
+    immediate = {
+        if = {
+            limit = { root = { has_woorskyr_deposit = yes } }
+            root = {
+                remove_deposit = d_woorskyr_hub
+                remove_modifier = scfe_woorskyr_tree_network
+            }
+        }
+        else_if = {
+            limit = { root = { has_koeleothan_deposit = yes } }
+            root = { remove_deposit = d_koeleothan }
+        }
+        else_if = {
+            limit = { root = { has_beetle_deposit = yes } }
+            root = { remove_deposit = d_beetle_swarm }
+        }
+        else_if = {
+            limit = { root = { has_xenograss_deposit = yes } }
+            root = { remove_deposit = d_xenograss }
+        }
+    }
+}
+
+#################################### Planet Killer Aftermath events ####################################
+
+namespace = scfe_strange_events
+
+# Quantum Pearls go boom
+country_event = {
+    id = scfe_strange_events.1
+    title = scfe_strange_events.1.name
+    desc = scfe_strange_events.1.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_super_explosion
+
+    option = {
+        name = UNFORTUNATE
+        hidden_effect = {
+            event_target:scfe_quantum_target = {
+                create_ambient_object = {
+                    type = "star_explosion"
+                    play_animation_once = yes
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 0
+                        angle = random
+                    }
+                }
+                destroy_colony = yes
+                remove_planet = yes
+                solar_system = {
+                    every_system_colony = { add_planet_devastation = 50 }
+                }
+            }
+            clear_global_event_target = scfe_quantum_target
+        }
+    }
+}
+country_event = {
+    id = scfe_strange_events.2
+    title = scfe_strange_events.1.name
+    desc = scfe_strange_events.2.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_super_explosion
+
+    option = {
+        name = UNFORTUNATE
+        hidden_effect = {
+            event_target:scfe_quantum_target = {
+                create_ambient_object = {
+                    type = "star_explosion"
+                    play_animation_once = yes
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 0
+                        angle = random
+                    }
+                }
+                destroy_colony = yes
+                remove_planet = yes
+                solar_system = {
+                    every_system_colony = { add_planet_devastation = 50 }
+                }
+            }
+            clear_global_event_target = scfe_quantum_target
+        }
+    }
+}
+# Woorskyr Hub dies by Planet Cracker
+country_event = {
+    id = scfe_strange_events.10
+    title = scfe_strange_events.10.name
+    desc = scfe_strange_events.10.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Woorskyr Hub drowns
+country_event = {
+    id = scfe_strange_events.11
+    title = scfe_strange_events.10.name
+    desc = scfe_strange_events.11.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Woorskyr Hub ecosystem dies by neutron bathing
+country_event = {
+    id = scfe_strange_events.12
+    title = scfe_strange_events.10.name
+    desc = scfe_strange_events.12.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Woorkskyr Hub is toxified
+country_event = {
+    id = scfe_strange_events.13
+    title = scfe_strange_events.13.name
+    desc = scfe_strange_events.13.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+
+
+# Koeleothans die
+country_event = {
+    id = scfe_strange_events.20
+    title = scfe_strange_events.20.name
+    desc = scfe_strange_events.20.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Koeleothans swept
+country_event = {
+    id = scfe_strange_events.21
+    title = scfe_strange_events.20.name
+    desc = scfe_strange_events.21.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Koeleothans toxified
+country_event = {
+    id = scfe_strange_events.22
+    title = scfe_strange_events.22.name
+    desc = scfe_strange_events.22.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+
+# Beetle Swarm die
+country_event = {
+    id = scfe_strange_events.30
+    title = scfe_strange_events.30.name
+    desc = scfe_strange_events.30.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Beetles thrive
+country_event = {
+    id = scfe_strange_events.31
+    title = scfe_strange_events.31.name
+    desc = scfe_strange_events.31.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = scfe_strange_events.41.a
+    }
+}
+# Beetles drowned
+country_event = {
+    id = scfe_strange_events.32
+    title = scfe_strange_events.30.name
+    desc = scfe_strange_events.32.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# Beetles toxified
+country_event = {
+    id = scfe_strange_events.33
+    title = scfe_strange_events.33.name
+    desc = scfe_strange_events.33.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+
+# Xenograss die
+country_event = {
+    id = scfe_strange_events.40
+    title = scfe_strange_events.40.name
+    desc = scfe_strange_events.40.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = UNFORTUNATE
+    }
+}
+# The Xenograss ignores the neutron sweep
+country_event = {
+    id = scfe_strange_events.41
+    title = scfe_strange_events.41.name
+    desc = scfe_strange_events.41.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = scfe_strange_events.41.a
+    }
+}
+# The Xenograss still thrives underwater
+country_event = {
+    id = scfe_strange_events.42
+    title = scfe_strange_events.42.name
+    desc = scfe_strange_events.42.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = scfe_strange_events.41.a
+    }
+}
+# The Xenograss adapts to the toxic environment
+country_event = {
+    id = scfe_strange_events.43
+    title = scfe_strange_events.42.name
+    desc = scfe_strange_events.43.desc
+    picture = GFX_evt_death_from_above
+    show_sound = event_ship_bridge
+
+    option = {
+        name = scfe_strange_events.41.a
+    }
+}

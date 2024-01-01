@@ -166,23 +166,6 @@ country_event = {
 	}
 }
 
-event = {
-	id = scfe_game_start.5
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		every_playable_country = {
-			limit = {
-				is_ai = no
-				has_relic = r_scfe_znkar_distortion_generator
-				NOT = { has_country_flag = znkar_precursors_done }
-			}
-			set_country_flag = znkar_precursors_done
-		}
-	}
-}
-
 namespace = scfe_engine
 
 # Galactic Wanderers

@@ -2,7 +2,7 @@ artifact_scfe_precursor_sless_research = {
     resources = {
         category = artifact_actions
         cost = {
-            minor_artifacts = 50
+            minor_artifacts = 750
         }
     }
 
@@ -32,7 +32,7 @@ artifact_scfe_precursor_coprean_research = {
     resources = {
         category = artifact_actions
         cost = {
-            minor_artifacts = 50
+            minor_artifacts = 750
         }
     }
 
@@ -62,7 +62,7 @@ artifact_scfe_precursor_astanine_research = {
     resources = {
         category = artifact_actions
         cost = {
-            minor_artifacts = 50
+            minor_artifacts = 750
         }
     }
 
@@ -92,7 +92,7 @@ artifact_scfe_precursor_alshigans_research = {
     resources = {
         category = artifact_actions
         cost = {
-            minor_artifacts = 50
+            minor_artifacts = 750
         }
     }
 
@@ -118,7 +118,7 @@ artifact_scfe_precursor_znkar_research = {
     resources = {
         category = artifact_actions
         cost = {
-            minor_artifacts = 50
+            minor_artifacts = 750
         }
     }
 

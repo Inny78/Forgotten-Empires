@@ -89,8 +89,46 @@ on_survey_planet = {
 	}
 }
 
-on_single_player_save_game_load = {
+on_destroy_planet_with_PLANET_KILLER_CRACKER = {
 	events = {
-		scfe_game_start.5
+		scfe_strange_on_actions.10 # Woorskyr
+		scfe_strange_on_actions.20 # Koeleothans
+		scfe_strange_on_actions.30 # Quantum Pearls
+		scfe_strange_on_actions.40 # Beetles
+		scfe_strange_on_actions.50 # Xenograss
+	}
+}
+on_destroy_planet_with_PLANET_KILLER_NEUTRON = {
+	events = {
+		scfe_strange_on_actions.11 # Woorskyr
+		scfe_strange_on_actions.21 # Koeleothans
+		scfe_strange_on_actions.30 # Quantum Pearls
+		scfe_strange_on_actions.41 # Beetles thrive
+		scfe_strange_on_actions.51 # Xenograss thrives
+	}
+}
+on_destroy_planet_with_PLANET_KILLER_DELUGE = {
+	events = {
+		scfe_strange_on_actions.12 # Woorskyr drowned
+		scfe_strange_on_actions.42 # Beetle drowned
+		scfe_strange_on_actions.52 # Xenograss thrives
+	}
+}
+on_destroy_planet_with_PLANET_KILLER_SHIELDER = {
+	events = {
+		scfe_strange_on_actions.31 # Quantum Pearls
+	}
+}
+on_destroy_planet_with_PLANET_KILLER_NANOBOTS = {
+	events = {
+		scfe_strange_on_actions.60
+	}
+}
+on_destroy_planet_with_PLANET_KILLER_TOXIFIER = {
+	events = {
+		scfe_strange_on_actions.13 # Woorskyr
+		scfe_strange_on_actions.22 # Koeleothans
+		scfe_strange_on_actions.43 # Beetles
+		scfe_strange_on_actions.53 # Xenograss thrives
 	}
 }
