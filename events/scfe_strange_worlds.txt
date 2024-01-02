@@ -271,37 +271,34 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_woorskyr_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_woorskyr_hub
-            remove_modifier = scfe_woorskyr_tree_network
-        }
-        from.owner = { country_event = { id = scfe_strange_events.11 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_woorskyr_deposit = yes } }
+            root = {
+                remove_deposit = d_woorskyr_hub
+                remove_modifier = scfe_woorskyr_tree_network
             }
-            root.owner = {
-                country_event = { id = scfe_strange_events.11 }
+            from.owner = { country_event = { id = scfe_strange_events.11 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = {
+                    country_event = { id = scfe_strange_events.11 }
+                }
             }
+            if = {
+                limit = { exists = root.owner }
+                every_owned_pop = { kill_pop = yes }
+                remove_all_buildings = yes
+                destroy_colony = yes
+            }
+            change_pc = pc_barren
+            clear_planet_modifiers = yes
+            clear_deposits = yes
+            add_modifier = { modifier = terraforming_candidate days = -1 }
         }
-    }
-    after = {
-        if = {
-            limit = { exists = root.owner }
-            every_owned_pop = { kill_pop = yes }
-            remove_all_buildings = yes
-            destroy_colony = yes
-        }
-        change_pc = pc_barren
-        clear_planet_modifiers = yes
-        clear_deposits = yes
-        add_modifier = { modifier = terraforming_candidate days = -1 }
     }
 }
 # Woorskyr tree drowned
@@ -310,23 +307,22 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_woorskyr_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_woorskyr_hub
-            remove_modifier = scfe_woorskyr_tree_network
-        }
-        from.owner = { country_event = { id = scfe_strange_events.12 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_woorskyr_deposit = yes } }
+            root = {
+                remove_deposit = d_woorskyr_hub
+                remove_modifier = scfe_woorskyr_tree_network
             }
-            root.owner = {
-                country_event = { id = scfe_strange_events.12 }
+            from.owner = { country_event = { id = scfe_strange_events.12 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = {
+                    country_event = { id = scfe_strange_events.12 }
+                }
             }
         }
     }
@@ -337,23 +333,22 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_woorskyr_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_woorskyr_hub
-            remove_modifier = scfe_woorskyr_tree_network
-        }
-        from.owner = { country_event = { id = scfe_strange_events.13 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_woorskyr_deposit = yes } }
+            root = {
+                remove_deposit = d_woorskyr_hub
+                remove_modifier = scfe_woorskyr_tree_network
             }
-            root.owner = {
-                country_event = { id = scfe_strange_events.13 }
+            from.owner = { country_event = { id = scfe_strange_events.13 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = {
+                    country_event = { id = scfe_strange_events.13 }
+                }
             }
         }
     }
@@ -365,23 +360,22 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_koeleothan_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_koeleothan
-        }
-        from.owner = {
-            country_event = { id = scfe_strange_events.20 }
-        }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_koeleothan_deposit = yes } }
+            root = {
+                remove_deposit = d_koeleothan
             }
-            root.owner = { country_event = { id = scfe_strange_events.20 } }
+            from.owner = {
+                country_event = { id = scfe_strange_events.20 }
+            }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.20 } }
+            }
         }
     }
 }
@@ -391,23 +385,22 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_koeleothan_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_koeleothan
-        }
-        from.owner = {
-            country_event = { id = scfe_strange_events.21 }
-        }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_koeleothan_deposit = yes } }
+            root = {
+                remove_deposit = d_koeleothan
             }
-            root.owner = { country_event = { id = scfe_strange_events.21 } }
+            from.owner = {
+                country_event = { id = scfe_strange_events.21 }
+            }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.21 } }
+            }
         }
     }
 }
@@ -417,23 +410,22 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_koeleothan_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_koeleothan
-        }
-        from.owner = {
-            country_event = { id = scfe_strange_events.22 }
-        }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_koeleothan_deposit = yes } }
+            root = {
+                remove_deposit = d_koeleothan
             }
-            root.owner = { country_event = { id = scfe_strange_events.22 } }
+            from.owner = {
+                country_event = { id = scfe_strange_events.22 }
+            }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.22 } }
+            }
         }
     }
 }
@@ -444,24 +436,23 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_quantumpearl_deposit = yes }
-    }
-
     immediate = {
-        root = { save_global_event_target_as = scfe_quantum_target }
-        from.owner = {
-            country_event = { id = scfe_strange_events.1 }
-        }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_quantumpearl_deposit = yes } }
+            root = { save_global_event_target_as = scfe_quantum_target }
+            from.owner = {
+                country_event = { id = scfe_strange_events.1 }
             }
-            root.owner = { country_event = { id = scfe_strange_events.1 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.1 } }
+            }
+            destroy_fleet = from
+            every_fleet_in_orbit = { destroy_fleet = this }
         }
-        destroy_fleet = from
-        every_fleet_in_orbit = { destroy_fleet = this }
     }
 }
 # Quantum Pearls shielded
@@ -470,24 +461,23 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_quantumpearl_deposit = yes }
-    }
-
     immediate = {
-        root = { save_global_event_target_as = scfe_quantum_target }
-        from.owner = {
-            country_event = { id = scfe_strange_events.2 }
-        }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_quantumpearl_deposit = yes } }
+            root = { save_global_event_target_as = scfe_quantum_target }
+            from.owner = {
+                country_event = { id = scfe_strange_events.2 }
             }
-            root.owner = { country_event = { id = scfe_strange_events.2 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.2 } }
+            }
+            destroy_fleet = from
+            every_fleet_in_orbit = { destroy_fleet = this }
         }
-        destroy_fleet = from
-        every_fleet_in_orbit = { destroy_fleet = this }
     }
 }
 
@@ -497,21 +487,20 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_beetle_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_beetle_swarm
-        }
-        from.owner = { country_event = { id = scfe_strange_events.30 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_beetle_deposit = yes } }
+            root = {
+                remove_deposit = d_beetle_swarm
             }
-            root.owner = { country_event = { id = scfe_strange_events.30 } }
+            from.owner = { country_event = { id = scfe_strange_events.30 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.30 } }
+            }
         }
     }
 }
@@ -521,18 +510,17 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_beetle_deposit = yes }
-    }
-
     immediate = {
-        from.owner = { country_event = { id = scfe_strange_events.31 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_beetle_deposit = yes } }
+            from.owner = { country_event = { id = scfe_strange_events.31 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.31 } }
             }
-            root.owner = { country_event = { id = scfe_strange_events.31 } }
         }
     }
 }
@@ -542,21 +530,20 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_beetle_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_beetle_swarm
-        }
-        from.owner = { country_event = { id = scfe_strange_events.30 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_beetle_deposit = yes } }
+            root = {
+                remove_deposit = d_beetle_swarm
             }
-            root.owner = { country_event = { id = scfe_strange_events.30 } }
+            from.owner = { country_event = { id = scfe_strange_events.30 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.30 } }
+            }
         }
     }
 }
@@ -566,21 +553,20 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_beetle_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_beetle_swarm
-        }
-        from.owner = { country_event = { id = scfe_strange_events.33 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_beetle_deposit = yes } }
+            root = {
+                remove_deposit = d_beetle_swarm
             }
-            root.owner = { country_event = { id = scfe_strange_events.33 } }
+            from.owner = { country_event = { id = scfe_strange_events.33 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.33 } }
+            }
         }
     }
 }
@@ -591,21 +577,20 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_xenograss_deposit = yes }
-    }
-
     immediate = {
-        root = {
-            remove_deposit = d_xenograss
-        }
-        from.owner = { country_event = { id = scfe_strange_events.40 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_xenograss_deposit = yes } }
+            root = {
+                remove_deposit = d_xenograss
             }
-            root.owner = { country_event = { id = scfe_strange_events.40 } }
+            from.owner = { country_event = { id = scfe_strange_events.40 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.40 } }
+            }
         }
     }
 }
@@ -615,18 +600,17 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_xenograss_deposit = yes }
-    }
-
     immediate = {
-        from.owner = { country_event = { id = scfe_strange_events.41 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_xenograss_deposit = yes } }
+            from.owner = { country_event = { id = scfe_strange_events.41 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.41 } }
             }
-            root.owner = { country_event = { id = scfe_strange_events.41 } }
         }
     }
 }
@@ -636,18 +620,17 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_xenograss_deposit = yes }
-    }
-
     immediate = {
-        from.owner = { country_event = { id = scfe_strange_events.42 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_xenograss_deposit = yes } }
+            from.owner = { country_event = { id = scfe_strange_events.42 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.42 } }
             }
-            root.owner = { country_event = { id = scfe_strange_events.42 } }
         }
     }
 }
@@ -657,18 +640,17 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_xenograss_deposit = yes }
-    }
-
     immediate = {
-        from.owner = { country_event = { id = scfe_strange_events.43 } }
         if = {
-            limit = {
-                exists = root.owner
-                root.owner = { NOT = { is_same_value = from.owner } }
+            limit = { root = { has_xenograss_deposit = yes } }
+            from.owner = { country_event = { id = scfe_strange_events.43 } }
+            if = {
+                limit = {
+                    exists = root.owner
+                    root.owner = { NOT = { is_same_value = from.owner } }
+                }
+                root.owner = { country_event = { id = scfe_strange_events.43 } }
             }
-            root.owner = { country_event = { id = scfe_strange_events.43 } }
         }
     }
 }
@@ -679,29 +661,28 @@ planet_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        root = { has_any_strange_worlds_deposit = yes }
-    }
-
     immediate = {
         if = {
-            limit = { root = { has_woorskyr_deposit = yes } }
-            root = {
-                remove_deposit = d_woorskyr_hub
-                remove_modifier = scfe_woorskyr_tree_network
+            limit = { root = { has_any_strange_worlds_deposit = yes } }
+            if = {
+                limit = { root = { has_woorskyr_deposit = yes } }
+                root = {
+                    remove_deposit = d_woorskyr_hub
+                    remove_modifier = scfe_woorskyr_tree_network
+                }
             }
-        }
-        else_if = {
-            limit = { root = { has_koeleothan_deposit = yes } }
-            root = { remove_deposit = d_koeleothan }
-        }
-        else_if = {
-            limit = { root = { has_beetle_deposit = yes } }
-            root = { remove_deposit = d_beetle_swarm }
-        }
-        else_if = {
-            limit = { root = { has_xenograss_deposit = yes } }
-            root = { remove_deposit = d_xenograss }
+            else_if = {
+                limit = { root = { has_koeleothan_deposit = yes } }
+                root = { remove_deposit = d_koeleothan }
+            }
+            else_if = {
+                limit = { root = { has_beetle_deposit = yes } }
+                root = { remove_deposit = d_beetle_swarm }
+            }
+            else_if = {
+                limit = { root = { has_xenograss_deposit = yes } }
+                root = { remove_deposit = d_xenograss }
+            }
         }
     }
 }
