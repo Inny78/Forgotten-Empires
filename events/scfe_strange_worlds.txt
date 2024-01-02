@@ -698,6 +698,7 @@ country_event = {
     desc = scfe_strange_events.1.desc
     picture = GFX_evt_death_from_above
     show_sound = event_super_explosion
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -731,6 +732,7 @@ country_event = {
     desc = scfe_strange_events.2.desc
     picture = GFX_evt_death_from_above
     show_sound = event_super_explosion
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -765,6 +767,7 @@ country_event = {
     desc = scfe_strange_events.10.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -777,6 +780,7 @@ country_event = {
     desc = scfe_strange_events.11.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -789,6 +793,7 @@ country_event = {
     desc = scfe_strange_events.12.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -801,6 +806,7 @@ country_event = {
     desc = scfe_strange_events.13.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -815,6 +821,7 @@ country_event = {
     desc = scfe_strange_events.20.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -827,6 +834,7 @@ country_event = {
     desc = scfe_strange_events.21.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -839,6 +847,7 @@ country_event = {
     desc = scfe_strange_events.22.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -852,6 +861,7 @@ country_event = {
     desc = scfe_strange_events.30.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -864,6 +874,7 @@ country_event = {
     desc = scfe_strange_events.31.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = scfe_strange_events.41.a
@@ -876,6 +887,7 @@ country_event = {
     desc = scfe_strange_events.32.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -888,6 +900,7 @@ country_event = {
     desc = scfe_strange_events.33.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -901,6 +914,7 @@ country_event = {
     desc = scfe_strange_events.40.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = UNFORTUNATE
@@ -913,6 +927,7 @@ country_event = {
     desc = scfe_strange_events.41.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = scfe_strange_events.41.a
@@ -925,6 +940,7 @@ country_event = {
     desc = scfe_strange_events.42.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = scfe_strange_events.41.a
@@ -937,6 +953,7 @@ country_event = {
     desc = scfe_strange_events.43.desc
     picture = GFX_evt_death_from_above
     show_sound = event_ship_bridge
+    is_triggered_only = yes
 
     option = {
         name = scfe_strange_events.41.a
