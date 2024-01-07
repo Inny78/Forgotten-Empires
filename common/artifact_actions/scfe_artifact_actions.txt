@@ -7,7 +7,7 @@ artifact_scfe_precursor_sless_research = {
     }
 
     ai_weight = {
-        weight = 10
+        weight = 0
     }
 
     potential = {
@@ -37,7 +37,7 @@ artifact_scfe_precursor_coprean_research = {
     }
 
     ai_weight = {
-        weight = 10
+        weight = 0
     }
 
     potential = {
@@ -67,7 +67,7 @@ artifact_scfe_precursor_astanine_research = {
     }
 
     ai_weight = {
-        weight = 10
+        weight = 0
     }
 
     potential = {
@@ -96,6 +96,10 @@ artifact_scfe_precursor_alshigans_research = {
         }
     }
 
+    ai_weight = {
+        weight = 0
+    }
+
     potential = {
         has_country_flag = alshigans_precursors_done
         NOT = { has_country_flag = scfe_precursor_alshigans_research_started }
@@ -120,6 +124,10 @@ artifact_scfe_precursor_znkar_research = {
         cost = {
             minor_artifacts = 750
         }
+    }
+
+    ai_weight = {
+        weight = 0
     }
 
     potential = {
