@@ -273,6 +273,7 @@ country_event = {
 					scfe_is_savannah = yes
 					has_anomaly = no
 					NOT = { exists = owner }
+					NOT = { exists = archaeological_site }
 				}
 			}
 			random_system_planet = {

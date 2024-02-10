@@ -10,11 +10,6 @@ on_entering_system_first_time = {
 		scfe_astanine.12
 	}
 }
-on_game_start = {
-	events = {
-		scfe_game_start.1
-	}
-}
 on_colonized = {
 	events = {
 		scfe_lonely_shroud.4

@@ -14,7 +14,7 @@ scfe_failed_hive_dig = {
 	}
 
 	visible = {
-		default_site_visible_trigger = yes
+		scfe_dig_site_visible_trigger = yes
 	}
 
 	on_visible = {
