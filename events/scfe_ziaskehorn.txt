@@ -1,6 +1,5 @@
 namespace = scfe_ziaskehorn
 
-
 # Digsite Discovery Chance
 ship_event = {
     id = scfe_ziaskehorn.1 # 00
@@ -259,7 +258,6 @@ fleet_event = {
         fromfrom = { add_stage_clues = -2 }
     }
 }
-
 
 # Player Activates Ziaskehorn Fire Relic
 country_event = {

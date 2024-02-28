@@ -101,7 +101,7 @@ ship_event = {
 		name = INTERESTING
 		event_target:scfe_alshigans_savannah = {
 			add_modifier = { modifier = scfe_savannah_ruins days = -1 }
-			add_modifier = { modifier = wasteland_infrastructure days = -1 }
+			add_modifier = { modifier = scfe_infrastructure days = -1 }
 		}
 		owner = {
 			add_event_chain_counter = {
@@ -132,7 +132,7 @@ ship_event = {
 		name = INTERESTING
 		event_target:scfe_alshigans_alpine = {
 			add_modifier = { modifier = scfe_alpine_ruins days = -1 }
-			add_modifier = { modifier = wasteland_infrastructure days = -1 }
+			add_modifier = { modifier = scfe_infrastructure days = -1 }
 		}
 		owner = {
 			add_event_chain_counter = {
@@ -163,7 +163,7 @@ ship_event = {
 		name = PECULIAR
 		event_target:scfe_alshigans_jungle = {
 			add_modifier = { modifier = scfe_jungle_ruins days = -1 }
-			add_modifier = { modifier = wasteland_infrastructure days = -1 }
+			add_modifier = { modifier = scfe_infrastructure days = -1 }
 		}
 		owner = {
 			add_event_chain_counter = {
@@ -283,7 +283,6 @@ country_event = {
 					NOT = { exists = owner }
 					NOT = { exists = archaeological_site }
 				}
-				set_planet_flag = precursor_world
 				enable_special_project = {
 					name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
 					location = this
@@ -319,7 +318,6 @@ country_event = {
 					}
 					change_pc = pc_savannah
 					reset_planet = yes
-					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
 						location = this
@@ -367,7 +365,6 @@ country_event = {
 						NOT = { exists = owner }
 						NOT = { exists = archaeological_site }
 					}
-					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_ALPINE_PROJECT
 						location = this
@@ -404,7 +401,6 @@ country_event = {
 					}
 					change_pc = pc_alpine
 					reset_planet = yes
-					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_ALPINE_PROJECT
 						location = this
@@ -452,7 +448,6 @@ country_event = {
 						NOT = { exists = owner }
 						NOT = { exists = archaeological_site }
 					}
-					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
 						location = this
@@ -489,7 +484,6 @@ country_event = {
 					}
 					change_pc = pc_tropical
 					reset_planet = yes
-					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
 						location = this
@@ -539,7 +533,6 @@ country_event = {
 						NOT = { exists = owner }
 						NOT = { exists = archaeological_site }
 					}
-					set_planet_flag = precursor_world
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_MOON_PROJECT
 						location = this

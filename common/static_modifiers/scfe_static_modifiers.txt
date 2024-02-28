@@ -159,17 +159,17 @@ mod_r_scfe_diary_of_innovo = {
 	custom_tooltip = mod_r_scfe_diary_of_innovo_tooltip
 }
 mod_scfe_precursor_coprean_secrets = {
-	category_statecraft_research_speed_mult = 0.2
+	category_statecraft_research_speed_mult = 0.1
 	pop_happiness = 0.05
 }
 mod_scfe_precursor_coprean_secrets_deep = {
-	all_technology_research_speed = 0.10
-	category_statecraft_research_speed_mult = 0.2
+	all_technology_research_speed = 0.05
+	category_statecraft_research_speed_mult = 0.1
 	pop_happiness = -0.15
 }
 mod_scfe_precursor_coprean_secrets_deep_gestalt = {
-	all_technology_research_speed = 0.10
-	category_statecraft_research_speed_mult = 0.2
+	all_technology_research_speed = 0.05
+	category_statecraft_research_speed_mult = 0.1
 }
 mod_scfe_precursor_astanine_hidden_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_shattered_planet.dds"
@@ -179,7 +179,7 @@ mod_scfe_precursor_astanine_hidden_world = {
 }
 mod_scfe_precursor_astanine_history_never_repeats = {
 	pop_happiness = 0.1
-	all_technology_research_speed = 0.10
+	all_technology_research_speed = 0.05
 	planet_jobs_unity_produces_mult = 0.2
 }
 mod_r_scfe_astanine_last_projector = {
@@ -200,7 +200,7 @@ mod_decision_scfe_astanine_last_projector_gestalt = {
 	job_maintenance_drone_per_pop = 0.05 #1 maintenance drone per 20 pops
 }
 mod_scfe_precursor_astanine_secrets = {
-	all_technology_research_speed = 0.15
+	all_technology_research_speed = 0.10
 }
 scfe_coprean_fake_terraforming = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
@@ -212,7 +212,15 @@ ziaskehorn_relic_active = {
 	army_collateral_damage_mult = 0.35
 }
 scfe_embers_of_ziaskehorn = {
+	planet_army_build_time_mult = -0.1
 	planet_army_build_speed_mult = -0.1
 	army_morale = -0.1
 	icon_frame = 3
+}
+scfe_infrastructure = {
+	planet_districts_cost_mult = -0.20
+	planet_max_buildings_add = 1
+	planet_building_build_speed_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
 }

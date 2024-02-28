@@ -22,8 +22,10 @@ building_woorskyr_biofuel_refinery = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_woorskyr_biofuel_refinery } }
-        planet = { planet_has_woorskyr_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_woorskyr_biofuel_refinery } }
+            planet = { planet_has_woorskyr_deposit = no }
+        }
     }
 
     inline_script = {
@@ -40,8 +42,7 @@ building_woorskyr_biofuel_refinery = {
             exotic_gases = 20
         }
         upkeep = {
-            energy = 1
-            food = 1
+            energy = 2
             exotic_gases = 1
         }
     }
@@ -89,8 +90,10 @@ building_woorskyr_bioenergy_plant = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_woorskyr_bioenergy_plant } }
-        planet = { planet_has_woorskyr_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_woorskyr_bioenergy_plant } }
+            planet = { planet_has_woorskyr_deposit = no }
+        }
     }
 
     inline_script = {
@@ -101,7 +104,6 @@ building_woorskyr_bioenergy_plant = {
         category = planet_buildings
         produces = {
             energy = 5
-            food = 1
         }
         cost = {
             minerals = 200
@@ -156,8 +158,10 @@ building_woorskyr_growth_monitoring_center = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_woorskyr_growth_monitoring_center } }
-        planet = { planet_has_woorskyr_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_woorskyr_growth_monitoring_center } }
+            planet = { planet_has_woorskyr_deposit = no }
+        }
     }
 
     inline_script = {
@@ -178,8 +182,15 @@ building_woorskyr_growth_monitoring_center = {
         }
         upkeep = {
             energy = 3
-            food = 1
             exotic_gases = 2
+        }
+        upkeep = {
+            trigger = { owner = { country_uses_food = yes } }
+            food = 1
+        }
+        upkeep = {
+            trigger = { owner = { country_uses_food = no } }
+            minerals = 1
         }
     }
 
@@ -208,6 +219,10 @@ building_woorskyr_barkfarm = {
         planet = {
             planet_has_woorskyr_deposit = yes
         }
+        exists = owner
+        owner = {
+            country_uses_food = yes
+        }
     }
 
     allow = {
@@ -223,8 +238,11 @@ building_woorskyr_barkfarm = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_woorskyr_bark_farm } }
-        planet = { planet_has_woorskyr_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_woorskyr_bark_farm } }
+            owner = { country_uses_food = no }
+            planet = { planet_has_woorskyr_deposit = no }
+        }
     }
 
     inline_script = {
@@ -304,8 +322,10 @@ building_woorskyr_ship_foundry = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_woorskyr_ship_foundry } }
-        planet = { planet_has_woorskyr_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_woorskyr_ship_foundry } }
+            planet = { planet_has_woorskyr_deposit = no }
+        }
     }
 
     triggered_planet_modifier = {
@@ -402,8 +422,10 @@ building_xenograss_processor = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_xenograss_harvesting } }
-        planet = { planet_has_xenograss_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_xenograss_harvesting } }
+            planet = { planet_has_xenograss_deposit = no }
+        }
     }
 
     inline_script = {
@@ -476,8 +498,10 @@ building_consciousness_amplifier = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_koeleothan_utilization } }
-        planet = { planet_has_koeleothan_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_koeleothan_utilization } }
+            planet = { planet_has_koeleothan_deposit = no }
+        }
     }
 
     triggered_planet_modifier = {
@@ -714,8 +738,10 @@ building_pearl_borehole_site = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_quantumpearls_exploitation } }
-        planet = { planet_has_quantumpearl_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_quantumpearls_exploitation } }
+            planet = { planet_has_quantumpearl_deposit = no }
+        }
     }
 
     inline_script = {
@@ -778,8 +804,10 @@ building_pearl_borehole_site_2 = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_quantumpearls_exploitation } }
-        planet = { planet_has_quantumpearl_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_quantumpearls_exploitation } }
+            planet = { planet_has_quantumpearl_deposit = no }
+        }
     }
 
     inline_script = {
@@ -838,8 +866,10 @@ building_pearl_borehole_site_3 = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_quantumpearls_exploitation } }
-        planet = { planet_has_quantumpearl_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_quantumpearls_exploitation } }
+            planet = { planet_has_quantumpearl_deposit = no }
+        }
     }
 
     inline_script = {
@@ -891,8 +921,10 @@ building_koeleothan_effect_platform = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_koeleothan_utilization } }
-        planet = { planet_has_koeleothan_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_koeleothan_utilization } }
+            planet = { planet_has_koeleothan_deposit = no }
+        }
     }
 
     allow = {
@@ -976,8 +1008,10 @@ building_beetle_sensor = {
 
     destroy_trigger = {
         exists = owner
-        owner = { NOT = { has_technology = tech_beetle_exploitation } }
-        planet = { planet_has_beetle_deposit = no }
+        OR = {
+            owner = { NOT = { has_technology = tech_beetle_exploitation } }
+            planet = { planet_has_beetle_deposit = no }
+        }
     }
 
     triggered_planet_modifier = {
@@ -1084,13 +1118,15 @@ building_beetle_sensor_2 = {
 
     destroy_trigger = {
         exists = owner
-        owner = {
-            NOR = {
-                has_technology = tech_beetle_exploitation_2
-                is_spiritualist = yes
+        OR = {
+            owner = {
+                NOR = {
+                    has_technology = tech_beetle_exploitation_2
+                    is_spiritualist = yes
+                }
             }
+            planet = { planet_has_beetle_deposit = no }
         }
-        planet = { planet_has_beetle_deposit = no }
     }
 
     triggered_planet_modifier = {

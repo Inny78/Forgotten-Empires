@@ -144,7 +144,6 @@ country_event = {
                     }
                     hidden_effect = {
                         set_name = scfe_znkar_pakrta
-                        set_planet_flag = precursor_world
                         save_global_event_target_as = scfe_znkar_nuked
                         random_moon = {
                             limit = {
@@ -158,7 +157,6 @@ country_event = {
                                 NOT = { exists = archaeological_site }
                             }
                             set_name = scfe_znkar_dantiy
-                            set_planet_flag = precursor_world
                             save_global_event_target_as = scfe_znkar_nuked_moon
                         }
                     }
@@ -372,7 +370,6 @@ country_event = {
                     owner = event_target:znkar_start_country
                 }
                 set_name = scfe_znkar_pakrta
-                set_planet_flag = precursor_world
                 save_global_event_target_as = scfe_znkar_nuked
                 random_moon = {
                     limit = {
@@ -384,7 +381,6 @@ country_event = {
                     clear_deposits = yes
                     clear_planet_modifiers = yes
                     set_name = scfe_znkar_dantiy
-                    set_planet_flag = precursor_world
                     save_global_event_target_as = scfe_znkar_nuked_moon
                 }
             }
@@ -439,7 +435,6 @@ country_event = {
                         owner = event_target:znkar_start_country
                     }
                     set_name = scfe_znkar_pakrta
-                    set_planet_flag = precursor_world
                     save_global_event_target_as = scfe_znkar_nuked
                     random_moon = {
                         limit = {
@@ -451,7 +446,6 @@ country_event = {
                         clear_deposits = yes
                         clear_planet_modifiers = yes
                         set_name = scfe_znkar_dantiy
-                        set_planet_flag = precursor_world
                         save_global_event_target_as = scfe_znkar_nuked_moon
                     }
                 }

@@ -137,11 +137,15 @@ fleet_event = {
         name = DIG
         small_artifact_reward = yes
         from.planet = {
-            change_pc = pc_barren
-            set_planet_entity = {
-                entity = continental_planet_01_entity
-            }
             hidden_effect = {
+                change_pc = pc_barren
+                set_planet_entity = {
+                    entity = continental_planet_01_entity
+                }
+                set_planet_entity = {
+                    entity = this
+                    picture = this
+                }
                 if = {
                     limit = { planet_size > 25 }
                     set_planet_size = 25
