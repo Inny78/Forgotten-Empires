@@ -34,7 +34,7 @@ ziaskehorn_digsite = {
 	}
 	on_roll_failed = {
 		from = {
-			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = site_ziaskehorn_random_events }
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = site_scfe_ziaskehorn_random_events }
 		}
 	}
 
