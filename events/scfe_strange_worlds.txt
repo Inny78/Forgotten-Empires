@@ -27,6 +27,18 @@ ship_event = {
             }
         }
     }
+    after = {
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = {
+                        NOT = { has_deposit = d_woorskyr_hub }
+                    }
+                    add_deposit = d_woorskyr_hub
+                }
+            }
+        }
+    }
 }
 
 namespace = scfe_koeleothan
@@ -54,6 +66,18 @@ ship_event = {
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+        }
+    }
+    after = {
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = {
+                        NOT = { has_deposit = d_koeleothan }
+                    }
+                    add_deposit = d_koeleothan
+                }
             }
         }
     }
@@ -88,6 +112,18 @@ ship_event = {
             }
         }
     }
+    after = {
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = {
+                        NOT = { has_deposit = d_xenograss }
+                    }
+                    add_deposit = d_xenograss
+                }
+            }
+        }
+    }
 }
 
 namespace = scfe_quantumpearl
@@ -116,6 +152,18 @@ ship_event = {
 
     option = {
         name = scfe_quantumpearl.1.a
+    }
+    after = {
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = {
+                        NOT = { has_deposit = d_quantumpearl }
+                    }
+                    add_deposit = d_quantumpearl
+                }
+            }
+        }
     }
 }
 
@@ -162,6 +210,18 @@ ship_event = {
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+        }
+    }
+    after = {
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = {
+                        NOT = { has_deposit = d_beetle_swarm }
+                    }
+                    add_deposit = d_beetle_swarm
+                }
             }
         }
     }
@@ -812,7 +872,6 @@ country_event = {
         name = UNFORTUNATE
     }
 }
-
 
 # Koeleothans die
 country_event = {

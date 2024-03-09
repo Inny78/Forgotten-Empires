@@ -324,7 +324,7 @@ country_event = {
 						owner = root
 					}
 					set_name = scfe_alshigans_velaen
-					save_global_event_target_as = scfe_alshigans_alpine
+					save_global_event_target_as = scfe_alshigans_savannah
 				}
 			}
 		}
