@@ -6,6 +6,7 @@ r_scfe_music_of_the_universe = {
 	activation_duration = @triumph_duration_short
 	portrait = "GFX_relic_scfe_music_of_the_universe"
 	sound = relic_activation_khans_throne
+	can_be_stolen = no
 
 	resources = {
 		category = relics
@@ -87,98 +88,6 @@ r_scfe_protagonist_of_the_show = {
 		}
 	}
 }
-r_scfe_alshigan_engine = {
-	activation_duration = 3600
-	portrait = "GFX_relic_scfe_alshigan_engine"
-	sound = "relic_activation_vultaum_real_perforator"
-
-	resources = {
-		category = relics
-		cost = {
-			unity = 2500
-		}
-	}
-	
-	ai_weight = {
-		weight = 100
-	}
-	
-	triggered_country_modifier = {
-		potential = { always = yes }
-		weapon_type_energy_weapon_damage_mult = 0.10
-		ship_shield_damage_mult = 0.10
-		ship_evasion_mult = 0.05
-	}
-	
-	score = 1000
-
-	active_effect = {
-		add_modifier = { modifier = scfe_alshigan_engine_activated days = 3600 }
-		custom_tooltip = relic_triumph_cooldown
-		hidden_effect = {
-			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
-		}
-	}
-
-	# Possible check for activation
-	possible = {
-		inline_script = {
-			script = relics/activation_checks
-			RELIC = r_scfe_alshigan_engine
-		}
-	}
-}
-
-r_scfe_znkar_distortion_generator = {
-	activation_duration = 3600
-	portrait = "GFX_relic_scfe_znkar_engine"
-	sound = "relic_activation_vultaum_real_perforator"
-
-	resources = {
-		category = relics
-		cost = {
-			unity = 2500
-		}
-	}
-
-	ai_weight = {
-		weight = 100
-	}
-
-	triggered_country_modifier = {
-		potential = { always = yes }
-		ship_shield_mult = 0.20
-		ship_shield_hardening_add = 0.1
-		ship_speed_mult = 0.1
-		ship_evasion_mult = 0.2
-	}
-
-	score = 1000
-
-	active_effect = {
-		if = {
-			limit = { has_first_contact_dlc = no }
-			add_modifier = { modifier = scfe_znkar_relic_1 days = 3600 }
-		}
-		else = {
-			add_modifier = { modifier = scfe_znkar_relic_2 days = 3600 }
-		}
-		custom_tooltip = relic_triumph_cooldown
-		hidden_effect = {
-			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
-		}
-	}
-
-	# Possible check for activation
-	possible = {
-		inline_script = {
-			script = relics/activation_checks
-			RELIC = r_scfe_znkar_distortion_generator
-		}
-	}
-}
-
-# Precursor Story Pack
 r_scfe_sless_gene_template = {
 	activation_duration = 0
 	portrait = "GFX_relic_scfe_sless_gene_template"
@@ -345,11 +254,12 @@ r_scfe_astanine_last_projector = {
 		}
 	}
 }
-
 r_ziaskehorn_fire = {
 	activation_duration = 3600
 	portrait = "GFX_ziaskehorn_fire"
 	sound = "relic_activation_ziaskehorn"
+	can_be_stolen = no
+
 	resources = {
 		category = relics
 		cost = {
@@ -391,6 +301,146 @@ r_ziaskehorn_fire = {
 		inline_script = {
 			script = relics/activation_checks
 			RELIC = r_scfe_astanine_last_projector
+		}
+	}
+}
+r_scfe_alshigan_engine = {
+	activation_duration = 3600
+	portrait = "GFX_relic_scfe_alshigan_engine"
+	sound = "relic_activation_vultaum_real_perforator"
+
+	resources = {
+		category = relics
+		cost = {
+			unity = 2500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = { always = yes }
+		weapon_type_energy_weapon_damage_mult = 0.10
+		ship_shield_damage_mult = 0.10
+		ship_evasion_mult = 0.05
+	}
+
+	score = 1000
+
+	active_effect = {
+		add_modifier = { modifier = scfe_alshigan_engine_activated days = 3600 }
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_alshigan_engine
+		}
+	}
+}
+r_scfe_znkar_distortion_generator = {
+	activation_duration = 3600
+	portrait = "GFX_relic_scfe_znkar_engine"
+	sound = "relic_activation_vultaum_real_perforator"
+
+	resources = {
+		category = relics
+		cost = {
+			unity = 2500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = { always = yes }
+		ship_shield_mult = 0.20
+		ship_shield_hardening_add = 0.1
+		ship_speed_mult = 0.1
+		ship_evasion_mult = 0.2
+	}
+
+	score = 1000
+
+	active_effect = {
+		if = {
+			limit = { has_first_contact_dlc = no }
+			add_modifier = { modifier = scfe_znkar_relic_1 days = 3600 }
+		}
+		else = {
+			add_modifier = { modifier = scfe_znkar_relic_2 days = 3600 }
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_znkar_distortion_generator
+		}
+	}
+}
+r_scfe_first_empire_databank = {
+	activation_duration = 3600
+	portrait = "GFX_relic_scfe_first_empire_databank"
+	sound = "relic_activation_vultaum_real_perforator"
+	can_be_stolen = no
+
+	resources = {
+		category = relics
+		cost = {
+			unity = 2500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = { always = yes }
+		planet_sensor_range_add = 1
+		country_hostile_claim_influence_cost_mult = 0.2
+		country_physics_tech_research_speed = 0.1
+		country_society_tech_research_speed = 0.1
+		country_engineering_tech_research_speed = 0.1
+	}
+
+	triggered_country_modifier = {
+		potential = { has_nemesis = yes }
+		intel_decryption_mult = 0.1
+		spy_network_decay_mult = -0.2
+		spy_network_daily_value_mult = 0.2
+	}
+
+	score = 1000
+
+	active_effect = {
+		add_modifier = { modifier = scfe_first_empire_databank_activated days = 3600 }
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_scfe_first_empire_databank
 		}
 	}
 }

@@ -92,84 +92,15 @@ country_event = {
             counter = "scfe_znkar_artifacts"
             amount = 1
         }
-        home_planet = {
-            closest_system = {
-                min_steps = 4
-                max_steps = 20
-                limit = {
-                    scfe_is_valid_system = yes
-                    scfe_is_valid_owner = yes
-                    any_system_planet = {
-                        scfe_is_nuked = yes
-                        has_moon = yes
-                        has_anomaly = no
-                        has_owner = no
-                        NOT = { has_planet_flag = has_megastructure }
-                        NOT = { exists = archaeological_site }
-                        any_moon = {
-                            OR = {
-                                scfe_is_frozen = yes
-                                scfe_is_barren = yes
-                                scfe_is_barren_cold = yes
-                            }
-                            has_anomaly = no
-                            NOT = { has_planet_flag = has_megastructure }
-                            NOT = { exists = archaeological_site }
-                        }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        scfe_is_valid_system = yes
-                        scfe_is_nuked = yes
-                        has_moon = yes
-                        has_anomaly = no
-                        has_owner = no
-                        NOT = { exists = archaeological_site }
-                        any_moon = {
-                            OR = {
-                                scfe_is_frozen = yes
-                                scfe_is_barren = yes
-                                scfe_is_barren_cold = yes
-                            }
-                            has_anomaly = no
-                            NOT = { has_planet_flag = has_megastructure }
-                            NOT = { exists = archaeological_site }
-                        }
-                    }
-                    enable_special_project = {
-                        name = SCFE_ZNKAR_NUKED_PROJECT
-                        location = this
-                        owner = event_target:znkar_start_country
-                    }
-                    hidden_effect = {
-                        set_name = scfe_znkar_pakrta
-                        save_global_event_target_as = scfe_znkar_nuked
-                        random_moon = {
-                            limit = {
-                                OR = {
-                                    scfe_is_frozen = yes
-                                    scfe_is_barren = yes
-                                    scfe_is_barren_cold = yes
-                                }
-                                has_anomaly = no
-                                NOT = { has_planet_flag = has_megastructure }
-                                NOT = { exists = archaeological_site }
-                            }
-                            set_name = scfe_znkar_dantiy
-                            save_global_event_target_as = scfe_znkar_nuked_moon
-                        }
-                    }
-                }
+        random_system_within_border = {
+            set_spawn_system_batch = begin
+            spawn_system = {
+                max_jumps = 0
+                min_distance = 5
+                max_distance = 20
+                initializer = "scfe_znkar_init_01"
             }
-        }
-        hidden_effect = {
-            if = {
-                limit = {
-                    NOT = { exists = event_target:scfe_znkar_nuked }
-                }
-                country_event = { id = scfe_znkar.20 }
-            }
+            set_spawn_system_batch = end
         }
     }
 }
@@ -318,142 +249,6 @@ country_event = {
     }
 }
 
-# Failsafe
-country_event = {
-    id = scfe_znkar.20
-    hide_window = yes
-    is_triggered_only = yes
-
-    immediate = {
-        random_system = {
-            limit = {
-                scfe_is_valid_system = yes
-                scfe_is_valid_owner = yes
-                any_system_planet = {
-                    uninhabitable_regular_planet = yes
-                    has_moon = yes
-                    has_anomaly = no
-                    has_owner = no
-                    NOT = { has_planet_flag = has_megastructure }
-                    NOT = { exists = archaeological_site }
-                    scfe_is_tfpanet = no
-                    any_moon = {
-                        has_anomaly = no
-                        NOT = { has_planet_flag = has_megastructure }
-                        NOT = { exists = archaeological_site }
-                        scfe_is_tfpanet = no
-                    }
-                }
-            }
-            random_system_planet = {
-                limit = {
-                    scfe_is_valid_system = yes
-                    uninhabitable_regular_planet = yes
-                    has_moon = yes
-                    has_anomaly = no
-                    has_owner = no
-                    NOT = { exists = archaeological_site }
-                    scfe_is_tfpanet = no
-                    any_moon = {
-                        has_anomaly = no
-                        NOT = { has_planet_flag = has_megastructure }
-                        NOT = { exists = archaeological_site }
-                        scfe_is_tfpanet = no
-                    }
-                }
-                change_pc = pc_nuked
-                clear_planet_modifiers = yes
-                clear_deposits = yes
-                enable_special_project = {
-                    name = SCFE_ZNKAR_NUKED_PROJECT
-                    location = this
-                    owner = event_target:znkar_start_country
-                }
-                set_name = scfe_znkar_pakrta
-                save_global_event_target_as = scfe_znkar_nuked
-                random_moon = {
-                    limit = {
-                        has_anomaly = no
-                        NOT = { has_planet_flag = has_megastructure }
-                        NOT = { exists = archaeological_site }
-                    }
-                    change_pc = pc_barren
-                    clear_deposits = yes
-                    clear_planet_modifiers = yes
-                    set_name = scfe_znkar_dantiy
-                    save_global_event_target_as = scfe_znkar_nuked_moon
-                }
-            }
-        }
-    }
-    after = {
-        if = {
-            limit = {
-                NOT = {
-                    exists = event_target:scfe_znkar_nuked
-                }
-            }
-            random_system = {
-                limit = {
-                    scfe_is_valid_system = yes
-                    scfe_is_valid_owner = yes
-                    any_system_planet = {
-                        scfe_is_gas_giant = yes
-                        has_moon = yes
-                        has_anomaly = no
-                        has_owner = no
-                        NOT = { has_planet_flag = has_megastructure }
-                        NOT = { exists = archaeological_site }
-                        any_moon = {
-                            has_anomaly = no
-                            NOT = { has_planet_flag = has_megastructure }
-                            NOT = { exists = archaeological_site }
-                        }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        scfe_is_valid_system = yes
-                        scfe_is_gas_giant = yes
-                        has_moon = yes
-                        has_anomaly = no
-                        has_owner = no
-                        NOT = { exists = archaeological_site }
-                        any_moon = {
-                            has_anomaly = no
-                            NOT = { has_planet_flag = has_megastructure }
-                            NOT = { exists = archaeological_site }
-                        }
-                    }
-                    change_pc = pc_nuked
-                    set_planet_size = 14
-                    clear_planet_modifiers = yes
-                    clear_deposits = yes
-                    enable_special_project = {
-                        name = SCFE_ZNKAR_NUKED_PROJECT
-                        location = this
-                        owner = event_target:znkar_start_country
-                    }
-                    set_name = scfe_znkar_pakrta
-                    save_global_event_target_as = scfe_znkar_nuked
-                    random_moon = {
-                        limit = {
-                            has_anomaly = no
-                            NOT = { has_planet_flag = has_megastructure }
-                            NOT = { exists = archaeological_site }
-                        }
-                        change_pc = pc_barren
-                        clear_deposits = yes
-                        clear_planet_modifiers = yes
-                        set_name = scfe_znkar_dantiy
-                        save_global_event_target_as = scfe_znkar_nuked_moon
-                    }
-                }
-            }
-        }
-    }
-}
-
 country_event = {
     id = scfe_znkar.30
     hide_window = yes
@@ -578,6 +373,9 @@ fleet_event = {
                 event_chain = "scfe_znkar_chain"
                 counter = "scfe_znkar_artifacts"
                 amount = 1
+            }
+            hidden_effect = {
+                remove_point_of_interest = scfe_znkar_nuked
             }
         }
         event_target:scfe_znkar_nuked_moon = {

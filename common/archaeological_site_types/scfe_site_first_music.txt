@@ -6,10 +6,13 @@ scfe_site_the_first_music = {
 	stages = 2
 	weight = 0 #check anomaly
 
+	potential = {
+		owner = { is_ai = no }
+	}
+
 	allow = {
 		exists = leader
 		leader = { leader_class = scientist }
-		owner = { is_ai = no }
 	}
 	visible = {
 		scfe_dig_site_visible_trigger = yes

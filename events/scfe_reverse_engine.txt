@@ -119,7 +119,7 @@ country_event = {
 	}
 	option = {
 		exclusive_trigger = {
-			has_synthethic_dawn = yes
+			has_synthetic_dawn = yes
 			is_machine_empire = yes
 		}
 		name = scfe_reverse_engine.5.a

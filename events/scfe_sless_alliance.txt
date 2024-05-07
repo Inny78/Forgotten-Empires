@@ -31,6 +31,7 @@ ship_event = {
     option = {
         name = scfe_sless.1.a
         owner = { begin_event_chain = { event_chain = scfe_sless_chain } }
+        hidden_effect = { owner = { save_global_event_target_as = scfe_sless_owner } }
         from = { create_archaeological_site = scfe_sless_alliance_site_1 }
     }
 }
@@ -91,7 +92,16 @@ fleet_event = {
     immediate = {
         from = { set_site_progress_locked = yes }
         closest_system = {
-            limit = { scfe_sless_digsite_spawn_rules = yes }
+            limit = {
+                scfe_sless_digsite_spawn_rules = yes
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_sless_owner }
+                    }
+                }
+            }
             min_steps = 1
             max_steps = 20
             random_system_planet = {
@@ -243,7 +253,16 @@ fleet_event = {
     immediate = {
         from = { set_site_progress_locked = yes }
         closest_system = {
-            limit = { scfe_sless_digsite_spawn_rules = yes }
+            limit = {
+                scfe_sless_digsite_spawn_rules = yes
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_sless_owner }
+                    }
+                }
+            }
             min_steps = 1
             max_steps = 20
             random_system_planet = {
@@ -467,6 +486,7 @@ fleet_event = {
         }
         hidden_effect = {
             owner = { set_country_flag = scfe_precursor_sless_finished }
+            clear_global_event_target = scfe_sless_owner
         }
     }
 

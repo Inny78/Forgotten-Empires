@@ -32,9 +32,6 @@ scfe_dig_site_default_spawn_rules = {
 scfe_dig_site_visible_trigger = {
 	scfe_is_default_empire = yes
 	is_ai = no
-	exists = from
-	exists = from.planet
-	exists = from.solar_system
 	default_site_visible_trigger = yes
 }
 
@@ -140,8 +137,10 @@ scfe_is_valid_system = {
 		exists = star
 		NOR = {
 			has_star_flag = home_system
+			has_star_flag = precursor_system
 			has_star_flag = sealed_system
 			has_star_flag = empire_cluster
+			has_star_flag = hostile_system
 			has_special_star_flag_trigger = yes
 			is_fe_cluster = yes
 			has_star_flag = drone_home_system
@@ -358,6 +357,10 @@ scfe_is_valid_owner = {
 	OR = {
 		has_owner = no
 		AND = {
+			exists = owner
+			owner = { is_same_empire = root.owner }
+		}
+		AND = {
 			exists = space_owner
 			space_owner = { is_same_value = root.owner }
 		}
@@ -367,7 +370,6 @@ scfe_is_valid_owner = {
 # Precursor Story Pack
 scfe_sless_digsite_spawn_rules = {
 	exists = star
-	scfe_is_valid_owner = yes
 	NOR = {
 		is_same_value = root.solar_system
 		any_system_planet = {
@@ -390,7 +392,6 @@ scfe_sless_digsite_spawn_rules = {
 }
 scfe_coprean_digsite_spawn_rules = {
 	exists = star
-	scfe_is_valid_owner = yes
 	NOR = {
 		is_same_value = root.solar_system
 		any_system_planet = {
@@ -408,7 +409,6 @@ scfe_coprean_digsite_spawn_rules = {
 }
 scfe_astanine_digsite_spawn_rules = {
 	exists = star
-	scfe_is_valid_owner = yes
 	NOR = {
 		is_same_value = root.solar_system
 		any_system_planet = {
@@ -487,5 +487,36 @@ has_any_strange_worlds_deposit = {
 		planet_has_koeleothan_deposit = yes
 		planet_has_quantumpearl_deposit = yes
 		planet_has_xenograss_deposit = yes
+	}
+}
+
+scfe_is_valid_shaded_fe = {
+	is_ai = yes
+	OR = {
+		AND = {
+			is_fallen_empire_spiritualist = yes
+			event_target:scfe_shaded_owner = { NOT = { has_relic = r_severed_head } }
+		}
+		is_fallen_empire_materialist = yes
+		is_fallen_empire_xenophile = yes
+		is_fallen_empire_xenophobe = yes
+	}
+	is_at_war = no
+	fleet_power > 60000
+	NOT = { has_country_flag = fallen_empire_lost_war }
+}
+
+scfe_is_valid_star = {
+	NOR = {
+		is_planet_class = pc_black_hole
+		is_planet_class = pc_neutron_star
+		is_planet_class = pc_pulsar
+	}
+}
+
+scfe_can_jump_in_shaded_system = {
+	OR = {
+		has_event_chain = scfe_shaded_chain
+		has_country_flag = scfe_shaded_colony_coordinates
 	}
 }

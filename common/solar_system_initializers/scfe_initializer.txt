@@ -558,3 +558,122 @@ strange_init_05 = {
         }
     }
 }
+
+shaded_colony_system = {
+    name = scfe_saaldryn
+    flags = { scfe_shaded_colony_system crisis_spawn_exclude }
+    class = "sc_m"
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+
+    init_effect = {
+        create_turbulent_nebula_2 = yes
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        anomaly = none
+    }
+
+    change_orbit = 50
+
+    planet = {
+        name = scfe_asdrylia
+        count = 1
+        orbit_distance = 0
+        class = "pc_gaia"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 20 max = 25 }
+        has_ring = no
+        anomaly = none
+
+        init_effect = {
+            set_planet_flag = scfe_shaded_colony
+            set_planet_flag = wp_pfe_ignore_planet_flag
+            set_planet_flag = forbid_guillis_planet_modifiers
+            set_planet_flag = suppress_archaeological_sites
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+            add_modifier = { modifier = natural_beauty days = -1 }
+            add_deposit = d_central_spire
+            prevent_anomaly = yes
+        }
+    }
+}
+
+scfe_znkar_init_01 = {
+    class = "rl_standard_stars"
+    name = scfe_znkar_kamva
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+
+    planet = {
+        name = scfe_znkar_kamva
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        orbit_distance = 20
+        count = { min = 1 max = 2 }
+        class = rl_unhabitable_planets
+    }
+
+    change_orbit = 20
+
+    planet = {
+        name = scfe_znkar_pakrta
+        count = 1
+        orbit_distance = 0
+        class = "pc_nuked"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+
+        init_effect = {
+            set_planet_flag = wp_pfe_ignore_planet_flag
+            set_planet_flag = forbid_guillis_planet_modifier
+            set_planet_flag = scfe_znkar_nuked
+            create_point_of_interest = { event_chain = scfe_znkar_chain id = scfe_znkar_nuked name = scfe_znkar_pakrta location = this }
+            save_global_event_target_as = scfe_znkar_nuked
+            enable_special_project = {
+                name = SCFE_ZNKAR_NUKED_PROJECT
+                location = this
+                owner = event_target:znkar_start_country
+            }
+            prevent_anomaly = yes
+        }
+
+        moon = {
+            name = scfe_znkar_dantiy
+            count = 1
+            class = "pc_barren"
+            orbit_distance = 12
+            size = { min = 6 max = 8 }
+            has_ring = no
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+
+            init_effect = {
+                set_planet_flag = wp_pfe_ignore_planet_flag
+                set_planet_flag = forbid_guillis_planet_modifiers
+                set_planet_flag = scfe_znkar_nuked_moon
+                save_global_event_target_as = scfe_znkar_nuked_moon
+                prevent_anomaly = yes
+            }
+        }
+    }
+}

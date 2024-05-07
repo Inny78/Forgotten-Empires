@@ -23,7 +23,12 @@ fleet_event = {
     option = {
         name = scfe_coprean_constitution.1.a
         small_artifact_reward = yes
-        owner = { begin_event_chain = { event_chain = scfe_coprean_chain } }
+        owner = {
+            begin_event_chain = { event_chain = scfe_coprean_chain }
+        }
+        hidden_effect = {
+            owner = { save_global_event_target_as = scfe_coprean_owner }
+        }
     }
 }
 #chapter 2
@@ -67,8 +72,15 @@ fleet_event = {
             limit = {
                 scfe_coprean_digsite_spawn_rules = yes
                 any_system_planet = { scfe_is_gas_giant = yes }
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_coprean_owner }
+                    }
+                }
             }
-            min_steps = 1
+            min_steps = 2
             max_steps = 20
             random_system_planet = {
                 limit = {
@@ -225,8 +237,15 @@ fleet_event = {
             limit = {
                 scfe_coprean_digsite_spawn_rules = yes
                 any_system_planet = { is_asteroid = yes }
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_coprean_owner }
+                    }
+                }
             }
-            min_steps = 1
+            min_steps = 2
             max_steps = 20
             random_system_planet = {
                 limit = {
@@ -781,34 +800,38 @@ country_event = {
                     }
                     add_opinion_modifier = {
                         who = root
-                        modifier = triggered_opinion_scfe_ture_identity
+                        modifier = triggered_opinion_scfe_true_identity
                     }
                 }
             }
             #create gestalt nodes
             country_create_gestalt_councilor = {
                 CLASS = official
-                COUNCIL_POS = councilor_gestalt_governor
+                COUNCIL_POS = councilor_gestalt_growth
                 DESC = councilor_gestalt_growth_desc
             }
             country_create_gestalt_councilor = {
                 CLASS = scientist
-                COUNCIL_POS = councilor_gestalt_scientist
+                COUNCIL_POS = councilor_gestalt_cognitive
                 DESC = councilor_gestalt_cognitive_desc
             }
             country_create_gestalt_councilor = {
                 CLASS = commander
-                COUNCIL_POS = councilor_gestalt_admiral
+                COUNCIL_POS = councilor_gestalt_legion
                 DESC = councilor_gestalt_legion_desc
             }
             country_create_gestalt_councilor = {
                 CLASS = official
-                COUNCIL_POS = councilor_gestalt_general
+                COUNCIL_POS = councilor_gestalt_regulatory
                 DESC = councilor_gestalt_regulatory_desc
             }
         }
     }
+    after = {
+        hidden_effect = { clear_global_event_target = scfe_coprean_owner }
+    }
 }
+
 #SCFE_COPREAN_PROJECT_1 finished event
 ship_event = {
     id = scfe_coprean_constitution.17

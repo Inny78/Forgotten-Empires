@@ -1,16 +1,13 @@
 triggered_opinion_scfe_diary_of_innovo = {
     trigger = {
         FROM = { has_modifier = mod_r_scfe_diary_of_innovo }
-        NOR = {
-            is_country_type = fallen_empire
-            is_country_type = awakened_fallen_empire
-        }
+        is_fallen_empire = no
     }
     opinion = {
         modifier = { add = 60 }
     }
 }
-triggered_opinion_scfe_ture_identity = {
+triggered_opinion_scfe_true_identity = {
     opinion = {
         modifier = {
             add = -200
@@ -18,6 +15,76 @@ triggered_opinion_scfe_ture_identity = {
     }
     monthly = yes
     decay = {
-        base = 2
+        base = 1
+        modifier = {
+            factor = value:negative_opinion_decay_rate
+        }
     }
+    unique = yes
+}
+scfe_opinion_angered_fallen_empire = {
+    opinion = {
+        add = -1000
+    }
+    monthly = yes
+    decay = {
+        base = 1
+    }
+    unique = yes
+}
+scfe_opinion_angered_machine_fallen_empire = {
+    opinion = {
+        add = -1000
+    }
+    monthly = yes
+    decay = {
+        base = 10
+    }
+    unique = yes
+}
+scfe_opinion_irritated_fallen_empire = {
+    opinion = {
+        add = -100
+    }
+    monthly = yes
+    decay = {
+        base = 1
+    }
+    unique = yes
+}
+scfe_opinion_irritated_machine_fallen_empire = {
+    opinion = {
+        add = -100
+    }
+    monthly = yes
+    decay = {
+        base = 10
+    }
+    unique = yes
+}
+scfe_opinion_compromise_attempt = {
+    opinion = {
+        add =  -250
+    }
+    monthly = yes
+    decay = {
+        base = 0.5
+        modifier = {
+            factor = value:negative_opinion_decay_rate
+        }
+    }
+    unique = yes
+}
+scfe_opinion_coords_attempt = {
+    opinion = {
+        add =  -50
+    }
+    monthly = yes
+    decay = {
+        base = 0.5
+        modifier = {
+            factor = value:negative_opinion_decay_rate
+        }
+    }
+    unique = yes
 }

@@ -224,3 +224,55 @@ scfe_infrastructure = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	icon_frame = 1
 }
+# Shaded Empire
+scfe_first_empire_databank_activated = {
+	icon = "gfx/interface/icons/modifiers/scfe_first_empire_db_activated.dds"
+	ship_speed_mult = 0.2
+	ship_shield_mult = 0.1
+	ship_shield_add = 200
+	megastructure_build_speed_mult = 0.2
+}
+scfe_ominous_menace = {
+	icon = "gfx/interface/icons/modifiers/mod_influence_negative.dds"
+	country_influence_produces_mult = -0.2
+	diplo_weight_mult = -0.15
+	pop_happiness = -0.1
+}
+scfe_shaded_skill = {
+	icon = "gfx/interface/icons/modifiers/mod_acceptlesson.dds"
+	country_influence_produces_mult = 0.1
+	country_subject_acceptance_add = 10
+	intel_gain_speed = 0.1
+	spy_network_daily_value_mult = 0.1
+}
+scfe_energy_mastery = {
+	icon = "gfx/interface/icons/modifiers/mod_energy_produces_mult.dds"
+	country_resource_max_energy_add = 2000
+	country_energy_produces_mult = 0.2
+	ships_energy_upkeep_mult = -0.2
+	weapon_type_energy_weapon_damage_mult = 0.1
+}
+# Roots
+scfe_rooted_nature = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+	planet_farmers_minerals_upkeep_add = 0.1
+	planet_farmers_produces_mult = 0.1
+	icon_frame = 2
+}
+scfe_rooted_nature_maintenance = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+	planet_miners_energy_upkeep_add = 0.1
+	planet_miners_produces_mult = -0.05
+	icon_frame = 3
+}
+scfe_rooted_crime = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	planet_crime_add = 15
+	job_criminal_add = 2
+	biological_pop_growth_speed = 0.2
+	icon_frame = 3
+}
+scfe_rooted_doom = {
+	icon = "gfx/interface/icons/planet_modifiers/scfe_aggressive_flora.dds"
+	icon_frame = 3
+}

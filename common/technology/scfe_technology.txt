@@ -152,7 +152,14 @@ tech_woorskyr_habitation = {
 	is_rare = yes
 	tier = 2
 	weight = @tier2weight1
-	
+
+	prereqfor_desc = {
+		custom = {
+			title = TECH_UNLOCK_WOORSKYR_TECHS_TITLE
+			desc = TECH_UNLOCK_WOORSKYR_TECHS_DESC
+		}
+	}
+
 	weight_modifier = {
 		modifier = {
 			factor = 2

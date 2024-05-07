@@ -8,10 +8,13 @@ scfe_site_king_of_underground_city = {
 		base = 0
 	}
 
+	potential = {
+		owner = { is_ai = no }
+	}
+
 	allow = {
 		exists = leader
 		leader = { leader_class = scientist }
-		owner = { is_ai = no }
 	}
 
 	visible = {

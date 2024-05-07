@@ -77,8 +77,8 @@
  scfe_tomb_of_dead_whales.6.name: "Karma"
  scfe_tomb_of_dead_whales.6.desc: "Las ballenas espaciales Tiyanki normalmente no explotan cuando mueren, ya que sus cuerpos tienen algún tipo de protección en sí mismos. La enorme cantidad de materia orgánica permanece dócil durante mucho tiempo, hasta que explota silenciosamente bajo tierra o se transforma en otros materiales. Incluso si algunos explotan en la superficie, los gases venenosos resultantes son demasiado livianos y demasiado pequeños para ser una amenaza, y pronto flotan fuera de la capa atmosférica del planeta.\nPor esa razón, muchos argumentaron en contra de la idea del gobierno de disparar cayendo ballenas con misiles nucleares interplanetarios. Sin embargo, el primer derribo exitoso de una ballena pronto los influyó en el lado profesional.\nLamentablemente, no tuvieron en cuenta el vínculo espiritual de las ballenas. Cuando algunos de sus amigos se vieron privados de sus legítimos funerales, innumerables ballenas Tiyanki en los alrededores rugieron de rabia, cargando hacia el planeta. Los funcionarios del imperio han dejado una ilustración bastante descriptiva de la terrible situación.\nSe habían disparado cantidades masivas de armas nucleares contra las ballenas, pero empeoraron las cosas. Algunas ballenas quedaron atrapadas en las explosiones nucleares cerca de la corteza del planeta, lo que a su vez provocó una desastrosa cadena de explosiones de cadáveres de ballenas espaciales bajo tierra.\nPronto siguieron innumerables explosiones de enorme escala. El aire prácticamente ardía con gases venenosos, contra los cuales el imperio no podía resistir, a diferencia del planeta.\nPero como ya sabemos, un pequeño número de personas sobrevivieron de alguna manera. Podrían haber podido prosperar nuevamente, si no fuera por el rencor de las ballenas contra el planeta. Las ballenas espaciales apuntaron específicamente al planeta como su lugar de funeral preferido a partir de entonces.\nSegún sus registros antiguos, no hubo muchas bajas de ballenas que caían antes del incidente, que es la forma en que pudimos rastrear la verdad. La construcción de la torre con ruedas y la construcción de hábitats dentro de los cadáveres de ballenas fueron los últimos esfuerzos de los remanentes para evitar las ballenas que caían, que ahora las atacaban específicamente.\nSabemos el resto."
  scfe_tomb_of_dead_whales.6.a: "Su último es algo más que una mala suerte."
- scfe_tomb_of_dead_whales.6.b: "Ahora tenemos motivos para cazar esas ballenas y hemos aprendido a tener en cuenta."
- scfe_tomb_of_dead_whales.6.c: "Lo más importante en esta historia es la gran cantidad de gases que quedan en depósito."
+ scfe_tomb_of_dead_whales.6.b: "Ahora tenemos razón para cazar esas ballenas."
+ scfe_tomb_of_dead_whales.6.c: "Quedan numerosos depósitos de gases."
  scfe_tomb_of_dead_whales.6.d: "Historia trágica."
  scfe_whale_fossil: "Fósil de Ballena"
  scfe_whale_fossil_desc: "El planeta que alguna vez fue utilizado como mundo sepulcral por las ballenas espaciales Tiyanki. Hay muchos fósiles de ballenas en su estrato, lo que dificulta el desarrollo de sus capas mineras."
@@ -356,7 +356,7 @@
 
  mod_scfe_precursor_coprean_secrets_deep: "Deeper Secret of the Coprea"
  mod_scfe_precursor_coprean_secrets_deep_gestalt: "Deeper Secret of the Coprea"
- triggered_opinion_scfe_ture_identity: "Revealed True Identity"
+ triggered_opinion_scfe_true_identity: "Revealed True Identity"
 
  civic_scfe_possessive_consciousness_machine: "Possessive Consciousness"
  civic_scfe_possessive_consciousness_machine_desc: "This collective consciousness society has adopted a truly innovative way to move forward, imitating sentient life forms with individual identities."

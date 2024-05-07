@@ -5,10 +5,14 @@ scfe_site_when_the_world_sings = {
 	max_instances = 1
 	stages = 4
 	weight = 0 #check on action
+
+	potential = {
+		owner = { is_ai = no }
+	}
+
 	allow = {
 		exists = leader
 		leader = { leader_class = scientist }
-		owner = { is_ai = no }
 	}
 
 	visible = {

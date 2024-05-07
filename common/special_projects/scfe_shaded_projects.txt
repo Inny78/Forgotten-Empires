@@ -1,0 +1,233 @@
+special_project = {
+    key = "SCFE_SHADED_PROJECT_INIT"
+    cost = 0
+    days_to_research = 100
+    tech_department = engineering_technology
+    picture = GFX_evt_scfe_crashed_ship
+    location = yes
+    event_scope = ship_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        owner = { country_event = { id = scfe_shaded.1 } }
+    }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_1"
+    cost = 0
+    days_to_research = 100
+    tech_department = engineering_technology
+    picture = GFX_evt_decryption
+    location = yes
+    event_scope = ship_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        owner = { country_event = { id = scfe_shaded.3 } }
+    }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_2"
+    cost = 0
+    days_to_research = 100
+    tech_department = engineering_technology
+    picture = GFX_evt_scfe_asteroid
+    location = yes
+    event_scope = ship_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        ship_event = { id = scfe_shaded.12 }
+    }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_3"
+    cost = 0
+    days_to_research = 100
+    tech_department = engineering_technology
+    picture = GFX_evt_decryption
+    location = yes
+    event_scope = ship_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        ship_event = { id = scfe_shaded.13 }
+    }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_4"
+    cost = 0
+    days_to_research = 100
+    tech_department = engineering_technology
+    picture = GFX_evt_decryption
+    location = yes
+    event_scope = ship_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        ship_event = { id = scfe_shaded.14 }
+    }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_5"
+    cost = 0
+    days_to_research = 100
+    tech_department = engineering_technology
+    picture = GFX_evt_decryption
+    location = yes
+    event_scope = ship_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+
+    on_success = {
+        ship_event = { id = scfe_shaded.15 }
+    }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_6"
+    cost = 15000
+    days_to_research = 0
+    tech_department = engineering_technology
+    picture = GFX_evt_decryption
+    event_scope = country_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {}
+
+    on_progress_25 = { country_event = { id = scfe_shaded.18 } }
+    on_progress_50 = { country_event = { id = scfe_shaded.19 } }
+    on_progress_75 = { country_event = { id = scfe_shaded.20 } }
+    on_success = { country_event = { id = scfe_shaded.21 } }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_7"
+    cost = 15000
+    tech_department = engineering_technology
+    picture = GFX_evt_analyzing_artifacts
+    event_scope = country_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {}
+
+    on_progress_25 = { country_event = { id = scfe_shaded.28 } }
+    on_progress_50 = { country_event = { id = scfe_shaded.29 } }
+    on_progress_75 = { country_event = { id = scfe_shaded.30 } }
+    on_success = { country_event = { id = scfe_shaded.31 } }
+}
+
+special_project = {
+    key = "SCFE_SHADED_PROJECT_8"
+    cost = 0
+    energy = 500
+    days_to_research = 100
+    timelimit = 150
+    picture = GFX_evt_ship_travel
+    location = no
+    event_scope = country_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+    }
+
+    on_success = {
+        country_event = { id = scfe_fallen_empires.5 }
+    }
+
+    on_fail = {
+        country_event = { id = scfe_fallen_empires.6 }
+    }
+
+}
+special_project = {
+    key = "SCFE_SHADED_PROJECT_9"
+    cost = 0
+    days_to_research = 120
+    timelimit = 150
+    picture = GFX_evt_decryption
+    location = yes
+    event_scope = country_event
+    event_chain = scfe_shaded_chain
+
+    requirements = {
+    }
+
+    on_success = {
+        country_event = { id = scfe_fallen_empires.5 }
+    }
+
+    on_fail = {
+        country_event = { id = scfe_fallen_empires.6 }
+    }
+}
+special_project = {
+    key = "SCFE_PRECURSOR_SHADED_EMPIRE_SECRETS"
+    picture = GFX_evt_analyzing_artifacts
+    icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+    cost = @tier3cost3
+    tech_department = society_technology
+
+    event_scope = planet_event
+
+    on_success = {
+        owner = {
+            country_event = { id = scfe_shaded.32 }
+        }
+    }
+}
+special_project = {
+    key = "SCFE_PRECURSOR_FIRST_EMPIRE_SECRETS_1"
+    picture = GFX_evt_analyzing_artifacts
+    icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+    cost = @tier3cost3
+    tech_department = society_technology
+
+    event_scope = planet_event
+
+    on_success = {
+        owner = {
+            country_event = { id = scfe_shaded.33 }
+        }
+    }
+}

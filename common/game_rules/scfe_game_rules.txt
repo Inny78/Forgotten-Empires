@@ -1,0 +1,71 @@
+# Root = country attempting to target system for movement
+# This = system being targeted
+can_enter_system_by_jump = {
+    custom_tooltip = {
+        #		success_text = "debug: can jump"
+        fail_text = cannot_jump_to_system
+
+        # Sealed system
+        OR = {
+            NOT = { has_star_flag = sealed_system }
+            AND = {
+                root = { has_country_flag = entered_sealed_system }
+                has_star_flag = sealed_system
+            }
+        }
+
+        # L-Cluster
+        NOT = { has_star_flag = lcluster }
+
+        # Formless system
+        NOT = { has_star_flag = formless_system }
+
+        # Forgotten Empires
+        NAND = {
+            has_star_flag = scfe_shaded_colony_system
+            root = { scfe_can_jump_in_shaded_system = no }
+        }
+    }
+}
+
+#Root = country
+#This = planet
+can_terraform_planet = {
+    custom_tooltip = {
+        fail_text = terraform_fail_no_presapient_protection_or_no_presapients
+        NAND = {
+            AND = {
+                exists = root
+                root = { has_policy_flag = pre_sapients_protect }
+            }
+            any_owned_species = { is_sapient = no }
+        }
+    }
+    custom_tooltip = {
+        fail_text = "requires_actor_not_devouring_swarm_lithoid"
+        exists = root
+        root = { is_lithoid_devouring_swarm = no }
+    }
+    custom_tooltip = {
+        fail_text = "legendary_leader_planet_no_terraform"
+        exists = root
+        this = {
+            NOT = { has_planet_flag = legendary_leader_planet }
+        }
+    }
+
+    custom_tooltip = {
+        fail_text = requires_not_relentless_industrialists_situation
+        NOT = {
+            any_targeting_situation = {
+                is_situation_type = relentless_industrialists_situation
+            }
+        }
+    }
+
+    # Forgotten Empires
+    custom_tooltip = {
+        fail_text = scfe_cant_terraform_special_planet
+        NOT = { has_planet_flag = cant_terraform_planet }
+    }
+}

@@ -213,7 +213,6 @@ scfe_vanishing_act_category = {
 	on_success = scfe_vanishing_act.1
 }
 
-
 ############################## Archaeology Story Pack ##############################
 
 ##### The First Music #####

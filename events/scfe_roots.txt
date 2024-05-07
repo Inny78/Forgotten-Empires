@@ -1,0 +1,237 @@
+namespace = scfe_roots
+
+# Change ownership
+planet_event = {
+    id = scfe_roots.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_planet_flag = scfe_roots
+            }
+            # Restart the chain
+            remove_global_flag = scfe_roots_started
+            scfe_roots_cleanup = yes
+            fromfrom = { end_event_chain = scfe_roots_chain }
+        }
+    }
+}
+# Start of the story
+country_event = {
+    id = scfe_roots.2
+    title = scfe_roots.2.name
+    picture = GFX_evt_alien_nature
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+    desc = {
+        trigger = { country_uses_food = yes }
+        text = scfe_roots.2.desc1
+    }
+    desc = {
+        trigger = { country_uses_food = no }
+        text = scfe_roots.2.desc2
+    }
+    location = event_target:scfe_roots_planet
+
+    option = {
+        name = CURIOUS
+        # begin_event_chain = { event_chain = scfe_roots_chain target = this }
+        event_target:scfe_roots_planet = {
+            if = {
+                limit = {
+                    owner = { country_uses_food = yes }
+                }
+                add_modifier = { modifier = scfe_rooted_nature days = -1 }
+            }
+            else = {
+                add_modifier = { modifier = scfe_rooted_nature_maintenance days = -1 }
+            }
+        }
+        hidden_effect = {
+            country_event = { id = scfe_roots.3 days = 200 random = 100 }
+        }
+    }
+}
+country_event = {
+    id = scfe_roots.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                is_same_empire = event_target:scfe_roots_planet.owner
+            }
+            country_event = { id = scfe_roots.4 }
+        }
+    }
+}
+country_event = {
+    id = scfe_roots.4
+    title = scfe_roots.4.name
+    desc = scfe_roots.4.desc
+    picture = GFX_evt_alien_nature
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+    location = event_target:scfe_roots_planet
+
+    option = {
+        name = scfe_roots.4.a
+        trigger = { resource_stockpile_compare = { resource = energy value = 200 } }
+        event_target:scfe_roots_planet = {
+            ruin_building = random_no_capital
+            add_planet_devastation = 10
+            add_resource = { energy = -200 }
+        }
+    }
+    option = {
+        name = NOTIME
+        event_target:scfe_roots_planet = {
+            ruin_building = random_no_capital
+            add_planet_devastation = 20
+        }
+    }
+    after = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    is_gestalt = no
+                    owner_main_species = {
+                        is_organic_species = yes
+                        OR = {
+                            is_species_class = PLANT
+                            is_species_class = FUN
+                        }
+                    }
+                    event_target:scfe_roots_planet = {
+                        any_pop = {
+                            is_same_species = owner_main_species
+                        }
+                    }
+                }
+                country_event = { id = scfe_roots.5 days = 50 random = 20 }
+            }
+            country_event = { id = scfe_roots.7 days = 100 random = 50 }
+        }
+    }
+}
+country_event = {
+    id = scfe_roots.5
+    title = scfe_roots.5.name
+    desc = scfe_roots.5.desc
+    picture = GFX_evt_alien_nature
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+    location = event_target:scfe_roots_planet
+
+    option = {
+        name = MAKE_IT_SO
+        trigger = { resource_stockpile_compare = { resource = energy value = 200 } }
+        add_resource = { energy = -200 }
+        event_target:scfe_roots_planet = {
+            create_pop = {
+                species = owner_main_species
+            }
+        }
+    }
+    option = {
+        name = utopia.60.a
+        event_target:scfe_roots_planet = {
+            create_pop = {
+                species = owner_main_species
+            }
+            add_modifier = { modifier = scfe_rooted_crime days = -1 }
+        }
+    }
+    after = {
+        hidden_effect = { country_event = { id = scfe_roots.6 days = 100 } }
+    }
+}
+country_event = {
+    id = scfe_roots.6
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:scfe_roots_planet = {
+            if = {
+                limit = {
+                    exists = owner
+                    owner = { is_same_empire = event_target:scfe_roots_owner }
+                }
+                create_pop = {
+                    species = owner_main_species
+                }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_roots.7
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                event_target:scfe_roots_planet = {
+                    exists = owner
+                    owner = { is_same_empire = event_target:scfe_roots_owner }
+                }
+            }
+            country_event = { id = scfe_roots.8 }
+        }
+    }
+}
+
+country_event = {
+    id = scfe_roots.8
+    title = scfe_roots.8.name
+    desc = scfe_roots.8.desc
+    picture = GFX_evt_alien_nature
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+    location = event_target:scfe_roots_planet
+
+    option = {
+        name = scfe_roots.8.a
+        event_target:scfe_roots_planet = {
+            kill_pop = yes
+            add_planet_devastation = 20
+        }
+        # Add doomed world modifier, start countdown
+    }
+    option = {
+        name = scfe_roots.8.b
+        trigger = { is_xenophile = no }
+        event_target:scfe_roots_planet = {
+            kill_pop = yes
+            add_planet_devastation = 20
+        }
+        # Follow-up event
+    }
+    option = {
+        name = scfe_roots.8.c
+        event_target:scfe_roots_planet = {
+            kill_pop = yes
+            add_planet_devastation = 20
+        }
+        # New special project
+    }
+    option = {
+        name = scfe_roots.8.d
+        trigger = {
+            OR = {
+                is_hive_empire = yes
+                has_ascension_perk = ap_mind_over_matter
+            }
+        }
+        event_target:scfe_roots_planet = {
+            kill_pop = yes
+            add_planet_devastation = 20
+        }
+        # New special project
+    }
+}

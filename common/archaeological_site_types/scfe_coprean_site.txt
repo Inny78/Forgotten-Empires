@@ -4,10 +4,13 @@ scfe_coprean_constitution_site_1 = {
     stages = 3
     weight = { base = 0 } #check scfeetc.2 to see real spawn chance
 
+    potential = {
+        owner = { is_ai = no }
+    }
+
     allow = {
         exists = leader
         leader = { leader_class = scientist }
-        owner = { is_ai = no }
     }
 
     visible = {
@@ -54,10 +57,13 @@ scfe_coprean_constitution_site_2 = {
     stages = 4
     weight = { base = 0 }
 
+    potential = {
+        owner = { is_ai = no }
+    }
+
     allow = {
         exists = leader
         leader = { leader_class = scientist }
-        owner = { is_ai = no }
     }
 
     visible = {
@@ -108,11 +114,14 @@ scfe_coprean_constitution_site_3 = {
     stages = 2
     weight = { base = 0 }
 
+    potential = {
+        owner = { is_ai = no }
+    }
+
     allow = {
         hidden_trigger = {
             exists = leader
             leader = { leader_class = scientist }
-            owner = { is_ai = no }
         }
         custom_tooltip_fail = {
             text = scfe_coprean_constitution_site_3_fail #prevent further excavation before special project done
@@ -158,10 +167,13 @@ scfe_coprean_constitution_site_4 = { #https://rumorsontheinternets.org/2010/10/1
     stages = 5
     weight = { base = 0 }
 
+    potential = {
+        owner = { is_ai = no }
+    }
+
     allow = {
         exists = leader
         leader = { leader_class = scientist }
-        owner = { is_ai = no }
     }
 
     visible = {

@@ -239,3 +239,97 @@ country_event = {
 		set_country_flag = scfe_alshigans_possible
 	}
 }
+
+# Shaded Empire
+country_event = {
+	id = scfe_engine.4
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		random_playable_country = {
+			limit = { is_ai = no }
+			set_country_flag = scfe_shaded_empire_possible
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				any_country = {
+					has_country_flag = scfe_shaded_empire_possible
+				}
+			}
+			random_country = {
+				limit = { has_country_flag = scfe_shaded_empire_possible }
+				country_event = { id = scfe_engine.5 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = scfe_engine.5
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		random_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = empire_home_system }
+				any_system_planet = {
+					NOT = { exists = owner }
+					scfe_is_general_planet = yes
+				}
+			}
+			save_global_event_target_as = shaded_crashed_ship_system
+			random_system_planet = {
+				limit = {
+					NOT = { exists = owner }
+					scfe_is_general_planet = yes
+				}
+				save_global_event_target_as = shaded_crashed_ship_location
+				enable_special_project = {
+					name = SCFE_SHADED_PROJECT_INIT
+					location = event_target:shaded_crashed_ship_location
+					owner = root
+				}
+			}
+		}
+	}
+	after = {
+		country_event = { id = scfe_shaded.100 }
+	}
+}
+
+# Roots initialization
+planet_event = {
+	id = scfe_engine.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = scfe_roots_started }
+				has_modifier = weak_magnetic_field
+				scfe_is_continental = yes
+				exists = owner
+				owner = {
+					is_ai = no
+					NOT = { has_country_flag = scfe_rooted }
+				}
+			}
+		}
+		set_planet_flag = scfe_roots
+		set_planet_flag = cant_terraform_planet
+		set_global_flag = scfe_roots_started
+		save_global_event_target_as = scfe_roots_planet
+		owner = {
+			save_global_event_target_as = scfe_roots_owner
+			set_country_flag = scfe_rooted
+			country_event = { id = scfe_roots.2 }
+		}
+	}
+}

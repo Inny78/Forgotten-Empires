@@ -1,0 +1,155 @@
+@diff_t0 = 4
+@diff_t1 = 5
+@diff_t2 = 6
+@diff_t3 = 7
+@diff_t4 = 8
+@diff_t5 = 9
+@diff_t6 = 10
+@diff_t7 = 11
+@diff_t8 = 12
+@diff_t9 = 13
+
+@operationTargetedByTimer = 10800 #30 years during which the effects of an operation may be felt by select Spy Network events
+
+# this = operation
+# from = operation target
+
+scfe_shaded_diversion_op = {
+    target = none
+    categories = { op_cat_manipulation op_cat_diplomacy }
+    picture = GFX_evt_smear_campaign
+    desc = scfe_shaded_diversion_op_desc
+    stages = 3
+
+    resources = {
+        category = operations
+        cost = {
+            influence = 60
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+
+    spy_power_cost = 40
+    potential = {
+        has_nemesis = yes
+        owner = {
+            num_communications > 3
+            has_event_chain = scfe_shaded_chain
+            check_variable = { which = scfe_shaded_detection value > 5 }
+            NOT = { has_global_flag = shaded_fe_detected }
+        }
+        target = {
+            is_primitive = no
+            is_gestalt = no
+            NOT = {
+                has_country_flag = scfe_shaded_campaign_target
+            }
+        }
+    }
+    allow = {
+        target = {
+            num_communications > 3
+            is_fallen_empire = no
+            is_gestalt = no
+            NOT = {
+                has_country_flag = scfe_shaded_campaign_target
+            }
+        }
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_target
+        event = scfe_operations.3
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_document
+        event = scfe_operations.4
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_motion
+        event = scfe_operations.5
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}
+
+scfe_shaded_coordinates_op = {
+    target = none
+    categories = { op_cat_subterfuge op_cat_technology }
+    picture = GFX_evt_spymaster
+    desc = scfe_shaded_coordinates_op_desc
+    stages = 3
+
+    resources = {
+        category = operations
+        cost = {
+            influence = 60
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+
+    spy_power_cost = 40
+    potential = {
+        has_nemesis = yes
+        target = {
+            has_country_flag = scfe_shaded_colony_coordinates
+        }
+    }
+    allow = {
+        owner = {
+            NOT = { has_country_flag = scfe_shaded_colony_coordinates }
+        }
+        target = {
+            is_fallen_empire = no
+        }
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_target
+        event = scfe_operations.9
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_document
+        event = scfe_operations.10
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_motion
+        event = scfe_operations.11
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}

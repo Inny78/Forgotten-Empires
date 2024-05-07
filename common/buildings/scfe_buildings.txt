@@ -54,11 +54,17 @@ building_woorskyr_biofuel_refinery = {
     triggered_country_modifier = {
         potential = {
             exists = owner
-            owner_main_species = {
-                is_species_class = LITHOID
+            OR = {
+                owner = {
+                    has_technology = tech_lithoid_transgenesis
+                }
+                owner_main_species = {
+                    is_species_class = LITHOID
+                }
             }
         }
         lithoid_pop_growth_speed = 0.1
+        biological_pop_growth_speed = 0.05
     }
 
     prerequisites = {
@@ -273,8 +279,16 @@ building_woorskyr_barkfarm = {
     triggered_country_modifier = {
         potential = {
             exists = owner
-            owner_main_species = {
-                is_species_class = PLANT
+            OR = {
+                owner = {
+                    has_technology = tech_plantoid_transgenesis
+                }
+                owner_main_species = {
+                    OR = {
+                        is_species_class = PLANT
+                        is_species_class = FUN
+                    }
+                }
             }
         }
         biological_pop_growth_speed = 0.1
@@ -368,9 +382,23 @@ building_woorskyr_ship_foundry = {
         }
         upkeep = {
             energy = 3
-            food = 1
             exotic_gases = 2
         }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = no }
+            }
+            minerals = 1
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = yes }
+            }
+            food = 1
+        }
+
     }
 
     country_modifier = {
@@ -444,8 +472,21 @@ building_xenograss_processor = {
         }
         upkeep = {
             minerals = 2
-            food = 1
             volatile_motes = 2
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = yes }
+            }
+            food = 1
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = no }
+            }
+            minerals = 1
         }
     }
 
@@ -946,7 +987,20 @@ building_koeleothan_effect_platform = {
         category = planet_buildings
         produces = {
             society_research = 3
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = yes }
+            }
             food = 2
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = no }
+            }
+            minerals = 2
         }
         cost = {
             minerals = 200
@@ -1040,14 +1094,26 @@ building_beetle_sensor = {
             physics_research = 6
         }
         cost = {
-            minerals = 200
-            food = 50
+            minerals = 250
             exotic_gases = 20
         }
         upkeep = {
             energy = 3
-            food = 1
             exotic_gases = 2
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = yes }
+            }
+            food = 1
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = no }
+            }
+            minerals = 1
         }
     }
 
@@ -1146,15 +1212,27 @@ building_beetle_sensor_2 = {
             physics_research = 10
         }
         cost = {
-            minerals = 300
+            minerals = 350
             energy = 50
-            food = 50
             exotic_gases = 30
         }
         upkeep = {
             energy = 5
-            food = 2
             exotic_gases = 3
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = yes }
+            }
+            food = 2
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { country_uses_food = no }
+            }
+            minerals = 2
         }
     }
 

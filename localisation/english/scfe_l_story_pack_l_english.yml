@@ -74,8 +74,8 @@
  scfe_tomb_of_dead_whales.6.name: "Karma"
  scfe_tomb_of_dead_whales.6.desc: "Tiyanki space whales, by nature, do not combust post-mortem due to an intrinsic shielding within their bodies. The vast quantities of organic matter typically remain inert, either decomposing silently beneath the surface or transmuting into different substances. On the rare occasion that they do explode on the surface, the resultant toxic gases are negligible and ephemeral, dissipating quickly into the upper atmosphere without causing harm.\nTherefore, the government's proposition to preemptively destroy the descending whales using interplanetary nuclear missiles met with considerable opposition. However, sentiments shifted favorably after the first whale was successfully neutralized mid-descent.\nTragically, what was not considered was the whales' profound spiritual connection, responding en masse to violence with a unified fury. Countless Tiyanki whales converged on the planet in a vengeful charge, a vividly depicted crisis in the empire's records.\nAn arsenal of nuclear weapons was deployed in defense, but this only exacerbated the situation. Whales caught in the nuclear detonations near the planet's surface triggered a catastrophic series of blasts among the other whale cadavers buried below.\nSubsequent massive explosions were cataclysmic, saturating the air with lethal gases, an onslaught against which the empire stood no chance, though the planet itself endured.\nA small faction of the population miraculously survived. Had it not been for the enduring vendetta of the space whales, which from then on favored this planet for their demise, they might have thrived once more. The construction of the wheeled towers and the adaptation of whale carcasses for shelter were the final desperate strategies of the survivors to evade the targeted whale descents.\nThe rest, as it is said, is history."
  scfe_tomb_of_dead_whales.6.a: "Their story is something more than just out of luck."
- scfe_tomb_of_dead_whales.6.b: "Now we've got a reason to hunt those whales, and learned what to be aware."
- scfe_tomb_of_dead_whales.6.c: "The most important thing in this story is numerous amount of gases remaining in deposit."
+ scfe_tomb_of_dead_whales.6.b: "Now we've got a reason to hunt those whales."
+ scfe_tomb_of_dead_whales.6.c: "There are numerous deposits of gases remaining."
  scfe_tomb_of_dead_whales.6.d: "A tragic Story."
  scfe_whale_fossil: "Whale Fossil"
  scfe_whale_fossil_desc: "The planet once used as a tomb world by Tiyanki Space Whales. There's a lot of whale fossils in its stratum, making it hard to develop its mining industry."
@@ -353,7 +353,7 @@
 
  mod_scfe_precursor_coprean_secrets_deep: "Deeper Secret of the Coprea"
  mod_scfe_precursor_coprean_secrets_deep_gestalt: "Deeper Secret of the Coprea"
- triggered_opinion_scfe_ture_identity: "Revealed True Identity"
+ triggered_opinion_scfe_true_identity: "Revealed True Identity"
 
  civic_scfe_possessive_consciousness_machine: "Possessive Consciousness"
  civic_scfe_possessive_consciousness_machine_desc: "This collective consciousness society has adopted a truly innovative way to move forward, imitating sentient life forms with individual identities."

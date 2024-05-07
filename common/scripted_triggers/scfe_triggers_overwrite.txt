@@ -1,0 +1,11 @@
+is_doomsday_planet = {
+    OR = {
+        has_modifier = doomsday_1
+        has_modifier = doomsday_2
+        has_modifier = doomsday_3
+        has_modifier = doomsday_4
+        has_modifier = doomsday_5
+        # Forgotten Empires
+        has_modifier = scfe_rooted_doom
+    }
+}

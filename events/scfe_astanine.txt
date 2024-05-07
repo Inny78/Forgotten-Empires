@@ -23,6 +23,9 @@ fleet_event = {
     option = {
         name = scfe_astanine.1.a
         owner = { begin_event_chain = { event_chain = scfe_astanine_chain } }
+        hidden_effect = {
+            owner = { save_global_event_target_as = scfe_astanine_owner }
+        }
     }
 }
 #chapter 2
@@ -62,8 +65,17 @@ fleet_event = {
     immediate = {
         from = { set_site_progress_locked = yes }
         closest_system = {
-            limit = { scfe_astanine_digsite_spawn_rules = yes }
-            min_steps = 1
+            limit = {
+                scfe_astanine_digsite_spawn_rules = yes
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_astanine_owner }
+                    }
+                }
+            }
+            min_steps = 2
             max_steps = 20
             random_system_planet = {
                 limit = {
@@ -144,13 +156,20 @@ fleet_event = {
         closest_system = {
             limit = {
                 scfe_astanine_digsite_spawn_rules = yes
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_astanine_owner }
+                    }
+                }
                 any_system_planet = {
                     uninhabitable_regular_planet = yes
                     has_anomaly = no
                     scfe_is_tfpanet = no
                 }
             }
-            min_steps = 1
+            min_steps = 2
             max_steps = 20
             random_system_planet = {
                 limit = {
@@ -301,8 +320,17 @@ fleet_event = {
     immediate = {
         from = { set_site_progress_locked = yes }
         closest_system = {
-            limit = { scfe_astanine_digsite_spawn_rules = yes }
-            min_steps = 1
+            limit = {
+                scfe_astanine_digsite_spawn_rules = yes
+                OR = {
+                    has_owner = no
+                    AND = {
+                        exists = space_owner
+                        space_owner = { is_same_empire = event_target:scfe_astanine_owner }
+                    }
+                }
+            }
+            min_steps = 2
             max_steps = 20
             random_system_planet = {
                 limit = {
@@ -588,6 +616,7 @@ fleet_event = {
         }
         hidden_effect = {
             owner = { set_country_flag = scfe_precursor_astanine_finished }
+            clear_global_event_target = scfe_astanine_owner
         }
     }
 

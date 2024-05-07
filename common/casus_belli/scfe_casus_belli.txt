@@ -1,0 +1,10 @@
+cb_shaded_payback = {
+    show_in_diplomacy = yes
+    show_notification = yes
+    is_valid = {
+        has_country_flag = scfe_shaded_campaign_instigator
+        from = {
+            has_country_flag = scfe_shaded_campaign_instigator
+        }
+    }
+}

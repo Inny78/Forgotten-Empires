@@ -444,3 +444,73 @@ scfe_coprean_constitution_16_hive_effect = {
     }
 }
 
+site_scfe_ziaskehorn_random_events = {
+    random_list = {
+        25 = { fleet_event = { id = ancrel.8055 } }
+        25 = { fleet_event = { id = ancrel.8070 } }
+        25 = { fleet_event = { id = ancrel.8080 } }
+        50 = { fleet_event = { id = scfe_ziaskehorn.21 } }
+        5000 = { fleet_event = { id = scfe_ziaskehorn.22 } }
+        1000 = { fleet_event = { id = scfe_ziaskehorn.23 } }
+        50 = { fleet_event = { id = scfe_ziaskehorn.24 } }
+    }
+}
+
+site_scfe_shaded_random_events = {
+    random_list = {
+        25 = { fleet_event = { id = ancrel.8055 } }
+        25 = { fleet_event = { id = ancrel.8070 } }
+        25 = { fleet_event = { id = ancrel.8080 } }
+        50 = { fleet_event = { id = scfe_shaded_dig_fail.1 } }
+        50 = { fleet_event = { id = scfe_shaded_dig_fail.2 } }
+        50 = { fleet_event = { id = scfe_shaded_dig_fail.3 } }
+    }
+}
+
+scfe_detection_level_add = {
+    if = {
+        limit = {
+            any_country = { scfe_is_valid_shaded_fe = yes has_communications = root }
+            NOT = { has_global_flag = shaded_fe_detected }
+        }
+        add_event_chain_counter = {
+            event_chain = scfe_shaded_chain counter = scfe_shaded_detection amount = 1
+        }
+        change_variable = { which = scfe_shaded_detection value = 1 }
+        country_event = { id = scfe_fallen_empires.3 }
+    }
+}
+scfe_detection_level_sub = {
+    if = {
+        limit = { any_country = { scfe_is_valid_shaded_fe = yes has_communications = root } }
+        add_event_chain_counter = {
+            event_chain = scfe_shaded_chain counter = scfe_shaded_detection amount = -1
+        }
+        change_variable = { which = scfe_shaded_detection value = -1 }
+    }
+}
+scfe_select_shaded_angry_fe = {
+    if = {
+        limit = { NOT = { exists = event_target:scfe_shaded_fe } }
+        if = {
+            limit = { any_country = { scfe_is_valid_shaded_fe = yes has_communications = root } }
+            random_country = {
+                limit = { scfe_is_valid_shaded_fe = yes }
+                save_global_event_target_as = scfe_shaded_fe
+            }
+        }
+        else_if = {
+            limit = { any_country = { scfe_is_valid_shaded_fe = yes } }
+            random_country = {
+                limit = { scfe_is_valid_shaded_fe = yes }
+                establish_communications = root
+                save_global_event_target_as = scfe_shaded_fe
+            }
+        }
+    }
+}
+scfe_roots_cleanup = {
+    remove_modifier = scfe_rooted_nature
+    remove_modifier = scfe_rooted_nature_maintenance
+    remove_modifier = scfe_rooted_crime
+}

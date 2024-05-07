@@ -3,3 +3,20 @@ on_game_start = {
         scfe_game_start.1
     }
 }
+on_mid_game_pulse_country = {
+    events = {
+        scfe_engine.4
+    }
+}
+
+on_ascension_perk_picked = {
+    events = {
+        scfe_shaded_engine.1
+    }
+}
+
+on_tradition_picked = {
+    events = {
+        scfe_shaded_engine.2
+    }
+}

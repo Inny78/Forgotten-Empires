@@ -4,14 +4,20 @@ ziaskehorn_digsite = {
 	stages = 4
 	max_instances = 1
 	weight = 0
+
+	potential = {
+		owner = { is_ai = no }
+	}
+
 	allow = {
 		is_ship_class = shipclass_science_ship
 		exists = leader
-        owner = { is_ai = no }
 	}
+
 	visible = {
 		scfe_dig_site_visible_trigger = yes
 	}
+
 	stage = {
 		difficulty = 2
 		event = scfe_ziaskehorn.11
@@ -37,5 +43,4 @@ ziaskehorn_digsite = {
 			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = site_scfe_ziaskehorn_random_events }
 		}
 	}
-
 }

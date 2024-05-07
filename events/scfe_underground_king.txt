@@ -157,7 +157,7 @@ fleet_event = {
 	option = {
 		name = scfe_king_of_underground_city.4.a
 		exclusive_trigger = {
-			has_synthethic_dawn = yes
+			has_synthetic_dawn = yes
 			owner = {
 				is_mechanical_empire = yes
 			}

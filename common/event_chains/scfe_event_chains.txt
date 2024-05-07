@@ -43,3 +43,16 @@ scfe_astanine_chain = {
 		}
 	}
 }
+scfe_shaded_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_shaded_clues = { max = 6 }
+		scfe_shaded_detection = {}
+		scfe_shaded_leads = { max = 4 }
+	}
+}
+scfe_roots_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	picture = GFX_evt_alien_nature
+}

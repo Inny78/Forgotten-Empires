@@ -13,7 +13,6 @@ ship_event = {
 		}
 		solar_system = {
 			scfe_is_valid_system = yes
-			scfe_is_valid_owner = yes
 			any_system_planet = {
 				is_asteroid = yes
 				has_anomaly = no
@@ -29,7 +28,10 @@ ship_event = {
 				save_global_event_target_as = scfe_alshigans_asteroid
 			}
 		}
-		owner = { country_event = { id = scfe_alshigans_init.2 } }
+		owner = {
+			save_global_event_target_as = scfe_alshigans_owner
+			country_event = { id = scfe_alshigans_init.2 }
+		}
 	}
 }
 
@@ -234,6 +236,7 @@ ship_event = {
 			clear_global_event_target = scfe_alshigans_alpine
 			clear_global_event_target = scfe_alshigans_savannah
 			clear_global_event_target = scfe_alshigans_moon
+			clear_global_event_target = scfe_alshigans_owner
 			owner = { set_country_flag = alshigans_precursors_done }
 			if = {
 				limit = {
@@ -243,7 +246,7 @@ ship_event = {
 					}
 				}
 				owner = {
-					country_event = { id = scfe_alshigans.11 days = 30 }
+					country_event = { id = scfe_alshigans.11 days = 30 random = 10 }
 				}
 			}
 		}
@@ -263,47 +266,21 @@ country_event = {
 		name = INTERESTING
 	}
 	after = {
-		closest_system = {
-			min_steps = 1
-			max_steps = 15
-			limit = {
-				scfe_is_valid_system = yes
-				scfe_is_valid_owner = yes
-				any_system_planet = {
-					scfe_is_savannah = yes
-					has_anomaly = no
-					NOT = { exists = owner }
-					NOT = { exists = archaeological_site }
-				}
-			}
-			random_system_planet = {
-				limit = {
-					scfe_is_savannah = yes
-					has_anomaly = no
-					NOT = { exists = owner }
-					NOT = { exists = archaeological_site }
-				}
-				enable_special_project = {
-					name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
-					location = this
-					owner = root
-				}
-				set_name = scfe_alshigans_velaen
-				save_global_event_target_as = scfe_alshigans_savannah
-			}
-		}
-		if = {
-			limit = {
-				NOT = { exists = event_target:scfe_alshigans_savannah }
-			}
+		hidden_effect = {
 			closest_system = {
-				min_steps = 1
-				max_steps = 20
+				min_steps = 2
+				max_steps = 15
 				limit = {
 					scfe_is_valid_system = yes
-					scfe_is_valid_owner = yes
+					OR = {
+						has_owner = no
+						AND = {
+							exists = space_owner
+							space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+						}
+					}
 					any_system_planet = {
-						scfe_is_uninhabitable = yes
+						scfe_is_savannah = yes
 						has_anomaly = no
 						NOT = { exists = owner }
 						NOT = { exists = archaeological_site }
@@ -311,13 +288,11 @@ country_event = {
 				}
 				random_system_planet = {
 					limit = {
-						scfe_is_uninhabitable = yes
+						scfe_is_savannah = yes
 						has_anomaly = no
 						NOT = { exists = owner }
 						NOT = { exists = archaeological_site }
 					}
-					change_pc = pc_savannah
-					reset_planet = yes
 					enable_special_project = {
 						name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
 						location = this
@@ -325,6 +300,48 @@ country_event = {
 					}
 					set_name = scfe_alshigans_velaen
 					save_global_event_target_as = scfe_alshigans_savannah
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = event_target:scfe_alshigans_savannah }
+				}
+				closest_system = {
+					min_steps = 2
+					max_steps = 20
+					limit = {
+						scfe_is_valid_system = yes
+						OR = {
+							has_owner = no
+							AND = {
+								exists = space_owner
+								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+							}
+						}
+						any_system_planet = {
+							scfe_is_uninhabitable = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+					}
+					random_system_planet = {
+						limit = {
+							scfe_is_uninhabitable = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+						change_pc = pc_savannah
+						reset_planet = yes
+						enable_special_project = {
+							name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
+							location = this
+							owner = root
+						}
+						set_name = scfe_alshigans_velaen
+						save_global_event_target_as = scfe_alshigans_savannah
+					}
 				}
 			}
 		}
@@ -344,70 +361,84 @@ country_event = {
 		name = INTERESTING
 	}
 	after = {
-		event_target:scfe_alshigans_asteroid = {
-			closest_system = {
-				min_steps = 1
-				max_steps = 15
-				limit = {
-					scfe_is_valid_system = yes
-					scfe_is_valid_owner = yes
-					any_system_planet = {
-						scfe_is_alpine = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
-				}
-				random_system_planet = {
+		hidden_effect = {
+			event_target:scfe_alshigans_asteroid = {
+				closest_system = {
+					min_steps = 2
+					max_steps = 15
 					limit = {
-						scfe_is_alpine = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
+						scfe_is_valid_system = yes
+						OR = {
+							has_owner = no
+							AND = {
+								exists = space_owner
+								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+							}
+						}
+						any_system_planet = {
+							scfe_is_alpine = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
 					}
-					enable_special_project = {
-						name = SCFE_ALSHIGANS_ALPINE_PROJECT
-						location = this
-						owner = root
+					random_system_planet = {
+						limit = {
+							scfe_is_alpine = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+						enable_special_project = {
+							name = SCFE_ALSHIGANS_ALPINE_PROJECT
+							location = this
+							owner = root
+						}
+						set_name = scfe_alshigans_uuladir
+						save_global_event_target_as = scfe_alshigans_alpine
 					}
-					set_name = scfe_alshigans_uuladir
-					save_global_event_target_as = scfe_alshigans_alpine
 				}
 			}
-		}
-		if = {
-			limit = {
-				NOT = { exists = event_target:scfe_alshigans_alpine }
-			}
-			closest_system = {
-				min_steps = 1
-				max_steps = 20
+			if = {
 				limit = {
-					scfe_is_valid_system = yes
-					scfe_is_valid_owner = yes
-					any_system_planet = {
-						scfe_is_uninhabitable = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
+					NOT = { exists = event_target:scfe_alshigans_alpine }
 				}
-				random_system_planet = {
+				closest_system = {
+					min_steps = 2
+					max_steps = 20
 					limit = {
-						scfe_is_uninhabitable = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
+						scfe_is_valid_system = yes
+						OR = {
+							has_owner = no
+							AND = {
+								exists = space_owner
+								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+							}
+						}
+						any_system_planet = {
+							scfe_is_uninhabitable = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
 					}
-					change_pc = pc_alpine
-					reset_planet = yes
-					enable_special_project = {
-						name = SCFE_ALSHIGANS_ALPINE_PROJECT
-						location = this
-						owner = root
+					random_system_planet = {
+						limit = {
+							scfe_is_uninhabitable = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+						change_pc = pc_alpine
+						reset_planet = yes
+						enable_special_project = {
+							name = SCFE_ALSHIGANS_ALPINE_PROJECT
+							location = this
+							owner = root
+						}
+						set_name = scfe_alshigans_uuladir
+						save_global_event_target_as = scfe_alshigans_alpine
 					}
-					set_name = scfe_alshigans_uuladir
-					save_global_event_target_as = scfe_alshigans_alpine
 				}
 			}
 		}
@@ -427,70 +458,84 @@ country_event = {
 		name = INTERESTING
 	}
 	after = {
-		event_target:scfe_alshigans_asteroid = {
-			closest_system = {
-				min_steps = 1
-				max_steps = 15
-				limit = {
-					scfe_is_valid_system = yes
-					scfe_is_valid_owner = yes
-					any_system_planet = {
-						scfe_is_tropical = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
-				}
-				random_system_planet = {
+		hidden_effect = {
+			event_target:scfe_alshigans_asteroid = {
+				closest_system = {
+					min_steps = 2
+					max_steps = 15
 					limit = {
-						scfe_is_tropical = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
+						scfe_is_valid_system = yes
+						OR = {
+							has_owner = no
+							AND = {
+								exists = space_owner
+								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+							}
+						}
+						any_system_planet = {
+							scfe_is_tropical = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
 					}
-					enable_special_project = {
-						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
-						location = this
-						owner = root
+					random_system_planet = {
+						limit = {
+							scfe_is_tropical = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+						enable_special_project = {
+							name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+							location = this
+							owner = root
+						}
+						set_name = scfe_alshigans_demearen
+						save_global_event_target_as = scfe_alshigans_jungle
 					}
-					set_name = scfe_alshigans_demearen
-					save_global_event_target_as = scfe_alshigans_jungle
 				}
 			}
-		}
-		if = {
-			limit = {
-				NOT = { exists = event_target:scfe_alshigans_jungle }
-			}
-			closest_system = {
-				min_steps = 1
-				max_steps = 20
+			if = {
 				limit = {
-					scfe_is_valid_system = yes
-					scfe_is_valid_owner = yes
-					any_system_planet = {
-						scfe_is_uninhabitable = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
+					NOT = { exists = event_target:scfe_alshigans_jungle }
 				}
-				random_system_planet = {
+				closest_system = {
+					min_steps = 2
+					max_steps = 20
 					limit = {
-						scfe_is_uninhabitable = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
+						scfe_is_valid_system = yes
+						OR = {
+							has_owner = no
+							AND = {
+								exists = space_owner
+								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+							}
+						}
+						any_system_planet = {
+							scfe_is_uninhabitable = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
 					}
-					change_pc = pc_tropical
-					reset_planet = yes
-					enable_special_project = {
-						name = SCFE_ALSHIGANS_JUNGLE_PROJECT
-						location = this
-						owner = root
+					random_system_planet = {
+						limit = {
+							scfe_is_uninhabitable = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+						change_pc = pc_tropical
+						reset_planet = yes
+						enable_special_project = {
+							name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+							location = this
+							owner = root
+						}
+						set_name = scfe_alshigans_demearen
+						save_global_event_target_as = scfe_alshigans_jungle
 					}
-					set_name = scfe_alshigans_demearen
-					save_global_event_target_as = scfe_alshigans_jungle
 				}
 			}
 		}
@@ -510,36 +555,44 @@ country_event = {
 		name = INTERESTING
 	}
 	after = {
-		event_target:scfe_alshigans_asteroid = {
-			closest_system = {
-				min_steps = 1
-				max_steps = 15
-				limit = {
-					scfe_is_valid_system = yes
-					scfe_is_valid_owner = yes
-					any_system_planet = {
-						scfe_is_barren = yes
-						is_moon = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
-				}
-				random_system_planet = {
+		hidden_effect = {
+			event_target:scfe_alshigans_asteroid = {
+				closest_system = {
+					min_steps = 2
+					max_steps = 15
 					limit = {
-						scfe_is_barren = yes
-						is_moon = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
+						scfe_is_valid_system = yes
+						OR = {
+							has_owner = no
+							AND = {
+								exists = space_owner
+								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+							}
+						}
+						any_system_planet = {
+							scfe_is_barren = yes
+							is_moon = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
 					}
-					enable_special_project = {
-						name = SCFE_ALSHIGANS_MOON_PROJECT
-						location = this
-						owner = root
+					random_system_planet = {
+						limit = {
+							scfe_is_barren = yes
+							is_moon = yes
+							has_anomaly = no
+							NOT = { exists = owner }
+							NOT = { exists = archaeological_site }
+						}
+						enable_special_project = {
+							name = SCFE_ALSHIGANS_MOON_PROJECT
+							location = this
+							owner = root
+						}
+						set_name = scfe_alshigans_yutela
+						save_global_event_target_as = scfe_alshigans_moon
 					}
-					set_name = scfe_alshigans_yutela
-					save_global_event_target_as = scfe_alshigans_moon
 				}
 			}
 		}
@@ -574,7 +627,7 @@ country_event = {
 	}
 
 	option = {
-		name = CURIOUS
+		name = AMAZING
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward

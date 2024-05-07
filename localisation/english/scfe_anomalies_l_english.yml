@@ -11,9 +11,9 @@
 
 # 3.10 start here
  scfe_reverse_engine_category: "Buried civilization"
- scfe_reverse_engine_desc: "The scanners of our science ship have detected a signal deep under the surface of a devastated world. §G[From.GetLeaderName]§! wants to send an expedition on §Y[Root.GetName]§! to dig to its source."
+ scfe_reverse_engine_desc: "The scanners of our science ship have detected a signal deep under the surface of a devastated world. Our team wants to send an expedition on §Y[Root.GetName]§! to dig to its source."
  scfe_failed_hive_category: "Ruined Civilization"
- scfe_failed_hive_desc: "The scanners of our science ship have detected the ruins of an advanced civilization on §Y[Root.GetName]§!. §G[From.GetLeaderName]§! and his crew are eager to investigate."
+ scfe_failed_hive_desc: "The scanners of our science ship have detected the ruins of an advanced civilization on §Y[Root.GetName]§!. Our crew is eager to investigate."
  scfe_lonely_shroud_category: "An impossible message"
  scfe_lonely_shroud_category_desc: "Our science vessel has stumbled upon a shrouded world in the depths of this system. As it draws closer, anomalous emissions pique the crew's curiosity. Could there be a hidden intelligence trying to communicate with us on this cursed world?"
  scfe_war_torn_category: "Devastated planet"

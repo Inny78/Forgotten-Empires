@@ -13,6 +13,9 @@ ship_event = {
 
 	option = {
 		name = INTRIGUING
+		hidden_effect = {
+			owner = { save_global_event_target_as = scfe_war_torn_owner }
+		}
 	}
 }
 
@@ -40,7 +43,10 @@ country_event = {
 	option = {
 		name = CURIOUS
 		add_modifier = { modifier = scfe_clone_prowess days = -1 }
-		set_country_flag = war_torn_done
+		hidden_effect = {
+			set_country_flag = war_torn_done
+			clear_global_event_target = scfe_war_torn_owner
+		}
 	}
 }
 
@@ -167,30 +173,38 @@ fleet_event = {
 		}
 	}
 	after = {
-		closest_system = {
-			min_steps = 1
-			max_steps = 15
-			limit = {
-				scfe_is_valid_system = yes
-				scfe_is_valid_owner = yes
-				any_system_planet = {
-					uninhabitable_regular_planet = yes
-					has_anomaly = no
-					has_owner = no
-					NOT = { has_planet_flag = has_megastructure }
-				}
-			}
-			random_system_planet = {
+		hidden_effect = {
+			closest_system = {
+				min_steps = 1
+				max_steps = 15
 				limit = {
-					uninhabitable_regular_planet = yes
-					has_anomaly = no
-					has_owner = no
-					NOT = { has_planet_flag = has_megastructure }
+					scfe_is_valid_system = yes
+					OR = {
+						has_owner = no
+						AND = {
+							exists = space_owner
+							space_owner = { is_same_empire = event_target:scfe_war_torn_owner }
+						}
+					}
+					any_system_planet = {
+						uninhabitable_regular_planet = yes
+						has_anomaly = no
+						has_owner = no
+						NOT = { has_planet_flag = has_megastructure }
+					}
 				}
-				enable_special_project = {
-					name = SCFE_WAR_TORN_PROJECT_1
-					location = this
-					owner = root
+				random_system_planet = {
+					limit = {
+						uninhabitable_regular_planet = yes
+						has_anomaly = no
+						has_owner = no
+						NOT = { has_planet_flag = has_megastructure }
+					}
+					enable_special_project = {
+						name = SCFE_WAR_TORN_PROJECT_1
+						location = this
+						owner = root
+					}
 				}
 			}
 		}

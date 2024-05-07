@@ -1,0 +1,1979 @@
+namespace = scfe_shaded
+
+country_event = {
+    id = scfe_shaded.100
+    title = scfe_shaded_init.1.name
+    desc = scfe_shaded_init.1.desc
+    picture = GFX_evt_communication_event
+    is_triggered_only = yes
+    location = event_target:shaded_crashed_ship_location
+
+    option = {
+        name = INTERESTING
+    }
+}
+
+country_event = {
+    id = scfe_shaded.1
+    title = scfe_shaded.1.name
+    desc = scfe_shaded.1.desc
+    picture = GFX_evt_scfe_crashed_ship
+    show_sound = event_default
+    is_triggered_only = yes
+    location = event_target:scfe_shaded_crash
+
+    immediate = {
+        save_global_event_target_as = scfe_shaded_owner
+        if = {
+            limit = {
+                NOT = { has_country_flag = scfe_shaded_empire_possible }
+            }
+            random_country = {
+                limit = { has_country_flag = scfe_shaded_empire_possible }
+                remove_country_flag = scfe_shaded_empire_possible
+            }
+        }
+        else = { remove_country_flag = scfe_shaded_empire_possible }
+        set_global_flag = scfe_shaded_precursor_started
+        country_event = { id = story.5 days = 30 }
+    }
+
+    option = {
+        name = scfe_shaded.1.a
+        add_monthly_resource_mult = {
+            resource = engineering_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        country_event = { id = scfe_shaded.2 days = 5 }
+    }
+    after = {
+        clear_global_event_target = shaded_crashed_ship_system
+    }
+}
+
+country_event = {
+    id = scfe_shaded.2
+    title = scfe_shaded.2.name
+    desc = scfe_shaded.2.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_default
+    is_triggered_only = yes
+    location = event_target:shaded_crashed_ship_location
+
+    option = {
+        name = INTERESTING
+        begin_event_chain = {
+            event_chain = "scfe_shaded_chain"
+            target = this
+        }
+        event_target:shaded_crashed_ship_location = {
+            enable_special_project = {
+                name = SCFE_SHADED_PROJECT_1
+                location = this
+                owner = root
+            }
+        }
+    }
+}
+
+country_event = {
+    id = scfe_shaded.3
+    title = scfe_shaded.3.name
+    desc = scfe_shaded.3.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_machinery
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        country_event = {
+            id = scfe_shaded.4
+        }
+    }
+}
+
+country_event = {
+    id = scfe_shaded.4
+    title = scfe_shaded.4.name
+    desc = scfe_shaded.4.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_machinery
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+        add_event_chain_counter = { event_chain = scfe_shaded_chain counter = scfe_shaded_clues amount = 1 }
+    }
+    after = {
+        hidden_effect = {
+            scfe_select_shaded_angry_fe = yes
+            if = {
+                limit = { exists = event_target:scfe_shaded_fe }
+                event_target:scfe_shaded_fe = {
+                    country_event = { id = scfe_fallen_empires.1 }
+                }
+            }
+            else = {
+                country_event = {
+                    id = scfe_shaded.5 days = 5
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = scfe_shaded.5
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:shaded_crashed_ship_location = {
+            closest_system = {
+                min_steps = 1
+                max_steps = 15
+                limit = {
+                    scfe_is_valid_system = yes
+                    OR = {
+                        has_owner = no
+                        AND = {
+                            exists = space_owner
+                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
+                        }
+                    }
+                    any_system_planet = {
+                        has_anomaly = no
+                        scfe_is_general_planet = yes
+                        is_colony = no
+                        NOT = { exists = archaeological_site }
+                        is_surveyed = { status = no who = root }
+                    }
+                }
+                set_star_flag = scfe_shaded_warbase
+                random_system_planet = {
+                    limit = {
+                        has_anomaly = no
+                        scfe_is_general_planet = yes
+                        is_colony = no
+                        NOT = { exists = archaeological_site }
+                        is_surveyed = { status = no who = root }
+                    }
+                    set_name = scfe_shaded_dilyall
+                    save_global_event_target_as = scfe_shaded_warbase
+                    create_archaeological_site = scfe_shaded_warform_dig
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = { exists = event_target:scfe_shaded_warbase }
+            }
+            capital_scope = {
+                closest_system = {
+                    min_steps = 3
+                    max_steps = 25
+                    limit = {
+                        scfe_is_valid_system = yes
+                        OR = {
+                            has_owner = no
+                            AND = {
+                                exists = space_owner
+                                space_owner = { is_same_empire = event_target:scfe_shaded_owner }
+                            }
+                        }
+                        NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
+                        any_system_planet = {
+                            has_anomaly = no
+                            is_colony = no
+                            NOT = { exists = archaeological_site }
+                            is_surveyed = { status = no who = root }
+                        }
+
+                    }
+                    random_system_planet = {
+                        limit = {
+                            has_anomaly = no
+                            is_colony = no
+                            NOT = { exists = archaeological_site }
+                            is_surveyed = { status = no who = root }
+                        }
+                        solar_system = {
+                            set_star_flag = scfe_shaded_warbase
+                        }
+                        set_name = scfe_shaded_dilyall
+                        save_global_event_target_as = scfe_shaded_warbase
+                        create_archaeological_site = scfe_shaded_warform_dig
+                    }
+                }
+            }
+        }
+        create_point_of_interest = {
+            id = scfe_shaded_warbase
+            event_chain = scfe_shaded_chain
+            name = scfe_shaded_warbase
+            desc = scfe_shaded_warbase_desc
+            location = event_target:scfe_shaded_warbase
+        }
+    }
+}
+
+ship_event = {
+    id = scfe_shaded.6
+    title = scfe_shaded.6.name
+    desc = scfe_shaded.6.desc
+    picture = GFX_evt_space_debris
+    is_triggered_only = yes
+    location = event_target:scfe_shaded_warbase
+
+    trigger = {
+        is_ship_class = shipclass_science_ship
+        owner = {
+            has_event_chain = scfe_shaded_chain
+            NOT = { has_country_flag = checked_shaded_warbase }
+        }
+        solar_system = {
+            has_star_flag = scfe_shaded_warbase
+        }
+    }
+
+    option = {
+        name = INTERESTING
+    }
+    after = {
+        clear_global_event_target = shaded_crashed_ship_location
+        owner = { set_country_flag = checked_shaded_warbase }
+    }
+}
+
+country_event = {
+    id = scfe_shaded.7
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        # Lead 1
+        capital_scope = {
+            closest_system = {
+                min_steps = 3
+                max_steps = 15
+                limit = {
+                    scfe_is_valid_system = yes
+                    OR = {
+                        has_owner = no
+                        AND = {
+                            exists = space_owner
+                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
+                        }
+                    }
+                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
+                    any_system_planet = {
+                        is_asteroid = yes
+                        has_anomaly = no
+                        NOT = { exists = archaeological_site }
+                    }
+                }
+                random_system_planet = {
+                    limit = {
+                        is_asteroid = yes
+                        has_anomaly = no
+                        NOT = { exists = archaeological_site }
+                    }
+                    solar_system = {
+                        set_star_flag = scfe_shaded_lead1
+                    }
+                    save_global_event_target_as = scfe_shaded_lead1
+                }
+            }
+            # Lead 2
+            closest_system = {
+                min_steps = 4
+                max_steps = 15
+                limit = {
+                    scfe_is_valid_system = yes
+                    OR = {
+                        has_owner = no
+                        AND = {
+                            exists = space_owner
+                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
+                        }
+                    }
+                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
+                    any_system_planet = {
+                        has_anomaly = no
+                        NOT = { exists = owner }
+                        NOT = { exists = archaeological_site }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
+                    }
+                }
+                random_system_planet = {
+                    limit = {
+                        has_anomaly = no
+                        NOT = { exists = owner }
+                        NOT = { exists = archaeological_site }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
+                    }
+                    solar_system = {
+                        set_star_flag = scfe_shaded_lead2
+                    }
+                    save_global_event_target_as = scfe_shaded_lead2
+                }
+            }
+            # Lead 3
+            closest_system = {
+                min_steps = 5
+                max_steps = 15
+                limit = {
+                    scfe_is_valid_system = yes
+                    OR = {
+                        has_owner = no
+                        AND = {
+                            exists = space_owner
+                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
+                        }
+                    }
+                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
+                    any_system_planet = {
+                        habitable_planet = yes
+                        is_artificial = no
+                        has_anomaly = no
+                        NOT = { exists = owner }
+                        NOT = { exists = archaeological_site }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
+                    }
+                }
+                random_system_planet = {
+                    limit = {
+                        scfe_is_general_planet = yes
+                        has_anomaly = no
+                        NOT = { exists = owner }
+                        NOT = { exists = archaeological_site }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
+                    }
+                    solar_system = {
+                        set_star_flag = scfe_shaded_lead3
+                    }
+                    save_global_event_target_as = scfe_shaded_lead3
+                    add_modifier = { modifier = scfe_infrastructure days = -1 }
+                }
+            }
+            # Lead 4
+            closest_system = {
+                min_steps = 5
+                max_steps = 15
+                limit = {
+                    scfe_is_valid_system = yes
+                    OR = {
+                        has_owner = no
+                        AND = {
+                            exists = space_owner
+                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
+                        }
+                    }
+                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
+                    any_system_planet = {
+                        is_star = yes
+                        NOR = {
+                            is_planet_class = pc_black_hole
+                            is_planet_class = pc_neutron_star
+                            is_planet_class = pc_pulsar
+                        }
+                        has_anomaly = no
+                        NOT = { exists = owner }
+                        NOT = { exists = archaeological_site }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead3 owner = root } }
+                    }
+                }
+                random_system_planet = {
+                    limit = {
+                        has_anomaly = no
+                        NOT = { exists = owner }
+                        NOT = { exists = archaeological_site }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
+                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead3 owner = root } }
+                    }
+                    solar_system = {
+                        set_star_flag = scfe_shaded_lead4
+                    }
+                    save_global_event_target_as = scfe_shaded_lead4
+                }
+            }
+        }
+        create_point_of_interest = {
+            id = scfe_shaded_lead1
+            event_chain = scfe_shaded_chain
+            name = scfe_shaded_lead1
+            desc = scfe_shaded_lead1_desc
+            location = event_target:scfe_shaded_lead1
+        }
+        create_point_of_interest = {
+            id = scfe_shaded_lead2
+            event_chain = scfe_shaded_chain
+            name = scfe_shaded_lead2
+            desc = scfe_shaded_lead2_desc
+            location = event_target:scfe_shaded_lead2
+        }
+        create_point_of_interest = {
+            id = scfe_shaded_lead3
+            event_chain = scfe_shaded_chain
+            name = scfe_shaded_lead3
+            desc = scfe_shaded_lead3_desc
+            location = event_target:scfe_shaded_lead3
+        }
+        create_point_of_interest = {
+            id = scfe_shaded_lead4
+            event_chain = scfe_shaded_chain
+            name = scfe_shaded_lead4
+            desc = scfe_shaded_lead4_desc
+            location = event_target:scfe_shaded_lead4
+        }
+    }
+}
+# Leads
+ship_event = {
+    id = scfe_shaded.8
+    title = scfe_shaded_lead1
+    desc = scfe_shaded.8.desc
+    picture = GFX_evt_scfe_asteroid
+    show_sound = event_default
+    is_triggered_only = yes
+
+    trigger = {
+        solar_system = {
+            has_star_flag = scfe_shaded_lead1
+        }
+        is_ship_class = shipclass_science_ship
+        owner = {
+            has_event_chain = scfe_shaded_chain
+            NOT = { has_country_flag = checked_lead_1 }
+        }
+    }
+
+    immediate = {
+        owner = {
+            set_country_flag = checked_lead_1
+        }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        event_target:scfe_shaded_lead1 = {
+            enable_special_project = {
+                name = SCFE_SHADED_PROJECT_2
+                location = event_target:scfe_shaded_lead1
+                owner = root.owner
+            }
+        }
+    }
+}
+# Lead 2
+ship_event = {
+    id = scfe_shaded.9
+    title = scfe_shaded_lead2
+    desc = scfe_shaded.9.desc
+    picture = GFX_evt_habitat
+    show_sound = event_default
+    is_triggered_only = yes
+
+    trigger = {
+        solar_system = {
+            has_star_flag = scfe_shaded_lead2
+        }
+        is_ship_class = shipclass_science_ship
+        owner = {
+            has_event_chain = scfe_shaded_chain
+            NOT = { has_country_flag = checked_lead_2 }
+        }
+    }
+    immediate = {
+        owner = {
+            set_country_flag = checked_lead_2
+        }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        event_target:scfe_shaded_lead2 = {
+            enable_special_project = {
+                name = SCFE_SHADED_PROJECT_3
+                location = event_target:scfe_shaded_lead2
+                owner = root.owner
+            }
+        }
+    }
+}
+# Lead 3
+ship_event = {
+    id = scfe_shaded.10
+    title = scfe_shaded_lead3
+    desc = scfe_shaded.10.desc
+    picture = GFX_evt_colony_settlement
+    show_sound = event_default
+    is_triggered_only = yes
+
+    trigger = {
+        solar_system = {
+            has_star_flag = scfe_shaded_lead3
+        }
+        is_ship_class = shipclass_science_ship
+        owner = {
+            has_event_chain = scfe_shaded_chain
+            NOT = { has_country_flag = checked_lead_3 }
+        }
+    }
+    immediate = {
+        owner = {
+            set_country_flag = checked_lead_3
+        }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        event_target:scfe_shaded_lead3 = {
+            enable_special_project = {
+                name = SCFE_SHADED_PROJECT_4
+                location = event_target:scfe_shaded_lead3
+                owner = root.owner
+            }
+        }
+    }
+}
+# Lead 4
+ship_event = {
+    id = scfe_shaded.11
+    title = scfe_shaded_lead4
+    desc = scfe_shaded.11.desc
+    picture = GFX_evt_space_debris
+    show_sound = event_default
+    is_triggered_only = yes
+
+    trigger = {
+        solar_system = {
+            has_star_flag = scfe_shaded_lead4
+        }
+        is_ship_class = shipclass_science_ship
+        owner = {
+            has_event_chain = scfe_shaded_chain
+            NOT = { has_country_flag = checked_lead_4 }
+        }
+    }
+    immediate = {
+        owner = {
+            set_country_flag = checked_lead_4
+        }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        event_target:scfe_shaded_lead4 = {
+            enable_special_project = {
+                name = SCFE_SHADED_PROJECT_5
+                location = event_target:scfe_shaded_lead4
+                owner = root.owner
+            }
+        }
+    }
+}
+# Lead Projects
+ship_event = {
+    id = scfe_shaded.12
+    title = scfe_shaded.12.name
+    desc = scfe_shaded.12.desc
+    picture = GFX_evt_scfe_asteroid
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        ship_event = { id = scfe_shaded.52 days = 5 }
+    }
+}
+ship_event = {
+    id = scfe_shaded.52
+    title = scfe_shaded.12.name
+    desc = scfe_shaded.52.desc
+    picture = GFX_evt_scfe_asteroid
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_keep_search
+        owner = {
+            add_resource = {
+                energy = -50
+                minerals = -50
+            }
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+            add_event_chain_counter = {
+                event_chain = scfe_shaded_chain
+                counter = scfe_shaded_leads
+                amount = 1
+            }
+            scfe_detection_level_add = yes
+            hidden_effect = {
+                remove_point_of_interest = scfe_shaded_lead1
+            }
+        }
+        hidden_effect = {
+            solar_system = {
+                remove_star_flag = scfe_shaded_lead1
+            }
+        }
+    }
+    after = {
+        hidden_effect = {
+            owner = { country_event = { id = scfe_shaded.16 } }
+        }
+    }
+}
+# Lead 2
+ship_event = {
+    id = scfe_shaded.13
+    title = scfe_shaded.13.name
+    desc = scfe_shaded.13.desc
+    picture = GFX_evt_habitat
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        ship_event = { id = scfe_shaded.53 }
+    }
+}
+ship_event = {
+    id = scfe_shaded.53
+    title = scfe_shaded.13.name
+    desc = scfe_shaded.53.desc
+    picture = GFX_evt_habitat
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_keep_search
+        owner = {
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+            add_event_chain_counter = {
+                event_chain = scfe_shaded_chain counter = scfe_shaded_leads amount = 1
+            }
+            scfe_detection_level_add = yes
+            hidden_effect = {
+                remove_point_of_interest = scfe_shaded_lead2
+            }
+        }
+        hidden_effect = {
+            solar_system = {
+                remove_star_flag = scfe_shaded_lead2
+            }
+        }
+    }
+    after = {
+        hidden_effect = {
+            owner = {
+                country_event = { id = scfe_shaded.16 }
+            }
+        }
+    }
+}
+
+# Lead 3
+ship_event = {
+    id = scfe_shaded.14
+    title = scfe_shaded.14.name
+    desc = scfe_shaded.14.desc
+    picture = GFX_evt_colony_settlement
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_keep_search
+        owner = {
+            add_event_chain_counter = {
+                event_chain = scfe_shaded_chain counter = scfe_shaded_leads amount = 1
+            }
+            scfe_detection_level_add = yes
+            hidden_effect = {
+                remove_point_of_interest = scfe_shaded_lead3
+            }
+        }
+        hidden_effect = {
+            solar_system = {
+                remove_star_flag = scfe_shaded_lead3
+            }
+        }
+    }
+    after = {
+        hidden_effect = {
+            owner = { country_event = { id = scfe_shaded.16 } }
+        }
+    }
+}
+# Lead 4
+ship_event = {
+    id = scfe_shaded.15
+    title = scfe_shaded.15.name
+    desc = scfe_shaded.15.desc
+    picture = GFX_evt_space_debris
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        ship_event = { id = scfe_shaded.55 }
+    }
+}
+ship_event = {
+    id = scfe_shaded.55
+    title = scfe_shaded.55.name
+    desc = {
+        trigger = { owner = { NOT = { has_origin = origin_toxic_knights } } }
+        text = scfe_shaded.55.desc
+    }
+    desc = {
+        trigger = { owner = { has_origin = origin_toxic_knights } }
+        text = scfe_shaded.55.desc2
+    }
+    picture = GFX_evt_face_off_in_space
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        exclusive_trigger = { owner = { NOT = { has_origin = origin_toxic_knights } } }
+        name = scfe_keep_search
+        owner = { add_resource = { alloys = -10 } }
+        owner = {
+            add_event_chain_counter = {
+                event_chain = scfe_shaded_chain counter = scfe_shaded_leads amount = 1
+            }
+            scfe_detection_level_add = yes
+            hidden_effect = {
+                remove_point_of_interest = scfe_shaded_lead4
+            }
+        }
+        hidden_effect = {
+            solar_system = {
+                remove_star_flag = scfe_shaded_lead4
+            }
+        }
+    }
+    option = {
+        exclusive_trigger = { owner = { has_origin = origin_toxic_knights } }
+        name = scfe_keep_search
+        owner = {
+            add_resource = { unity = 100 }
+            add_resource = { alloys = -10 }
+        }
+        owner = {
+            add_event_chain_counter = {
+                event_chain = scfe_shaded_chain counter = scfe_shaded_leads amount = 1
+            }
+            scfe_detection_level_add = yes
+            hidden_effect = {
+                remove_point_of_interest = scfe_shaded_lead4
+            }
+        }
+        hidden_effect = {
+            solar_system = {
+                remove_star_flag = scfe_shaded_lead4
+            }
+        }
+    }
+    after = {
+        hidden_effect = {
+            owner = { country_event = { id = scfe_shaded.16 } }
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.16
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_completed_event_chain_counter = {
+                    event_chain = scfe_shaded_chain
+                    counter = scfe_shaded_leads
+                }
+            }
+            country_event = { id = scfe_shaded.17 days = 5 }
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.17
+    title = scfe_shaded.17.name
+    desc = scfe_shaded.17.desc
+    picture = GFX_evt_decryption
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        enable_special_project = {
+            name = SCFE_SHADED_PROJECT_6
+            owner = root
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.18
+    title = scfe_shaded.18.name
+    desc = scfe_shaded.18.desc
+    picture = GFX_evt_decryption
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.19
+    title = scfe_shaded.19.name
+    desc = scfe_shaded.19.desc
+    picture = GFX_evt_decryption
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.20
+    title = scfe_shaded.20.name
+    desc = scfe_shaded.20.desc
+    picture = GFX_evt_decryption
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = engineering_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.21
+    title = scfe_shaded.21.name
+    desc = scfe_shaded.21.desc
+    picture = GFX_evt_colony_settlement
+    show_sound = event_default
+    is_triggered_only = yes
+
+    immediate = {
+        random_system_within_border = {
+            limit = { is_capital_system = yes }
+            set_spawn_system_batch = begin
+            spawn_system = {
+                min_jumps = 5
+                max_jumps = 15
+                min_distance = 10
+                max_distance = 40
+                direction = rimwards
+                initializer = shaded_colony_system
+                hyperlane = no
+            }
+            set_spawn_system_batch = end
+        }
+        random_system = {
+            limit = {
+                any_system_planet = { has_planet_flag = scfe_shaded_colony }
+            }
+            random_system_planet = {
+                limit = { has_planet_flag = scfe_shaded_colony }
+                save_global_event_target_as = scfe_shaded_colony
+            }
+        }
+        set_country_flag = scfe_shaded_colony_coordinates
+        create_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_colony name = scfe_asdrylia location = event_target:scfe_shaded_colony }
+
+    }
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier2unityreward
+            min = @tier2unitymin
+            max = @tier2unitymax
+        }
+        scfe_detection_level_add = yes
+        hidden_effect = {
+            if = {
+                limit = {
+                    NOR = {
+                        has_technology = tech_jump_drive_1
+                        has_technology = tech_psi_jump_drive_1
+                    }
+                }
+                country_event = { id = scfe_shaded.61 }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.61
+    title = scfe_shaded.61.name
+    desc = scfe_shaded.61.desc
+    picture = GFX_evt_physics_research
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_shaded.61.a
+        add_research_option = tech_jump_drive_1
+        add_tech_progress = { tech = tech_jump_drive_1 progress = 0.05 }
+    }
+}
+ship_event = {
+    id = scfe_shaded.22
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                from = { has_star_flag = scfe_shaded_colony_system }
+                owner = {
+                    has_event_chain = scfe_shaded_chain
+                }
+            }
+            owner = {
+                country_event = { id = scfe_shaded.23 }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.23
+    title = scfe_shaded.23.name
+    desc = scfe_shaded.23.desc
+    picture = GFX_scfe_shaded_system
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        country_event = { id = scfe_shaded.24 }
+    }
+}
+country_event = {
+    id = scfe_shaded.24
+    title = scfe_shaded.24.name
+    desc = scfe_shaded.24.desc
+    picture = GFX_evt_communication_event
+    show_sound = event_conversation
+    is_triggered_only = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+ship_event = {
+    id = scfe_shaded.25
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                from = { has_planet_flag = scfe_shaded_colony }
+                owner = { has_event_chain = scfe_shaded_chain }
+            }
+            owner = { country_event = { id = scfe_shaded.26 } }
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.26
+    title = scfe_shaded.26.name
+    desc = scfe_shaded.26.desc
+    picture = GFX_scfe_shaded_system
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        country_event = { id = scfe_shaded.27 }
+    }
+
+    after = {
+        hidden_effect = {
+            remove_point_of_interest = scfe_shaded_colony
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.27
+    title = scfe_shaded.26.name
+    desc = scfe_shaded.27.desc
+    picture = GFX_evt_gaia
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        enable_special_project = { name = SCFE_SHADED_PROJECT_7 owner = this }
+    }
+}
+country_event = {
+    id = scfe_shaded.28
+    title = scfe_shaded.28.name
+    desc = scfe_shaded.28.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+country_event = {
+    id = scfe_shaded.29
+    title = scfe_shaded.28.name
+    desc = scfe_shaded.29.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTRIGUING
+    }
+}
+country_event = {
+    id = scfe_shaded.30
+    title = scfe_shaded.28.name
+    desc = scfe_shaded.30.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+country_event = {
+    id = scfe_shaded.31
+    title = scfe_shaded.28.name
+    desc = scfe_shaded.31.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_shaded.31.a
+        add_relic = r_scfe_first_empire_databank
+        end_event_chain = scfe_shaded_chain
+        hidden_effect = {
+            set_country_flag = shaded_precursor_done
+            remove_country_flag = checked_shaded_warbase
+            remove_country_flag = scfe_shaded_operations_active
+            remove_country_flag = scfe_shaded_operations_inactive
+            remove_country_flag = checked_lead_1
+            remove_country_flag = checked_lead_2
+            remove_country_flag = checked_lead_3
+            remove_country_flag = checked_lead_4
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded.32
+    title = scfe_shaded.32.name
+    desc = scfe_shaded.32.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_shaded.32.a
+        add_modifier = { modifier = scfe_shaded_skill days = -1 }
+    }
+}
+country_event = {
+    id = scfe_shaded.33
+    title = scfe_shaded.33.name
+    desc = scfe_shaded.33.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        country_event = { id = scfe_shaded.34 }
+    }
+}
+country_event = {
+    id = scfe_shaded.34
+    title = scfe_shaded.33.name
+    desc = scfe_shaded.34.desc
+    picture = GFX_evt_analyzing_artifacts
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = FASCINATING
+        add_modifier = { modifier = scfe_energy_mastery days = -1 }
+    }
+}
+
+######################### Fallen Empires Interactions #########################
+
+namespace = scfe_fallen_empires
+
+country_event = {
+    id = scfe_fallen_empires.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:scfe_shaded_owner = {
+            set_country_flag = fe_demand_made
+            country_event = { id = scfe_fallen_empires.2 scopes = { from = root } }
+        }
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.2
+    title = fallen_empires.4.name
+    desc = scfe_fallen_empires.2.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = from
+        planet_background = from
+        graphical_culture = from
+        city_level = from
+        room = from.ruler
+    }
+
+    option = {
+        name = fallen_empires.5.a
+        from = { save_event_target_as = fallen_empire_humiliator }
+        event_target:scfe_shaded_owner = {
+            fallen_empire_humiliate_effect = yes
+            end_event_chain = scfe_shaded_chain
+            hidden_effect = {
+                clear_global_event_target = scfe_shaded_crash
+                clear_global_event_target = scfe_shaded_owner
+            }
+        }
+    }
+    option = {
+        name = scfe_fallen_empires.2.b
+        from = { save_event_target_as = fallen_empire_humiliator }
+        event_target:scfe_shaded_owner = {
+            fallen_empire_humiliate_effect = yes
+            scfe_detection_level_add = yes
+        }
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                    is_fallen_empire = yes
+                }
+                if = {
+                    limit = {
+                        is_fallen_empire_machine = yes
+                    }
+                    add_opinion_modifier = { who = root modifier = scfe_opinion_irritated_machine_fallen_empire }
+                }
+                else = {
+                    add_opinion_modifier = { who = root modifier = scfe_opinion_irritated_fallen_empire }
+                }
+            }
+        }
+    }
+    option = {
+        name = fallen_empires.5.b
+        custom_tooltip = fallen_empire_refuse_tooltip
+        scfe_detection_level_add = yes
+        hidden_effect = {
+            from = { add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand } }
+        }
+    }
+
+    after = {
+        event_target:scfe_shaded_owner = {
+            remove_country_flag = fe_demand_made
+            if = {
+                limit = {
+                    has_event_chain = scfe_shaded_chain
+                }
+                country_event = { id = scfe_shaded.5 }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
+                NOR = {
+                    has_global_flag = shaded_fe_wary
+                    has_global_flag = shaded_fe_detected
+                }
+                has_relic = r_scfe_znkar_distortion_generator
+                has_first_contact_dlc = yes
+            }
+            country_event = { id = scfe_fallen_empires.44 }
+        }
+        else_if = {
+            limit = {
+                check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
+                NOR = {
+                    has_global_flag = shaded_fe_wary
+                    has_global_flag = shaded_fe_detected
+                }
+            }
+            country_event = { id = scfe_fallen_empires.4 }
+        }
+        else_if = {
+            limit = {
+                check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
+                has_global_flag = shaded_fe_wary
+            }
+            country_event = { id = scfe_fallen_empires.6 }
+        }
+        else_if = {
+            limit = {
+                check_variable_arithmetic = { which = scfe_shaded_detection value > @shaded_detection_limit }
+                has_global_flag = shaded_fe_detection_high
+            }
+            country_event = { id = scfe_fallen_empires.6 }
+        }
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.4
+    title = scfe_fallen_empires.4.name
+    desc = scfe_fallen_empires.4.desc
+    picture = GFX_evt_communication_event
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_fallen_empires.4.a
+        trigger = { resource_stockpile_compare = { resource = energy value = 500 } }
+        enable_special_project = { name = SCFE_SHADED_PROJECT_8 owner = this }
+    }
+    option = {
+        name = scfe_fallen_empires.4.b
+        enable_special_project = { name = SCFE_SHADED_PROJECT_9 owner = this }
+    }
+    option = {
+        name = NOTIME
+    }
+    after = {
+        set_global_flag = shaded_fe_detection_high
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.44
+    title = scfe_fallen_empires.4.name
+    desc = scfe_fallen_empires.4.desc
+    picture = GFX_evt_communication_event
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_fallen_empires.4.c
+        country_event = { id = scfe_fallen_empires.55 days = 10 }
+    }
+    after = {
+        set_global_flag = shaded_fe_detection_high
+    }
+}
+
+country_event = {
+    id = scfe_fallen_empires.5
+    title = scfe_fallen_empires.5.name
+    desc = scfe_fallen_empires.5.desc
+    picture = GFX_evt_fallen_empire
+    is_triggered_only = yes
+
+    immediate = {
+        remove_global_flag = shaded_fe_detection_high
+        add_event_chain_counter = { event_chain = scfe_shaded_chain counter = scfe_shaded_detection amount = -5 }
+        change_variable = { which = scfe_shaded_detection value = -5 }
+        set_global_flag = shaded_fe_wary
+    }
+
+    option = {
+        name = EXCELLENT
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.55
+    title = scfe_fallen_empires.5.name
+    desc = scfe_fallen_empires.5B.desc
+    picture = GFX_evt_fallen_empire
+    is_triggered_only = yes
+
+    immediate = {
+        remove_global_flag = shaded_fe_detection_high
+        add_event_chain_counter = { event_chain = scfe_shaded_chain counter = scfe_shaded_detection amount = -5 }
+        change_variable = { which = scfe_shaded_detection value = -5 }
+        set_global_flag = shaded_fe_wary
+    }
+
+    option = {
+        name = EXCELLENT
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.6
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        scfe_select_shaded_angry_fe = yes
+        if = {
+            limit = { exists = event_target:scfe_shaded_fe }
+            event_target:scfe_shaded_owner = {
+                country_event = { id = scfe_fallen_empires.7 scopes = { from = event_target:scfe_shaded_fe } }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_fallen_empires.7
+    title = scfe_fallen_empires.7.name
+    desc = scfe_fallen_empires.7.desc
+    picture = GFX_evt_fallen_empire
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = from
+        planet_background = from
+        graphical_culture = from
+        city_level = from
+        room = from.ruler
+    }
+
+    immediate = {
+        remove_global_flag = shaded_fe_detection_high
+        remove_global_flag = shaded_fe_wary
+        set_global_flag = shaded_fe_detected
+        every_country = {
+            limit = {
+                is_ai = yes
+                is_fallen_empire = yes
+            }
+            if = {
+                limit = { is_fallen_empire_machine = yes }
+                add_opinion_modifier = { modifier = scfe_opinion_angered_machine_fallen_empire who = root }
+            }
+            else = {
+                add_opinion_modifier = { modifier = scfe_opinion_angered_fallen_empire who = root }
+            }
+        }
+    }
+
+    option = {
+        name = scfe_fallen_empires.7.a
+    }
+}
+
+######################### Dig Sites #########################
+
+namespace = scfe_shaded_dig_fail
+
+fleet_event = {
+    id = scfe_shaded_dig_fail.1
+    title = scfe_shaded_dig_fail.1.name
+    desc = scfe_shaded_dig_fail.1.desc
+    picture = GFX_evt_guardians
+    show_sound = event_ground_battle
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = site_delay
+        fromfrom = { add_stage_clues = -5 }
+    }
+}
+fleet_event = {
+    id = scfe_shaded_dig_fail.2
+    title = scfe_shaded_dig_fail.2.name
+    desc = scfe_shaded_dig_fail.2.desc
+    picture = GFX_evt_engineering_cache
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = site_delay
+        fromfrom = { add_stage_clues = -3 }
+        owner = {
+            scfe_detection_level_add = yes
+        }
+    }
+}
+fleet_event = {
+    id = scfe_shaded_dig_fail.3
+    title = scfe_shaded_dig_fail.3.name
+    desc = scfe_shaded_dig_fail.3.desc
+    picture = GFX_evt_sentry_guns
+    show_sound = event_ground_battle
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = site_delay
+        fromfrom = { add_stage_clues = -4 }
+    }
+}
+
+namespace = scfe_shaded_warform_dig
+
+fleet_event = {
+    id = scfe_shaded_warform_dig.1
+    title = scfe_shaded_warform_dig.1.name
+    desc = scfe_shaded_warform_dig.1.desc
+    picture = GFX_evt_riftworld_archsite_crater
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = DIG
+    }
+}
+fleet_event = {
+    id = scfe_shaded_warform_dig.2
+    title = scfe_shaded_warform_dig.2.name
+    desc = scfe_shaded_warform_dig.2.desc
+    picture = GFX_evt_collapsing_roof
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = DIG
+    }
+}
+fleet_event = {
+    id = scfe_shaded_warform_dig.3
+    title = scfe_shaded_warform_dig.3.name
+    desc = scfe_shaded_warform_dig.3.desc
+    picture = GFX_evt_engineering_bay
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = DIG
+    }
+}
+fleet_event = {
+    id = scfe_shaded_warform_dig.4
+    title = scfe_shaded_warform_dig.4.name
+    desc = scfe_shaded_warform_dig.4.desc
+    picture = GFX_evt_generator_powerup
+    show_sound = event_energy_field
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = DIG
+    }
+}
+fleet_event = {
+    id = scfe_shaded_warform_dig.5
+    title = scfe_shaded_warform_dig.5.name
+    desc = scfe_shaded_warform_dig.5.desc
+    picture = GFX_evt_decryption
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+    option = {
+        name = INTERESTING
+        owner = {
+            add_monthly_resource_mult = {
+                resource = engineering_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+            add_event_chain_counter = {
+                event_chain = scfe_shaded_chain counter = scfe_shaded_clues amount = 1
+            }
+            scfe_detection_level_add = yes
+            hidden_effect = {
+                remove_point_of_interest = scfe_shaded_warbase
+                country_event = { id = scfe_shaded.7 }
+                solar_system = {
+                    remove_star_flag = scfe_shaded_warbase
+                }
+                clear_global_event_target = scfe_shaded_warbase
+            }
+        }
+    }
+}
+# Operations
+namespace = scfe_operations
+
+country_event = {
+    id = scfe_operations.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_nemesis = yes
+                has_event_chain = scfe_shaded_chain
+                NOT = { has_global_flag = shaded_fe_detected }
+                check_variable = { which = scfe_shaded_detection value > 5 }
+                NOR = {
+                    has_country_flag = scfe_shaded_operations_active
+                    has_country_flag = scfe_shaded_operations_inactive
+                }
+                num_communications > 3
+            }
+            country_event = { id = scfe_operations.2 }
+        }
+    }
+}
+country_event = {
+    id = scfe_operations.2
+    title = scfe_operations.2.name
+    desc = scfe_operations.2.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_operations.2.a
+        set_country_flag = scfe_shaded_operations_active
+        custom_tooltip = scfe_operations.2.t
+    }
+    option = {
+        name = scfe_operations.2.b
+        set_country_flag = scfe_shaded_operations_inactive
+    }
+}
+espionage_operation_event = {
+    id = scfe_operations.3
+    title = operation.3000.name
+    espionage_operation = yes
+    desc = scfe_operations.3.desc
+    picture = GFX_evt_smear_campaign
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = PROCEED
+    }
+}
+espionage_operation_event = {
+    id = scfe_operations.4
+    title = scfe_operations.4.name
+    espionage_operation = yes
+    desc = scfe_operations.4.desc
+    picture = GFX_evt_smear_campaign
+    show_sound = event_default
+    is_triggered_only = yes
+
+    immediate = {
+        set_espionage_operation_progress_locked = yes
+    }
+
+    option = {
+        name = PROCEED
+        set_espionage_operation_progress_locked = no
+    }
+}
+espionage_operation_event = {
+    id = scfe_operations.5
+    title = scfe_operations.5.name
+    espionage_operation = yes
+    desc = scfe_operations.5.desc
+    picture = GFX_evt_smear_campaign
+    show_sound = event_default
+    is_triggered_only = yes
+
+    immediate = {
+        set_espionage_operation_progress_locked = yes
+    }
+
+    option = {
+        name = LAUNCH_OPERATION
+        hidden_effect = {
+            owner = {
+                country_event = { id = scfe_operations.6 days = 1 }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_operations.6
+    title = scfe_operations.6.name
+    desc = scfe_operations.6.desc
+    picture = GFX_evt_smear_campaign
+    show_sound = event_espionage_concluded
+    is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = shaded_campaign_instigator
+        from.target = {
+            save_event_target_as = shaded_campaign_target
+            set_country_flag = scfe_shaded_campaign_target
+        }
+    }
+
+    option = {
+        name = EXCELLENT
+        from.spynetwork = {
+            add_spy_network_level_on_success_effect = { VALUE = -20 }
+        }
+        hidden_effect = {
+            scfe_select_shaded_angry_fe = yes
+            if = {
+                limit = { exists = event_target:scfe_shaded_fe }
+                event_target:shaded_campaign_target = {
+                    if = {
+                        limit = {
+                            is_ai = no
+                            relative_encryption_decryption = { target = root value > 1.7 }
+                        }
+                        country_event = { id = scfe_operations.7 days = 1 }
+                    }
+                    else = {
+                        event_target:scfe_shaded_owner = {
+                            change_variable = { which = scfe_shaded_detection value = -5 }
+                            add_event_chain_counter = { event_chain = scfe_shaded_chain counter = scfe_shaded_detection amount = -5 }
+                        }
+                        if = {
+                            limit = { is_ai = no }
+                            country_event = { id = scfe_operations.8 days = 1 scopes = { from = event_target:scfe_shaded_fe } }
+                        }
+                        else = {
+                            event_target:scfe_shaded_fe = {
+                                add_opinion_modifier = { modifier = scfe_opinion_irritated_fallen_empire who = event_target:shaded_campaign_target }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        destroy_espionage_operation = from
+        owner = {
+            if = {
+                limit = { has_ascension_perk = ap_become_the_crisis }
+                complete_crisis_objective = crisobj_perform_upsetting_operations
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_operations.7
+    title = scfe_operations.7.name
+    desc = scfe_operations.7.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_operations.7.a
+        add_opinion_modifier = { modifier = scfe_opinion_compromise_attempt who = event_target:shaded_campaign_instigator }
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier2unityreward
+            min = @tier2unitymin
+            max = @tier2unitymax
+        }
+    }
+    option = {
+        name = scfe_operations.7.b
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }
+        add_opinion_modifier = { modifier = scfe_opinion_compromise_attempt who = event_target:shaded_campaign_instigator }
+        add_casus_belli = { type = cb_shaded_payback days = 7200 who = event_target:shaded_campaign_instigator }
+    }
+    option = {
+        name = scfe_operations.7.c
+        allow = {
+            any_country = {
+                is_fallen_empire = yes
+                is_fallen_empire_machine = no
+                opinion_level = { who = root level >= good }
+            }
+        }
+        add_opinion_modifier = { modifier = scfe_opinion_compromise_attempt who = event_target:shaded_campaign_instigator }
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier2unityreward
+            min = @tier2unitymin
+            max = @tier2unitymax
+        }
+        hidden_effect = {
+            event_target:shaded_campaign_instigator = {
+                country_event = { id = scfe_fallen_empires.6 days = 5 }
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_operations.8
+    title = scfe_operations.8.name
+    desc = scfe_operations.8.desc
+    diplomatic = yes
+    is_triggered_only = yes
+
+    picture_event_data = {
+        portrait = from
+        planet_background = from
+        graphical_culture = from
+        city_level = from
+        room = from.ruler
+    }
+
+    option = {
+        name = scfe_operations.8.a
+        add_modifier = { modifier = scfe_ominous_menace days = 360 }
+        from = {
+            add_opinion_modifier = { modifier = scfe_opinion_irritated_fallen_empire who = root }
+        }
+    }
+}
+espionage_operation_event = {
+    id = scfe_operations.9
+    title = scfe_operations.9.name
+    espionage_operation = yes
+    desc = scfe_operations.9.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = PROCEED
+    }
+}
+# Get the coordinates
+espionage_operation_event = {
+    id = scfe_operations.10
+    title = scfe_operations.10.name
+    espionage_operation = yes
+    desc = scfe_operations.10.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = PROCEED
+    }
+
+}
+espionage_operation_event = {
+    id = scfe_operations.11
+    title = scfe_operations.11.name
+    espionage_operation = yes
+    desc = scfe_operations.11.desc
+    picture = GFX_evt_intelligence_report
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = LAUNCH_OPERATION
+    }
+}
+country_event = {
+    id = scfe_operations.12
+    title = scfe_operations.12.name
+    desc = scfe_operations.12.desc
+    picture = GFX_evt_intelligence_report
+    is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = shaded_coords_instigator
+        from.target = { save_event_target_as = shaded_coords_target }
+    }
+
+    option = {
+        name = EXCELLENT
+        from.spynetwork = {
+            add_spy_network_level_on_success_effect = { VALUE = -20 }
+        }
+        hidden_effect = {
+            event_target:shaded_coords_target = {
+                if = {
+                    limit = { relative_encryption_decryption = { target = root value > 1.7 } }
+                    country_event = { id = scfe_operations.13 days = 1 }
+                }
+                else = {
+                    country_event = { id = scfe_operations.14 days = 1 }
+                }
+            }
+        }
+        destroy_espionage_operation = from
+    }
+}
+country_event = {
+    id = scfe_operations.13
+    title = scfe_operations.7.name
+    desc = scfe_operations.13.desc
+    picture = GFX_evt_intelligence_report
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_operations.13.a
+        add_intel = { who = event_target:shaded_coords_instigator amount = 10 }
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier2unityreward
+            min = @tier2unitymin
+            max = @tier2unitymax
+        }
+        add_opinion_modifier = { modifier = scfe_opinion_coords_attempt who = event_target:shaded_coords_instigator }
+    }
+}
+country_event = {
+    id = scfe_operations.14
+    title = scfe_operations.14.name
+    desc = scfe_operations.14.desc
+    picture = GFX_evt_intelligence_report
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_operations.14.a
+    }
+}
+country_event = {
+    id = scfe_operations.15
+    title = scfe_operations.15.name
+    desc = scfe_operations.15.desc
+    picture = GFX_evt_intelligence_report
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_operations.15.a
+    }
+}
+
+namespace = scfe_shaded_engine
+
+country_event = {
+    id = scfe_shaded_engine.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                is_ai = no
+                has_ascension_perk = ap_enigmatic_engineering
+                NOT = { has_country_flag = enigmatic_counted }
+            }
+            set_country_flag = enigmatic_counted
+            change_variable = { which = scfe_shaded_detection_limit value = 1 }
+        }
+    }
+}
+country_event = {
+    id = scfe_shaded_engine.2
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_tradition = tr_subterfuge_finish
+                NOT = { has_country_flag = scfe_subterfuge_counted }
+            }
+            set_country_flag = scfe_subterfuge_counted
+            change_variable = { which = scfe_shaded_detection_limit value = 1 }
+        }
+    }
+}
