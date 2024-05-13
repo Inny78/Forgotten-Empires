@@ -13,6 +13,9 @@ ship_event = {
 
 	option = {
 		name = INTRIGUING
+		from = {
+			create_archaeological_site = scfe_war_torn_dig
+		}
 		hidden_effect = {
 			owner = { save_global_event_target_as = scfe_war_torn_owner }
 		}

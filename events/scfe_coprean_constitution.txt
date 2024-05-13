@@ -153,10 +153,7 @@ fleet_event = {
                 change_pc = pc_barren
                 set_planet_entity = {
                     entity = continental_planet_01_entity
-                }
-                set_planet_entity = {
-                    entity = this
-                    picture = this
+                    picture = pc_continental
                 }
                 if = {
                     limit = { planet_size > 25 }
