@@ -144,6 +144,7 @@ fleet_event = {
 	
 	option = {
 		name = scfe_when_the_world_sings.5.a
+		trigger = { owner = { is_memorialist_empire = no } }
 		medium_artifact_reward = yes
 		from.planet = {
 			add_modifier = {
@@ -163,4 +164,17 @@ fleet_event = {
 			}
 		}
 	}
+
+	option = {
+		name = scfe_when_the_world_sings.5.c
+		trigger = { owner = { is_memorialist_empire = yes } }
+		large_artifact_reward = yes
+		from.planet = {
+			add_modifier = {
+				modifier = scfe_singing_planet
+				days = -1
+			}
+		}
+	}
+
 }

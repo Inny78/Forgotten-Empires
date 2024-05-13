@@ -108,11 +108,23 @@ country_event = {
     }
     after = {
         hidden_effect = {
-            scfe_select_shaded_angry_fe = yes
             if = {
-                limit = { exists = event_target:scfe_shaded_fe }
-                event_target:scfe_shaded_fe = {
-                    country_event = { id = scfe_fallen_empires.1 }
+                limit = { has_global_flag = war_in_heaven_started }
+                set_country_flag = scfe_shaded_ignore_fe
+            }
+            if = {
+                limit = { NOT = { has_global_flag = war_in_heaven_started } }
+                scfe_select_shaded_angry_fe = yes
+                if = {
+                    limit = { exists = event_target:scfe_shaded_fe }
+                    event_target:scfe_shaded_fe = {
+                        country_event = { id = scfe_fallen_empires.1 }
+                    }
+                }
+                else = {
+                    country_event = {
+                        id = scfe_shaded.5 days = 5
+                    }
                 }
             }
             else = {
@@ -1245,40 +1257,43 @@ country_event = {
 
     immediate = {
         if = {
-            limit = {
-                check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
-                NOR = {
-                    has_global_flag = shaded_fe_wary
-                    has_global_flag = shaded_fe_detected
+            limit = { NOT = { has_global_flag = war_in_heaven_started } }
+            if = {
+                limit = {
+                    check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
+                    NOR = {
+                        has_global_flag = shaded_fe_wary
+                        has_global_flag = shaded_fe_detected
+                    }
+                    has_relic = r_scfe_znkar_distortion_generator
+                    has_first_contact_dlc = yes
                 }
-                has_relic = r_scfe_znkar_distortion_generator
-                has_first_contact_dlc = yes
+                country_event = { id = scfe_fallen_empires.44 }
             }
-            country_event = { id = scfe_fallen_empires.44 }
-        }
-        else_if = {
-            limit = {
-                check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
-                NOR = {
-                    has_global_flag = shaded_fe_wary
-                    has_global_flag = shaded_fe_detected
+            else_if = {
+                limit = {
+                    check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
+                    NOR = {
+                        has_global_flag = shaded_fe_wary
+                        has_global_flag = shaded_fe_detected
+                    }
                 }
+                country_event = { id = scfe_fallen_empires.4 }
             }
-            country_event = { id = scfe_fallen_empires.4 }
-        }
-        else_if = {
-            limit = {
-                check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
-                has_global_flag = shaded_fe_wary
+            else_if = {
+                limit = {
+                    check_variable = { which = scfe_shaded_detection value = @shaded_detection_limit }
+                    has_global_flag = shaded_fe_wary
+                }
+                country_event = { id = scfe_fallen_empires.6 }
             }
-            country_event = { id = scfe_fallen_empires.6 }
-        }
-        else_if = {
-            limit = {
-                check_variable_arithmetic = { which = scfe_shaded_detection value > @shaded_detection_limit }
-                has_global_flag = shaded_fe_detection_high
+            else_if = {
+                limit = {
+                    check_variable_arithmetic = { which = scfe_shaded_detection value > @shaded_detection_limit }
+                    has_global_flag = shaded_fe_detection_high
+                }
+                country_event = { id = scfe_fallen_empires.6 }
             }
-            country_event = { id = scfe_fallen_empires.6 }
         }
     }
 }

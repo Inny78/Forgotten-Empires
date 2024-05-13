@@ -242,4 +242,17 @@ fleet_event = {
 			add_deposit = scfe_d_exotic_gases_layers
 		}
 	}
+	after = {
+		hidden_effect = {
+			from.planet = {
+				if = {
+					limit = {
+						uninhabitable_regular_planet = yes
+						NOT = { has_modifier = terraforming_candidate }
+					}
+					add_modifier = { modifier = terraforming_candidate days = -1 }
+				}
+			}
+		}
+	}
 }
