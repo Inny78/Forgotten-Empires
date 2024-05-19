@@ -1059,6 +1059,17 @@ country_event = {
     option = {
         name = INTERESTING
         enable_special_project = { name = SCFE_SHADED_PROJECT_7 owner = this }
+        # Building a starbase in an isolated system costs a lot of unity, so let's auto-build one.
+        hidden_effect = {
+            event_target:scfe_shaded_colony.solar_system = {
+                if = {
+                    limit = {
+                        NOT = { any_fleet_in_system = { is_ship_class = shipclass_starbase } }
+                    }
+                    create_starbase = { owner = root size = starbase_outpost }
+                }
+            }
+        }
     }
 }
 country_event = {
@@ -1306,7 +1317,7 @@ country_event = {
 
     option = {
         name = scfe_fallen_empires.4.a
-        trigger = { resource_stockpile_compare = { resource = energy value = 500 } }
+        trigger = { resource_stockpile_compare = { resource = energy value >= 500 } }
         enable_special_project = { name = SCFE_SHADED_PROJECT_8 owner = this }
     }
     option = {
