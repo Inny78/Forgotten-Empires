@@ -136,7 +136,6 @@ scfe_lonely_shroud_category = {
 	spawn_chance = {
 		modifier = {
 			add = 100
-			is_planet_class = pc_shrouded
 			has_planet_flag = scfe_lonely_planet
 		}
 		modifier = {
