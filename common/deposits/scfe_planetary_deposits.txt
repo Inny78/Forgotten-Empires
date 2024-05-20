@@ -27,6 +27,21 @@ scfe_d_exotic_gases_layers = {
 		weight = 0
 	}
 }
+scfe_d_exotic_gases_layers_orbital = {
+	icon = d_gaseous_eruption
+	category = deposit_cat_rare
+	station = shipclass_mining_station
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			exotic_gases = 4
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
 #ASP_site_king_of_underground_city
 scfe_d_ancient_underground_city = {
 	is_for_colonizable = yes

@@ -11,10 +11,12 @@
  ### deposits ###
  scfe_d_society_20: "£society£ +20"
  scfe_d_society_20_desc: ""
- scfe_d_exotic_gases_layers: "Exotic Gases Layers"
- scfe_d_exotic_gases_layers_desc: "£exotic_gases£"
+ scfe_d_exotic_gases_layers: "Exotic Gas Layers"
+ scfe_d_exotic_gases_layers_desc: "Raumwale sind seit Millionen von Jahren auf diesem Planeten gestorben und haben dabei Schichten £exotic_gases£exotischer Gase erzeugt."
  scfe_d_ancient_underground_city: "Uralte unterirdische Stadt"
  scfe_d_ancient_underground_city_desc: "Diese riesige Stadt wurde von einer Zivilisation gebaut, die einst auf dem Planeten existierte. Überraschenderweise ist sie noch intakt und groß genug, um eine große Anzahl von Menschen aufzunehmen."
+ scfe_d_exotic_gases_layers_orbital: "$scfe_d_exotic_gases_layers$"
+ scfe_d_exotic_gases_layers_orbital_desc: "$scfe_d_exotic_gases_layers_desc$"
 
  # Biggest Show of the World
  scfe_site_biggest_show_of_world: "Größte Show der Welt"

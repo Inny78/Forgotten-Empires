@@ -38,18 +38,11 @@ on_colonized = {
 		scfe_sless.100
 	}
 }
-on_colony_yearly_pulse = {
-	events = {
-		# scfe_engine.6
-	}
-}
 
-# ASP
 on_colony_2_years_old = {
 	events = {
 	}
 	random_events = {
-		### Archaeology Colony Sites
 		6 = scfe_when_the_world_sings.1 # When the world sings
 	}
 }
@@ -57,7 +50,6 @@ on_colony_3_years_old = {
 	events = {
 	}
 	random_events = {
-		### Archaeology Colony Sites
 		8 = scfe_when_the_world_sings.1 # When the world sings
 	}
 }
@@ -65,7 +57,6 @@ on_colony_4_years_old = {
 	events = {
 	}
 	random_events = {
-		### Archaeology Colony Sites
 		10 = scfe_when_the_world_sings.1 # When the world sings
 	}
 }
@@ -73,8 +64,8 @@ on_colony_5_years_old = {
 	events = {
 	}
 	random_events = {
-		### Archaeology Colony Sites
 		10 = scfe_when_the_world_sings.1 # When the world sings
+		5 = scfe_engine.6
 	}
 }
 
@@ -142,5 +133,27 @@ on_destroy_planet_with_PLANET_KILLER_TOXIFIER = {
 		scfe_strange_on_actions.22 # Koeleothans
 		scfe_strange_on_actions.43 # Beetles
 		scfe_strange_on_actions.53 # Xenograss thrives
+	}
+}
+on_mid_game_pulse_country = {
+	events = {
+		scfe_engine.4
+	}
+}
+
+on_ascension_perk_picked = {
+	events = {
+		scfe_shaded_engine.1
+	}
+}
+
+on_tradition_picked = {
+	events = {
+		scfe_shaded_engine.2
+	}
+}
+on_terraforming_complete = {
+	events = {
+		scfe_tomb_of_dead_whales.10
 	}
 }

@@ -12,9 +12,11 @@
  scfe_d_society_20: "£society£ +20"
  scfe_d_society_20_desc: ""
  scfe_d_exotic_gases_layers: "이종 가스 퇴적층"
- scfe_d_exotic_gases_layers_desc: ""
+ scfe_d_exotic_gases_layers_desc: "우주 고래들은 수백만 년 동안 이 행성에서 죽었고, 이로 인해 이국적인 가스 층이 생성되었습니다."
  scfe_d_ancient_underground_city: "고대의 지하 도시"
  scfe_d_ancient_underground_city_desc: "한때 이 행성에 살던 종족이 건설한 거대한 지하 도시는 아직도 유지되고 있으며, 많은 인구가 거주할 수 있을 만큼 넓습니다."
+ scfe_d_exotic_gases_layers_orbital: "$scfe_d_exotic_gases_layers$"
+ scfe_d_exotic_gases_layers_orbital_desc: "$scfe_d_exotic_gases_layers_desc$"
 
 # Biggest Show of the World
  scfe_site_biggest_show_of_world: "지상 최대의 쇼"

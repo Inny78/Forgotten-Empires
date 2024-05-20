@@ -470,6 +470,7 @@ site_scfe_shaded_random_events = {
 scfe_detection_level_add = {
     if = {
         limit = {
+            event_target:scfe_shaded_owner = { NOT = { has_country_flag = scfe_shaded_ignore_fe } }
             any_country = { scfe_is_valid_shaded_fe = yes has_communications = root }
             NOT = { has_global_flag = shaded_fe_detected }
         }
@@ -478,15 +479,6 @@ scfe_detection_level_add = {
         }
         change_variable = { which = scfe_shaded_detection value = 1 }
         country_event = { id = scfe_fallen_empires.3 }
-    }
-}
-scfe_detection_level_sub = {
-    if = {
-        limit = { any_country = { scfe_is_valid_shaded_fe = yes has_communications = root } }
-        add_event_chain_counter = {
-            event_chain = scfe_shaded_chain counter = scfe_shaded_detection amount = -1
-        }
-        change_variable = { which = scfe_shaded_detection value = -1 }
     }
 }
 scfe_select_shaded_angry_fe = {
@@ -513,4 +505,5 @@ scfe_roots_cleanup = {
     remove_modifier = scfe_rooted_nature
     remove_modifier = scfe_rooted_nature_maintenance
     remove_modifier = scfe_rooted_crime
+    remove_modifier = scfe_rooted_doom
 }

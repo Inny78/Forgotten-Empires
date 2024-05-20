@@ -292,6 +292,7 @@ scfe_astanine_home_system = {
             set_deposit = d_physics_10
             set_deposit = d_trade_value_5
             set_planet_flag = has_megastructure
+            set_planet_flag = forbid_guillis_planet_modifiers
             save_event_target_as = scfe_new_astania_location
         }
 
@@ -320,6 +321,7 @@ scfe_astanine_home_system = {
                 set_planet_flag = habitat
                 set_planet_flag = advanced_habitat
                 set_planet_flag = advanced_habitat_2
+                set_planet_flag = forbid_guillis_planet_modifiers
 
                 set_planet_flag = energy_habitat
                 set_planet_flag = research_habitat

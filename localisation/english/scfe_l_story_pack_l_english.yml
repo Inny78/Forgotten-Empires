@@ -11,10 +11,12 @@
  ### deposits ###
  scfe_d_society_20: "£society£ +20"
  scfe_d_society_20_desc: ""
- scfe_d_exotic_gases_layers: "Exotic Gases Layers"
- scfe_d_exotic_gases_layers_desc: "£exotic_gases£"
+ scfe_d_exotic_gases_layers: "Exotic Gas Layers"
+ scfe_d_exotic_gases_layers_desc: "Space whales have died for millions of years on this planet, generating layers of £exotic_gases£$exotic_gases$"
  scfe_d_ancient_underground_city: "Ancient Underground City"
  scfe_d_ancient_underground_city_desc: "This giant city was built by a civilization that once existed on the planet. Surprisingly, it is still intact and large enough to hold a lot of population."
+ scfe_d_exotic_gases_layers_orbital: "$scfe_d_exotic_gases_layers$"
+ scfe_d_exotic_gases_layers_orbital_desc: "$scfe_d_exotic_gases_layers_desc$"
 
 # Biggest Show of the World
  scfe_site_biggest_show_of_world: "Biggest Show of the World"
@@ -77,7 +79,7 @@
  scfe_tomb_of_dead_whales.6.b: "Now we've got a reason to hunt those whales."
  scfe_tomb_of_dead_whales.6.c: "There are numerous deposits of gases remaining."
  scfe_tomb_of_dead_whales.6.d: "A tragic Story."
- scfe_whale_fossil: "Whale Fossil"
+ scfe_whale_fossil: "Whale Fossils"
  scfe_whale_fossil_desc: "The planet once used as a tomb world by Tiyanki Space Whales. There's a lot of whale fossils in its stratum, making it hard to develop its mining industry."
  scfe_site_whale_lesson: "Lesson of Whale tomb world"
  scfe_whale_hunt: "Whale Hunting"

@@ -1,2 +1,7 @@
 ﻿l_simp_chinese:
+ # Added
  scfe_when_the_world_sings.5.c: "We will mourn and honor them."
+ scfe_d_exotic_gases_layers_orbital: "$scfe_d_exotic_gases_layers$"
+ scfe_d_exotic_gases_layers_orbital_desc: "$scfe_d_exotic_gases_layers_desc$"
+ # Modified
+ scfe_d_exotic_gases_layers_desc: "Space whales have died for millions of years on this planet, generating layers of £exotic_gases£$exotic_gases$"

@@ -1,10 +1,9 @@
 ﻿l_spanish:
 
  ### dummy ###
- pc_nuked_colorful: ""
- pc_nuked_colorful_desc: ""
- pc_asp_ocean_red: ""
- pc_asp_ocean_red_desc: ""
+ pc_nuked_colorful: "$pc_nuked$"
+ pc_nuked_colorful_desc: "$pc_nuked_desc$"
+ pc_nuked_colorful_adj: "$pc_nuked_adj$"
 
  ### modifiers ###
  mod_damage_vs_country_type_tiyanki_mult: "Daño a las ballenas espaciales Tiyanki"
@@ -13,9 +12,11 @@
  scfe_d_society_20: "£society£ +20"
  scfe_d_society_20_desc: ""
  scfe_d_exotic_gases_layers: "Estrato de Gases Exóticos"
- scfe_d_exotic_gases_layers_desc: ""
+ scfe_d_exotic_gases_layers_desc: "Las ballenas espaciales han muerto durante millones de años en este planeta, generando capas de £exotic_gases£$exotic_gases$."
  scfe_d_ancient_underground_city: "Antigua Ciudad Subterránea"
  scfe_d_ancient_underground_city_desc: "Esta ciudad gigante fue construida por una civilización que alguna vez existió en el planeta. Sorprendentemente, todavía está intacto y es lo suficientemente grande como para albergar a una gran cantidad de población."
+ scfe_d_exotic_gases_layers_orbital: "$scfe_d_exotic_gases_layers$"
+ scfe_d_exotic_gases_layers_orbital_desc: "$scfe_d_exotic_gases_layers_desc$"
 
 # Biggest Show of the World
  scfe_site_biggest_show_of_world: "El espectáculo más grande del mundo"

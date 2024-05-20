@@ -6,6 +6,7 @@ ship_event = {
 	id = scfe_lonely_shroud.1
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 	trigger = {
 		years_passed > 50
 		owner = { is_ai = no }
@@ -80,8 +81,10 @@ ship_event = {
 		name = scfe_lonely_shroud.3.th
 		event_target:scfe_lonely_planet = {
 			change_pc = pc_hive
-			reroll_planet_modifiers = yes
-			reroll_deposits = yes
+			hidden_effect = {
+				reroll_planet_modifiers = yes
+				reroll_deposits = yes
+			}
 		}
 	}
 	option = {
@@ -89,16 +92,20 @@ ship_event = {
 		name = scfe_lonely_shroud.3.tm
 		event_target:scfe_lonely_planet = {
 			change_pc = pc_machine
-			reroll_planet_modifiers = yes
-			reroll_deposits = yes
+			hidden_effect = {
+				reroll_planet_modifiers = yes
+				reroll_deposits = yes
+			}
 		}
 	}
 	option = {
 		name = scfe_lonely_shroud.3.tb
 		event_target:scfe_lonely_planet = {
 			change_pc = pc_gaia
-			reroll_planet_modifiers = yes
-			reroll_deposits = yes
+			hidden_effect = {
+				reroll_planet_modifiers = yes
+				reroll_deposits = yes
+			}
 		}
 	}
 	after = {
