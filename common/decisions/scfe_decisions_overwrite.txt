@@ -13,10 +13,10 @@ decision_baol_life_seed = {
             is_planet_class = pc_relic
             is_planet_class = pc_hive
             is_planet_class = pc_gaia
-            NAND = {
-                has_planet_flag = cant_terraform_planet
-                NOT = { has_planet_flag = scfe_roots_peace }
-            }
+        }
+        NAND = {
+            has_planet_flag = cant_terraform_planet
+            NOT = { has_planet_flag = scfe_roots_peace }
         }
         is_artificial = no
         exists = owner
