@@ -50,8 +50,6 @@ scfe_is_aquatic = {
 		# All These Worlds
 		atw_is_ocean_basic = yes
 		# Planetary Diversity
-		is_pd_ocean = yes
-		is_pd_aquatics = yes
 		pd_is_ocean = yes
 		is_pd_planet_for_aqua_trait = yes
 	}
@@ -62,7 +60,6 @@ scfe_is_continental = {
 	OR = {
 		is_planet_class = pc_continental
 		# Planetary Diversity
-		is_pd_continental = yes
 		pd_is_continental = yes
 		# All These Worlds
 		atw_is_continental = yes
@@ -74,7 +71,6 @@ scfe_is_desertic = {
 	OR = {
 		is_planet_class = pc_desert
 		# Planetary Diversity
-		is_pd_desert = yes
 		pd_is_desert = yes
 		# All These Worlds
 		atw_is_desert = yes
@@ -88,7 +84,7 @@ scfe_is_frozen = {
 		# All These Worlds
 		atw_is_frozen = yes
 		# Planetary Diversity
-		is_pd_arctic = yes
+		pd_is_arctic = yes
 	}
 }
 
@@ -96,7 +92,6 @@ scfe_is_tundra = {
 	OR = {
 		is_planet_class = pc_tundra
 		# Planetary Diversity
-		is_pd_tundra = yes
 		pd_is_tundra = yes
 		# All These Worlds
 		atw_is_tundra = yes
@@ -125,8 +120,6 @@ scfe_is_uninhabitable = {
 		scfe_is_barren = yes
 		scfe_is_molten = yes
 		scfe_is_barren_cold = yes
-		# Planetary Diversity
-		is_pd_toxic = yes
 		# All These Worlds
 		atw_is_toxic = yes
 	}
@@ -140,7 +133,6 @@ scfe_is_valid_system = {
 			has_star_flag = precursor_system
 			has_star_flag = sealed_system
 			has_star_flag = empire_cluster
-			has_star_flag = hostile_system
 			has_special_star_flag_trigger = yes
 			is_fe_cluster = yes
 			has_star_flag = drone_home_system
@@ -149,10 +141,7 @@ scfe_is_valid_system = {
 			urmazin_system = yes
 			everchanging_system = yes
 			any_system_planet = {
-				OR = {
-					has_planet_flag = hatchling_egg
-					has_planet_flag = suppress_archaeological_sites
-				}
+				has_planet_flag = hatchling_egg
 			}
 		}
 	}
@@ -171,8 +160,6 @@ scfe_is_barren = {
 scfe_is_barren_cold = {
 	OR = {
 		is_planet_class = pc_barren_cold
-		# Planetary Diversity
-		is_pd_barren_cold = yes
 		# All These Worlds
 		atw_is_barren_cold = yes
 	}
@@ -182,7 +169,6 @@ scfe_is_arctic = {
 	OR = {
 		is_planet_class = pc_arctic
 		# Planetary Diversity
-		is_pd_barren = yes
 		pd_is_arctic = yes
 		# All These Worlds
 		atw_is_arctic = yes
@@ -214,7 +200,6 @@ scfe_is_gaia = {
 		# All These Worlds
 		atw_is_gaia = yes
 		# Planetary Diversity
-		is_pd_gaia = yes
 		pd_is_planet_class_gaia = yes
 	}
 }
@@ -224,8 +209,6 @@ scfe_is_molten = {
 		is_planet_class = pc_molten
 		# All These Worlds
 		atw_is_molten = yes
-		# Planetary Diversity
-		is_pd_molten = yes
 	}
 }
 
@@ -235,7 +218,6 @@ scfe_is_tropical = {
 		# All These Worlds
 		atw_is_tropical = yes
 		# Planetary Diversity
-		is_pd_tropical = yes
 		pd_is_tropical = yes
 	}
 }
@@ -246,7 +228,6 @@ scfe_is_alpine = {
 		# All These Worlds
 		atw_is_alpine = yes
 		# Planetary Diversity
-		is_pd_alpine = yes
 		pd_is_alpine = yes
 	}
 }
@@ -257,7 +238,6 @@ scfe_is_savannah = {
 		# All These Worlds
 		atw_is_savannah = yes
 		# Planetary Diversity
-		is_pd_savannah = yes
 		pd_is_savannah = yes
 	}
 }
@@ -265,8 +245,6 @@ scfe_is_savannah = {
 scfe_is_toxic = {
 	OR = {
 		is_planet_class = pc_toxic
-		# Planetary Diversity
-		is_pd_toxic = yes
 		# All These Worlds
 		atw_is_toxic = yes
 	}
@@ -302,7 +280,6 @@ scfe_is_nuked = {
 		# All these worlds
 		atw_is_nuked = yes
 		# Planetary Diversity
-		is_pd_nuked = yes
 		pd_is_planet_class_nuked = yes
 	}
 }
