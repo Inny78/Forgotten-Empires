@@ -13,12 +13,13 @@ ship_event = {
 	immediate = {
 		from = {
 			clear_deposits = yes
-			create_archaeological_site = scfe_tower_city_dig
-			save_event_target_as = scfe_tower
 		}
 	}
 	option = {
 		name = INTERESTING
+		from = {
+			create_archaeological_site = scfe_tower_city_dig
+		}
 	}
 }
 
@@ -143,12 +144,10 @@ fleet_event = {
 				max = @tier2researchmax
 			}
 		}
-		from = {
-			planet = {
-				add_deposit = d_engineering_6
-				add_deposit = d_physics_4
-				add_deposit = d_society_4
-			}
+		from.planet = {
+			add_deposit = d_engineering_6
+			add_deposit = d_physics_4
+			add_deposit = d_society_4
 		}
 	}
 	option = {
@@ -162,7 +161,7 @@ fleet_event = {
 				max = @tier2researchmax
 			}
 		}
-		from = {
+		from.planet = {
 			random_moon = {
 				limit = {
 					uninhabitable_regular_planet = yes

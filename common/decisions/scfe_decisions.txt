@@ -106,6 +106,12 @@ decision_scfe_connect_with_nature = {
     }
 
     potential = {
+        exists = owner
+        owner = {
+            has_country_flag = scfe_rooted_unification
+            is_hive_empire = yes
+            country_uses_food = yes
+        }
         is_artificial = no
         NOR = {
             has_modifier = lush_planet
@@ -115,11 +121,6 @@ decision_scfe_connect_with_nature = {
     }
 
     allow = {
-        exists = owner
-        owner = {
-            has_country_flag = scfe_rooted_unification
-            country_uses_food = yes
-        }
     }
 
     effect = {
@@ -136,6 +137,11 @@ decision_scfe_draw_from_nature = {
     }
 
     potential = {
+        exists = owner
+        owner = {
+            has_country_flag = scfe_rooted_unification
+            is_hive_empire = yes
+        }
         is_artificial = no
         NOR = {
             has_modifier = mineral_rich
@@ -146,10 +152,6 @@ decision_scfe_draw_from_nature = {
     }
 
     allow = {
-        exists = owner
-        owner = {
-            has_country_flag = scfe_rooted_unification
-        }
     }
 
     effect = {

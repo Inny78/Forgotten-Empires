@@ -627,6 +627,7 @@ country_event = {
             add_modifier = { modifier = scfe_rooted_death days = -1 }
             hidden_effect = {
                 scfe_roots_cleanup = yes
+                set_planet_flag = cant_be_colonized
             }
         }
         hidden_effect = {
