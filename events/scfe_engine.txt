@@ -11,6 +11,10 @@ event = {
 	trigger = { exists = event_target:global_event_country }
 
 	immediate = {
+		every_playable_country = {
+			limit = { is_ai = no }
+			set_policy = { policy = scfe_precursor_policy option = scfe_precursor_policy_concurrent }
+		}
 		if = {
 			limit = {
 				# Check if precursor menu is not active
@@ -56,10 +60,7 @@ country_event = {
 				NOT = { has_country_flag = scfe_znkar_possible}
 			}
 			if = {
-				limit = { is_multiplayer = yes }
-				set_country_flag = scfe_alshigan_possible
-			}
-			else = {
+				limit = { is_multiplayer = no }
 				random_list = {
 					50 = { }
 					50 = { set_country_flag = scfe_alshigan_possible }
@@ -121,6 +122,19 @@ country_event = {
 				}
 			}
 			count = 3
+		}
+	}
+}
+
+event = {
+	id = scfe_game_start.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		event_target:global_event_country = {
+			country_event = { id = scfe_engine.7 days = 7200 random = 720 }
 		}
 	}
 }
@@ -202,6 +216,7 @@ country_event = {
 		has_country_flag = scfe_znkar_possible
 		years_passed > 30
 		has_met_primitives = yes
+		scfe_can_find_precursor = yes
 		AND = {
 			exists = home_planet
 			home_planet = {
@@ -232,6 +247,8 @@ country_event = {
 	trigger = {
 		years_passed > 25
 		has_country_flag = scfe_alshigan_possible
+		scfe_can_find_precursor = yes
+		is_multiplayer = no
 	}
 
 	immediate = {
@@ -349,6 +366,81 @@ planet_event = {
 			save_global_event_target_as = scfe_roots_owner
 			set_country_flag = scfe_rooted
 			country_event = { id = scfe_roots.2 }
+		}
+	}
+}
+
+# Celestial Disturbance
+country_event = {
+	id = scfe_engine.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = {
+				is_rim_system = yes
+				is_fe_cluster = no
+			}
+			set_spawn_system_batch = begin
+			spawn_system = {
+				min_distance = 30
+				max_distance = 60
+				direction = rimwards
+				initializer = "scfe_celestial_disturbance_system"
+			}
+			set_spawn_system_batch = end
+		}
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = { id = scfe_celestial_init.1 }
+		}
+	}
+}
+
+# Alshigans cleanup for multi
+country_event = {
+	id = scfe_engine.8
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_event_chain = scfe_alshigans_chain
+	}
+
+	immediate = { end_event_chain = scfe_alshigans_chain }
+}
+
+event = {
+	id = scfe_engine.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:scfe_celestial_disturbance_system
+	}
+
+	immediate = {
+		event_target:scfe_celestial_disturbance_system = {
+			remove_star_flag = scfe_ai_avoid_system
+		}
+	}
+}
+event = {
+	id = scfe_engine.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		solar_system = {
+			has_star_flag = scfe_ai_avoid_system
+		}
+	}
+
+	immediate = {
+		solar_system = {
+			remove_star_flag = scfe_ai_avoid_system
 		}
 	}
 }

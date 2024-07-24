@@ -178,6 +178,7 @@ scfe_war_torn_category = {
 				OR = {
 					is_ai = yes
 					has_origin = origin_incohesive
+					scfe_can_find_precursor = no
 				}
 			}
 		}
@@ -317,6 +318,7 @@ scfe_sless_alliance_anomaly_1 = {
 			from.owner = {
 				is_ai = no
 				has_country_flag = scfe_precursor_set_sless
+				scfe_can_find_precursor = yes
 			}
 			has_anomaly = no
 			OR = {
@@ -359,6 +361,5 @@ scfe_sless_alliance_anomaly_1 = {
 			add_modifier = { modifier = wasteland_infrastructure }
 		}
 	}
-
 	on_success = scfe_sless.1
 }

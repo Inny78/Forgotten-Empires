@@ -56,3 +56,14 @@ scfe_roots_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
 	picture = GFX_evt_alien_nature
 }
+scfe_celestial_system_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_communication_event
+}
+scfe_celestial_disturbance_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_star_neutron
+	counter = {
+		scfe_celestial_disturbance_clues = { max = 7 }
+	}
+}

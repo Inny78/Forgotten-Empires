@@ -1,0 +1,840 @@
+namespace = scfe_celestial_init
+
+country_event = {
+    id = scfe_celestial_init.1
+    title = scfe_celestial_init.1.name
+    desc = scfe_celestial_init.1.desc
+    is_triggered_only = yes
+    fire_only_once = yes
+    picture = GFX_evt_communication_event
+    show_sound = event_default
+    location = event_target:scfe_celestial_disturbance_system
+
+    option = {
+        name = CURIOUS
+        begin_event_chain = { event_chain = scfe_celestial_system_chain target = this }
+        create_point_of_interest = { event_chain = scfe_celestial_system_chain id = scfe_celestial_new_system name = scfe_celestial_init.1.name location = event_target:scfe_celestial_disturbance_system }
+    }
+}
+
+namespace = scfe_celestial_disturbance
+
+ship_event = {
+    id = scfe_celestial_disturbance.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                solar_system = { has_star_flag = scfe_celestial_disturbance_system }
+                NOT = { has_global_flag = scfe_celestial_disturbance_started }
+                owner = { is_ai = no }
+            }
+            owner = {
+                save_global_event_target_as = scfe_neutron_owner
+                set_global_flag = scfe_celestial_disturbance_started
+            }
+            every_playable_country = {
+                if = {
+                    limit = { has_event_chain = "scfe_celestial_system_chain" }
+                    end_event_chain = "scfe_celestial_system_chain"
+                }
+            }
+            ship_event = { id = scfe_celestial_disturbance.2 }
+        }
+    }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.2
+    title = scfe_celestial_disturbance.2.name
+    desc = scfe_celestial_disturbance.2.desc
+    picture = GFX_evt_binary_stars
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        owner = { begin_event_chain = { event_chain = scfe_celestial_disturbance_chain target = this } }
+    }
+}
+# Gathering Clues
+ship_event = {
+    id = scfe_celestial_disturbance.3
+    title = scfe_celestial_disturbance.3.name
+    desc = scfe_celestial_disturbance.3.desc
+    picture = GFX_evt_frozen
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_homeworld }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = CONTINUE
+        owner = {
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+            owner = { country_event = { id = scfe_celestial_disturbance.11 } }
+        }
+    }
+    after = { owner = { country_event = { id = story.5 days = 30 } } }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.4
+    title = scfe_celestial_disturbance.4.name
+    desc = scfe_celestial_disturbance.4.desc
+    picture = GFX_evt_cold_barren
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_moon }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = INTERESTING
+        from = {
+            add_deposit = d_engineering_3
+            add_deposit = d_physics_3
+        }
+        owner = {
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+        }
+    }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.5
+    title = scfe_celestial_disturbance.5.name
+    desc = scfe_celestial_disturbance.5.desc
+    picture = GFX_evt_gas_giant
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_gas }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { add_deposit = d_exotic_gases_2 }
+        owner = {
+            add_resource = { rare_crystals = 20 }
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+        }
+    }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.6
+    title = scfe_celestial_disturbance.6.name
+    desc = scfe_celestial_disturbance.6.desc
+    picture = GFX_evt_ship_in_orbit
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_barren }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { add_deposit = d_alloys_1 }
+        owner = {
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+        }
+    }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.7
+    title = scfe_celestial_disturbance.7.name
+    desc = scfe_celestial_disturbance.7.desc
+    picture = GFX_evt_molten
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_molten }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { add_deposit = d_minerals_3 }
+        owner = {
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+        }
+    }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.8
+    title = scfe_celestial_disturbance.8.name
+    desc = scfe_celestial_disturbance.8.desc
+    picture = GFX_evt_star_yellow
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_sun }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { add_deposit = d_energy_4 }
+        owner = {
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+        }
+    }
+}
+ship_event = {
+    id = scfe_celestial_disturbance.9
+    title = scfe_celestial_disturbance.9.name
+    desc = scfe_celestial_disturbance.9.desc
+    picture = GFX_evt_star_neutron
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_planet_flag = scfe_celestial_disturbance_neutron }
+        owner = { has_event_chain = scfe_celestial_disturbance_chain }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { add_deposit = d_engineering_5 }
+        owner = {
+            add_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues amount = 1 }
+            hidden_effect = { country_event = { id = scfe_celestial_disturbance.10 } }
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.10
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_completed_event_chain_counter = { event_chain = scfe_celestial_disturbance_chain counter = scfe_celestial_disturbance_clues }
+            }
+            country_event = {
+                id = scfe_celestial_disturbance.12
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.11
+    title = scfe_celestial_disturbance.11.name
+    picture = GFX_evt_astral_scar
+    show_sound = pc_astral_scar
+    is_triggered_only = yes
+
+    desc = {
+        trigger = {
+            NOR = {
+                country_has_situation = { SITUATION = situation_a_rift_in_space }
+                has_country_flag = has_completed_a_rift_in_space_situation
+            }
+        }
+        text = scfe_celestial_disturbance.11.desc_1
+    }
+    desc = {
+        trigger = {
+            has_astral_planes_dlc = yes
+            OR = {
+                country_has_situation = { SITUATION = situation_a_rift_in_space }
+                has_country_flag = has_completed_a_rift_in_space_situation
+            }
+        }
+        text = scfe_celestial_disturbance.11.desc_2
+    }
+
+    option = {
+        name = astral_planes.100.a
+        exclusive_trigger = {
+            OR = {
+                has_astral_planes_dlc = no
+                AND = {
+                    has_astral_planes_dlc = yes
+                    NOR = {
+                        country_has_situation = { SITUATION = situation_a_rift_in_space }
+                        has_country_flag = has_completed_a_rift_in_space_situation
+                        has_technology = tech_rift_sphere
+                        has_tech_option = tech_rift_sphere
+                    }
+                }
+            }
+        }
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        if = {
+            limit = { has_technology = tech_astral_harvesting }
+            astral_thread_small_reward = yes
+        }
+    }
+
+    option = {
+        name = FASCINATING
+        exclusive_trigger = {
+            has_astral_planes_dlc = yes
+            OR = {
+                country_has_situation = { SITUATION = situation_a_rift_in_space }
+                has_country_flag = has_completed_a_rift_in_space_situation
+                has_technology = tech_rift_sphere
+                has_tech_option = tech_rift_sphere
+            }
+        }
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        if = {
+            limit = { has_technology = tech_astral_harvesting }
+            astral_thread_small_reward = yes
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.12
+    title = scfe_celestial_disturbance.12.name
+    desc = scfe_celestial_disturbance.12.desc
+    picture = GFX_evt_frozen
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        event_target:scfe_celestial_disturbance_homeworld = {
+            create_archaeological_site = scfe_celestial_disturbance_dig
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.13
+    title = scfe_celestial_disturbance.13.name
+    picture = GFX_evt_astral_scar
+    show_sound = pc_astral_scar
+    is_triggered_only = yes
+    desc = {
+        trigger = { has_astral_planes_dlc = no }
+        text = scfe_celestial_disturbance.13.desc1
+    }
+    desc = {
+        trigger = { has_astral_planes_dlc = yes }
+        text = scfe_celestial_disturbance.13.desc2
+    }
+    option = {
+        name = FASCINATING
+        exclusive_trigger = {
+            OR = {
+                has_astral_planes_dlc = no
+                NOT = { has_technology = tech_rift_sphere }
+            }
+        }
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+    }
+    option = {
+        name = NOTIME
+        trigger = { has_technology = tech_rift_sphere }
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+    }
+    option = {
+        name = scfe_celestial_disturbance.13.a
+        trigger = { has_technology = tech_rift_sphere }
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        hidden_effect = {
+            country_event = { id = scfe_celestial_disturbance.14 }
+        }
+    }
+    after = {
+        end_event_chain = scfe_celestial_disturbance_chain
+        hidden_effect = {
+            set_country_flag = scfe_celestial_disturbance_finished
+            clear_global_event_target = scfe_celestial_disturbance_homeworld
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.14
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_country_flag = scfe_celestial_disturbance_finished
+                NOT = { has_country_flag = scfe_celestial_disturbance_astral }
+                has_technology = tech_rift_sphere
+                resource_stockpile_compare = {
+                    resource = astral_threads
+                    value > 200
+                }
+            }
+            set_country_flag = scfe_celestial_disturbance_astral
+            country_event = { id = scfe_celestial_disturbance.15 }
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.15
+    title = scfe_celestial_disturbance.15.name
+    desc = scfe_celestial_disturbance.15.desc
+    picture = GFX_evt_astral_scar
+    show_sound = pc_astral_scar
+    is_triggered_only = yes
+
+    option = {
+        name = READY
+        add_resource = { astral_threads = -200 }
+        country_event = { id = scfe_celestial_disturbance.16 }
+    }
+    after = {
+        event_target:scfe_celestial_disturbance_astral_scar = {
+            spawn_astral_rift = { id = scfe_celestial_disturbance_rift in_place_of = prev spawn_sound = no }
+        }
+        event_target:scfe_celestial_disturbance_system = {
+            astral_rift = {
+                save_global_event_target_as = scfe_celestial_disturbance_rift
+            }
+        }
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.16
+    title = scfe_celestial_disturbance.16.name
+    desc = scfe_celestial_disturbance.16.desc
+    picture = GFX_evt_astral_rift
+    show_sound = pc_astral_scar
+    is_triggered_only = yes
+
+    option = {
+        name = EXCELLENT
+    }
+}
+country_event = {
+    id = scfe_celestial_disturbance.17
+    title = scfe_celestial_disturbance.17.name
+    desc = scfe_celestial_disturbance.17.desc
+    picture = GFX_evt_large_explosion
+    show_sound = event_super_explosion
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:scfe_celestial_disturbance_rift = {
+            create_ambient_object = {
+                type = "star_explosion"
+                play_animation_once = yes
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = random
+                }
+            }
+            destroy_astral_rift = this
+        }
+    }
+
+    option = {
+        name = DISTURBING
+        astral_thread_large_reward = yes
+        if = {
+            limit = {
+                OR = {
+                    is_unfriendly = yes
+                    is_homicidal = yes
+                }
+            }
+            add_monthly_resource_mult = {
+                resource = engineering_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_civic = civic_pompous_purists
+                    has_policy_flag = diplo_stance_isolationist
+                }
+            }
+            add_monthly_resource_mult = {
+                resource = engineering_research
+                value = @tier1researchreward
+                min = @tier1researchmin
+                max = @tier1researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier1researchreward
+                min = @tier1researchmin
+                max = @tier1researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier2unityreward
+                min = @tier2unitymin
+                max = @tier2unitymax
+            }
+        }
+        else = {
+            add_monthly_resource_mult = {
+                resource = engineering_research
+                value = @tier1researchreward
+                min = @tier1researchmin
+                max = @tier1researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier1researchreward
+                min = @tier1researchmin
+                max = @tier1researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+            }
+        }
+    }
+
+    after = {
+        hidden_effect = {
+            clear_global_event_target = scfe_celestial_disturbance_system
+            clear_global_event_target = scfe_celestial_disturbance_rift
+        }
+    }
+}
+
+# Dig Site
+namespace = scfe_celestial_disturbance_dig
+
+fleet_event = {
+    id = scfe_celestial_disturbance_dig.1
+    title = scfe_celestial_disturbance_dig.1.name
+    desc = scfe_celestial_disturbance_dig.1.desc
+    picture = GFX_evt_barren_dig_site
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = scfe_celestial_disturbance_dig.1.a
+    }
+}
+fleet_event = {
+    id = scfe_celestial_disturbance_dig.2
+    title = scfe_celestial_disturbance_dig.2.name
+    desc = scfe_celestial_disturbance_dig.2.desc
+    picture = GFX_evt_barren_dig_site
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = DIG
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_celestial_disturbance_dig.3
+    title = scfe_celestial_disturbance_dig.3.name
+    desc = scfe_celestial_disturbance_dig.3.desc
+    picture = GFX_evt_barren_dig_site
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = DIG
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_celestial_disturbance_dig.4
+    title = scfe_celestial_disturbance_dig.4.name
+    desc = scfe_celestial_disturbance_dig.4.desc
+    picture = GFX_evt_barren_dig_site
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = DIG
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_celestial_disturbance_dig.5
+    title = scfe_celestial_disturbance_dig.5.name
+    desc = scfe_celestial_disturbance_dig.5.desc
+    picture = GFX_evt_barren_dig_site
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = DIG
+        medium_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_celestial_disturbance_dig.6
+    title = scfe_celestial_disturbance_dig.6.name
+    desc = scfe_celestial_disturbance_dig.6.desc
+    picture = GFX_evt_barren_dig_site
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = DIG
+        large_artifact_reward = yes
+        owner = {
+            country_event = { id = scfe_celestial_disturbance.13 }
+        }
+    }
+}
+
+# Astral Rift
+namespace = scfe_celestial_disturbance_rift
+
+astral_rift_event = {
+    id = scfe_celestial_disturbance_rift.1
+    title = scfe_celestial_disturbance_rift.1.name
+    desc = scfe_celestial_disturbance_rift.1.desc
+    picture = GFX_evt_space_station
+    show_sound = pc_astral_scar
+    difficulty = @astral_rift_initial_difficulty
+    astral_rift = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                explorer = {
+                    OR = {
+                        has_civic = civic_pompous_purists
+                        has_policy_flag = diplo_stance_isolationist
+                    }
+                }
+            }
+            set_astral_rift_flag = scfe_diplomacy_isolationist
+        }
+        else_if = {
+            limit = {
+                explorer = {
+                    OR = {
+                        is_homicidal = yes
+                        is_unfriendly = yes
+                    }
+                }
+            }
+            set_astral_rift_flag = scfe_diplomacy_hostile
+        }
+        else = {
+            set_astral_rift_flag = scfe_diplomacy_standard
+        }
+    }
+
+    option = {
+        name = ONSCREEN
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.2 }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+
+    after = {
+        explorer = { astral_thread_small_reward = yes }
+    }
+}
+
+astral_rift_event = {
+    id = scfe_celestial_disturbance_rift.2
+    title = scfe_celestial_disturbance_rift.2.name
+    picture = GFX_evt_space_station
+    show_sound = event_conversation
+    difficulty = @astral_rift_transition_difficulty
+    astral_rift = yes
+    is_triggered_only = yes
+    desc = scfe_celestial_disturbance_rift.2.desc
+
+    option = {
+        name = scfe_celestial_disturbance_rift.2.a
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.2 }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+}
+astral_rift_event = {
+    id = scfe_celestial_disturbance_rift.3
+    title = scfe_celestial_disturbance_rift.3.name
+    picture = GFX_evt_space_station
+    show_sound = event_conversation
+    difficulty = @astral_rift_easy_difficulty
+    astral_rift = yes
+    is_triggered_only = yes
+    desc = scfe_celestial_disturbance_rift.3.desc
+
+    option = {
+        name = scfe_celestial_disturbance_rift.3.a
+        exclusive_trigger = { has_astral_rift_flag = scfe_diplomacy_hostile }
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.4 }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+    option = {
+        name = scfe_celestial_disturbance_rift.3.b
+        exclusive_trigger = { has_astral_rift_flag = scfe_diplomacy_isolationist }
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.4 }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+    option = {
+        name = scfe_celestial_disturbance_rift.3.c
+        exclusive_trigger = { has_astral_rift_flag = scfe_diplomacy_standard }
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.4 }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+}
+astral_rift_event = {
+    id = scfe_celestial_disturbance_rift.4
+    title = scfe_celestial_disturbance_rift.4.name
+    picture = GFX_evt_space_station
+    show_sound = event_conversation
+    difficulty = @astral_rift_easy_difficulty
+    astral_rift = yes
+    is_triggered_only = yes
+    desc = scfe_celestial_disturbance_rift.3.desc
+
+    option = {
+        name = CURIOUS
+        exclusive_trigger = { has_astral_rift_flag = scfe_diplomacy_hostile }
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.5 }
+        explorer = {
+            add_resource = { consumer_goods = 50 }
+            small_artifact_reward = yes
+        }
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+    option = {
+        name = CURIOUS
+        exclusive_trigger = { has_astral_rift_flag = scfe_diplomacy_isolationist }
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.5 }
+        explorer = {
+            add_resource = { consumer_goods = 100 }
+            add_resource = { alloys = 50 }
+            medium_artifact_reward = yes
+        }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+    option = {
+        name = CURIOUS
+        exclusive_trigger = { has_astral_rift_flag = scfe_diplomacy_standard }
+        set_next_astral_rift_event = { id = scfe_celestial_disturbance_rift.5 }
+        explorer = {
+            add_resource = { consumer_goods = 30 }
+            small_artifact_reward = yes
+        }
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+}
+astral_rift_event = {
+    id = scfe_celestial_disturbance_rift.5
+    title = scfe_celestial_disturbance_rift.5.name
+    picture = GFX_evt_space_station
+    show_sound = event_conversation
+    difficulty = @astral_rift_easy_difficulty
+    astral_rift = yes
+    is_triggered_only = yes
+    desc = scfe_celestial_disturbance_rift.5.desc
+
+    option = {
+        name = scfe_celestial_disturbance_rift.5.a
+
+        ai_chance = {
+            inline_script = astral_rift/rift_difficulty_ai_weight
+        }
+    }
+    after = { explorer = { country_event = { id = scfe_celestial_disturbance.17 days = 1 } } }
+}

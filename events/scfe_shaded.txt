@@ -20,9 +20,10 @@ country_event = {
     picture = GFX_evt_scfe_crashed_ship
     show_sound = event_default
     is_triggered_only = yes
-    location = event_target:scfe_shaded_crash
+    location = event_target:shaded_crashed_ship_location
 
     immediate = {
+        country_event = { id = story.5 days = 30 }
         save_global_event_target_as = scfe_shaded_owner
         if = {
             limit = {

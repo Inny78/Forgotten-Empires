@@ -10,9 +10,8 @@ ship_event = {
 
 	is_triggered_only = yes
 	immediate = {
-		from = {
-			create_archaeological_site = scfe_belltower_dig
-		}
+		owner = { country_event = { id = story.5 days = 30 } }
+		from = { create_archaeological_site = scfe_belltower_dig }
 	}
 	option = {
 		name = INTERESTING

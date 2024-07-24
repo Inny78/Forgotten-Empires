@@ -316,3 +316,9 @@
  # 3.11 starts here
  scfe_infrastructure: "Überlebende Infrastruktur"
  scfe_infrastructure_desc: "Verlassene Gebäude, verlassene Straßen und unberührte Einrichtungen deuten darauf hin, was hätte eine blühende Siedlung sein können. Trotz des Zeitablaufs können die verbleibenden Infrastrukturen umfunktioniert werden und bieten einen einzigartigen Rahmen, auf dem eine neue Kolonie errichtet werden könnte."
+
+ # 3.12 starts here
+ policy_scfe_precursor_policy: "Precursor Discovery"
+ policy_scfe_precursor_policy_desc: "Choose between concurrent or consecutive precursor discovery to determine if multiple precursors event chains can happen at once."
+ scfe_precursor_policy_concurrent: "Concurrent Discovery"
+ scfe_precursor_policy_consecutive: "Consecutive Discovery"

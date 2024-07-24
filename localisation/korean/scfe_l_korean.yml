@@ -314,3 +314,9 @@
   # 3.11 starts here
  scfe_infrastructure: "살아남은 인프라"
  scfe_infrastructure_desc: "버려진 건물들과 황량한 거리, 그리고 손을 대지 않은 시설물들은 번영했을 수도 있었던 살아있는 정착지를 암시한다. 시간이 흐르더라도 남아 있는 인프라는 새로운 식민지를 건설할 수 있는 독특한 구조를 제공할 수 있다."
+
+ # 3.12 starts here
+ policy_scfe_precursor_policy: "Precursor Discovery"
+ policy_scfe_precursor_policy_desc: "Choose between concurrent or consecutive precursor discovery to determine if multiple precursors event chains can happen at once."
+ scfe_precursor_policy_concurrent: "Concurrent Discovery"
+ scfe_precursor_policy_consecutive: "Consecutive Discovery"

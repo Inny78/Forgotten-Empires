@@ -1,0 +1,284 @@
+namespace = scfe_subterranean
+
+country_event = {
+    id = scfe_subterranean.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        NOT = { has_global_flag = scfe_subterranean_started }
+        is_ai = no
+        years_passed > 40
+        count_owned_planet = {
+            limit = {
+                is_colony = yes
+                is_capital = no
+                is_artificial = no
+                NOR = {
+                    exists = archaeological_site
+                    has_planet_flag = colony_event
+                }
+            }
+            count > 3
+        }
+    }
+
+    immediate = {
+        set_global_flag = scfe_subterranean_started
+        random_owned_planet = {
+            limit = {
+                is_colony = yes
+                is_capital = no
+                is_artificial = no
+                NOR = {
+                    exists = archaeological_site
+                    has_planet_flag = colony_event
+                }
+            }
+            save_global_event_target_as = scfe_subterranean_planet
+            set_planet_flag = colony_event
+        }
+        if = {
+            limit = {
+                any_owned_planet = { has_planet_flag = seismic_disturbance_friendly }
+            }
+            set_country_flag = seismic_friendly
+            country_event = { id = scfe_subterranean.3 days = 200 random = 200 }
+        }
+        else = {
+            country_event = { id = scfe_subterranean.2 days = 200 random = 200 }
+        }
+    }
+}
+country_event = {
+    id = scfe_subterranean.2
+    title = scfe_subterranean.2.name
+    desc = scfe_subterranean.2.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    location = event_target:scfe_subterranean_planet
+
+    option = {
+        name = scfe_subterranean.2.a
+        event_target:scfe_subterranean_planet = {
+            create_archaeological_site = scfe_subterranean_dig
+        }
+    }
+    option = {
+        name = scfe_subterranean.2.b
+        add_resource = { minerals = 200 }
+    }
+}
+country_event = {
+    id = scfe_subterranean.3
+    title = scfe_subterranean.2.name
+    desc = scfe_subterranean.3.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    location = event_target:scfe_subterranean_planet
+
+    option = {
+        name = scfe_subterranean.3.a
+        event_target:scfe_subterranean_planet = {
+            create_archaeological_site = scfe_subterranean_dig
+        }
+        hidden_effect = {
+            change_variable = {
+                which = "angry_subterraneans"
+                value = -1
+            }
+        }
+        custom_tooltip = subterraneans_pleased
+    }
+    option = {
+        name = scfe_subterranean.3.b
+        hidden_effect = {
+            change_variable = {
+                which = "angry_subterraneans"
+                value = 1
+            }
+        }
+        custom_tooltip = scfe_subterraneans_displeased
+    }
+    option = {
+        name = scfe_subterranean.2.b
+        add_resource = { minerals = 200 }
+        hidden_effect = {
+            change_variable = {
+                which = "angry_subterraneans"
+                value = 1
+            }
+        }
+        custom_tooltip = scfe_subterraneans_displeased2
+    }
+}
+
+# Dig Site
+
+namespace = scfe_subterranean_dig
+
+fleet_event = {
+    id = scfe_subterranean_dig.1
+    title = scfe_subterranean_dig.1.name
+    desc = scfe_subterranean_dig.1.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.2
+    title = scfe_subterranean_dig.2.name
+    desc = scfe_subterranean_dig.2.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.3
+    title = scfe_subterranean_dig.3.name
+    desc = scfe_subterranean_dig.3.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.4
+    title = scfe_subterranean_dig.4.name
+    desc = scfe_subterranean_dig.4.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.5
+    title = scfe_subterranean_dig.5.name
+    desc = scfe_subterranean_dig.5.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.6
+    title = scfe_subterranean_dig.6.name
+    desc = scfe_subterranean_dig.6.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+#
+fleet_event = {
+    id = scfe_subterranean_dig.10
+    title = scfe_subterranean_dig.10.name
+    desc = scfe_subterranean_dig.10.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.11
+    title = scfe_subterranean_dig.11.name
+    desc = scfe_subterranean_dig.11.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.12
+    title = scfe_subterranean_dig.12.name
+    desc = scfe_subterranean_dig.12.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.13
+    title = scfe_subterranean_dig.13.name
+    desc = scfe_subterranean_dig.13.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.14
+    title = scfe_subterranean_dig.14.name
+    desc = scfe_subterranean_dig.14.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.15
+    title = scfe_subterranean_dig.15.name
+    desc = scfe_subterranean_dig.15.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_subterranean_dig.16
+    title = scfe_subterranean_dig.16.name
+    desc = scfe_subterranean_dig.16.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_collapsing_ruins
+    is_triggered_only = yes
+
+    option = {
+        name = CURIOUS
+    }
+}

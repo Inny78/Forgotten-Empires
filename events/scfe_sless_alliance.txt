@@ -25,8 +25,9 @@ ship_event = {
     desc = "scfe_sless.1.desc"
     picture = GFX_evt_ancient_alien_temple
     location = from
-
     is_triggered_only = yes
+
+    immediate = { owner = { country_event = { id = story.5 days = 30 } } }
 
     option = {
         name = scfe_sless.1.a

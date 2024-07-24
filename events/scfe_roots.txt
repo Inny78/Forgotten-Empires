@@ -110,7 +110,7 @@ country_event = {
                         }
                     }
                     event_target:scfe_roots_planet = {
-                        any_pop = {
+                        any_owned_pop = {
                             is_same_species = owner_main_species
                         }
                     }
@@ -435,7 +435,7 @@ ship_event = {
 
     option = {
         name = scfe_roots.13.a
-        trigger = { is_xenophobe = no }
+        trigger = { owner = { is_xenophobe = no } }
         owner = { country_event = { id = scfe_roots.10 } }
     }
     option = {

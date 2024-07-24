@@ -10,6 +10,7 @@ ship_event = {
 
 	is_triggered_only = yes
 	immediate = {
+		owner = { country_event = { id = story.5 days = 30 } }
 		from = {
 			create_archaeological_site = scfe_reverse_engine_dig
 			save_event_target_as = reverse_engine_planet

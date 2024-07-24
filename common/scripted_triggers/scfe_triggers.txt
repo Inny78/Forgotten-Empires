@@ -150,8 +150,6 @@ scfe_is_valid_system = {
 scfe_is_barren = {
 	OR = {
 		is_planet_class = pc_barren
-		# Planetary Diversity
-		is_pd_barren = yes
 		# All These Worlds
 		atw_is_barren = yes
 	}
@@ -286,36 +284,43 @@ scfe_is_nuked = {
 
 has_woorskyr_deposit = {
 	any_owned_planet = {
+		is_colony = yes
 		has_deposit = d_woorskyr_hub
 	}
 }
 has_koeleothan_deposit = {
 	any_owned_planet = {
+		is_colony = yes
 		has_deposit = d_koeleothan
 	}
 }
 has_quantumpearl_deposit = {
 	any_owned_planet = {
+		is_colony = yes
 		has_deposit = d_quantumpearl
 	}
 }
 has_xenograss_deposit = {
 	any_owned_planet = {
+		is_colony = yes
 		has_deposit = d_xenograss
 	}
 }
 has_beetle_deposit = {
 	any_owned_planet = {
+		is_colony = yes
 		has_deposit = d_beetle_swarm
 	}
 }
 has_xenograss_building = {
 	any_owned_planet = {
+		is_colony = yes
 		has_building = building_xenograss_processor
 	}
 }
 has_quantumpearl_building = {
 	any_owned_planet = {
+		is_colony = yes
 		OR = {
 			has_building = building_pearl_borehole_site
 			has_building = building_pearl_borehole_site_2
@@ -413,36 +418,6 @@ scfe_is_tfpanet = {
 	}
 }
 
-
-# Country scope
-has_precursor_intro = {
-	OR = {
-		has_country_flag = vultaum_intro
-		has_country_flag = yuht_intro
-		has_country_flag = first_league_intro
-		has_country_flag = irassian_intro
-		has_country_flag = cybrex_intro
-		has_country_flag = zroni_intro
-		has_country_flag = baol_intro
-		has_country_flag = plexi_intro # Forgotten History
-		has_country_flag = lartia_intro # Forgotten History
-		has_country_flag = ixardian_intro # More Precursors
-		has_country_flag = ezentian_intro # More Precursors
-		has_country_flag = werediran_intro # More Precursors
-		has_country_flag = volgan_intro # Unavoidable Changes
-		has_country_flag = scfe_precursor_set_sless # Forgotten Empires
-		has_country_flag = scfe_precursor_set_coprean # Forgotten Empires
-		has_country_flag = scfe_precursor_set_astanine # Forgotten Empires
-		# Still in the early stages of 'On the Shoulders of Giants'
-		AND = {
-			has_origin = origin_shoulders_of_giants
-			NOT = { has_country_flag = origin_shoulders_closure }
-		}
-		# Gigas exclusion
-		has_origin = origin_incohesive
-	}
-}
-
 is_valid_origin_for_znkar = {
 	NOR = {
 		has_origin = origin_shoulders_of_giants
@@ -495,5 +470,42 @@ scfe_can_jump_in_shaded_system = {
 	OR = {
 		has_event_chain = scfe_shaded_chain
 		has_country_flag = scfe_shaded_colony_coordinates
+	}
+}
+scfe_has_zroni_chain = {
+	has_country_flag = zroni_intro
+	NOT = { has_country_flag = dust_off_achievement }
+}
+scfe_has_baol_chain = {
+	has_country_flag = baol_intro
+	NOT = { has_country_flag = green_thumb_achievement }
+}
+scfe_can_find_precursor = {
+	OR = {
+		has_policy_flag = scfe_precursor_policy_concurrent
+		AND = {
+			has_policy_flag = scfe_precursor_policy_consecutive
+			NOR = {
+				has_event_chain = vultaum_chain
+				has_event_chain = yuht_chain
+				has_event_chain = first_league_chain
+				has_event_chain = irassian_chain
+				has_event_chain = cybrex_chain
+				scfe_has_zroni_chain = yes
+				scfe_has_baol_chain = yes
+				scfe_has_plexi_chain = yes
+				scfe_has_volgan_chain = yes
+				scfe_has_ixardian_chain = yes
+				scfe_has_werediran_chain = yes
+				scfe_has_ezentian_chain = yes
+				scfe_has_lartia_chain = yes
+				has_event_chain = scfe_alshigans_chain
+				has_event_chain = scfe_astanine_chain
+				has_event_chain = scfe_znkar_chain
+				has_event_chain = scfe_coprean_chain
+				has_event_chain = scfe_sless_chain
+				has_event_chain = scfe_shaded_chain
+			}
+		}
 	}
 }

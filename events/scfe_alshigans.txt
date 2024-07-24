@@ -6,6 +6,7 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		is_multiplayer = no
 		NOT = { has_global_flag = scfe_had_alshigans }
 		owner = {
 			is_ai = no
@@ -44,6 +45,12 @@ country_event = {
 	is_triggered_only = yes
 	location = event_target:scfe_alshigans_asteroid
 
+	trigger = {
+		is_multiplayer = no
+	}
+
+	immediate = { country_event = { id = story.5 days = 30 } }
+
 	option = {
 		name = INTERESTING
 		begin_event_chain = {
@@ -72,6 +79,10 @@ ship_event = {
 	location = root
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = CURIOUS
 		owner = {
@@ -99,11 +110,16 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = INTERESTING
-		event_target:scfe_alshigans_savannah = {
-			add_modifier = { modifier = scfe_savannah_ruins days = -1 }
-			add_modifier = { modifier = scfe_infrastructure days = -1 }
+		hidden_effect = {
+			owner = {
+				remove_point_of_interest = scfe_alshigans_savannah
+			}
 		}
 		owner = {
 			add_event_chain_counter = {
@@ -130,11 +146,16 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = INTERESTING
-		event_target:scfe_alshigans_alpine = {
-			add_modifier = { modifier = scfe_alpine_ruins days = -1 }
-			add_modifier = { modifier = scfe_infrastructure days = -1 }
+		hidden_effect = {
+			owner = {
+				remove_point_of_interest = scfe_alshigans_alpine
+			}
 		}
 		owner = {
 			add_event_chain_counter = {
@@ -161,11 +182,16 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = PECULIAR
-		event_target:scfe_alshigans_jungle = {
-			add_modifier = { modifier = scfe_jungle_ruins days = -1 }
-			add_modifier = { modifier = scfe_infrastructure days = -1 }
+		hidden_effect = {
+			owner = {
+				remove_point_of_interest = scfe_alshigans_jungle
+			}
 		}
 		owner = {
 			add_event_chain_counter = {
@@ -192,6 +218,10 @@ ship_event = {
 	location = root
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = CONTINUE
 		owner = {
@@ -215,8 +245,17 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = DISTURBING
+		hidden_effect = {
+			owner = {
+				remove_point_of_interest = scfe_alshigans_moon
+			}
+		}
 		owner = {
 			end_event_chain = "scfe_alshigans_chain"
 			if = {
@@ -237,15 +276,13 @@ ship_event = {
 			clear_global_event_target = scfe_alshigans_savannah
 			clear_global_event_target = scfe_alshigans_moon
 			clear_global_event_target = scfe_alshigans_owner
-			owner = { set_country_flag = alshigans_precursors_done }
-			if = {
-				limit = {
-					owner = {
+			owner = {
+				set_country_flag = alshigans_precursors_done
+				if = {
+					limit = {
 						is_xenophobe = no
 						is_gestalt = no
 					}
-				}
-				owner = {
 					country_event = { id = scfe_alshigans.11 days = 30 random = 10 }
 				}
 			}
@@ -262,87 +299,24 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = INTERESTING
 	}
 	after = {
 		hidden_effect = {
-			closest_system = {
-				min_steps = 2
-				max_steps = 15
-				limit = {
-					scfe_is_valid_system = yes
-					OR = {
-						has_owner = no
-						AND = {
-							exists = space_owner
-							space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-						}
-					}
-					any_system_planet = {
-						scfe_is_savannah = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
+			random_system_within_border = {
+				set_spawn_system_batch = begin
+				spawn_system = {
+					max_jumps = 15
+					min_distance = 5
+					max_distance = 30
+					initializer = "scfe_alshigans_init_01"
 				}
-				random_system_planet = {
-					limit = {
-						scfe_is_savannah = yes
-						has_anomaly = no
-						NOT = { exists = owner }
-						NOT = { exists = archaeological_site }
-					}
-					enable_special_project = {
-						name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
-						location = this
-						owner = root
-					}
-					set_name = scfe_alshigans_velaen
-					save_global_event_target_as = scfe_alshigans_savannah
-				}
-			}
-			if = {
-				limit = {
-					NOT = { exists = event_target:scfe_alshigans_savannah }
-				}
-				closest_system = {
-					min_steps = 2
-					max_steps = 20
-					limit = {
-						scfe_is_valid_system = yes
-						OR = {
-							has_owner = no
-							AND = {
-								exists = space_owner
-								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-							}
-						}
-						any_system_planet = {
-							scfe_is_uninhabitable = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-					}
-					random_system_planet = {
-						limit = {
-							scfe_is_uninhabitable = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-						change_pc = pc_savannah
-						reset_planet = yes
-						enable_special_project = {
-							name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
-							location = this
-							owner = root
-						}
-						set_name = scfe_alshigans_velaen
-						save_global_event_target_as = scfe_alshigans_savannah
-					}
-				}
+				set_spawn_system_batch = end
 			}
 		}
 	}
@@ -357,89 +331,24 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = INTERESTING
 	}
 	after = {
 		hidden_effect = {
-			event_target:scfe_alshigans_asteroid = {
-				closest_system = {
-					min_steps = 2
-					max_steps = 15
-					limit = {
-						scfe_is_valid_system = yes
-						OR = {
-							has_owner = no
-							AND = {
-								exists = space_owner
-								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-							}
-						}
-						any_system_planet = {
-							scfe_is_alpine = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-					}
-					random_system_planet = {
-						limit = {
-							scfe_is_alpine = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-						enable_special_project = {
-							name = SCFE_ALSHIGANS_ALPINE_PROJECT
-							location = this
-							owner = root
-						}
-						set_name = scfe_alshigans_uuladir
-						save_global_event_target_as = scfe_alshigans_alpine
-					}
+			random_system_within_border = {
+				set_spawn_system_batch = begin
+				spawn_system = {
+					max_jumps = 15
+					min_distance = 5
+					max_distance = 30
+					initializer = "scfe_alshigans_init_02"
 				}
-			}
-			if = {
-				limit = {
-					NOT = { exists = event_target:scfe_alshigans_alpine }
-				}
-				closest_system = {
-					min_steps = 2
-					max_steps = 20
-					limit = {
-						scfe_is_valid_system = yes
-						OR = {
-							has_owner = no
-							AND = {
-								exists = space_owner
-								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-							}
-						}
-						any_system_planet = {
-							scfe_is_uninhabitable = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-					}
-					random_system_planet = {
-						limit = {
-							scfe_is_uninhabitable = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-						change_pc = pc_alpine
-						reset_planet = yes
-						enable_special_project = {
-							name = SCFE_ALSHIGANS_ALPINE_PROJECT
-							location = this
-							owner = root
-						}
-						set_name = scfe_alshigans_uuladir
-						save_global_event_target_as = scfe_alshigans_alpine
-					}
-				}
+				set_spawn_system_batch = end
 			}
 		}
 	}
@@ -454,89 +363,24 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
+	trigger = {
+		is_multiplayer = no
+	}
+
 	option = {
 		name = INTERESTING
 	}
 	after = {
 		hidden_effect = {
-			event_target:scfe_alshigans_asteroid = {
-				closest_system = {
-					min_steps = 2
-					max_steps = 15
-					limit = {
-						scfe_is_valid_system = yes
-						OR = {
-							has_owner = no
-							AND = {
-								exists = space_owner
-								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-							}
-						}
-						any_system_planet = {
-							scfe_is_tropical = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-					}
-					random_system_planet = {
-						limit = {
-							scfe_is_tropical = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-						enable_special_project = {
-							name = SCFE_ALSHIGANS_JUNGLE_PROJECT
-							location = this
-							owner = root
-						}
-						set_name = scfe_alshigans_demearen
-						save_global_event_target_as = scfe_alshigans_jungle
-					}
+			random_system_within_border = {
+				set_spawn_system_batch = begin
+				spawn_system = {
+					max_jumps = 15
+					min_distance = 5
+					max_distance = 30
+					initializer = "scfe_alshigans_init_03"
 				}
-			}
-			if = {
-				limit = {
-					NOT = { exists = event_target:scfe_alshigans_jungle }
-				}
-				closest_system = {
-					min_steps = 2
-					max_steps = 20
-					limit = {
-						scfe_is_valid_system = yes
-						OR = {
-							has_owner = no
-							AND = {
-								exists = space_owner
-								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-							}
-						}
-						any_system_planet = {
-							scfe_is_uninhabitable = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-					}
-					random_system_planet = {
-						limit = {
-							scfe_is_uninhabitable = yes
-							has_anomaly = no
-							NOT = { exists = owner }
-							NOT = { exists = archaeological_site }
-						}
-						change_pc = pc_tropical
-						reset_planet = yes
-						enable_special_project = {
-							name = SCFE_ALSHIGANS_JUNGLE_PROJECT
-							location = this
-							owner = root
-						}
-						set_name = scfe_alshigans_demearen
-						save_global_event_target_as = scfe_alshigans_jungle
-					}
-				}
+				set_spawn_system_batch = end
 			}
 		}
 	}
@@ -550,6 +394,10 @@ country_event = {
 	picture = GFX_evt_tropical
 	show_sound = event_default
 	is_triggered_only = yes
+
+	trigger = {
+		is_multiplayer = no
+	}
 
 	option = {
 		name = INTERESTING
@@ -592,6 +440,7 @@ country_event = {
 						}
 						set_name = scfe_alshigans_yutela
 						save_global_event_target_as = scfe_alshigans_moon
+						create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_moon name = scfe_alshigans_yutela location = this }
 					}
 				}
 			}
@@ -607,6 +456,10 @@ country_event = {
 	picture = GFX_evt_ship_travel
 	show_sound = event_default
 	is_triggered_only = yes
+
+	trigger = {
+		is_multiplayer = no
+	}
 
 	immediate = {
 		random_owned_planet = {
@@ -646,6 +499,10 @@ country_event = {
 	desc = scfe_alshigans.12.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
+
+	trigger = {
+		is_multiplayer = no
+	}
 
 	option = {
 		name = EXCELLENT

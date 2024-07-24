@@ -1,3 +1,19 @@
+on_mid_game_pulse = {
+	events = {
+		scfe_engine.9
+	}
+}
+
+on_mid_game_pulse_country = {
+	events = {
+		scfe_engine.4
+	}
+}
+on_monthly_pulse_country = {
+	events = {
+		scfe_engine.8
+	}
+}
 on_five_year_pulse_country = {
 	events = {
 		scfe_engine.3
@@ -21,6 +37,7 @@ on_entering_system_first_time = {
 		scfe_coprean_constitution.18
 		scfe_astanine.12
 		scfe_shaded.22
+		scfe_celestial_disturbance.1
 	}
 }
 on_entering_system = {
@@ -89,6 +106,13 @@ on_survey_planet = {
 		scfe_etc.3
 		scfe_ziaskehorn.1
 		scfe_shaded.25
+		scfe_celestial_disturbance.3
+		scfe_celestial_disturbance.4
+		scfe_celestial_disturbance.5
+		scfe_celestial_disturbance.6
+		scfe_celestial_disturbance.7
+		scfe_celestial_disturbance.8
+		scfe_celestial_disturbance.9
 	}
 }
 
@@ -135,18 +159,11 @@ on_destroy_planet_with_PLANET_KILLER_TOXIFIER = {
 		scfe_strange_on_actions.53 # Xenograss thrives
 	}
 }
-on_mid_game_pulse_country = {
-	events = {
-		scfe_engine.4
-	}
-}
-
 on_ascension_perk_picked = {
 	events = {
 		scfe_shaded_engine.1
 	}
 }
-
 on_tradition_picked = {
 	events = {
 		scfe_shaded_engine.2
@@ -155,5 +172,10 @@ on_tradition_picked = {
 on_terraforming_complete = {
 	events = {
 		scfe_tomb_of_dead_whales.10
+	}
+}
+on_building_outpost_station = {
+	events = {
+		id = scfe_engine.10
 	}
 }

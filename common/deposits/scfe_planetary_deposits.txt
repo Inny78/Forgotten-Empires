@@ -1,7 +1,8 @@
 scfe_d_society_20 = {
 	is_for_colonizable = yes
 	icon = d_metal_boneyard
-    
+	should_swap_deposit_on_terraforming = no
+
 	resources = {
 		category = planet_deposits
 		produces = {
@@ -17,6 +18,7 @@ scfe_d_society_20 = {
 scfe_d_exotic_gases_layers = {
 	is_for_colonizable = yes
 	icon = d_gaseous_eruption
+	should_swap_deposit_on_terraforming = no
 	category = deposit_cat_rare
 
 	planet_modifier = { 
@@ -46,6 +48,8 @@ scfe_d_exotic_gases_layers_orbital = {
 scfe_d_ancient_underground_city = {
 	is_for_colonizable = yes
 	icon = d_mining_tunnels
+	should_swap_deposit_on_terraforming = no
+	use_for_min_max_adjustments = yes
 	category = deposit_cat_rare
 
 	planet_modifier = {
@@ -61,6 +65,8 @@ scfe_d_ancient_underground_city = {
 d_woorskyr_hub = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare_resource
+	should_swap_deposit_on_terraforming = no
+	use_for_min_max_adjustments = yes
 
 	potential = {
 		can_have_habitable_deposits = yes
@@ -82,6 +88,8 @@ d_woorskyr_hub = {
 d_beetle_swarm = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare_resource
+	should_swap_deposit_on_terraforming = no
+	use_for_min_max_adjustments = yes
 
 	potential = {
 		can_have_habitable_deposits = yes
@@ -99,6 +107,8 @@ d_beetle_swarm = {
 d_koeleothan = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare_resource
+	should_swap_deposit_on_terraforming = no
+	use_for_min_max_adjustments = yes
 
 	potential = {
 		can_have_habitable_deposits = yes
@@ -116,6 +126,8 @@ d_koeleothan = {
 d_quantumpearl = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare_resource
+	should_swap_deposit_on_terraforming = no
+	use_for_min_max_adjustments = yes
 
 	potential = {
 		can_have_habitable_deposits = yes
@@ -134,6 +146,8 @@ d_quantumpearl = {
 d_xenograss = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare_resource
+	should_swap_deposit_on_terraforming = no
+	use_for_min_max_adjustments = yes
 
 	potential = {
 		can_have_habitable_deposits = yes

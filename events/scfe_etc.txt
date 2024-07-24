@@ -9,6 +9,7 @@ ship_event = {
         owner = {
             is_ai = no
             has_country_flag = scfe_precursor_set_coprean
+            scfe_can_find_precursor = yes
         }
         from = {
             solar_system = {
@@ -40,6 +41,7 @@ ship_event = {
         owner = {
             is_ai = no
             has_country_flag = scfe_precursor_set_astanine
+            scfe_can_find_precursor = yes
         }
         from = {
             solar_system = {

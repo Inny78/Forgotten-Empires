@@ -24,6 +24,8 @@ country_event = {
 	picture = GFX_evt_alien_ruins
 	show_sound = event_laboratory_sound
 
+	immediate = { country_event = { id = story.5 days = 30 } }
+
 	option = {
 		name = INTERESTING
 		enable_special_project = {

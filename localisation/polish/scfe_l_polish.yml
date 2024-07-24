@@ -324,3 +324,9 @@
  # 3.11 starts here
  scfe_infrastructure: "Surviving infrastructure"
  scfe_infrastructure_desc: "Abandoned buildings, deserted streets, and untouched facilities hint at what could have been a thriving settlement. Despite the passage of time, the remaining infrastructures can be repurposed, offering a unique framework upon which a new colony could be built."
+
+ # 3.12 starts here
+ policy_scfe_precursor_policy: "Precursor Discovery"
+ policy_scfe_precursor_policy_desc: "Choose between concurrent or consecutive precursor discovery to determine if multiple precursors event chains can happen at once."
+ scfe_precursor_policy_concurrent: "Concurrent Discovery"
+ scfe_precursor_policy_consecutive: "Consecutive Discovery"

@@ -1,0 +1,15 @@
+scfe_precursor_policy = {
+    potential = {
+        is_ai = no
+    }
+    option = {
+        name = "scfe_precursor_policy_concurrent"
+        potential = { NOT = { has_global_flag = force_consecutive_precursors } }
+        policy_flags = { scfe_precursor_policy_concurrent }
+    }
+    option = {
+        name = "scfe_precursor_policy_consecutive"
+        potential = { NOT = { has_global_flag = force_concurrent_precursors } }
+        policy_flags = { scfe_precursor_policy_consecutive }
+    }
+}

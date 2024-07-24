@@ -20,6 +20,9 @@ scfe_sless_home_system = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 45
@@ -115,7 +118,6 @@ scfe_coprean_home_system = {
     usage = misc_system_init
     usage_odds = 0
     flags = { scfe_coprean_home_system }
-
     prevent_anomalies = yes
 
     asteroid_belt = {
@@ -130,6 +132,9 @@ scfe_coprean_home_system = {
         orbit_angle = 0
         size = 35
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     planet = {
@@ -228,6 +233,9 @@ scfe_astanine_home_system = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 30
@@ -336,13 +344,13 @@ scfe_astanine_home_system = {
 }
 
 # Strange Worlds
-
 strange_init_01 = {
     class = "rl_standard_stars"
 
     usage = misc_system_init
     usage_odds = 100
     max_instances = 1
+    spawn_chance = 100
 
     planet = {
         count = 1
@@ -351,6 +359,9 @@ strange_init_01 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 20
@@ -380,13 +391,13 @@ strange_init_01 = {
         }
     }
 }
-
 strange_init_02 = {
     class = "rl_standard_stars"
 
     usage = misc_system_init
     usage_odds = 100
     max_instances = 1
+    spawn_chance = 100
 
     planet = {
         count = 1
@@ -395,6 +406,9 @@ strange_init_02 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 20
@@ -424,13 +438,13 @@ strange_init_02 = {
         }
     }
 }
-
 strange_init_03 = {
     class = "rl_standard_stars"
 
     usage = misc_system_init
     usage_odds = 100
     max_instances = 1
+    spawn_chance = 100
 
     planet = {
         count = 1
@@ -439,6 +453,9 @@ strange_init_03 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 20
@@ -472,13 +489,13 @@ strange_init_03 = {
         }
     }
 }
-
 strange_init_04 = {
     class = "rl_standard_stars"
 
     usage = misc_system_init
     usage_odds = 100
     max_instances = 1
+    spawn_chance = 100
 
     planet = {
         count = 1
@@ -487,6 +504,9 @@ strange_init_04 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 20
@@ -516,13 +536,13 @@ strange_init_04 = {
         }
     }
 }
-
 strange_init_05 = {
     class = "rl_standard_stars"
 
     usage = misc_system_init
     usage_odds = 100
     max_instances = 1
+    spawn_chance = 100
 
     planet = {
         count = 1
@@ -531,6 +551,9 @@ strange_init_05 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 20
@@ -561,6 +584,7 @@ strange_init_05 = {
     }
 }
 
+# Shaded Empire
 shaded_colony_system = {
     name = scfe_saaldryn
     flags = { scfe_shaded_colony_system crisis_spawn_exclude }
@@ -569,6 +593,7 @@ shaded_colony_system = {
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
+    prevent_anomalies = yes
 
     init_effect = {
         create_turbulent_nebula_2 = yes
@@ -581,6 +606,9 @@ shaded_colony_system = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         anomaly = none
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 50
@@ -607,7 +635,7 @@ shaded_colony_system = {
         }
     }
 }
-
+# Znkar
 scfe_znkar_init_01 = {
     class = "rl_standard_stars"
     name = scfe_znkar_kamva
@@ -615,6 +643,7 @@ scfe_znkar_init_01 = {
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
+    prevent_anomalies = yes
 
     planet = {
         name = scfe_znkar_kamva
@@ -623,6 +652,9 @@ scfe_znkar_init_01 = {
         orbit_distance = 0
         orbit_angle = 1
         size = { min = 20 max = 30 }
+        init_effect = {
+            prevent_anomaly = yes
+        }
     }
 
     change_orbit = 25
@@ -657,6 +689,8 @@ scfe_znkar_init_01 = {
                 owner = event_target:znkar_start_country
             }
             prevent_anomaly = yes
+            clear_planet_modifiers = yes
+            clear_deposits = yes
         }
 
         moon = {
@@ -675,7 +709,403 @@ scfe_znkar_init_01 = {
                 set_planet_flag = scfe_znkar_nuked_moon
                 save_global_event_target_as = scfe_znkar_nuked_moon
                 prevent_anomaly = yes
+                clear_deposits = yes
+                clear_planet_modifiers = yes
             }
+        }
+    }
+}
+
+# A Celestial Disturbance
+scfe_celestial_disturbance_system = {
+    class = sc_scfe_binary_1 # The primary star, a neutron star
+    flags = { scfe_celestial_disturbance_system }
+    name = scfe_celestial_disturbance_system_name
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    init_effect = {
+        save_global_event_target_as = scfe_celestial_disturbance_system
+        set_star_flag = scfe_ai_avoid_system
+    }
+
+    planet = {
+        count = 1
+        class = pc_g_star
+        orbit_distance = 25
+        orbit_angle = 0
+        size = 25
+        has_ring = no
+        anomaly = none
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+            set_planet_flag = scfe_celestial_disturbance_sun
+        }
+    }
+
+    planet = {
+        count = 1
+        class = pc_neutron_star
+        orbit_distance = 0
+        size = 8
+        has_ring = no
+        anomaly = none
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+            set_planet_flag = scfe_celestial_disturbance_neutron
+        }
+    }
+
+    change_orbit = 15
+
+    planet = {
+        count = 1
+        class = pc_molten
+        has_ring = no
+        size = { min = 10 max = 14 }
+        orbit_distance = 20
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+            set_planet_flag = scfe_celestial_disturbance_molten
+        }
+    }
+
+    change_orbit = 40
+
+    planet = {
+        count = 1
+        class = pc_gas_giant
+        has_ring = yes
+        size = 25
+        orbit_distance = 60
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+        init_effect = {
+            clear_deposits = yes
+            set_planet_flag = scfe_celestial_disturbance_gas
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = 1
+            class = pc_barren
+            size = 6
+            orbit_angle = { min = 90 max = 270 }
+            orbit_distance = 6
+            anomaly = none
+            init_effect = {
+                clear_deposits = yes
+                clear_planet_modifiers = yes
+                set_planet_flag = scfe_celestial_disturbance_barren
+            }
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        count = 1
+        orbit_distance = 10
+        class = pc_frozen
+        size = 17
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+        name = scfe_celestial_disturbance_home_name
+
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+            set_planet_flag = wp_pfe_ignore_planet_flag
+            set_planet_flag = forbid_guillis_planet_modifiers
+            set_planet_flag = scfe_celestial_disturbance_homeworld
+            save_global_event_target_as = scfe_celestial_disturbance_homeworld
+            create_ambient_object = {
+                type = scfe_astral_scar
+                scale = 0.2
+                entity_offset_height = 5
+                location = this
+            }
+            last_created_ambient_object = {
+                save_global_event_target_as = scfe_celestial_disturbance_astral_scar
+                set_location = {
+                    target = prev
+                }
+            }
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = 1
+            class = pc_barren_cold
+            size = 5
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+            name = scfe_celestial_disturbance_home_moon_name
+            orbit_distance = 6
+            init_effect = {
+                clear_deposits = yes
+                clear_planet_modifiers = yes
+                set_planet_flag = scfe_celestial_disturbance_moon
+            }
+        }
+    }
+}
+
+# Alshigans
+scfe_alshigans_init_01 = {
+    class = "rl_standard_stars"
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_4
+        }
+    }
+
+    change_orbit = 30
+
+    planet = {
+        orbit_distance = 15
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_3
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        name = scfe_alshigans_velaen
+        count = 1
+        orbit_distance = 0
+        class = "pc_savannah"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+
+        init_effect = {
+            set_planet_flag = forbid_guillis_planet_modifier
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_savannah name = scfe_alshigans_velaen location = this }
+            save_global_event_target_as = scfe_alshigans_savannah
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+            add_modifier = { modifier = scfe_savannah_ruins days = -1 }
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+
+        moon = {
+            count = 1
+            class = "pc_barren"
+            orbit_distance = 12
+            size = { min = 6 max = 8 }
+            has_ring = no
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        class = pc_gas_giant
+        orbit_distance = 0
+        size = { min = 25 max = 35 }
+        has_ring = yes
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+
+        init_effect = {
+            add_deposit = d_exotic_gases_2
+        }
+    }
+}
+scfe_alshigans_init_02 = {
+    class = "rl_standard_stars"
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_physics_4
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_rare_crystals_2
+        }
+    }
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_2
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        name = scfe_alshigans_uuladir
+        count = 1
+        orbit_distance = 0
+        class = "pc_alpine"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+
+        init_effect = {
+            set_planet_flag = forbid_guillis_planet_modifier
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_alpine name = scfe_alshigans_uuladir location = this }
+            save_global_event_target_as = scfe_alshigans_alpine
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_ALPINE_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+            add_modifier = { modifier = scfe_alpine_ruins days = -1 }
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        class = pc_barren_cold
+        orbit_distance = 0
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+
+        init_effect = {
+            add_deposit = d_physics_3
+        }
+    }
+}
+scfe_alshigans_init_03 = {
+    class = "rl_standard_stars"
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_3
+        }
+    }
+
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = pc_molten
+        anomaly = none
+    }
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = pc_barren
+        anomaly = none
+        init_effect = { add_deposit = d_volatile_motes_2 }
+    }
+    change_orbit = 15
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_2
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        name = scfe_alshigans_demearen
+        count = 1
+        orbit_distance = 0
+        class = "pc_tropical"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+
+        init_effect = {
+            set_planet_flag = forbid_guillis_planet_modifier
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_jungle name = scfe_alshigans_demearen location = this }
+            save_global_event_target_as = scfe_alshigans_jungle
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+            add_modifier = { modifier = scfe_jungle_ruins days = -1 }
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        class = pc_barren_cold
+        orbit_distance = 0
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+
+        init_effect = {
+            add_deposit = d_engineering_3
         }
     }
 }
