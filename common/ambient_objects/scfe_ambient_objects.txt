@@ -1,0 +1,6 @@
+ambient_object = {
+    name = "scfe_astral_scar"
+    entity = "astral_scar_entity"
+    selectable = no
+    show_name = no
+}

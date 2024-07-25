@@ -284,7 +284,6 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
 	id = scfe_engine.5
 	hide_window = yes
@@ -359,6 +358,7 @@ planet_event = {
 
 	immediate = {
 		set_planet_flag = scfe_roots
+		set_planet_flag = colony_event
 		set_planet_flag = cant_terraform_planet
 		set_global_flag = scfe_roots_started
 		save_global_event_target_as = scfe_roots_planet
@@ -411,7 +411,7 @@ country_event = {
 
 	immediate = { end_event_chain = scfe_alshigans_chain }
 }
-
+# Celestial Disturbance
 event = {
 	id = scfe_engine.9
 	hide_window = yes
@@ -427,6 +427,7 @@ event = {
 		}
 	}
 }
+# AI avoidance flag cleanup
 event = {
 	id = scfe_engine.9
 	hide_window = yes
