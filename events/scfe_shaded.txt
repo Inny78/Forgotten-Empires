@@ -161,7 +161,6 @@ country_event = {
                         scfe_is_general_planet = yes
                         is_colony = no
                         NOT = { exists = archaeological_site }
-                        is_surveyed = { status = no who = root }
                     }
                 }
                 set_star_flag = scfe_shaded_warbase
@@ -171,7 +170,6 @@ country_event = {
                         scfe_is_general_planet = yes
                         is_colony = no
                         NOT = { exists = archaeological_site }
-                        is_surveyed = { status = no who = root }
                     }
                     set_name = scfe_shaded_dilyall
                     save_global_event_target_as = scfe_shaded_warbase

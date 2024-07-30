@@ -429,7 +429,7 @@ event = {
 }
 # AI avoidance flag cleanup
 event = {
-	id = scfe_engine.9
+	id = scfe_engine.10
 	hide_window = yes
 	is_triggered_only = yes
 

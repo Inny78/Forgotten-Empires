@@ -9,11 +9,6 @@ on_mid_game_pulse_country = {
 		scfe_engine.4
 	}
 }
-on_monthly_pulse_country = {
-	events = {
-		scfe_engine.8
-	}
-}
 on_five_year_pulse_country = {
 	events = {
 		scfe_engine.3
@@ -100,6 +95,9 @@ on_planet_transfer = {
 	}
 }
 
+# A ship has surveyed a planet.
+# Scope = Ship
+# From = Planet
 on_survey_planet = {
 	events = {
 		scfe_etc.2
@@ -159,23 +157,32 @@ on_destroy_planet_with_PLANET_KILLER_TOXIFIER = {
 		scfe_strange_on_actions.53 # Xenograss thrives
 	}
 }
+# Executed when a country picks an ascension perk
+# THIS = country
 on_ascension_perk_picked = {
 	events = {
 		scfe_shaded_engine.1
 	}
 }
+# Executed when a country picks any tradition (including starters and finishers)
+# THIS = country
 on_tradition_picked = {
 	events = {
 		scfe_shaded_engine.2
 	}
 }
+# Planet has been terraformed
+# This = Planet
+# From = Terraforming country
 on_terraforming_complete = {
 	events = {
 		scfe_tomb_of_dead_whales.10
 	}
 }
-on_building_outpost_station = {
+#This = ship (starbase)
+#From = owner country
+on_building_starbase_outpost = {
 	events = {
-		id = scfe_engine.10
+		scfe_engine.10
 	}
 }

@@ -51,10 +51,7 @@ country_event = {
 			min = @tier2researchmin
 			max = @tier2researchmax
 		}
-		if = {
-			limit = { has_ancrel = yes }
-			medium_artifact_reward = yes
-		}
+		medium_artifact_reward = yes
 		country_event = { id = scfe_galactic_wanderers.4 days = 10 }
 	}
 }
