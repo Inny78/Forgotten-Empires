@@ -425,6 +425,12 @@ fleet_event = {
     show_sound = event_collapsing_ruins
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = CURIOUS
@@ -445,6 +451,12 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = FASCINATING
@@ -465,6 +477,12 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = FASCINATING
@@ -485,6 +503,12 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = FASCINATING
@@ -505,6 +529,12 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = FASCINATING
@@ -525,6 +555,12 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = FASCINATING
