@@ -302,3 +302,19 @@ scfe_rooted_death = {
 	icon = "gfx/interface/icons/planet_modifiers/scfe_aggressive_flora.dds"
 	icon_frame = 3
 }
+# The Subterranean Enigma
+scfe_subterranean_knowledge_1 = {
+	planet_districts_minerals_cost_mult = -0.05
+	empire_size_districts_mult = -0.1
+}
+scfe_subterranean_knowledge_2 = {
+	planet_districts_minerals_cost_mult = -0.1
+	empire_size_districts_mult = -0.1
+}
+scfe_subterranean_bombardment_1 = {
+	ship_orbital_bombardment_army_damage_mult = 0.2
+}
+scfe_subterranean_bombardment_2 = {
+	ship_orbital_bombardment_army_damage_mult = 0.1
+	ship_orbital_bombardment_pop_damage_mult = 0.1
+}

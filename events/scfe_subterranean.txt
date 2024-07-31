@@ -1,3 +1,23 @@
+namespace = scfe_subterranean_init
+planet_event = {
+    id = scfe_subterranean_init.1
+    hide_window = yes
+    is_triggered_only = yes
+    pre_triggers = {
+        has_owner = yes
+        is_capital = no
+        is_ai = no
+    }
+
+    trigger = {
+        NOT = { has_global_flag = scfe_subterranean_started }
+    }
+
+    immediate = {
+        owner = { country_event = { id = scfe_subterranean.1 } }
+    }
+}
+
 namespace = scfe_subterranean
 
 country_event = {
@@ -8,18 +28,18 @@ country_event = {
     trigger = {
         NOT = { has_global_flag = scfe_subterranean_started }
         is_ai = no
+        is_subterranean_empire = no
         years_passed > 40
-        count_owned_planet = {
-            limit = {
-                is_colony = yes
-                is_capital = no
-                is_artificial = no
-                NOR = {
-                    exists = archaeological_site
-                    has_planet_flag = colony_event
-                }
+        any_owned_planet = {
+            is_colony = yes
+            is_capital = no
+            is_artificial = no
+            NOR = {
+                exists = archaeological_site
+                has_planet_flag = colony_event
+                has_planet_flag = megastructure
+                has_planet_flag = has_megastructure
             }
-            count > 3
         }
     }
 
@@ -33,21 +53,14 @@ country_event = {
                 NOR = {
                     exists = archaeological_site
                     has_planet_flag = colony_event
+                    has_planet_flag = megastructure
+                    has_planet_flag = has_megastructure
                 }
             }
             save_global_event_target_as = scfe_subterranean_planet
             set_planet_flag = colony_event
         }
-        if = {
-            limit = {
-                any_owned_planet = { has_planet_flag = seismic_disturbance_friendly }
-            }
-            set_country_flag = seismic_friendly
-            country_event = { id = scfe_subterranean.3 days = 200 random = 200 }
-        }
-        else = {
-            country_event = { id = scfe_subterranean.2 days = 200 random = 200 }
-        }
+        country_event = { id = scfe_subterranean.30 days = 200 random = 200 }
     }
 }
 country_event = {
@@ -64,6 +77,7 @@ country_event = {
         event_target:scfe_subterranean_planet = {
             create_archaeological_site = scfe_subterranean_dig
         }
+        hidden_effect = { set_country_flag = scfe_subterranean_dig }
     }
     option = {
         name = scfe_subterranean.2.b
@@ -85,38 +99,322 @@ country_event = {
             create_archaeological_site = scfe_subterranean_dig
         }
         hidden_effect = {
+            set_country_flag = scfe_subterranean_dig
+            set_country_flag = scfe_seismic_friendly
             change_variable = {
                 which = "angry_subterraneans"
                 value = -1
             }
+            country_event = { id = scfe_subterranean.31 }
         }
-        custom_tooltip = subterraneans_pleased
     }
     option = {
         name = scfe_subterranean.3.b
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier2unityreward
+            min = @tier2unitymin
+            max = @tier2unitymax
+        }
+        event_target:scfe_subterranean_planet = {
+            create_archaeological_site = scfe_subterranean_dig
+        }
         hidden_effect = {
+            set_country_flag = scfe_subterranean_dig
             change_variable = {
                 which = "angry_subterraneans"
                 value = 1
             }
         }
-        custom_tooltip = scfe_subterraneans_displeased
     }
     option = {
         name = scfe_subterranean.2.b
         add_resource = { minerals = 200 }
+        custom_tooltip = scfe_subterraneans_displeased2
         hidden_effect = {
             change_variable = {
                 which = "angry_subterraneans"
                 value = 1
             }
         }
-        custom_tooltip = scfe_subterraneans_displeased2
+    }
+}
+country_event = {
+    id = scfe_subterranean.4
+    title = scfe_subterranean.4.name
+    desc = scfe_subterranean.4.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = WORRYING
+    }
+}
+country_event = {
+    id = scfe_subterranean.5
+    title = scfe_subterranean.5.name
+    desc = scfe_subterranean.5.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:subterranean_empire
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = scfe_subterranean.5.a
+        hidden_effect = {
+            change_variable = {
+                which = "angry_subterraneans"
+                value = -1
+            }
+            country_event = { id = scfe_subterranean.6 days = 100 random = 30 }
+        }
+    }
+    option = {
+        name = scfe_subterranean.5.b
+        custom_tooltip = scfe_subterraneans_displeased
+        hidden_effect = {
+            change_variable = {
+                which = "angry_subterraneans"
+                value = 1
+            }
+        }
+    }
+}
+
+country_event = {
+    id = scfe_subterranean.6
+    title = scfe_subterranean.6.name
+    desc = scfe_subterranean.6.desc
+    picture = GFX_evt_underground_city
+    show_sound = event_default
+    is_triggered_only = yes
+    location = event_target:scfe_subterranean_planet
+
+    option = {
+        name = EXCELLENT
+        event_target:scfe_subterranean_planet = {
+            add_deposit = d_underground_contact_zone
+            add_deposit = d_underground_farm
+            add_deposit = d_underground_generator
+            add_deposit = d_underground_mine
+        }
+    }
+}
+
+# Subterranean communications
+country_event = {
+    id = scfe_subterranean.10
+    title = scfe_subterranean.10.name
+    desc = scfe_subterranean.10.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = scfe_subterranean.10.a
+    }
+}
+country_event = {
+    id = scfe_subterranean.11
+    title = scfe_subterranean.11.name
+    desc = scfe_subterranean.11.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = CURIOUS
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_subterranean.12
+    title = scfe_subterranean.12.name
+    desc = scfe_subterranean.12.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = engineering_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_subterranean.13
+    title = scfe_subterranean.13.name
+    desc = scfe_subterranean.13.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_subterranean.14
+    title = scfe_subterranean.14.name
+    desc = scfe_subterranean.14.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = FASCINATING
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_subterranean.15
+    title = scfe_subterranean.15.name
+    desc = scfe_subterranean.15.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = INTERESTING
+        add_monthly_resource_mult = {
+            resource = engineering_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+    }
+}
+country_event = {
+    id = scfe_subterranean.16
+    title = scfe_subterranean.16.name
+    desc = scfe_subterranean.16.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_subterranean_leader
+        room = event_target:subterranean_empire.ruler
+    }
+
+    option = {
+        name = scfe_subterranean.16.a
+        add_modifier = { modifier = scfe_subterranean_knowledge_2 days = -1 }
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }
+    }
+    after = {
+        hidden_effect = {
+            country_event = { id = scfe_subterranean.5 days = 60 scopes = { from = event_target:subterranean_empire } }
+        }
+    }
+}
+
+# Checking for friendly subterranean nation
+country_event = {
+    id = scfe_subterranean.30
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                exists = event_target:subterranean_empire
+                any_owned_planet = { has_planet_flag = seismic_disturbance_friendly }
+            }
+            random_owned_planet = {
+                limit = { has_planet_flag = seismic_disturbance_friendly }
+                save_global_event_target_as = scfe_subterranean_origin
+            }
+            country_event = { id = scfe_subterranean.3 }
+        }
+        else = {
+            country_event = { id = scfe_subterranean.2 }
+        }
+    }
+}
+# Friendly neighborhood subterranean leader
+country_event = {
+    id = scfe_subterranean.31
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:subterranean_empire = {
+            create_leader = {
+                class = scientist
+                species = owner_species
+                name = random
+                event_leader = yes
+                immortal = yes
+                hide_age = yes
+                hide_leader = yes
+                background_planet = event_target:scfe_subterranean_origin
+
+                effect = {
+                    set_leader_flag = immune_to_negative_traits
+                    set_leader_flag = leader_death_events_blocked
+                    save_global_event_target_as = scfe_subterranean_leader
+                    exile_leader_as = scfe_sub_leader_exile
+                }
+            }
+        }
+        country_event = { id = scfe_subterranean.10 days = 1 scopes = { from = event_target:subterranean_empire } }
     }
 }
 
 # Dig Site
-
 namespace = scfe_subterranean_dig
 
 fleet_event = {
@@ -130,6 +428,13 @@ fleet_event = {
 
     option = {
         name = CURIOUS
+        small_artifact_reward = yes
+    }
+    after = {
+        if = {
+            limit = { owner = { has_country_flag = scfe_seismic_friendly } }
+            owner = { country_event = { id = scfe_subterranean.11 days = 1 scopes = { from = event_target:subterranean_empire } } }
+        }
     }
 }
 fleet_event = {
@@ -137,12 +442,19 @@ fleet_event = {
     title = scfe_subterranean_dig.2.name
     desc = scfe_subterranean_dig.2.desc
     picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
     option = {
         name = FASCINATING
+        small_artifact_reward = yes
+    }
+    after = {
+        if = {
+            limit = { owner = { has_country_flag = scfe_seismic_friendly } }
+            owner = { country_event = { id = scfe_subterranean.12 days = 1 scopes = { from = event_target:subterranean_empire } } }
+        }
     }
 }
 fleet_event = {
@@ -150,12 +462,19 @@ fleet_event = {
     title = scfe_subterranean_dig.3.name
     desc = scfe_subterranean_dig.3.desc
     picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
     option = {
         name = FASCINATING
+        small_artifact_reward = yes
+    }
+    after = {
+        if = {
+            limit = { owner = { has_country_flag = scfe_seismic_friendly } }
+            owner = { country_event = { id = scfe_subterranean.13 days = 1 scopes = { from = event_target:subterranean_empire } } }
+        }
     }
 }
 fleet_event = {
@@ -163,12 +482,19 @@ fleet_event = {
     title = scfe_subterranean_dig.4.name
     desc = scfe_subterranean_dig.4.desc
     picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
     option = {
         name = FASCINATING
+        small_artifact_reward = yes
+    }
+    after = {
+        if = {
+            limit = { owner = { has_country_flag = scfe_seismic_friendly } }
+            owner = { country_event = { id = scfe_subterranean.14 days = 1 scopes = { from = event_target:subterranean_empire } } }
+        }
     }
 }
 fleet_event = {
@@ -176,12 +502,19 @@ fleet_event = {
     title = scfe_subterranean_dig.5.name
     desc = scfe_subterranean_dig.5.desc
     picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
     option = {
         name = FASCINATING
+        small_artifact_reward = yes
+    }
+    after = {
+        if = {
+            limit = { owner = { has_country_flag = scfe_seismic_friendly } }
+            owner = { country_event = { id = scfe_subterranean.15 days = 1 scopes = { from = event_target:subterranean_empire } } }
+        }
     }
 }
 fleet_event = {
@@ -189,96 +522,27 @@ fleet_event = {
     title = scfe_subterranean_dig.6.name
     desc = scfe_subterranean_dig.6.desc
     picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
     option = {
         name = FASCINATING
+        medium_artifact_reward = yes
+        owner = {
+            if = {
+                limit = { NOT = { has_country_flag = scfe_seismic_friendly } }
+                add_modifier = { modifier = scfe_subterranean_knowledge_1 days = -1 }
+            }
+            hidden_effect = {
+                country_event = { id = scfe_subterranean.4 days = 30 }
+            }
+        }
     }
-}
-#
-fleet_event = {
-    id = scfe_subterranean_dig.10
-    title = scfe_subterranean_dig.10.name
-    desc = scfe_subterranean_dig.10.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
-    }
-}
-fleet_event = {
-    id = scfe_subterranean_dig.11
-    title = scfe_subterranean_dig.11.name
-    desc = scfe_subterranean_dig.11.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
-    }
-}
-fleet_event = {
-    id = scfe_subterranean_dig.12
-    title = scfe_subterranean_dig.12.name
-    desc = scfe_subterranean_dig.12.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
-    }
-}
-fleet_event = {
-    id = scfe_subterranean_dig.13
-    title = scfe_subterranean_dig.13.name
-    desc = scfe_subterranean_dig.13.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
-    }
-}
-fleet_event = {
-    id = scfe_subterranean_dig.14
-    title = scfe_subterranean_dig.14.name
-    desc = scfe_subterranean_dig.14.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
-    }
-}
-fleet_event = {
-    id = scfe_subterranean_dig.15
-    title = scfe_subterranean_dig.15.name
-    desc = scfe_subterranean_dig.15.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
-    }
-}
-fleet_event = {
-    id = scfe_subterranean_dig.16
-    title = scfe_subterranean_dig.16.name
-    desc = scfe_subterranean_dig.16.desc
-    picture = GFX_evt_underground_city
-    show_sound = event_collapsing_ruins
-    is_triggered_only = yes
-
-    option = {
-        name = CURIOUS
+    after = {
+        if = {
+            limit = { owner = { has_country_flag = scfe_seismic_friendly } }
+            owner = { country_event = { id = scfe_subterranean.16 days = 1 scopes = { from = event_target:subterranean_empire } } }
+        }
     }
 }

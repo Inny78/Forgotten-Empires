@@ -78,6 +78,7 @@ on_colony_5_years_old = {
 	random_events = {
 		10 = scfe_when_the_world_sings.1 # When the world sings
 		5 = scfe_engine.6
+		10 = scfe_subterranean_init.1
 	}
 }
 
