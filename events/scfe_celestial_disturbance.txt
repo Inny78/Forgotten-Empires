@@ -52,6 +52,7 @@ ship_event = {
     picture = GFX_evt_binary_stars
     show_sound = event_default
     is_triggered_only = yes
+    location = event_target:scfe_celestial_disturbance_system
 
     option = {
         name = INTERESTING
