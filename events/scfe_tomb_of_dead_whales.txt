@@ -167,16 +167,11 @@ fleet_event = {
 	desc = scfe_tomb_of_dead_whales.6.desc
 	picture = GFX_evt_ancient_tiyanki
 	show_sound = elder_tiyanki_idle_vocal
-	
 	archaeology = yes
 	is_triggered_only = yes
 	
 	immediate = {
 		from = { set_site_progress_locked = yes }
-	}
-
-	after = {
-		from = { set_site_progress_locked = no }
 	}
 
 	option = {
@@ -243,6 +238,11 @@ fleet_event = {
 		}
 	}
 	after = {
+		from = { set_site_progress_locked = no }
+		if = {
+			limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+			destroy_archaeological_site = from
+		}
 		hidden_effect = {
 			from.planet = {
 				if = {

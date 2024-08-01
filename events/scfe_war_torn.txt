@@ -65,6 +65,14 @@ fleet_event = {
 	show_sound = event_ground_battle
 	location = FROM
 	is_triggered_only = yes
+	archaeology = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
 
 	option = {
 		name = INTRIGUING
@@ -88,6 +96,14 @@ fleet_event = {
 	show_sound = event_ground_battle
 	location = FROM
 	is_triggered_only = yes
+	archaeology = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
 
 	option = {
 		name = scfe_war_torn_dig.2.a
@@ -138,6 +154,14 @@ fleet_event = {
 	show_sound = event_ground_battle
 	location = FROM
 	is_triggered_only = yes
+	archaeology = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
 
 	option = {
 		name = INTRIGUING
@@ -161,6 +185,10 @@ fleet_event = {
 	show_sound = event_ground_battle
 	location = FROM
 	is_triggered_only = yes
+	archaeology = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
 
 	option = {
 		name = INTRIGUING
@@ -176,6 +204,11 @@ fleet_event = {
 		}
 	}
 	after = {
+		from = { set_site_progress_locked = no }
+		if = {
+			limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+			destroy_archaeological_site = from
+		}
 		hidden_effect = {
 			closest_system = {
 				min_steps = 1

@@ -1,6 +1,6 @@
 namespace = scfe_astanine
 
-#digsite 1
+#digsite scfe_astanine_site_1
 #chapter 1
 fleet_event = {
     id = scfe_astanine.1
@@ -95,6 +95,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -188,6 +192,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -350,6 +358,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -475,6 +487,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -618,6 +634,10 @@ fleet_event = {
         hidden_effect = {
             owner = { set_country_flag = scfe_precursor_astanine_finished }
             clear_global_event_target = scfe_astanine_owner
+        }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
         }
     }
 

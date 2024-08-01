@@ -82,9 +82,7 @@ fleet_event = {
 	desc = scfe_soul_of_the_art.1.desc
 	picture = GFX_evt_ruined_system
 	show_sound = event_space_battle
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -108,9 +106,7 @@ fleet_event = {
 	desc = scfe_soul_of_the_art.2.desc
 	picture = GFX_evt_city_ruins
 	show_sound = event_wind_ruins
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -133,9 +129,7 @@ fleet_event = {
 	desc = scfe_soul_of_the_art.3.desc
 	picture = GFX_evt_dead_city
 	show_sound = event_mystic_reveal
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -162,9 +156,7 @@ fleet_event = {
 	desc = scfe_soul_of_the_art.4.desc
 	picture = GFX_evt_glitchy_matrix
 	show_sound = event_alien_signal
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -191,9 +183,7 @@ fleet_event = {
 	desc = scfe_soul_of_the_art.5.desc
 	picture = GFX_evt_sapient_AI
 	show_sound = event_door_opening
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -232,6 +222,10 @@ fleet_event = {
 				remove_planet_flag = cant_terraform_planet
 				remove_planet_flag = has_megastructure
 			}
+		}
+		if = {
+			limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+			destroy_archaeological_site = from
 		}
 	}
 

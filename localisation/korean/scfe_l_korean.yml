@@ -376,3 +376,8 @@
  scfe_subterranean.16.name: "Foolish Endeavor"
  scfe_subterranean.16.desc: "The fate of the Kraktanians is clear, and it is deeply disturbing. This civilization shows us a path we did not take. While this revelation is enlightening, their folly is not what I had hoped to find. Despite this, I am thankful for the opportunity to participate in this joint operation. Here are my notes on Kraktanian engineering. I hope they prove useful to your empire. Farewell, and may our collaboration continue to bear fruit."
  scfe_subterranean.16.a: "Farewell."
+
+ policy_scfe_archaeology_cleanup: "Automatic archaeology cleanup"
+ policy_scfe_archaeology_cleanup_desc: "Allows the automatic removal of completed dig sites."
+ scfe_archaeology_cleanup_active: "Activate auto-cleanup"
+ scfe_archaeology_cleanup_inactive: "No dig site cleanup"

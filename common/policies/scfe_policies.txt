@@ -13,3 +13,22 @@ scfe_precursor_policy = {
         policy_flags = { scfe_precursor_policy_consecutive }
     }
 }
+scfe_archaeology_cleanup = {
+    potential = {
+        is_ai = no
+    }
+    option = {
+        name = scfe_archaeology_cleanup_active
+        potential = {
+            NOT = { has_global_flag = archaeology_force_no_cleanup }
+        }
+        policy_flags = { scfe_archaeology_cleanup_active }
+    }
+    option = {
+        name = scfe_archaeology_cleanup_inactive
+        potential = {
+            NOT = { has_global_flag = archaeology_force_cleanup }
+        }
+        policy_flags = { scfe_archaeology_cleanup_inactive }
+    }
+}

@@ -51,9 +51,7 @@ fleet_event = {
 	desc = scfe_when_the_world_sings.2.desc
 	picture = GFX_evt_scfe_samchigui_first
 	show_sound = event_whispering
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -77,9 +75,7 @@ fleet_event = {
 	desc = scfe_when_the_world_sings.3.desc
 	picture = GFX_evt_scfe_samchigui_second
 	show_sound = event_energy_field
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -103,9 +99,7 @@ fleet_event = {
 	desc = scfe_when_the_world_sings.4.desc
 	picture = GFX_evt_scfe_samchigui_third
 	show_sound = event_metal_fatigue
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -129,9 +123,7 @@ fleet_event = {
 	desc = scfe_when_the_world_sings.5.desc
 	picture = GFX_evt_scfe_samchigui_fourth
 	show_sound = event_screams
-	
 	archaeology = yes
-
 	is_triggered_only = yes
 	
 	immediate = {
@@ -139,7 +131,11 @@ fleet_event = {
 	}
 
 	after = { 
-		from = { set_site_progress_locked = no } 
+		from = { set_site_progress_locked = no }
+		if = {
+			limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+			destroy_archaeological_site = from
+		}
 	}
 	
 	option = {

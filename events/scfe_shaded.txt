@@ -1517,10 +1517,10 @@ fleet_event = {
     archaeology = yes
 
     immediate = {
-        fromfrom = { set_site_progress_locked = yes }
+        from = { set_site_progress_locked = yes }
     }
     after = {
-        fromfrom = { set_site_progress_locked = no }
+        from = { set_site_progress_locked = no }
     }
     option = {
         name = DIG
@@ -1536,10 +1536,10 @@ fleet_event = {
     archaeology = yes
 
     immediate = {
-        fromfrom = { set_site_progress_locked = yes }
+        from = { set_site_progress_locked = yes }
     }
     after = {
-        fromfrom = { set_site_progress_locked = no }
+        from = { set_site_progress_locked = no }
     }
     option = {
         name = DIG
@@ -1555,10 +1555,10 @@ fleet_event = {
     archaeology = yes
 
     immediate = {
-        fromfrom = { set_site_progress_locked = yes }
+        from = { set_site_progress_locked = yes }
     }
     after = {
-        fromfrom = { set_site_progress_locked = no }
+        from = { set_site_progress_locked = no }
     }
     option = {
         name = DIG
@@ -1574,10 +1574,10 @@ fleet_event = {
     archaeology = yes
 
     immediate = {
-        fromfrom = { set_site_progress_locked = yes }
+        from = { set_site_progress_locked = yes }
     }
     after = {
-        fromfrom = { set_site_progress_locked = no }
+        from = { set_site_progress_locked = no }
     }
     option = {
         name = DIG
@@ -1593,10 +1593,14 @@ fleet_event = {
     archaeology = yes
 
     immediate = {
-        fromfrom = { set_site_progress_locked = yes }
+        from = { set_site_progress_locked = yes }
     }
     after = {
-        fromfrom = { set_site_progress_locked = no }
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
     option = {
         name = INTERESTING

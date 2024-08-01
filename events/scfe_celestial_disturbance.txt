@@ -578,6 +578,13 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = scfe_celestial_disturbance_dig.1.a
@@ -591,6 +598,13 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -605,6 +619,13 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -619,6 +640,13 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -633,6 +661,13 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -647,6 +682,17 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
 
     option = {
         name = DIG

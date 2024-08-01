@@ -558,9 +558,6 @@ fleet_event = {
     immediate = {
         from = { set_site_progress_locked = yes }
     }
-    after = {
-        from = { set_site_progress_locked = no }
-    }
 
     option = {
         name = FASCINATING
@@ -576,6 +573,11 @@ fleet_event = {
         }
     }
     after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
         if = {
             limit = { owner = { has_country_flag = scfe_seismic_friendly } }
             owner = { country_event = { id = scfe_subterranean.16 days = 1 scopes = { from = event_target:subterranean_empire } } }

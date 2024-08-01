@@ -6,7 +6,6 @@ ship_event = {
     desc = scfe_vanishing_act.1.desc
     picture = GFX_evt_space_station
     show_sound = event_ship_bridge
-
     is_triggered_only = yes
 
     option = {
@@ -22,8 +21,15 @@ fleet_event = {
     desc = scfe_vanishing_act_dig.1.desc
     picture = GFX_evt_space_station
     show_sound = event_ship_bridge
-
     is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = CURIOUS
@@ -37,8 +43,15 @@ fleet_event = {
     desc = scfe_vanishing_act_dig.2.desc
     picture = GFX_evt_alien_city
     show_sound = event_ship_bridge
-
     is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = CURIOUS
@@ -52,8 +65,15 @@ fleet_event = {
     desc = scfe_vanishing_act_dig.3.desc
     picture = GFX_evt_alien_city
     show_sound = event_ship_bridge
-
     is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = CURIOUS
@@ -67,8 +87,19 @@ fleet_event = {
     desc = scfe_vanishing_act_dig.4.desc
     picture = GFX_evt_a_rift_in_space
     show_sound = event_ship_bridge
-
     is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+
+    after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
 
     option = {
         name = scfe_vanishing_act_dig.4.a

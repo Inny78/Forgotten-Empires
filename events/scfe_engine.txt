@@ -14,6 +14,7 @@ event = {
 		every_playable_country = {
 			limit = { is_ai = no }
 			set_policy = { policy = scfe_precursor_policy option = scfe_precursor_policy_concurrent }
+			set_policy = { policy = scfe_archaeology_cleanup option = scfe_archaeology_cleanup_inactive }
 		}
 		if = {
 			limit = {
@@ -396,20 +397,6 @@ country_event = {
 			country_event = { id = scfe_celestial_init.1 }
 		}
 	}
-}
-
-# Alshigans cleanup for multi
-country_event = {
-	id = scfe_engine.8
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		is_ai = no
-		has_event_chain = scfe_alshigans_chain
-	}
-
-	immediate = { end_event_chain = scfe_alshigans_chain }
 }
 # Celestial Disturbance
 event = {

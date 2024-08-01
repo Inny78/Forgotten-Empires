@@ -100,7 +100,7 @@
 
 # The Failed Hive
  scfe_failed_hive.1.name: "War-torn ruins"
- scfe_failed_hive.1.desc: "The remnants of this advanced civilization bear clear indications of a devastating conflict. Widespread and intense battles seem to have engulfed the entire planet, leading §G[Root.GetLeaderName]§! to propose that it was a global civil war. Given the vast expanse of these ruins, [root.leader.getHerHim] recommends setting up a base camp to conduct a thorough exploration."
+ scfe_failed_hive.1.desc: "The remnants of this advanced civilization bear clear indications of a devastating conflict. Widespread and intense battles seem to have engulfed the entire planet, leading §G[Root.GetLeaderName]§! to propose that it was a global civil war. Given the vast expanse of these ruins, [root.fleet.leader.getHerHim] recommends setting up a base camp to conduct a thorough exploration."
  scfe_failed_hive.1.t: "We have to make a declaration."
  scfe_failed_hive.2.name: "Statement"
  # Hive Statement
@@ -386,3 +386,8 @@
  scfe_subterranean.16.name: "Foolish Endeavor"
  scfe_subterranean.16.desc: "The fate of the Kraktanians is clear, and it is deeply disturbing. This civilization shows us a path we did not take. While this revelation is enlightening, their folly is not what I had hoped to find. Despite this, I am thankful for the opportunity to participate in this joint operation. Here are my notes on Kraktanian engineering. I hope they prove useful to your empire. Farewell, and may our collaboration continue to bear fruit."
  scfe_subterranean.16.a: "Farewell."
+
+ policy_scfe_archaeology_cleanup: "Automatic archaeology cleanup"
+ policy_scfe_archaeology_cleanup_desc: "Allows the automatic removal of completed dig sites."
+ scfe_archaeology_cleanup_active: "Activate auto-cleanup"
+ scfe_archaeology_cleanup_inactive: "No dig site cleanup"

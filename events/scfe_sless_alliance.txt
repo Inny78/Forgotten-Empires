@@ -122,6 +122,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -283,6 +287,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -399,6 +407,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
     }
 
     option = {
@@ -468,7 +480,10 @@ fleet_event = {
 
     after = {
         from = { set_site_progress_locked = no }
-        large_artifact_reward = yes
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
         owner = {
             end_event_chain = scfe_sless_chain
             custom_tooltip = scfe_sless.14.a.tooltip
@@ -494,10 +509,12 @@ fleet_event = {
     option = {
         name = scfe_sless.14.a
         exclusive_trigger = { NOT = { owner = { has_ascension_perk = ap_engineered_evolution } } }
+        large_artifact_reward = yes
     }
     option = {
         name = scfe_sless.14.b
         exclusive_trigger = { owner = { has_ascension_perk = ap_engineered_evolution } }
+        large_artifact_reward = yes
     }
 }
 #SCFE_PRECURSOR_SLESS_SECRETS effect event

@@ -44,7 +44,6 @@ fleet_event = {
 	desc = scfe_king_of_underground_city.1.desc
 	picture = GFX_evt_scfe.54
 	show_sound = event_drilling
-	
 	archaeology = yes
 	is_triggered_only = yes
 	
@@ -68,7 +67,6 @@ fleet_event = {
 	desc = scfe_king_of_underground_city.2.desc
 	picture = GFX_evt_scfe.55
 	show_sound = event_pre_ftl_civilization
-	
 	archaeology = yes
 	is_triggered_only = yes
 	
@@ -92,7 +90,6 @@ fleet_event = {
 	desc = scfe_king_of_underground_city.3.desc
 	picture = GFX_evt_scfe.56
 	show_sound = event_administrative_work
-	
 	archaeology = yes
 	is_triggered_only = yes
 	
@@ -116,7 +113,6 @@ fleet_event = {
 	desc = scfe_king_of_underground_city.4.desc
 	picture = GFX_evt_scfe.57
 	show_sound = event_bad_omen
-	
 	archaeology = yes
 	is_triggered_only = yes
 	
@@ -126,6 +122,10 @@ fleet_event = {
 
 	after = {
 		from = { set_site_progress_locked = no }
+		if = {
+			limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+			destroy_archaeological_site = from
+		}
 	}
 
 	option = {

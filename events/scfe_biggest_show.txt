@@ -190,6 +190,10 @@ fleet_event = {
 
 	after = {
 		from = { set_site_progress_locked = no }
+		if = {
+			limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+			destroy_archaeological_site = from
+		}
 	}
 
 	option = {
