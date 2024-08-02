@@ -1,9 +1,0 @@
-scfe_celestial_disturbance_rift = {
-    name = astral_rift_celestial_disturbance_rift
-    randomized = no
-    flags = { scfe_celestial_disturbance_rift }
-    event = scfe_celestial_disturbance_rift.1
-    on_roll_failed = {
-        standard_astral_rift_on_roll_failed = yes
-    }
-}
