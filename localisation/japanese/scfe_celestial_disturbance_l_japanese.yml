@@ -54,3 +54,4 @@
  scfe_celestial_disturbance.13.name: "Conclusion"
  scfe_celestial_disturbance.13.desc.a: "We now have a clear understanding of the events that transpired in this solar system. Ironically, the neutron star that sealed the Ze'tanians' fate also brought with it an hyperlane, reconnecting this system with the rest of the galaxy."
  scfe_celestial_disturbance.13.desc1: "$scfe_celestial_disturbance.13.desc.a$ The question of the rift remains an enigma. All their research has been destroyed, leaving it far beyond our current understanding. Perhaps the future will reveal the answers the Ze'tanians discovered."
+ scfe_celestial_disturbance.13.a: "Perhaps indeed."
