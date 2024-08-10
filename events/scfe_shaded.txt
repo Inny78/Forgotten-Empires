@@ -278,7 +278,6 @@ country_event = {
                             space_owner = { is_same_empire = event_target:scfe_shaded_owner }
                         }
                     }
-                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
                     any_system_planet = {
                         is_asteroid = yes
                         has_anomaly = no
@@ -310,7 +309,6 @@ country_event = {
                             space_owner = { is_same_empire = event_target:scfe_shaded_owner }
                         }
                     }
-                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
                     any_system_planet = {
                         has_anomaly = no
                         NOT = { exists = owner }
@@ -344,7 +342,6 @@ country_event = {
                             space_owner = { is_same_empire = event_target:scfe_shaded_owner }
                         }
                     }
-                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
                     any_system_planet = {
                         habitable_planet = yes
                         is_artificial = no
@@ -384,7 +381,6 @@ country_event = {
                             space_owner = { is_same_empire = event_target:scfe_shaded_owner }
                         }
                     }
-                    NOT = { any_fleet_in_system = { is_ship_class = shipclass_science_ship } }
                     any_system_planet = {
                         is_star = yes
                         NOR = {
@@ -393,7 +389,6 @@ country_event = {
                             is_planet_class = pc_pulsar
                         }
                         has_anomaly = no
-                        NOT = { exists = owner }
                         NOT = { exists = archaeological_site }
                         NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
                         NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
