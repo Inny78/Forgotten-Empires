@@ -381,3 +381,5 @@
  policy_scfe_archaeology_cleanup_desc: "Allows the automatic removal of completed dig sites."
  scfe_archaeology_cleanup_active: "Activate auto-cleanup"
  scfe_archaeology_cleanup_inactive: "No dig site cleanup"
+ scfe_archaeology_cleanup_active_desc: "$policy_scfe_archaeology_cleanup_desc$"
+ scfe_archaeology_cleanup_inactive_desc: "Disallows the automatic removal of completed dig sites."
