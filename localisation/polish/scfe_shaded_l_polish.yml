@@ -205,3 +205,9 @@
  scfe_shaded.33.desc: "The First Empire databank offers a rare glimpse into the origins and evolution of a civilization that predates even the most ancient of known empires. Born from the nascent energies of the universe itself, these energy beings faced the existential challenge of a universe cooling and dispersing, threatening their very form of existence. Through this adversity, they achieved sentience, a profound understanding of the cosmos, and the ability to craft protective shells, marking their transition to a material existence.\nOver epochs, the First Empire's quest for knowledge and technological advancement knew no bounds. Their civilization flourished, reaching heights of scientific achievement unrivaled in known history. They explored many galaxies, ventured into alternate universes, and ultimately stood on the brink of transcending to a higher state of existence. The lack of historical records beyond this pivotal moment suggests that they succeeded, leaving behind only their databank as a testament to their legacy."
  scfe_shaded.34.desc: "While the technology of the First Empire is far beyond our current understanding, the databank offers tantalizing insights into their mastery of energy. Even a rudimentary grasp of their principles could revolutionize our approach to energy utilization, opening new avenues for research and development. This knowledge, though fragmentary, presents an unparalleled opportunity for our civilization to leap forward, drawing inspiration from a species whose existence spanned the breadth of cosmic possibilities."
  scfe_energy_mastery: "Energy Mastery of the First Empire"
+
+ # 3.13 additions
+ scfe_shaded_clue1_system_name: "Ustraicit"
+ scfe_shaded_clue2_system_name: "Zoltael"
+ scfe_shaded_clue3_system_name: "Haug'sad"
+ scfe_shaded_clue4_system_name: "Dranuct"

@@ -53,7 +53,6 @@ can_terraform_planet = {
             NOT = { has_planet_flag = legendary_leader_planet }
         }
     }
-
     custom_tooltip = {
         fail_text = requires_not_relentless_industrialists_situation
         NOT = {
@@ -62,7 +61,12 @@ can_terraform_planet = {
             }
         }
     }
-
+    custom_tooltip = {
+        fail_text = terraform_fail_is_metal_planet
+        NOT = {
+            has_modifier = metal_planet
+        }
+    }
     # Forgotten Empires
     custom_tooltip = {
         fail_text = scfe_cant_terraform_special_planet

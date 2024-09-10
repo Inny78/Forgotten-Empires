@@ -29,6 +29,30 @@ scfe_dig_site_default_spawn_rules = {
 	NOT = { exists = archaeological_site }
 }
 
+scfe_is_valid_star_system = {
+	exists = star
+	NOR = {
+		has_star_flag = sealed_system
+		has_star_flag = empire_cluster
+		has_star_flag = precursor_system
+		has_special_star_flag_trigger = yes
+		is_fe_cluster = yes
+		is_marauder_cluster = yes
+		has_star_flag = drone_home_system
+		has_star_flag = chosen_system
+		has_star_flag = outercluster
+		cohesive_system = yes
+		urmazin_system = yes
+		everchanging_system = yes
+		any_system_planet = {
+			OR = {
+				has_planet_flag = hatchling_egg
+				has_planet_flag = suppress_archaeological_sites
+			}
+		}
+	}
+}
+
 scfe_dig_site_visible_trigger = {
 	scfe_is_default_empire = yes
 	is_ai = no

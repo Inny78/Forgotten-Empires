@@ -363,3 +363,23 @@ scfe_sless_alliance_anomaly_1 = {
 	}
 	on_success = scfe_sless.1
 }
+# Inasir Corp
+scfe_inasir_category = {
+	desc = scfe_inasir_desc
+	picture = GFX_evt_ship_in_orbit
+	level = 8
+	max_once_global = yes
+	spawn_chance = {
+		modifier = {
+			add = 10
+			scfe_is_barren = yes
+		}
+		modifier = {
+			factor = 0
+			from.owner = {
+				is_ai = yes
+			}
+		}
+	}
+	on_success = scfe_inasir.1
+}

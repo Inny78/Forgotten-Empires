@@ -1,0 +1,63 @@
+scfe_site_inasir = {
+    desc = "scfe_site_inasir_desc"
+    picture = GFX_evt_barren_dig_site
+    max_instances = 1
+    stages = 4
+    weight = {
+        base = 0
+    }
+
+    potential = {
+        owner = { is_ai = no }
+    }
+
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E1
+        event = scfe_inasir_dig.1
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E2
+        event = scfe_inasir_dig.2
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E3
+        event = scfe_inasir_dig.3
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E4
+        event = scfe_inasir_dig.4
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E4
+        event = scfe_inasir_dig.5
+    }
+    stage = {
+        difficulty = 6
+        icon = GFX_archaeology_runes_E4
+        event = scfe_inasir_dig.6
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}

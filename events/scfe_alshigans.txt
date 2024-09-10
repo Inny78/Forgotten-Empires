@@ -309,6 +309,7 @@ country_event = {
 	after = {
 		hidden_effect = {
 			random_system_within_border = {
+				limit = { scfe_is_valid_star_system = yes }
 				set_spawn_system_batch = begin
 				spawn_system = {
 					max_jumps = 15
@@ -341,6 +342,7 @@ country_event = {
 	after = {
 		hidden_effect = {
 			random_system_within_border = {
+				limit = { scfe_is_valid_star_system = yes }
 				set_spawn_system_batch = begin
 				spawn_system = {
 					max_jumps = 15
@@ -373,6 +375,7 @@ country_event = {
 	after = {
 		hidden_effect = {
 			random_system_within_border = {
+				limit = { scfe_is_valid_star_system = yes }
 				set_spawn_system_batch = begin
 				spawn_system = {
 					max_jumps = 15

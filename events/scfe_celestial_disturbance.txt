@@ -264,43 +264,6 @@ country_event = {
 
     option = {
         name = astral_planes.100.a
-        exclusive_trigger = {
-            OR = {
-                has_astral_planes_dlc = no
-                AND = {
-                    has_astral_planes_dlc = yes
-                    NOR = {
-                        country_has_situation = { SITUATION = situation_a_rift_in_space }
-                        has_country_flag = has_completed_a_rift_in_space_situation
-                        has_technology = tech_rift_sphere
-                        has_tech_option = tech_rift_sphere
-                    }
-                }
-            }
-        }
-        add_monthly_resource_mult = {
-            resource = physics_research
-            value = @tier2researchreward
-            min = @tier2researchmin
-            max = @tier2researchmax
-        }
-        if = {
-            limit = { has_technology = tech_astral_harvesting }
-            astral_thread_small_reward = yes
-        }
-    }
-
-    option = {
-        name = FASCINATING
-        exclusive_trigger = {
-            has_astral_planes_dlc = yes
-            OR = {
-                country_has_situation = { SITUATION = situation_a_rift_in_space }
-                has_country_flag = has_completed_a_rift_in_space_situation
-                has_technology = tech_rift_sphere
-                has_tech_option = tech_rift_sphere
-            }
-        }
         add_monthly_resource_mult = {
             resource = physics_research
             value = @tier2researchreward
@@ -336,45 +299,7 @@ country_event = {
     show_sound = pc_astral_scar
     is_triggered_only = yes
     option = {
-        name = FASCINATING
-        exclusive_trigger = {
-            OR = {
-                has_astral_planes_dlc = no
-                NOT = { has_technology = tech_rift_sphere }
-            }
-        }
-        add_monthly_resource_mult = {
-            resource = physics_research
-            value = @tier2researchreward
-            min = @tier2researchmin
-            max = @tier2researchmax
-        }
-        add_monthly_resource_mult = {
-            resource = society_research
-            value = @tier2researchreward
-            min = @tier2researchmin
-            max = @tier2researchmax
-        }
-    }
-    option = {
-        name = NOTIME
-        trigger = { has_technology = tech_rift_sphere }
-        add_monthly_resource_mult = {
-            resource = physics_research
-            value = @tier2researchreward
-            min = @tier2researchmin
-            max = @tier2researchmax
-        }
-        add_monthly_resource_mult = {
-            resource = society_research
-            value = @tier2researchreward
-            min = @tier2researchmin
-            max = @tier2researchmax
-        }
-    }
-    option = {
         name = scfe_celestial_disturbance.13.a
-        trigger = { has_technology = tech_rift_sphere }
         add_monthly_resource_mult = {
             resource = physics_research
             value = @tier2researchreward
@@ -393,6 +318,8 @@ country_event = {
         hidden_effect = {
             set_country_flag = scfe_celestial_disturbance_finished
             clear_global_event_target = scfe_celestial_disturbance_homeworld
+            clear_global_event_target = scfe_celestial_disturbance_astral_scar
+            clear_global_event_target = scfe_celestial_disturbance_system
         }
     }
 }
@@ -525,7 +452,7 @@ fleet_event = {
     }
 
     option = {
-        name = DIG
+        name = FASCINATING
         large_artifact_reward = yes
         owner = {
             country_event = { id = scfe_celestial_disturbance.13 }

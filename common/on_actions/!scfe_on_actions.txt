@@ -187,3 +187,40 @@ on_building_starbase_outpost = {
 		scfe_engine.10
 	}
 }
+
+########################## Plague On-Actions ###############################
+
+# Pop is resettled
+# From is previous planet
+# planet = { } is new planet
+on_pop_resettled = {
+	events = {
+	}
+}
+# Pop is abducted by raiding stance
+# This = Pop scope
+# From = planet abducted from
+on_pop_abducted = {
+	events = {
+	}
+}
+# A planets controller becomes a country not the same as the owner.
+# Root = Planet
+# From = Planet Owner
+# FromFrom = Planet Controller (the one occupying)
+on_planet_occupied = {
+	events = {
+	}
+}
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+on_planet_transfer = {
+	events = {
+	}
+}
+# this = country
+on_monthly_pulse_country = {
+	events = {
+	}
+}

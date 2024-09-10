@@ -15,6 +15,7 @@ ship_event = {
 			any_system_planet = {
 				scfe_is_nuked = yes
 				has_anomaly = no
+				NOT = { exists = archaeological_site }
 			}
 			scfe_is_valid_system = yes
 		}
@@ -23,7 +24,11 @@ ship_event = {
 		set_global_flag = scfe_had_soulofarts
 		solar_system = {
 			random_system_planet = {
-				limit = { scfe_is_nuked = yes has_anomaly = no }
+				limit = {
+					scfe_is_nuked = yes
+					has_anomaly = no
+					NOT = { exists = archaeological_site }
+				}
 				set_planet_entity = {
 					picture = pc_nuked_colorful
 					entity = scfe_color_nuked_planet_01_entity

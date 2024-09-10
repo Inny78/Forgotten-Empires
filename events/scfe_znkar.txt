@@ -93,6 +93,7 @@ country_event = {
             amount = 1
         }
         random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
             set_spawn_system_batch = begin
             spawn_system = {
                 max_jumps = 0

@@ -382,6 +382,7 @@ country_event = {
 			limit = {
 				is_rim_system = yes
 				is_fe_cluster = no
+				scfe_is_valid_star_system = yes
 			}
 			set_spawn_system_batch = begin
 			spawn_system = {
@@ -429,6 +430,50 @@ event = {
 	immediate = {
 		solar_system = {
 			remove_star_flag = scfe_ai_avoid_system
+		}
+	}
+}
+
+# The Plague
+country_event = {
+	id = scfe_engine.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = scfe_plague_start
+			has_country_flag = scfe_sick_pop_check
+		}
+		is_ai = no
+		is_machine_empire = no
+		is_synthetic_empire = no
+		count_controlled_planet = {
+			limit = {
+				is_colony = yes
+				is_capital = no
+				colony_age > 12
+				num_pops > 10
+			}
+			count > 4
+		}
+		count_controlled_planet = {
+			limit = {
+				is_colony = yes
+				is_capital = no
+				colony_age >= 60
+				num_pops > 10
+				NOT = { has_planet_flag = colony_event }
+			}
+			count >= 1
+		}
+	}
+
+	immediate = {
+		set_country_flag = scfe_sick_pop_check
+		random_list = {
+			30 = { country_event = { id = scfe_plague.1 days = 200 random = 100 } }
+			70 = { }
 		}
 	}
 }

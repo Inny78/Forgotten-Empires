@@ -12,7 +12,6 @@ country_event = {
         name = INTERESTING
     }
 }
-
 country_event = {
     id = scfe_shaded.1
     title = scfe_shaded.1.name
@@ -53,7 +52,6 @@ country_event = {
         clear_global_event_target = shaded_crashed_ship_system
     }
 }
-
 country_event = {
     id = scfe_shaded.2
     title = scfe_shaded.2.name
@@ -78,7 +76,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_shaded.3
     title = scfe_shaded.3.name
@@ -94,7 +91,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_shaded.4
     title = scfe_shaded.4.name
@@ -136,7 +132,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_shaded.5
     hide_window = yes
@@ -229,7 +224,6 @@ country_event = {
         }
     }
 }
-
 ship_event = {
     id = scfe_shaded.6
     title = scfe_shaded.6.name
@@ -257,160 +251,103 @@ ship_event = {
         owner = { set_country_flag = checked_shaded_warbase }
     }
 }
-
 country_event = {
     id = scfe_shaded.7
     hide_window = yes
     is_triggered_only = yes
 
     immediate = {
-        # Lead 1
-        capital_scope = {
-            closest_system = {
-                min_steps = 3
-                max_steps = 15
-                limit = {
-                    scfe_is_valid_system = yes
-                    OR = {
-                        has_owner = no
-                        AND = {
-                            exists = space_owner
-                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
-                        }
-                    }
-                    any_system_planet = {
-                        is_asteroid = yes
-                        has_anomaly = no
-                        NOT = { exists = archaeological_site }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        is_asteroid = yes
-                        has_anomaly = no
-                        NOT = { exists = archaeological_site }
-                    }
-                    solar_system = {
-                        set_star_flag = scfe_shaded_lead1
-                    }
-                    save_global_event_target_as = scfe_shaded_lead1
+        # Leads
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            save_event_target_as = scfe_shaded_spawn_system
+        }
+        set_spawn_system_batch = begin
+        event_target:scfe_shaded_spawn_system = {
+            spawn_system = {
+                min_distance = 5
+                max_distance = 20
+                max_jumps = 0
+                initializer = "shaded_lead1_system"
+            }
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
                 }
             }
-            # Lead 2
-            closest_system = {
-                min_steps = 4
-                max_steps = 15
-                limit = {
-                    scfe_is_valid_system = yes
-                    OR = {
-                        has_owner = no
-                        AND = {
-                            exists = space_owner
-                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
-                        }
-                    }
-                    any_system_planet = {
-                        has_anomaly = no
-                        NOT = { exists = owner }
-                        NOT = { exists = archaeological_site }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        has_anomaly = no
-                        NOT = { exists = owner }
-                        NOT = { exists = archaeological_site }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
-                    }
-                    solar_system = {
-                        set_star_flag = scfe_shaded_lead2
-                    }
-                    save_global_event_target_as = scfe_shaded_lead2
-                }
-            }
-            # Lead 3
-            closest_system = {
-                min_steps = 5
-                max_steps = 15
-                limit = {
-                    scfe_is_valid_system = yes
-                    OR = {
-                        has_owner = no
-                        AND = {
-                            exists = space_owner
-                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
-                        }
-                    }
-                    any_system_planet = {
-                        habitable_planet = yes
-                        is_artificial = no
-                        has_anomaly = no
-                        NOT = { exists = owner }
-                        NOT = { exists = archaeological_site }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        scfe_is_general_planet = yes
-                        has_anomaly = no
-                        NOT = { exists = owner }
-                        NOT = { exists = archaeological_site }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
-                    }
-                    solar_system = {
-                        set_star_flag = scfe_shaded_lead3
-                    }
-                    save_global_event_target_as = scfe_shaded_lead3
-                    add_modifier = { modifier = scfe_infrastructure days = -1 }
-                }
-            }
-            # Lead 4
-            closest_system = {
-                min_steps = 5
-                max_steps = 15
-                limit = {
-                    scfe_is_valid_system = yes
-                    OR = {
-                        has_owner = no
-                        AND = {
-                            exists = space_owner
-                            space_owner = { is_same_empire = event_target:scfe_shaded_owner }
-                        }
-                    }
-                    any_system_planet = {
-                        is_star = yes
-                        NOR = {
-                            is_planet_class = pc_black_hole
-                            is_planet_class = pc_neutron_star
-                            is_planet_class = pc_pulsar
-                        }
-                        has_anomaly = no
-                        NOT = { exists = archaeological_site }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead3 owner = root } }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        has_anomaly = no
-                        NOT = { exists = owner }
-                        NOT = { exists = archaeological_site }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead1 owner = root } }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead2 owner = root } }
-                        NOT = { is_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_lead3 owner = root } }
-                    }
-                    solar_system = {
-                        set_star_flag = scfe_shaded_lead4
-                    }
-                    save_global_event_target_as = scfe_shaded_lead4
-                }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
             }
         }
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            save_event_target_as = scfe_shaded_spawn_system
+        }
+        event_target:scfe_shaded_spawn_system = {
+            spawn_system = {
+                min_distance = 5
+                max_distance = 20
+                max_jumps = 0
+                initializer = "shaded_lead2_system"
+            }
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
+        }
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            save_event_target_as = scfe_shaded_spawn_system
+        }
+        event_target:scfe_shaded_spawn_system = {
+            spawn_system = {
+                min_distance = 5
+                max_distance = 20
+                max_jumps = 0
+                initializer = "shaded_lead3_system"
+            }
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
+        }
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            save_event_target_as = scfe_shaded_spawn_system
+        }
+        event_target:scfe_shaded_spawn_system = {
+            spawn_system = {
+                min_distance = 10
+                max_distance = 30
+                max_jumps = 0
+                initializer = "shaded_lead4_system"
+            }
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
+        }
+        set_spawn_system_batch = end
         create_point_of_interest = {
             id = scfe_shaded_lead1
             event_chain = scfe_shaded_chain
@@ -449,6 +386,7 @@ ship_event = {
     picture = GFX_evt_scfe_asteroid
     show_sound = event_default
     is_triggered_only = yes
+    location = event_target:scfe_shaded_lead1
 
     trigger = {
         solar_system = {
@@ -469,10 +407,10 @@ ship_event = {
 
     option = {
         name = scfe_lead_explore
-        event_target:scfe_shaded_lead1 = {
+        event_target:scfe_shaded_asteroid_lead1 = {
             enable_special_project = {
                 name = SCFE_SHADED_PROJECT_2
-                location = event_target:scfe_shaded_lead1
+                location = event_target:scfe_shaded_asteroid_lead1
                 owner = root.owner
             }
         }
@@ -505,10 +443,10 @@ ship_event = {
 
     option = {
         name = scfe_lead_explore
-        event_target:scfe_shaded_lead2 = {
+        event_target:scfe_shaded_habitat_lead2 = {
             enable_special_project = {
                 name = SCFE_SHADED_PROJECT_3
-                location = event_target:scfe_shaded_lead2
+                location = event_target:scfe_shaded_habitat_lead2
                 owner = root.owner
             }
         }
@@ -541,10 +479,10 @@ ship_event = {
 
     option = {
         name = scfe_lead_explore
-        event_target:scfe_shaded_lead3 = {
+        event_target:scfe_shaded_colony_lead3 = {
             enable_special_project = {
                 name = SCFE_SHADED_PROJECT_4
-                location = event_target:scfe_shaded_lead3
+                location = event_target:scfe_shaded_colony_lead3
                 owner = root.owner
             }
         }
@@ -577,10 +515,10 @@ ship_event = {
 
     option = {
         name = scfe_lead_explore
-        event_target:scfe_shaded_lead4 = {
+        event_target:scfe_shaded_star_lead4 = {
             enable_special_project = {
                 name = SCFE_SHADED_PROJECT_5
-                location = event_target:scfe_shaded_lead4
+                location = event_target:scfe_shaded_star_lead4
                 owner = root.owner
             }
         }
@@ -640,6 +578,8 @@ ship_event = {
     after = {
         hidden_effect = {
             owner = { country_event = { id = scfe_shaded.16 } }
+            clear_global_event_target = scfe_shaded_lead1
+            clear_global_event_target = scfe_shaded_asteroid_lead1
         }
     }
 }
@@ -690,13 +630,12 @@ ship_event = {
     }
     after = {
         hidden_effect = {
-            owner = {
-                country_event = { id = scfe_shaded.16 }
-            }
+            owner = { country_event = { id = scfe_shaded.16 } }
+            clear_global_event_target = scfe_shaded_lead2
+            clear_global_event_target = scfe_shaded_habitat_lead2
         }
     }
 }
-
 # Lead 3
 ship_event = {
     id = scfe_shaded.14
@@ -726,6 +665,8 @@ ship_event = {
     after = {
         hidden_effect = {
             owner = { country_event = { id = scfe_shaded.16 } }
+            clear_global_event_target = scfe_shaded_lead3
+            clear_global_event_target = scfe_shaded_colony_lead3
         }
     }
 }
@@ -772,9 +713,9 @@ ship_event = {
             }
         }
         hidden_effect = {
-            solar_system = {
-                remove_star_flag = scfe_shaded_lead4
-            }
+            solar_system = { remove_star_flag = scfe_shaded_lead4 }
+            clear_global_event_target = scfe_shaded_lead4
+            clear_global_event_target = scfe_shaded_star_lead4
         }
     }
     option = {
@@ -902,7 +843,7 @@ country_event = {
 
     immediate = {
         random_system_within_border = {
-            limit = { is_capital_system = yes }
+            limit = { scfe_is_valid_star_system = yes }
             set_spawn_system_batch = begin
             spawn_system = {
                 min_jumps = 5
@@ -914,15 +855,6 @@ country_event = {
                 hyperlane = no
             }
             set_spawn_system_batch = end
-        }
-        random_system = {
-            limit = {
-                any_system_planet = { has_planet_flag = scfe_shaded_colony }
-            }
-            random_system_planet = {
-                limit = { has_planet_flag = scfe_shaded_colony }
-                save_global_event_target_as = scfe_shaded_colony
-            }
         }
         set_country_flag = scfe_shaded_colony_coordinates
         create_point_of_interest = { event_chain = scfe_shaded_chain id = scfe_shaded_colony name = scfe_asdrylia location = event_target:scfe_shaded_colony }
@@ -1340,7 +1272,6 @@ country_event = {
         set_global_flag = shaded_fe_detection_high
     }
 }
-
 country_event = {
     id = scfe_fallen_empires.5
     title = scfe_fallen_empires.5.name
