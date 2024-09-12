@@ -515,6 +515,8 @@ scfe_can_find_precursor = {
 				has_event_chain = first_league_chain
 				has_event_chain = irassian_chain
 				has_event_chain = cybrex_chain
+				has_event_chain = cs_inetian_chain
+				has_event_chain = cs_adAkkaria_chain
 				scfe_has_zroni_chain = yes
 				scfe_has_baol_chain = yes
 				scfe_has_plexi_chain = yes
@@ -533,3 +535,9 @@ scfe_can_find_precursor = {
 		}
 	}
 }
+has_sless_gene_template = { has_relic = r_scfe_sless_gene_template }
+has_diary_of_innovo = { has_relic = r_scfe_diary_of_innovo }
+has_astanine_last_projector = { has_relic = r_scfe_astanine_last_projector }
+has_alshigan_engine = { has_relic = r_scfe_alshigan_engine }
+has_znkar_distortion_generator = { has_relic = r_scfe_znkar_distortion_generator }
+has_first_empire_databank = { has_relic = r_scfe_first_empire_databank }
