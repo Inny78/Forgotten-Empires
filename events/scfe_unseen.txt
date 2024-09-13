@@ -1,0 +1,241 @@
+namespace = scfe_unseen
+
+country_event = {
+    id = scfe_unseen.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        random_system_within_border = {
+            limit = {
+                is_capital_system = no
+                any_system_planet = {
+                    OR = {
+                        scfe_is_barren = yes
+                        scfe_is_barren_cold = yes
+                    }
+                    NOR = {
+                        exists = archaeological_site
+                        has_modifier = terraforming_candidate
+                    }
+                }
+            }
+            save_global_event_target_as = scfe_unseen_system
+            random_system_planet = {
+                limit = {
+                    OR = {
+                        scfe_is_barren = yes
+                        scfe_is_barren_cold = yes
+                    }
+                    NOR = {
+                        exists = archaeological_site
+                        has_modifier = terraforming_candidate
+                    }
+                }
+                save_global_event_target_as = scfe_unseen_planet
+            }
+        }
+    }
+    after = {
+        country_event = { id = scfe_unseen.2 }
+    }
+}
+country_event = {
+    id = scfe_unseen.2
+    title = scfe_unseen.2.name
+    desc = scfe_unseen.2.desc
+    picture = GFX_evt_communication_event
+    show_sound = event_default
+
+    option = {
+        name = scfe_subterranean.2.a
+        begin_event_chain = { event_chain = scfe_unseen_chain target = root }
+        event_target:scfe_unseen_planet = {
+            enable_special_project = { name = SCFE_UNSEEN_PROJECT_1 }
+            create_point_of_interest = { id = scfe_unseen_world event_chain = scfe_unseen_chain name = scfe_unseen.2.name location = this }
+        }
+    }
+
+    option = {
+        name = NOTIME
+        add_resource = {
+            influence = 50
+        }
+    }
+}
+country_event = {
+    id = scfe_unseen.3
+    title = scfe_unseen.3.name
+    desc = scfe_unseen.3.desc
+    picture = GFX_evt_astral_rift
+    show_sound = event_default
+
+    option = {
+        name = scfe_unseen.3.a
+        trigger = {
+            has_technology = tech_astral_harvesting
+            resource_stockpile_compare = { resource = astral_threads value >= 100 }
+        }
+    }
+    option = {
+        name = scfe_unseen.3.b
+        trigger = {
+            has_technology = tech_antimatter_power
+            resource_stockpile_compare = { resource = energy value >= 2000 }
+        }
+    }
+    option = {
+        name = scfe_unseen.3.c
+        country_event = { id = scfe_unseen.6 days = 30 }
+    }
+    after = { remove_point_of_interest = scfe_unseen_world }
+}
+country_event = {
+    id = scfe_unseen.4
+    title = scfe_unseen.4.name
+    desc = scfe_unseen.4.desc
+    picture = GFX_evt_astral_rift
+    show_sound = event_default
+
+    option = {
+        name = EXCELLENT
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        end_event_chain = scfe_unseen_chain
+    }
+}
+country_event = {
+    id = scfe_unseen.5
+    title = scfe_unseen.4.name
+    desc = scfe_unseen.5.desc
+    picture = GFX_evt_exploding_planet
+    show_sound = event_super_explosion
+
+    option = {
+        name = EXCELLENT
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        event_target:scfe_unseen_planet = {
+            change_pc = pc_broken
+            hidden_effect = {
+                reset_planet = yes
+            }
+        }
+        end_event_chain = scfe_unseen_chain
+    }
+}
+country_event = {
+    id = scfe_unseen.6
+    title = scfe_unseen.6.name
+    desc = scfe_unseen.6.desc
+    picture = GFX_evt_astral_rift
+    show_sound = event_default
+
+    option = {
+        name = INTRIGUING
+        add_monthly_resource_mult = {
+            resource = physics_research
+            value = @tier2researchreward
+            min = @tier2researchmin
+            max = @tier2researchmax
+        }
+        country_event = { id = scfe_unseen.7 days = 30 }
+    }
+}
+country_event = {
+    id = scfe_unseen.7
+    title = scfe_unseen.7.name
+    desc = scfe_unseen.7.desc
+    picture = GFX_evt_riftworld_archsite_crater
+    show_sound = event_default
+
+    option = {
+        name = scfe_unseen.7.a
+    }
+}
+
+# Dig site
+namespace = scfe_unseen_dig
+fleet_event = {
+    id = scfe_unseen_dig.1
+    title = scfe_unseen_dig.1.name
+    desc = scfe_unseen_dig.1.desc
+    picture = GFX_evt_cold_barren
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+fleet_event = {
+    id = scfe_unseen_dig.2
+    title = scfe_unseen_dig.2.name
+    desc = scfe_unseen_dig.2.desc
+    picture = GFX_evt_cold_barren
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_unseen_dig.3
+    title = scfe_unseen_dig.3.name
+    desc = scfe_unseen_dig.3.desc
+    picture = GFX_evt_cold_barren
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = INTRIGUING
+    }
+}
+fleet_event = {
+    id = scfe_unseen_dig.4
+    title = scfe_unseen_dig.4.name
+    desc = scfe_unseen_dig.4.desc
+    picture = GFX_evt_cold_barren
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_unseen_dig.5
+    title = scfe_unseen_dig.5.name
+    desc = scfe_unseen_dig.5.desc
+    picture = GFX_evt_cold_barren
+    is_triggered_only = yes
+    archaeology = yes
+
+    option = {
+        name = FASCINATING
+        owner = {
+            end_event_chain = scfe_unseen_chain
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier2unityreward
+                min = @tier2unitymin
+                max = @tier2unitymax
+            }
+        }
+    }
+}

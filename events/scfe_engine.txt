@@ -26,11 +26,6 @@ event = {
 			}
 		}
 	}
-	after = {
-		event_target:global_event_country = {
-			country_event = { id = scfe_game_start.4 days = 10 }
-		}
-	}
 }
 
 country_event = {
@@ -136,49 +131,6 @@ event = {
 	immediate = {
 		event_target:global_event_country = {
 			country_event = { id = scfe_engine.7 days = 7200 random = 720 }
-		}
-	}
-}
-
-country_event = {
-	id = scfe_game_start.4
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		while = {
-			random_system = {
-				limit = {
-					NOT = { exists = owner }
-					scfe_is_valid_system = yes
-					any_system_planet = {
-						scfe_is_barren = yes
-						NOT = { has_modifier = terraforming_candidate }
-						has_anomaly = no
-						is_moon = no
-					}
-					NOT = {
-						any_neighbor_system = {
-							OR = {
-								exists = owner
-								scfe_is_valid_system = no
-							}
-						}
-					}
-				}
-				random_system_planet = {
-					limit = {
-						scfe_is_barren = yes
-						NOT = { has_modifier = terraforming_candidate }
-						has_anomaly = no
-						is_moon = no
-					}
-					change_pc = pc_nuked
-					reset_planet = yes
-					clear_deposits = yes
-				}
-			}
-			count = 3
 		}
 	}
 }
@@ -434,46 +386,41 @@ event = {
 	}
 }
 
-# The Plague
-country_event = {
+# Unseen
+
+event = {
 	id = scfe_engine.11
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = scfe_plague_start
-			has_country_flag = scfe_sick_pop_check
-		}
-		is_ai = no
-		is_machine_empire = no
-		is_synthetic_empire = no
-		count_controlled_planet = {
-			limit = {
-				is_colony = yes
-				is_capital = no
-				colony_age > 12
-				num_pops > 10
-			}
-			count > 4
-		}
-		count_controlled_planet = {
-			limit = {
-				is_colony = yes
-				is_capital = no
-				colony_age >= 60
-				num_pops > 10
-				NOT = { has_planet_flag = colony_event }
-			}
-			count >= 1
-		}
+		years_passed > 70
+		NOT = { has_global_flag = scfe_unseen_start }
 	}
 
 	immediate = {
-		set_country_flag = scfe_sick_pop_check
-		random_list = {
-			30 = { country_event = { id = scfe_plague.1 days = 200 random = 100 } }
-			70 = { }
+		set_global_flag = scfe_unseen_start
+		random_playable_country = {
+			limit = {
+				is_ai = no
+				any_system_within_border = {
+					is_capital_system = no
+					any_system_planet = {
+						OR = {
+							scfe_is_barren = yes
+							scfe_is_barren_cold = yes
+						}
+						NOR = {
+							exists = archaeological_site
+							has_modifier = terraforming_candidate
+						}
+					}
+				}
+			}
+			random_list = {
+				30 = { country_event = { id = scfe_unseen.1 days = 200 random = 100 } }
+				70 = { }
+			}
 		}
 	}
 }

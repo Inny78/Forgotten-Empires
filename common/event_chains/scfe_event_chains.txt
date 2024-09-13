@@ -67,3 +67,7 @@ scfe_celestial_disturbance_chain = {
 		scfe_celestial_disturbance_clues = { max = 7 }
 	}
 }
+scfe_unseen_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_astral_rift.dds"
+	picture = GFX_evt_astral_rift
+}

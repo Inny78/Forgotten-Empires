@@ -21,6 +21,11 @@ on_decade_pulse_country = {
 		scfe_engine.2
 	}
 }
+on_decade_pulse = {
+	events = {
+		scfe_engine.11
+	}
+}
 on_entering_system_first_time = {
 	events = {
 		scfe_lonely_shroud.1

@@ -1,0 +1,23 @@
+special_project = {
+    key = "SCFE_UNSEEN_PROJECT_1"
+    cost = 0
+    days_to_research = 30
+    tech_department = society_technology
+    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    picture = GFX_evt_cold_barren
+    event_chain = scfe_unseen_chain
+
+    requirements = {
+        shipclass_science_ship = 1
+    }
+
+    event_scope = ship_event
+
+    on_success = {
+        country_event = { id = scfe_unseen.3 }
+    }
+
+    on_cancel = {  }
+
+    on_fail = {  }
+}
