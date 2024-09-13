@@ -46,6 +46,7 @@ country_event = {
     desc = scfe_unseen.2.desc
     picture = GFX_evt_communication_event
     show_sound = event_default
+    is_triggered_only = yes
 
     option = {
         name = scfe_subterranean.2.a
@@ -69,6 +70,7 @@ country_event = {
     desc = scfe_unseen.3.desc
     picture = GFX_evt_astral_rift
     show_sound = event_default
+    is_triggered_only = yes
 
     option = {
         name = scfe_unseen.3.a
@@ -96,6 +98,7 @@ country_event = {
     desc = scfe_unseen.4.desc
     picture = GFX_evt_astral_rift
     show_sound = event_default
+    is_triggered_only = yes
 
     option = {
         name = EXCELLENT
@@ -114,6 +117,7 @@ country_event = {
     desc = scfe_unseen.5.desc
     picture = GFX_evt_exploding_planet
     show_sound = event_super_explosion
+    is_triggered_only = yes
 
     option = {
         name = EXCELLENT
@@ -138,6 +142,7 @@ country_event = {
     desc = scfe_unseen.6.desc
     picture = GFX_evt_astral_rift
     show_sound = event_default
+    is_triggered_only = yes
 
     option = {
         name = INTRIGUING
@@ -156,6 +161,7 @@ country_event = {
     desc = scfe_unseen.7.desc
     picture = GFX_evt_riftworld_archsite_crater
     show_sound = event_default
+    is_triggered_only = yes
 
     option = {
         name = scfe_unseen.7.a
