@@ -417,10 +417,7 @@ event = {
 					}
 				}
 			}
-			random_list = {
-				30 = { country_event = { id = scfe_unseen.1 days = 200 random = 100 } }
-				70 = { }
-			}
+			country_event = { id = scfe_unseen.1 days = 200 random = 100 }
 		}
 	}
 }
