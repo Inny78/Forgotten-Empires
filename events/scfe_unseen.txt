@@ -165,6 +165,9 @@ country_event = {
 
     option = {
         name = scfe_unseen.7.a
+        event_target:scfe_unseen_planet = {
+            create_archaeological_site = scfe_site_unseen
+        }
     }
 }
 

@@ -416,7 +416,7 @@
  scfe_inasir_dig.6.desc: "To say our scientists are baffled by the contents of the databanks would be an understatement. Upon further examination, the true nature of this vast data repository became clear - every single entry is a complaint regarding the substandard quality of the alloys produced by the Inasir Corporation. The sheer volume of grievances stored here is staggering, reflecting a level of dissatisfaction that rivals the scale of the operation itself."
  scfe_inasir_dig.6.a: "Why did they keep them?"
 # Echoes of the Unseen
- scfe_unseen_chain: "$scfe_unseen.2.name$"
+ scfe_unseen_chain_title: "$scfe_unseen.2.name$"
  scfe_unseen_chain_desc: "$scfe_unseen.2.desc$"
  scfe_unseen.2.name: "Strange Emission Detected"
  scfe_unseen.2.desc: "Our outpost's sensors in the §Y[scfe_unseen_system.GetName]§! system have detected an unusual anomaly on the surface of §Y[scfe_unseen_planet.GetName]§!. Exotic particles are being emitted at an unprecedented intensity. A science ship must be dispatched to investigate this phenomenon immediately."
