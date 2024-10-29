@@ -1,0 +1,272 @@
+namespace = scfe_ghastly_eyrie_init
+
+ship_event = {
+    id = scfe_ghastly_eyrie_init.1
+    title = "scfe_ghastly_eyrie_init.1.name"
+    desc = "scfe_ghastly_eyrie_init.1.desc"
+    picture = GFX_evt_ghastly_eyrie_space
+    location = root
+    is_triggered_only = yes
+    trigger = {
+        owner = { is_ai = no }
+        from = { has_star_flag = arcane_rune_system }
+    }
+    immediate = {
+        from = { remove_star_flag = arcane_rune_system }
+        owner = { country_event = { id = story.5 days = 30 } }
+    }
+    option = {
+        name = "scfe_ghastly_eyrie_init.1.a"
+    }
+}
+
+namespace = scfe_ghastly_eyrie
+
+# scfe_ghastly_eyrie Digsite
+fleet_event = {
+    id = scfe_ghastly_eyrie.1
+    title = "scfe_ghastly_eyrie.1.name"
+    desc = scfe_ghastly_eyrie.1.desc
+    picture = GFX_evt_ghastly_eyrie_shrine
+    show_sound = event_scanner
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_ghastly_eyrie.1.a
+        small_artifact_reward = yes
+    }
+}
+
+# scfe_ghastly_eyrie Digsite
+fleet_event = {
+    id = scfe_ghastly_eyrie.2
+    title = "scfe_ghastly_eyrie.2.name"
+    desc = scfe_ghastly_eyrie.2.desc
+    picture = GFX_evt_ghastly_eyrie_wraith
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_ghastly_eyrie.1.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghastly_eyrie.3
+    title = "scfe_ghastly_eyrie.2.name"
+    desc = scfe_ghastly_eyrie.3.desc
+    picture = GFX_evt_ghastly_eyrie_wraith
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_ghastly_eyrie.1.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghastly_eyrie.4
+    title = "scfe_ghastly_eyrie.4.name"
+    desc = scfe_ghastly_eyrie.4.desc
+    picture = GFX_evt_ghastly_eyrie_wraith
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_ghastly_eyrie.1.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghastly_eyrie.5
+    title = "scfe_ghastly_eyrie.4.name"
+    desc = scfe_ghastly_eyrie.5.desc
+    picture = GFX_evt_ghastly_eyrie_choice
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_ghastly_eyrie.1.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghastly_eyrie.6
+    title = "scfe_ghastly_eyrie.4.name"
+    desc = scfe_ghastly_eyrie.6.desc
+    picture = GFX_evt_ghastly_eyrie_choice
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = scfe_ghastly_eyrie.6.a
+        medium_artifact_reward = yes
+        if = {
+            limit = { owner = { is_gestalt = no } }
+            hidden_effect = {
+                fleet_event = { id = scfe_ghastly_eyrie.11 }
+            }
+        }
+        else = {
+            hidden_effect = {
+                owner = { country_event = { id = scfe_ghastly_eyrie.13 } }
+            }
+        }
+    }
+}
+fleet_event = {
+    id = scfe_ghastly_eyrie.11
+    title = scfe_ghastly_eyrie.11.name
+    desc = scfe_ghastly_eyrie.11.desc
+    picture = GFX_evt_ghastly_eyrie_wraith
+    show_sound = event_mystic_reveal
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_ghastly_eyrie.11.a
+        leader = {  kill_leader = { show_notification = no } }
+        hidden_effect = {
+            owner = { country_event = { id = scfe_ghastly_eyrie.12 }  }
+        }
+    }
+    option = {
+        name = scfe_ghastly_eyrie.11.b
+        leader = { add_trait = leader_trait_arrested_development }
+        hidden_effect = {
+            owner = { country_event = { id = scfe_ghastly_eyrie.12 }  }
+        }
+    }
+}
+
+country_event = {
+    id = scfe_ghastly_eyrie.12
+    title = scfe_ghastly_eyrie.12.name
+    desc = scfe_ghastly_eyrie.12.desc
+    picture = GFX_evt_arcane_rune_get
+    show_sound = event_mystic_reveal
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_ghastly_eyrie.12.a
+        add_relic = r_scfe_arcane_rune
+        set_global_flag = r_arcane_rune_collected
+        add_resource = { unity = 1000 }
+    }
+}
+
+country_event = {
+    id = scfe_ghastly_eyrie.13
+    title = scfe_ghastly_eyrie.13.name
+    desc = scfe_ghastly_eyrie.13.desc
+    picture = GFX_evt_arcane_rune_get
+    show_sound = event_mystic_reveal
+    is_triggered_only = yes
+
+    option = {
+        trigger = { has_authority = auth_machine_intelligence }
+        name = scfe_ghastly_eyrie.13.mach
+        set_global_flag = r_arcane_rune_collected
+        add_relic = r_scfe_arcane_rune
+        add_resource = { unity = 1000 }
+    }
+    option = {
+        trigger = { has_authority = auth_hive_mind }
+        name = scfe_ghastly_eyrie.13.hive
+        add_relic = r_scfe_arcane_rune
+        add_resource = { unity = 1000 }
+    }
+}
+
+namespace = scfe_arcane_rune
+
+# Arcane Rune Activation
+
+country_event = {
+    id = scfe_arcane_rune.1
+    title = scfe_arcane_rune.1.name
+    desc = scfe_arcane_rune.1.desc
+    picture = GFX_evt_power_runes_arcane_rune
+
+    hide_window = no
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_arcane_rune.1.a
+        create_leader = {
+            class = official
+            species = owner_main_species
+            name = random
+            skill = 10
+            leader_age_min = 18
+            leader_age_max = 20
+        }
+    }
+    option = {
+        name = scfe_arcane_rune.1.b
+        create_leader = {
+            class = scientist
+            species = owner_main_species
+            name = random
+            skill = 10
+            leader_age_min = 18
+            leader_age_max = 20
+        }
+    }
+    option = {
+        name = scfe_arcane_rune.1.c
+        create_leader = {
+            class = commander
+            species = owner_main_species
+            name = random
+            skill = 10
+            leader_age_min = 18
+            leader_age_max = 20
+        }
+    }
+}

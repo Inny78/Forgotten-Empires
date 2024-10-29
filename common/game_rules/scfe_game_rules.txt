@@ -67,6 +67,14 @@ can_terraform_planet = {
             has_modifier = metal_planet
         }
     }
+	custom_tooltip = {
+		fail_text = COLONIZATION_IMPOSSIBLE_DEFENDED_PLANET
+		NOT = { has_planet_flag = planet_defended_forbid_colonization }
+	}
+	custom_tooltip = {
+		fail_text = "COLONIZATION_IMPOSSIBLE_SMEEGIBB_PLANET"
+		NOT = { has_planet_flag = cannot_colonize_smeegibb_shelter }
+	}
     # Forgotten Empires
     custom_tooltip = {
         fail_text = scfe_cant_terraform_special_planet
@@ -90,6 +98,16 @@ ai_should_restrict_system = {
             exists = owner
             owner = { is_country_type = fallen_empire }
         }
+		AND = {
+			root = { is_country_type = voidworms }
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = dormant_marauders
+					is_country_type = awakened_marauders
+				}
+			}
+		}
         AND = {
             root = {
                 OR = {
@@ -124,6 +142,29 @@ ai_should_restrict_system = {
         AND = {
             has_star_flag = scfe_ai_avoid_system
             NOT = { exists = owner }
+        }
+    }
+}
+
+# this = system
+# root = country
+system_blocks_sensors = {
+    OR = {
+        is_inside_nebula = yes
+        has_modifier = space_storm
+        has_modifier = zroni_storm
+        has_modifier = queen_scorn_storm
+        has_star_flag = lcluster
+        has_star_flag = sealed_system
+        has_star_flag = storm_system
+        # Forgotten Empires
+        AND = {
+            exists = owner
+            owner = {
+                has_relic = r_scfe_invisibility_rune
+                has_modifier = scfe_invisibility_rune
+            }
+            NOT = { root = { is_same_empire = prev.owner } }
         }
     }
 }

@@ -1,5 +1,6 @@
 # Irony this is a placeholder file please ignore it
 annihilator_system = { always = no }
+has_ariphaos_assorted_precursors = { always = no }
 atw_is_alpine = { always = no }
 atw_is_arctic = { always = no }
 atw_is_barren = { always = no }

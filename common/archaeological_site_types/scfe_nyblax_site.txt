@@ -1,0 +1,274 @@
+# Power Stone
+scfe_techis_site = {
+    desc = scfe_techis_relic_world_site_desc
+    picture = GFX_evt_techis_world
+    stages = 6
+    max_instances = 1
+    allow = {
+        is_ship_class = shipclass_science_ship
+        exists = leader
+    }
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_D1
+        event = scfe_techis.1
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_D2
+        event = scfe_techis.2
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_D3
+        event = scfe_techis.3
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_D4
+        event = scfe_techis.4
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_D5
+        event = scfe_techis.5
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_D6
+        event = scfe_techis.6
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# haste rune
+scfe_narrow_maze_site = {
+    desc = scfe_narrow_maze_relic_world_site_desc
+    picture = GFX_evt_narrow_maze
+    stages = 5
+    max_instances = 1
+    allow = {
+        is_ship_class = shipclass_science_ship
+        exists = leader
+    }
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_A1
+        event = scfe_narrow_maze.1
+    }
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_A2
+        event = scfe_narrow_maze.2
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_A3
+        event = scfe_narrow_maze.3
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_A4
+        event = scfe_narrow_maze.4
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_A5
+        event = scfe_narrow_maze.5
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# illusion rune
+scfe_jex_site = {
+    desc = scfe_jex_relic_world_site_desc
+    picture = GFX_evt_jex_world
+    stages = 5
+    max_instances = 1
+    allow = {
+        is_ship_class = shipclass_science_ship
+        exists = leader
+    }
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_B1
+        event = scfe_jex.1
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_B2
+        event = scfe_jex.2
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_B3
+        event = scfe_jex.3
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_B4
+        event = scfe_jex.4
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_B5
+        event = scfe_jex.5
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# arcane rune
+scfe_ghastly_eyrie_site = {
+    desc = scfe_ghastly_eyrie_relic_world_site_desc
+    picture = GFX_evt_ghastly_eyrie_planet
+    stages = 6
+    max_instances = 1
+    allow = {
+        is_ship_class = shipclass_science_ship
+        exists = leader
+    }
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_C1
+        event = scfe_ghastly_eyrie.1
+    }
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_C2
+        event = scfe_ghastly_eyrie.2
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_C3
+        event = scfe_ghastly_eyrie.3
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_C4
+        event = scfe_ghastly_eyrie.4
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_C5
+        event = scfe_ghastly_eyrie.5
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_C6
+        event = scfe_ghastly_eyrie.6
+    }
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# regeneration rune
+scfe_quad_site = {
+    desc = scfe_quad_relic_world_site_desc
+    picture = GFX_evt_quad_space
+    stages = 2
+    max_instances = 1
+    allow = {
+        is_ship_class = shipclass_science_ship
+        exists = leader
+    }
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E1
+        event = scfe_quad.1
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E2
+        event = scfe_quad.2
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+scfe_riki_site = {
+    desc = scfe_riki_relic_world_site_desc
+    picture = GFX_evt_riki_city
+    stages = 5
+    max_instances = 1
+    allow = {
+        is_ship_class = shipclass_science_ship
+        exists = leader
+    }
+    visible = {
+        scfe_dig_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_F1
+        event = scfe_riki.1
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_F2
+        event = scfe_riki.2
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_F3
+        event = scfe_riki.3
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_F4
+        event = scfe_riki.4
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_F5
+        event = scfe_riki.5
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}

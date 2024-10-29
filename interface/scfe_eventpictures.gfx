@@ -471,7 +471,230 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_scfe_shaded_system"
-		textureFile = "gfx/event_pictures/scfe_shaded_system.png"
+		textureFile = "gfx/event_pictures/scfe_shaded_system.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_scfe_frozen_city"
+		textureFile = "gfx/event_pictures/scfe_frozen_city.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_scfe_core_lab"
+		textureFile = "gfx/event_pictures/scfe_core_lab.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	# Nyblax
+	spriteType = {
+		name = "GFX_evt_power_runes_arcane_rune"
+		texturefile = "gfx/event_pictures/scfe_arcane_rune_use.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_techis_world"
+		texturefile = "gfx/event_pictures/scfe_techis_world.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_techis_mp"
+		texturefile = "gfx/event_pictures/scfe_techis_mp.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_techis_nyblax"
+		texturefile = "gfx/event_pictures/scfe_techis_nyblax.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_techis_archives"
+		texturefile = "gfx/event_pictures/scfe_techis_archives.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_techis_rune"
+		texturefile = "gfx/event_pictures/scfe_techis_rune.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_narrow_maze_rune"
+		texturefile = "gfx/event_pictures/scfe_narrow_maze_rune.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex_world"
+		texturefile = "gfx/event_pictures/scfe_jex_world.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex_world_2"
+		texturefile = "gfx/event_pictures/scfe_jex_world_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex_rifts"
+		texturefile = "gfx/event_pictures/scfe_jex_rifts.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex"
+		texturefile = "gfx/event_pictures/scfe_jex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex_spire"
+		texturefile = "gfx/event_pictures/scfe_jex_spire.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex_rune"
+		texturefile = "gfx/event_pictures/scfe_jex_rune.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_ghastly_eyrie_planet"
+		texturefile = "gfx/event_pictures/scfe_ghastly_eyrie_planet.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_ghastly_eyrie_shrine"
+		texturefile = "gfx/event_pictures/scfe_ghastly_eyrie_shrine.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_ghastly_eyrie_wraith"
+		texturefile = "gfx/event_pictures/scfe_ghastly_eyrie_wraith.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_ghastly_eyrie_choice"
+		texturefile = "gfx/event_pictures/scfe_ghastly_eyrie_choice.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_arcane_rune_get"
+		texturefile = "gfx/event_pictures/scfe_arcane_rune_get.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_quad_destroyed"
+		texturefile = "gfx/event_pictures/scfe_quad_destroyed.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_quad_tunnel"
+		texturefile = "gfx/event_pictures/scfe_quad_tunnel.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_quad_lady"
+		texturefile = "gfx/event_pictures/scfe_quad_lady.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_riki_paintings"
+		texturefile = "gfx/event_pictures/scfe_riki_paintings.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_riki_window"
+		texturefile = "gfx/event_pictures/scfe_riki_window.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_riki_cosmic_cube"
+		texturefile = "gfx/event_pictures/scfe_riki_cosmic_cube.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_riki_city"
+		texturefile = "gfx/event_pictures/scfe_riki_city.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_techis_space"
+		texturefile = "gfx/event_pictures/scfe_techis_space.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_narrow_maze"
+		texturefile = "gfx/event_pictures/scfe_narrow_maze.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_narrow_maze_church"
+		texturefile = "gfx/event_pictures/scfe_narrow_maze_church.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_narrow_maze_dead"
+		texturefile = "gfx/event_pictures/scfe_narrow_maze_dead.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_narrow_maze_ascend"
+		texturefile = "gfx/event_pictures/scfe_narrow_maze_ascend.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_jex_space"
+		texturefile = "gfx/event_pictures/scfe_jex_space.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_ghastly_eyrie_space"
+		texturefile = "gfx/event_pictures/scfe_ghastly_eyrie_space.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_quad_space"
+		texturefile = "gfx/event_pictures/scfe_quad_space.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_riki_space"
+		texturefile = "gfx/event_pictures/scfe_riki_space.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_riki_lost"
+		texturefile = "gfx/event_pictures/scfe_riki_lost.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}

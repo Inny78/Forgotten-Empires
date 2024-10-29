@@ -10,6 +10,7 @@ special_project = {
     requirements = {
         shipclass_science_ship = 1
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 

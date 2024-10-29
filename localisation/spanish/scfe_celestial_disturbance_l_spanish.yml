@@ -11,7 +11,9 @@
  scfe_celestial_disturbance_home_name: "Va'dyalna"
  scfe_celestial_disturbance_home_moon_name: "Tel'kalaryn"
  scfe_celestial_init.1.name: "New system detected"
- scfe_celestial_init.1.desc: "An optimization in our hyperlane detection systems allowed us to notice a faint hyperlane that previously eluded us, allowing the detection of an unexplored solar system."
+ scfe_celestial_init.1.base: "An optimization in our hyperlane detection systems allowed us to notice a faint hyperlane that previously eluded us, allowing the detection of an unexplored solar system, nicknamed"
+ scfe_celestial_init.1.desc: "$scfe_celestial_init.1.base$ §HAnansi§!."
+ scfe_celestial_init.point: "$scfe_celestial_init.1.name$: §HAnansi§!."
  scfe_celestial_disturbance.2.name: "A Disturbed System"
  scfe_celestial_disturbance.2.desc: "Upon entering the system, our ship's scanners detect an unusual celestial configuration. At its center lies a striking binary composed of a neutron star and an M class star. The orbits of the planets within the system appear highly irregular, suggesting that the neutron star is a recent arrival, having caused significant gravitational disturbances. The crew is eager to begin a thorough exploration to study the consequences of these changes and uncover any secrets this system may hold."
  # Clues

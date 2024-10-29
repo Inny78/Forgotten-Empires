@@ -17,13 +17,14 @@ on_five_year_pulse_country = {
 }
 on_decade_pulse_country = {
 	events = {
-		scfe_engine.1
 		scfe_engine.2
 	}
 }
 on_decade_pulse = {
 	events = {
+		scfe_engine.1
 		scfe_engine.11
+		scfe_engine.12
 	}
 }
 on_entering_system_first_time = {
@@ -38,6 +39,15 @@ on_entering_system_first_time = {
 		scfe_astanine.12
 		scfe_shaded.22
 		scfe_celestial_disturbance.1
+		scfe_ghost_planet.1
+		scfe_ghost_planet.5
+		scfe_ghost_planet.11
+		scfe_ghastly_eyrie_init.1
+		scfe_techis_init.1
+		scfe_narrow_maze_init.1
+		scfe_quad_init.1
+		scfe_jex_init.1
+		scfe_riki_init.1
 	}
 }
 on_entering_system = {
@@ -117,6 +127,10 @@ on_survey_planet = {
 		scfe_celestial_disturbance.7
 		scfe_celestial_disturbance.8
 		scfe_celestial_disturbance.9
+		scfe_ghost_planet.2
+		scfe_ghost_planet.4
+		scfe_ghost_planet.6
+		scfe_ghost_planet.12
 	}
 }
 
@@ -190,42 +204,5 @@ on_terraforming_complete = {
 on_building_starbase_outpost = {
 	events = {
 		scfe_engine.10
-	}
-}
-
-########################## Plague On-Actions ###############################
-
-# Pop is resettled
-# From is previous planet
-# planet = { } is new planet
-on_pop_resettled = {
-	events = {
-	}
-}
-# Pop is abducted by raiding stance
-# This = Pop scope
-# From = planet abducted from
-on_pop_abducted = {
-	events = {
-	}
-}
-# A planets controller becomes a country not the same as the owner.
-# Root = Planet
-# From = Planet Owner
-# FromFrom = Planet Controller (the one occupying)
-on_planet_occupied = {
-	events = {
-	}
-}
-# This = Planet scope
-# From = Country scope (new owner)
-# FromFrom = Country scope (previous owner, if any)
-on_planet_transfer = {
-	events = {
-	}
-}
-# this = country
-on_monthly_pulse_country = {
-	events = {
 	}
 }

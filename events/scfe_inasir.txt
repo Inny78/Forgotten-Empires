@@ -24,6 +24,12 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -34,10 +40,16 @@ fleet_event = {
     id = scfe_inasir_dig.2
     title = scfe_inasir_dig.2.name
     desc = scfe_inasir_dig.2.desc
-    picture = GFX_evt_barren_dig_site
+    picture = GFX_evt_resource_cache
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -48,10 +60,16 @@ fleet_event = {
     id = scfe_inasir_dig.3
     title = scfe_inasir_dig.3.name
     desc = scfe_inasir_dig.3.desc
-    picture = GFX_evt_barren_dig_site
+    picture = GFX_evt_resource_cache
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -62,10 +80,16 @@ fleet_event = {
     id = scfe_inasir_dig.4
     title = scfe_inasir_dig.4.name
     desc = scfe_inasir_dig.4.desc
-    picture = GFX_evt_barren_dig_site
+    picture = GFX_evt_space_hangar
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -76,10 +100,16 @@ fleet_event = {
     id = scfe_inasir_dig.5
     title = scfe_inasir_dig.5.name
     desc = scfe_inasir_dig.5.desc
-    picture = GFX_evt_barren_dig_site
+    picture = GFX_evt_engineering_bay
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
 
     option = {
         name = DIG
@@ -94,6 +124,16 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
 
     option = {
         name = scfe_inasir_dig.6.a

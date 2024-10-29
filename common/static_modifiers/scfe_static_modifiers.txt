@@ -146,9 +146,6 @@ scfe_woorskyr_tree_network = {
 	icon_frame = 1
 }
 # Precursor Story Pack
-scfe_relic_activation_cooldown = {
-	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
-}
 mod_scfe_precursor_sless_secrets = {
 	modify_species_cost_mult = -0.33
 }
@@ -256,7 +253,6 @@ scfe_rooted_magnetic_field = {
 	pop_environment_tolerance = -0.05
 	pop_growth_speed = -0.05
 	planet_jobs_physics_research_produces_mult = 0.10
-
 	icon = "gfx/interface/icons/planet_modifiers/pm_weak_magnetic_field.dds"
 	icon_frame = 3
 }
@@ -317,4 +313,46 @@ scfe_subterranean_bombardment_1 = {
 scfe_subterranean_bombardment_2 = {
 	ship_orbital_bombardment_army_damage_mult = 0.1
 	ship_orbital_bombardment_pop_damage_mult = 0.1
+}
+# Ghosts
+scfe_orders_trinket_activated = {
+	planet_army_build_speed_mult = 0.25
+	army_damage_taken_mult = -0.1
+	army_morale_damage_taken_mult = -0.1
+}
+scfe_vinarii_mastery = {
+	planet_pops_food_upkeep_mult = -0.1
+	colony_start_num_pops_add = 1
+	planet_colony_development_speed_mult = 0.1
+}
+# Nyblax
+scfe_invisibility_rune = {
+	ship_evasion_mult = 0.25
+	ship_disengage_chance_mult = 0.25
+	army_disengage_chance_mult = 0.25
+}
+scfe_invisibility_rune_fc = {
+	ship_evasion_mult = 0.25
+	ship_disengage_chance_mult = 0.25
+	army_disengage_chance_mult = 0.25
+	ship_cloaking_strength_add = 2
+}
+scfe_regeneration_rune = {
+	pop_growth_speed = 0.25
+	planet_pop_assembly_organic_mult = 0.1
+	country_food_produces_mult = 0.20
+}
+scfe_planet_haste_rune_boost = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_scfe_haste_run_boots.dds"
+	icon_frame = 1
+	planet_building_build_speed_mult = 1.0
+	planet_clear_blocker_time_mult = -0.5
+}
+scfe_planet_illusion_rune_boost= {
+	icon = "gfx/interface/icons/planet_modifiers/pm_scfe_illusion_rune_terraform.dds"
+	icon_frame = 1
+}
+scfe_power_rune_boost = {
+	ship_orbital_bombardment_mult = 0.5
+	ship_damage_against_starbases_mult = 0.2
 }

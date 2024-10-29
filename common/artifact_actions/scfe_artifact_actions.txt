@@ -208,3 +208,33 @@ artifact_scfe_precursor_first_empire_1_research = {
         }
     }
 }
+artifact_scfe_precursor_vinarii_research = {
+    resources = {
+        category = artifact_actions
+        cost = {
+            minor_artifacts = 750
+        }
+    }
+
+    ai_weight = {
+        weight = 0
+    }
+
+    potential = {
+        has_country_flag = vinarii_precursor_done
+        NOT = { has_country_flag = scfe_precursor_vinarii_research_started }
+        has_ancrel = yes
+    }
+
+    effect = {
+        enable_special_project = {
+            name = "SCFE_PRECURSOR_VINARII_SECRETS"
+            location = capital_scope
+            owner = ROOT
+        }
+        hidden_effect = {
+            set_country_flag = scfe_precursor_vinarii_research_started
+            country_event = { id = ancrel.10040 }
+        }
+    }
+}

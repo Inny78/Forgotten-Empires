@@ -14,6 +14,7 @@ special_project = {
         leader = scientist
         skill > 3
     }
+    fail_trigger = { }
 
     on_success = {
         owner = { country_event = { id = scfe_znkar.3 } }
@@ -28,13 +29,14 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
     location = yes
 	event_chain = scfe_znkar_chain
-     event_scope = ship_event
+    event_scope = ship_event
 
     requirements = {
         shipclass_science_ship = 1
         leader = scientist
         skill > 3
     }
+    fail_trigger = { }
 
     on_progress_25 = {
         owner = { country_event = { id = scfe_znkar.5 } }
@@ -61,6 +63,7 @@ special_project = {
         leader = scientist
         skill > 3
     }
+    fail_trigger = { }
 
     on_progress_50 = {
         owner = { country_event = { id = scfe_znkar.7 } }
@@ -87,6 +90,7 @@ special_project = {
         leader = scientist
         skill > 3
     }
+    fail_trigger = { }
 
     on_success = {
         owner = { country_event = { id = scfe_znkar.9 } }
@@ -105,7 +109,8 @@ special_project = {
 
 	requirements = {
 	}
-	
+    fail_trigger = { }
+
 	on_success = {
 		country_event = { id = scfe_znkar.10 }
 	}

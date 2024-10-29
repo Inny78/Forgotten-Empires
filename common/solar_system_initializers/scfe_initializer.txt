@@ -8,7 +8,7 @@ scfe_sless_home_system = {
     class = rl_standard_stars
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_sless_home_system }
+    flags = { scfe_sless_home_system precursor_system }
 
     prevent_anomalies = yes
 
@@ -117,7 +117,7 @@ scfe_coprean_home_system = {
     class = "rl_binary_stars"
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_coprean_home_system }
+    flags = { scfe_coprean_home_system precursor_system }
     prevent_anomalies = yes
 
     asteroid_belt = {
@@ -217,7 +217,7 @@ scfe_astanine_home_system = {
     class = "rl_standard_stars"
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_astanine_home_system }
+    flags = { scfe_astanine_home_system precursor_system }
 
     prevent_anomalies = yes
 
@@ -346,11 +346,9 @@ scfe_astanine_home_system = {
 # Strange Worlds
 strange_init_01 = {
     class = "rl_standard_stars"
-
+    flags = { strange_world_system }
     usage = misc_system_init
-    usage_odds = 100
-    max_instances = 1
-    spawn_chance = 100
+    usage_odds = 0
 
     planet = {
         count = 1
@@ -394,11 +392,9 @@ strange_init_01 = {
 }
 strange_init_02 = {
     class = "rl_standard_stars"
-
+    flags = { strange_world_system }
     usage = misc_system_init
-    usage_odds = 100
-    max_instances = 1
-    spawn_chance = 100
+    usage_odds = 0
 
     planet = {
         count = 1
@@ -442,11 +438,9 @@ strange_init_02 = {
 }
 strange_init_03 = {
     class = "rl_standard_stars"
-
+    flags = { strange_world_system }
     usage = misc_system_init
-    usage_odds = 100
-    max_instances = 1
-    spawn_chance = 100
+    usage_odds = 0
 
     planet = {
         count = 1
@@ -494,11 +488,9 @@ strange_init_03 = {
 }
 strange_init_04 = {
     class = "rl_standard_stars"
-
+    flags = { strange_world_system }
     usage = misc_system_init
-    usage_odds = 100
-    max_instances = 1
-    spawn_chance = 100
+    usage_odds = 0
 
     planet = {
         count = 1
@@ -542,11 +534,9 @@ strange_init_04 = {
 }
 strange_init_05 = {
     class = "rl_standard_stars"
-
+    flags = { strange_world_system }
     usage = misc_system_init
-    usage_odds = 100
-    max_instances = 1
-    spawn_chance = 100
+    usage_odds = 0
 
     planet = {
         count = 1
@@ -592,7 +582,7 @@ strange_init_05 = {
 # Shaded Empire
 shaded_lead1_system = {
     name = scfe_shaded_clue1_system_name
-    flags = { scfe_shaded_lead1 }
+    flags = { scfe_shaded_lead1 precursor_system }
     class = "sc_m_giant"
     asteroid_belt = {
         type = rocky_asteroid_belt
@@ -648,7 +638,7 @@ shaded_lead1_system = {
 }
 shaded_lead2_system = {
     name = scfe_shaded_clue2_system_name
-    flags = { scfe_shaded_lead2 }
+    flags = { scfe_shaded_lead2 precursor_system }
     class = "sc_m"
 
     usage = misc_system_init
@@ -660,7 +650,7 @@ shaded_lead2_system = {
         save_global_event_target_as = scfe_shaded_lead2
         spawn_megastructure = {
             type = "habitat_central_complex_ruined"
-            planet = event_target:nexus_planet
+            planet = event_target:scfe_shaded_habitat_planet
             init_effect = {
                 save_global_event_target_as = scfe_shaded_habitat_lead2
                 create_ambient_object = {
@@ -749,7 +739,7 @@ shaded_lead2_system = {
 }
 shaded_lead3_system = {
     name = scfe_shaded_clue3_system_name
-    flags = { scfe_shaded_lead3 }
+    flags = { scfe_shaded_lead3 precursor_system }
     class = "sc_g"
 
     usage = misc_system_init
@@ -793,7 +783,7 @@ shaded_lead3_system = {
 }
 shaded_lead4_system = {
     name = scfe_shaded_clue4_system_name
-    flags = { scfe_shaded_lead4 }
+    flags = { scfe_shaded_lead4 precursor_system }
     class = "sc_a"
 
     usage = misc_system_init
@@ -813,12 +803,24 @@ shaded_lead4_system = {
         size = 30
         init_effect = {
             save_global_event_target_as = scfe_shaded_star_lead4
-        }
+            create_ambient_object = {
+                type = scfe_precursor_cruiser_01_amb
+                scale = 2
+                entity_offset_height = 5
+                location = this
+            }
+            create_ambient_object = {
+                type = scfe_toxoid_science_ship_amb
+                scale = 0.75
+                entity_offset_height = 6
+                location = this
+            }
+       }
     }
 }
 shaded_colony_system = {
     name = scfe_saaldryn
-    flags = { scfe_shaded_colony_system crisis_spawn_exclude }
+    flags = { scfe_shaded_colony_system crisis_spawn_exclude precursor_system }
     class = "sc_m"
 
     usage = misc_system_init
@@ -866,7 +868,7 @@ shaded_colony_system = {
 scfe_znkar_init_01 = {
     class = "rl_standard_stars"
     name = scfe_znkar_kamva
-
+    flags = { precursor_system }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -942,7 +944,7 @@ scfe_znkar_init_01 = {
 # A Celestial Disturbance
 scfe_celestial_disturbance_system = {
     class = sc_scfe_binary_1 # The primary star, a neutron star
-    flags = { scfe_celestial_disturbance_system crisis_spawn_exclude }
+    flags = { scfe_celestial_disturbance_system precursor_system scfe_ai_avoid_system }
     name = scfe_celestial_disturbance_system_name
 
     usage = misc_system_init
@@ -1085,6 +1087,7 @@ scfe_celestial_disturbance_system = {
 # Alshigans
 scfe_alshigans_init_01 = {
     class = "rl_standard_stars"
+    flags = { precursor_system }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -1166,6 +1169,7 @@ scfe_alshigans_init_01 = {
 }
 scfe_alshigans_init_02 = {
     class = "rl_standard_stars"
+    flags = { precursor_system }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -1247,6 +1251,7 @@ scfe_alshigans_init_02 = {
 }
 scfe_alshigans_init_03 = {
     class = "rl_standard_stars"
+    flags = { precursor_system }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -1330,4 +1335,465 @@ scfe_alshigans_init_03 = {
             add_deposit = d_engineering_3
         }
     }
+}
+# Ghosts
+scfe_ghost_system_01 = {
+    class = sc_g
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    flags = { scfe_ghost_system_01 precursor_system scfe_ai_avoid_system }
+    name = scfe_ghost_izanami
+    init_effect = { save_global_event_target_as = scfe_ghost_system1 }
+
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 100
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_4
+        }
+    }
+    planet = {
+        orbit_distance = 40
+        count = 1
+        class = pc_barren
+        anomaly = none
+        flags = { scfe_ghost_planet_mining }
+    }
+    planet = {
+        name = scfe_ghost_bchania
+        count = 1
+        orbit_distance = 30
+        class = "pc_relic"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+        flags = { scfe_ghost_planet forbid_guillis_planet_modifier }
+        init_effect = { save_global_event_target_as = scfe_ghost_planet1 }
+    }
+    planet = {
+        count = 1
+        orbit_distance = 70
+        class = pc_gas_giant
+        has_ring = yes
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 20 max = 30 }
+        anomaly = none
+        init_effect = { add_deposit = d_exotic_gases_2 }
+    }
+}
+scfe_ghost_system_02 = {
+    class = sc_scfe_empty_space
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    flags = { scfe_ghost_system_02 precursor_system }
+    init_effect = { save_global_event_target_as = scfe_ghost_system2 }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 20
+        anomaly = none
+        flags = { scfe_ghost_void }
+        init_effect = { clear_deposits = yes }
+    }
+    planet = {
+        orbit_distance = 35
+        count = 1
+        class = pc_barren_cold
+        anomaly = none
+        init_effect = { add_deposit = d_rare_crystals_2 }
+    }
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = pc_barren_cold
+        anomaly = none
+    }
+    planet = {
+        name = scfe_ghost_dtarren
+        count = 1
+        orbit_distance = 40
+        class = "pc_frozen"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 16 max = 20 }
+        anomaly = none
+        flags = { scfe_ghost_planet2 forbid_guillis_planet_modifier }
+        init_effect = { save_global_event_target_as = scfe_ghost_planet2 }
+    }
+}
+scfe_ghost_system_03 = {
+    class = sc_scfe_empty_space
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    flags = { scfe_ghost_system_03 precursor_system }
+    init_effect = { save_global_event_target_as = scfe_ghost_system3 }
+
+    asteroid_belt = {
+        type = icy_asteroid_belt
+        radius = 120
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 20
+        anomaly = none
+        flags = { scfe_ghost_void }
+        init_effect = { clear_deposits = yes }
+    }
+    planet = {
+        count = 1
+        orbit_distance = 60
+        class = "pc_gas_giant"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = 30
+        anomaly = none
+        moon = {
+            name = scfe_ghost_kraatdaan
+            class = "pc_broken"
+            size = 10
+            orbit_distance = 10
+            orbit_angle = 300
+            has_ring = no
+            flags = { scfe_ghost_planet3 forbid_guillis_planet_modifier }
+            init_effect = { save_global_event_target_as = scfe_ghost_planet3 }
+        }
+    }
+}
+# Nyblax
+scfe_hyrokkin = {
+    name = scfe_hyrokkin
+    class = "sc_pulsar"
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    flags = { arcane_rune_system precursor_system }
+    prevent_anomalies = yes
+
+    planet = {
+        name = scfe_hyrokkin
+        class = "pc_pulsar"
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 45
+        has_ring = no
+    }
+
+    planet = {
+        name = scfe_moxxu
+        class = "pc_shrouded"
+        orbit_distance = 75
+        orbit_angle = { min = 90 max = 270 }
+        size = 15
+        has_ring = no
+        modifiers = none
+        init_effect = {
+            prevent_anomaly = yes
+            clear_deposits = yes
+            create_archaeological_site = scfe_ghastly_eyrie_site
+        }
+    }
+}
+scfe_khnum = {
+    name = scfe_khnum
+    class = "sc_black_hole"
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    flags = { damage_rune_system precursor_system }
+    prevent_anomalies = yes
+
+    planet = {
+        name = scfe_khnum
+        class = "pc_black_hole"
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 35
+        has_ring = no
+    }
+
+    planet = {
+        name = scfe_byoti
+        class = "pc_broken"
+        orbit_distance = 75
+        orbit_angle = { min = 90 max = 270 }
+        size = 10
+        has_ring = no
+        modifiers = none
+        init_effect = {
+            prevent_anomaly = yes
+        }
+    }
+    planet = {
+        name = scfe_vorcia
+        class = "pc_broken"
+        orbit_distance = 35
+        orbit_angle = { min = 90 max = 270 }
+        size = 14
+        has_ring = no
+        modifiers = none
+        init_effect = {
+            prevent_anomaly = yes
+        }
+    }
+    planet = {
+        name = scfe_tharkun
+        class = "pc_broken"
+        orbit_distance = 35
+        orbit_angle = { min = 90 max = 270 }
+        size = 22
+        has_ring = no
+        modifiers = none
+        init_effect = {
+            prevent_anomaly = yes
+            clear_deposits = yes
+            relic_world_deposits = yes
+            create_archaeological_site = scfe_techis_site
+        }
+    }
+}
+scfe_severing_lash = {
+	name = scfe_severing_lash
+	class = "sc_neutron_star"
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	flags = { haste_rune_system precursor_system }
+    prevent_anomalies = yes
+
+	planet = {
+		name = scfe_severing_lash
+		class = "pc_neutron_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 15
+		has_ring = no
+	}
+
+	planet = {
+		name = scfe_ninsun
+		class = "pc_relic"
+		orbit_distance = 120
+		orbit_angle = { min = 90 max = 270 }
+		size = 17
+		has_ring = no
+		modifiers = none
+		init_effect = {
+			create_archaeological_site = scfe_narrow_maze_site
+		}
+	}
+}
+scfe_kikimora = {
+	name = scfe_kikimora
+	class = "sc_b"
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	flags = { regeneration_rune_system precursor_system }
+	prevent_anomalies = yes
+
+	planet = {
+		name = scfe_kikimora
+		class = "pc_b_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+	}
+
+	planet = {
+		name = scfe_qresh
+		class = "pc_molten"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 11
+		has_ring = no
+        moon = {
+			name = scfe_aman
+			class = "pc_barren"
+			size = 6
+			orbit_distance = 8
+			orbit_angle = 320
+			has_ring = yes
+		}
+		
+		moon = {
+			name = scfe_mcholou
+			class = "pc_infested"
+			size = 10
+			orbit_distance = 12
+			orbit_angle = 150
+			has_ring = no
+            init_effect = {
+                clear_deposits = yes
+                create_archaeological_site = scfe_quad_site
+            }
+		}
+		moon = {
+			name = scfe_dracia
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 4
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+}
+scfe_mireska = {
+	name = scfe_mireska
+	class = "sc_black_hole"
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	flags = { illusion_rune_system precursor_system }
+	prevent_anomalies = yes
+
+	planet = {
+		name = scfe_mireska
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	planet = {
+		name = scfe_jex
+		class = "pc_gaia"
+		orbit_distance = 75
+		orbit_angle = { min = 90 max = 270 }
+		size = 13
+		has_ring = yes
+		modifiers = none
+		init_effect = {
+			clear_deposits = yes
+			create_archaeological_site = scfe_jex_site
+		}
+	}
+}
+scfe_tahlin = {
+	name = scfe_tahlin
+	class = "sc_g"
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	flags = { invisibility_rune_system precursor_system }
+	prevent_anomalies = yes
+
+	planet = {
+		name = scfe_tahlin
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+	
+	planet = {
+		name = scfe_meandrus
+		class = "pc_molten"
+		orbit_distance = 75
+		orbit_angle = { min = 90 max = 270 }
+		size = 24
+		has_ring = yes
+		change_orbit = 5
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+	planet = {
+		name = scfe_deani
+		class = "pc_barren"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 18
+		has_ring = no
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			create_archaeological_site = scfe_riki_site
+            create_ambient_object = {
+                type = scfe_abandoned_invisible_observation_outpost
+                scale = 0.25
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                }
+            }
+        }
+	}
+    planet = {
+		name = scfe_ahemait
+		class = "pc_ocean"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 17
+		has_ring = no
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+	planet = {
+		name = scfe_jasper
+		class = "pc_gas_giant"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 30
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		moon = {
+			name = scfe_jasper_circle
+			class = "pc_molten"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+			modifiers = none
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		}
+	}
+	planet = {
+		name = scfe_syke
+		class = "pc_frozen"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 22
+		has_ring = no
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
 }

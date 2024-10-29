@@ -14,7 +14,8 @@ special_project = {
 		leader = scientist
 		skill > 4
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		ship_event = { id = scfe_alshigans.1 }
 	}
@@ -36,7 +37,8 @@ special_project = {
 		leader = scientist
 		skill > 4
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		ship_event = { id = scfe_alshigans.2 }
 	}
@@ -58,7 +60,8 @@ special_project = {
 		leader = scientist
 		skill > 4
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		ship_event = { id = scfe_alshigans.3 }
 	}
@@ -80,7 +83,8 @@ special_project = {
 		leader = scientist
 		skill > 4
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		ship_event = { id = scfe_alshigans.4 }
 	}
@@ -102,7 +106,8 @@ special_project = {
 		leader = scientist
 		skill > 4
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		ship_event = { id = scfe_alshigans.5 }
 	}
@@ -120,7 +125,8 @@ special_project = {
 
 	requirements = {
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		country_event = { id = scfe_alshigans.12 }
 	}

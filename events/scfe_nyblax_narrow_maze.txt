@@ -1,0 +1,141 @@
+namespace = scfe_narrow_maze_init
+ship_event = {
+    id = scfe_narrow_maze_init.1
+    title = scfe_narrow_maze_init.1.name
+    desc = scfe_narrow_maze_init.1.desc
+    picture = GFX_evt_narrow_maze
+    location = root
+    is_triggered_only = yes
+    trigger = {
+        owner = { is_ai = no }
+        from = { has_star_flag = haste_rune_system }
+    }
+    immediate = {
+		from = { remove_star_flag = haste_rune_system }
+        owner = { country_event = { id = story.5 days = 30 } }
+    }
+    option = {
+        name = scfe_narrow_maze_init.1.a
+    }
+}
+
+namespace = scfe_narrow_maze
+
+
+# narrow_maze Digsite
+fleet_event = {
+    id = scfe_narrow_maze.1
+    title = scfe_narrow_maze.1.name
+    desc = scfe_narrow_maze.1.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_ghost_town
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_narrow_maze.1.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_narrow_maze.2
+    title = scfe_narrow_maze.2.name
+    desc = scfe_narrow_maze.2.desc
+    picture = GFX_evt_narrow_maze_church
+    show_sound = event_radio_chatter
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_narrow_maze.2.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_narrow_maze.3
+    title = scfe_narrow_maze.3.name
+    desc = scfe_narrow_maze.3.desc
+    picture = GFX_evt_narrow_maze_dead
+    show_sound = event_radio_chatter_02
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_narrow_maze.3.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_narrow_maze.4
+    title = scfe_narrow_maze.4.name
+    desc = scfe_narrow_maze.4.desc
+    picture = GFX_evt_narrow_maze_ascend
+    show_sound = event_administrative_work
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_narrow_maze.4.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_narrow_maze.5
+    title = scfe_narrow_maze.5.name
+    desc = scfe_narrow_maze.5.desc
+    picture = GFX_evt_narrow_maze_rune
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = scfe_narrow_maze.5.a
+        medium_artifact_reward = yes
+        owner = {
+            add_relic = r_scfe_haste_rune
+            add_resource = { unity = 1000 }
+        }
+    }
+}

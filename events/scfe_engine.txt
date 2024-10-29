@@ -7,15 +7,9 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-
 	trigger = { exists = event_target:global_event_country }
 
 	immediate = {
-		every_playable_country = {
-			limit = { is_ai = no }
-			set_policy = { policy = scfe_precursor_policy option = scfe_precursor_policy_concurrent }
-			set_policy = { policy = scfe_archaeology_cleanup option = scfe_archaeology_cleanup_inactive }
-		}
 		if = {
 			limit = {
 				# Check if precursor menu is not active
@@ -55,20 +49,10 @@ country_event = {
 				is_ai = no
 				NOT = { has_country_flag = scfe_znkar_possible}
 			}
-			if = {
-				limit = { is_multiplayer = no }
-				random_list = {
-					50 = { }
-					50 = { set_country_flag = scfe_alshigan_possible }
-				}
+			random_list = {
+				50 = { }
+				50 = { set_country_flag = scfe_alshigan_possible }
 			}
-		}
-		random_playable_country = {
-			limit = {
-				is_ai = no
-				is_unfriendly = no
-			}
-			set_country_flag = scfe_galwand_possible
 		}
 		# Precursor Story Pack
 		while = {
@@ -121,7 +105,6 @@ country_event = {
 		}
 	}
 }
-
 event = {
 	id = scfe_game_start.3
 	hide_window = yes
@@ -134,28 +117,174 @@ event = {
 		}
 	}
 }
+# Strange Worlds
+country_event = {
+	id = scfe_game_start.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_global_flag = scfe_markys_enabled }
+			set_spawn_system_batch = begin
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = "strange_init_01"
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = "strange_init_02"
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = "strange_init_03"
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = "strange_init_04"
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = "strange_init_05"
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			set_spawn_system_batch = end
+		}
+	}
+	after = {
+		country_event = {
+			id = scfe_game_start.5
+		}
+	}
+}
+# Nyblax
+country_event = {
+	id = scfe_game_start.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = scfe_nyblax_enabled
+			}
+			set_spawn_system_batch = begin
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = scfe_hyrokkin
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = scfe_khnum
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = scfe_severing_lash
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = scfe_kikimora
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = scfe_mireska
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			random_system = {
+				limit = { scfe_is_valid_star_system = yes }
+				spawn_system = {
+					min_distance = 30
+					max_distance = 60
+					initializer = scfe_tahlin
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			set_spawn_system_batch = end
+		}
+	}
+}
 
 namespace = scfe_engine
 
 # Galactic Wanderers
-country_event = {
+event = {
 	id = scfe_engine.1
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		has_country_flag = scfe_galwand_possible
-		AND = {
+		NOT = { has_global_flag = scfe_galwand_start }
+		years_passed >= 40
+		any_playable_country = {
+			is_ai = no
+			is_unfriendly = no
 			has_comms_with_alien_empire = yes
-			years_passed > 50
-		}
-		any_planet_within_border = {
-			scfe_is_valid_moon = yes
+			any_planet_within_border = {
+				scfe_is_valid_moon = yes
+			}
 		}
 	}
 	immediate = {
-		remove_country_flag = scfe_galwand_possible
-		country_event = { id = scfe_galactic_wanderers.1 days = 30 random = 30 }
+		set_global_flag = scfe_galwand_start
+		random_playable_country = {
+			limit = {
+				is_ai = no
+				is_unfriendly = no
+				has_comms_with_alien_empire = yes
+				any_planet_within_border = {
+					scfe_is_valid_moon = yes
+				}
+			}
+			country_event = { id = scfe_galactic_wanderers.1 days = 30 random = 30 }
+		}
 	}
 }
 
@@ -338,36 +467,37 @@ country_event = {
 			}
 			set_spawn_system_batch = begin
 			spawn_system = {
-				min_distance = 30
+				min_distance = 20
 				max_distance = 60
-				direction = rimwards
 				initializer = "scfe_celestial_disturbance_system"
 			}
+			add_extra_hyperlane_to_spawned_system_effect = yes
 			set_spawn_system_batch = end
 		}
 		every_playable_country = {
 			limit = { is_ai = no }
-			country_event = { id = scfe_celestial_init.1 }
+			country_event = { id = scfe_celestial_init.1 days = 1 }
 		}
 	}
 }
-# Celestial Disturbance
+# Mid-game clearing of AI avoidance flags
 event = {
 	id = scfe_engine.9
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		exists = event_target:scfe_celestial_disturbance_system
+		any_system = { has_star_flag = scfe_ai_avoid_system }
 	}
 
 	immediate = {
-		event_target:scfe_celestial_disturbance_system = {
+		every_system = {
+			limit = { has_star_flag = scfe_ai_avoid_system }
 			remove_star_flag = scfe_ai_avoid_system
 		}
 	}
 }
-# AI avoidance flag cleanup
+# on outpost built: AI avoidance flag cleanup
 event = {
 	id = scfe_engine.10
 	hide_window = yes
@@ -387,7 +517,6 @@ event = {
 }
 
 # Unseen
-
 event = {
 	id = scfe_engine.11
 	hide_window = yes
@@ -418,6 +547,44 @@ event = {
 				}
 			}
 			country_event = { id = scfe_unseen.1 days = 200 random = 100 }
+		}
+	}
+}
+event = {
+	id = scfe_engine.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		years_passed >= 30
+		NOT = { has_global_flag = scfe_ghosts_start }
+	}
+
+	immediate = {
+		set_global_flag = scfe_ghosts_start
+		event_target:global_event_country = { country_event = { id = scfe_engine.13 days = 300 random = 300 } }
+	}
+}
+country_event = {
+	id = scfe_engine.13
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = { scfe_is_valid_star_system = yes }
+			set_spawn_system_batch = begin
+			spawn_system = {
+				min_distance = 5
+				max_distance = 20
+				initializer = scfe_ghost_system_01
+			}
+			add_extra_hyperlane_to_spawned_system_effect = yes
+			set_spawn_system_batch = end
+		}
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = { id = scfe_ghost_init.1 days = 1 }
 		}
 	}
 }

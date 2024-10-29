@@ -10,6 +10,7 @@ special_project = {
     requirements = {
         shipclass_science_ship = 1
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 
@@ -29,6 +30,7 @@ special_project = {
     requirements = {
         shipclass_science_ship = 1
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 
@@ -42,8 +44,8 @@ special_project = {
     icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
     cost = @tier3cost3
     tech_department = society_technology
-
     event_scope = planet_event
+    fail_trigger = { }
 
     on_success = {
         owner = {
@@ -59,12 +61,11 @@ special_project = {
     icon = "gfx/interface/icons/situation_log/situation_log_archaeology.dds"
     picture = GFX_evt_aggressive_flora
     event_chain = scfe_coprean_chain
-
     requirements = {
         shipclass_science_ship = 1
     }
-
     event_scope = ship_event
+    fail_trigger = { }
 
     on_success = {
         ship_event = { id = scfe_coprean_constitution.17 }
@@ -76,8 +77,8 @@ special_project = {
     icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
     cost = @tier3cost3
     tech_department = society_technology
-
     event_scope = planet_event
+    fail_trigger = { }
 
     on_success = {
         owner = {
@@ -91,8 +92,8 @@ special_project = {
     icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
     cost = @tier3cost3
     tech_department = physics_technology
-
     event_scope = planet_event
+    fail_trigger = { }
 
     on_success = {
         owner = {

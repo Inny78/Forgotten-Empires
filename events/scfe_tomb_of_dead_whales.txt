@@ -28,9 +28,48 @@ ship_event = {
 		solar_system = {
 			random_system_planet = {
 				limit = { scfe_is_barren_cold = yes has_anomaly = no }
+				save_global_event_target_as = scfe_tomb_of_dead_whale
 				create_archaeological_site = scfe_site_tomb_of_dead_whale
 			}
 		}
+		event_target:scfe_tomb_of_dead_whale = {
+			create_fleet = {
+				name = "NAME_Grazing_Tiyanki"
+				effect = {
+					set_owner = event_target:tiyanki_country
+					create_ship = {
+						name = ""
+						design = "NAME_Tiyanki_Cow"
+					}
+					while = {
+						count = 1
+						create_ship = {
+							name = ""
+							design = "NAME_Tiyanki_Bull"
+						}
+					}
+					while = {
+						count = 4
+						create_ship = {
+							name = ""
+							design = "NAME_Tiyanki_Calf"
+						}
+					}
+					set_location = event_target:scfe_tomb_of_dead_whale
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = return_point
+					set_aggro_range = 0
+					set_fleet_flag = NAME_Tiyanki_Space_Whale
+					queue_actions = {
+						wait = { # Cooldown until they start moving
+							duration = 320
+							random = 80
+						}
+					}
+				}
+			}
+		}
+		clear_global_event_target = scfe_tomb_of_dead_whale
 	}
 }
 

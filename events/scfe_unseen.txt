@@ -178,6 +178,7 @@ fleet_event = {
     title = scfe_unseen_dig.1.name
     desc = scfe_unseen_dig.1.desc
     picture = GFX_evt_cold_barren
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
@@ -190,6 +191,7 @@ fleet_event = {
     title = scfe_unseen_dig.2.name
     desc = scfe_unseen_dig.2.desc
     picture = GFX_evt_cold_barren
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
@@ -202,6 +204,7 @@ fleet_event = {
     title = scfe_unseen_dig.3.name
     desc = scfe_unseen_dig.3.desc
     picture = GFX_evt_cold_barren
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
@@ -214,6 +217,7 @@ fleet_event = {
     title = scfe_unseen_dig.4.name
     desc = scfe_unseen_dig.4.desc
     picture = GFX_evt_cold_barren
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 
@@ -226,6 +230,7 @@ fleet_event = {
     title = scfe_unseen_dig.5.name
     desc = scfe_unseen_dig.5.desc
     picture = GFX_evt_cold_barren
+    show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
 

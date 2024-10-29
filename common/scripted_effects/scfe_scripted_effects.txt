@@ -29,11 +29,9 @@ scfe_species_modify_clear_trait_pc_preference = {
         trait_pc_desert_preference = { modify_species = { remove_trait = trait_pc_desert_preference } }
         trait_pc_arid_preference = { modify_species = { remove_trait = trait_pc_arid_preference } }
         trait_pc_savannah_preference = { modify_species = { remove_trait = trait_pc_savannah_preference } }
-
         trait_pc_tropical_preference = { modify_species = { remove_trait = trait_pc_tropical_preference } }
         trait_pc_continental_preference = { modify_species = { remove_trait = trait_pc_continental_preference } }
         trait_pc_ocean_preference = { modify_species = { remove_trait = trait_pc_ocean_preference } }
-
         trait_pc_arctic_preference = { modify_species = { remove_trait = trait_pc_arctic_preference } }
         trait_pc_tundra_preference = { modify_species = { remove_trait = trait_pc_tundra_preference } }
         trait_pc_alpine_preference = { modify_species = { remove_trait = trait_pc_alpine_preference } }
@@ -63,7 +61,6 @@ scfe_coprean_constitution_16_machine_effect = {
             limit = { has_modifier = penal_colony }
             remove_modifier = penal_colony
         }
-
         if = {
             limit = { has_building = building_colony_shelter }
             remove_building = building_colony_shelter
@@ -84,7 +81,6 @@ scfe_coprean_constitution_16_machine_effect = {
             remove_building = building_system_capital
             add_building = building_machine_system_capital
         }
-
         if = {
             limit = { has_building = building_resort_capital }
             remove_building = building_resort_capital
@@ -163,16 +159,10 @@ scfe_coprean_constitution_16_machine_effect = {
             remove_building = building_communal_housing_large
             add_building = building_drone_megastorage
         }
-        while = {
-            limit = { has_building = building_slave_huts }
-            remove_building = building_slave_huts
-            add_building = building_drone_megastorage
-        }
         if = {
             limit = { has_building = building_clone_vats }
             remove_building = building_clone_vats
         }
-
         while = {
             limit = { has_building = building_bureaucratic_1 }
             remove_building = building_bureaucratic_1
@@ -188,7 +178,6 @@ scfe_coprean_constitution_16_machine_effect = {
             remove_building = building_bureaucratic_3
             add_building = building_system_conflux
         }
-
         while = {
             limit = { has_building = building_autochthon_monument }
             remove_building = building_autochthon_monument
@@ -209,7 +198,6 @@ scfe_coprean_constitution_16_machine_effect = {
             remove_building = building_autocurating_vault
             add_building = building_alpha_hub
         }
-
         while = {
             limit = { has_building = building_temple }
             remove_building = building_temple
@@ -230,7 +218,6 @@ scfe_coprean_constitution_16_machine_effect = {
             remove_building = building_citadel_of_faith
             add_building = building_alpha_hub
         }
-
         while = {
             limit = { has_building = building_corporate_monument }
             remove_building = building_corporate_monument
@@ -277,7 +264,6 @@ scfe_coprean_constitution_16_hive_effect = {
             limit = { has_modifier = penal_colony }
             remove_modifier = penal_colony
         }
-
         if = {
             limit = { has_building = building_colony_shelter }
             remove_building = building_colony_shelter
@@ -373,12 +359,6 @@ scfe_coprean_constitution_16_hive_effect = {
             add_building = building_expanded_warren
         }
         while = {
-            limit = { has_building = building_slave_huts }
-            remove_building = building_slave_huts
-            add_building = building_expanded_warren
-        }
-
-        while = {
             limit = { has_building = building_bureaucratic_1 }
             remove_building = building_bureaucratic_1
             add_building = building_hive_node
@@ -393,7 +373,6 @@ scfe_coprean_constitution_16_hive_effect = {
             remove_building = building_bureaucratic_3
             add_building = building_hive_confluence
         }
-
         while = {
             limit = { has_building = building_autochthon_monument }
             remove_building = building_autochthon_monument
@@ -409,7 +388,6 @@ scfe_coprean_constitution_16_hive_effect = {
             remove_building = building_hypercomms_forum
             add_building = building_hive_confluence
         }
-
         while = {
             limit = { has_building = building_temple }
             remove_building = building_temple
@@ -425,7 +403,6 @@ scfe_coprean_constitution_16_hive_effect = {
             remove_building = building_sacred_nexus
             add_building = building_hive_confluence
         }
-
         while = {
             limit = { has_building = building_corporate_monument }
             remove_building = building_corporate_monument
@@ -506,4 +483,11 @@ scfe_roots_cleanup = {
     remove_modifier = scfe_rooted_nature_maintenance
     remove_modifier = scfe_rooted_crime
     remove_modifier = scfe_rooted_doom
+}
+site_scfe_ghosts_random_events = {
+    random_list = {
+        33 = { fleet_event = { id = scfe_ghosts_site_fail.1 } }
+        33 = { fleet_event = { id = scfe_ghosts_site_fail.2 } }
+        33 = { fleet_event = { id = scfe_ghosts_site_fail.3 } }
+    }
 }

@@ -11,6 +11,7 @@ special_project = {
     requirements = {
         shipclass_military = 1
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 
@@ -36,6 +37,7 @@ special_project = {
         shipclass_science_ship = 1
         leader = scientist
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 
@@ -61,6 +63,7 @@ special_project = {
         shipclass_science_ship = 1
         leader = scientist
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 
@@ -81,8 +84,8 @@ special_project = {
     picture = GFX_evt_continental
     event_chain = scfe_roots_chain
 
-    requirements = {
-    }
+    requirements = { }
+    fail_trigger = { }
 
     event_scope = country_event
 
@@ -104,6 +107,7 @@ special_project = {
         shipclass_science_ship = 1
         leader = scientist
     }
+    fail_trigger = { }
 
     event_scope = ship_event
 
@@ -127,6 +131,7 @@ special_project = {
 
     requirements = {
     }
+    fail_trigger = { }
 
     event_scope = country_event
 
@@ -148,8 +153,8 @@ special_project = {
     picture = GFX_evt_alien_nature
     event_chain = scfe_roots_chain
 
-    requirements = {
-    }
+    requirements = { }
+    fail_trigger = { }
 
     event_scope = country_event
 
@@ -173,6 +178,7 @@ special_project = {
 
     requirements = {
     }
+    fail_trigger = { }
 
     event_scope = country_event
 
@@ -196,6 +202,7 @@ special_project = {
 
     requirements = {
     }
+    fail_trigger = { }
 
     event_scope = country_event
 

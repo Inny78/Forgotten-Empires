@@ -6,7 +6,6 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		is_multiplayer = no
 		NOT = { has_global_flag = scfe_had_alshigans }
 		owner = {
 			is_ai = no
@@ -45,10 +44,6 @@ country_event = {
 	is_triggered_only = yes
 	location = event_target:scfe_alshigans_asteroid
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	immediate = { country_event = { id = story.5 days = 30 } }
 
 	option = {
@@ -79,10 +74,6 @@ ship_event = {
 	location = root
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = CURIOUS
 		owner = {
@@ -109,10 +100,6 @@ ship_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
-
-	trigger = {
-		is_multiplayer = no
-	}
 
 	option = {
 		name = INTERESTING
@@ -182,10 +169,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = PECULIAR
 		hidden_effect = {
@@ -218,10 +201,6 @@ ship_event = {
 	location = root
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = CONTINUE
 		owner = {
@@ -244,10 +223,6 @@ ship_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
-
-	trigger = {
-		is_multiplayer = no
-	}
 
 	option = {
 		name = DISTURBING
@@ -299,10 +274,6 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -317,6 +288,7 @@ country_event = {
 					max_distance = 30
 					initializer = "scfe_alshigans_init_01"
 				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
 				set_spawn_system_batch = end
 			}
 		}
@@ -332,10 +304,6 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -350,6 +318,7 @@ country_event = {
 					max_distance = 30
 					initializer = "scfe_alshigans_init_02"
 				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
 				set_spawn_system_batch = end
 			}
 		}
@@ -365,10 +334,6 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -383,6 +348,7 @@ country_event = {
 					max_distance = 30
 					initializer = "scfe_alshigans_init_03"
 				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
 				set_spawn_system_batch = end
 			}
 		}
@@ -397,10 +363,6 @@ country_event = {
 	picture = GFX_evt_tropical
 	show_sound = event_default
 	is_triggered_only = yes
-
-	trigger = {
-		is_multiplayer = no
-	}
 
 	option = {
 		name = INTERESTING
@@ -424,7 +386,6 @@ country_event = {
 							scfe_is_barren = yes
 							is_moon = yes
 							has_anomaly = no
-							NOT = { exists = owner }
 							NOT = { exists = archaeological_site }
 						}
 					}
@@ -433,7 +394,6 @@ country_event = {
 							scfe_is_barren = yes
 							is_moon = yes
 							has_anomaly = no
-							NOT = { exists = owner }
 							NOT = { exists = archaeological_site }
 						}
 						enable_special_project = {
@@ -460,13 +420,9 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	immediate = {
 		random_owned_planet = {
-			limit = { is_colony = yes num_pops > 5 }
+			limit = { is_colony = yes num_pops > 4 }
 			weights = {
 				base = 1
 				modifier = {
@@ -502,10 +458,6 @@ country_event = {
 	desc = scfe_alshigans.12.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
-
-	trigger = {
-		is_multiplayer = no
-	}
 
 	option = {
 		name = EXCELLENT

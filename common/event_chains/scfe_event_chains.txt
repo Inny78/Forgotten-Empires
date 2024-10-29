@@ -71,3 +71,11 @@ scfe_unseen_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_astral_rift.dds"
 	picture = GFX_evt_astral_rift
 }
+scfe_ghosts_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_city_ruins
+}
+scfe_ghost_system_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_communication_event
+}

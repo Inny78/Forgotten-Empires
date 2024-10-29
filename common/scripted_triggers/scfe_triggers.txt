@@ -531,6 +531,7 @@ scfe_can_find_precursor = {
 				has_event_chain = scfe_coprean_chain
 				has_event_chain = scfe_sless_chain
 				has_event_chain = scfe_shaded_chain
+				has_event_chain = scfe_ghosts_chain
 			}
 		}
 	}
@@ -541,3 +542,4 @@ has_astanine_last_projector = { has_relic = r_scfe_astanine_last_projector }
 has_alshigan_engine = { has_relic = r_scfe_alshigan_engine }
 has_znkar_distortion_generator = { has_relic = r_scfe_znkar_distortion_generator }
 has_first_empire_databank = { has_relic = r_scfe_first_empire_databank }
+has_orders_trinket = { has_relic = r_scfe_orders_trinket }

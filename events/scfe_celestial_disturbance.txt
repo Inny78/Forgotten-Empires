@@ -13,7 +13,7 @@ country_event = {
     option = {
         name = CURIOUS
         begin_event_chain = { event_chain = scfe_celestial_system_chain target = this }
-        create_point_of_interest = { event_chain = scfe_celestial_system_chain id = scfe_celestial_new_system name = scfe_celestial_init.1.name location = event_target:scfe_celestial_disturbance_system }
+        create_point_of_interest = { event_chain = scfe_celestial_system_chain id = scfe_celestial_new_system name = scfe_celestial_init.point location = event_target:scfe_celestial_disturbance_system }
     }
 }
 

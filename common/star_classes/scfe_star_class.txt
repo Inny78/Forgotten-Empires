@@ -17,3 +17,9 @@ sc_scfe_binary_1 = { # X-ray Binary Star System : M star around a Neutron
 		ship_speed_reduction = 0.5 # Be careful about using this modifier outside of star classes, it can throw off the ETA for ships
 	}
 }
+sc_scfe_empty_space = {
+	class = scfe_empty_star
+	planet			= { key = pc_scfe_empty_space }
+	spawn_odds 		= 0
+	num_planets 	= { min = 0 max = 0 }
+}

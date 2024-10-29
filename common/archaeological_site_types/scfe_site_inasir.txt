@@ -2,7 +2,7 @@ scfe_site_inasir = {
     desc = "scfe_site_inasir_desc"
     picture = GFX_evt_barren_dig_site
     max_instances = 1
-    stages = 4
+    stages = 6
     weight = {
         base = 0
     }

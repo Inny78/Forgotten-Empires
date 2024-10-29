@@ -66,3 +66,4 @@ entity = {
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_planet_class_02" } }
 	}
 }
+entity = { name = "scfe_empty_space" scale = 1 }

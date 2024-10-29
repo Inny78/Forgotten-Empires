@@ -56,16 +56,12 @@ fleet_event = {
 	desc = scfe_first_music.2.desc
 	picture = GFX_evt_scfe_lifeseeded_02
 	show_sound = event_collapsing_ruins
-	
 	archaeology = yes
-
 	is_triggered_only = yes
-	
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
-	after = { 
+	after = {
 		from = { set_site_progress_locked = no }
 	}
 	

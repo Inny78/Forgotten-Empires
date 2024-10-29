@@ -1,6 +1,45 @@
 ﻿l_french:
 
  # Scopes: Root = ship, From = planet
+# Start menu
+ scfe_menu.2.name: "Forgotten Empires Configuration"
+ scfe_menu.2.desc: "Showing current event chains configuration."
+ scfe_menu.2.a: "Strange Worlds (default)"
+ scfe_menu.2.at: "Strange Worlds are set to spawn."
+ scfe_menu.2.b: "No Strange Worlds"
+ scfe_menu.2.c: "Nyblax (default)"
+ scfe_menu.2.ct: "Nyblax dig sites are set to spawn."
+ scfe_menu.2.d: "No Nyblax"
+ scfe_menu.2.e: "Begin"
+ scfe_menu.3.desc: "Showing current policy configuration."
+ scfe_menu.3.a: "$scfe_precursor_policy_concurrent$ (default)"
+ scfe_menu.3.at: "$scfe_precursor_policy_concurrent_desc$"
+ scfe_menu.3.b: "$scfe_precursor_policy_consecutive$"
+ scfe_menu.3.bt: "$scfe_precursor_policy_consecutive_desc$"
+ scfe_menu.3.c: "$scfe_archaeology_cleanup_inactive$ (default)"
+ scfe_menu.3.ct: "$scfe_archaeology_cleanup_inactive_desc$"
+ scfe_menu.3.d: "$policy_scfe_archaeology_cleanup$"
+ scfe_menu.3.dt: "$policy_scfe_archaeology_cleanup_desc$"
+
+ mod_planet_farmers_minerals_upkeep_add: "£minerals£ $minerals$ Upkeep of £job_farmer£ [GetFarmerPlural]"
+ mod_planet_pops_food_upkeep_mult: "£food£ $food$ £pop£ Pops Upkeep"
+
+ policy_scfe_archaeology_cleanup: "Automatic archaeology cleanup"
+ policy_scfe_archaeology_cleanup_desc: "Allows the automatic removal of completed dig sites."
+ scfe_archaeology_cleanup_active: "Activate auto-cleanup"
+ scfe_archaeology_cleanup_inactive: "No dig site cleanup"
+ scfe_archaeology_cleanup_active_name: "$scfe_archaeology_cleanup_active$"
+ scfe_archaeology_cleanup_inactive_name: "$scfe_archaeology_cleanup_inactive$"
+ scfe_archaeology_cleanup_active_desc: "$policy_scfe_archaeology_cleanup_desc$"
+ scfe_archaeology_cleanup_inactive_desc: "Disallows the automatic removal of completed dig sites."
+ policy_scfe_precursor_policy: "Precursor Discovery"
+ policy_scfe_precursor_policy_desc: "Choose between concurrent or consecutive precursor discovery to determine if multiple precursor event chains can happen at once."
+ scfe_precursor_policy_concurrent: "Concurrent Discovery"
+ scfe_precursor_policy_consecutive: "Consecutive Discovery"
+ scfe_precursor_policy_concurrent_name: "$scfe_precursor_policy_concurrent$"
+ scfe_precursor_policy_consecutive_name: "$scfe_precursor_policy_consecutive$"
+ scfe_precursor_policy_concurrent_desc: "Multiple precursor event chains can happen at once."
+ scfe_precursor_policy_consecutive_desc: "You must finish a precursor event chain to trigger another one."
 
  # Gigas compatibility
  origin_incohesive: "Away on an Island"
@@ -326,10 +365,6 @@
  scfe_infrastructure_desc: "Abandoned buildings, deserted streets, and untouched facilities hint at what could have been a thriving settlement. Despite the passage of time, the remaining infrastructures can be repurposed, offering a unique framework upon which a new colony could be built."
 
  # 3.12 starts here
- policy_scfe_precursor_policy: "Precursor Discovery"
- policy_scfe_precursor_policy_desc: "Choose between concurrent or consecutive precursor discovery to determine if multiple precursors event chains can happen at once."
- scfe_precursor_policy_concurrent: "Concurrent Discovery"
- scfe_precursor_policy_consecutive: "Consecutive Discovery"
 
  # The Subterranean Enigma
  scfe_subterranean_knowledge_1: "Subterranean Architectural Knowledge"
@@ -387,13 +422,6 @@
  scfe_subterranean.16.desc: "The fate of the Kraktanians is clear, and it is deeply disturbing. This civilization shows us a path we did not take. While this revelation is enlightening, their folly is not what I had hoped to find. Despite this, I am thankful for the opportunity to participate in this joint operation. Here are my notes on Kraktanian engineering. I hope they prove useful to your empire. Farewell, and may our collaboration continue to bear fruit."
  scfe_subterranean.16.a: "Farewell."
 
- policy_scfe_archaeology_cleanup: "Automatic archaeology cleanup"
- policy_scfe_archaeology_cleanup_desc: "Allows the automatic removal of completed dig sites."
- scfe_archaeology_cleanup_active: "Activate auto-cleanup"
- scfe_archaeology_cleanup_inactive: "No dig site cleanup"
- scfe_archaeology_cleanup_active_desc: "$policy_scfe_archaeology_cleanup_desc$"
- scfe_archaeology_cleanup_inactive_desc: "Disallows the automatic removal of completed dig sites."
-
  # 3.13 starts here
  # Old Forge
  scfe_inasir_category: "Signal detected"
@@ -403,11 +431,11 @@
  scfe_site_inasir: "$scfe_inasir.1.name$"
  scfe_site_inasir_desc: "We have uncovered a labyrinthine network of subterranean structures."
  scfe_inasir_dig.1.name: "Excavation Report"
- scfe_inasir_dig.1.desc: "A base camp has been successfully established on the planet’s surface. Preliminary surveys have identified multiple entry points to the ancient underground structures, though all have suffered severe collapse over millennia. Our team has selected the most stable of these and begun the delicate process of clearing the debris. Initial progress is slow, but promising."
+ scfe_inasir_dig.1.desc: "A base camp has been successfully established on the planet's surface. Preliminary surveys have identified multiple entry points to the ancient underground structures, though all have suffered severe collapse over millennia. Our team has selected the most stable of these and begun the delicate process of clearing the debris. Initial progress is slow, but promising."
  scfe_inasir_dig.2.name: "Warehouse"
  scfe_inasir_dig.2.desc: "The cleared entryway has granted access to a colossal subterranean warehouse. The chamber is filled to the ceiling with towering stacks of metallic ingots. However, initial analysis has revealed a perplexing discovery - the metal is highly brittle, consisting of a haphazard blend of incompatible minerals that render it entirely useless. Despite their apparent worthlessness, the ingots were meticulously stored here, leaving us to question the purpose of this enigmatic cache."
  scfe_inasir_dig.3.name: "Manufacturing Complex"
- scfe_inasir_dig.3.desc: "We have breached the interior of a vast underground manufacturing complex, now lying in ruins. This facility once drew magma from the planet’s core to forge the alloy ingots we've discovered. It was clearly capable of mass production, though much of the foundry has now collapsed into uncharted depths. The surviving machinery bears signs of crude modifications: quality control systems have been deliberately bypassed, seemingly in a desperate bid to maximize output at the expense of material integrity."
+ scfe_inasir_dig.3.desc: "We have breached the interior of a vast underground manufacturing complex, now lying in ruins. This facility once drew magma from the planet's core to forge the alloy ingots we've discovered. It was clearly capable of mass production, though much of the foundry has now collapsed into uncharted depths. The surviving machinery bears signs of crude modifications: quality control systems have been deliberately bypassed, seemingly in a desperate bid to maximize output at the expense of material integrity."
  scfe_inasir_dig.4.name: "Hangar"
  scfe_inasir_dig.4.desc: "Our team has reached another collapsed tunnel, revealing a series of colossal hangars once connected to a now-ruined spaceport. The scale of these facilities suggests that they regularly received massive cargo ships, each capable of transporting thousands of tonnes of alloys in a single trip. Analysis of surviving computer records reveals that the primary client for these shipments was the First League."
  scfe_inasir_dig.5.name: "Administrative Sector"

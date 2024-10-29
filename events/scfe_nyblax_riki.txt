@@ -1,0 +1,139 @@
+namespace = scfe_riki_init
+
+ship_event = {
+    id = scfe_riki_init.1
+    title = scfe_riki_init.1.name
+    desc = scfe_riki_init.1.desc
+    picture = GFX_evt_riki_city
+    location = root
+    is_triggered_only = yes
+    trigger = {
+        owner = { is_ai = no }
+        from = { has_star_flag = invisibility_rune_system }
+    }
+    immediate = {
+		from = { remove_star_flag = invisibility_rune_system }
+        owner = { country_event = { id = story.5 days = 30 } }
+    }
+    option = {
+        name = scfe_riki_init.1.a
+    }
+}
+
+namespace = scfe_riki
+
+fleet_event = {
+    id = scfe_riki.1
+    title = scfe_riki.1.name
+    desc = scfe_riki.1.desc
+    picture = GFX_evt_riki_space
+    show_sound = event_scanner
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_riki.1.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_riki.2
+    title = scfe_riki.2.name
+    desc = scfe_riki.2.desc
+    picture = GFX_evt_riki_window
+    show_sound = event_scanner
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_riki.2.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_riki.3
+    title = scfe_riki.3.name
+    desc = scfe_riki.3.desc
+    picture = GFX_evt_riki_lost
+    show_sound = event_finding_loot
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_riki.3.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_riki.4
+    title = scfe_riki.4.name
+    desc = scfe_riki.4.desc
+    picture = GFX_evt_riki_paintings
+    show_sound = event_finding_loot
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_riki.4.a
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_riki.5
+    title = scfe_riki.5.name
+    desc = scfe_riki.5.desc
+    picture = GFX_evt_riki_cosmic_cube
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = scfe_riki.5.a
+        medium_artifact_reward = yes
+        owner = {
+            add_relic = r_scfe_invisibility_rune
+            add_resource = { unity = 1000 }
+        }
+    }
+}

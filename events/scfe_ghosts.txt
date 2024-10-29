@@ -1,0 +1,777 @@
+# Ancient Ghosts
+
+namespace = scfe_ghost_init
+
+country_event = {
+    id = scfe_ghost_init.1
+    title = scfe_ghost_init.1.name
+    desc = scfe_ghost_point0_desc
+    picture = GFX_evt_communication_event
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        begin_event_chain = { event_chain = scfe_ghost_system_chain target = root }
+        create_point_of_interest = {
+            event_chain = scfe_ghost_system_chain
+            id = scfe_ghost_point0
+            name = scfe_ghost_point0
+            desc = scfe_ghost_point0_desc
+            location = event_target:scfe_ghost_system1
+        }
+    }
+}
+
+namespace = scfe_ghost_planet
+
+ship_event = {
+    id = scfe_ghost_planet.1
+    title = scfe_ghost_planet.1.name
+    desc = scfe_ghost_planet.1.desc
+    picture = GFX_evt_ship_travel
+    show_sound = event_default
+    is_triggered_only = yes
+    trigger = {
+        owner = { is_ai = no }
+        from = { has_star_flag = scfe_ghost_system_01 }
+        NOT = { has_global_flag = scfe_ghosts_started }
+    }
+
+    immediate = {
+        set_global_flag = scfe_ghosts_started
+        owner = { country_event = { id = story.5 days = 30 } }
+    }
+
+    option = {
+        name = INTERESTING
+        owner = {
+            begin_event_chain = { event_chain = scfe_ghosts_chain target = root.owner }
+            create_point_of_interest = {
+                event_chain = scfe_ghosts_chain
+                id = scfe_ghost_point1
+                name = scfe_ghost_point1
+                location = event_target:scfe_ghost_planet1
+            }
+        }
+        hidden_effect = {
+            owner = { set_country_flag = scfe_vinarii_intro }
+            every_playable_country = {
+                limit = { is_ai = no }
+                end_event_chain = scfe_ghost_system_chain
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.2
+    title = scfe_ghost_planet.2.name
+    desc = scfe_ghost_planet.2.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        owner = { has_event_chain = scfe_ghosts_chain }
+        from = { has_planet_flag = scfe_ghost_planet }
+    }
+
+    option = {
+        name = scfe_ghost_planet.2.a
+        from = {
+            create_archaeological_site = scfe_ghost_planet_dig
+            hidden_effect = { remove_planet_flag = scfe_ghost_planet }
+        }
+        hidden_effect = {
+            owner = { remove_point_of_interest = scfe_ghost_point1 }
+        }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.3
+    title = scfe_ghost_planet.3.name
+    desc = scfe_ghost_planet.3.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_lead_explore
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            set_spawn_system_batch = begin
+            spawn_system = {
+                min_distance = 5
+                max_distance = 20
+                initializer = scfe_ghost_system_02
+            }
+            add_extra_hyperlane_to_spawned_system_effect = yes
+            set_spawn_system_batch = end
+        }
+        create_point_of_interest = {
+            event_chain = scfe_ghosts_chain
+            id = scfe_ghost_point2
+            name = scfe_ghost_point2
+            location = event_target:scfe_ghost_system2
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.4
+    title = scfe_ghost_planet.4.name
+    desc = scfe_ghost_planet.4.desc
+    picture = GFX_evt_mining_station
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        owner = { has_event_chain = scfe_ghosts_chain }
+        from = { has_planet_flag = scfe_ghost_planet_mining }
+    }
+
+    option = {
+        name = INTERESTING
+        from = {
+            add_deposit = d_minerals_3
+            hidden_effect = { remove_planet_flag = scfe_ghost_planet_mining }
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.5
+    title = scfe_ghost_planet.5.name
+    desc = scfe_ghost_planet.5.desc
+    picture = GFX_evt_ship_travel
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_star_flag = scfe_ghost_system_02 }
+    }
+
+    option = {
+        name = CURIOUS
+        owner = {
+            hidden_effect = {
+                remove_point_of_interest = scfe_ghost_point2
+            }
+            create_point_of_interest = {
+                event_chain = scfe_ghosts_chain
+                id = scfe_ghost_point2
+                name = scfe_ghost_planet.6.name
+                location = event_target:scfe_ghost_planet2
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.6
+    title = scfe_ghost_planet.6.name
+    desc = scfe_ghost_planet.6.desc
+    picture = GFX_evt_frozen
+    show_sound = event_default
+    is_triggered_only = yes
+    trigger = {
+        from = { has_planet_flag = scfe_ghost_planet2 }
+        owner = { has_event_chain = scfe_ghosts_chain }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        from = {
+            create_archaeological_site = scfe_ghost_frozen_dig
+            hidden_effect = { remove_planet_flag = scfe_ghost_planet2 }
+        }
+        hidden_effect = {
+            owner = { remove_point_of_interest = scfe_ghost_point2 }
+        }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.7
+    title = scfe_ghost_planet.7.name
+    desc = scfe_ghost_planet.7.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        country_event = { id = scfe_ghost_planet.8 }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.8
+    title = scfe_ghost_planet.7.name
+    desc = scfe_ghost_planet.8.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_ghost_planet.8.a
+        country_event = { id = scfe_ghost_planet.9 days = 5 }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.9
+    title = scfe_ghost_planet.9.name
+    desc = scfe_ghost_planet.9.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_lead_explore
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            set_spawn_system_batch = begin
+            spawn_system = {
+                min_distance = 5
+                max_distance = 20
+                initializer = scfe_ghost_system_03
+            }
+            add_extra_hyperlane_to_spawned_system_effect = yes
+            set_spawn_system_batch = end
+        }
+        create_point_of_interest = { event_chain = scfe_ghosts_chain id = scfe_ghost_point3 name = scfe_ghost_point3 location = event_target:scfe_ghost_system3 }
+    }
+    after = {
+        if = {
+            limit = { has_valid_civic = civic_reanimated_armies }
+            country_event = { id = scfe_ghost_planet.10 days = 5 }
+        }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.10
+    title = scfe_ghost_planet.10.name
+    desc = scfe_ghost_planet.10.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = FASCINATING
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.11
+    title = scfe_ghost_planet.5.name
+    desc = scfe_ghost_planet.11.desc
+    picture = GFX_evt_ship_travel
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        from = { has_star_flag = scfe_ghost_system_03 }
+        owner = { has_event_chain = scfe_ghosts_chain }
+    }
+
+    option = {
+        name = CURIOUS
+        owner = {
+            hidden_effect = {
+                remove_point_of_interest = scfe_ghost_point3
+            }
+            create_point_of_interest = { event_chain = scfe_ghosts_chain id = scfe_ghost_point3 name = scfe_ghost_planet.12.name location = event_target:scfe_ghost_planet3 }
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.12
+    title = scfe_ghost_planet.12.name
+    desc = scfe_ghost_planet.12.desc
+    picture = GFX_evt_shattered_planet
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        from = { has_planet_flag = scfe_ghost_planet3 }
+        owner = { has_event_chain = scfe_ghosts_chain }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        enable_special_project = { name = SCFE_GHOST_PROJECT2 location = event_target:scfe_ghost_planet3 owner = root.owner }
+    }
+
+}
+ship_event = {
+    id = scfe_ghost_planet.13
+    title = scfe_ghost_planet.13.name
+    desc = scfe_ghost_planet.13.desc
+    picture = GFX_evt_shattered_planet
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_ghost_planet.13.a
+        ship_event = { id = scfe_ghost_planet.14 days = 5 }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.14
+    title = scfe_ghost_planet.13.name
+    desc = scfe_ghost_planet.14.desc
+    picture = GFX_evt_space_station
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONCERNING
+        ship_event = { id = scfe_ghost_planet.15 days = 1 }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.15
+    title = scfe_ghost_planet.13.name
+    desc = scfe_ghost_planet.15.desc
+    picture = GFX_evt_space_station
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTRIGUING
+        owner = { country_event = { id = scfe_ghost_order.1 } }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.16
+    title = scfe_ghost_order.2.name
+    desc = scfe_ghost_planet.16.desc
+    picture = GFX_evt_space_station
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = CONTINUE
+        country_event = { id = scfe_ghost_planet.17 days = 5 }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.17
+    title = scfe_ghost_planet.17.name
+    desc = scfe_ghost_planet.17.desc
+    picture = GFX_evt_space_station
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = scfe_ghost_planet.17.a
+        end_event_chain = scfe_ghosts_chain
+        add_relic = r_scfe_orders_trinket
+        hidden_effect = { set_country_flag = vinarii_precursor_done }
+    }
+    after = {
+        hidden_effect = {
+            clear_global_event_target = scfe_ghost_system1
+            clear_global_event_target = scfe_ghost_planet1
+            clear_global_event_target = scfe_ghost_system2
+            clear_global_event_target = scfe_ghost_planet2
+            clear_global_event_target = scfe_ghost_system3
+            clear_global_event_target = scfe_ghost_system3
+            event_target:scfe_ghost_robo_leader = { kill_leader = { show_notification = no } }
+            clear_global_event_target = scfe_ghost_robo_leader
+            clear_global_event_target = scfe_ghost_robo_species
+            event_target:scfe_ghost_robo_country = { destroy_country = yes }
+            clear_global_event_target = scfe_ghost_robo_country
+        }
+    }
+}
+country_event = {
+    id = scfe_ghost_planet.18
+    title = scfe_ghost_planet.18.name
+    desc = scfe_ghost_planet.18.desc
+    picture = GFX_evt_star_chart
+    is_triggered_only = yes
+
+    option = {
+        name = EXCELLENT
+        add_modifier = { modifier = scfe_vinarii_mastery days = -1 }
+    }
+}
+
+namespace = scfe_ghost_order
+country_event = {
+    id = scfe_ghost_order.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        create_country = {
+            name = scfe_ghost_robo_country
+            type = faction
+            auto_delete = yes
+            effect = { save_global_event_target_as = scfe_ghost_robo_country }
+        }
+        event_target:scfe_ghost_robo_country = {
+            set_faction_hostility = { set_hostile = no }
+            create_species = {
+                name = scfe_ghost_robo_country
+                class = MACHINE
+                portrait = random
+                traits = {
+                    trait = trait_machine_unit
+                    trait = random_traits
+                }
+                immortal = yes
+                effect = { save_global_event_target_as = scfe_ghost_robo_species }
+            }
+            create_leader = {
+                class = official
+                species = event_target:scfe_ghost_robo_species
+                name = "scfe_ghost_janitor_chief"
+                skill = 5
+                traits = {
+                    trait = leader_trait_ambassador_pact_keeper
+                    trait = leader_trait_mining_focus
+                }
+                event_leader = yes
+                hide_age = yes
+                skip_background_generation = yes
+                effect = { save_global_event_target_as = scfe_ghost_robo_leader }
+            }
+        }
+    }
+    after = {
+        country_event = { id = scfe_ghost_order.2 scopes = { from = event_target:scfe_ghost_robo_country } }
+    }
+}
+country_event = {
+    id = scfe_ghost_order.2
+    title = scfe_ghost_order.2.name
+    desc = scfe_ghost_order.2.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_ghost_robo_leader
+        planet_background = pc_habitat
+        room = machine_room
+    }
+
+    option = {
+        name = scfe_ghost_order.2.a
+        hidden_effect = { country_event = { id = scfe_ghost_order.3 } }
+    }
+}
+country_event = {
+    id = scfe_ghost_order.3
+    title = scfe_ghost_order.2.name
+    desc = scfe_ghost_order.3.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_ghost_robo_leader
+        planet_background = pc_habitat
+        room = machine_room
+    }
+
+    option = {
+        name = scfe_ghost_order.3.a
+        hidden_effect = { country_event = { id = scfe_ghost_order.4 } }
+    }
+}
+country_event = {
+    id = scfe_ghost_order.4
+    title = scfe_ghost_order.2.name
+    desc = scfe_ghost_order.4.desc
+    is_triggered_only = yes
+    diplomatic = yes
+
+    picture_event_data = {
+        portrait = event_target:scfe_ghost_robo_leader
+        planet_background = pc_habitat
+        room = machine_room
+    }
+
+    option = {
+        name = scfe_ghost_order.4.a
+        hidden_effect = { country_event = { id = scfe_ghost_planet.16 } }
+    }
+}
+
+# Dig Sites
+namespace = scfe_ghost_planet_dig
+
+fleet_event = {
+    id = scfe_ghost_planet_dig.1
+    title = scfe_ghost_planet_dig.1.name
+    desc = scfe_ghost_planet_dig.1.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = CURIOUS
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.2
+    title = scfe_ghost_planet_dig.2.name
+    desc = scfe_ghost_planet_dig.2.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTRIGUING
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.3
+    title = scfe_ghost_planet_dig.3.name
+    desc = scfe_ghost_planet_dig.3.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTRIGUING
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.4
+    title = scfe_ghost_planet_dig.4.name
+    desc = scfe_ghost_planet_dig.4.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTRIGUING
+        medium_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.5
+    title = scfe_ghost_planet_dig.5.name
+    desc = scfe_ghost_planet_dig.5.desc
+    picture = GFX_evt_city_ruins
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTRIGUING
+        large_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.6
+    title = scfe_ghost_planet_dig.6.name
+    desc = scfe_ghost_planet_dig.6.desc
+    picture = GFX_evt_star_chart
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = INTRIGUING
+        medium_artifact_reward = yes
+        owner = {
+            enable_special_project = {
+                name = SCFE_GHOST_PROJECT
+                owner = root.owner
+            }
+        }
+    }
+}
+
+# Frozen Ghosts Dig
+fleet_event = {
+    id = scfe_ghost_planet_dig.7
+    title = scfe_ghost_planet_dig.7.name
+    desc = scfe_ghost_planet_dig.7.desc
+    picture = GFX_evt_frozen
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = DIG
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.8
+    title = scfe_ghost_planet_dig.8.name
+    desc = scfe_ghost_planet_dig.8.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = CURIOUS
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.9
+    title = scfe_ghost_planet_dig.9.name
+    desc = scfe_ghost_planet_dig.9.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = DIG
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_ghost_planet_dig.10
+    title = scfe_ghost_planet_dig.10.name
+    desc = scfe_ghost_planet_dig.10.desc
+    picture = GFX_scfe_core_lab
+    show_sound = event_default
+    is_triggered_only = yes
+    archaeology = yes
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = FASCINATING
+        small_artifact_reward = yes
+        owner = { country_event = { id = scfe_ghost_planet.7 days = 30 } }
+    }
+}
+
+namespace = scfe_ghosts_site_fail
+
+fleet_event = {
+    id = scfe_ghosts_site_fail.1
+    title = scfe_ghosts_site_fail.1.name
+    desc = scfe_ghosts_site_fail.1.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = WORRYING
+        fromfrom = { add_stage_clues = -4 }
+    }
+}
+fleet_event = {
+    id = scfe_ghosts_site_fail.2
+    title = scfe_ghosts_site_fail.2.name
+    desc = scfe_ghosts_site_fail.2.desc
+    picture = GFX_evt_ship_in_orbit_2
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = WORRYING
+        fromfrom = { add_stage_clues = -4 }
+    }
+}
+fleet_event = {
+    id = scfe_ghosts_site_fail.3
+    title = scfe_ghosts_site_fail.3.name
+    desc = scfe_ghosts_site_fail.3.desc
+    picture = GFX_scfe_frozen_city
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = WORRYING
+        fromfrom = { add_stage_clues = -4 }
+    }
+}

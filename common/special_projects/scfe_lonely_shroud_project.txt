@@ -13,7 +13,8 @@ special_project = {
 		leader = scientist
 		skill > 4
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		ship_event = { id = scfe_lonely_shroud.3 }
 	}

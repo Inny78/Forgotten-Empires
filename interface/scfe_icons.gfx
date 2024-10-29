@@ -14,4 +14,16 @@ spriteTypes = {
 		alwaystransparent = yes
 	}
 
+    ### decisions ###
+	spriteType = {
+		name = "scfe_decision_if_planet_haste_rune"
+		texturefile = "gfx/interface/icons/decisions/scfe_decision_if_planet_haste_rune.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "scfe_decision_terraform_arcology"
+		texturefile = "gfx/interface/icons/decisions/scfe_decision_terraform_arcology.dds"
+		alwaystransparent = yes
+	}
+
 }

@@ -1,0 +1,142 @@
+namespace = scfe_jex_init
+
+ship_event = {
+    id = scfe_jex_init.1
+    title = scfe_jex_init.1.name
+    desc = scfe_jex_init.1.desc
+    picture = GFX_evt_jex_space
+    location = root
+    is_triggered_only = yes
+    trigger = {
+        owner = { is_ai = no }
+        from = { has_star_flag = illusion_rune_system }
+    }
+    immediate = {
+		from = { remove_star_flag = illusion_rune_system }
+        owner = { country_event = { id = story.5 days = 30 } }
+    }
+    option = {
+        name = scfe_jex_init.1.a
+    }
+}
+
+namespace = scfe_jex
+
+# jex Digsite
+fleet_event = {
+    id = scfe_jex.1
+    title = scfe_jex.1.name
+    desc = scfe_jex.1.desc
+    picture = GFX_evt_jex_world_2
+    show_sound = event_scanner
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_jex.1.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_jex.2
+    title = scfe_jex.2.name
+    desc = scfe_jex.2.desc
+    picture = GFX_evt_jex
+    show_sound = event_alien_signal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_jex.2.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_jex.3
+    title = scfe_jex.3.name
+    desc = scfe_jex.3.desc
+    picture = GFX_evt_jex_rifts
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_jex.3.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_jex.4
+    title = scfe_jex.4.name
+    desc = scfe_jex.4.desc
+    picture = GFX_evt_jex_spire
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = scfe_jex.4.a
+        small_artifact_reward = yes
+    }
+}
+
+fleet_event = {
+    id = scfe_jex.5
+    title = scfe_jex.5.name
+    desc = scfe_jex.5.desc
+    picture = GFX_evt_jex_rune
+    show_sound = event_mystic_reveal
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = { set_site_progress_locked = yes }
+    }
+    after = {
+        fromfrom = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = scfe_jex.5.a
+        medium_artifact_reward = yes
+        owner = {
+            add_relic = r_scfe_illusion_rune
+            add_resource = { unity = 1000 }
+        }
+    }
+}

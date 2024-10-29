@@ -1,0 +1,52 @@
+special_project = {
+    key = "SCFE_GHOST_PROJECT"
+    event_chain = scfe_ghosts_chain
+    days_to_research = 200
+    tech_department = physics_technology
+    picture = GFX_evt_physics_research
+    icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+    event_scope = country_event
+    fail_trigger = { }
+
+    on_success = {
+        country_event = { id = scfe_ghost_planet.3 }
+    }
+}
+special_project = {
+    key = "SCFE_GHOST_PROJECT2"
+    event_chain = scfe_ghosts_chain
+    days_to_research = 30
+    tech_department = physics_technology
+    picture = GFX_evt_shattered_planet
+    icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+    location = yes
+    event_scope = ship_event
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+        skill > 3
+    }
+    fail_trigger = { }
+
+    on_success = {
+        ship_event = { id = scfe_ghost_planet.13 }
+    }
+}
+special_project = {
+    key = "SCFE_PRECURSOR_VINARII_SECRETS"
+    cost = @tier1cost3
+    days_to_research = 0
+    tech_department = society_technology
+    picture = GFX_evt_star_chart
+    icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+    location = yes
+    event_scope = country_event
+
+    requirements = {
+    }
+    fail_trigger = { }
+
+    on_success = {
+        country_event = { id = scfe_ghost_planet.18 }
+    }
+}

@@ -9,27 +9,41 @@ is_doomsday_planet = {
         has_modifier = scfe_rooted_doom
     }
 }
+scfe_has_precursor_intro = {
+	if = {
+		limit = { has_ariphaos_assorted_precursors = no }
+		OR = {
+			has_country_flag = vultaum_intro
+			has_country_flag = yuht_intro
+			has_country_flag = first_league_intro
+			has_country_flag = irassian_intro
+			has_country_flag = cybrex_intro
+			has_country_flag = zroni_intro
+			has_country_flag = baol_intro
+			has_country_flag = inetian_intro
+			has_country_flag = adakkaria_intro
+            # Forgotten History
+			has_country_flag = plexi_intro
+			has_country_flag = lartia_intro
+            # More Precursors
+			has_country_flag = ixardian_intro
+			has_country_flag = ezentian_intro
+			has_country_flag = werediran_intro
+            # Unavoidable Changes
+			has_country_flag = volgan_intro
+            # Forgotten Empires
+			has_country_flag = scfe_precursor_set_sless
+			has_country_flag = scfe_precursor_set_coprean
+			has_country_flag = scfe_precursor_set_astanine
+			has_country_flag = scfe_vinarii_intro
+		}
+	}
+	else = { always = no }
+}
 # Country scope
 has_precursor_intro = {
     OR = {
-        has_country_flag = vultaum_intro
-        has_country_flag = yuht_intro
-        has_country_flag = first_league_intro
-        has_country_flag = irassian_intro
-        has_country_flag = cybrex_intro
-        has_country_flag = zroni_intro
-        has_country_flag = baol_intro
-        has_country_flag = inetian_intro
-        has_country_flag = adakkaria_intro
-        has_country_flag = plexi_intro # Forgotten History
-        has_country_flag = lartia_intro # Forgotten History
-        has_country_flag = ixardian_intro # More Precursors
-        has_country_flag = ezentian_intro # More Precursors
-        has_country_flag = werediran_intro # More Precursors
-        has_country_flag = volgan_intro # Unavoidable Changes
-        has_country_flag = scfe_precursor_set_sless # Forgotten Empires
-        has_country_flag = scfe_precursor_set_coprean # Forgotten Empires
-        has_country_flag = scfe_precursor_set_astanine # Forgotten Empires
+        scfe_has_precursor_intro = yes
         # Still in the early stages of 'On the Shoulders of Giants'
         AND = {
             has_origin = origin_shoulders_of_giants
@@ -38,4 +52,50 @@ has_precursor_intro = {
         # Gigas exclusion
         has_origin = origin_incohesive
     }
+}
+is_valid_drone_expansion_destination_system = {
+	NOR = {
+		is_star_class = sc_black_hole
+		has_star_flag = mining_drone_expansion_starting_system
+		has_star_flag = aggressive_drone_expansion_starting_system
+		has_star_flag = mining_drone_expansion_destination_system
+		has_star_flag = aggressive_drone_expansion_destination_system
+		has_star_flag = hostile_system
+		has_star_flag = guardian
+		has_star_flag = tiyanki_home_system
+		has_star_flag = tiyanki_graveyard_system
+		has_star_flag = amoeba_home_system
+		has_star_flag = lcluster
+		has_star_flag = sealed_system
+		has_star_flag = voidworms_system
+		has_star_flag = frenzied_voidworms_system
+		# Forgotten Empires
+		has_star_flag = precursor_system
+		has_star_flag = strange_world_system
+	}
+	any_system_planet = {
+		can_have_mineral_deposits = yes
+	}
+}
+is_valid_crystal_splitter_system = {
+	NOR = {
+		exists = starbase
+		is_star_class = sc_black_hole
+		has_star_flag = crystal_splitter_starting_system
+		has_star_flag = crystal_splitter_destination_system
+		has_star_flag = hostile_system
+		has_star_flag = guardian
+		has_star_flag = tiyanki_home_system
+		has_star_flag = tiyanki_graveyard_system
+		has_star_flag = amoeba_home_system
+		has_star_flag = lcluster
+		has_star_flag = sealed_system
+		has_star_flag = fruitful_colonization
+		has_star_flag = voidworms_system
+		has_star_flag = frenzied_voidworms_system
+		# Forgotten Empires
+		has_star_flag = precursor_system
+		has_star_flag = strange_world_system
+	}
+	any_system_planet = { is_asteroid = yes }
 }

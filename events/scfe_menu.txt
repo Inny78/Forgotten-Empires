@@ -1,0 +1,138 @@
+namespace = scfe_menu
+
+# Start Menu
+country_event = {
+	id = scfe_menu.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		NOT = { has_global_flag = scfe_host_set }
+	}
+	immediate = {
+		set_country_flag = scfe_host
+		set_global_flag = scfe_host_set
+		set_global_flag = scfe_markys_enabled
+		set_global_flag = scfe_nyblax_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+
+}
+country_event = {
+	id = scfe_menu.2
+	title = scfe_menu.2.name
+	desc = scfe_menu.2.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_default
+	is_triggered_only = yes
+
+	# Strange Worlds
+	option = {
+		name = scfe_menu.2.a
+		custom_tooltip = scfe_menu.2.at
+		trigger = { has_global_flag = scfe_markys_enabled }
+		remove_global_flag = scfe_markys_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+	option = {
+		name = scfe_menu.2.b
+		trigger = { NOT = { has_global_flag = scfe_markys_enabled } }
+		set_global_flag = scfe_markys_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+	# Nyblax
+	option = {
+		name = scfe_menu.2.c
+		trigger = { has_global_flag = scfe_nyblax_enabled }
+		custom_tooltip = scfe_menu.2.ct
+		remove_global_flag = scfe_nyblax_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+	option = {
+		name = scfe_menu.2.d
+		trigger = { NOT = { has_global_flag = scfe_nyblax_enabled } }
+		set_global_flag = scfe_nyblax_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+	# Start
+	option = {
+		name = scfe_menu.2.e
+		hidden_effect = {
+			country_event = { id = scfe_menu.3 }
+		}
+	}
+}
+
+country_event = {
+	id = scfe_menu.3
+	title = scfe_menu.2.name
+	desc = scfe_menu.3.desc
+	picture = GFX_evt_engineering_research
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = scfe_precursor_policy_concurrent
+	}
+
+	# Concurrent
+	option = {
+		name = scfe_menu.3.a
+		trigger = { has_global_flag = scfe_precursor_policy_concurrent }
+		custom_tooltip = scfe_menu.3.at
+		remove_global_flag = scfe_precursor_policy_concurrent
+		country_event = { id = scfe_menu.3 }
+	}
+	option = {
+		name = scfe_menu.3.b
+		trigger = { NOT = { has_global_flag = scfe_precursor_policy_concurrent } }
+		custom_tooltip = scfe_menu.3.bt
+		set_global_flag = scfe_precursor_policy_concurrent
+		country_event = { id = scfe_menu.3 }
+	}
+	# Cleanup
+	option = {
+		name = scfe_menu.3.c
+		trigger = { NOT = { has_global_flag = scfe_archaeology_cleanup } }
+		custom_tooltip = scfe_menu.3.ct
+		set_global_flag = scfe_archaeology_cleanup
+		country_event = { id = scfe_menu.3 }
+	}
+	option = {
+		name = scfe_menu.3.d
+		trigger = { has_global_flag = scfe_archaeology_cleanup }
+		custom_tooltip = scfe_menu.3.dt
+		remove_global_flag = scfe_archaeology_cleanup
+		country_event = { id = scfe_menu.3 }
+	}
+	# Start
+	option = {
+		name = scfe_menu.2.e
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = scfe_precursor_policy_concurrent }
+				every_playable_country = {
+					set_policy = { policy = scfe_precursor_policy option = scfe_precursor_policy_concurrent }
+				}
+			}
+			else = {
+				every_playable_country = {
+					set_policy = { policy = scfe_precursor_policy option = scfe_precursor_policy_consecutive }
+				}
+			}
+			if = {
+				limit = { has_global_flag = scfe_archaeology_cleanup }
+				every_playable_country = {
+					set_policy = { policy = scfe_archaeology_cleanup option = scfe_archaeology_cleanup_active }
+				}
+			}
+			else = {
+				every_playable_country = {
+					set_policy = { policy = scfe_archaeology_cleanup option = scfe_archaeology_cleanup_inactive }
+				}
+			}
+			country_event = { id = scfe_game_start.4 }
+		}
+	}
+}

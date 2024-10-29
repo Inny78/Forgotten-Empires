@@ -13,7 +13,8 @@ special_project = {
 		leader = scientist
 		skill > 3
 	}
-	
+	fail_trigger = { }
+
 	on_success = {
 		owner = { country_event = { id = scfe_war_torn.3 } }
 	}
