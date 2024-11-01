@@ -1,4 +1,4 @@
-# Power Stone
+# damage rune
 scfe_techis_site = {
     desc = scfe_techis_relic_world_site_desc
     picture = GFX_evt_techis_world
@@ -7,6 +7,7 @@ scfe_techis_site = {
     allow = {
         is_ship_class = shipclass_science_ship
         exists = leader
+        owner = { is_subject = no }
     }
     visible = {
         scfe_dig_site_visible_trigger = yes
@@ -49,7 +50,6 @@ scfe_techis_site = {
         }
     }
 }
-
 # haste rune
 scfe_narrow_maze_site = {
     desc = scfe_narrow_maze_relic_world_site_desc
@@ -59,6 +59,7 @@ scfe_narrow_maze_site = {
     allow = {
         is_ship_class = shipclass_science_ship
         exists = leader
+        owner = { is_subject = no }
     }
     visible = {
         scfe_dig_site_visible_trigger = yes
@@ -96,7 +97,6 @@ scfe_narrow_maze_site = {
         }
     }
 }
-
 # illusion rune
 scfe_jex_site = {
     desc = scfe_jex_relic_world_site_desc
@@ -106,6 +106,7 @@ scfe_jex_site = {
     allow = {
         is_ship_class = shipclass_science_ship
         exists = leader
+        owner = { is_subject = no }
     }
     visible = {
         scfe_dig_site_visible_trigger = yes
@@ -143,7 +144,6 @@ scfe_jex_site = {
         }
     }
 }
-
 # arcane rune
 scfe_ghastly_eyrie_site = {
     desc = scfe_ghastly_eyrie_relic_world_site_desc
@@ -153,6 +153,7 @@ scfe_ghastly_eyrie_site = {
     allow = {
         is_ship_class = shipclass_science_ship
         exists = leader
+        owner = { is_subject = no }
     }
     visible = {
         scfe_dig_site_visible_trigger = yes
@@ -194,7 +195,6 @@ scfe_ghastly_eyrie_site = {
         }
     }
 }
-
 # regeneration rune
 scfe_quad_site = {
     desc = scfe_quad_relic_world_site_desc
@@ -204,6 +204,7 @@ scfe_quad_site = {
     allow = {
         is_ship_class = shipclass_science_ship
         exists = leader
+        owner = { is_subject = no }
     }
     visible = {
         scfe_dig_site_visible_trigger = yes
@@ -226,7 +227,7 @@ scfe_quad_site = {
         }
     }
 }
-
+# Invisibility rune
 scfe_riki_site = {
     desc = scfe_riki_relic_world_site_desc
     picture = GFX_evt_riki_city
@@ -235,6 +236,7 @@ scfe_riki_site = {
     allow = {
         is_ship_class = shipclass_science_ship
         exists = leader
+        owner = { is_subject = no }
     }
     visible = {
         scfe_dig_site_visible_trigger = yes

@@ -8,7 +8,7 @@ ship_event = {
     location = root
     is_triggered_only = yes
     trigger = {
-        owner = { is_ai = no }
+        owner = { is_ai = no is_subject = no }
         from = { has_star_flag = illusion_rune_system }
     }
     immediate = {
@@ -137,6 +137,9 @@ fleet_event = {
         owner = {
             add_relic = r_scfe_illusion_rune
             add_resource = { unity = 1000 }
+            hidden_effect = {
+                country_event = { id = scfe_nyblax_country.1 }
+            }
         }
     }
 }

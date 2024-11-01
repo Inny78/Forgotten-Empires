@@ -62,7 +62,6 @@ scfe_failed_hive_category = {
 	on_success = scfe_failed_hive.1
 }
 
-
 # The Reverse Engine
 scfe_reverse_engine_category = {
 	desc = scfe_reverse_engine_desc
@@ -186,6 +185,7 @@ scfe_war_torn_category = {
 	on_success = scfe_war_torn.1
 }
 
+# Vanishing Act
 scfe_vanishing_act_category = {
 	desc = scfe_vanishing_act_category_desc
 	picture = GFX_evt_space_station
@@ -216,7 +216,6 @@ scfe_vanishing_act_category = {
 ############################## Archaeology Story Pack ##############################
 
 ##### The First Music #####
-
 scfe_the_first_music_anomaly = {
 	desc = scfe_the_first_music_anomaly_desc
 	picture = GFX_evt_scfe_junim_anomaly
@@ -266,7 +265,6 @@ scfe_koeleothan_world_category = {
 	}
 	on_success = scfe_koeleothan.1
 }
-
 scfe_xenograss_world_category = {
 	desc = scfe_xenograss_world_category_desc
 	picture = GFX_evt_tundra
@@ -279,7 +277,6 @@ scfe_xenograss_world_category = {
 	}
 	on_success = scfe_xenograss.1
 }
-
 scfe_quantumpearl_world_category = {
 	desc = scfe_quantumpearl_world_category_desc
 	picture = GFX_evt_desert
@@ -292,8 +289,6 @@ scfe_quantumpearl_world_category = {
 	}
 	on_success = scfe_quantumpearl.1
 }
-
-
 scfe_beetle_world_category = {
 	desc = scfe_beetle_world_category_desc
 	picture = GFX_evt_tropical
@@ -306,7 +301,6 @@ scfe_beetle_world_category = {
 	}
 	on_success = scfe_beetleswarm.1
 }
-
 scfe_sless_alliance_anomaly_1 = {
 	desc = "scfe_sless_alliance_anomaly_1_desc"
 	picture = GFX_evt_city_ruins

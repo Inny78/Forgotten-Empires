@@ -1,0 +1,10 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_scfe_specimen_creep_sample"
+        texturefile = "gfx/interface/icons/specimens/scfe_creep_sample.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_data_fountain"
+        texturefile = "gfx/interface/icons/specimens/scfe_data_fountain.dds"
+    }
+}

@@ -715,7 +715,6 @@ ship_event = {
         hidden_effect = {
             solar_system = { remove_star_flag = scfe_shaded_lead4 }
             clear_global_event_target = scfe_shaded_lead4
-            clear_global_event_target = scfe_shaded_star_lead4
         }
     }
     option = {
@@ -971,6 +970,13 @@ country_event = {
     after = {
         hidden_effect = {
             remove_point_of_interest = scfe_shaded_colony
+            event_target:scfe_shaded_star_lead4 = {
+                random_ambient_object = {
+                    limit = { has_ambient_object_flag = scfe_shaded_toxoid_amb }
+                    destroy_ambient_object = this
+                }
+            }
+            clear_global_event_target = scfe_shaded_star_lead4
         }
     }
 }

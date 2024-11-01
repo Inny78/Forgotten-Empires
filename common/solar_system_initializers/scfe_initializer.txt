@@ -814,6 +814,7 @@ shaded_lead4_system = {
                 scale = 0.75
                 entity_offset_height = 6
                 location = this
+                effect = { set_ambient_object_flag = scfe_shaded_toxoid_amb }
             }
        }
     }

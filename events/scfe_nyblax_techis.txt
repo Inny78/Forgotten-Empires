@@ -8,7 +8,7 @@ ship_event = {
     location = root
     is_triggered_only = yes
     trigger = {
-        owner = { is_ai = no }
+        owner = { is_ai = no is_subject = no }
         from = { has_star_flag = damage_rune_system }
     }
     immediate = {

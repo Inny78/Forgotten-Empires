@@ -1,9 +1,13 @@
+on_monthly_pulse_country = {
+	events = {
+		scfe_nyblax_country.1
+	}
+}
 on_mid_game_pulse = {
 	events = {
 		scfe_engine.9
 	}
 }
-
 on_mid_game_pulse_country = {
 	events = {
 		scfe_engine.4
@@ -204,5 +208,20 @@ on_terraforming_complete = {
 on_building_starbase_outpost = {
 	events = {
 		scfe_engine.10
+	}
+}
+# Nyblax
+#This = destroyed country
+#From = optional, destroyer (country)
+on_country_destroyed = {
+	events = {
+		scfe_nyblax_country.13
+	}
+}
+# This = subject
+# From = subject's overlord
+on_becoming_subject = {
+	events = {
+		scfe_nyblax_country.10
 	}
 }

@@ -22,6 +22,7 @@ ship_event = {
 				}
 				has_anomaly = no
 				has_owner = no
+				scfe_has_special_deposit = no
 			}
 			scfe_is_valid_system = yes
 		}
@@ -29,7 +30,11 @@ ship_event = {
 	immediate = {
 		solar_system = {
 			random_system_planet = {
-				limit = { scfe_is_moon_of_gas_giant = yes has_anomaly = no }
+				limit = {
+					scfe_is_moon_of_gas_giant = yes
+					has_anomaly = no
+					scfe_has_special_deposit = no
+				}
 				change_pc = pc_relic
 				reset_planet = yes
 				clear_deposits = yes

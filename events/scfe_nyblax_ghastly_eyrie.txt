@@ -8,7 +8,7 @@ ship_event = {
     location = root
     is_triggered_only = yes
     trigger = {
-        owner = { is_ai = no }
+        owner = { is_ai = no is_subject = no }
         from = { has_star_flag = arcane_rune_system }
     }
     immediate = {
@@ -197,6 +197,9 @@ country_event = {
         add_relic = r_scfe_arcane_rune
         set_global_flag = r_arcane_rune_collected
         add_resource = { unity = 1000 }
+        hidden_effect = {
+            change_variable = { which = nyblax_owned_relics@root value = 1 }
+        }
     }
 }
 
@@ -214,12 +217,18 @@ country_event = {
         set_global_flag = r_arcane_rune_collected
         add_relic = r_scfe_arcane_rune
         add_resource = { unity = 1000 }
+        hidden_effect = {
+            change_variable = { which = nyblax_owned_relics@root value = 1 }
+        }
     }
     option = {
         trigger = { has_authority = auth_hive_mind }
         name = scfe_ghastly_eyrie.13.hive
         add_relic = r_scfe_arcane_rune
         add_resource = { unity = 1000 }
+        hidden_effect = {
+            country_event = { id = scfe_nyblax_country.1 }
+        }
     }
 }
 

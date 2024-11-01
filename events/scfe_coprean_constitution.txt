@@ -387,6 +387,7 @@ fleet_event = {
                 counter = scfe_coprean_colonies
                 amount = 1
             }
+            give_specimen = { key = scfe_creep_sample }
         }
     }
 }

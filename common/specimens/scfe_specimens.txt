@@ -1,0 +1,46 @@
+scfe_creep_sample = {
+    icon = "GFX_scfe_specimen_creep_sample"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = epic
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        space_fauna_growth_rate_mult = 0.1
+    }
+}
+scfe_data_fountain = {
+    icon = "GFX_scfe_specimen_data_fountain"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            engineering_research = 10
+        }
+    }
+}
+scfe_complaint_inasir = {
+    icon = "GFX_specimen_reparation_invoice"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            society_research = 10
+        }
+    }
+}

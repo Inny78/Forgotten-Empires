@@ -8,7 +8,7 @@ ship_event = {
     location = root
     is_triggered_only = yes
     trigger = {
-        owner = { is_ai = no }
+        owner = { is_ai = no is_subject = no }
         from = { has_star_flag = regeneration_rune_system }
     }
     immediate = {
@@ -140,46 +140,64 @@ country_event = {
     }
 
     option = {
+        name = scfe_quad.8.dev
+        trigger = { has_civic = civic_hive_devouring_swarm }
+        add_resource = { food = 200 }
+    }
+    option = {
         name =  scfe_quad.8.phil
-        trigger = { owner = { is_xenophile = yes } }
+        trigger = { is_xenophile = yes }
     }
     option = {
         name =  scfe_quad.8.phob
-        trigger = { owner = { is_xenophobe = yes } }
+        trigger = {
+            OR = {
+                is_xenophobe = yes
+                is_homicidal = yes
+            }
+            NOT = { has_civic = civic_hive_devouring_swarm }
+        }
     }
     option = {
         name =  scfe_quad.8.spir
-        trigger = { owner = { is_spiritualist = yes } }
+        trigger = { is_spiritualist = yes }
     }
     option = {
         name =  scfe_quad.8.mate
-        trigger = { owner = { is_materialist = yes } }
+        trigger = { is_materialist = yes }
     }
     option = {
         name =  scfe_quad.8.egal
-        trigger = { owner = { is_egalitarian = yes } }
+        trigger = { is_egalitarian = yes }
     }
     option = {
         name =  scfe_quad.8.auth
-        trigger = { owner = { is_authoritarian = yes } }
+        trigger = { is_authoritarian = yes }
     }
     option = {
         name =  scfe_quad.8.mili
-        trigger = { owner = { is_militarist = yes } }
+        trigger = { is_militarist = yes }
     }
     option = {
         name =  scfe_quad.8.paci
-        trigger = { owner = { is_pacifist = yes } }
+        trigger = { is_pacifist = yes }
     }
     option = {
         name =  scfe_quad.8.mach
-        trigger = { owner = { is_machine_empire = yes } }
+        trigger = { is_machine_empire = yes }
     }
     option = {
         name =  scfe_quad.8.hive
-        trigger = { owner = { is_hive_empire = yes } }
+        trigger = {
+            is_hive_empire = yes
+            NOT = { has_civic = civic_hive_devouring_swarm }
+        }
     }
 	option = {
+        trigger = {
+            is_hive_empire = no
+            scfe_has_no_standard_ethic = yes
+        }
 		name = scfe_quad.8.default
 	}
     after = {
@@ -200,5 +218,8 @@ country_event = {
         name = scfe_quad.9.a
         add_relic = r_scfe_regeneration_rune
         add_resource = { unity = 1000 }
+        hidden_effect = {
+            country_event = { id = scfe_nyblax_country.1 }
+        }
     }
 }

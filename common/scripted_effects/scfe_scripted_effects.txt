@@ -491,3 +491,77 @@ site_scfe_ghosts_random_events = {
         33 = { fleet_event = { id = scfe_ghosts_site_fail.3 } }
     }
 }
+scfe_nyblax_runes_redistribute = {
+    if = {
+        limit = { has_relic = r_scfe_arcane_rune }
+        remove_relic = r_scfe_arcane_rune
+        random_playable_country = {
+            limit = {
+                is_ai = no
+                is_subject = no
+                NOT = { is_same_empire = root }
+            }
+            country_event = { id = scfe_nyblax_country.23 days = 10 random = 60 }
+        }
+    }
+    if = {
+        limit = { has_relic = r_scfe_regeneration_rune }
+        remove_relic = r_scfe_regeneration_rune
+        random_playable_country = {
+            limit = {
+                is_ai = no
+                is_subject = no
+                NOT = { is_same_empire = root }
+            }
+            country_event = { id = scfe_nyblax_country.25 days = 10 random = 60 }
+        }
+    }
+    if = {
+        limit = { has_relic = r_scfe_invisibility_rune }
+        remove_relic = r_scfe_invisibility_rune
+        random_playable_country = {
+            limit = {
+                is_ai = no
+                is_subject = no
+                NOT = { is_same_empire = root }
+            }
+            country_event = { id = scfe_nyblax_country.24 days = 10 random = 60 }
+        }
+    }
+    if = {
+        limit = { has_relic = r_scfe_illusion_rune }
+        remove_relic = r_scfe_illusion_rune
+        random_playable_country = {
+            limit = {
+                is_ai = no
+                is_subject = no
+                NOT = { is_same_empire = root }
+            }
+            country_event = { id = scfe_nyblax_country.22 days = 10 random = 60 }
+        }
+    }
+    if = {
+        limit = { has_relic = r_scfe_damage_rune }
+        remove_relic = r_scfe_damage_rune
+        random_playable_country = {
+            limit = {
+                is_ai = no
+                is_subject = no
+                NOT = { is_same_empire = root }
+            }
+            country_event = { id = scfe_nyblax_country.20 days = 10 random = 60 }
+        }
+    }
+    if = {
+        limit = { has_relic = r_scfe_haste_rune }
+        remove_relic = r_scfe_haste_rune
+        random_playable_country = {
+            limit = {
+                is_ai = no
+                is_subject = no
+                NOT = { is_same_empire = root }
+            }
+            country_event = { id = scfe_nyblax_country.21 days = 10 random = 60 }
+        }
+    }
+}

@@ -40,6 +40,11 @@ scfe_is_valid_star_system = {
 		is_marauder_cluster = yes
 		has_star_flag = drone_home_system
 		has_star_flag = chosen_system
+		has_star_flag = extragalactic_cluster
+		has_star_flag = giga_grox_system
+		has_star_flag = giga_system_six
+		has_star_flag = giga_no_lanes
+		has_star_flag = mem_sadrell_extant_cluster
 		has_star_flag = outercluster
 		cohesive_system = yes
 		urmazin_system = yes
@@ -54,7 +59,6 @@ scfe_is_valid_star_system = {
 }
 
 scfe_dig_site_visible_trigger = {
-	scfe_is_default_empire = yes
 	is_ai = no
 	default_site_visible_trigger = yes
 }
@@ -543,3 +547,59 @@ has_alshigan_engine = { has_relic = r_scfe_alshigan_engine }
 has_znkar_distortion_generator = { has_relic = r_scfe_znkar_distortion_generator }
 has_first_empire_databank = { has_relic = r_scfe_first_empire_databank }
 has_orders_trinket = { has_relic = r_scfe_orders_trinket }
+
+scfe_has_any_nyblax_relic = {
+	OR = {
+		has_relic = r_scfe_arcane_rune
+		has_relic = r_scfe_damage_rune
+		has_relic = r_scfe_haste_rune
+		has_relic = r_scfe_illusion_rune
+		has_relic = r_scfe_invisibility_rune
+		has_relic = r_scfe_regeneration_rune
+	}
+}
+
+scfe_has_no_standard_ethic = {
+	is_xenophobe = no
+	is_xenophile = no
+	is_authoritarian = no
+	is_egalitarian = no
+	is_militarist = no
+	is_pacifist = no
+	is_materialist = no
+	is_spiritualist = no
+}
+
+scfe_has_special_deposit = {
+	OR = {
+		has_deposit = d_treasure_planet
+		has_deposit = d_black_needle_base
+		has_deposit = d_abandoned_black_needle_base
+		has_deposit = d_hive_dwelling
+		has_deposit = d_ruined_hive_dwelling
+		has_deposit = d_the_zone
+		has_deposit = d_arcane_device
+		has_deposit = d_ancient_facilities
+		has_deposit = d_fallen_orbital_shipyard
+		has_deposit = d_arcane_replicator
+		has_deposit = d_system_resources
+		has_deposit = d_arcane_generator
+		has_deposit = d_spore_vents
+		has_deposit = d_cave_shroom_veins
+		has_deposit = d_tree_of_life_home
+		has_deposit = d_tree_of_life_colony
+		has_deposit = d_buried_lithoids
+		has_deposit = d_buried_lithoids_overlord
+		has_deposit = d_lithoid_crater
+		has_deposit = d_machine_minerals
+		has_deposit = d_impossiblecorrie
+		has_deposit = d_bluelotus
+		has_deposit = d_bluelotus2
+		has_deposit = d_ruin_bluelotus
+		has_deposit = d_crater_bluelotus
+		has_deposit = d_mutation_vats
+		has_deposit = d_exotic_mountain
+		has_deposit = d_guardian_dragon_hoard
+		has_any_strange_worlds_deposit = yes
+	}
+}
