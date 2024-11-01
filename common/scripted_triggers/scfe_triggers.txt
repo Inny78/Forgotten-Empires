@@ -13,6 +13,11 @@ scfe_dig_site_default_spawn_rules = {
 			has_star_flag = drone_home_system
 			has_star_flag = chosen_system
 			has_star_flag = outercluster
+			has_star_flag = extragalactic_cluster
+			has_star_flag = giga_grox_system
+			has_star_flag = giga_system_six
+			has_star_flag = giga_no_lanes
+			has_star_flag = mem_sadrell_extant_cluster
 			cohesive_system = yes
 			urmazin_system = yes
 			everchanging_system = yes
@@ -509,6 +514,7 @@ scfe_has_baol_chain = {
 	NOT = { has_country_flag = green_thumb_achievement }
 }
 scfe_can_find_precursor = {
+	is_ai = no
 	OR = {
 		has_policy_flag = scfe_precursor_policy_concurrent
 		AND = {
