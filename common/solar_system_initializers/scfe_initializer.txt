@@ -8,7 +8,7 @@ scfe_sless_home_system = {
     class = rl_standard_stars
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_sless_home_system precursor_system }
+    flags = { scfe_sless_home_system precursor_system shroud_storm_changed }
 
     prevent_anomalies = yes
 
@@ -20,9 +20,6 @@ scfe_sless_home_system = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 45
@@ -40,10 +37,9 @@ scfe_sless_home_system = {
         class = pc_nuked
         size = 25
         orbit_distance = 40
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
         init_effect = {
             prevent_anomaly = yes
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = precursor_world
             save_global_event_target_as = scfe_sless_home_planet
             create_archaeological_site = scfe_sless_alliance_site_4
             create_ambient_object = {
@@ -117,7 +113,7 @@ scfe_coprean_home_system = {
     class = "rl_binary_stars"
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_coprean_home_system precursor_system }
+    flags = { scfe_coprean_home_system precursor_system shroud_storm_changed }
     prevent_anomalies = yes
 
     asteroid_belt = {
@@ -157,13 +153,12 @@ scfe_coprean_home_system = {
         deposit_blockers = none
         modifiers = none
         has_ring = no
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
 
         change_orbit = @base_moon_distance
 
         init_effect = {
             prevent_anomaly = yes
-            set_planet_flag = precursor_world
-            set_planet_flag = forbid_guillis_planet_modifiers
             save_global_event_target_as = scfe_coprean_home_planet
             create_archaeological_site = scfe_coprean_constitution_site_4
 
@@ -217,7 +212,7 @@ scfe_astanine_home_system = {
     class = "rl_standard_stars"
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_astanine_home_system precursor_system }
+    flags = { scfe_astanine_home_system precursor_system shroud_storm_changed }
 
     prevent_anomalies = yes
 
@@ -261,23 +256,19 @@ scfe_astanine_home_system = {
         deposit_blockers = none
         modifiers = none
         has_ring = no
-
-        change_orbit = @base_moon_distance
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
 
         init_effect = {
             prevent_anomaly = yes
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = precursor_world
             save_global_event_target_as = scfe_astanine_home_planet
             create_archaeological_site = scfe_astanine_site_5
-
             add_deposit = d_physics_10
             add_deposit = d_physics_10
             add_deposit = d_physics_10
         }
     }
 
-    change_orbit = 25
+    change_orbit = 35
 
     init_effect = {
         spawn_megastructure = {
@@ -346,7 +337,7 @@ scfe_astanine_home_system = {
 # Strange Worlds
 strange_init_01 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system }
+    flags = { strange_world_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
 
@@ -377,22 +368,18 @@ strange_init_01 = {
         class = "pc_ocean"
         orbit_angle = { min = 90 max = 270 }
         size = { min = 22 max = 22 }
+        flags = { cant_terraform_planet pf_koeleothan_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
 
         anomaly = "scfe_koeleothan_world_category"
 
         init_effect = {
-            set_planet_flag = cant_terraform_planet
-            set_planet_flag = pf_koeleothan_world
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = suppress_archaeological_sites
             add_deposit = d_koeleothan
         }
     }
 }
 strange_init_02 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system }
+    flags = { strange_world_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
 
@@ -423,22 +410,18 @@ strange_init_02 = {
         class = "pc_desert"
         orbit_angle = { min = 90 max = 270 }
         size = { min = 18 max = 18 }
+        flags = { cant_terraform_planet pf_quantumpearl_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
 
         anomaly = "scfe_quantumpearl_world_category"
 
         init_effect = {
-            set_planet_flag = cant_terraform_planet
-            set_planet_flag = pf_quantumpearl_world
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = suppress_archaeological_sites
             add_deposit = d_quantumpearl
         }
     }
 }
 strange_init_03 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system }
+    flags = { strange_world_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
 
@@ -469,15 +452,10 @@ strange_init_03 = {
         class = "pc_gaia"
         orbit_angle = { min = 90 max = 270 }
         size = { min = 14 max = 20 }
-
+        flags = { cant_terraform_planet pf_woorskyr_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
         anomaly = "scfe_woorskyr_world_category"
 
         init_effect = {
-            set_planet_flag = cant_terraform_planet
-            set_planet_flag = pf_woorskyr_world
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = suppress_archaeological_sites
             add_modifier = {
                 modifier = "scfe_woorskyr_tree_network"
                 days = -1
@@ -488,7 +466,7 @@ strange_init_03 = {
 }
 strange_init_04 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system }
+    flags = { strange_world_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
 
@@ -519,22 +497,17 @@ strange_init_04 = {
         class = "pc_tundra"
         orbit_angle = { min = 90 max = 270 }
         size = { min = 14 max = 20 }
-
+        flags = { cant_terraform_planet pf_xenograss_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
         anomaly = "scfe_xenograss_world_category"
 
         init_effect = {
-            set_planet_flag = cant_terraform_planet
-            set_planet_flag = pf_xenograss_world
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = suppress_archaeological_sites
             add_deposit = d_xenograss
         }
     }
 }
 strange_init_05 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system }
+    flags = { strange_world_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
 
@@ -565,15 +538,10 @@ strange_init_05 = {
         class = "pc_tropical"
         orbit_angle = { min = 90 max = 270 }
         size = { min = 16 max = 22 }
-
+        flags = { cant_terraform_planet pf_beetle_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
         anomaly = "scfe_beetle_world_category"
 
         init_effect = {
-            set_planet_flag = cant_terraform_planet
-            set_planet_flag = pf_beetle_world
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = suppress_archaeological_sites
             add_deposit = d_beetle_swarm
         }
     }
@@ -582,7 +550,7 @@ strange_init_05 = {
 # Shaded Empire
 shaded_lead1_system = {
     name = scfe_shaded_clue1_system_name
-    flags = { scfe_shaded_lead1 precursor_system }
+    flags = { scfe_shaded_lead1 precursor_system shroud_storm_changed }
     class = "sc_m_giant"
     asteroid_belt = {
         type = rocky_asteroid_belt
@@ -617,6 +585,7 @@ shaded_lead1_system = {
         size = 6
         has_ring = no
         anomaly = none
+        flags = { shroud_storm_changed }
         init_effect = {
             save_global_event_target_as = scfe_shaded_asteroid_lead1
         }
@@ -638,7 +607,7 @@ shaded_lead1_system = {
 }
 shaded_lead2_system = {
     name = scfe_shaded_clue2_system_name
-    flags = { scfe_shaded_lead2 precursor_system }
+    flags = { scfe_shaded_lead2 precursor_system shroud_storm_changed }
     class = "sc_m"
 
     usage = misc_system_init
@@ -739,7 +708,7 @@ shaded_lead2_system = {
 }
 shaded_lead3_system = {
     name = scfe_shaded_clue3_system_name
-    flags = { scfe_shaded_lead3 precursor_system }
+    flags = { scfe_shaded_lead3 precursor_system shroud_storm_changed }
     class = "sc_g"
 
     usage = misc_system_init
@@ -768,6 +737,7 @@ shaded_lead3_system = {
         orbit_distance = 30
         size = 17
         class = rl_habitable_normal
+        flags = { shroud_storm_changed }
         init_effect = {
             save_global_event_target_as = scfe_shaded_colony_lead3
             add_modifier = { modifier = scfe_infrastructure }
@@ -783,7 +753,7 @@ shaded_lead3_system = {
 }
 shaded_lead4_system = {
     name = scfe_shaded_clue4_system_name
-    flags = { scfe_shaded_lead4 precursor_system }
+    flags = { scfe_shaded_lead4 precursor_system shroud_storm_changed }
     class = "sc_a"
 
     usage = misc_system_init
@@ -821,7 +791,7 @@ shaded_lead4_system = {
 }
 shaded_colony_system = {
     name = scfe_saaldryn
-    flags = { scfe_shaded_colony_system crisis_spawn_exclude precursor_system }
+    flags = { scfe_shaded_colony_system crisis_spawn_exclude precursor_system shroud_storm_changed }
     class = "sc_m"
 
     usage = misc_system_init
@@ -851,6 +821,7 @@ shaded_colony_system = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 20 max = 25 }
         has_ring = no
+        flags = { shroud_storm_changed }
 
         init_effect = {
             set_planet_flag = scfe_shaded_colony
@@ -869,7 +840,7 @@ shaded_colony_system = {
 scfe_znkar_init_01 = {
     class = "rl_standard_stars"
     name = scfe_znkar_kamva
-    flags = { precursor_system }
+    flags = { precursor_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -903,11 +874,9 @@ scfe_znkar_init_01 = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
         anomaly = none
+        flags = { wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers scfe_znkar_nuked shroud_storm_changed }
 
         init_effect = {
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifier
-            set_planet_flag = scfe_znkar_nuked
             create_point_of_interest = { event_chain = scfe_znkar_chain id = scfe_znkar_nuked name = scfe_znkar_pakrta location = this }
             save_global_event_target_as = scfe_znkar_nuked
             enable_special_project = {
@@ -929,11 +898,9 @@ scfe_znkar_init_01 = {
             has_ring = no
             orbit_angle = { min = 90 max = 270 }
             anomaly = none
+            flags = { wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers scfe_znkar_nuked_moon shroud_storm_changed }
 
             init_effect = {
-                set_planet_flag = wp_pfe_ignore_planet_flag
-                set_planet_flag = forbid_guillis_planet_modifiers
-                set_planet_flag = scfe_znkar_nuked_moon
                 save_global_event_target_as = scfe_znkar_nuked_moon
                 prevent_anomaly = yes
                 clear_deposits = yes
@@ -945,7 +912,7 @@ scfe_znkar_init_01 = {
 # A Celestial Disturbance
 scfe_celestial_disturbance_system = {
     class = sc_scfe_binary_1 # The primary star, a neutron star
-    flags = { scfe_celestial_disturbance_system precursor_system scfe_ai_avoid_system }
+    flags = { scfe_celestial_disturbance_system precursor_system scfe_ai_avoid_system shroud_storm_changed }
     name = scfe_celestial_disturbance_system_name
 
     usage = misc_system_init
@@ -954,7 +921,6 @@ scfe_celestial_disturbance_system = {
     prevent_anomalies = yes
     init_effect = {
         save_global_event_target_as = scfe_celestial_disturbance_system
-        set_star_flag = scfe_ai_avoid_system
     }
 
     planet = {
@@ -965,10 +931,10 @@ scfe_celestial_disturbance_system = {
         size = 25
         has_ring = no
         anomaly = none
+        flags = { scfe_celestial_disturbance_sun shroud_storm_changed }
         init_effect = {
             clear_deposits = yes
             clear_planet_modifiers = yes
-            set_planet_flag = scfe_celestial_disturbance_sun
         }
     }
 
@@ -979,10 +945,10 @@ scfe_celestial_disturbance_system = {
         size = 8
         has_ring = no
         anomaly = none
+        flags = { scfe_celestial_disturbance_neutron shroud_storm_changed }
         init_effect = {
             clear_deposits = yes
             clear_planet_modifiers = yes
-            set_planet_flag = scfe_celestial_disturbance_neutron
         }
     }
 
@@ -996,10 +962,10 @@ scfe_celestial_disturbance_system = {
         orbit_distance = 20
         orbit_angle = { min = 90 max = 270 }
         anomaly = none
+        flags = { scfe_celestial_disturbance_molten shroud_storm_changed }
         init_effect = {
             clear_deposits = yes
             clear_planet_modifiers = yes
-            set_planet_flag = scfe_celestial_disturbance_molten
         }
     }
 
@@ -1013,9 +979,9 @@ scfe_celestial_disturbance_system = {
         orbit_distance = 60
         orbit_angle = { min = 90 max = 270 }
         anomaly = none
+        flags = { scfe_celestial_disturbance_gas shroud_storm_changed }
         init_effect = {
             clear_deposits = yes
-            set_planet_flag = scfe_celestial_disturbance_gas
         }
 
         change_orbit = @base_moon_distance
@@ -1027,10 +993,10 @@ scfe_celestial_disturbance_system = {
             orbit_angle = { min = 90 max = 270 }
             orbit_distance = 6
             anomaly = none
+            flags = { scfe_celestial_disturbance_barren shroud_storm_changed }
             init_effect = {
                 clear_deposits = yes
                 clear_planet_modifiers = yes
-                set_planet_flag = scfe_celestial_disturbance_barren
             }
         }
     }
@@ -1045,13 +1011,11 @@ scfe_celestial_disturbance_system = {
         orbit_angle = { min = 90 max = 270 }
         anomaly = none
         name = scfe_celestial_disturbance_home_name
+        flags = { wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers scfe_celestial_disturbance_homeworld shroud_storm_changed }
 
         init_effect = {
             clear_deposits = yes
             clear_planet_modifiers = yes
-            set_planet_flag = wp_pfe_ignore_planet_flag
-            set_planet_flag = forbid_guillis_planet_modifiers
-            set_planet_flag = scfe_celestial_disturbance_homeworld
             save_global_event_target_as = scfe_celestial_disturbance_homeworld
             create_ambient_object = {
                 type = scfe_astral_scar
@@ -1077,10 +1041,10 @@ scfe_celestial_disturbance_system = {
             anomaly = none
             name = scfe_celestial_disturbance_home_moon_name
             orbit_distance = 6
+            flags = { scfe_celestial_disturbance_moon shroud_storm_changed }
             init_effect = {
                 clear_deposits = yes
                 clear_planet_modifiers = yes
-                set_planet_flag = scfe_celestial_disturbance_moon
             }
         }
     }
@@ -1088,7 +1052,7 @@ scfe_celestial_disturbance_system = {
 # Alshigans
 scfe_alshigans_init_01 = {
     class = "rl_standard_stars"
-    flags = { precursor_system }
+    flags = { precursor_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -1128,9 +1092,9 @@ scfe_alshigans_init_01 = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
         anomaly = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 
         init_effect = {
-            set_planet_flag = forbid_guillis_planet_modifier
             create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_savannah name = scfe_alshigans_velaen location = this }
             save_global_event_target_as = scfe_alshigans_savannah
             enable_special_project = {
@@ -1170,7 +1134,7 @@ scfe_alshigans_init_01 = {
 }
 scfe_alshigans_init_02 = {
     class = "rl_standard_stars"
-    flags = { precursor_system }
+    flags = { precursor_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -1221,9 +1185,9 @@ scfe_alshigans_init_02 = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
         anomaly = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 
         init_effect = {
-            set_planet_flag = forbid_guillis_planet_modifier
             create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_alpine name = scfe_alshigans_uuladir location = this }
             save_global_event_target_as = scfe_alshigans_alpine
             enable_special_project = {
@@ -1252,7 +1216,7 @@ scfe_alshigans_init_02 = {
 }
 scfe_alshigans_init_03 = {
     class = "rl_standard_stars"
-    flags = { precursor_system }
+    flags = { precursor_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -1308,9 +1272,9 @@ scfe_alshigans_init_03 = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
         anomaly = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 
         init_effect = {
-            set_planet_flag = forbid_guillis_planet_modifier
             create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_jungle name = scfe_alshigans_demearen location = this }
             save_global_event_target_as = scfe_alshigans_jungle
             enable_special_project = {
@@ -1344,7 +1308,7 @@ scfe_ghost_system_01 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
-    flags = { scfe_ghost_system_01 precursor_system scfe_ai_avoid_system }
+    flags = { scfe_ghost_system_01 precursor_system scfe_ai_avoid_system shroud_storm_changed }
     name = scfe_ghost_izanami
     init_effect = { save_global_event_target_as = scfe_ghost_system1 }
 
@@ -1368,7 +1332,7 @@ scfe_ghost_system_01 = {
         count = 1
         class = pc_barren
         anomaly = none
-        flags = { scfe_ghost_planet_mining }
+        flags = { scfe_ghost_planet_mining shroud_storm_changed }
     }
     planet = {
         name = scfe_ghost_bchania
@@ -1379,7 +1343,7 @@ scfe_ghost_system_01 = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
         anomaly = none
-        flags = { scfe_ghost_planet forbid_guillis_planet_modifier }
+        flags = { scfe_ghost_planet forbid_guillis_planet_modifier shroud_storm_changed }
         init_effect = { save_global_event_target_as = scfe_ghost_planet1 }
     }
     planet = {
@@ -1399,7 +1363,7 @@ scfe_ghost_system_02 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
-    flags = { scfe_ghost_system_02 precursor_system }
+    flags = { scfe_ghost_system_02 precursor_system shroud_storm_changed }
     init_effect = { save_global_event_target_as = scfe_ghost_system2 }
 
     planet = {
@@ -1409,7 +1373,7 @@ scfe_ghost_system_02 = {
         orbit_angle = 1
         size = 20
         anomaly = none
-        flags = { scfe_ghost_void }
+        flags = { scfe_ghost_void shroud_storm_changed }
         init_effect = { clear_deposits = yes }
     }
     planet = {
@@ -1434,7 +1398,7 @@ scfe_ghost_system_02 = {
         orbit_angle = { min = 90 max = 270 }
         size = { min = 16 max = 20 }
         anomaly = none
-        flags = { scfe_ghost_planet2 forbid_guillis_planet_modifier }
+        flags = { scfe_ghost_planet2 forbid_guillis_planet_modifier shroud_storm_changed }
         init_effect = { save_global_event_target_as = scfe_ghost_planet2 }
     }
 }
@@ -1444,7 +1408,7 @@ scfe_ghost_system_03 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
-    flags = { scfe_ghost_system_03 precursor_system }
+    flags = { scfe_ghost_system_03 precursor_system shroud_storm_changed }
     init_effect = { save_global_event_target_as = scfe_ghost_system3 }
 
     asteroid_belt = {
@@ -1459,7 +1423,7 @@ scfe_ghost_system_03 = {
         orbit_angle = 1
         size = 20
         anomaly = none
-        flags = { scfe_ghost_void }
+        flags = { scfe_ghost_void shroud_storm_changed }
         init_effect = { clear_deposits = yes }
     }
     planet = {
@@ -1477,7 +1441,7 @@ scfe_ghost_system_03 = {
             orbit_distance = 10
             orbit_angle = 300
             has_ring = no
-            flags = { scfe_ghost_planet3 forbid_guillis_planet_modifier }
+            flags = { scfe_ghost_planet3 forbid_guillis_planet_modifier shroud_storm_changed }
             init_effect = { save_global_event_target_as = scfe_ghost_planet3 }
         }
     }
@@ -1489,7 +1453,7 @@ scfe_hyrokkin = {
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
-    flags = { arcane_rune_system precursor_system }
+    flags = { arcane_rune_system precursor_system shroud_storm_changed }
     prevent_anomalies = yes
 
     planet = {
@@ -1509,6 +1473,7 @@ scfe_hyrokkin = {
         size = 15
         has_ring = no
         modifiers = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
         init_effect = {
             prevent_anomaly = yes
             clear_deposits = yes
@@ -1522,7 +1487,7 @@ scfe_khnum = {
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
-    flags = { damage_rune_system precursor_system }
+    flags = { damage_rune_system precursor_system shroud_storm_changed }
     prevent_anomalies = yes
 
     planet = {
@@ -1566,6 +1531,7 @@ scfe_khnum = {
         size = 22
         has_ring = no
         modifiers = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
         init_effect = {
             prevent_anomaly = yes
             clear_deposits = yes
@@ -1580,7 +1546,7 @@ scfe_severing_lash = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { haste_rune_system precursor_system }
+	flags = { haste_rune_system precursor_system shroud_storm_changed }
     prevent_anomalies = yes
 
 	planet = {
@@ -1600,6 +1566,7 @@ scfe_severing_lash = {
 		size = 17
 		has_ring = no
 		modifiers = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 		init_effect = {
 			create_archaeological_site = scfe_narrow_maze_site
 		}
@@ -1611,7 +1578,7 @@ scfe_kikimora = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { regeneration_rune_system precursor_system }
+	flags = { regeneration_rune_system precursor_system shroud_storm_changed }
 	prevent_anomalies = yes
 
 	planet = {
@@ -1646,6 +1613,7 @@ scfe_kikimora = {
 			orbit_distance = 12
 			orbit_angle = 150
 			has_ring = no
+            flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
             init_effect = {
                 clear_deposits = yes
                 create_archaeological_site = scfe_quad_site
@@ -1667,7 +1635,7 @@ scfe_mireska = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { illusion_rune_system precursor_system }
+	flags = { illusion_rune_system precursor_system shroud_storm_changed }
 	prevent_anomalies = yes
 
 	planet = {
@@ -1687,6 +1655,7 @@ scfe_mireska = {
 		size = 13
 		has_ring = yes
 		modifiers = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 		init_effect = {
 			clear_deposits = yes
 			create_archaeological_site = scfe_jex_site
@@ -1699,7 +1668,7 @@ scfe_tahlin = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { invisibility_rune_system precursor_system }
+	flags = { invisibility_rune_system precursor_system shroud_storm_changed }
 	prevent_anomalies = yes
 
 	planet = {
@@ -1732,6 +1701,7 @@ scfe_tahlin = {
 		size = 18
 		has_ring = no
 		modifiers = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 		init_effect = {
 			prevent_anomaly = yes
 			clear_deposits = yes
