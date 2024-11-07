@@ -100,24 +100,18 @@ ship_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
+	specimen = scfe_alshigan_amulet
 
 	option = {
 		name = INTERESTING
-		hidden_effect = {
-			owner = {
-				remove_point_of_interest = scfe_alshigans_savannah
-			}
-		}
 		owner = {
+			hidden_effect = { remove_point_of_interest = scfe_alshigans_savannah }
 			add_event_chain_counter = {
 				event_chain = "scfe_alshigans_chain"
 				counter = "scfe_alshigans_artifacts"
 				amount = 1
 			}
-			if = {
-				limit = { has_ancrel = yes }
-				small_artifact_reward = yes
-			}
+			small_artifact_reward = yes
 			country_event = { id = scfe_alshigans.8 days = 1 }
 		}
 	}
@@ -132,6 +126,7 @@ ship_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
+	specimen = scfe_alshigan_pen
 
 	trigger = {
 		is_multiplayer = no
@@ -139,21 +134,20 @@ ship_event = {
 
 	option = {
 		name = INTERESTING
-		hidden_effect = {
-			owner = {
-				remove_point_of_interest = scfe_alshigans_alpine
-			}
-		}
 		owner = {
+			hidden_effect = { remove_point_of_interest = scfe_alshigans_alpine }
 			add_event_chain_counter = {
 				event_chain = "scfe_alshigans_chain"
 				counter = "scfe_alshigans_artifacts"
 				amount = 1
 			}
-			if = {
-				limit = { has_ancrel = yes }
-				medium_artifact_reward = yes
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
 			}
+			medium_artifact_reward = yes
 			country_event = { id = scfe_alshigans.9 days = 1 }
 		}
 	}
@@ -168,24 +162,24 @@ ship_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
+	specimen = scfe_alshigan_flower
 
 	option = {
 		name = PECULIAR
-		hidden_effect = {
-			owner = {
-				remove_point_of_interest = scfe_alshigans_jungle
-			}
-		}
 		owner = {
+			hidden_effect = { remove_point_of_interest = scfe_alshigans_jungle }
 			add_event_chain_counter = {
 				event_chain = "scfe_alshigans_chain"
 				counter = "scfe_alshigans_artifacts"
 				amount = 1
 			}
-			if = {
-				limit = { has_ancrel = yes }
-				small_artifact_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
 			}
+			small_artifact_reward = yes
 			country_event = { id = scfe_alshigans.10 days = 1 }
 		}
 	}
@@ -226,23 +220,26 @@ ship_event = {
 
 	option = {
 		name = DISTURBING
-		hidden_effect = {
-			owner = {
-				remove_point_of_interest = scfe_alshigans_moon
-			}
-		}
 		owner = {
 			end_event_chain = "scfe_alshigans_chain"
-			if = {
-				limit = { has_ancrel = yes }
-				medium_artifact_reward = yes
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
 			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+			large_artifact_reward = yes
 			add_relic = r_scfe_alshigan_engine
 		}
-
 		event_target:scfe_alshigans_moon = {
-			add_deposit = d_physics_5
-			add_deposit = d_engineering_5
+			add_deposit = d_physics_10
+			add_deposit = d_engineering_10
 		}
 		hidden_effect = {
 			clear_global_event_target = scfe_alshigans_asteroid
@@ -252,6 +249,7 @@ ship_event = {
 			clear_global_event_target = scfe_alshigans_moon
 			clear_global_event_target = scfe_alshigans_owner
 			owner = {
+				remove_point_of_interest = scfe_alshigans_moon
 				set_country_flag = alshigans_precursors_done
 				if = {
 					limit = {

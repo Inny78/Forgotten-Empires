@@ -39,7 +39,6 @@ scfe_sless_home_system = {
         orbit_distance = 40
         flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
         init_effect = {
-            prevent_anomaly = yes
             save_global_event_target_as = scfe_sless_home_planet
             create_archaeological_site = scfe_sless_alliance_site_4
             create_ambient_object = {
@@ -128,9 +127,6 @@ scfe_coprean_home_system = {
         orbit_angle = 0
         size = 35
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     planet = {
@@ -158,10 +154,8 @@ scfe_coprean_home_system = {
         change_orbit = @base_moon_distance
 
         init_effect = {
-            prevent_anomaly = yes
             save_global_event_target_as = scfe_coprean_home_planet
             create_archaeological_site = scfe_coprean_constitution_site_4
-
             set_planet_entity = { entity = "relic_world_01_entity" }
         }
 
@@ -213,7 +207,6 @@ scfe_astanine_home_system = {
     usage = misc_system_init
     usage_odds = 0
     flags = { scfe_astanine_home_system precursor_system shroud_storm_changed }
-
     prevent_anomalies = yes
 
     asteroid_belt = {
@@ -228,9 +221,6 @@ scfe_astanine_home_system = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 30
@@ -259,7 +249,6 @@ scfe_astanine_home_system = {
         flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
 
         init_effect = {
-            prevent_anomaly = yes
             save_global_event_target_as = scfe_astanine_home_planet
             create_archaeological_site = scfe_astanine_site_5
             add_deposit = d_physics_10
@@ -348,9 +337,6 @@ strange_init_01 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 20
@@ -390,9 +376,6 @@ strange_init_02 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 20
@@ -432,9 +415,6 @@ strange_init_03 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 20
@@ -477,9 +457,6 @@ strange_init_04 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 20
@@ -518,9 +495,6 @@ strange_init_05 = {
         orbit_angle = 1
         size = { min = 20 max = 30 }
         has_ring = no
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
 
     change_orbit = 20
@@ -675,9 +649,6 @@ shaded_lead2_system = {
         class = star
         orbit_distance = 0
         size = { min = 20 max = 30 }
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
     planet = {
         orbit_distance = 20
@@ -831,7 +802,6 @@ shaded_colony_system = {
             add_modifier = { modifier = scfe_infrastructure days = -1 }
             add_modifier = { modifier = natural_beauty days = -1 }
             add_deposit = d_central_spire
-            prevent_anomaly = yes
             save_global_event_target_as = scfe_shaded_colony
         }
     }
@@ -861,6 +831,11 @@ scfe_znkar_init_01 = {
         orbit_distance = 20
         count = { min = 1 max = 2 }
         class = rl_unhabitable_planets
+        init_effect = {
+            clear_deposits = yes
+            add_deposit = d_engineering_10
+            add_deposit = d_engineering_10
+        }
     }
 
     change_orbit = 20
@@ -884,7 +859,6 @@ scfe_znkar_init_01 = {
                 location = this
                 owner = event_target:znkar_start_country
             }
-            prevent_anomaly = yes
             clear_planet_modifiers = yes
             clear_deposits = yes
         }
@@ -902,7 +876,6 @@ scfe_znkar_init_01 = {
 
             init_effect = {
                 save_global_event_target_as = scfe_znkar_nuked_moon
-                prevent_anomaly = yes
                 clear_deposits = yes
                 clear_planet_modifiers = yes
             }
@@ -1184,7 +1157,6 @@ scfe_alshigans_init_02 = {
         has_ring = no
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
-        anomaly = none
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 
         init_effect = {
@@ -1197,6 +1169,19 @@ scfe_alshigans_init_02 = {
             }
             add_modifier = { modifier = scfe_alpine_ruins days = -1 }
             add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+        moon = {
+            count = 1
+            orbit_distance = @base_moon_distance
+            class = pc_barren
+            orbit_angle = { min = 90 max = 270 }
+            size = 6
+            flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
+            init_effect = {
+                clear_deposits = yes
+                add_deposit = d_engineering_10
+                add_deposit = d_engineering_10
+            }
         }
     }
 
@@ -1442,7 +1427,12 @@ scfe_ghost_system_03 = {
             orbit_angle = 300
             has_ring = no
             flags = { scfe_ghost_planet3 forbid_guillis_planet_modifier shroud_storm_changed }
-            init_effect = { save_global_event_target_as = scfe_ghost_planet3 }
+            init_effect = {
+                save_global_event_target_as = scfe_ghost_planet3
+                clear_deposits = yes
+                add_deposit = d_physics_10
+                add_deposit = d_physics_10
+            }
         }
     }
 }
@@ -1475,7 +1465,6 @@ scfe_hyrokkin = {
         modifiers = none
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
         init_effect = {
-            prevent_anomaly = yes
             clear_deposits = yes
             create_archaeological_site = scfe_ghastly_eyrie_site
         }
@@ -1507,9 +1496,6 @@ scfe_khnum = {
         size = 10
         has_ring = no
         modifiers = none
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
     planet = {
         name = scfe_vorcia
@@ -1519,9 +1505,6 @@ scfe_khnum = {
         size = 14
         has_ring = no
         modifiers = none
-        init_effect = {
-            prevent_anomaly = yes
-        }
     }
     planet = {
         name = scfe_tharkun
@@ -1533,7 +1516,6 @@ scfe_khnum = {
         modifiers = none
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
         init_effect = {
-            prevent_anomaly = yes
             clear_deposits = yes
             relic_world_deposits = yes
             create_archaeological_site = scfe_techis_site
@@ -1689,9 +1671,6 @@ scfe_tahlin = {
 		has_ring = yes
 		change_orbit = 5
 		modifiers = none
-		init_effect = {
-			prevent_anomaly = yes
-		}
 	}
 	planet = {
 		name = scfe_deani
@@ -1703,7 +1682,6 @@ scfe_tahlin = {
 		modifiers = none
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
 		init_effect = {
-			prevent_anomaly = yes
 			clear_deposits = yes
 			create_archaeological_site = scfe_riki_site
             create_ambient_object = {
@@ -1726,9 +1704,6 @@ scfe_tahlin = {
 		size = 17
 		has_ring = no
 		modifiers = none
-		init_effect = {
-			prevent_anomaly = yes
-		}
 	}
 	planet = {
 		name = scfe_jasper
@@ -1740,9 +1715,6 @@ scfe_tahlin = {
 		has_ring = yes
 		change_orbit = 5
 		modifiers = none
-		init_effect = {
-			prevent_anomaly = yes
-		}
 		moon = {
 			name = scfe_jasper_circle
 			class = "pc_molten"
@@ -1750,9 +1722,6 @@ scfe_tahlin = {
 			orbit_angle = { min = 90 max = 270 }
 			size = 10
 			modifiers = none
-			init_effect = {
-				prevent_anomaly = yes
-			}
 		}
 	}
 	planet = {
@@ -1763,8 +1732,5 @@ scfe_tahlin = {
 		size = 22
 		has_ring = no
 		modifiers = none
-		init_effect = {
-			prevent_anomaly = yes
-		}
 	}
 }

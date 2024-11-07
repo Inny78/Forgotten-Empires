@@ -61,6 +61,7 @@ country_event = {
             min = @tier2researchmin
             max = @tier2researchmax
         }
+        small_artifact_reward = yes
         country_event = { id = scfe_znkar.4 days = 10 }
     }
     after = {
@@ -170,6 +171,7 @@ country_event = {
             counter = "scfe_znkar_artifacts"
             amount = 1
         }
+        medium_artifact_reward = yes
         country_event = { id = scfe_znkar.9 days = 30 }
     }
 }
@@ -217,6 +219,7 @@ country_event = {
             min = @tier2unitymin
             max = @tier2unitymax
         }
+        medium_artifact_reward = yes
         end_event_chain = scfe_znkar_chain
         add_relic = r_scfe_znkar_distortion_generator
     }

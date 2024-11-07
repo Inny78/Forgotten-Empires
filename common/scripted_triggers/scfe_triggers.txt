@@ -403,6 +403,7 @@ scfe_sless_digsite_spawn_rules = {
 			scfe_is_nuked = yes
 		}
 		NOT = { exists = archaeological_site }
+		scfe_has_special_deposit = yes
 	}
 }
 scfe_coprean_digsite_spawn_rules = {
@@ -420,6 +421,7 @@ scfe_coprean_digsite_spawn_rules = {
 	any_system_planet = {
 		has_anomaly = no
 		NOT = { exists = archaeological_site }
+		scfe_has_special_deposit = yes
 	}
 }
 scfe_astanine_digsite_spawn_rules = {
@@ -440,6 +442,7 @@ scfe_astanine_digsite_spawn_rules = {
 		uninhabitable_regular_planet = yes
 		NOT = {
 			exists = archaeological_site
+			scfe_has_special_deposit = yes
 		}
 	}
 }
@@ -609,3 +612,4 @@ scfe_has_special_deposit = {
 		has_any_strange_worlds_deposit = yes
 	}
 }
+scfe_is_empty_space = { is_planet_class = pc_scfe_empty_space }

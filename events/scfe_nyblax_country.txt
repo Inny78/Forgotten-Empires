@@ -276,3 +276,4 @@ country_event = {
         hidden_effect = { country_event = { id = scfe_nyblax_country.1 } }
     }
 }
+# Resolutions stuff

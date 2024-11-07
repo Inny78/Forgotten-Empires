@@ -124,6 +124,8 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    specimen = scfe_complaint_inasir
+
     immediate = {
         from = { set_site_progress_locked = yes }
     }
@@ -145,7 +147,6 @@ fleet_event = {
                 min = @tier2researchmin
                 max = @tier2researchmax
             }
-            give_specimen = { key = scfe_complaint_inasir }
         }
     }
 }

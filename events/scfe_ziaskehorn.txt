@@ -113,6 +113,7 @@ fleet_event = {
     location = from
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_shard_ziaskehorn
 
     immediate = {
         from = { set_site_progress_locked = yes }

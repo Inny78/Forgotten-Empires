@@ -1,10 +1,64 @@
 spriteTypes = {
+    # Misc
     spriteType = {
-        name = "GFX_scfe_specimen_creep_sample"
-        texturefile = "gfx/interface/icons/specimens/scfe_creep_sample.dds"
+        name = "GFX_scfe_specimen_complaint_inasir"
+        texturefile = "gfx/interface/icons/specimens/scfe_complaint_inasir.dds"
     }
     spriteType = {
-        name = "GFX_scfe_specimen_data_fountain"
-        texturefile = "gfx/interface/icons/specimens/scfe_data_fountain.dds"
+        name = "GFX_scfe_specimen_shard_ziaskehorn"
+        texturefile = "gfx/interface/icons/specimens/scfe_shard_ziaskehorn.dds"
+    }
+    # Alshigan
+    spriteType = {
+        name = "GFX_scfe_specimen_alshigan_amulet"
+        texturefile = "gfx/interface/icons/specimens/scfe_alshigan_amulet.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_alshigan_flower"
+        texturefile = "gfx/interface/icons/specimens/scfe_alshigan_flower.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_alshigan_pen"
+        texturefile = "gfx/interface/icons/specimens/scfe_alshigan_pen.dds"
+    }
+    # Astanine
+    spriteType = {
+        name = "GFX_scfe_specimen_astanine_projector_lens"
+        textureFile = "gfx/interface/icons/specimens/scfe_astanine_projector_lens.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_astanine_holosphere"
+        textureFile = "gfx/interface/icons/specimens/scfe_astanine_holosphere.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_astanine_flyer"
+        textureFile = "gfx/interface/icons/specimens/scfe_astanine_flyer.dds"
+    }
+    # Coprean
+    spriteType = {
+        name = "GFX_scfe_specimen_avus_memorial"
+        textureFile = "gfx/interface/icons/specimens/scfe_avus_memorial.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_coprean_creep_sample"
+        texturefile = "gfx/interface/icons/specimens/scfe_coprean_creep_sample.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_coprean_ship_engine"
+        texturefile = "gfx/interface/icons/specimens/scfe_coprean_ship_engine.dds"
+    }
+    # Sless
+    spriteType = {
+        name = "GFX_scfe_specimen_sless_darts"
+        texturefile = "gfx/interface/icons/specimens/scfe_sless_darts.dds"
+    }
+    # V'inarii
+    spriteType = {
+        name = "GFX_scfe_specimen_vinarii_starmap"
+        textureFile = "gfx/interface/icons/specimens/scfe_vinarii_starmap.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_vinarii_data_fountain"
+        textureFile = "gfx/interface/icons/specimens/scfe_vinarii_data_fountain.dds"
     }
 }

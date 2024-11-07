@@ -66,6 +66,7 @@ fleet_event = {
 
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_coprean_ship_engine
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -232,6 +233,7 @@ fleet_event = {
 
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_avus_memorial
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -341,6 +343,7 @@ fleet_event = {
 
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_coprean_creep_sample
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -387,7 +390,6 @@ fleet_event = {
                 counter = scfe_coprean_colonies
                 amount = 1
             }
-            give_specimen = { key = scfe_creep_sample }
         }
     }
 }

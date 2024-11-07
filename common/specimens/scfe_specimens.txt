@@ -1,5 +1,6 @@
-scfe_creep_sample = {
-    icon = "GFX_scfe_specimen_creep_sample"
+# Alshigans
+scfe_alshigan_amulet = {
+    icon = "GFX_scfe_specimen_alshigan_amulet"
     type = aesthetic_wonder
 
     inline_script = {
@@ -9,12 +10,75 @@ scfe_creep_sample = {
 
     triggered_country_modifier = {
         mult = value:aesthetic_wonder_specimens_modifiers_mult
-        space_fauna_growth_rate_mult = 0.1
+        potential = { is_gestalt = no }
+        trade_value_mult = 0.03
+    }
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        potential = { is_gestalt = yes }
+        planet_jobs_energy_produces_mult = 0.02
     }
 }
-scfe_data_fountain = {
-    icon = "GFX_scfe_specimen_data_fountain"
+scfe_alshigan_flower = {
+    icon = "GFX_scfe_specimen_alshigan_flower"
+    type = xeno_geology
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:xeno_geology_specimens_modifiers_mult
+        planet_stability_add = 3
+    }
+}
+scfe_alshigan_pen = {
+    icon = "GFX_scfe_specimen_alshigan_pen"
     type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        country_edict_fund_add = 5
+    }
+}
+# Astanine
+scfe_astanine_projector_lens = {
+    icon = "GFX_scfe_specimen_astanine_projector_lens"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        planet_amenities_add = 5
+    }
+}
+scfe_astanine_holosphere = {
+    icon = "GFX_scfe_specimen_astanine_holosphere"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:historical_item_specimens_modifiers_mult
+        planet_army_build_speed_mult = 0.1
+    }
+}
+scfe_astanine_flyer = {
+    icon = "GFX_scfe_specimen_astanine_flyer"
+    type = historical_item
 
     inline_script = {
         script = "grand_archive/set_specimen_rarity"
@@ -24,12 +88,13 @@ scfe_data_fountain = {
     resources = {
         category = specimens
         produces = {
-            engineering_research = 10
+            unity = 10
         }
     }
 }
-scfe_complaint_inasir = {
-    icon = "GFX_specimen_reparation_invoice"
+# Copreans
+scfe_avus_memorial = {
+    icon = "GFX_scfe_specimen_avus_memorial"
     type = historical_item
 
     inline_script = {
@@ -42,5 +107,131 @@ scfe_complaint_inasir = {
         produces = {
             society_research = 10
         }
+    }
+}
+scfe_coprean_creep_sample = {
+    icon = "GFX_scfe_specimen_coprean_creep_sample"
+    type = xeno_geology
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:xeno_geology_specimens_modifiers_mult
+        space_fauna_growth_rate_mult = 0.1
+    }
+}
+scfe_coprean_ship_engine = {
+    icon = "GFX_scfe_specimen_coprean_ship_engine"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        potential = { has_first_contact_dlc = no }
+        mult = value:historical_item_specimens_modifiers_mult
+        ship_speed_mult = 0.08
+    }
+    triggered_country_modifier = {
+        potential = { has_first_contact_dlc = yes }
+        mult = value:historical_item_specimens_modifiers_mult
+        ship_base_speed_mult = 0.08
+    }
+}
+scfe_creep_sample = { # Temp duplicate, old id
+    icon = "GFX_scfe_specimen_coprean_creep_sample"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = epic
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        space_fauna_growth_rate_mult = 0.05
+    }
+}
+# Sless
+scfe_sless_darts = {
+    icon = "GFX_scfe_specimen_sless_darts"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        army_morale_damage_mult = 0.05
+    }
+
+}
+# V'inarii
+scfe_vinarii_starmap = {
+    icon = "GFX_scfe_specimen_vinarii_starmap"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:historical_item_specimens_modifiers_mult
+        ship_interstellar_speed_mult = 0.08
+    }
+}
+scfe_vinarii_data_fountain = {
+    icon = "GFX_scfe_specimen_vinarii_data_fountain"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            society_research = 10
+        }
+    }
+}
+# Misc
+scfe_complaint_inasir = {
+    icon = "GFX_scfe_specimen_complaint_inasir"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            society_research = 10
+        }
+    }
+}
+scfe_shard_ziaskehorn = {
+    icon = "GFX_scfe_specimen_shard_ziaskehorn"
+    type = xeno_geology
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:xeno_geology_specimens_modifiers_mult
+        army_damage_mult = 0.05
     }
 }

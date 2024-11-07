@@ -62,6 +62,7 @@ fleet_event = {
 
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_astanine_projector_lens
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -298,6 +299,7 @@ fleet_event = {
     desc = "scfe_astanine.8.desc"
     picture = GFX_evt_victorious_army
     show_sound = event_bad_omen
+    specimen = scfe_astanine_holosphere
 
     archaeology = yes
     is_triggered_only = yes
@@ -576,7 +578,7 @@ fleet_event = {
 
     option = {
         name = scfe_astanine.14.a
-        small_artifact_reward = yes
+        medium_artifact_reward = yes
     }
 }
 #chapter 3
@@ -600,12 +602,19 @@ fleet_event = {
 
     option = {
         name = scfe_astanine.15.a
-        small_artifact_reward = yes
+        large_artifact_reward = yes
         owner = {
-            add_resource = {
-                unity = 9999
-                physics_research = 1000
-                energy = 2000
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier2unityreward
+                min = @tier2unitymin
+                max = @tier2unitymax
             }
         }
     }
