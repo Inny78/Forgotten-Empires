@@ -6,7 +6,7 @@
  scfe_complaint_inasir_desc_details: "The document details a grievance regarding the recent delivery of a substandard alloy batch. The correspondence highlights the consequential delays in ship building across the First League's production sites."
  scfe_shard_ziaskehorn: "Shard of Ziaskehorn"
  scfe_shard_ziaskehorn_desc_short: "This shard, a crystal fragment from the scorched surface of a planet ravaged by the enigmatic Fires of Ziaskehorn, exudes an intense and enduring heat"
- scfe_shard_ziaskehorn_desc_details: "Discovered amidst the smoldering remains of Ziaskehorn, the crystal’s temperature has shown no signs of diminishing since it was collected."
+ scfe_shard_ziaskehorn_desc_details: "Discovered amidst the smoldering remains of this planet, the crystal's temperature has shown no signs of diminishing since it was collected."
 
  # Alshigan
  scfe_alshigan_amulet: "Alshigan Amulet"
@@ -56,4 +56,4 @@
  scfe_vinarii_starmap_desc_detail: "Each route and station is carefully marked, indicating the complex infrastructure that sustained V'inarii society. However, the map holds an enduring mystery: none of its stellar formations, star systems, or coordinates correspond to any known region of our galaxy."
  scfe_vinarii_data_fountain: "V'inarii Data Fountain"
  scfe_vinarii_data_fountain_desc_short: "The V'inarii Data Fountain was a ubiquitous information terminal, seamlessly blending advanced technology with artistic craftsmanship to serve the vast urban population of the V'inarii Empire"
- scfe_vinarii_data_fountain_desc_details: "Each terminal featured a dynamic holographic display, allowing citizens instant access to information within the empire’s extensive data networks. Encased in unique stone sculptures, no two Data Fountains were identical; each one was carved with distinct motifs and symbols."
+ scfe_vinarii_data_fountain_desc_details: "Each terminal featured a dynamic holographic display, allowing citizens instant access to information within the empire's extensive data networks. Encased in unique stone sculptures, no two Data Fountains were identical; each one was carved with distinct motifs and symbols."
