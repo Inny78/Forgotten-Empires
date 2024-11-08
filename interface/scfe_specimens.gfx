@@ -52,6 +52,14 @@ spriteTypes = {
         name = "GFX_scfe_specimen_sless_darts"
         texturefile = "gfx/interface/icons/specimens/scfe_sless_darts.dds"
     }
+    spriteType = {
+        name = "GFX_scfe_specimen_sless_holo_ad"
+        texturefile = "gfx/interface/icons/specimens/scfe_sless_holo_ad.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_sless_bio_brooch"
+        textureFile = "gfx/interface/icons/specimens/scfe_sless_bio_brooch.dds"
+    }
     # V'inarii
     spriteType = {
         name = "GFX_scfe_specimen_vinarii_starmap"

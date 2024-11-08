@@ -171,7 +171,34 @@ scfe_sless_darts = {
         mult = value:aesthetic_wonder_specimens_modifiers_mult
         army_morale_damage_mult = 0.05
     }
+}
+scfe_sless_holo_ad = {
+    icon = "GFX_scfe_specimen_sless_holo_ad"
+    type = aesthetic_wonder
 
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        army_health = 0.05
+    }
+}
+scfe_sless_bio_brooch = {
+    icon = "GFX_scfe_specimen_sless_bio_brooch"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        biological_pop_happiness = 0.05
+    }
 }
 # V'inarii
 scfe_vinarii_starmap = {

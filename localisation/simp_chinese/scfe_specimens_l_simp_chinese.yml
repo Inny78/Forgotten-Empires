@@ -51,6 +51,12 @@
  scfe_sless_darts: "Sless Darts"
  scfe_sless_darts_desc_short: "These Sless Darts are autoguided weapons recovered from the ruins of a spaceport during an emergency evacuation"
  scfe_sless_darts_desc_detail: "Built with sophisticated targeting systems, the darts are designed to identify and pursue targets autonomously. Remarkably, they remain operational, their deadly functionality halted only by depleted energy reserves."
+ scfe_sless_holo_ad: "Sless Holo-ad"
+ scfe_sless_holo_ad_desc_short: "This holographic advertisement of a reinforced skin offers a glimpse into the biological enhancements marketed to the population"
+ scfe_sless_holo_ad_desc_details: "Found alongside numerous similar adverts, this artifact attests to the Sless Alliance's mastery of genetic modification and their society's widespread acceptance of self-enhancement as both a cultural norm and an aspirational pursuit."
+ scfe_sless_bio_brooch: "Sless Bio-Brooch"
+ scfe_sless_bio_brooch_desc_short: "This intricately crafted brooch exemplifies the Sless tradition of visually celebrating personal enhancement"
+ scfe_sless_bio_brooch_desc_details: "Typically worn to complement their latest body modification, Sless citizens selected brooch designs that symbolized and accentuated their augmented traits."
 
  # V'inarii
  scfe_vinarii_starmap: "V'inarii Star Map"

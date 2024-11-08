@@ -210,6 +210,7 @@ fleet_event = {
 
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_sless_holo_ad
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -346,6 +347,7 @@ fleet_event = {
 
     archaeology = yes
     is_triggered_only = yes
+    specimen = scfe_sless_bio_brooch
 
     immediate = {
         from = { set_site_progress_locked = yes }
