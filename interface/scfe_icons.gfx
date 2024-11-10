@@ -1,20 +1,16 @@
 spriteTypes = {
-
 	### ship parts ###
 	spriteType = {
 		name = "GFX_ship_part_scfe_astanine_hologram"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_inspiring_presence.dds"
 	}
-
     ### technologies ###
-
 	spriteType = {
 		name = "GFX_tech_scfe_astanine_hologram"
 		texturefile = "gfx/interface/icons/technologies/tech_scfe_astanine_hologram.dds"
 		alwaystransparent = yes
 	}
-
-    ### decisions ###
+    ### Decisions ###
 	spriteType = {
 		name = "scfe_decision_if_planet_haste_rune"
 		texturefile = "gfx/interface/icons/decisions/scfe_decision_if_planet_haste_rune.dds"
@@ -25,5 +21,9 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/decisions/scfe_decision_terraform_arcology.dds"
 		alwaystransparent = yes
 	}
-
+	### Resolutions
+	spriteType = {
+		name = "GFX_resolution_power_runes"
+		texturefile = "gfx/interface/icons/resolutions/resolution_power_runes.dds"
+	}
 }

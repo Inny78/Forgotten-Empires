@@ -527,8 +527,10 @@ r_scfe_arcane_rune = {
 	active_effect = {
 		custom_tooltip = scfe_arcane_rune_activated
 		custom_tooltip = relic_triumph_cooldown
+
 		hidden_effect = {
-		set_timed_country_flag = { flag = r_arcane_rune_active days = 1800 }
+			set_timed_country_flag = { flag = resolution_breached_arcane_rune days = 3600 }
+			set_timed_country_flag = { flag = r_arcane_rune_active days = 3600 }
 			hidden_effect = { add_modifier = { modifier = "relic_activation_cooldown" days = 3600 } }
 			country_event = { id = scfe_arcane_rune.1 }
 		}
@@ -575,6 +577,7 @@ r_scfe_damage_rune = {
 	score = 500
 
 	active_effect = {
+		set_timed_country_flag = { flag = resolution_breached_mighty_rune days = 3600 }
 		add_modifier = { modifier = scfe_power_rune_boost days = 3600 }
 		custom_tooltip = relic_triumph_cooldown
 		hidden_effect = { add_modifier = { modifier = "relic_activation_cooldown" days = 3600 } }
@@ -618,6 +621,7 @@ r_scfe_haste_rune = {
 		custom_tooltip = haste_rune_activated
 		custom_tooltip = relic_triumph_cooldown
 		hidden_effect = {
+			set_timed_country_flag = { flag = resolution_breached_haste_rune days = 3600 }
 			set_timed_country_flag = { flag = r_haste_rune_active days = 3600 }
 			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
 			set_timed_country_flag = { flag = relic_haste_rune_activated_for_decision days = 3600 }
@@ -666,6 +670,7 @@ r_scfe_regeneration_rune = {
 	score = 500
 
 	active_effect = {
+		set_timed_country_flag = { flag = resolution_breached_regeneration_rune days = 3600 }
 		set_timed_country_flag = { flag = r_regeneration_rune_active days = 3600 }
 		add_modifier = { modifier = scfe_regeneration_rune days = 3600 }
 		custom_tooltip = relic_triumph_cooldown
@@ -712,6 +717,7 @@ r_scfe_illusion_rune = {
 		custom_tooltip = scfe_illusion_rune_activated
 		custom_tooltip = relic_triumph_cooldown
 		hidden_effect = {
+			set_timed_country_flag = { flag = resolution_breached_illusion_rune days = 3600 }
 			set_timed_country_flag = { flag = r_illusion_rune_active days = 3600 }
 			add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
 			set_timed_country_flag = { flag = relic_illusion_rune_activated days = 3600 }
@@ -756,6 +762,7 @@ r_scfe_invisibility_rune = {
   	}
 	
 	active_effect = {
+		set_timed_country_flag = { flag = resolution_breached_invisibility_rune days = 3600 }
 		set_timed_country_flag = { flag = r_invisibility_rune_active days = 3600 }
 		if = {
 			limit = { has_first_contact_dlc = yes }

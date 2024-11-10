@@ -61,7 +61,10 @@
  # V'inarii
  scfe_vinarii_starmap: "V'inarii Star Map"
  scfe_vinarii_starmap_desc_short: "This detailed star map offers a glimpse into the V'inarii Empire's expansive domain, meticulously charting trade routes, resource hubs, and military outposts"
- scfe_vinarii_starmap_desc_detail: "Each route and station is carefully marked, indicating the complex infrastructure that sustained V'inarii society. However, the map holds an enduring mystery: none of its stellar formations, star systems, or coordinates correspond to any known region of our galaxy."
+ scfe_vinarii_starmap_desc_details: "Each route and station is carefully marked, indicating the complex infrastructure that sustained V'inarii society. However, the map holds an enduring mystery: none of its stellar formations, star systems, or coordinates correspond to any known region of our galaxy."
  scfe_vinarii_data_fountain: "V'inarii Data Fountain"
  scfe_vinarii_data_fountain_desc_short: "The V'inarii Data Fountain was a ubiquitous information terminal, seamlessly blending advanced technology with artistic craftsmanship to serve the vast urban population of the V'inarii Empire"
  scfe_vinarii_data_fountain_desc_details: "Each terminal featured a dynamic holographic display, allowing citizens instant access to information within the empire's extensive data networks. Encased in unique stone sculptures, no two Data Fountains were identical; each one was carved with distinct motifs and symbols."
+ scfe_vinarii_ghost_ice: "V'inarii Ghost Ice"
+ scfe_vinarii_ghost_ice_desc_short: "This somber shard of ice was extracted from the frozen remains of a former V'inarii ecumenopolis"
+ scfe_vinarii_ghost_ice_desc_details: "Dense and faintly luminous, it pulses with unidentifiable energies that elude our current understanding. Traces of ash are embedded within its crystalline structure, suggesting a connection to an ancient event."

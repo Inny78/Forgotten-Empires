@@ -2,7 +2,106 @@
 @distance = 50
 
 # Precursors Story Pack
+scfe_sless_system_1 = {
+    class = rl_standard_stars
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { precursor_system shroud_storm_changed }
+    prevent_anomalies = yes
 
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+        init_effect = { add_deposit = d_energy_4 }
+    }
+    planet = {
+        count = 1
+        class = pc_molten
+        orbit_distance = 20
+        orbit_angle = { min = 90 max = 270 }
+        size = 12
+        has_ring = no
+        init_effect = { add_deposit = d_volatile_motes_2 }
+    }
+    planet = {
+        count = 1
+        class = pc_toxic
+        orbit_distance = 25
+        orbit_angle = { min = 90 max = 270 }
+        size = 15
+        has_ring = no
+        init_effect = { add_modifier = { modifier = toxic_terraforming_candidate days = -1 } }
+    }
+    planet = {
+        count = 1
+        class = pc_nuked
+        orbit_distance = 30
+        orbit_angle = { min = 90 max = 270 }
+        size = 15
+        has_ring = no
+        flags = { precursor_world shroud_storm_changed }
+        init_effect = {
+            save_event_target_as = scfe_sless_colony_2
+        }
+    }
+    planet = {
+        count = 1
+        class = pc_gas_giant
+        orbit_distance = 50
+        size = 40
+        has_ring = yes
+        init_effect = { add_deposit = d_physics_3 }
+    }
+    planet = {
+        class = pc_barren_cold
+        orbit_distance = 30
+        size = 10
+        has_ring = no
+        init_effect = { add_deposit = d_minerals_3 }
+    }
+}
+scfe_sless_system_2 = {
+    class = rl_standard_stars
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { precursor_system shroud_storm_changed }
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+        init_effect = { add_deposit = d_energy_4 }
+    }
+    planet = {
+        count = { min = 0 max = 2 }
+        class = rl_unhabitable_planets
+        orbit_distance = 25
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 7 max = 12 }
+        has_ring = no
+    }
+    planet = {
+        count = 1
+        class = pc_nuked
+        orbit_distance = 30
+        orbit_angle = { min = 90 max = 270 }
+        size = 14
+        has_ring = no
+        flags = { precursor_world shroud_storm_changed }
+        init_effect = {
+            save_event_target_as = scfe_sless_colony_3
+        }
+    }
+
+}
 scfe_sless_home_system = {
     name = "NAME_laeran"
     class = rl_standard_stars
@@ -22,11 +121,9 @@ scfe_sless_home_system = {
         has_ring = no
     }
 
-    change_orbit = 45
-
     planet = {
         class = "pc_molten"
-        orbit_distance = 20
+        orbit_distance = 65
         orbit_angle = 45
         size = 18
         has_ring = no

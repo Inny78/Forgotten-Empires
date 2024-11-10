@@ -193,7 +193,6 @@ scfe_decision_planet_haste_rune = {
         }
     }
 }
-
 scfe_decision_planet_illusion_rune = {
     owned_planets_only = yes
     sound = event_administrative_work
@@ -210,6 +209,7 @@ scfe_decision_planet_illusion_rune = {
     potential = {
         exists = owner
         owner = { has_country_flag = relic_illusion_rune_activated_for_decision }
+        habitable_planet_not_urban = yes
     }
 
     allow = {

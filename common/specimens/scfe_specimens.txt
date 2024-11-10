@@ -231,6 +231,22 @@ scfe_vinarii_data_fountain = {
         }
     }
 }
+scfe_vinarii_ghost_ice = {
+    icon = "GFX_scfe_specimen_vinarii_ghost_ice"
+    type = xeno_geology
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = epic
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            physics_research = 20
+        }
+    }
+}
 # Misc
 scfe_complaint_inasir = {
     icon = "GFX_scfe_specimen_complaint_inasir"

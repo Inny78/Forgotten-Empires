@@ -443,7 +443,6 @@ site_scfe_shaded_random_events = {
         50 = { fleet_event = { id = scfe_shaded_dig_fail.3 } }
     }
 }
-
 scfe_detection_level_add = {
     if = {
         limit = {
@@ -478,12 +477,14 @@ scfe_select_shaded_angry_fe = {
         }
     }
 }
+
 scfe_roots_cleanup = {
     remove_modifier = scfe_rooted_nature
     remove_modifier = scfe_rooted_nature_maintenance
     remove_modifier = scfe_rooted_crime
     remove_modifier = scfe_rooted_doom
 }
+
 site_scfe_ghosts_random_events = {
     random_list = {
         33 = { fleet_event = { id = scfe_ghosts_site_fail.1 } }
@@ -491,6 +492,7 @@ site_scfe_ghosts_random_events = {
         33 = { fleet_event = { id = scfe_ghosts_site_fail.3 } }
     }
 }
+
 scfe_nyblax_runes_redistribute = {
     if = {
         limit = { has_relic = r_scfe_arcane_rune }

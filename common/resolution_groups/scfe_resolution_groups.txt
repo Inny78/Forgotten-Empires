@@ -1,0 +1,4 @@
+power_runes = {
+    color_index = 4
+    text_color_code = "R"
+}

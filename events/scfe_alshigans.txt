@@ -311,7 +311,7 @@ country_event = {
 				limit = { scfe_is_valid_star_system = yes }
 				set_spawn_system_batch = begin
 				spawn_system = {
-					max_jumps = 15
+					max_jumps = 10
 					min_distance = 5
 					max_distance = 30
 					initializer = "scfe_alshigans_init_02"
@@ -341,7 +341,7 @@ country_event = {
 				limit = { scfe_is_valid_star_system = yes }
 				set_spawn_system_batch = begin
 				spawn_system = {
-					max_jumps = 15
+					max_jumps = 10
 					min_distance = 5
 					max_distance = 30
 					initializer = "scfe_alshigans_init_03"
@@ -370,7 +370,7 @@ country_event = {
 			event_target:scfe_alshigans_asteroid = {
 				closest_system = {
 					min_steps = 2
-					max_steps = 15
+					max_steps = 20
 					limit = {
 						scfe_is_valid_system = yes
 						OR = {

@@ -69,4 +69,8 @@ spriteTypes = {
         name = "GFX_scfe_specimen_vinarii_data_fountain"
         textureFile = "gfx/interface/icons/specimens/scfe_vinarii_data_fountain.dds"
     }
+    spriteType = {
+        name = "GFX_scfe_specimen_vinarii_ghost_ice"
+        textureFile = "gfx/interface/icons/specimens/scfe_vinarii_ghost_ice.dds"
+    }
 }

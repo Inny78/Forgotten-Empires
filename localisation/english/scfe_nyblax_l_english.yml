@@ -154,8 +154,8 @@
  scfe_quad.2.desc: "As our team approached the ruins, they noticed the planet's heartbeat quickening, as if the planet itself was aware of their presence. The team reported that the structures were made of muscle, tissue, and bone - an astonishing example of organic architecture. These buildings were still alive, breathing, though no sentient life remained. The scale of the structures suggests they once housed thousands, but no other species was found.\nOur archaeologists speculate there was a mass exodus toward the mountain, where the heartbeat originates. The team pressed on.\n\nNear the summit, they discovered a tunnel of flesh, leading deep into the heart of the mountain."
  scfe_quad.2.a: "Keep moving forward."
  scfe_quad.5.name: "M'Cholou"
- scfe_quad.5.desc: "Tentacles began to encircle the exploration team as a giant, faceless creature approached. Despite its terrifying appearance, the creature showed no signs of hostility. In fact, it has started communicating with us."
- scfe_quad.5.a: "Are you the Nyblax?"
+ scfe_quad.5.desc: "Tentacles began to encircle the exploration team as a giant, faceless creature approached. Despite its terrifying appearance, the creature showed no signs of hostility. In fact, it has started communicating with us.\n\n§HAre you the Nyblax?§!"
+ scfe_quad.5.a: "Hum, no."
  scfe_quad.6.desc: "§BThe creature seems disappointed after realizing your team is not the entity it was expecting.§!\n\nYes, I am disappointed...\nAnd yes, I have linked my thoughts to yours, forming a bridge between our minds so we can communicate. The connection is weaker with inferior or mechanical species like yourselves, and yet, here we are.\nHow is this possible? Well... it is thanks to the Nyblax. We were once a proud and benevolent collective known as the Morthra, but now we have merged into a single, superior being."
  scfe_quad.6.a: "What is the Nyblax?"
  scfe_quad.7.desc: "§BThe creature appears irritated and frustrated by your thoughts.§!\n\nThe Nyblax... It arrived on our homeworld thousands of years ago. The creature believed we were like it—unique, one of a kind. And in a way, we were... It sought our friendship and our help.\nWhether the Nyblax was honest, benevolent, malevolent, or simply lost in hopeless despair remains unclear.\nIt wanted us to create a Rune for it, and when we did, it would return to collect it.\nYes, of course we created the Rune! How else do you think we managed to merge our entire collective into this single vessel?\nThe Rune? I have it here somewhere. I've been trying to rid myself of it for a very long time, but overpowering my own gravity has proven... rather difficult."
@@ -249,7 +249,7 @@
  scfe_nyblax_country.25.name: "Overgrowth"
  scfe_nyblax_country.25.desc: "One of our cargo ships was destroyed from within by the sudden overgrowth of its own cargo. Amidst the wreckage, we discovered a powerful relic known as the §YRegeneration Rune§!, which had caused some seeds to grow instantly into a dense thicket of trees, tearing the ship apart."
 
-# Resolutions stuff (WIP)
+# Resolutions stuff
  power_runes: "Power Runes"
  resolution_category_mighty_rune: "$resolution_power_runes_ban_mighty$"
  resolution_category_haste_rune: "$resolution_power_runes_ban_haste$"
@@ -297,13 +297,6 @@
  resolution_power_runes_repeal_ban_regeneration_effect_success: "Repeals the §Y$resolution_power_runes_repeal_ban_regeneration$§! resolution, allowing any empire to use the §YRegeneration Rune§! without being in Breach of Galactic Law."
  resolution_power_runes_repeal_ban_haste_effect_success: "Repeals the §Y$resolution_power_runes_repeal_ban_haste$§! resolution, allowing any empire to use the §YHaste Rune§! without being in Breach of Galactic Law."
  resolution_power_runes_repeal_ban_invisibility_effect_success: "Repeals the §Y$resolution_power_runes_repeal_ban_invisibility$§! resolution, allowing any empire to use the §YInvisibility Rune§! without being in Breach of Galactic Law."
-
-# resolution_power_runes_repeal_ban_arcane_effect_fail: "The §YArcane Rune§! will not be banned from use."
-# resolution_power_runes_repeal_ban_illusion_effect_fail: "The §YIllusion Rune§! will not be banned from use."
-# resolution_power_runes_repeal_ban_mighty_effect_fail: "The §YMighty Rune§! will not be banned from use."
-# resolution_power_runes_repeal_ban_regeneration_effect_fail: "The §YRegeneration Rune§! will not be banned from use."
-# resolution_power_runes_repeal_ban_haste_effect_fail: "The §YHaste Rune§! will not be banned from use."
-# resolution_power_runes_repeal_ban_invisibility_effect_fail: "The §YInvisibility Rune§! will not be banned from use."
 
  arcane_penalties: "Breach of Galactic Law: Use of Arcane Rune"
  regeneration_penalties: "Breach of Galactic Law: Use of Regeneration Rune"

@@ -93,32 +93,6 @@ fleet_event = {
 
     immediate = {
         from = { set_site_progress_locked = yes }
-        closest_system = {
-            limit = {
-                scfe_sless_digsite_spawn_rules = yes
-                OR = {
-                    has_owner = no
-                    AND = {
-                        exists = space_owner
-                        space_owner = { is_same_empire = event_target:scfe_sless_owner }
-                    }
-                }
-            }
-            min_steps = 1
-            max_steps = 20
-            random_system_planet = {
-                limit = {
-                    has_anomaly = no
-                    OR = {
-                        scfe_is_barren = yes
-                        scfe_is_barren_cold = yes
-                        scfe_is_nuked = yes
-                    }
-                    NOT = { exists = archaeological_site }
-                }
-                save_event_target_as = scfe_sless_colony_2
-            }
-        }
     }
 
     after = {
@@ -132,6 +106,30 @@ fleet_event = {
     option = {
         name = scfe_sless.3.a
         medium_artifact_reward = yes
+        hidden_effect = {
+            owner = {
+                random_system_within_border = {
+                    set_spawn_system_batch = begin
+                    spawn_system = {
+                        min_distance = 5
+                        max_distance = 20
+                        max_jumps = 5
+                        initializer = "scfe_sless_system_1"
+                    }
+                    if = {
+                        limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                        add_hyperlane = {
+                            from = this
+                            to = last_created_system
+                        }
+                    }
+                    else = {
+                        add_extra_hyperlane_to_spawned_system_effect = yes
+                    }
+                    set_spawn_system_batch = end
+                }
+            }
+        }
         event_target:scfe_sless_colony_2 = {
             enable_special_project = {
                 name = "SCFE_SLESS_ALLIANCE_PROJECT_1"
@@ -262,32 +260,6 @@ fleet_event = {
 
     immediate = {
         from = { set_site_progress_locked = yes }
-        closest_system = {
-            limit = {
-                scfe_sless_digsite_spawn_rules = yes
-                OR = {
-                    has_owner = no
-                    AND = {
-                        exists = space_owner
-                        space_owner = { is_same_empire = event_target:scfe_sless_owner }
-                    }
-                }
-            }
-            min_steps = 1
-            max_steps = 20
-            random_system_planet = {
-                limit = {
-                    has_anomaly = no
-                    OR = {
-                        scfe_is_barren = yes
-                        scfe_is_barren_cold = yes
-                        scfe_is_nuked = yes
-                    }
-                    NOT = { exists = archaeological_site }
-                }
-                save_event_target_as = scfe_sless_colony_3
-            }
-        }
     }
 
     after = {
@@ -300,7 +272,31 @@ fleet_event = {
 
     option = {
         name = scfe_sless.8.a
-        small_artifact_reward = yes
+        medium_artifact_reward = yes
+        hidden_effect = {
+            owner = {
+                random_system_within_border = {
+                    set_spawn_system_batch = begin
+                    spawn_system = {
+                        min_distance = 5
+                        max_distance = 20
+                        max_jumps = 5
+                        initializer = "scfe_sless_system_2"
+                    }
+                    if = {
+                        limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                        add_hyperlane = {
+                            from = this
+                            to = last_created_system
+                        }
+                    }
+                    else = {
+                        add_extra_hyperlane_to_spawned_system_effect = yes
+                    }
+                    set_spawn_system_batch = end
+                }
+            }
+        }
         event_target:scfe_sless_colony_3 = {
             enable_special_project = {
                 name = "SCFE_SLESS_ALLIANCE_PROJECT_2"
@@ -534,6 +530,9 @@ fleet_event = {
         hidden_effect = {
             owner = { set_country_flag = scfe_precursor_sless_finished }
             clear_global_event_target = scfe_sless_owner
+            clear_global_event_target = scfe_sless_colony_2
+            clear_global_event_target = scfe_sless_colony_3
+            clear_global_event_target = scfe_sless_home_planet
         }
     }
 
