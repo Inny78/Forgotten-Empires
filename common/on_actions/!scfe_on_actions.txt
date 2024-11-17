@@ -1,6 +1,6 @@
 on_monthly_pulse_country = {
 	events = {
-		scfe_nyblax_country.1
+		scfe_nyblax_country.2
 	}
 }
 on_mid_game_pulse = {
@@ -16,7 +16,6 @@ on_mid_game_pulse_country = {
 on_five_year_pulse_country = {
 	events = {
 		scfe_engine.3
-		scfe_znkar.30
 	}
 }
 on_decade_pulse_country = {
@@ -52,6 +51,7 @@ on_entering_system_first_time = {
 		scfe_quad_init.1
 		scfe_jex_init.1
 		scfe_riki_init.1
+		scfe_znkar.10
 	}
 }
 on_entering_system = {

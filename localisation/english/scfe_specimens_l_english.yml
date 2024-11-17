@@ -40,15 +40,11 @@
  scfe_coprean_ship_engine: "Coprean Stealthcraft Engine"
  scfe_coprean_ship_engine_desc_short: "The engine of a Coprean subspace stealthcraft, recovered from the wreckage of an ill-fated mission"
  scfe_coprean_ship_engine_desc_details: "These advanced vessels were engineered for covert operations, utilizing specialized subspace drives that allowed them to remain hidden, even under the gravitational pull of planetary bodies. Their stealth capabilities enabled brief but effective subspace 'dives', granting them the element of surprise in potential conflicts - a strategic edge that could have redefined warfare in their era."
-  # temp duplicate
- scfe_creep_sample: "$scfe_coprean_creep_sample$"
- scfe_creep_sample_desc_short: "$scfe_coprean_creep_sample_desc_short$"
- scfe_creep_sample_desc_details: "$scfe_coprean_creep_sample_desc_details$"
 
  # Sless
  scfe_sless_darts: "Sless Darts"
  scfe_sless_darts_desc_short: "These Sless Darts are autoguided weapons recovered from the ruins of a spaceport during an emergency evacuation"
- scfe_sless_darts_desc_detail: "Built with sophisticated targeting systems, the darts are designed to identify and pursue targets autonomously. Remarkably, they remain operational, their deadly functionality halted only by depleted energy reserves."
+ scfe_sless_darts_desc_details: "Built with sophisticated targeting systems, the darts are designed to identify and pursue targets autonomously. Remarkably, they remain operational, their deadly functionality halted only by depleted energy reserves."
  scfe_sless_holo_ad: "Sless Holo-ad"
  scfe_sless_holo_ad_desc_short: "This holographic advertisement of a reinforced skin offers a glimpse into the biological enhancements marketed to the population"
  scfe_sless_holo_ad_desc_details: "Found alongside numerous similar adverts, this artifact attests to the Sless Alliance's mastery of genetic modification and their society's widespread acceptance of self-enhancement as both a cultural norm and an aspirational pursuit."
@@ -66,3 +62,14 @@
  scfe_vinarii_ghost_ice: "V'inarii Ghost Ice"
  scfe_vinarii_ghost_ice_desc_short: "This somber shard of ice was extracted from the frozen remains of a former V'inarii ecumenopolis"
  scfe_vinarii_ghost_ice_desc_details: "Dense and faintly luminous, it pulses with unidentifiable energies that elude our current understanding. Traces of ash are embedded within its crystalline structure, suggesting a connection to an ancient event."
+
+ # Z'nkar
+ scfe_znkar_databanks: "Z'nkar Databanks"
+ scfe_znkar_databanks_desc_short: "The Z'nkar Databanks are a striking fusion of tradition and advanced technology, embodying the Z'nkar's deep reverence for their heritage"
+ scfe_znkar_databanks_desc_details: "Designed to resemble ancient scrolls, the exteriors are inscribed with intricate details recounting the lineage and clan affiliations of their owners. Within, a sophisticated holographic display reveals a wealth of stored data."
+ scfe_znkar_railgun: "Z'nkar Railgun"
+ scfe_znkar_railgun_desc_short: "This railgun represents a pinnacle of destructive precision in Z'nkar weaponry"
+ scfe_znkar_railgun_desc_details: "This advanced device launches a high-density projectile at relativistic speeds, immediately followed by a plasma bolt trailing its path. The resulting dual impact delivers catastrophic damage, combining kinetic force with intense thermal energy. Despite extensive study, its intricate mechanisms and energy systems remain beyond our ability to activate or replicate."
+ scfe_znkar_lamp: "Z'nkar Clan Lamp"
+ scfe_znkar_lamp_desc_short: "This exquisite Z'nkar Clan Lamp showcases the artistry and heritage of the Z'nkar people"
+ scfe_znkar_lamp_desc_details: "Crafted from sculpted stone and crystal, each lamp was meticulously hand-carved by skilled artisans, despite the Z'nkar's access to advanced technology. Every lamp is unique, bearing the insignias of the owner's clan - a mark of pride and belonging within Z'nkar society."

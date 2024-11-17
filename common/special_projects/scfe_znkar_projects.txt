@@ -76,24 +76,20 @@ special_project = {
 
 special_project = {
     key = "SCFE_ZNKAR_RELIC_ANALYSIS"
-    cost = 0
-    days_to_research = 60
+    cost = 3000
+    days_to_research = 0
     tech_department = physics_technology
     picture = GFX_evt_city_ruins
 	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
-    location = yes
     event_chain = scfe_znkar_chain
-    event_scope = ship_event
+    event_scope = country_event
 
     requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
     }
     fail_trigger = { }
 
     on_success = {
-        owner = { country_event = { id = scfe_znkar.9 } }
+        country_event = { id = scfe_znkar.20 }
     }
 }
 
@@ -112,6 +108,6 @@ special_project = {
     fail_trigger = { }
 
 	on_success = {
-		country_event = { id = scfe_znkar.10 }
+		country_event = { id = scfe_znkar.21 }
 	}
 }

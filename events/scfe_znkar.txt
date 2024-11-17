@@ -17,7 +17,6 @@ country_event = {
         }
     }
 }
-
 planet_event = {
     id = scfe_znkar.2
     title = scfe_znkar.2.name
@@ -44,7 +43,6 @@ planet_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_znkar.3
     title = scfe_znkar.3.name
@@ -52,6 +50,7 @@ country_event = {
     picture = GFX_evt_space_station
     show_sound = event_default
     is_triggered_only = yes
+    specimen = scfe_znkar_databanks
 
     option = {
         name = CONTINUE
@@ -70,7 +69,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_znkar.4
     title = scfe_znkar.4.name
@@ -107,7 +105,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_znkar.5
     title = scfe_znkar.5.name
@@ -120,7 +117,6 @@ country_event = {
         name = INTERESTING
     }
 }
-
 country_event = {
     id = scfe_znkar.6
     title = scfe_znkar.6.name
@@ -136,7 +132,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_znkar.7
     title = scfe_znkar.7.name
@@ -155,7 +150,6 @@ country_event = {
         }
     }
 }
-
 country_event = {
     id = scfe_znkar.8
     title = scfe_znkar.7.name
@@ -175,20 +169,65 @@ country_event = {
         country_event = { id = scfe_znkar.9 days = 30 }
     }
 }
-
 country_event = {
     id = scfe_znkar.9
     title = scfe_znkar.9.name
+    desc = scfe_znkar.9.desc
+    picture = GFX_evt_star_chart
+    show_sound = event_default
+    is_triggered_only = yes
+
+    option = {
+        name = INTERESTING
+        hidden_effect = {
+            random_system_within_border = {
+                limit = { scfe_is_valid_star_system = yes }
+                set_spawn_system_batch = begin
+                spawn_system = {
+                    max_jumps = 0
+                    min_distance = 10
+                    max_distance = 40
+                    initializer = "scfe_znkar_init_02"
+                }
+                add_extra_hyperlane_to_spawned_system_effect = yes
+                set_spawn_system_batch = end
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_znkar.10
+    title = scfe_znkar.10.name
+    desc = scfe_znkar.10.desc
+    picture = GFX_evt_shattered_planet
+    show_sound = event_default
+    is_triggered_only = yes
+
+    trigger = {
+        from = { has_star_flag = scfe_wur_den_kaar }
+        owner = { has_event_chain = scfe_znkar_chain }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        event_target:scfe_znkar_broken = {
+            create_archaeological_site = scfe_znkar_colossus_dig
+        }
+    }
+}
+country_event = {
+    id = scfe_znkar.20
+    title = scfe_znkar.20.name
     desc = {
         trigger = { has_first_contact_dlc = no }
-        text = scfe_znkar.9.desc_1
+        text = scfe_znkar.20.desc_1
     }
     desc = {
         trigger = {
             has_first_contact_dlc = yes
             has_technology = tech_cloaking_3
         }
-        text = scfe_znkar.9.desc_2
+        text = scfe_znkar.20.desc_2
     }
     desc = {
         trigger = {
@@ -199,7 +238,7 @@ country_event = {
                 has_technology = tech_cloaking_3
             }
         }
-        text = scfe_znkar.9.desc_3
+        text = scfe_znkar.20.desc_3
     }
     picture = GFX_evt_analyzing_artifacts
     show_sound = event_mystic_reveal_light
@@ -240,11 +279,10 @@ country_event = {
         }
     }
 }
-
 country_event = {
-    id = scfe_znkar.10
-    title = scfe_znkar.10.name
-    desc = scfe_znkar.10.desc
+    id = scfe_znkar.21
+    title = scfe_znkar.21.name
+    desc = scfe_znkar.21.desc
     picture = GFX_evt_star_chart
     is_triggered_only = yes
 
@@ -254,26 +292,10 @@ country_event = {
     }
 }
 
-country_event = {
-    id = scfe_znkar.30
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-        is_ai = no
-        has_relic = r_scfe_znkar_distortion_generator
-        NOT = { has_country_flag = znkar_precursors_done }
-    }
-
-    immediate = {
-        set_country_flag = znkar_precursors_done
-    }
-}
-
 #################################### DIG SITE ####################################
 
 namespace = scfe_znkar_dig
-
+# Secret Base
 fleet_event = {
     id = scfe_znkar_dig.1
     title = scfe_znkar_dig.1.name
@@ -282,11 +304,11 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
-	
+
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -296,7 +318,6 @@ fleet_event = {
         small_artifact_reward = yes
     }
 }
-
 fleet_event = {
     id = scfe_znkar_dig.2
     title = scfe_znkar_dig.2.name
@@ -305,11 +326,11 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
-	
+    specimen = scfe_znkar_railgun
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -319,7 +340,6 @@ fleet_event = {
         small_artifact_reward = yes
     }
 }
-
 fleet_event = {
     id = scfe_znkar_dig.3
     title = scfe_znkar_dig.3.name
@@ -332,7 +352,6 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -342,7 +361,6 @@ fleet_event = {
         small_artifact_reward = yes
     }
 }
-
 fleet_event = {
     id = scfe_znkar_dig.4
     title = scfe_znkar_dig.4.name
@@ -355,7 +373,6 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
         if = {
@@ -390,6 +407,123 @@ fleet_event = {
         event_target:scfe_znkar_nuked_moon = {
             enable_special_project = {
                 name = SCFE_ZNKAR_NUKED_MOON_PROJECT
+                owner = event_target:znkar_start_country
+            }
+        }
+    }
+}
+# Ancient Colossus
+fleet_event = {
+    id = scfe_znkar_dig.5
+    title = scfe_znkar_dig.5.name
+    desc = scfe_znkar_dig.5.desc
+    picture = GFX_evt_space_hangar
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTERESTING
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_znkar_dig.6
+    title = scfe_znkar_dig.6.name
+    desc = scfe_znkar_dig.6.desc
+    picture = GFX_evt_space_hangar
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+    specimen = scfe_znkar_lamp
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTERESTING
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_znkar_dig.7
+    title = scfe_znkar_dig.7.name
+    desc = scfe_znkar_dig.7.desc
+    picture = GFX_evt_space_hangar
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTERESTING
+        small_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_znkar_dig.8
+    title = scfe_znkar_dig.8.name
+    desc = scfe_znkar_dig.8.desc
+    picture = GFX_evt_space_hangar
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+    }
+
+    option = {
+        name = INTERESTING
+        medium_artifact_reward = yes
+    }
+}
+fleet_event = {
+    id = scfe_znkar_dig.9
+    title = scfe_znkar_dig.9.name
+    desc = scfe_znkar_dig.9.desc
+    picture = GFX_evt_space_hangar
+    show_sound = event_default
+    archaeology = yes
+    is_triggered_only = yes
+
+    immediate = {
+        from = { set_site_progress_locked = yes }
+    }
+    after = {
+        from = { set_site_progress_locked = no }
+        if = {
+            limit = { owner = { has_policy_flag = scfe_archaeology_cleanup_active } }
+            destroy_archaeological_site = from
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        large_artifact_reward = yes
+        owner = {
+            enable_special_project = {
+                name = SCFE_ZNKAR_RELIC_ANALYSIS
                 owner = event_target:znkar_start_country
             }
         }

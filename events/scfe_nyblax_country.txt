@@ -20,11 +20,11 @@ country_event = {
 
     trigger = {
         is_ai = no
-        check_variable = { which = nyblax_owned_relics@root value = 0 }
         scfe_has_any_nyblax_relic = yes
     }
 
     immediate = {
+        set_variable = { which = nyblax_owned_relics@root value = 0 }
         if = {
             limit = { has_relic = r_scfe_regeneration_rune }
             change_variable = { which = nyblax_owned_relics@root value = 1 }

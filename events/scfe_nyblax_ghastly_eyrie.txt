@@ -147,14 +147,12 @@ fleet_event = {
     option = {
         name = scfe_ghastly_eyrie.6.a
         medium_artifact_reward = yes
-        if = {
-            limit = { owner = { is_gestalt = no } }
-            hidden_effect = {
+        hidden_effect = {
+            if = {
+                limit = { owner = { is_gestalt = no } }
                 fleet_event = { id = scfe_ghastly_eyrie.11 }
             }
-        }
-        else = {
-            hidden_effect = {
+            else = {
                 owner = { country_event = { id = scfe_ghastly_eyrie.13 } }
             }
         }
@@ -195,7 +193,6 @@ country_event = {
     option = {
         name = scfe_ghastly_eyrie.12.a
         add_relic = r_scfe_arcane_rune
-        set_global_flag = r_arcane_rune_collected
         add_resource = { unity = 1000 }
         hidden_effect = {
             change_variable = { which = nyblax_owned_relics@root value = 1 }
@@ -214,7 +211,6 @@ country_event = {
     option = {
         trigger = { has_authority = auth_machine_intelligence }
         name = scfe_ghastly_eyrie.13.mach
-        set_global_flag = r_arcane_rune_collected
         add_relic = r_scfe_arcane_rune
         add_resource = { unity = 1000 }
         hidden_effect = {

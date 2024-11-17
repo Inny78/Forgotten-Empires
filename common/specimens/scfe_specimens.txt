@@ -143,20 +143,6 @@ scfe_coprean_ship_engine = {
         ship_base_speed_mult = 0.08
     }
 }
-scfe_creep_sample = { # Temp duplicate, old id
-    icon = "GFX_scfe_specimen_coprean_creep_sample"
-    type = aesthetic_wonder
-
-    inline_script = {
-        script = "grand_archive/set_specimen_rarity"
-        RARITY = epic
-    }
-
-    triggered_country_modifier = {
-        mult = value:aesthetic_wonder_specimens_modifiers_mult
-        space_fauna_growth_rate_mult = 0.05
-    }
-}
 # Sless
 scfe_sless_darts = {
     icon = "GFX_scfe_specimen_sless_darts"
@@ -245,6 +231,51 @@ scfe_vinarii_ghost_ice = {
         produces = {
             physics_research = 20
         }
+    }
+}
+# Z'nkar
+scfe_znkar_databanks = {
+    icon = "GFX_scfe_specimen_znkar_databanks"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            society_research = 10
+        }
+    }
+}
+scfe_znkar_railgun = {
+    icon = "GFX_scfe_specimen_znkar_railgun"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        weapon_type_kinetic_weapon_damage_mult = 0.05
+    }
+}
+scfe_znkar_lamp = {
+    icon = "GFX_scfe_specimen_znkar_lamp"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        planet_amenities_add = 5
     }
 }
 # Misc

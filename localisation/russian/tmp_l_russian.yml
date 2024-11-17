@@ -1,0 +1,37 @@
+﻿l_russian:
+
+ # 3.14 starts here
+ scfe_znkar_wur_den_kaar: "Wur-Den-Kaar"
+ scfe_znkar_kaar_da_kruun: "Kaar-Da-Kruun"
+ scfe_precursor_cruiser_01_amb: "The Sunskimmer"
+
+ # Modified
+ scfe_znkar.8.desc: "Our exploration of the Z'nkar moon base has unearthed a pivotal aspect of their history. The Z'nkar, once a militaristic society, had transitioned towards a more peaceful existence, relegating their most potent and dangerous technologies to this moon base. The central discovery is the existence of an immense, cloaked vessel - a technological marvel that challenges our current understanding. The surveillance team's ultimate mission was to board this invisible colossus and shadow their assailants, following them back to their own world."
+
+ # Translators, the previous 9 and 10 have moved to 20 and 21.
+ scfe_znkar.9.name: "Following Their Trail"
+ scfe_znkar.9.desc: "As we were about to leave, one of the scientists found an critical piece of information: the Z'nkar's colossus transmitted a final signal, captured by the computers within their hidden base. §HMission accomplished§!, it states. Yet, more intriguing are the coordinates embedded in the transmission. We now have the means to trace their path back to the attackers' homeworld."
+ scfe_znkar.10.name: "$scfe_znkar_wur_den_kaar$"
+ scfe_znkar.10.desc: "Upon arrival at our destination, our instruments reveal a haunting scene of desolation: a planet, shattered into fragments, still glows with incandescent remnants, millennia after its destruction. Suspended above it lies the wreck of a massive vessel - the Z'nkar's Colossus. With luck, its remains will yield valuable information."
+ # New Dig Site
+ scfe_znkar_colossus_dig: "Ancient Colossus"
+ scfe_znkar_colossus_dig_desc: "Suspended above a broken world lies the wreck of a massive vessel - the Z'nkar's Colossus. With luck, its remains will yield valuable information."
+ scfe_znkar_dig.5.name: "Empty Hangars"
+ scfe_znkar_dig.5.desc: "The core section of the Colossus wreck remains remarkably intact, allowing us to dock within one of its hangars. The hangar stands eerily empty, and, judging by the debris outside, it seems the Z'nkar fleet defended the Colossus to the last ship, likely to buy enough time for its main weapon to fire. We've divided into four teams to explore key areas: the command center, living quarters, power core, and main weapon chamber."
+ scfe_znkar_dig.6.name: "Living Quarters"
+ scfe_znkar_dig.6.desc: "The living quarters are unexpectedly comfortable for a military vessel, likely designed to ease the psychological burden of serving on a weapon of mass destruction - a device built to shatter entire worlds. Small personal effects remain scattered throughout: intricately carved lamps bearing clan insignias, personal logs, and the occasional musical instrument. The logs reveal that the crew understood they would not return from this mission. With their homeworld devastated by the very aliens they sought to obliterate, they pressed forward, resolved to avenge their people and ultimately destroy the Colossus to prevent its misuse by others."
+ scfe_znkar_dig.7.name: "Power Core"
+ scfe_znkar_dig.7.desc: "Our attempt to reach the power core was unsuccessful; we encountered a devastated section where the core once lay. It appears the core detonated after the weapon fired, tearing the Colossus apart. The enemy fleet must have been positioned around the Colossus when it exploded, and it's unlikely any of them survived the massive blast. The survival of large fragments of the vessel speaks volumes about its robust design."
+ scfe_znkar_dig.8.name: "Main Weapon Chamber"
+ scfe_znkar_dig.8.desc: "The Z'nkar were no fools. The self-destruct system obliterated the main weapon, leaving nothing to be learned from its remnants. Similar reports come from other sections as our teams continue their search: engineering, propulsion, shields - none are intact enough to analyze. We have yet to locate the cloaking device that concealed this massive ship, though we are certain it no longer exists. If any valuable information remains, it will be in the command center."
+ scfe_znkar_dig.9.name: "Command Center"
+ scfe_znkar_dig.9.desc: "The command center is encased within a layered defensive shell, designed to ensure its operation until the final moments. Yet, the heavily armored doors now stand open. We initiate scans on the computers, but they yield little of value. The Z'nkar showed no interest in understanding their enemies; they made no effort to decipher their language or learn their motives. Their sole objective was eradication.\nAmidst the consoles and displays scattered across the command center, one device stands out - a peculiar apparatus, hastily integrated into the ship's systems. Its design is intricate and unfamiliar. Our scientists meticulously disconnect it for further analysis, hopeful that this might be a rare piece of Z'nkar technology, offering a glimpse into their advanced engineering."
+
+ # Conclusion
+ scfe_znkar.20.name: "Z'nkar Distortion Engine"
+ scfe_znkar.20.pdesc: "Our extensive analysis has led to a breakthrough understanding of the Z'nkar relic, now designated as the §HZ'nkar Distortion Engine§!."
+ scfe_znkar.20.desc_1: "$scfe_znkar.20.pdesc$ This technological marvel demonstrates the advanced capabilities of the precursors. Its primary function appears to involve manipulating the state of subspace surrounding our ships, resulting in enhanced engine performance. This modification extends to our shielding systems as well, significantly bolstering their defensive capabilities against attacks. The introduction of the Z'nkar distortion engine into our fleet represents a substantial tactical advantage over our adversaries. As long as they're not invisible..."
+ scfe_znkar.20.desc_2: "$scfe_znkar.20.pdesc$ This device has the ability to subtly modify the subspace environment around our ships, thereby enhancing engine performance. The engine also interacts with our cloaking generators, substantially improving their efficiency. Furthermore, an intriguing aspect of this relic is its capability to disrupt and unveil cloaked ships within its range, compelling enemy vessels to reveal themselves. This feature adds a strategic layer to our stealth operations and defensive maneuvers. It's a poignant realization that such a transformative technology was consigned to storage by the Z'nkar before its final use, potentially altering the course of their fate."
+ scfe_znkar.20.desc_3: "$scfe_znkar.20.desc_2$\nThanks to our analysis of this device, we have gained new knowledge on cloaking technology."
+ scfe_znkar.21.name: "Secrets of the Z'nkar"
+ scfe_znkar.21.desc: "The Z'nkar, having long observed numerous primitive civilizations, including ours, have innovated in information organization and storage, something we can in turn take advantage to improve our administration."

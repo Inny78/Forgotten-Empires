@@ -613,3 +613,13 @@ scfe_has_special_deposit = {
 	}
 }
 scfe_is_empty_space = { is_planet_class = pc_scfe_empty_space }
+scfe_has_comms_with_alien_empire = {
+	any_relation = {
+		has_communications = prev
+		OR = {
+			scfe_is_default_empire = yes
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+}

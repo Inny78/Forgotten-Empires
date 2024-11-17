@@ -266,7 +266,7 @@ event = {
 		any_playable_country = {
 			is_ai = no
 			is_unfriendly = no
-			has_comms_with_alien_empire = yes
+			scfe_has_comms_with_alien_empire = yes
 			any_planet_within_border = {
 				scfe_is_valid_moon = yes
 			}
@@ -278,7 +278,7 @@ event = {
 			limit = {
 				is_ai = no
 				is_unfriendly = no
-				has_comms_with_alien_empire = yes
+				scfe_has_comms_with_alien_empire = yes
 				any_planet_within_border = {
 					scfe_is_valid_moon = yes
 				}

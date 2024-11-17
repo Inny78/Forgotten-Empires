@@ -73,4 +73,17 @@ spriteTypes = {
         name = "GFX_scfe_specimen_vinarii_ghost_ice"
         textureFile = "gfx/interface/icons/specimens/scfe_vinarii_ghost_ice.dds"
     }
+    # Z'nkar
+    spriteType = {
+        name = "GFX_scfe_specimen_znkar_databanks"
+        textureFile = "gfx/interface/icons/specimens/scfe_znkar_databanks.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_znkar_railgun"
+        textureFile = "gfx/interface/icons/specimens/scfe_znkar_railgun.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_znkar_lamp"
+        textureFile = "gfx/interface/icons/specimens/scfe_znkar_lamp.dds"
+    }
 }
