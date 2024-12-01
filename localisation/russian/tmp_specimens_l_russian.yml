@@ -1,14 +1,15 @@
 ﻿l_russian:
 
- # Modified: scfe_sless_darts_desc_detail -> scfe_sless_darts_desc_details
-
- # Z'nkar
- scfe_znkar_databanks: "Z'nkar Databanks"
- scfe_znkar_databanks_desc_short: "The Z'nkar Databanks are a striking fusion of tradition and advanced technology, embodying the Z'nkar's deep reverence for their heritage"
- scfe_znkar_databanks_desc_details: "Designed to resemble ancient scrolls, the exteriors are inscribed with intricate details recounting the lineage and clan affiliations of their owners. Within, a sophisticated holographic display reveals a wealth of stored data."
- scfe_znkar_railgun: "Z'nkar Railgun"
- scfe_znkar_railgun_desc_short: "This railgun represents a pinnacle of destructive precision in Z'nkar weaponry"
- scfe_znkar_railgun_desc_details: "This advanced device launches a high-density projectile at relativistic speeds, immediately followed by a plasma bolt trailing its path. The resulting dual impact delivers catastrophic damage, combining kinetic force with intense thermal energy. Despite extensive study, its intricate mechanisms and energy systems remain beyond our ability to activate or replicate."
- scfe_znkar_lamp: "Z'nkar Clan Lamp"
- scfe_znkar_lamp_desc_short: "This exquisite Z'nkar Clan Lamp showcases the artistry and heritage of the Z'nkar people"
- scfe_znkar_lamp_desc_details: "Crafted from sculpted stone and crystal, each lamp was meticulously hand-carved by skilled artisans, despite the Z'nkar's access to advanced technology. Every lamp is unique, bearing the insignias of the owner's clan - a mark of pride and belonging within Z'nkar society."
+ # Shaded
+ scfe_black_box: "Sunskimmer's Black Box"
+ scfe_black_box_desc_short: "Recovered from the wreckage of a colossal cargo vessel adrift perilously close to a star"
+ scfe_black_box_desc_details: "The ship, masquerading as an ordinary cargo freighter, was in fact a pirate vessel, covertly joining trade convoys to ambush and plunder them. Its luck ran out when it was ensnared by a military fleet using similar deception."
+ scfe_colony_sculpture: "Zeelnan Colony Sculpture"
+ scfe_colony_sculpture_desc_short: "This intricate sculpture, discovered in the central plaza of a Zeelnan colony, depicts a collection of planets crafted from materials not native to the colony itself"
+ scfe_colony_sculpture_desc_details: "The sculpture's elegant design and careful material selection reflect the Zeelnans' deep connection to their heritage and their desire to preserve the memory of their ancestral home, even amidst the challenges of colonization."
+ scfe_ferlian_cipher: "Ferlian Cipher Key"
+ scfe_ferlian_cipher_desc_short: "Recovered from the ruins of the Ferlian intelligence headquarters, the Ferlian Cipher Key is an essential tool for unlocking the encrypted data of the Ferlian network"
+ scfe_ferlian_cipher_desc_details: "The device's intricate design suggests advanced cryptographic capabilities, reflecting the Ferlians' emphasis on secure communication. Unfortunately for the Ferlians, it was in the hands of the Shaded Empire's agents."
+ scfe_penitential_records: "Penitential Records"
+ scfe_penitential_records_desc_short: "Originating from a space penitentiary constructed within an asteroid, these records offer a comprehensive archive of inmate data"
+ scfe_penitential_records_desc_details: "This database meticulously documents each prisoner's crimes, psychological evaluations, and rehabilitation progress."

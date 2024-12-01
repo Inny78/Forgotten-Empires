@@ -41,6 +41,20 @@
  scfe_coprean_ship_engine_desc_short: "The engine of a Coprean subspace stealthcraft, recovered from the wreckage of an ill-fated mission"
  scfe_coprean_ship_engine_desc_details: "These advanced vessels were engineered for covert operations, utilizing specialized subspace drives that allowed them to remain hidden, even under the gravitational pull of planetary bodies. Their stealth capabilities enabled brief but effective subspace 'dives', granting them the element of surprise in potential conflicts - a strategic edge that could have redefined warfare in their era."
 
+ # Shaded
+ scfe_black_box: "Sunskimmer's Black Box"
+ scfe_black_box_desc_short: "Recovered from the wreckage of a colossal cargo vessel adrift perilously close to a star"
+ scfe_black_box_desc_details: "The ship, masquerading as an ordinary cargo freighter, was in fact a pirate vessel, covertly joining trade convoys to ambush and plunder them. Its luck ran out when it was ensnared by a military fleet using similar deception."
+ scfe_colony_sculpture: "Zeelnan Colony Sculpture"
+ scfe_colony_sculpture_desc_short: "This intricate sculpture, discovered in the central plaza of a Zeelnan colony, depicts a collection of planets crafted from materials not native to the colony itself"
+ scfe_colony_sculpture_desc_details: "The sculpture's elegant design and careful material selection reflect the Zeelnans' deep connection to their heritage and their desire to preserve the memory of their ancestral home, even amidst the challenges of colonization."
+ scfe_ferlian_cipher: "Ferlian Cipher Key"
+ scfe_ferlian_cipher_desc_short: "Recovered from the ruins of the Ferlian intelligence headquarters, the Ferlian Cipher Key is an essential tool for unlocking the encrypted data of the Ferlian network"
+ scfe_ferlian_cipher_desc_details: "The device's intricate design suggests advanced cryptographic capabilities, reflecting the Ferlians' emphasis on secure communication. Unfortunately for the Ferlians, it was in the hands of the Shaded Empire's agents."
+ scfe_penitential_records: "Penitential Records"
+ scfe_penitential_records_desc_short: "Originating from a space penitentiary constructed within an asteroid, these records offer a comprehensive archive of inmate data"
+ scfe_penitential_records_desc_details: "This database meticulously documents each prisoner's crimes, psychological evaluations, and rehabilitation progress."
+
  # Sless
  scfe_sless_darts: "Sless Darts"
  scfe_sless_darts_desc_short: "These Sless Darts are autoguided weapons recovered from the ruins of a spaceport during an emergency evacuation"

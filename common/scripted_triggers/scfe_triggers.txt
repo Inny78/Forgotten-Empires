@@ -75,7 +75,6 @@ scfe_is_general_planet = {
 		scfe_is_uninhabitable = yes
 	}
 }
-
 scfe_is_aquatic = {
 	is_wet = yes
 	OR = {
@@ -87,7 +86,6 @@ scfe_is_aquatic = {
 		is_pd_planet_for_aqua_trait = yes
 	}
 }
-
 scfe_is_continental = {
 	is_wet = yes
 	OR = {
@@ -98,7 +96,6 @@ scfe_is_continental = {
 		atw_is_continental = yes
 	}
 }
-
 scfe_is_desertic = {
 	is_dry = yes
 	OR = {
@@ -109,7 +106,6 @@ scfe_is_desertic = {
 		atw_is_desert = yes
 	}
 }
-
 scfe_is_frozen = {
 	OR = {
 		is_planet_class = pc_frozen
@@ -120,7 +116,6 @@ scfe_is_frozen = {
 		pd_is_arctic = yes
 	}
 }
-
 scfe_is_tundra = {
 	OR = {
 		is_planet_class = pc_tundra
@@ -130,7 +125,6 @@ scfe_is_tundra = {
 		atw_is_tundra = yes
 	}
 }
-
 scfe_is_gas_giant = {
 	OR = {
 		is_planet_class = pc_gas_giant
@@ -138,14 +132,6 @@ scfe_is_gas_giant = {
 		atw_is_gas_giant = yes
 	}
 }
-
-scfe_is_heavy_metal = {
-	OR = {
-		is_mechanical_empire = yes
-		is_robot_empire = yes
-	}
-}
-
 scfe_is_uninhabitable = {
 	OR = {
 		uninhabitable_regular_planet = yes
@@ -157,7 +143,97 @@ scfe_is_uninhabitable = {
 		atw_is_toxic = yes
 	}
 }
+scfe_is_barren = {
+	OR = {
+		is_planet_class = pc_barren
+		# All These Worlds
+		atw_is_barren = yes
+	}
+}
+scfe_is_barren_cold = {
+	OR = {
+		is_planet_class = pc_barren_cold
+		# All These Worlds
+		atw_is_barren_cold = yes
+	}
+}
+scfe_is_arctic = {
+	OR = {
+		is_planet_class = pc_arctic
+		# Planetary Diversity
+		pd_is_arctic = yes
+		# All These Worlds
+		atw_is_arctic = yes
+	}
+}
+scfe_is_gaia = {
+	OR = {
+		is_planet_class = pc_gaia
+		# All These Worlds
+		atw_is_gaia = yes
+		# Planetary Diversity
+		pd_is_planet_class_gaia = yes
+	}
+}
+scfe_is_molten = {
+	OR = {
+		is_planet_class = pc_molten
+		# All These Worlds
+		atw_is_molten = yes
+	}
+}
+scfe_is_tropical = {
+	OR = {
+		is_planet_class = pc_tropical
+		# All These Worlds
+		atw_is_tropical = yes
+		# Planetary Diversity
+		pd_is_tropical = yes
+	}
+}
+scfe_is_alpine = {
+	OR = {
+		is_planet_class = pc_alpine
+		# All These Worlds
+		atw_is_alpine = yes
+		# Planetary Diversity
+		pd_is_alpine = yes
+	}
+}
+scfe_is_savannah = {
+	OR = {
+		is_planet_class = pc_savannah
+		# All These Worlds
+		atw_is_savannah = yes
+		# Planetary Diversity
+		pd_is_savannah = yes
+	}
+}
+scfe_is_toxic = {
+	OR = {
+		is_planet_class = pc_toxic
+		# All These Worlds
+		atw_is_toxic = yes
+	}
+}
 
+scfe_is_valid_moon = {
+	AND = {
+		scfe_is_barren = yes
+		is_moon = yes
+		NOT = { has_planet_flag = has_megastructure }
+		solar_system = {
+			starting_system = no
+		}
+	}
+}
+scfe_is_valid_colony = {
+	AND = {
+		is_colony = yes
+		is_capital = no
+		is_artificial = no
+	}
+}
 scfe_is_valid_system = {
 	solar_system = {
 		exists = star
@@ -180,107 +256,12 @@ scfe_is_valid_system = {
 	}
 }
 
-scfe_is_barren = {
+scfe_is_heavy_metal = {
 	OR = {
-		is_planet_class = pc_barren
-		# All These Worlds
-		atw_is_barren = yes
+		is_mechanical_empire = yes
+		is_robot_empire = yes
 	}
 }
-
-scfe_is_barren_cold = {
-	OR = {
-		is_planet_class = pc_barren_cold
-		# All These Worlds
-		atw_is_barren_cold = yes
-	}
-}
-
-scfe_is_arctic = {
-	OR = {
-		is_planet_class = pc_arctic
-		# Planetary Diversity
-		pd_is_arctic = yes
-		# All These Worlds
-		atw_is_arctic = yes
-	}
-}
-
-scfe_is_valid_moon = {
-	AND = {
-		scfe_is_barren = yes
-		is_moon = yes
-		NOT = { has_planet_flag = has_megastructure }
-		solar_system = {
-			starting_system = no
-		}
-	}
-}
-
-scfe_is_valid_colony = {
-	AND = {
-		is_colony = yes
-		is_capital = no
-		is_artificial = no
-	}
-}
-
-scfe_is_gaia = {
-	OR = {
-		is_planet_class = pc_gaia
-		# All These Worlds
-		atw_is_gaia = yes
-		# Planetary Diversity
-		pd_is_planet_class_gaia = yes
-	}
-}
-
-scfe_is_molten = {
-	OR = {
-		is_planet_class = pc_molten
-		# All These Worlds
-		atw_is_molten = yes
-	}
-}
-
-scfe_is_tropical = {
-	OR = {
-		is_planet_class = pc_tropical
-		# All These Worlds
-		atw_is_tropical = yes
-		# Planetary Diversity
-		pd_is_tropical = yes
-	}
-}
-
-scfe_is_alpine = {
-	OR = {
-		is_planet_class = pc_alpine
-		# All These Worlds
-		atw_is_alpine = yes
-		# Planetary Diversity
-		pd_is_alpine = yes
-	}
-}
-
-scfe_is_savannah = {
-	OR = {
-		is_planet_class = pc_savannah
-		# All These Worlds
-		atw_is_savannah = yes
-		# Planetary Diversity
-		pd_is_savannah = yes
-	}
-}
-
-scfe_is_toxic = {
-	OR = {
-		is_planet_class = pc_toxic
-		# All These Worlds
-		atw_is_toxic = yes
-	}
-}
-
 scfe_is_default_empire = {
 	OR = {
 		is_country_type = default

@@ -43,7 +43,7 @@ scfe_sless_system_1 = {
         orbit_angle = { min = 90 max = 270 }
         size = 15
         has_ring = no
-        flags = { precursor_world shroud_storm_changed }
+        flags = { precursor_world shroud_storm_changed scfe_sless_colony1 }
         init_effect = {
             save_event_target_as = scfe_sless_colony_2
         }
@@ -95,7 +95,7 @@ scfe_sless_system_2 = {
         orbit_angle = { min = 90 max = 270 }
         size = 14
         has_ring = no
-        flags = { precursor_world shroud_storm_changed }
+        flags = { precursor_world shroud_storm_changed scfe_sless_colony2 }
         init_effect = {
             save_event_target_as = scfe_sless_colony_3
         }

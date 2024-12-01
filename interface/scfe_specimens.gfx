@@ -47,6 +47,23 @@ spriteTypes = {
         name = "GFX_scfe_specimen_coprean_ship_engine"
         texturefile = "gfx/interface/icons/specimens/scfe_coprean_ship_engine.dds"
     }
+    # Shaded
+    spriteType = {
+        name = "GFX_scfe_specimen_black_box"
+        texturefile = "gfx/interface/icons/specimens/scfe_black_box.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_colony_sculpture"
+        texturefile = "gfx/interface/icons/specimens/scfe_colony_sculpture.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_ferlian_cipher"
+        texturefile = "gfx/interface/icons/specimens/scfe_ferlian_cipher.dds"
+    }
+    spriteType = {
+        name = "GFX_scfe_specimen_penitential_records"
+        texturefile = "gfx/interface/icons/specimens/scfe_penitential_records.dds"
+    }
     # Sless
     spriteType = {
         name = "GFX_scfe_specimen_sless_darts"

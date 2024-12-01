@@ -52,6 +52,20 @@
  scfe_sless_bio_brooch_desc_short: "This intricately crafted brooch exemplifies the Sless tradition of visually celebrating personal enhancement"
  scfe_sless_bio_brooch_desc_details: "Typically worn to complement their latest body modification, Sless citizens selected brooch designs that symbolized and accentuated their augmented traits."
 
+ # Shaded
+ scfe_black_box: "Sunskimmer's Black Box"
+ scfe_black_box_desc_short: "Recovered from the wreckage of a colossal cargo vessel adrift perilously close to a star"
+ scfe_black_box_desc_details: "The ship, masquerading as an ordinary cargo freighter, was in fact a pirate vessel, covertly joining trade convoys to ambush and plunder them. Its luck ran out when it was ensnared by a military fleet using similar deception."
+ scfe_colony_sculpture: "Zeelnan Colony Sculpture"
+ scfe_colony_sculpture_desc_short: "This intricate sculpture, discovered in the central plaza of a Zeelnan colony, depicts a collection of planets crafted from materials not native to the colony itself"
+ scfe_colony_sculpture_desc_details: "The sculpture's elegant design and careful material selection reflect the Zeelnans' deep connection to their heritage and their desire to preserve the memory of their ancestral home, even amidst the challenges of colonization."
+ scfe_ferlian_cipher: "Ferlian Cipher Key"
+ scfe_ferlian_cipher_desc_short: "Recovered from the ruins of the Ferlian intelligence headquarters, the Ferlian Cipher Key is an essential tool for unlocking the encrypted data of the Ferlian network"
+ scfe_ferlian_cipher_desc_details: "The device's intricate design suggests advanced cryptographic capabilities, reflecting the Ferlians' emphasis on secure communication. Unfortunately for the Ferlians, it was in the hands of the Shaded Empire's agents."
+ scfe_penitential_records: "Penitential Records"
+ scfe_penitential_records_desc_short: "Originating from a space penitentiary constructed within an asteroid, these records offer a comprehensive archive of inmate data"
+ scfe_penitential_records_desc_details: "This database meticulously documents each prisoner's crimes, psychological evaluations, and rehabilitation progress."
+
  # V'inarii
  scfe_vinarii_starmap: "V'inarii Star Map"
  scfe_vinarii_starmap_desc_short: "This detailed star map offers a glimpse into the V'inarii Empire's expansive domain, meticulously charting trade routes, resource hubs, and military outposts"

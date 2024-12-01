@@ -1,44 +1,4 @@
 special_project = {
-    key = "SCFE_SLESS_ALLIANCE_PROJECT_1"
-    cost = 0
-    days_to_research = 90
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_star_chart
-    event_chain = scfe_sless_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-    }
-    fail_trigger = { }
-
-    event_scope = ship_event
-
-    on_success = {
-        ship_event = { id = scfe_sless.4 }
-    }
-}
-special_project = {
-    key = "SCFE_SLESS_ALLIANCE_PROJECT_2"
-    cost = 0
-    days_to_research = 90
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_star_chart
-    event_chain = scfe_sless_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-    }
-    fail_trigger = { }
-
-    event_scope = ship_event
-
-    on_success = {
-        ship_event = { id = scfe_sless.9 }
-    }
-}
-special_project = {
     key = "SCFE_PRECURSOR_SLESS_SECRETS"
     picture = GFX_evt_circuitry_modification
     icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"

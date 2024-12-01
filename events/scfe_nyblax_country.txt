@@ -12,45 +12,6 @@ country_event = {
         }
     }
 }
-# Counting the relics after the update
-country_event = {
-    id = scfe_nyblax_country.2
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-        is_ai = no
-        scfe_has_any_nyblax_relic = yes
-    }
-
-    immediate = {
-        set_variable = { which = nyblax_owned_relics@root value = 0 }
-        if = {
-            limit = { has_relic = r_scfe_regeneration_rune }
-            change_variable = { which = nyblax_owned_relics@root value = 1 }
-        }
-        if = {
-            limit = { has_relic = r_scfe_arcane_rune }
-            change_variable = { which = nyblax_owned_relics@root value = 1 }
-        }
-        if = {
-            limit = { has_relic = r_scfe_damage_rune }
-            change_variable = { which = nyblax_owned_relics@root value = 1 }
-        }
-        if = {
-            limit = { has_relic = r_scfe_invisibility_rune }
-            change_variable = { which = nyblax_owned_relics@root value = 1 }
-        }
-        if = {
-            limit = { has_relic = r_scfe_illusion_rune }
-            change_variable = { which = nyblax_owned_relics@root value = 1 }
-        }
-        if = {
-            limit = { has_relic = r_scfe_haste_rune }
-            change_variable = { which = nyblax_owned_relics@root value = 1 }
-        }
-    }
-}
 # Becoming subject
 # This = subject
 country_event = {

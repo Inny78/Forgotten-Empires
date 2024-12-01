@@ -460,6 +460,7 @@ ship_event = {
     picture = GFX_evt_colony_settlement
     show_sound = event_default
     is_triggered_only = yes
+    specimen = scfe_colony_sculpture
 
     trigger = {
         solar_system = {
@@ -545,6 +546,7 @@ ship_event = {
     picture = GFX_evt_scfe_asteroid
     show_sound = event_default
     is_triggered_only = yes
+    specimen = scfe_penitential_records
 
     option = {
         name = scfe_keep_search
@@ -604,6 +606,7 @@ ship_event = {
     picture = GFX_evt_habitat
     show_sound = event_default
     is_triggered_only = yes
+    specimen = scfe_ferlian_cipher
 
     option = {
         name = scfe_keep_search
@@ -698,6 +701,7 @@ ship_event = {
     picture = GFX_evt_face_off_in_space
     show_sound = event_default
     is_triggered_only = yes
+    specimen = scfe_black_box
 
     option = {
         exclusive_trigger = { owner = { NOT = { has_origin = origin_toxic_knights } } }

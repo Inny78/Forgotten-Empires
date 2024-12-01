@@ -9,13 +9,13 @@ scfe_alshigan_amulet = {
     }
 
     triggered_country_modifier = {
-        mult = value:aesthetic_wonder_specimens_modifiers_mult
         potential = { is_gestalt = no }
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
         trade_value_mult = 0.03
     }
     triggered_country_modifier = {
-        mult = value:aesthetic_wonder_specimens_modifiers_mult
         potential = { is_gestalt = yes }
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
         planet_jobs_energy_produces_mult = 0.02
     }
 }
@@ -141,6 +141,69 @@ scfe_coprean_ship_engine = {
         potential = { has_first_contact_dlc = yes }
         mult = value:historical_item_specimens_modifiers_mult
         ship_base_speed_mult = 0.08
+    }
+}
+# Shaded
+scfe_black_box = {
+    icon = "GFX_scfe_specimen_black_box"
+    type = aesthetic_wonder
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:aesthetic_wonder_specimens_modifiers_mult
+        ship_evasion_mult = 0.05
+    }
+}
+scfe_colony_sculpture = {
+    icon = "GFX_scfe_specimen_colony_sculpture"
+    type = xeno_geology
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:xeno_geology_specimens_modifiers_mult
+        planet_stability_add = 3
+    }
+}
+scfe_ferlian_cipher = {
+    icon = "GFX_scfe_specimen_ferlian_cipher"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        potential = { has_nemesis = no }
+        mult = value:historical_item_specimens_modifiers_mult
+        intel_gain_speed = 0.05
+    }
+    triggered_country_modifier = {
+        potential = { has_nemesis = yes }
+        mult = value:historical_item_specimens_modifiers_mult
+        espionage_operation_speed_mult = 0.05
+    }
+}
+scfe_penitential_records = {
+    icon = "GFX_scfe_specimen_penitential_records"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    triggered_country_modifier = {
+        mult = value:historical_item_specimens_modifiers_mult
+        planet_crime_mult = -0.03
     }
 }
 # Sless
@@ -276,6 +339,22 @@ scfe_znkar_lamp = {
     triggered_country_modifier = {
         mult = value:aesthetic_wonder_specimens_modifiers_mult
         planet_amenities_add = 5
+    }
+}
+scfe_penitential_records = {
+    icon = "GFX_scfe_specimen_penitential_records"
+    type = historical_item
+
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+    resources = {
+        category = specimens
+        produces = {
+            society_research = 10
+        }
     }
 }
 # Misc
