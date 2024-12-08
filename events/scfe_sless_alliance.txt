@@ -141,7 +141,7 @@ ship_event = {
     title = "scfe_sless.4.name"
     desc = "scfe_sless.4.desc"
     picture = GFX_evt_metropolis
-    location = fromfrom
+    location = from
 
     is_triggered_only = yes
 
@@ -310,7 +310,7 @@ ship_event = {
     title = "scfe_sless.9.name"
     desc = "scfe_sless.9.desc"
     picture = GFX_evt_archaeology_camp
-    location = fromfrom
+    location = from
     is_triggered_only = yes
 
     trigger = {
