@@ -943,7 +943,7 @@ country_event = {
         name = FASCINATING
     }
 }
-ship_event = {
+fleet_event = {
     id = scfe_shaded.25
     hide_window = yes
     is_triggered_only = yes
@@ -1108,6 +1108,22 @@ country_event = {
     }
 }
 
+# Safeguard
+ship_event = {
+    id = scfe_shaded.225
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                from = { has_planet_flag = scfe_shaded_colony }
+                owner = { has_event_chain = scfe_shaded_chain }
+            }
+            owner = { country_event = { id = scfe_shaded.26 } }
+        }
+    }
+}
 ######################### Fallen Empires Interactions #########################
 
 namespace = scfe_fallen_empires

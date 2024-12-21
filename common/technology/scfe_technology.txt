@@ -8,11 +8,8 @@ tech_koeleothan_utilization = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_koeleothan_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_koeleothan_found
 			has_koeleothan_deposit = yes
 		}
 		inline_script = {
@@ -37,11 +34,8 @@ tech_koeleothan_utilization = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_koeleothan_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_koeleothan_found
 			has_koeleothan_deposit = yes
 		}
 	}
@@ -57,11 +51,8 @@ tech_quantumpearls_exploitation = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_quantumpearls_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_quantumpearls_found
 			has_quantumpearl_deposit = yes
 		}
 		inline_script = {
@@ -86,11 +77,8 @@ tech_quantumpearls_exploitation = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_quantumpearls_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_quantumpearls_found
 			has_quantumpearl_deposit = yes
 		}
 	}
@@ -106,11 +94,8 @@ tech_xenograss_harvesting = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_xenograss_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_xenograss_found
 			has_xenograss_deposit = yes
 		}
 		inline_script = {
@@ -135,11 +120,8 @@ tech_xenograss_harvesting = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_xenograss_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_xenograss_found
 			has_xenograss_deposit = yes
 		}
 	}
@@ -162,11 +144,8 @@ tech_woorskyr_habitation = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 		inline_script = {
@@ -191,11 +170,8 @@ tech_woorskyr_habitation = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 	}
@@ -217,11 +193,8 @@ tech_woorskyr_bark_farm = {
 			country_uses_food = no
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 		inline_script = {
@@ -246,11 +219,8 @@ tech_woorskyr_bark_farm = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 	}
@@ -268,11 +238,8 @@ tech_woorskyr_biofuel_refinery = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 		inline_script = {
@@ -297,11 +264,8 @@ tech_woorskyr_biofuel_refinery = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 	}
@@ -319,11 +283,8 @@ tech_woorskyr_bioenergy_plant = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 		inline_script = {
@@ -348,11 +309,8 @@ tech_woorskyr_bioenergy_plant = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 	}
@@ -370,11 +328,8 @@ tech_woorskyr_growth_monitoring_center = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 		inline_script = {
@@ -399,11 +354,8 @@ tech_woorskyr_growth_monitoring_center = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 	}
@@ -421,11 +373,8 @@ tech_woorskyr_ship_foundry = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 		inline_script = {
@@ -450,11 +399,8 @@ tech_woorskyr_ship_foundry = {
 			}
 		}
 		modifier = {
-			factor = 2
-			has_country_flag = cf_woorskyr_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_woorskyr_found
 			has_woorskyr_deposit = yes
 		}
 	}
@@ -470,11 +416,8 @@ tech_beetle_exploitation = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_beetle_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_beetle_found
 			has_beetle_deposit = yes
 		}
 		inline_script = {
@@ -492,11 +435,8 @@ tech_beetle_exploitation = {
 	
 	ai_weight = {
 		modifier = {
-			factor = 2
-			has_country_flag = cf_beetle_found
-		}
-		modifier = {
 			factor = 3
+			has_country_flag = cf_beetle_found
 			has_beetle_deposit = yes
 		}
 		modifier = {

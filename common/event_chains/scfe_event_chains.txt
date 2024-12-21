@@ -79,3 +79,8 @@ scfe_ghost_system_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
 	picture = GFX_evt_communication_event
 }
+scfe_strange_worlds_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	picture = GFX_evt_star_chart
+
+}

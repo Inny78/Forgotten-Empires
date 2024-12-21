@@ -11,19 +11,29 @@ ship_event = {
     is_triggered_only = yes
 
     immediate = {
-        owner = {
-            set_country_flag = cf_woorskyr_found
-        }
+        owner = { set_country_flag = cf_woorskyr_found }
+        from = { save_event_target_as = scfe_woorskyr_world }
     }
 
     option = {
         name = scfe_woorskyr_world.1.a
         owner = {
+            if = {
+                limit = { NOT = { has_event_chain = scfe_strange_worlds_chain } }
+                begin_event_chain = { event_chain = scfe_strange_worlds_chain }
+            }
             add_monthly_resource_mult = {
                 resource = society_research
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+            create_point_of_interest = {
+                id = scfe_swpoi_woorskyr
+                event_chain = scfe_strange_worlds_chain
+                name = scfe_swpoi_woorskyr
+                desc = scfe_swpoi_woorskyr_desc
+                location = event_target:scfe_woorskyr_world
             }
         }
     }
@@ -31,9 +41,7 @@ ship_event = {
         hidden_effect = {
             from = {
                 if = {
-                    limit = {
-                        NOT = { has_deposit = d_woorskyr_hub }
-                    }
+                    limit = { NOT = { has_deposit = d_woorskyr_hub } }
                     add_deposit = d_woorskyr_hub
                 }
             }
@@ -53,19 +61,29 @@ ship_event = {
     is_triggered_only = yes
 
     immediate = {
-        owner = {
-            set_country_flag = cf_koeleothan_found
-        }
+        owner = { set_country_flag = cf_koeleothan_found }
+        from = { save_global_event_target_as = scfe_koeleothan_world }
     }
 
     option = {
         name = "scfe_koeleothan.1.a"
         owner = {
+            if = {
+                limit = { NOT = { has_event_chain = scfe_strange_worlds_chain } }
+                begin_event_chain = { event_chain = scfe_strange_worlds_chain }
+            }
             add_monthly_resource_mult = {
                 resource = society_research
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+            create_point_of_interest = {
+                id = scfe_swpoi_koeleothan
+                event_chain = scfe_strange_worlds_chain
+                name = scfe_swpoi_koeleothan
+                desc = scfe_swpoi_koeleothan_desc
+                location = event_target:scfe_koeleothan_world
             }
         }
     }
@@ -73,9 +91,7 @@ ship_event = {
         hidden_effect = {
             from = {
                 if = {
-                    limit = {
-                        NOT = { has_deposit = d_koeleothan }
-                    }
+                    limit = { NOT = { has_deposit = d_koeleothan } }
                     add_deposit = d_koeleothan
                 }
             }
@@ -96,19 +112,29 @@ ship_event = {
     is_triggered_only = yes
 
     immediate = {
-        owner = {
-            set_country_flag = cf_xenograss_found
-        }
+        owner = { set_country_flag = cf_xenograss_found }
+        from = { save_global_event_target_as = scfe_xenograss_world }
     }
 
     option = {
         name = scfe_xenograss.1.a
         owner = {
+            if = {
+                limit = { NOT = { has_event_chain = scfe_strange_worlds_chain } }
+                begin_event_chain = { event_chain = scfe_strange_worlds_chain }
+            }
             add_monthly_resource_mult = {
                 resource = engineering_research
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+            create_point_of_interest = {
+                id = scfe_swpoi_xenograss
+                event_chain = scfe_strange_worlds_chain
+                name = scfe_swpoi_xenograss
+                desc = scfe_swpoi_xenograss_desc
+                location = event_target:scfe_xenograss_world
             }
         }
     }
@@ -116,9 +142,7 @@ ship_event = {
         hidden_effect = {
             from = {
                 if = {
-                    limit = {
-                        NOT = { has_deposit = d_xenograss }
-                    }
+                    limit = { NOT = { has_deposit = d_xenograss } }
                     add_deposit = d_xenograss
                 }
             }
@@ -139,27 +163,37 @@ ship_event = {
     is_triggered_only = yes
 
     immediate = {
+        owner = { set_country_flag = cf_quantumpearls_found }
+        from = { save_global_event_target_as = scfe_quantumpearls_world }
+    }
+
+    option = {
+        name = scfe_quantumpearl.1.a
         owner = {
-            set_country_flag = cf_quantumpearls_found
+            if = {
+                limit = { NOT = { has_event_chain = scfe_strange_worlds_chain } }
+                begin_event_chain = { event_chain = scfe_strange_worlds_chain }
+            }
             add_monthly_resource_mult = {
                 resource = physics_research
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
             }
+            create_point_of_interest = {
+                id = scfe_swpoi_quantumpearls
+                event_chain = scfe_strange_worlds_chain
+                name = scfe_swpoi_quantumpearls
+                desc = scfe_swpoi_quantumpearls_desc
+                location = event_target:scfe_quantumpearls_world
+            }
         }
-    }
-
-    option = {
-        name = scfe_quantumpearl.1.a
     }
     after = {
         hidden_effect = {
             from = {
                 if = {
-                    limit = {
-                        NOT = { has_deposit = d_quantumpearl }
-                    }
+                    limit = { NOT = { has_deposit = d_quantumpearl } }
                     add_deposit = d_quantumpearl
                 }
             }
@@ -180,9 +214,8 @@ ship_event = {
     is_triggered_only = yes
 
     immediate = {
-        owner = {
-            set_country_flag = cf_beetle_found
-        }
+        owner = { set_country_flag = cf_beetle_found }
+        from = { save_global_event_target_as = scfe_beetleswarm_world }
     }
 
     option = {
@@ -191,11 +224,22 @@ ship_event = {
             owner = { is_spiritualist = no }
         }
         owner = {
+            if = {
+                limit = { NOT = { has_event_chain = scfe_strange_worlds_chain } }
+                begin_event_chain = { event_chain = scfe_strange_worlds_chain }
+            }
             add_monthly_resource_mult = {
                 resource = society_research
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+            create_point_of_interest = {
+                id = scfe_swpoi_beetleswarm
+                event_chain = scfe_strange_worlds_chain
+                name = scfe_swpoi_beetleswarm
+                desc = scfe_swpoi_beetleswarm_desc
+                location = event_target:scfe_beetleswarm_world
             }
         }
     }
@@ -205,11 +249,22 @@ ship_event = {
             owner = { is_spiritualist = yes }
         }
         owner = {
+            if = {
+                limit = { NOT = { has_event_chain = scfe_strange_worlds_chain } }
+                begin_event_chain = { event_chain = scfe_strange_worlds_chain }
+            }
             add_monthly_resource_mult = {
                 resource = society_research
                 value = @tier2researchreward
                 min = @tier2researchmin
                 max = @tier2researchmax
+            }
+            create_point_of_interest = {
+                id = scfe_swpoi_beetleswarm
+                event_chain = scfe_strange_worlds_chain
+                name = scfe_swpoi_beetleswarm
+                desc = scfe_swpoi_beetleswarm_desc
+                location = event_target:scfe_beetleswarm_world
             }
         }
     }
@@ -217,9 +272,7 @@ ship_event = {
         hidden_effect = {
             from = {
                 if = {
-                    limit = {
-                        NOT = { has_deposit = d_beetle_swarm }
-                    }
+                    limit = { NOT = { has_deposit = d_beetle_swarm } }
                     add_deposit = d_beetle_swarm
                 }
             }
@@ -292,7 +345,75 @@ planet_event = {
     }
 
     immediate = {
-        from = { set_country_flag = cf_xenograss_found }
+        from = {
+            set_country_flag = cf_xenograss_found
+        }
+    }
+}
+planet_event = {
+    id = scfe_strange_on_actions.6
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        planet_has_strange_worlds_deposit = yes
+        from = { has_event_chain = scfe_strange_worlds_chain }
+    }
+
+    immediate = {
+        if = {
+            limit = { planet_has_woorskyr_deposit = yes }
+            from = { remove_point_of_interest = scfe_swpoi_woorskyr }
+        }
+        else_if = {
+            limit = { planet_has_koeleothan_deposit = yes }
+            from = { remove_point_of_interest = scfe_swpoi_koeleothan }
+        }
+        else_if = {
+            limit = { planet_has_quantumpearl_deposit = yes }
+            from = { remove_point_of_interest = scfe_swpoi_quantumpearls }
+        }
+        else_if = {
+            limit = { planet_has_xenograss_deposit = yes }
+            from = { remove_point_of_interest = scfe_swpoi_xenograss }
+        }
+        else = {
+            from = { remove_point_of_interest = scfe_swpoi_beetleswarm }
+        }
+    }
+}
+
+# Colonization
+planet_event = {
+    id = scfe_strange_on_actions.7
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        planet_has_strange_worlds_deposit = yes
+        owner = { has_event_chain = scfe_strange_worlds_chain }
+    }
+
+    immediate = {
+        if = {
+            limit = { planet_has_woorskyr_deposit = yes }
+            owner = { remove_point_of_interest = scfe_swpoi_woorskyr }
+        }
+        else_if = {
+            limit = { planet_has_koeleothan_deposit = yes }
+            owner = { remove_point_of_interest = scfe_swpoi_koeleothan }
+        }
+        else_if = {
+            limit = { planet_has_quantumpearl_deposit = yes }
+            owner = { remove_point_of_interest = scfe_swpoi_quantumpearls }
+        }
+        else_if = {
+            limit = { planet_has_xenograss_deposit = yes }
+            owner = { remove_point_of_interest = scfe_swpoi_xenograss }
+        }
+        else = {
+            owner = { remove_point_of_interest = scfe_swpoi_beetleswarm }
+        }
     }
 }
 

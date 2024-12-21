@@ -298,42 +298,49 @@ scfe_is_nuked = {
 
 has_woorskyr_deposit = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		has_deposit = d_woorskyr_hub
 	}
 }
 has_koeleothan_deposit = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		has_deposit = d_koeleothan
 	}
 }
 has_quantumpearl_deposit = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		has_deposit = d_quantumpearl
 	}
 }
 has_xenograss_deposit = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		has_deposit = d_xenograss
 	}
 }
 has_beetle_deposit = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		has_deposit = d_beetle_swarm
 	}
 }
 has_xenograss_building = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		has_building = building_xenograss_processor
 	}
 }
 has_quantumpearl_building = {
 	any_owned_planet = {
+		exists = owner
 		is_colony = yes
 		OR = {
 			has_building = building_pearl_borehole_site
@@ -348,6 +355,15 @@ planet_has_koeleothan_deposit = { has_deposit = d_koeleothan }
 planet_has_quantumpearl_deposit = { has_deposit = d_quantumpearl }
 planet_has_xenograss_deposit = { has_deposit = d_xenograss }
 planet_has_beetle_deposit = { has_deposit = d_beetle_swarm }
+planet_has_strange_worlds_deposit = {
+	OR = {
+		planet_has_woorskyr_deposit = yes
+		planet_has_koeleothan_deposit = yes
+		planet_has_quantumpearl_deposit = yes
+		planet_has_xenograss_deposit = yes
+		planet_has_beetle_deposit = yes
+	}
+}
 
 scfe_is_valid_owner = {
 	OR = {

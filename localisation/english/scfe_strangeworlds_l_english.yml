@@ -135,3 +135,17 @@
 
  TECH_UNLOCK_WOORSKYR_TECHS_TITLE: "§HUnlocks Feature:§! Woorskyr building technologies"
  TECH_UNLOCK_WOORSKYR_TECHS_DESC: "Allows us to develop technologies to exploit the Woorskyr tree."
+
+# 3.14
+ scfe_strange_worlds_chain_title: "Strange Worlds"
+ scfe_strange_worlds_chain_desc: "Some planets hold resources of particular interest"
+ scfe_swpoi_woorskyr: "Woorskyr's World"
+ scfe_swpoi_woorskyr_desc: "Home of a massive tree, taller than mountains and larger than cities, its roots connected to all other trees on the planet."
+ scfe_swpoi_koeleothan: "Koeleothans' World"
+ scfe_swpoi_koeleothan_desc: "Home of wild shoals of Koelethan, displaying a weak link of consciousness among themselves."
+ scfe_swpoi_xenograss: "Xenograss' World"
+ scfe_swpoi_xenograss_desc: "Home of a very hardy alien grass with possibly extra-galactic origins."
+ scfe_swpoi_quantumpearls: "Quantum Pearls' World"
+ scfe_swpoi_quantumpearls_desc: "Home of strange pearls linked on a quantum level."
+ scfe_swpoi_beetleswarm: "Zrogate Beetles' World"
+ scfe_swpoi_beetleswarm_desc: "Home of a colony of energetic, semi-intelligent docile beetles."

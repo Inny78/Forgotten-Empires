@@ -39,6 +39,7 @@ ship_event = {
     }
 
     immediate = {
+        from = { remove_star_flag = scfe_ghost_system_01 }
         set_global_flag = scfe_ghosts_started
         owner = { country_event = { id = story.5 days = 30 } }
     }
@@ -63,7 +64,7 @@ ship_event = {
         }
     }
 }
-ship_event = {
+fleet_event = {
     id = scfe_ghost_planet.2
     title = scfe_ghost_planet.2.name
     desc = scfe_ghost_planet.2.desc
@@ -71,8 +72,10 @@ ship_event = {
     show_sound = event_default
     is_triggered_only = yes
     fire_only_once = yes
+    location = event_target:scfe_ghost_planet1
     trigger = {
-        owner = { has_event_chain = scfe_ghosts_chain }
+        exists = event_target:scfe_ghost_planet1
+        owner = { is_ai = no has_event_chain = scfe_ghosts_chain }
         from = { has_planet_flag = scfe_ghost_planet }
     }
 
@@ -116,7 +119,7 @@ country_event = {
         }
     }
 }
-ship_event = {
+fleet_event = {
     id = scfe_ghost_planet.4
     title = scfe_ghost_planet.4.name
     desc = scfe_ghost_planet.4.desc
@@ -128,12 +131,12 @@ ship_event = {
         owner = { has_event_chain = scfe_ghosts_chain }
         from = { has_planet_flag = scfe_ghost_planet_mining }
     }
+    immediate = { from = { remove_planet_flag = scfe_ghost_planet_mining } }
 
     option = {
         name = INTERESTING
         from = {
             add_deposit = d_minerals_3
-            hidden_effect = { remove_planet_flag = scfe_ghost_planet_mining }
         }
     }
 }
@@ -164,7 +167,7 @@ ship_event = {
         }
     }
 }
-ship_event = {
+fleet_event = {
     id = scfe_ghost_planet.6
     title = scfe_ghost_planet.6.name
     desc = scfe_ghost_planet.6.desc
@@ -175,12 +178,12 @@ ship_event = {
         from = { has_planet_flag = scfe_ghost_planet2 }
         owner = { has_event_chain = scfe_ghosts_chain }
     }
+    immediate = { from = { remove_planet_flag = scfe_ghost_planet2 } }
 
     option = {
         name = scfe_lead_explore
         from = {
             create_archaeological_site = scfe_ghost_frozen_dig
-            hidden_effect = { remove_planet_flag = scfe_ghost_planet2 }
         }
         hidden_effect = {
             owner = { remove_point_of_interest = scfe_ghost_point2 }
@@ -278,7 +281,7 @@ ship_event = {
         }
     }
 }
-ship_event = {
+fleet_event = {
     id = scfe_ghost_planet.12
     title = scfe_ghost_planet.12.name
     desc = scfe_ghost_planet.12.desc
@@ -291,6 +294,7 @@ ship_event = {
         from = { has_planet_flag = scfe_ghost_planet3 }
         owner = { has_event_chain = scfe_ghosts_chain }
     }
+    immediate = { from = { remove_planet_flag = scfe_ghost_planet3 } }
 
     option = {
         name = scfe_lead_explore
@@ -776,5 +780,97 @@ fleet_event = {
     option = {
         name = WORRYING
         fromfrom = { add_stage_clues = -4 }
+    }
+}
+namespace = scfe_ghost_planet
+# Safeguards
+ship_event = {
+    id = scfe_ghost_planet.202
+    title = scfe_ghost_planet.2.name
+    desc = scfe_ghost_planet.2.desc
+    picture = GFX_evt_scfe_city_planet
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    location = event_target:scfe_ghost_planet1
+    trigger = {
+        exists = event_target:scfe_ghost_planet1
+        owner = { is_ai = no has_event_chain = scfe_ghosts_chain }
+        from = { has_planet_flag = scfe_ghost_planet }
+    }
+
+    option = {
+        name = scfe_ghost_planet.2.a
+        from = {
+            create_archaeological_site = scfe_ghost_planet_dig
+            hidden_effect = { remove_planet_flag = scfe_ghost_planet }
+        }
+        hidden_effect = {
+            owner = { remove_point_of_interest = scfe_ghost_point1 }
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.204
+    title = scfe_ghost_planet.4.name
+    desc = scfe_ghost_planet.4.desc
+    picture = GFX_evt_mining_station
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        owner = { has_event_chain = scfe_ghosts_chain }
+        from = { has_planet_flag = scfe_ghost_planet_mining }
+    }
+    immediate = { from = { remove_planet_flag = scfe_ghost_planet_mining } }
+
+    option = {
+        name = INTERESTING
+        from = {
+            add_deposit = d_minerals_3
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.206
+    title = scfe_ghost_planet.6.name
+    desc = scfe_ghost_planet.6.desc
+    picture = GFX_evt_scfe_city_planet
+    show_sound = event_default
+    is_triggered_only = yes
+    trigger = {
+        from = { has_planet_flag = scfe_ghost_planet2 }
+        owner = { has_event_chain = scfe_ghosts_chain }
+    }
+    immediate = { from = { remove_planet_flag = scfe_ghost_planet2 } }
+
+    option = {
+        name = scfe_lead_explore
+        from = {
+            create_archaeological_site = scfe_ghost_frozen_dig
+        }
+        hidden_effect = {
+            owner = { remove_point_of_interest = scfe_ghost_point2 }
+        }
+    }
+}
+ship_event = {
+    id = scfe_ghost_planet.212
+    title = scfe_ghost_planet.12.name
+    desc = scfe_ghost_planet.12.desc
+    picture = GFX_evt_shattered_planet
+    show_sound = event_default
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        from = { has_planet_flag = scfe_ghost_planet3 }
+        owner = { has_event_chain = scfe_ghosts_chain }
+    }
+    immediate = { from = { remove_planet_flag = scfe_ghost_planet3 } }
+
+    option = {
+        name = scfe_lead_explore
+        enable_special_project = { name = SCFE_GHOST_PROJECT2 location = event_target:scfe_ghost_planet3 owner = root.owner }
     }
 }
