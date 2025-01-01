@@ -74,9 +74,9 @@ fleet_event = {
     fire_only_once = yes
     location = event_target:scfe_ghost_planet1
     trigger = {
+        from = { is_scope_type = planet has_planet_flag = scfe_ghost_planet }
         exists = event_target:scfe_ghost_planet1
         owner = { is_ai = no has_event_chain = scfe_ghosts_chain }
-        from = { has_planet_flag = scfe_ghost_planet }
     }
 
     option = {
@@ -105,7 +105,7 @@ country_event = {
             set_spawn_system_batch = begin
             spawn_system = {
                 min_distance = 5
-                max_distance = 20
+                max_distance = 60
                 initializer = scfe_ghost_system_02
             }
             add_extra_hyperlane_to_spawned_system_effect = yes
@@ -128,8 +128,8 @@ fleet_event = {
     is_triggered_only = yes
     fire_only_once = yes
     trigger = {
+        from = { is_scope_type = planet has_planet_flag = scfe_ghost_planet_mining }
         owner = { has_event_chain = scfe_ghosts_chain }
-        from = { has_planet_flag = scfe_ghost_planet_mining }
     }
     immediate = { from = { remove_planet_flag = scfe_ghost_planet_mining } }
 
@@ -175,7 +175,7 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     trigger = {
-        from = { has_planet_flag = scfe_ghost_planet2 }
+        from = { is_scope_type = planet has_planet_flag = scfe_ghost_planet2 }
         owner = { has_event_chain = scfe_ghosts_chain }
     }
     immediate = { from = { remove_planet_flag = scfe_ghost_planet2 } }
@@ -231,7 +231,7 @@ country_event = {
             set_spawn_system_batch = begin
             spawn_system = {
                 min_distance = 5
-                max_distance = 20
+                max_distance = 60
                 initializer = scfe_ghost_system_03
             }
             add_extra_hyperlane_to_spawned_system_effect = yes
@@ -291,7 +291,7 @@ fleet_event = {
     fire_only_once = yes
 
     trigger = {
-        from = { has_planet_flag = scfe_ghost_planet3 }
+        from = { is_scope_type = planet has_planet_flag = scfe_ghost_planet3 }
         owner = { has_event_chain = scfe_ghosts_chain }
     }
     immediate = { from = { remove_planet_flag = scfe_ghost_planet3 } }

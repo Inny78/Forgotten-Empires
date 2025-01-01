@@ -7,7 +7,7 @@ ship_event = {
     is_triggered_only = yes
 
     trigger = {
-        years_passed > 20
+        years_passed > 30
         from = {
             NOT = { exists = archaeological_site }
             scfe_is_molten = yes

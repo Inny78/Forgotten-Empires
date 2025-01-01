@@ -283,7 +283,7 @@ country_event = {
 				spawn_system = {
 					max_jumps = 15
 					min_distance = 5
-					max_distance = 30
+					max_distance = 60
 					initializer = "scfe_alshigans_init_01"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -313,7 +313,7 @@ country_event = {
 				spawn_system = {
 					max_jumps = 10
 					min_distance = 5
-					max_distance = 30
+					max_distance = 60
 					initializer = "scfe_alshigans_init_02"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -343,7 +343,7 @@ country_event = {
 				spawn_system = {
 					max_jumps = 10
 					min_distance = 5
-					max_distance = 30
+					max_distance = 60
 					initializer = "scfe_alshigans_init_03"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes

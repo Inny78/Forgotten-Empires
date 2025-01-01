@@ -112,7 +112,7 @@ fleet_event = {
                     set_spawn_system_batch = begin
                     spawn_system = {
                         min_distance = 5
-                        max_distance = 20
+                        max_distance = 60
                         max_jumps = 5
                         initializer = "scfe_sless_system_1"
                     }
@@ -146,7 +146,7 @@ fleet_event = {
     is_triggered_only = yes
 
     trigger = {
-        from = { has_planet_flag = scfe_sless_colony1 }
+        from = { is_scope_type = planet has_planet_flag = scfe_sless_colony1 }
         owner = { has_event_chain = scfe_sless_chain }
     }
     immediate = { from = { remove_planet_flag = scfe_sless_colony1 } }
@@ -281,7 +281,7 @@ fleet_event = {
                     set_spawn_system_batch = begin
                     spawn_system = {
                         min_distance = 5
-                        max_distance = 20
+                        max_distance = 60
                         max_jumps = 5
                         initializer = "scfe_sless_system_2"
                     }
@@ -314,7 +314,7 @@ fleet_event = {
     is_triggered_only = yes
 
     trigger = {
-        from = { has_planet_flag = scfe_sless_colony2 }
+        from = { is_scope_type = planet has_planet_flag = scfe_sless_colony2 }
         owner = { has_event_chain = scfe_sless_chain }
     }
 
@@ -453,8 +453,8 @@ country_event = {
                 set_spawn_system_batch = begin
                 spawn_system = {
                     max_jumps = 0
-                    min_distance = 10
-                    max_distance = 40
+                    min_distance = 5
+                    max_distance = 60
                     initializer = "scfe_sless_home_system"
                 }
                 set_spawn_system_batch = end

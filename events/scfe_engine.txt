@@ -130,7 +130,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = "strange_init_01"
 				}
@@ -139,7 +139,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = "strange_init_02"
 				}
@@ -148,7 +148,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = "strange_init_03"
 				}
@@ -157,7 +157,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = "strange_init_04"
 				}
@@ -166,7 +166,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = "strange_init_05"
 				}
@@ -196,7 +196,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = scfe_hyrokkin
 				}
@@ -205,7 +205,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = scfe_khnum
 				}
@@ -214,7 +214,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = scfe_severing_lash
 				}
@@ -223,7 +223,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = scfe_kikimora
 				}
@@ -232,7 +232,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = scfe_mireska
 				}
@@ -241,7 +241,7 @@ country_event = {
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
 				spawn_system = {
-					min_distance = 30
+					min_distance = 5
 					max_distance = 60
 					initializer = scfe_tahlin
 				}
@@ -467,7 +467,7 @@ country_event = {
 			}
 			set_spawn_system_batch = begin
 			spawn_system = {
-				min_distance = 20
+				min_distance = 5
 				max_distance = 60
 				initializer = "scfe_celestial_disturbance_system"
 			}
@@ -576,7 +576,7 @@ country_event = {
 			set_spawn_system_batch = begin
 			spawn_system = {
 				min_distance = 5
-				max_distance = 20
+				max_distance = 60
 				initializer = scfe_ghost_system_01
 			}
 			add_extra_hyperlane_to_spawned_system_effect = yes
