@@ -41,10 +41,6 @@
  scfe_precursor_policy_concurrent_desc: "Multiple precursor event chains can happen at once."
  scfe_precursor_policy_consecutive_desc: "You must finish a precursor event chain to trigger another one."
 
- # Gigas compatibility
- origin_incohesive: "Away on an Island"
- origin_incohesive_desc: "This civilisation developed entirely on a bleak lifeless world, in a space far away from space."
-
  # Moved content
  # Galactic Wanderers
  scfe_galactic_wanderers.2.name: "Lunar Monument"

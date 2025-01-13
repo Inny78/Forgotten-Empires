@@ -9,6 +9,7 @@ scfe_belltower_category = {
 	spawn_chance = {
 		modifier = {
 			add = 10
+			years_passed > 40
 			solar_system = {
 				NOT = {
 					any_system_planet = {
@@ -40,6 +41,7 @@ scfe_failed_hive_category = {
 	spawn_chance = {
 		modifier = {
 			add = 10
+			years_passed > 35
 			habitable_planet = yes
 			solar_system = {
 				NOT = {
@@ -71,6 +73,7 @@ scfe_reverse_engine_category = {
 	spawn_chance = {
 		modifier = {
 			add = 10
+			years_passed > 27
 			OR = {
 				scfe_is_barren = yes
 				scfe_is_barren_cold = yes
@@ -102,6 +105,7 @@ scfe_tower_city_category = {
 	spawn_chance = {
 		modifier = {
 			add = 10
+			years_passed > 30
 			scfe_is_gas_giant = yes
 			has_moon = yes
 			any_moon = {
@@ -156,7 +160,7 @@ scfe_war_torn_category = {
 	spawn_chance = {
 		modifier = {
 			add = 10
-			years_passed > 30
+			years_passed > 35
 			OR = {
 				scfe_is_continental = yes
 				scfe_is_desertic = yes
@@ -194,7 +198,7 @@ scfe_vanishing_act_category = {
 	spawn_chance = {
 		modifier = {
 			add = 20
-			years_passed = 10
+			years_passed > 32
 			solar_system = { scfe_is_valid_system = yes }
 			NOT = { exists = archaeological_site }
 			OR = {
@@ -226,6 +230,7 @@ scfe_the_first_music_anomaly = {
 	spawn_chance = {
 		modifier = {
 			add = 20
+			years_passed > 35
 			OR = {
 				scfe_is_barren = yes
 				scfe_is_barren_cold = yes
@@ -366,6 +371,7 @@ scfe_inasir_category = {
 	spawn_chance = {
 		modifier = {
 			add = 10
+			years_passed > 27
 			scfe_is_barren = yes
 		}
 		modifier = {

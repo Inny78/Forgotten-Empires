@@ -1,0 +1,6 @@
+@has_planetary_diversity = 0
+@has_gigastructures = 0
+@has_zofe_vanilla = 0
+@has_atw_lite = 0
+
+# EOF

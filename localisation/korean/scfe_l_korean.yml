@@ -41,10 +41,6 @@
  scfe_precursor_policy_concurrent_desc: "Multiple precursor event chains can happen at once."
  scfe_precursor_policy_consecutive_desc: "You must finish a precursor event chain to trigger another one."
 
- # Gigas compatibility
- origin_incohesive: "어느 섬에서"
- origin_incohesive_desc: "이 문명은 전적으로 우주에서 멀리 떨어진 황량하고 생명이 없는 세계에서 발전했습니다."
-
  # Moved content
  # Galactic Wanderers
  scfe_galactic_wanderers.2.name: "달 기념물"

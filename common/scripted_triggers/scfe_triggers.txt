@@ -14,13 +14,21 @@ scfe_dig_site_default_spawn_rules = {
 			has_star_flag = chosen_system
 			has_star_flag = outercluster
 			has_star_flag = extragalactic_cluster
-			has_star_flag = giga_grox_system
-			has_star_flag = giga_system_six
-			has_star_flag = giga_no_lanes
 			has_star_flag = mem_sadrell_extant_cluster
-			cohesive_system = yes
-			urmazin_system = yes
-			everchanging_system = yes
+			inline_script = {
+				script = forgotten_empires/toggled_code
+				code = "
+					has_star_flag = giga_grox_system
+					has_star_flag = giga_system_six
+					has_star_flag = giga_no_lanes
+					giga_is_core_system = yes
+					cohesive_system = yes
+					compound_cluster = yes
+					annihilator_system = yes
+					urmazin_system = yes
+				"
+				toggle = @has_gigastructures
+			}
 			any_system_planet = {
 				OR = {
 					has_planet_flag = hatchling_egg
@@ -46,14 +54,22 @@ scfe_is_valid_star_system = {
 		has_star_flag = drone_home_system
 		has_star_flag = chosen_system
 		has_star_flag = extragalactic_cluster
-		has_star_flag = giga_grox_system
-		has_star_flag = giga_system_six
-		has_star_flag = giga_no_lanes
 		has_star_flag = mem_sadrell_extant_cluster
 		has_star_flag = outercluster
-		cohesive_system = yes
-		urmazin_system = yes
-		everchanging_system = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+					has_star_flag = giga_grox_system
+					has_star_flag = giga_system_six
+					has_star_flag = giga_no_lanes
+					giga_is_core_system = yes
+					cohesive_system = yes
+					compound_cluster = yes
+					annihilator_system = yes
+					urmazin_system = yes
+				"
+			toggle = @has_gigastructures
+		}
 		any_system_planet = {
 			OR = {
 				has_planet_flag = hatchling_egg
@@ -80,10 +96,22 @@ scfe_is_aquatic = {
 	OR = {
 		is_planet_class = pc_ocean
 		# All These Worlds
-		atw_is_ocean_basic = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_ocean_basic = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_ocean = yes
-		is_pd_planet_for_aqua_trait = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_ocean = yes
+				is_pd_planet_for_aqua_trait = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 scfe_is_continental = {
@@ -91,9 +119,21 @@ scfe_is_continental = {
 	OR = {
 		is_planet_class = pc_continental
 		# Planetary Diversity
-		pd_is_continental = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_continental = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 		# All These Worlds
-		atw_is_continental = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_continental = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_desertic = {
@@ -101,9 +141,21 @@ scfe_is_desertic = {
 	OR = {
 		is_planet_class = pc_desert
 		# Planetary Diversity
-		pd_is_desert = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_desert = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 		# All These Worlds
-		atw_is_desert = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_desert = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_frozen = {
@@ -111,25 +163,55 @@ scfe_is_frozen = {
 		is_planet_class = pc_frozen
 		is_planet_class = pc_arctic
 		# All These Worlds
-		atw_is_frozen = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_frozen = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_arctic = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_arctic = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 scfe_is_tundra = {
 	OR = {
 		is_planet_class = pc_tundra
 		# Planetary Diversity
-		pd_is_tundra = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_tundra = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 		# All These Worlds
-		atw_is_tundra = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_tundra = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_gas_giant = {
 	OR = {
 		is_planet_class = pc_gas_giant
 		# All these worlds
-		atw_is_gas_giant = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_gas_giant = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_uninhabitable = {
@@ -140,80 +222,170 @@ scfe_is_uninhabitable = {
 		scfe_is_molten = yes
 		scfe_is_barren_cold = yes
 		# All These Worlds
-		atw_is_toxic = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_toxic = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_barren = {
 	OR = {
 		is_planet_class = pc_barren
 		# All These Worlds
-		atw_is_barren = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_barren = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_barren_cold = {
 	OR = {
 		is_planet_class = pc_barren_cold
 		# All These Worlds
-		atw_is_barren_cold = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_barren_cold = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_arctic = {
 	OR = {
 		is_planet_class = pc_arctic
 		# Planetary Diversity
-		pd_is_arctic = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_arctic = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 		# All These Worlds
-		atw_is_arctic = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_arctic = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_gaia = {
 	OR = {
 		is_planet_class = pc_gaia
 		# All These Worlds
-		atw_is_gaia = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_gaia = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_planet_class_gaia = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_planet_class_gaia = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 scfe_is_molten = {
 	OR = {
 		is_planet_class = pc_molten
 		# All These Worlds
-		atw_is_molten = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_molten = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 scfe_is_tropical = {
 	OR = {
 		is_planet_class = pc_tropical
 		# All These Worlds
-		atw_is_tropical = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_tropical = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_tropical = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_tropical = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 scfe_is_alpine = {
 	OR = {
 		is_planet_class = pc_alpine
 		# All These Worlds
-		atw_is_alpine = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_alpine = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_alpine = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_alpine = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 scfe_is_savannah = {
 	OR = {
 		is_planet_class = pc_savannah
 		# All These Worlds
-		atw_is_savannah = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_savannah = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_savannah = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_savannah = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 scfe_is_toxic = {
 	OR = {
 		is_planet_class = pc_toxic
 		# All These Worlds
-		atw_is_toxic = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_toxic = yes
+			"
+			toggle = @has_atw_lite
+		}
 	}
 }
 
@@ -246,9 +418,17 @@ scfe_is_valid_system = {
 			is_fe_cluster = yes
 			has_star_flag = drone_home_system
 			has_star_flag = chosen_system
-			cohesive_system = yes
-			urmazin_system = yes
-			everchanging_system = yes
+			inline_script = {
+				script = forgotten_empires/toggled_code
+				code = "
+					giga_is_core_system = yes
+					cohesive_system = yes
+					compound_cluster = yes
+					annihilator_system = yes
+					urmazin_system = yes
+				"
+				toggle = @has_gigastructures
+			}
 			any_system_planet = {
 				has_planet_flag = hatchling_egg
 			}
@@ -274,7 +454,13 @@ scfe_is_default_empire = {
 		# The Empty Vagrant
 		is_country_type = default_ev
 		# ZOFE
-		is_zofe_country = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				is_zofe_country = yes
+			"
+			toggle = @has_zofe_vanilla
+		}
 	}
 }
 
@@ -290,9 +476,21 @@ scfe_is_nuked = {
 	OR = {
 		is_planet_class = pc_nuked
 		# All these worlds
-		atw_is_nuked = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_nuked = yes
+			"
+			toggle = @has_atw_lite
+		}
 		# Planetary Diversity
-		pd_is_planet_class_nuked = yes
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_planet_class_nuked = yes
+			"
+			toggle = @has_planetary_diversity
+		}
 	}
 }
 
@@ -460,7 +658,13 @@ is_valid_origin_for_znkar = {
 		has_origin = origin_separatists
 		has_origin = origin_lost_colony
 		# Gigas exclusion
-		has_origin = origin_incohesive
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				has_origin = origin_incohesive
+			"
+			toggle = @has_gigastructures
+		}
 	}
 }
 
