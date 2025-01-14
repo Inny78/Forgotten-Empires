@@ -1,5 +1,0 @@
-namespace = scfe_precursors_legacy
-
-
-
-namespace = scfe_precursors_legacy_dig
