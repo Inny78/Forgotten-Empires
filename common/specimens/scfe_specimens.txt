@@ -201,9 +201,11 @@ scfe_penitential_records = {
         RARITY = rare
     }
 
-    triggered_country_modifier = {
-        mult = value:historical_item_specimens_modifiers_mult
-        planet_crime_mult = -0.03
+    resources = {
+        category = specimens
+        produces = {
+            society_research = 10
+        }
     }
 }
 # Sless
@@ -339,22 +341,6 @@ scfe_znkar_lamp = {
     triggered_country_modifier = {
         mult = value:aesthetic_wonder_specimens_modifiers_mult
         planet_amenities_add = 5
-    }
-}
-scfe_penitential_records = {
-    icon = "GFX_scfe_specimen_penitential_records"
-    type = historical_item
-
-    inline_script = {
-        script = "grand_archive/set_specimen_rarity"
-        RARITY = rare
-    }
-
-    resources = {
-        category = specimens
-        produces = {
-            society_research = 10
-        }
     }
 }
 # Misc

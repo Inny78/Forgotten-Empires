@@ -50,7 +50,13 @@ has_precursor_intro = {
             NOT = { has_country_flag = origin_shoulders_closure }
         }
         # Gigas exclusion
-        has_origin = origin_incohesive
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+		        has_origin = origin_incohesive
+			"
+			toggle = @has_gigastructures
+		}
     }
 }
 is_valid_drone_expansion_destination_system = {

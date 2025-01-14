@@ -59,7 +59,13 @@ country_event = {
 			random_playable_country = {
 				limit = {
 					is_ai = no
-					NOT = { has_origin = origin_incohesive }
+					inline_script = {
+						script = forgotten_empires/toggled_code
+						code = "
+							NOT = { has_origin = origin_incohesive }
+						"
+						toggle = @has_gigastructures
+					}
 					NOR = {
 						has_country_flag = scfe_precursor_set_sless
 						has_country_flag = scfe_precursor_set_coprean

@@ -180,7 +180,13 @@ scfe_war_torn_category = {
 			from.owner = {
 				OR = {
 					is_ai = yes
-					has_origin = origin_incohesive
+					inline_script = {
+						script = forgotten_empires/toggled_code
+						code = "
+							has_origin = origin_incohesive
+						"
+						toggle = @has_gigastructures
+					}
 					scfe_can_find_precursor = no
 				}
 			}
