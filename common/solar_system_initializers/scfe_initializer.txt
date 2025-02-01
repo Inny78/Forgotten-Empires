@@ -6,7 +6,7 @@ scfe_sless_system_1 = {
     class = rl_standard_stars
     usage = misc_system_init
     usage_odds = 0
-    flags = { precursor_system shroud_storm_changed }
+    flags = { precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
     planet = {
@@ -68,7 +68,7 @@ scfe_sless_system_2 = {
     class = rl_standard_stars
     usage = misc_system_init
     usage_odds = 0
-    flags = { precursor_system shroud_storm_changed }
+    flags = { precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
     planet = {
@@ -107,7 +107,7 @@ scfe_sless_home_system = {
     class = rl_standard_stars
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_sless_home_system precursor_system shroud_storm_changed }
+    flags = { scfe_sless_home_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
 
     prevent_anomalies = yes
 
@@ -209,7 +209,7 @@ scfe_coprean_home_system = {
     class = "rl_binary_stars"
     usage = misc_system_init
     usage_odds = 0
-    flags = { scfe_coprean_home_system precursor_system shroud_storm_changed }
+    flags = { scfe_coprean_home_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
     asteroid_belt = {
@@ -303,7 +303,7 @@ scfe_astanine_home_system = {
     class = "rl_standard_stars"
     usage = misc_system_init
     usage_odds = 0
-    flags = { has_habitat scfe_astanine_home_system precursor_system shroud_storm_changed }
+    flags = { has_habitat scfe_astanine_home_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
     asteroid_belt = {
@@ -405,7 +405,7 @@ scfe_astanine_home_system = {
 # Strange Worlds
 strange_init_01 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system shroud_storm_changed }
+    flags = { strange_world_system shroud_storm_changed scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
 
@@ -444,7 +444,7 @@ strange_init_01 = {
 }
 strange_init_02 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system shroud_storm_changed }
+    flags = { strange_world_system shroud_storm_changed scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
 
@@ -483,7 +483,7 @@ strange_init_02 = {
 }
 strange_init_03 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system shroud_storm_changed }
+    flags = { strange_world_system shroud_storm_changed scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
 
@@ -525,7 +525,7 @@ strange_init_03 = {
 }
 strange_init_04 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system shroud_storm_changed }
+    flags = { strange_world_system shroud_storm_changed scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
 
@@ -563,7 +563,7 @@ strange_init_04 = {
 }
 strange_init_05 = {
     class = "rl_standard_stars"
-    flags = { strange_world_system shroud_storm_changed }
+    flags = { strange_world_system shroud_storm_changed scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
 
@@ -603,7 +603,7 @@ strange_init_05 = {
 # Shaded Empire
 shaded_lead1_system = {
     name = scfe_shaded_clue1_system_name
-    flags = { scfe_shaded_lead1 precursor_system shroud_storm_changed }
+    flags = { scfe_shaded_lead1 precursor_system shroud_storm_changed scfe_ai_avoid_system }
     class = "sc_m_giant"
     asteroid_belt = {
         type = rocky_asteroid_belt
@@ -660,7 +660,7 @@ shaded_lead1_system = {
 }
 shaded_lead2_system = {
     name = scfe_shaded_clue2_system_name
-    flags = { scfe_shaded_lead2 precursor_system shroud_storm_changed }
+    flags = { scfe_shaded_lead2 precursor_system shroud_storm_changed scfe_ai_avoid_system }
     class = "sc_m"
 
     usage = misc_system_init
@@ -758,7 +758,7 @@ shaded_lead2_system = {
 }
 shaded_lead3_system = {
     name = scfe_shaded_clue3_system_name
-    flags = { scfe_shaded_lead3 precursor_system shroud_storm_changed }
+    flags = { scfe_shaded_lead3 precursor_system shroud_storm_changed scfe_ai_avoid_system }
     class = "sc_g"
 
     usage = misc_system_init
@@ -803,7 +803,7 @@ shaded_lead3_system = {
 }
 shaded_lead4_system = {
     name = scfe_shaded_clue4_system_name
-    flags = { scfe_shaded_lead4 precursor_system shroud_storm_changed }
+    flags = { scfe_shaded_lead4 precursor_system shroud_storm_changed scfe_ai_avoid_system }
     class = "sc_a"
 
     usage = misc_system_init
@@ -895,7 +895,7 @@ shaded_colony_system = {
 scfe_znkar_init_01 = {
     class = "rl_standard_stars"
     name = scfe_znkar_kamva
-    flags = { precursor_system shroud_storm_changed }
+    flags = { precursor_system shroud_storm_changed scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -964,7 +964,7 @@ scfe_znkar_init_01 = {
 scfe_znkar_init_02 = {
     class = "rl_standard_stars"
     name = scfe_znkar_wur_den_kaar
-    flags = { precursor_system shroud_storm_changed scfe_wur_den_kaar }
+    flags = { precursor_system shroud_storm_changed scfe_wur_den_kaar scfe_ai_avoid_system }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
@@ -999,10 +999,52 @@ scfe_znkar_init_02 = {
             create_point_of_interest = { event_chain = scfe_znkar_chain id = scfe_znkar_broken name = scfe_znkar_kaar_da_kruun location = this }
             save_global_event_target_as = scfe_znkar_broken
             create_ambient_object = {
-                type = small_debris_object
-                scale = 1
-                entity_offset_height = 5
+                type = "large_debris_object"
+                entity_offset_height = { min = -0 max = -25 }
                 location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+            create_ambient_object = {
+                type = "medium_debris_01_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+            create_ambient_object = {
+                type = "medium_debris_02_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+            create_ambient_object = {
+                type = "small_debris_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
             }
         }
     }
@@ -1576,7 +1618,7 @@ scfe_hyrokkin = {
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
-    flags = { arcane_rune_system precursor_system shroud_storm_changed }
+    flags = { arcane_rune_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
     planet = {
@@ -1609,7 +1651,7 @@ scfe_khnum = {
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
-    flags = { damage_rune_system precursor_system shroud_storm_changed }
+    flags = { damage_rune_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
     planet = {
@@ -1661,7 +1703,7 @@ scfe_severing_lash = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { haste_rune_system precursor_system shroud_storm_changed }
+	flags = { haste_rune_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
     prevent_anomalies = yes
 
 	planet = {
@@ -1693,7 +1735,7 @@ scfe_kikimora = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { regeneration_rune_system precursor_system shroud_storm_changed }
+	flags = { regeneration_rune_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
 	prevent_anomalies = yes
 
 	planet = {
@@ -1720,7 +1762,7 @@ scfe_kikimora = {
 			orbit_angle = 320
 			has_ring = yes
 		}
-		
+
 		moon = {
 			name = scfe_mcholou
 			class = "pc_infested"
@@ -1750,7 +1792,7 @@ scfe_mireska = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { illusion_rune_system precursor_system shroud_storm_changed }
+	flags = { illusion_rune_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
 	prevent_anomalies = yes
 
 	planet = {
@@ -1783,7 +1825,7 @@ scfe_tahlin = {
 	usage = misc_system_init
 	usage_odds = 0
 	max_instances = 1
-	flags = { invisibility_rune_system precursor_system shroud_storm_changed }
+	flags = { invisibility_rune_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
 	prevent_anomalies = yes
 
 	planet = {
@@ -1794,7 +1836,7 @@ scfe_tahlin = {
 		size = 35
 		has_ring = no
 	}
-	
+
 	planet = {
 		name = scfe_meandrus
 		class = "pc_molten"

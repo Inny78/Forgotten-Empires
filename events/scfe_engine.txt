@@ -504,7 +504,7 @@ event = {
 	}
 }
 # on outpost built: AI avoidance flag cleanup
-event = {
+ship_event = {
 	id = scfe_engine.10
 	hide_window = yes
 	is_triggered_only = yes

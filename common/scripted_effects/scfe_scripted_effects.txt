@@ -21,6 +21,7 @@ scfe_give_next_cloaking_tech = {
         add_tech_progress = { tech = tech_cloaking_3 progress = 0.1 }
     }
 }
+SCFE_disable_PreSelect = { country_event = { id = scfe_game_start.2 } }
 
 # Precursor Story Pack
 scfe_species_modify_clear_trait_pc_preference = {

@@ -1,6 +1,0 @@
-﻿l_simp_chinese:
- # 3.14 additions
- scfe_shaded_diversion_op_on_success: "$scfe_shaded_diversion_op_desc$"
- scfe_shaded_coordinates_op_on_success: "$scfe_shaded_coordinates_op_desc$"
- scfe_shaded_diversion_op_no_dlc_desc: "$scfe_shaded_diversion_op_desc$"
- scfe_shaded_coordinates_op_no_dlc_desc: "$scfe_shaded_coordinates_op_desc$"

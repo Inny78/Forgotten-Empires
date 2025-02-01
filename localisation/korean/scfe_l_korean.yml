@@ -4,19 +4,19 @@
 # Start menu
  scfe_menu.2.name: "Forgotten Empires Configuration"
  scfe_menu.2.desc: "Showing current event chains configuration."
- scfe_menu.2.a: "Strange Worlds (default)"
+ scfe_menu.2.a: "Strange Worlds $DEFAULT_BRACKET$"
  scfe_menu.2.at: "Strange Worlds are set to spawn."
  scfe_menu.2.b: "No Strange Worlds"
- scfe_menu.2.c: "Nyblax (default)"
+ scfe_menu.2.c: "Nyblax $DEFAULT_BRACKET$"
  scfe_menu.2.ct: "Nyblax dig sites are set to spawn."
  scfe_menu.2.d: "No Nyblax"
  scfe_menu.2.e: "Begin"
  scfe_menu.3.desc: "Showing current policy configuration."
- scfe_menu.3.a: "$scfe_precursor_policy_concurrent$ (default)"
+ scfe_menu.3.a: "$scfe_precursor_policy_concurrent$ $DEFAULT_BRACKET$"
  scfe_menu.3.at: "$scfe_precursor_policy_concurrent_desc$"
  scfe_menu.3.b: "$scfe_precursor_policy_consecutive$"
  scfe_menu.3.bt: "$scfe_precursor_policy_consecutive_desc$"
- scfe_menu.3.c: "$scfe_archaeology_cleanup_inactive$ (default)"
+ scfe_menu.3.c: "$scfe_archaeology_cleanup_inactive$ $DEFAULT_BRACKET$"
  scfe_menu.3.ct: "$scfe_archaeology_cleanup_inactive_desc$"
  scfe_menu.3.d: "$policy_scfe_archaeology_cleanup$"
  scfe_menu.3.dt: "$policy_scfe_archaeology_cleanup_desc$"
@@ -56,7 +56,7 @@
  scfe_galactic_wanderers.5.name: "§H[scfe_monument_country.GetName]§에서 통신!"
  scfe_galactic_wanderers.5.desc: "미지의 우주 깊은 곳에서 우리는 한때 별을 배회했던 문명의 야망과 꿈에 대한 고대 증거인 기념물을 우연히 발견했습니다. 이 기념물은 희망의 등대이며, 우주는 광대하지만 우리의 잠재력은 끝이 없습니다."
  scfe_galactic_wanderers.6.desc: "이 기념물의 비문은 이 고대 문명의 시련과 승리를 자세히 설명합니다. 그들의 메시지는 분명합니다: \n\n§l우리 우주의 발자취를 따르는 사람들에게는 별들이 무한한 경이로움을 담고 있다는 것을 아십시오 . 우리는 미지의 상황에 직면하더라도 여러분이 우리와 같은 높이로 오를 수 있다는 것을 여러분에게 상기시키기 위해 우리 여정에 대한 이 증거, 기념비를 남깁니다. 절대 포기하지 마세요. 우주는 당신의 놀이터이고, 별들 사이에서 당신의 운명은 끝이 없습니다.§!\n\n우리는 이 발견의 중요성이 우리 문명의 경계를 넘어 확장된다고 믿습니다. 이는 별들 사이에서 자신의 지평을 탐구하고, 배우고, 확장하고자 하는 모든 사람들에게 공감을 불러일으키는 메시지입니다."
-  
+
  # Unexpected tower (Farewell Horizontal)
  scfe_tower_city.1.name: "거대한 탑"
  scfe_tower_city.1.desc: "가스 거성의 깊은 곳에서 금속과 콘크리트로 제작된 거대한 원통이 나타납니다. 훨씬 더 매혹적인 것은 이 우뚝 솟은 첨탑 꼭대기에 자리잡은 도시 폐허와 마을이 그 측면에 위태롭게 달라붙어 있다는 것입니다. 이 불가사의한 영역을 탐험하면서 우리는 상당한 자원이 필요하다는 것을 인식했습니다. 따라서 탐사를 위한 출발점 역할을 할 베이스캠프를 도시의 탁 트인 공간에 설립하기로 결정했습니다."
@@ -77,7 +77,7 @@
 
  # The Belltower
  scfe_belltower.1.name: "사막 타워"
- scfe_belltower.1.desc: "건물이 이동하는 모래의 광대한 지역 중심부에 있다는 점을 고려할 때 건물 근처에 착륙하는 것은 예상보다 더 어려웠습니다. 승무원은 선박의 샘플링 레이저를 사용하여 상당한 지역을 유리화하여 건물을 만들었습니다. 안타깝게도 건물은 이제 대부분 모래 밑에 묻혀 있으며 표면 위에는 원뿔 모양의 봉우리만 보입니다. §G[Root.GetLeaderName]§!에서는 구조물 발굴 및 탐사를 위한 캠프 설립을 제안합니다."  
+ scfe_belltower.1.desc: "건물이 이동하는 모래의 광대한 지역 중심부에 있다는 점을 고려할 때 건물 근처에 착륙하는 것은 예상보다 더 어려웠습니다. 승무원은 선박의 샘플링 레이저를 사용하여 상당한 지역을 유리화하여 건물을 만들었습니다. 안타깝게도 건물은 이제 대부분 모래 밑에 묻혀 있으며 표면 위에는 원뿔 모양의 봉우리만 보입니다. §G[Root.GetLeaderName]§!에서는 구조물 발굴 및 탐사를 위한 캠프 설립을 제안합니다."
  # Archaeology site starts here
  scfe_belltower_dig: "종탑"
  scfe_belltower_dig_desc: "건물이 이동하는 모래의 광대한 지역 중심부에 있다는 점을 고려할 때 건물 근처에 착륙하는 것은 예상보다 더 어려웠습니다. 승무원은 선박의 샘플링 레이저를 사용하여 상당한 지역을 유리화하여 적절한 착륙 구역을 만들었습니다. 안타깝게도 건물은 이제 대부분 모래 밑에 묻혀 있고, 표면 위로는 원뿔 모양의 봉우리만 보입니다."
@@ -274,7 +274,7 @@
  SCFE_WAR_TORN_PROJECT_1_DESC: "우리는 요새에서 발견된 좌표를 이 성계로 추적했습니다. 이제 클론의 흔적이 남아 있는지 찾아야 합니다."
  scfe_clone_prowess: "클론 군인 영감"
  scfe_clone_prowess_desc: "고대 클론 병사들이 보여준 놀라운 기량과 전문성은 우리 군대가 개선을 위해 노력하는 데 영감을 주었습니다. 우리는 새로운 훈련 프로그램을 시작했으며 적에 대한 원활한 승리를 보장하기 위해 새로운 전략을 꼼꼼하게 연구하고 있습니다. "
-  
+
  # The 즈'느카르 Watchers (Invisible War)
  scfe_znkar_chain_title: "선구자 - 즈'느카르"
  scfe_znkar_chain_desc: "고대 문명이 수천 년 전에 우리 고향 행성에 관측소를 세웠습니다. 우리는 그들이 누구였으며 그들의 운명은 어떠했는지 알아내는 것을 목표로 합니다."
