@@ -9,7 +9,7 @@
  ziaskehorn.01.desc: "불꽃이 새로 발견된 불씨에 달라붙자 지아스케호른의 불길로 빠르게 퍼졌습니다. 거의 즉시, 우리 장군들은 새로 살아난 불의 열기가 그들의 몸 전체로 퍼지는 것을 느꼈습니다. 그 여파는 다음과 같습니다. 지아스케호른의 불꽃으로 강화된 상상할 수 없을 정도로 강력한 군대는 전투에서 그 힘을 사용할 수 있습니다."
  ziaskehorn.02.name: "처리할 것이 너무 많습니다."
  ziaskehorn.02.desc: "지아스케호른 불꽃의 힘이 우리 군대에서 약해지면서, 부여한 것보다 더 많은 것을 빼앗고 떠났습니다. 이제 우리 지휘관들의 마음에는 꺼질 수 없는 불이 타올랐고, 그들의 정신은 지아스케호른 불꽃에 휩싸였습니다. 자제에 대한 모든 개념은 한때 휘두르던 힘의 열정으로 소각되어 바람에 흩어졌습니다."
- ziaskehorn.02.tooltip: "우리 사령관 모두는 §H$leader_trait_victory_or_death$§! 및 §H$leader_trait_reckless§! 특성을 얻고 모든 구속을 잃습니다."
+ ziaskehorn.02.tooltip: "우리 사령관 모두는 ['trait:leader_trait_victory_or_death'] 및 ['trait:leader_trait_reckless'] 특성을 얻고 모든 구속을 잃습니다."
  ziaskehorn_digsite: "지아스케호른 불"
  ziaskehorn_digsite_desc: "§Y[From.Planet.GetName]§!의 표면은 한때 사람이 거주했지만 현재는 살기 힘든 화산암에 지나지 않습니다. 한때 행성에 살았던 FTL 이전 문명은 그리고 그들의 집 주위에 몇 개의 위성을 보냅니다.\n\n그러나 그들의 흔적은 없습니다. 남은 것은 대도시가 천천히 녹아내리는 것뿐입니다. 아마도 과거 거주자들로부터 배울 것이 있는 것이 아닐까요?"
  ziaskehorn.99.name: "용암 아래의 삶"
