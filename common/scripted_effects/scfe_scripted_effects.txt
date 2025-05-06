@@ -479,12 +479,12 @@ scfe_select_shaded_angry_fe = {
     }
 }
 
-# scfe_roots_cleanup = {
-#     remove_modifier = scfe_rooted_nature
-#     remove_modifier = scfe_rooted_nature_maintenance
-#     remove_modifier = scfe_rooted_crime
-#     remove_modifier = scfe_rooted_doom
-# }
+scfe_roots_cleanup = {
+    remove_modifier = scfe_rooted_nature
+    remove_modifier = scfe_rooted_nature_maintenance
+    remove_modifier = scfe_rooted_crime
+    remove_modifier = scfe_rooted_doom
+}
 
 site_scfe_ghosts_random_events = {
     random_list = {

@@ -406,55 +406,55 @@ country_event = {
 }
 
 # Roots initialization
-# planet_event = {
-# 	id = scfe_engine.6
-# 	hide_window = yes
-# 	is_triggered_only = yes
-#
-# 	trigger = {
-# 		years_passed > 50
-# 		NOT = { has_global_flag = scfe_roots_started }
-# 		exists = owner
-# 		owner = {
-# 			is_ai = no
-# 			is_homicidal = no
-# 			NOT = { has_country_flag = scfe_rooted }
-# 			count_owned_planet = {
-# 				limit = {
-# 					is_colony = yes
-# 					is_capital = no
-# 				}
-# 				count > 3
-# 			}
-# 			any_owned_planet = {
-# 				scfe_is_continental = yes
-# 				planet_size >= 15
-# 				is_terraforming = no
-# 				NOR = {
-# 					has_planet_flag = colony_event
-# 					has_planet_flag = megastructure
-# 					has_planet_flag = has_megastructure
-# 					has_modifier = lush_planet
-# 					has_modifier = ultra_rich
-# 					has_modifier = mineral_rich
-# 				}
-# 			}
-# 		}
-# 	}
-#
-# 	immediate = {
-# 		set_planet_flag = scfe_roots
-# 		set_planet_flag = colony_event
-# 		set_planet_flag = cant_terraform_planet
-# 		set_global_flag = scfe_roots_started
-# 		save_global_event_target_as = scfe_roots_planet
-# 		owner = {
-# 			save_global_event_target_as = scfe_roots_owner
-# 			set_country_flag = scfe_rooted
-# 			country_event = { id = scfe_roots.2 }
-# 		}
-# 	}
-# }
+planet_event = {
+	id = scfe_engine.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		years_passed > 50
+		NOT = { has_global_flag = scfe_roots_started }
+		exists = owner
+		owner = {
+			is_ai = no
+			is_homicidal = no
+			NOT = { has_country_flag = scfe_rooted }
+			count_owned_planet = {
+				limit = {
+					is_colony = yes
+					is_capital = no
+				}
+				count > 3
+			}
+			any_owned_planet = {
+				scfe_is_continental = yes
+				planet_size >= 15
+				is_terraforming = no
+				NOR = {
+					has_planet_flag = colony_event
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					has_modifier = lush_planet
+					has_modifier = ultra_rich
+					has_modifier = mineral_rich
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_planet_flag = scfe_roots
+		set_planet_flag = colony_event
+		set_planet_flag = cant_terraform_planet
+		set_global_flag = scfe_roots_started
+		save_global_event_target_as = scfe_roots_planet
+		owner = {
+			save_global_event_target_as = scfe_roots_owner
+			set_country_flag = scfe_rooted
+			country_event = { id = scfe_roots.2 }
+		}
+	}
+}
 
 # Celestial Disturbance
 country_event = {
