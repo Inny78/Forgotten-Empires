@@ -354,7 +354,7 @@ fleet_event = {
                     limit = { any_system_planet = { has_planet_flag = scfe_coprean_colony } }
                     set_spawn_system_batch = begin
                     spawn_system = {
-                        max_jumps = 0
+                        max_jumps = 5
                         min_distance = 10
                         max_distance = 40
                         initializer = "scfe_coprean_home_system"
@@ -581,269 +581,270 @@ country_event = {
             add_modifier = { modifier = mod_scfe_precursor_coprean_secrets_deep_gestalt days = -1 }
         }
     }
-    option = {
-        name = scfe_coprean_constitution.16.c
-        trigger = { NOT = { has_ethic = ethic_gestalt_consciousness } }
-        set_country_flag = scfe_innovo
-        remove_modifier = mod_scfe_precursor_coprean_secrets
-        hidden_effect = {
-            if = {
-                limit = { is_mechanical_empire = no }
-                custom_tooltip = scfe_coprean_constitution.16.hive.tooltip
-                #see 'GOVERNMENT_CHANGE_EMPIRE_SIZE_MULT' in the vanilla edict file for more info
-                #GOVERNMENT_CHANGE_EMPIRE_SIZE_MULT	= 10.0 # It will cost (Empire Size) * X Unity to change Government Type
-                export_trigger_value_to_variable = {
-                    trigger = empire_size
-                    variable = scfe_coprean_constitution_gov_reform_cost_var
-                }
-                add_resource = {
-                    unity = 10 #cost to reform government
-                    mult = scfe_coprean_constitution_gov_reform_cost_var
-                }
-                clear_variable = scfe_coprean_constitution_gov_reform_cost_var
-                clear_ethos = yes
-                country_add_ethic = ethic_gestalt_consciousness
-                change_government = {
-                    authority = auth_hive_mind
-                    civics = { civic = civic_scfe_possessive_consciousness_hive }
-                    cooldown = no
-                }
-                give_technology = { tech = tech_hive_node message = no }
-                species = {
-                    modify_species = {
-                        base = none
-                        add_trait = trait_hive_mind
-                    }
-                }
-                change_dominant_species = { species = last_created_species }
-                every_owned_pop = {
-                    limit = { NOT = { is_same_species = last_created_species } }
-                    change_species = last_created_species
-                }
-                every_owned_ship = {
-                    limit = {
-                        is_ship_class = shipclass_colonizer
-                        species = { NOT = { has_trait = trait_hive_mind } }
-                    }
-                    change_species = last_created_species
-                }
-                every_owned_army = {
-                    limit = {
-                        exists = species
-                        exists = planet
-                        species = { NOT = { has_trait = trait_hive_mind } }
-                        army_type = assault_army
-                    }
-                    modify_army = {
-                        name = random
-                        type = "machine_defense"
-                        species = last_created_species
-                    }
-                }
-                every_owned_army = {
-                    limit = {
-                        exists = species
-                        exists = planet
-                        species = { NOT = { has_trait = trait_hive_mind } }
-                        army_type = defense_army
-                    }
-                    modify_army = {
-                        name = random
-                        type = "machine_defense"
-                        species = last_created_species
-                    }
-                }
-                every_owned_leader = {
-                    limit = { species = { NOT = { has_trait = trait_hive_mind } } }
-                    change_background_ethic = ethic_gestalt_consciousness
-                    change_species = last_created_species
-                    change_leader_portrait = species
-                }
-                every_pool_leader = {
-                    limit = { species = { NOT = { has_trait = trait_hive_mind } } }
-                    change_background_ethic = ethic_gestalt_consciousness
-                    change_species = last_created_species
-                    change_leader_portrait = species
-                }
-
-                #to reset ruler traits
-                ruler = {
-                    remove_all_traits = yes
-                    add_trait_no_notify = leader_trait_ruler_hive_mind
-                    add_trait_no_notify = leader_trait_psionic
-                    set_name = "Name_coprean_innovo"
-                }
-
-                #set the origin again when it's needed
-                if = {
-                    limit = { NOT = { has_authority = auth_hive_mind } }
-                    set_origin = origin_default
-                    #and attempt to change the government again
-                    change_government = {
-                        authority = auth_hive_mind
-                        civics = { civic = civic_scfe_possessive_consciousness_hive }
-                        cooldown = no
-                    }
-                }
-
-                scfe_coprean_constitution_16_hive_effect = yes
-
-                else = {
-                    custom_tooltip = scfe_coprean_constitution.16.machine.tooltip
-
-                    export_trigger_value_to_variable = {
-                        trigger = empire_size
-                        variable = scfe_coprean_constitution_gov_reform_cost_var
-                    }
-                    add_resource = {
-                        unity = 10
-                        mult = scfe_coprean_constitution_gov_reform_cost_var
-                    }
-                    clear_variable = scfe_coprean_constitution_gov_reform_cost_var
-                    clear_ethos = yes
-                    country_add_ethic = ethic_gestalt_consciousness
-                    change_government = {
-                        authority = auth_machine_intelligence
-                        civics = { civic = civic_scfe_possessive_consciousness_machine }
-                        cooldown = no
-                    }
-
-                    remove_country_flag = cyborg_empire
-                    remove_country_flag = synthetic_empire
-
-                    if = {
-                        limit = { NOT = { has_technology = tech_bio_reactor } }
-                        give_technology = { tech = tech_bio_reactor message = no }
-                    }
-                    species = {
-                        create_species = {
-                            adjective = this
-                            name = this
-                            namelist = prev
-                            plural = this
-                            class = "MACHINE"
-                            portrait = this
-                            traits = { trait = trait_machine_unit }
-                            traits = this
-                            homeworld = prev.capital_scope
-                            effect = {
-                                modify_species = {
-                                    remove_trait = trait_mechanical
-                                    change_scoped_species = no
-                                }
-                            }
-                        }
-                    }
-                    every_owned_pop = {
-                        limit = { NOT = { is_same_species = last_created_species } }
-                        change_species = last_created_species
-                    }
-                    change_dominant_species = { species = last_created_species }
-                    every_owned_ship = {
-                        limit = {
-                            is_ship_class = shipclass_colonizer
-                            species = { has_trait = trait_mechanical }
-                        }
-                        change_species = last_created_species
-                    }
-                    every_owned_army = {
-                        limit = {
-                            exists = species
-                            exists = planet
-                            species = { has_trait = trait_mechanical }
-                            army_type = assault_army
-                        }
-                        modify_army = {
-                            name = random
-                            type = "machine_defense"
-                            species = last_created_species
-                        }
-                    }
-                    every_owned_army = {
-                        limit = {
-                            exists = species
-                            exists = planet
-                            species = { has_trait = trait_mechanical }
-                            army_type = defense_army
-                        }
-                        modify_army = {
-                            name = random
-                            type = "machine_defense"
-                            species = last_created_species
-                        }
-                    }
-                    every_owned_leader = {
-                        limit = {
-                            species = { has_trait = trait_mechanical }
-                            NOR = {
-                                has_leader_flag = renowned_leader
-                                has_leader_flag = legendary_leader
-                            }
-                        }
-                        change_background_ethic = ethic_gestalt_consciousness
-                        change_species = last_created_species
-                        change_leader_portrait = species
-                    }
-                    every_pool_leader = {
-                        limit = { species = { has_trait = trait_mechanical } }
-                        change_background_ethic = ethic_gestalt_consciousness
-                        change_species = last_created_species
-                        change_leader_portrait = species
-                    }
-
-                    ruler = {
-                        remove_all_traits = yes
-                        add_trait_no_notify = leader_trait_ruler_machine_intelligence
-                        add_trait_no_notify = leader_trait_psionic
-                        set_name = "Name_coprean_innovo"
-                    }
-
-                    if = {
-                        limit = { NOT = { has_authority = auth_machine_intelligence } }
-                        set_origin = origin_default
-                        change_government = {
-                            authority = auth_machine_intelligence
-                            civics = { civic = civic_scfe_possessive_consciousness_machine }
-                            cooldown = no
-                        }
-                    }
-
-                    scfe_coprean_constitution_16_machine_effect = yes
-                }
-                every_country = {
-                    limit = {
-                        NOT = { is_same_value = root }
-                        has_communications = root
-                    }
-                    add_opinion_modifier = {
-                        who = root
-                        modifier = triggered_opinion_scfe_true_identity
-                    }
-                }
-            }
-            #create gestalt nodes
-            country_create_gestalt_councilor = {
-                CLASS = official
-                COUNCIL_POS = councilor_gestalt_growth
-                DESC = councilor_gestalt_growth_desc
-            }
-            country_create_gestalt_councilor = {
-                CLASS = scientist
-                COUNCIL_POS = councilor_gestalt_cognitive
-                DESC = councilor_gestalt_cognitive_desc
-            }
-            country_create_gestalt_councilor = {
-                CLASS = commander
-                COUNCIL_POS = councilor_gestalt_legion
-                DESC = councilor_gestalt_legion_desc
-            }
-            country_create_gestalt_councilor = {
-                CLASS = official
-                COUNCIL_POS = councilor_gestalt_regulatory
-                DESC = councilor_gestalt_regulatory_desc
-            }
-        }
-    }
+    # option = {
+    #     name = scfe_coprean_constitution.16.c
+    #     trigger = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+    #     set_country_flag = scfe_innovo
+    #     remove_modifier = mod_scfe_precursor_coprean_secrets
+    #     hidden_effect = {
+    #         if = {
+    #             # Hive Empire
+    #             limit = { is_mechanical_empire = no }
+    #             custom_tooltip = scfe_coprean_constitution.16.hive.tooltip
+    #             #see 'GOVERNMENT_CHANGE_EMPIRE_SIZE_MULT' in the vanilla edict file for more info
+    #             #GOVERNMENT_CHANGE_EMPIRE_SIZE_MULT	= 10.0 # It will cost (Empire Size) * X Unity to change Government Type
+    #             export_trigger_value_to_variable = {
+    #                 trigger = empire_size
+    #                 variable = scfe_coprean_constitution_gov_reform_cost_var
+    #             }
+    #             add_resource = {
+    #                 unity = 10 #cost to reform government
+    #                 mult = scfe_coprean_constitution_gov_reform_cost_var
+    #             }
+    #             clear_variable = scfe_coprean_constitution_gov_reform_cost_var
+    #             clear_ethos = yes
+    #             country_add_ethic = ethic_gestalt_consciousness
+    #             change_government = {
+    #                 authority = auth_hive_mind
+    #                 civics = { civic = civic_scfe_possessive_consciousness_hive }
+    #                 cooldown = no
+    #             }
+    #             give_technology = { tech = tech_hive_node message = no }
+    #             species = {
+    #                 modify_species = {
+    #                     base = none
+    #                     add_trait = trait_hive_mind
+    #                 }
+    #             }
+    #             change_dominant_species = { species = last_created_species }
+    #             every_owned_pop = {
+    #                 limit = { NOT = { is_same_species = last_created_species } }
+    #                 change_species = last_created_species
+    #             }
+    #             every_owned_ship = {
+    #                 limit = {
+    #                     is_ship_class = shipclass_colonizer
+    #                     species = { NOT = { has_trait = trait_hive_mind } }
+    #                 }
+    #                 change_species = last_created_species
+    #             }
+    #             every_owned_army = {
+    #                 limit = {
+    #                     exists = species
+    #                     exists = planet
+    #                     species = { NOT = { has_trait = trait_hive_mind } }
+    #                     army_type = assault_army
+    #                 }
+    #                 modify_army = {
+    #                     name = random
+    #                     type = "machine_defense"
+    #                     species = last_created_species
+    #                 }
+    #             }
+    #             every_owned_army = {
+    #                 limit = {
+    #                     exists = species
+    #                     exists = planet
+    #                     species = { NOT = { has_trait = trait_hive_mind } }
+    #                     army_type = defense_army
+    #                 }
+    #                 modify_army = {
+    #                     name = random
+    #                     type = "machine_defense"
+    #                     species = last_created_species
+    #                 }
+    #             }
+    #             every_owned_leader = {
+    #                 limit = { species = { NOT = { has_trait = trait_hive_mind } } }
+    #                 change_background_ethic = ethic_gestalt_consciousness
+    #                 change_species = last_created_species
+    #                 change_leader_portrait = species
+    #             }
+    #             every_pool_leader = {
+    #                 limit = { species = { NOT = { has_trait = trait_hive_mind } } }
+    #                 change_background_ethic = ethic_gestalt_consciousness
+    #                 change_species = last_created_species
+    #                 change_leader_portrait = species
+    #             }
+    #
+    #             #to reset ruler traits
+    #             ruler = {
+    #                 remove_all_traits = yes
+    #                 add_trait_no_notify = leader_trait_ruler_hive_mind
+    #                 add_trait_no_notify = leader_trait_psionic
+    #                 set_name = "Name_coprean_innovo"
+    #             }
+    #
+    #             #set the origin again when it's needed
+    #             if = {
+    #                 limit = { NOT = { has_authority = auth_hive_mind } }
+    #                 set_origin = origin_default
+    #                 #and attempt to change the government again
+    #                 change_government = {
+    #                     authority = auth_hive_mind
+    #                     civics = { civic = civic_scfe_possessive_consciousness_hive }
+    #                     cooldown = no
+    #                 }
+    #             }
+    #             scfe_coprean_constitution_16_hive_effect = yes
+    #
+    #             else_if = {
+    #                 limit = { is_mechanical_empire = yes }
+    #                 custom_tooltip = scfe_coprean_constitution.16.machine.tooltip
+    #
+    #                 export_trigger_value_to_variable = {
+    #                     trigger = empire_size
+    #                     variable = scfe_coprean_constitution_gov_reform_cost_var
+    #                 }
+    #                 add_resource = {
+    #                     unity = 10
+    #                     mult = scfe_coprean_constitution_gov_reform_cost_var
+    #                 }
+    #                 clear_variable = scfe_coprean_constitution_gov_reform_cost_var
+    #                 clear_ethos = yes
+    #                 country_add_ethic = ethic_gestalt_consciousness
+    #                 change_government = {
+    #                     authority = auth_machine_intelligence
+    #                     civics = { civic = civic_scfe_possessive_consciousness_machine }
+    #                     cooldown = no
+    #                 }
+    #
+    #                 remove_country_flag = cyborg_empire
+    #                 remove_country_flag = synthetic_empire
+    #
+    #                 if = {
+    #                     limit = { NOT = { has_technology = tech_bio_reactor } }
+    #                     give_technology = { tech = tech_bio_reactor message = no }
+    #                 }
+    #                 species = {
+    #                     create_species = {
+    #                         adjective = this
+    #                         name = this
+    #                         namelist = prev
+    #                         plural = this
+    #                         class = "MACHINE"
+    #                         portrait = this
+    #                         traits = { trait = trait_machine_unit }
+    #                         traits = this
+    #                         homeworld = prev.capital_scope
+    #                         effect = {
+    #                             modify_species = {
+    #                                 remove_trait = trait_mechanical
+    #                                 change_scoped_species = no
+    #                             }
+    #                         }
+    #                     }
+    #                 }
+    #                 every_owned_pop = {
+    #                     limit = { NOT = { is_same_species = last_created_species } }
+    #                     change_species = last_created_species
+    #                 }
+    #                 change_dominant_species = { species = last_created_species }
+    #                 every_owned_ship = {
+    #                     limit = {
+    #                         is_ship_class = shipclass_colonizer
+    #                         species = { has_trait = trait_mechanical }
+    #                     }
+    #                     change_species = last_created_species
+    #                 }
+    #                 every_owned_army = {
+    #                     limit = {
+    #                         exists = species
+    #                         exists = planet
+    #                         species = { has_trait = trait_mechanical }
+    #                         army_type = assault_army
+    #                     }
+    #                     modify_army = {
+    #                         name = random
+    #                         type = "machine_defense"
+    #                         species = last_created_species
+    #                     }
+    #                 }
+    #                 every_owned_army = {
+    #                     limit = {
+    #                         exists = species
+    #                         exists = planet
+    #                         species = { has_trait = trait_mechanical }
+    #                         army_type = defense_army
+    #                     }
+    #                     modify_army = {
+    #                         name = random
+    #                         type = "machine_defense"
+    #                         species = last_created_species
+    #                     }
+    #                 }
+    #                 every_owned_leader = {
+    #                     limit = {
+    #                         species = { has_trait = trait_mechanical }
+    #                         NOR = {
+    #                             has_leader_flag = renowned_leader
+    #                             has_leader_flag = legendary_leader
+    #                         }
+    #                     }
+    #                     change_background_ethic = ethic_gestalt_consciousness
+    #                     change_species = last_created_species
+    #                     change_leader_portrait = species
+    #                 }
+    #                 every_pool_leader = {
+    #                     limit = { species = { has_trait = trait_mechanical } }
+    #                     change_background_ethic = ethic_gestalt_consciousness
+    #                     change_species = last_created_species
+    #                     change_leader_portrait = species
+    #                 }
+    #
+    #                 ruler = {
+    #                     remove_all_traits = yes
+    #                     add_trait_no_notify = leader_trait_ruler_machine_intelligence
+    #                     add_trait_no_notify = leader_trait_psionic
+    #                     set_name = "Name_coprean_innovo"
+    #                 }
+    #
+    #                 if = {
+    #                     limit = { NOT = { has_authority = auth_machine_intelligence } }
+    #                     set_origin = origin_default
+    #                     change_government = {
+    #                         authority = auth_machine_intelligence
+    #                         civics = { civic = civic_scfe_possessive_consciousness_machine }
+    #                         cooldown = no
+    #                     }
+    #                 }
+    #
+    #                 scfe_coprean_constitution_16_machine_effect = yes
+    #             }
+    #             every_country = {
+    #                 limit = {
+    #                     NOT = { is_same_value = root }
+    #                     has_communications = root
+    #                 }
+    #                 add_opinion_modifier = {
+    #                     who = root
+    #                     modifier = triggered_opinion_scfe_true_identity
+    #                 }
+    #             }
+    #         }
+    #         #create gestalt nodes
+    #         country_create_gestalt_councilor = {
+    #             CLASS = official
+    #             COUNCIL_POS = councilor_gestalt_growth
+    #             DESC = councilor_gestalt_growth_desc
+    #         }
+    #         country_create_gestalt_councilor = {
+    #             CLASS = scientist
+    #             COUNCIL_POS = councilor_gestalt_cognitive
+    #             DESC = councilor_gestalt_cognitive_desc
+    #         }
+    #         country_create_gestalt_councilor = {
+    #             CLASS = commander
+    #             COUNCIL_POS = councilor_gestalt_legion
+    #             DESC = councilor_gestalt_legion_desc
+    #         }
+    #         country_create_gestalt_councilor = {
+    #             CLASS = official
+    #             COUNCIL_POS = councilor_gestalt_regulatory
+    #             DESC = councilor_gestalt_regulatory_desc
+    #         }
+    #     }
+    # }
     after = {
         hidden_effect = { clear_global_event_target = scfe_coprean_owner }
     }

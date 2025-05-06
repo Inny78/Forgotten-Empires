@@ -72,93 +72,94 @@ decision_scfe_astanine_last_projector_remove = {
         weight = 0
     }
 }
-decision_scfe_restore_magnetic_field = {
-    owned_planets_only = yes
-
-    resources = {
-        category = decisions
-        cost = { energy = 250 }
-    }
-
-    potential = {
-        has_modifier = scfe_rooted_magnetic_field
-        NOT = { has_planet_flag = scfe_roots }
-    }
-
-    allow = {
-        exists = owner
-        owner = { has_technology = tech_shields_3 }
-    }
-
-    effect = {
-        remove_modifier = scfe_rooted_magnetic_field
-        hidden_effect = {
-            owner = { country_event = { id = scfe_roots.21 } }
-        }
-    }
-}
-decision_scfe_connect_with_nature = {
-    owned_planets_only = yes
-
-    resources = {
-        category = decisions
-        cost = { influence = 200 }
-    }
-
-    potential = {
-        exists = owner
-        owner = {
-            has_country_flag = scfe_rooted_unification
-            is_hive_empire = yes
-            country_uses_food = yes
-        }
-        is_artificial = no
-        NOR = {
-            has_modifier = lush_planet
-            has_planet_flag = scfe_rooted_minerals
-            has_planet_flag = scfe_roots_peace
-        }
-    }
-
-    allow = {
-    }
-
-    effect = {
-        add_modifier = { modifier = lush_planet days = -1 }
-        set_planet_flag = scfe_rooted_lush
-    }
-}
-decision_scfe_draw_from_nature = {
-    owned_planets_only = yes
-
-    resources = {
-        category = decisions
-        cost = { influence = 200 }
-    }
-
-    potential = {
-        exists = owner
-        owner = {
-            has_country_flag = scfe_rooted_unification
-            is_hive_empire = yes
-        }
-        is_artificial = no
-        NOR = {
-            has_modifier = mineral_rich
-            has_modifier = ultra_rich
-            has_planet_flag = scfe_rooted_lush
-            has_planet_flag = scfe_roots_peace
-        }
-    }
-
-    allow = {
-    }
-
-    effect = {
-        add_modifier = { modifier = mineral_rich days = -1 }
-        set_planet_flag = scfe_rooted_minerals
-    }
-}
+# Roots
+# decision_scfe_restore_magnetic_field = {
+#     owned_planets_only = yes
+#
+#     resources = {
+#         category = decisions
+#         cost = { energy = 250 }
+#     }
+#
+#     potential = {
+#         has_modifier = scfe_rooted_magnetic_field
+#         NOT = { has_planet_flag = scfe_roots }
+#     }
+#
+#     allow = {
+#         exists = owner
+#         owner = { has_technology = tech_shields_3 }
+#     }
+#
+#     effect = {
+#         remove_modifier = scfe_rooted_magnetic_field
+#         hidden_effect = {
+#             owner = { country_event = { id = scfe_roots.21 } }
+#         }
+#     }
+# }
+# decision_scfe_connect_with_nature = {
+#     owned_planets_only = yes
+#
+#     resources = {
+#         category = decisions
+#         cost = { influence = 200 }
+#     }
+#
+#     potential = {
+#         exists = owner
+#         owner = {
+#             has_country_flag = scfe_rooted_unification
+#             is_hive_empire = yes
+#             country_uses_food = yes
+#         }
+#         is_artificial = no
+#         NOR = {
+#             has_modifier = lush_planet
+#             has_planet_flag = scfe_rooted_minerals
+#             has_planet_flag = scfe_roots_peace
+#         }
+#     }
+#
+#     allow = {
+#     }
+#
+#     effect = {
+#         add_modifier = { modifier = lush_planet days = -1 }
+#         set_planet_flag = scfe_rooted_lush
+#     }
+# }
+# decision_scfe_draw_from_nature = {
+#     owned_planets_only = yes
+#
+#     resources = {
+#         category = decisions
+#         cost = { influence = 200 }
+#     }
+#
+#     potential = {
+#         exists = owner
+#         owner = {
+#             has_country_flag = scfe_rooted_unification
+#             is_hive_empire = yes
+#         }
+#         is_artificial = no
+#         NOR = {
+#             has_modifier = mineral_rich
+#             has_modifier = ultra_rich
+#             has_planet_flag = scfe_rooted_lush
+#             has_planet_flag = scfe_roots_peace
+#         }
+#     }
+#
+#     allow = {
+#     }
+#
+#     effect = {
+#         add_modifier = { modifier = mineral_rich days = -1 }
+#         set_planet_flag = scfe_rooted_minerals
+#     }
+# }
 # Nyblax
 scfe_decision_planet_haste_rune = {
     owned_planets_only = yes
@@ -232,7 +233,7 @@ scfe_decision_planet_illusion_rune = {
                     type = name
                     localization = PLANET
                     scope = this
-                }				
+                }
                 variable = {
                     type = name
                     localization = DEPOSIT
@@ -249,7 +250,7 @@ scfe_decision_planet_illusion_rune = {
                     type = name
                     localization = PLANET
                     scope = this
-                }				
+                }
                 variable = {
                     type = name
                     localization = DEPOSIT

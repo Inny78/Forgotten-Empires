@@ -420,7 +420,7 @@ country_event = {
 
 	immediate = {
 		random_owned_planet = {
-			limit = { is_colony = yes num_pops > 4 }
+			limit = { is_colony = yes colony_age > 5 }
 			weights = {
 				base = 1
 				modifier = {

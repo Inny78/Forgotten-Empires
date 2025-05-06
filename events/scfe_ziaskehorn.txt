@@ -307,10 +307,6 @@ country_event = {
                     limit = { has_trait = leader_trait_restrained }
                     remove_trait = leader_trait_restrained
                 }
-                else_if = {
-                    limit = { has_trait = leader_trait_restrained_2 }
-                    remove_trait = leader_trait_restrained_2
-                }
                 if = {
                     limit = { has_trait = leader_trait_nervous }
                     remove_trait = leader_trait_nervous

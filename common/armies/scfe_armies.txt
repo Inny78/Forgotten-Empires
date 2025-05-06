@@ -7,9 +7,9 @@ scfe_astanine_hologram_army = {
     war_exhaustion = 1.00
     has_species = yes
     use_armynames_from = clone_army
-
     time = 150
     icon = GFX_army_type_clone
+
     resources = {
         category = armies
         cost = {

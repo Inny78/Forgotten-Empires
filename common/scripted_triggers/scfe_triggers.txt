@@ -81,6 +81,8 @@ scfe_is_valid_star_system = {
 
 scfe_dig_site_visible_trigger = {
 	is_ai = no
+	exists = from
+	exists = from.planet
 	default_site_visible_trigger = yes
 }
 
@@ -411,7 +413,6 @@ scfe_is_valid_system = {
 		exists = star
 		NOR = {
 			has_star_flag = home_system
-			has_star_flag = precursor_system
 			has_star_flag = sealed_system
 			has_star_flag = empire_cluster
 			has_special_star_flag_trigger = yes
@@ -792,7 +793,6 @@ scfe_has_special_deposit = {
 		has_deposit = d_ancient_facilities
 		has_deposit = d_fallen_orbital_shipyard
 		has_deposit = d_arcane_replicator
-		has_deposit = d_system_resources
 		has_deposit = d_arcane_generator
 		has_deposit = d_spore_vents
 		has_deposit = d_cave_shroom_veins

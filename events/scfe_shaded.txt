@@ -267,7 +267,7 @@ country_event = {
             spawn_system = {
                 min_distance = 5
                 max_distance = 60
-                max_jumps = 0
+                max_jumps = 5
                 initializer = "shaded_lead1_system"
             }
             if = {
@@ -289,7 +289,7 @@ country_event = {
             spawn_system = {
                 min_distance = 5
                 max_distance = 60
-                max_jumps = 0
+                max_jumps = 5
                 initializer = "shaded_lead2_system"
             }
             if = {
@@ -311,7 +311,7 @@ country_event = {
             spawn_system = {
                 min_distance = 5
                 max_distance = 60
-                max_jumps = 0
+                max_jumps = 5
                 initializer = "shaded_lead3_system"
             }
             if = {
@@ -333,7 +333,7 @@ country_event = {
             spawn_system = {
                 min_distance = 5
                 max_distance = 60
-                max_jumps = 0
+                max_jumps = 5
                 initializer = "shaded_lead4_system"
             }
             if = {

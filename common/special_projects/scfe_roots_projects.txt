@@ -1,216 +1,216 @@
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_1"
-    cost = 0
-    days_to_research = 120
-    timelimit = 360
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-        shipclass_military = 1
-    }
-    fail_trigger = { }
-
-    event_scope = ship_event
-
-    on_success = {
-        ship_event = { id = scfe_roots.9 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_2"
-    cost = 0
-    days_to_research = 120
-    timelimit = 360
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-    }
-    fail_trigger = { }
-
-    event_scope = ship_event
-
-    on_success = {
-        ship_event = { id = scfe_roots.13 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_3"
-    cost = 0
-    days_to_research = 120
-    timelimit = 360
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-    }
-    fail_trigger = { }
-
-    event_scope = ship_event
-
-    on_success = {
-        ship_event = { id = scfe_roots.16 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_4"
-    cost = 0
-    days_to_research = 120
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_continental
-    event_chain = scfe_roots_chain
-
-    requirements = { }
-    fail_trigger = { }
-
-    event_scope = country_event
-
-    on_success = {
-        country_event = { id = scfe_roots.11 }
-    }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_5"
-    cost = 0
-    days_to_research = 90
-    timelimit = 300
-    tech_department = physics_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-    }
-    fail_trigger = { }
-
-    event_scope = ship_event
-
-    on_success = {
-        ship_event = { id = scfe_roots.15 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_6"
-    cost = 0
-    days_to_research = 90
-    timelimit = 300
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-    }
-    fail_trigger = { }
-
-    event_scope = country_event
-
-    on_success = {
-        country_event = { id = scfe_roots.14 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_7"
-    cost = 0
-    days_to_research = 90
-    timelimit = 300
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = { }
-    fail_trigger = { }
-
-    event_scope = country_event
-
-    on_success = {
-        country_event = { id = scfe_roots.17 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_8"
-    cost = 0
-    days_to_research = 90
-    timelimit = 300
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-    }
-    fail_trigger = { }
-
-    event_scope = country_event
-
-    on_success = {
-        country_event = { id = scfe_roots.18 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
-special_project = {
-    key = "SCFE_ROOTS_PROJECT_9"
-    cost = 0
-    days_to_research = 90
-    timelimit = 300
-    tech_department = society_technology
-    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-    picture = GFX_evt_alien_nature
-    event_chain = scfe_roots_chain
-
-    requirements = {
-    }
-    fail_trigger = { }
-
-    event_scope = country_event
-
-    on_success = {
-        country_event = { id = scfe_roots.19 }
-    }
-
-    on_cancel = {  }
-
-    on_fail = {  }
-}
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_1"
+#     cost = 0
+#     days_to_research = 120
+#     timelimit = 360
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#         shipclass_military = 1
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = ship_event
+#
+#     on_success = {
+#         ship_event = { id = scfe_roots.9 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_2"
+#     cost = 0
+#     days_to_research = 120
+#     timelimit = 360
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = ship_event
+#
+#     on_success = {
+#         ship_event = { id = scfe_roots.13 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_3"
+#     cost = 0
+#     days_to_research = 120
+#     timelimit = 360
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = ship_event
+#
+#     on_success = {
+#         ship_event = { id = scfe_roots.16 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_4"
+#     cost = 0
+#     days_to_research = 120
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_continental
+#     event_chain = scfe_roots_chain
+#
+#     requirements = { }
+#     fail_trigger = { }
+#
+#     event_scope = country_event
+#
+#     on_success = {
+#         country_event = { id = scfe_roots.11 }
+#     }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_5"
+#     cost = 0
+#     days_to_research = 90
+#     timelimit = 300
+#     tech_department = physics_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = ship_event
+#
+#     on_success = {
+#         ship_event = { id = scfe_roots.15 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_6"
+#     cost = 0
+#     days_to_research = 90
+#     timelimit = 300
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = country_event
+#
+#     on_success = {
+#         country_event = { id = scfe_roots.14 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_7"
+#     cost = 0
+#     days_to_research = 90
+#     timelimit = 300
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = { }
+#     fail_trigger = { }
+#
+#     event_scope = country_event
+#
+#     on_success = {
+#         country_event = { id = scfe_roots.17 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_8"
+#     cost = 0
+#     days_to_research = 90
+#     timelimit = 300
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = country_event
+#
+#     on_success = {
+#         country_event = { id = scfe_roots.18 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }
+# special_project = {
+#     key = "SCFE_ROOTS_PROJECT_9"
+#     cost = 0
+#     days_to_research = 90
+#     timelimit = 300
+#     tech_department = society_technology
+#     icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+#     picture = GFX_evt_alien_nature
+#     event_chain = scfe_roots_chain
+#
+#     requirements = {
+#     }
+#     fail_trigger = { }
+#
+#     event_scope = country_event
+#
+#     on_success = {
+#         country_event = { id = scfe_roots.19 }
+#     }
+#
+#     on_cancel = {  }
+#
+#     on_fail = {  }
+# }

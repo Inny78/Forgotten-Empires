@@ -13,11 +13,11 @@ r_scfe_music_of_the_universe = {
 		# Activation cost
 		cost = { unity = 2000 }
 	}
-	
+
 	ai_weight = {
 		weight = 100
 	}
-	
+
 	triggered_country_modifier = {
 		potential = {
 			always = yes
@@ -35,9 +35,9 @@ r_scfe_music_of_the_universe = {
 		custom_tooltip = relic_triumph_cooldown
 		hidden_effect = {
 			add_modifier = {
-				modifier = "relic_activation_cooldown" 
+				modifier = "relic_activation_cooldown"
 				days = @triumph_duration_short
-			}		
+			}
 		}
 	}
 
@@ -60,16 +60,16 @@ r_scfe_protagonist_of_the_show = {
 			unity = 2500
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 100
 	}
-	
+
 	triggered_country_modifier = {
 		potential = { always = yes }
 		country_base_unity_produces_add = 20
 	}
-	
+
 	score = 1500
 
 	active_effect = {
@@ -463,8 +463,8 @@ r_scfe_orders_trinket = {
 	triggered_country_modifier = {
 		potential = { always = yes }
 		leader_lifespan_add = 15
-		biological_pop_growth_speed = 0.1
-		lithoid_pop_growth_speed = 0.1
+		BIOLOGICAL_bonus_pop_growth_mult = 0.1
+		LITHOID_bonus_pop_growth_mult = 0.1
 		army_defense_health_mult = 0.1
 		army_attack_health_mult = 0.1
 	}
@@ -604,11 +604,11 @@ r_scfe_haste_rune = {
 			unity = 1500
 		}
 	}
-	
+
 	ai_weight = {
-		weight = 200	
+		weight = 200
 	}
-	
+
 	triggered_country_modifier = {
 		potential = { always = yes }
 		ship_speed_mult = 0.25
@@ -650,15 +650,15 @@ r_scfe_regeneration_rune = {
 			unity = 1000
 		}
 	}
-	
+
 	ai_weight = {
-		weight = 10		
+		weight = 10
 		modifier = {
 			factor = 30
 			is_at_war = yes
-		}		
+		}
 	}
-	
+
 	triggered_country_modifier = {
 		potential = { always = yes }
 		ship_hull_regen_add_static = 5
@@ -746,11 +746,11 @@ r_scfe_invisibility_rune = {
 			unity = 1500
 		}
 	}
-	
+
 	ai_weight = {
-		weight = 200			
+		weight = 200
 	}
-	
+
 	score = 500
 
 	triggered_country_modifier = {
@@ -760,7 +760,7 @@ r_scfe_invisibility_rune = {
 		army_disengage_chance_mult = 0.1
 		planet_orbital_bombardment_damage = -0.1
   	}
-	
+
 	active_effect = {
 		set_timed_country_flag = { flag = resolution_breached_invisibility_rune days = 3600 }
 		set_timed_country_flag = { flag = r_invisibility_rune_active days = 3600 }

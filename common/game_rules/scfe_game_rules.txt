@@ -38,7 +38,10 @@ can_terraform_planet = {
                 exists = root
                 root = { has_policy_flag = pre_sapients_protect }
             }
-            any_owned_species = { is_sapient = no }
+            any_owned_species = {
+                is_sapient = no
+                NOT = { has_trait = trait_nascent_stage }
+            }
         }
     }
     custom_tooltip = {
@@ -75,6 +78,32 @@ can_terraform_planet = {
 		fail_text = "COLONIZATION_IMPOSSIBLE_SMEEGIBB_PLANET"
 		NOT = { has_planet_flag = cannot_colonize_smeegibb_shelter }
 	}
+    custom_tooltip = {
+        fail_text = "COLONIZATION_IMPOSSIBLE_WILDERNESS_TECH"
+        OR = {
+            NAND = {
+                root = {
+                    is_wilderness_empire = yes
+                    NOT = { has_technology = tech_terrestrial_sculpting }
+                }
+                OR = {
+                    AND = {
+                        root = { has_country_flag = started_wet }
+                        is_wet = no
+                    }
+                    AND = {
+                        root = { has_country_flag = started_dry }
+                        is_dry = no
+                    }
+                    AND = {
+                        root = { has_country_flag = started_cold }
+                        is_cold = no
+                    }
+                }
+            }
+            is_planet_class = pc_gaia
+        }
+    }
     # Forgotten Empires
     custom_tooltip = {
         fail_text = scfe_cant_terraform_special_planet

@@ -95,7 +95,7 @@ country_event = {
             limit = { scfe_is_valid_star_system = yes }
             set_spawn_system_batch = begin
             spawn_system = {
-                max_jumps = 0
+                max_jumps = 5
                 min_distance = 10
                 max_distance = 60
                 initializer = "scfe_znkar_init_01"
@@ -184,7 +184,7 @@ country_event = {
                 limit = { scfe_is_valid_star_system = yes }
                 set_spawn_system_batch = begin
                 spawn_system = {
-                    max_jumps = 0
+                    max_jumps = 5
                     min_distance = 10
                     max_distance = 60
                     initializer = "scfe_znkar_init_02"
@@ -206,6 +206,10 @@ ship_event = {
     trigger = {
         from = { has_star_flag = scfe_wur_den_kaar }
         owner = { has_event_chain = scfe_znkar_chain }
+    }
+
+    immediate = {
+        from = { remove_star_flag = scfe_wur_den_kaar }
     }
 
     option = {
@@ -348,7 +352,7 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
@@ -369,7 +373,7 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}

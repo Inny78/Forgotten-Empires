@@ -11,7 +11,7 @@ scfe_alshigan_amulet = {
     triggered_country_modifier = {
         potential = { is_gestalt = no }
         mult = value:aesthetic_wonder_specimens_modifiers_mult
-        trade_value_mult = 0.03
+        country_trade_produces_mult = 0.03
     }
     triggered_country_modifier = {
         potential = { is_gestalt = yes }

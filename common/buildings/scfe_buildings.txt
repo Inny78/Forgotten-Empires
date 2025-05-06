@@ -2,8 +2,11 @@ building_woorskyr_biofuel_refinery = {
     base_buildtime = 360
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = resource
+
+    building_sets = {
+        mining
+    }
 
     potential = {
         planet = {
@@ -30,7 +33,7 @@ building_woorskyr_biofuel_refinery = {
 
     inline_script = {
         script = jobs/miners_add
-        AMOUNT = 4
+        AMOUNT = @building_static_jobs
     }
     resources = {
         category = planet_buildings
@@ -56,7 +59,7 @@ building_woorskyr_biofuel_refinery = {
             exists = owner
             OR = {
                 owner = {
-                    has_technology = tech_lithoid_transgenesis
+                    can_add_transgenic_traits = yes
                 }
                 owner_main_species = {
                     is_species_class = LITHOID
@@ -76,8 +79,11 @@ building_woorskyr_bioenergy_plant = {
     base_buildtime = 360
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = resource
+
+    building_sets = {
+        generator
+    }
 
     potential = {
         planet = {
@@ -104,7 +110,7 @@ building_woorskyr_bioenergy_plant = {
 
     inline_script = {
         script = jobs/technicians_add
-        AMOUNT = 4
+        AMOUNT = @building_static_jobs
     }
     resources = {
         category = planet_buildings
@@ -144,8 +150,11 @@ building_woorskyr_growth_monitoring_center = {
     base_buildtime = 720
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = research
+
+    building_sets = {
+        research
+    }
 
     potential = {
         planet = {
@@ -172,7 +181,7 @@ building_woorskyr_growth_monitoring_center = {
 
     inline_script = {
         script = jobs/researchers_add
-        AMOUNT = 3
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -218,8 +227,11 @@ building_woorskyr_barkfarm = {
     base_buildtime = 180
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = resource
+
+    building_sets = {
+        farming
+    }
 
     potential = {
         planet = {
@@ -253,9 +265,9 @@ building_woorskyr_barkfarm = {
 
     inline_script = {
         script = jobs/farmers_add
-        FARMER_AMOUNT = 3
-        ANGLER_AMOUNT = 2
+        AMOUNT = @building_static_jobs
     }
+
     resources = {
         category = planet_buildings
         produces = {
@@ -281,7 +293,7 @@ building_woorskyr_barkfarm = {
             exists = owner
             OR = {
                 owner = {
-                    has_technology = tech_plantoid_transgenesis
+                    can_add_transgenic_traits = yes
                 }
                 owner_main_species = {
                     OR = {
@@ -303,8 +315,11 @@ building_woorskyr_ship_foundry = {
     base_buildtime = 1800
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = army
+
+    building_sets = {
+        fortress
+    }
 
     potential = {
         planet = {
@@ -342,39 +357,16 @@ building_woorskyr_ship_foundry = {
         }
     }
 
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = no }
-        }
-        modifier = {
-            job_soldier_add = 1
-        }
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        modifier = {
-            job_warrior_drone_add = 1
-        }
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner_main_species = { is_robotic_species = yes }
-        }
-        modifier = {
-            job_roboticist_add = 1
-        }
+    inline_script = {
+        script = jobs/soldiers_add
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
         category = planet_buildings
         produces = {
             unity = 4
-            minerals = 2
+            alloys = 2
         }
         cost = {
             minerals = 500
@@ -430,8 +422,11 @@ building_xenograss_processor = {
     base_buildtime = 180
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = research
+
+    building_sets = {
+        research
+    }
 
     potential = {
         planet = {
@@ -458,7 +453,7 @@ building_xenograss_processor = {
 
     inline_script = {
         script = jobs/researchers_add
-        AMOUNT = 3
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -508,8 +503,11 @@ building_consciousness_amplifier = {
     base_buildtime = 1800
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = unity
+
+    building_sets = {
+        unity
+    }
 
     potential = {
         planet = {
@@ -545,114 +543,9 @@ building_consciousness_amplifier = {
         }
     }
 
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                is_regular_empire = yes
-                is_spiritualist = no
-                is_megacorp = no
-                is_worker_coop_empire = no
-                has_make_spiritualist_perk = no
-            }
-        }
-        modifier = {
-            job_bureaucrat_add = 2
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                OR = {
-                    is_spiritualist = yes
-                    has_make_spiritualist_perk = yes
-                }
-            }
-        }
-        modifier = {
-            job_priest_add = 2
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                is_megacorp = yes
-                is_spiritualist = no
-                has_make_spiritualist_perk = no
-            }
-        }
-        modifier = {
-            job_manager_add = 2
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                is_spiritualist = no
-                has_make_spiritualist_perk = no
-                is_worker_coop_empire = yes
-            }
-        }
-        modifier = {
-            job_steward_add = 2
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                is_megacorp = yes
-                has_make_spiritualist_perk = no
-                is_spiritualist = yes
-            }
-        }
-        modifier = {
-            job_manager_add = 1
-            job_priest_add = 1
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                is_megacorp = yes
-                is_worker_coop_empire = yes
-                has_make_spiritualist_perk = no
-                is_spiritualist = yes
-            }
-        }
-        modifier = {
-            job_steward_add = 1
-            job_priest_add = 1
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_hive_empire = yes }
-        }
-        modifier = {
-            job_synapse_drone_add = 2
-        }
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_machine_empire = yes }
-        }
-        modifier = {
-            job_coordinator_add = 2
-        }
+    inline_script = {
+        script = jobs/unity_jobs_add
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -680,72 +573,6 @@ building_consciousness_amplifier = {
         pop_government_ethic_attraction = 0.20
     }
 
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_regular_empire = yes
-                is_spiritualist = no
-                is_megacorp = no
-                is_worker_coop_empire = no
-                has_make_spiritualist_perk = no
-            }
-        }
-        text = job_bureaucrat_effect_desc
-    }
-
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                OR = {
-                    is_spiritualist = yes
-                    has_make_spiritualist_perk = yes
-                }
-            }
-        }
-        text = job_priest_effect_desc
-    }
-
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_megacorp = yes
-                is_worker_coop_empire = no
-                has_make_spiritualist_perk = no
-            }
-        }
-        text = job_manager_effect_desc
-    }
-
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_worker_coop_empire = yes
-                has_make_spiritualist_perk = no
-            }
-        }
-        text = job_steward_effect_desc
-    }
-
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = { is_machine_empire = yes }
-        }
-        text = job_coordinator_effect_desc
-    }
-
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = { is_hive_empire = yes }
-        }
-        text = job_synapse_drone_effect_desc
-    }
-
     ai_weight = {
         weight = 100
     }
@@ -759,8 +586,11 @@ building_pearl_borehole_site = {
     base_buildtime = 360
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = research
+
+    building_sets = {
+        research
+    }
 
     potential = {
         planet = {
@@ -787,7 +617,7 @@ building_pearl_borehole_site = {
 
     inline_script = {
         script = jobs/researchers_add
-        AMOUNT = 2
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -830,8 +660,11 @@ building_pearl_borehole_site_2 = {
     base_buildtime = 720
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = research
+
+    building_sets = {
+        research
+    }
 
     potential = {
         planet = {
@@ -853,7 +686,7 @@ building_pearl_borehole_site_2 = {
 
     inline_script = {
         script = jobs/researchers_add
-        AMOUNT = 3
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -892,8 +725,11 @@ building_pearl_borehole_site_3 = {
     base_buildtime = 1800
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = research
+
+    building_sets = {
+        research
+    }
 
     potential = {
         planet = {
@@ -915,7 +751,7 @@ building_pearl_borehole_site_3 = {
 
     inline_script = {
         script = jobs/researchers_add
-        AMOUNT = 4
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -951,8 +787,11 @@ building_koeleothan_effect_platform = {
     base_buildtime = 180
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = resource
+
+    building_sets = {
+        farming
+    }
 
     potential = {
         planet = {
@@ -979,8 +818,7 @@ building_koeleothan_effect_platform = {
 
     inline_script = {
         script = jobs/farmers_add
-        FARMER_AMOUNT = 2
-        ANGLER_AMOUNT = 3
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -1039,8 +877,11 @@ building_beetle_sensor = {
     base_buildtime = 360
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = army
+
+    building_sets = {
+        fortress
+    }
 
     potential = {
         planet = {
@@ -1068,23 +909,9 @@ building_beetle_sensor = {
         }
     }
 
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = no }
-        }
-        modifier = {
-            job_soldier_add = 1
-        }
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        modifier = {
-            job_warrior_drone_add = 1
-        }
+    inline_script = {
+        script = jobs/soldiers_add
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
@@ -1158,8 +985,11 @@ building_beetle_sensor_2 = {
     base_buildtime = 540
     base_cap_amount = 1
     empire_limit = { base = 1 }
-
     category = army
+
+    building_sets = {
+        fortress
+    }
 
     potential = {
         planet = {
@@ -1195,14 +1025,9 @@ building_beetle_sensor_2 = {
         }
     }
 
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-        }
-        modifier = {
-            job_soldier_add = 1
-            job_priest_add = 1
-        }
+    inline_script = {
+        script = jobs/soldiers_add
+        AMOUNT = @building_static_jobs
     }
 
     resources = {
