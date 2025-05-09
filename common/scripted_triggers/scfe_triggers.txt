@@ -446,14 +446,8 @@ scfe_is_heavy_metal = {
 scfe_is_default_empire = {
 	OR = {
 		is_country_type = default
-		# Darkspace
-		is_country_type = ds_nomads
-		# Ethics & Civics Infinity
-		is_country_type = uo_une_member_active
 		# Scripted Triggers Undercoat
 		has_country_flag = is_playable
-		# The Empty Vagrant
-		is_country_type = default_ev
 		# ZOFE
 		inline_script = {
 			script = forgotten_empires/toggled_code

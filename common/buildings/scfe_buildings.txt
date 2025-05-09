@@ -66,8 +66,8 @@ building_woorskyr_biofuel_refinery = {
                 }
             }
         }
-        lithoid_pop_growth_speed = 0.1
-        biological_pop_growth_speed = 0.05
+        LITHOID_bonus_pop_growth_mult = 0.1
+        BIOLOGICAL_bonus_pop_growth_mult = 0.05
     }
 
     prerequisites = {

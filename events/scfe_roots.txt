@@ -199,7 +199,7 @@ country_event = {
     option = {
         name = scfe_roots.8.a
         event_target:scfe_roots_planet = {
-            kill_pop = yes
+            kill_single_pop = yes
             add_planet_devastation = 20
             add_modifier = { modifier = scfe_rooted_doom days = -1 }
             add_blocker = { type = d_dangerous_wildlife_blocker blocked_deposit = random }
@@ -214,7 +214,7 @@ country_event = {
             is_pacifist = no
         }
         event_target:scfe_roots_planet = {
-            kill_pop = yes
+            kill_single_pop = yes
             add_planet_devastation = 20
             add_modifier = { modifier = scfe_rooted_doom days = -1 }
             add_blocker = { type = d_dangerous_wildlife_blocker blocked_deposit = random }
@@ -225,7 +225,7 @@ country_event = {
     option = {
         name = scfe_roots.8.c
         event_target:scfe_roots_planet = {
-            kill_pop = yes
+            kill_single_pop = yes
             add_planet_devastation = 20
             add_modifier = { modifier = scfe_rooted_doom days = -1 }
             add_blocker = { type = d_dangerous_wildlife_blocker blocked_deposit = random }
@@ -242,7 +242,7 @@ country_event = {
             }
         }
         event_target:scfe_roots_planet = {
-            kill_pop = yes
+            kill_single_pop = yes
             add_planet_devastation = 20
             add_modifier = { modifier = scfe_rooted_doom days = -1 }
             add_blocker = { type = d_dangerous_wildlife_blocker blocked_deposit = random }
