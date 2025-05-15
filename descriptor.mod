@@ -1,8 +1,8 @@
 version="1.0"
 tags={
 	"Events"
-	"3.12.*"
+	"4.0.*"
 }
-name="Forgotten Empires"
-supported_version="3.10.*"
+name="Forgotten Empires 4.0"
+supported_version="4.0.*"
 remote_file_id="3062038863"

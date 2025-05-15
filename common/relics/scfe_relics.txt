@@ -463,8 +463,7 @@ r_scfe_orders_trinket = {
 	triggered_country_modifier = {
 		potential = { always = yes }
 		leader_lifespan_add = 15
-		BIOLOGICAL_bonus_pop_growth_mult = 0.1
-		LITHOID_bonus_pop_growth_mult = 0.1
+		founder_species_growth_mult = 0.1
 		army_defense_health_mult = 0.1
 		army_attack_health_mult = 0.1
 	}
