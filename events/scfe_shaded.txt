@@ -60,6 +60,7 @@ country_event = {
     show_sound = event_default
     is_triggered_only = yes
     location = event_target:shaded_crashed_ship_location
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTERESTING
@@ -83,6 +84,7 @@ country_event = {
     picture = GFX_evt_intelligence_report
     show_sound = event_machinery
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CONTINUE
@@ -98,6 +100,7 @@ country_event = {
     picture = GFX_evt_intelligence_report
     show_sound = event_machinery
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CURIOUS
@@ -231,6 +234,7 @@ ship_event = {
     picture = GFX_evt_space_debris
     is_triggered_only = yes
     location = event_target:scfe_shaded_warbase
+    event_chain = scfe_shaded_chain
 
     trigger = {
         is_ship_class = shipclass_science_ship
@@ -387,6 +391,7 @@ ship_event = {
     show_sound = event_default
     is_triggered_only = yes
     location = event_target:scfe_shaded_lead1
+    event_chain = scfe_shaded_chain
 
     trigger = {
         solar_system = {
@@ -424,6 +429,7 @@ ship_event = {
     picture = GFX_evt_habitat
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     trigger = {
         solar_system = {
@@ -461,6 +467,7 @@ ship_event = {
     show_sound = event_default
     is_triggered_only = yes
     specimen = scfe_colony_sculpture
+    event_chain = scfe_shaded_chain
 
     trigger = {
         solar_system = {
@@ -497,6 +504,7 @@ ship_event = {
     picture = GFX_evt_space_debris
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     trigger = {
         solar_system = {
@@ -533,6 +541,7 @@ ship_event = {
     picture = GFX_evt_scfe_asteroid
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CONTINUE
@@ -547,6 +556,7 @@ ship_event = {
     show_sound = event_default
     is_triggered_only = yes
     specimen = scfe_penitential_records
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_keep_search
@@ -593,6 +603,7 @@ ship_event = {
     picture = GFX_evt_habitat
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CONTINUE
@@ -607,6 +618,7 @@ ship_event = {
     show_sound = event_default
     is_triggered_only = yes
     specimen = scfe_ferlian_cipher
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_keep_search
@@ -647,6 +659,7 @@ ship_event = {
     picture = GFX_evt_colony_settlement
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_keep_search
@@ -681,6 +694,7 @@ ship_event = {
     picture = GFX_evt_space_debris
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CONTINUE
@@ -702,6 +716,7 @@ ship_event = {
     show_sound = event_default
     is_triggered_only = yes
     specimen = scfe_black_box
+    event_chain = scfe_shaded_chain
 
     option = {
         exclusive_trigger = { owner = { NOT = { has_origin = origin_toxic_knights } } }
@@ -773,6 +788,7 @@ country_event = {
     picture = GFX_evt_decryption
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTERESTING
@@ -789,6 +805,7 @@ country_event = {
     picture = GFX_evt_decryption
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTERESTING
@@ -807,6 +824,7 @@ country_event = {
     picture = GFX_evt_decryption
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTERESTING
@@ -825,6 +843,7 @@ country_event = {
     picture = GFX_evt_decryption
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTERESTING
@@ -843,6 +862,7 @@ country_event = {
     picture = GFX_evt_colony_settlement
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         random_system_within_border = {
@@ -892,6 +912,7 @@ country_event = {
     desc = scfe_shaded.61.desc
     picture = GFX_evt_physics_research
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_shaded.61.a
@@ -925,6 +946,7 @@ country_event = {
     picture = GFX_scfe_shaded_system
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CONTINUE
@@ -938,6 +960,7 @@ country_event = {
     picture = GFX_evt_communication_event
     show_sound = event_conversation
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = FASCINATING
@@ -965,6 +988,7 @@ country_event = {
     picture = GFX_scfe_shaded_system
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CONTINUE
@@ -991,6 +1015,7 @@ country_event = {
     picture = GFX_evt_gaia
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTERESTING
@@ -1015,6 +1040,7 @@ country_event = {
     picture = GFX_evt_analyzing_artifacts
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = CURIOUS
@@ -1027,6 +1053,7 @@ country_event = {
     picture = GFX_evt_analyzing_artifacts
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = INTRIGUING
@@ -1039,6 +1066,7 @@ country_event = {
     picture = GFX_evt_analyzing_artifacts
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = FASCINATING
@@ -1051,6 +1079,7 @@ country_event = {
     picture = GFX_evt_analyzing_artifacts
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_shaded.31.a
@@ -1146,6 +1175,7 @@ country_event = {
     desc = scfe_fallen_empires.2.desc
     is_triggered_only = yes
     diplomatic = yes
+    event_chain = scfe_shaded_chain
 
     picture_event_data = {
         portrait = from
@@ -1266,6 +1296,7 @@ country_event = {
     desc = scfe_fallen_empires.4.desc
     picture = GFX_evt_communication_event
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_fallen_empires.4.a
@@ -1289,6 +1320,7 @@ country_event = {
     desc = scfe_fallen_empires.4.desc
     picture = GFX_evt_communication_event
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     option = {
         name = scfe_fallen_empires.4.c
@@ -1304,6 +1336,7 @@ country_event = {
     desc = scfe_fallen_empires.5.desc
     picture = GFX_evt_fallen_empire
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         remove_global_flag = shaded_fe_detection_high
@@ -1322,6 +1355,7 @@ country_event = {
     desc = scfe_fallen_empires.5B.desc
     picture = GFX_evt_fallen_empire
     is_triggered_only = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         remove_global_flag = shaded_fe_detection_high
@@ -1356,6 +1390,7 @@ country_event = {
     picture = GFX_evt_fallen_empire
     is_triggered_only = yes
     diplomatic = yes
+    event_chain = scfe_shaded_chain
 
     picture_event_data = {
         portrait = from
@@ -1401,6 +1436,7 @@ fleet_event = {
     show_sound = event_ground_battle
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         fromfrom = { set_site_progress_locked = yes }
@@ -1421,6 +1457,7 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         fromfrom = { set_site_progress_locked = yes }
@@ -1444,6 +1481,7 @@ fleet_event = {
     show_sound = event_ground_battle
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         fromfrom = { set_site_progress_locked = yes }
@@ -1467,6 +1505,7 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -1486,6 +1525,7 @@ fleet_event = {
     show_sound = event_collapsing_ruins
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -1505,6 +1545,7 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -1524,6 +1565,7 @@ fleet_event = {
     show_sound = event_energy_field
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -1543,6 +1585,7 @@ fleet_event = {
     show_sound = event_default
     is_triggered_only = yes
     archaeology = yes
+    event_chain = scfe_shaded_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }

@@ -25,6 +25,7 @@ planet_event = {
     show_sound = event_red_alert
     is_triggered_only = yes
     fire_only_once = yes
+    event_chain = scfe_znkar_chain
 
     trigger = {
         has_global_flag = scfe_had_znkar
@@ -51,6 +52,7 @@ country_event = {
     show_sound = event_default
     is_triggered_only = yes
     specimen = scfe_znkar_databanks
+    event_chain = scfe_znkar_chain
 
     option = {
         name = CONTINUE
@@ -76,6 +78,7 @@ country_event = {
     picture = GFX_evt_space_station
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = scfe_znkar.4.a
@@ -112,6 +115,7 @@ country_event = {
     picture = GFX_evt_city_ruins
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = INTERESTING
@@ -124,6 +128,7 @@ country_event = {
     picture = GFX_evt_city_ruins
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = INTERESTING
@@ -139,6 +144,7 @@ country_event = {
     picture = GFX_evt_city_ruins
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = INTERESTING
@@ -157,6 +163,7 @@ country_event = {
     picture = GFX_evt_city_ruins
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = INTERESTING
@@ -176,6 +183,7 @@ country_event = {
     picture = GFX_evt_star_chart
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = INTERESTING
@@ -199,9 +207,10 @@ ship_event = {
     id = scfe_znkar.10
     title = scfe_znkar.10.name
     desc = scfe_znkar.10.desc
-    picture = GFX_evt_shattered_planet
+    picture = GFX_evt_scfe_znkar_shattered
     show_sound = event_default
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     trigger = {
         from = { has_star_flag = scfe_wur_den_kaar }
@@ -247,6 +256,7 @@ country_event = {
     picture = GFX_evt_analyzing_artifacts
     show_sound = event_mystic_reveal_light
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     option = {
         name = AMAZING
@@ -308,7 +318,7 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
-
+    event_chain = scfe_znkar_chain
 
 	immediate = {
 		from = { set_site_progress_locked = yes }
@@ -331,6 +341,7 @@ fleet_event = {
 	archaeology = yes
 	is_triggered_only = yes
     specimen = scfe_znkar_railgun
+    event_chain = scfe_znkar_chain
 
 	immediate = {
 		from = { set_site_progress_locked = yes }
@@ -352,6 +363,7 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
 	immediate = {
 		from = { set_site_progress_locked = yes }
@@ -373,6 +385,7 @@ fleet_event = {
     show_sound = event_default
 	archaeology = yes
 	is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
 	immediate = {
 		from = { set_site_progress_locked = yes }
@@ -425,6 +438,7 @@ fleet_event = {
     show_sound = event_default
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -447,6 +461,7 @@ fleet_event = {
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_znkar_lamp
+    event_chain = scfe_znkar_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -468,6 +483,7 @@ fleet_event = {
     show_sound = event_default
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -489,6 +505,7 @@ fleet_event = {
     show_sound = event_default
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -510,6 +527,7 @@ fleet_event = {
     show_sound = event_default
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_znkar_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }

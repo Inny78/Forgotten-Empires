@@ -26,6 +26,7 @@ ship_event = {
     picture = GFX_evt_ancient_alien_temple
     location = from
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = { owner = { country_event = { id = story.5 days = 30 } } }
 
@@ -44,9 +45,9 @@ fleet_event = {
     desc = "scfe_sless.2.desc"
     picture = GFX_evt_tradestation_interior
     show_sound = event_pre_ftl_civilization
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -86,10 +87,10 @@ fleet_event = {
     desc = "scfe_sless.3.desc"
     picture = GFX_evt_ruined_system
     show_sound = event_wind_ruins
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_sless_darts
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -142,8 +143,8 @@ fleet_event = {
     desc = "scfe_sless.4.desc"
     picture = GFX_evt_metropolis
     location = from
-
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     trigger = {
         from = { is_scope_type = planet has_planet_flag = scfe_sless_colony1 }
@@ -174,9 +175,9 @@ fleet_event = {
     desc = "scfe_sless.5.desc"
     picture = GFX_evt_zro_5
     show_sound = event_drilling
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -204,12 +205,12 @@ fleet_event = {
     id = scfe_sless.6
     title = "scfe_sless.6.name"
     desc = "scfe_sless.6.desc"
-    picture = GFX_evt_genetic_modification
+    picture = GFX_evt_scfe_sless_genes_1
     show_sound = event_engineered_evolution
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_sless_holo_ad
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -231,9 +232,9 @@ fleet_event = {
     desc = "scfe_sless.7.desc"
     picture = GFX_evt_interior_battle
     show_sound = event_ground_battle
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -255,9 +256,9 @@ fleet_event = {
     desc = "scfe_sless.8.desc"
     picture = GFX_evt_disease_outbreak
     show_sound = event_planetary_riot
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -312,6 +313,7 @@ fleet_event = {
     picture = GFX_evt_archaeology_camp
     location = from
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     trigger = {
         from = { is_scope_type = planet has_planet_flag = scfe_sless_colony2 }
@@ -341,12 +343,12 @@ fleet_event = {
     id = scfe_sless.10
     title = "scfe_sless.10.name"
     desc = "scfe_sless.10.desc"
-    picture = GFX_evt_circuitry_modification
+    picture = GFX_evt_scfe_sless_genes_2
     show_sound = event_evolution_mastery
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_sless_bio_brooch
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -376,9 +378,9 @@ fleet_event = {
     desc = "scfe_sless.11.desc"
     picture = GFX_evt_clones
     show_sound = event_laboratory_sound
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -412,9 +414,9 @@ fleet_event = {
     desc = "scfe_sless.12.desc"
     picture = GFX_evt_cybernetics
     show_sound = event_dangerous_animals
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -444,6 +446,7 @@ country_event = {
     desc = "scfe_sless.13.desc"
     picture = GFX_evt_star_chart
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         if = {
@@ -486,9 +489,9 @@ fleet_event = {
     desc = "scfe_sless.14.desc"
     picture = GFX_evt_burning_settlement
     show_sound = event_bad_omen
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -557,7 +560,6 @@ country_event = {
     title = "scfe_sless.15.name"
     desc = "scfe_sless.15.desc"
     picture = GFX_evt_cybernetics
-
     is_triggered_only = yes
 
     option = {
@@ -575,8 +577,8 @@ ship_event = {
     desc = "scfe_sless.4.desc"
     picture = GFX_evt_metropolis
     location = from
-
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     trigger = {
         from = { has_planet_flag = scfe_sless_colony1 }
@@ -606,6 +608,7 @@ ship_event = {
     picture = GFX_evt_archaeology_camp
     location = from
     is_triggered_only = yes
+    event_chain = scfe_sless_chain
 
     trigger = {
         from = { has_planet_flag = scfe_sless_colony2 }

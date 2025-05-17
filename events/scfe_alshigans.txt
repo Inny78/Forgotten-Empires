@@ -43,6 +43,7 @@ country_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 	location = event_target:scfe_alshigans_asteroid
+	event_chain = scfe_alshigans_chain
 
 	immediate = { country_event = { id = story.5 days = 30 } }
 
@@ -73,6 +74,7 @@ ship_event = {
 	show_sound = event_default
 	location = root
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = CURIOUS
@@ -101,6 +103,7 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = scfe_alshigan_amulet
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = INTERESTING
@@ -127,6 +130,7 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = scfe_alshigan_pen
+	event_chain = scfe_alshigans_chain
 
 	trigger = {
 		is_multiplayer = no
@@ -163,6 +167,7 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = scfe_alshigan_flower
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = PECULIAR
@@ -194,6 +199,7 @@ ship_event = {
 	show_sound = event_default
 	location = root
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = CONTINUE
@@ -217,6 +223,7 @@ ship_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = DISTURBING
@@ -271,6 +278,7 @@ country_event = {
 	picture = GFX_evt_scfe_asteroid
 	show_sound = event_default
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = INTERESTING
@@ -301,6 +309,7 @@ country_event = {
 	picture = GFX_evt_ship_travel
 	show_sound = event_default
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = INTERESTING
@@ -331,6 +340,7 @@ country_event = {
 	picture = GFX_evt_scfe_alshigans_alpine
 	show_sound = event_default
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = INTERESTING
@@ -361,6 +371,7 @@ country_event = {
 	picture = GFX_evt_tropical
 	show_sound = event_default
 	is_triggered_only = yes
+	event_chain = scfe_alshigans_chain
 
 	option = {
 		name = INTERESTING

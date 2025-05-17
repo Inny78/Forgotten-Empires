@@ -8,9 +8,9 @@ fleet_event = {
     desc = "scfe_astanine.1.desc"
     picture = GFX_evt_alien_city
     show_sound = event_ghost_town
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         owner = { country_event = { id = story.5 days = 30 } }
@@ -36,9 +36,9 @@ fleet_event = {
     desc = "scfe_astanine.2.desc"
     picture = GFX_evt_discovered_hidden_door
     show_sound = event_big_door_opening
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -59,10 +59,10 @@ fleet_event = {
     desc = "scfe_astanine.3.desc"
     picture = GFX_evt_archaeologists_escaping
     show_sound = event_ship_explosion
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_astanine_projector_lens
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -129,9 +129,9 @@ fleet_event = {
     desc = "scfe_astanine.4.desc"
     picture = GFX_evt_ship_offloading_cargo
     show_sound = event_finding_loot
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -153,9 +153,9 @@ fleet_event = {
     desc = "scfe_astanine.5.desc"
     picture = GFX_evt_star_chart
     show_sound = event_administrative_work
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -226,9 +226,9 @@ fleet_event = {
     desc = "scfe_astanine.6.desc"
     picture = GFX_evt_big_landing_ship
     show_sound = event_mystic_reveal
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -250,9 +250,9 @@ fleet_event = {
     desc = "scfe_astanine.7.desc"
     picture = GFX_evt_synth_sabotage
     show_sound = event_power_down
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -300,9 +300,9 @@ fleet_event = {
     picture = GFX_evt_victorious_army
     show_sound = event_bad_omen
     specimen = scfe_astanine_holosphere
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -324,9 +324,9 @@ fleet_event = {
     desc = "scfe_astanine.9.desc"
     picture = GFX_evt_ancient_records
     show_sound = event_radio_chatter
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -393,9 +393,9 @@ fleet_event = {
     desc = "scfe_astanine.10.desc"
     picture = GFX_evt_archaeology_camp
     show_sound = event_alien_signal
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -463,9 +463,9 @@ fleet_event = {
     desc = "scfe_astanine.11.desc"
     picture = GFX_evt_underground_city
     show_sound = event_planetary_riot
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -521,8 +521,8 @@ ship_event = {
     desc = "scfe_astanine.12.desc"
     picture = GFX_evt_mega_art_installation
     location = from
-
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     trigger = {
         from = { has_star_flag = scfe_astanine_home_system }
@@ -540,9 +540,9 @@ fleet_event = {
     desc = "scfe_astanine.13.desc"
     picture = GFX_evt_underground_civilization
     show_sound = event_scanner
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -564,9 +564,9 @@ fleet_event = {
     desc = "scfe_astanine.14.desc"
     picture = GFX_evt_small_space_battle
     show_sound = event_space_battle
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -588,9 +588,9 @@ fleet_event = {
     desc = "scfe_astanine.15.desc"
     picture = GFX_evt_ruined_system
     show_sound = event_wind_ruins
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -626,9 +626,9 @@ fleet_event = {
     desc = "scfe_astanine.16.desc"
     picture = GFX_evt_ancient_artifact
     show_sound = event_conversation
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_astanine_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -667,7 +667,6 @@ country_event = {
     title = "scfe_astanine.17.name"
     desc = "scfe_astanine.17.desc"
     picture = GFX_evt_board_meeting
-
     is_triggered_only = yes
 
     option = {

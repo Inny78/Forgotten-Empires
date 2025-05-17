@@ -8,9 +8,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.1.desc"
     picture = GFX_evt_small_space_battle
     show_sound = event_space_battle
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         owner = { country_event = { id = story.5 days = 30 } }
@@ -39,9 +39,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.2.desc"
     picture = GFX_evt_alien_segregation
     show_sound = event_factions
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -63,10 +63,10 @@ fleet_event = {
     desc = "scfe_coprean_constitution.3.desc"
     picture = GFX_evt_crashed_station
     show_sound = event_metal_fatigue
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_coprean_ship_engine
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -139,9 +139,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.4.desc"
     picture = GFX_evt_gas_giant_station
     show_sound = event_ghost_town
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -179,9 +179,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.5.desc"
     picture = GFX_evt_alien_planet
     show_sound = event_mystic_reveal
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -230,10 +230,10 @@ fleet_event = {
     desc = "scfe_coprean_constitution.7.desc"
     picture = GFX_evt_alien_ruins
     show_sound = event_mystic_reveal_light
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_avus_memorial
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -305,9 +305,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.8.desc"
     picture = GFX_evt_smugglers_in_bar
     show_sound = event_conversation
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -340,10 +340,10 @@ fleet_event = {
     desc = "scfe_coprean_constitution.9.desc"
     picture = GFX_evt_aggressive_flora
     show_sound = event_dangerous_animals
-
     archaeology = yes
     is_triggered_only = yes
     specimen = scfe_coprean_creep_sample
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -401,9 +401,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.10.desc"
     picture = GFX_evt_ancient_alien_temple
     show_sound = event_bad_omen
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -425,9 +425,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.11.desc"
     picture = GFX_evt_burning_settlement
     show_sound = event_planetary_riot
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -449,9 +449,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.12.desc"
     picture = GFX_evt_ground_combat
     show_sound = event_ground_battle
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -473,9 +473,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.13.desc"
     picture = GFX_evt_relic_world_building
     show_sound = event_construction
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -497,9 +497,9 @@ fleet_event = {
     desc = "scfe_coprean_constitution.14.desc"
     picture = GFX_evt_zro_2
     show_sound = event_whispering
-
     archaeology = yes
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     immediate = {
         from = { set_site_progress_locked = yes }
@@ -536,7 +536,6 @@ country_event = {
     title = "scfe_coprean_constitution.15.name"
     desc = "scfe_coprean_constitution.15.desc"
     picture = GFX_evt_hive_mind
-
     is_triggered_only = yes
 
     option = {
@@ -550,7 +549,6 @@ country_event = {
     title = "scfe_coprean_constitution.15.name"
     desc = "scfe_coprean_constitution.16.desc"
     picture = GFX_evt_hive_mind
-
     is_triggered_only = yes
 
     option = {
@@ -857,8 +855,8 @@ ship_event = {
     desc = "scfe_coprean_constitution.17.desc"
     picture = GFX_evt_excavation_team
     location = fromfrom
-
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     option = {
         name = scfe_coprean_constitution.17.a
@@ -877,8 +875,8 @@ ship_event = {
     desc = "scfe_coprean_constitution.18.desc"
     picture = GFX_evt_binary_stars
     location = from
-
     is_triggered_only = yes
+    event_chain = scfe_coprean_chain
 
     trigger = {
         from = { has_star_flag = scfe_coprean_home_system  }

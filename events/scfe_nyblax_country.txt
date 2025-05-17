@@ -227,7 +227,12 @@ country_event = {
     id = scfe_nyblax_country.25
     title = scfe_nyblax_country.25.name
     desc = scfe_nyblax_country.25.desc
-    picture = GFX_evt_ship_in_orbit
+    inline_script = {
+        script = events/biogenesis_event_art
+        OWNER = owner
+        REGULAR_PICTURE = GFX_evt_ship_in_orbit
+        BIOSHIP_PICTURE = GFX_evt_bio_ships_orbiting
+    }
     show_sound = event_default
     is_triggered_only = yes
 

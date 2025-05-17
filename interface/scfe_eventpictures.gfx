@@ -524,4 +524,22 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_evt_scfe_sless_genes_1"
+		texturefile = "gfx/event_pictures/scfe_sless_genes_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_sless_genes_2"
+		texturefile = "gfx/event_pictures/scfe_sless_genes_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_scfe_znkar_shattered"
+		texturefile = "gfx/event_pictures/scfe_znkar_shattered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
 }

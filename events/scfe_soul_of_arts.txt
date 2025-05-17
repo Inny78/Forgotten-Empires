@@ -18,6 +18,7 @@ ship_event = {
 				NOT = { exists = archaeological_site }
 			}
 			scfe_is_valid_system = yes
+			NOT = { has_star_flag = scfe_wur_den_kaar }
 		}
 	}
 	immediate = {
@@ -89,13 +90,13 @@ fleet_event = {
 	show_sound = event_space_battle
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		owner = { country_event = { id = story.5 days = 30 } }
 		from = { set_site_progress_locked = yes }
 	}
 
-	after = { 
+	after = {
 		from = { set_site_progress_locked = no }
 	}
 
@@ -113,12 +114,12 @@ fleet_event = {
 	show_sound = event_wind_ruins
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
 
-	after = { 
+	after = {
 		from = { set_site_progress_locked = no }
 	}
 
@@ -136,12 +137,12 @@ fleet_event = {
 	show_sound = event_mystic_reveal
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
 
-	after = { 
+	after = {
 		from = { set_site_progress_locked = no }
 	}
 
@@ -163,12 +164,12 @@ fleet_event = {
 	show_sound = event_alien_signal
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
 
-	after = { 
+	after = {
 		from = { set_site_progress_locked = no }
 	}
 
@@ -190,12 +191,12 @@ fleet_event = {
 	show_sound = event_door_opening
 	archaeology = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
 
-	after = { 
+	after = {
 		from = { set_site_progress_locked = no }
 	}
 
@@ -211,16 +212,16 @@ fleet_event = {
 	desc = scfe_soul_of_the_art.6.desc
 	picture = GFX_evt_planet_beam
 	show_sound = distance_god_ray_fire_layer_1
-	
+
 	archaeology = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
 
-	after = { 
+	after = {
 		from = {
 			set_site_progress_locked = no
 			planet = {

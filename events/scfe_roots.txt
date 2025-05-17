@@ -295,7 +295,12 @@ country_event = {
     id = scfe_roots.10
     title = scfe_roots.10.name
     desc = scfe_roots.10.desc
-    picture = GFX_evt_landing_ship
+    inline_script = {
+        script = events/biogenesis_event_art
+        OWNER = owner
+        REGULAR_PICTURE = GFX_evt_landing_ship
+        BIOSHIP_PICTURE = GFX_evt_bioship_landing
+    }
     show_sound = event_default
     is_triggered_only = yes
     location = event_target:scfe_roots_planet
@@ -348,7 +353,12 @@ ship_event = {
     id = scfe_roots.13
     title = scfe_roots.13.name
     desc = scfe_roots.13.desc
-    picture = GFX_evt_ship_in_orbit_3
+    inline_script = {
+        script = events/biogenesis_event_art
+        OWNER = owner
+        REGULAR_PICTURE = GFX_evt_ship_in_orbit_3
+        BIOSHIP_PICTURE = GFX_evt_bio_ships_orbiting
+    }
     show_sound = event_default
     is_triggered_only = yes
     location = event_target:scfe_roots_planet
