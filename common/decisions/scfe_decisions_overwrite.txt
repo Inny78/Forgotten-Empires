@@ -7,7 +7,7 @@ decision_baol_life_seed = {
     enactment_time = 720
 
     potential = {
-        NOT = {
+        NOR = {
             is_planet_class = pc_city
             is_planet_class = pc_machine
             is_planet_class = pc_relic
@@ -20,8 +20,8 @@ decision_baol_life_seed = {
         }
         is_artificial = no
         exists = owner
-        owner = { has_country_flag = relic_last_baol_activated }
         owner = {
+            has_country_flag = relic_last_baol_activated
             has_country_flag = not_activated_baol
         }
         NOT = { has_designation = col_nanotech_world }
@@ -33,7 +33,7 @@ decision_baol_life_seed = {
         # Convert to Gaia world, spawn Nu-Baol pops
         custom_tooltip = decision_baol_life_seed_effects
         hidden_effect = {
-            change_pc = pc_gaia
+            pd_make_all_gaia_worlds_effect = yes
             if = {
                 limit = { NOT = { exists = event_target:nu_baol_species } }
                 if = {
@@ -44,16 +44,32 @@ decision_baol_life_seed = {
                     }
                     create_hive_nu_baol_effect = yes
                 }
-                else = {
-                    create_nu_baol_effect = yes
-                }
+                else = { create_nu_baol_effect = yes }
             }
             create_pop_group = {
                 size = 400
                 species = event_target:nu_baol_species
-                ethos = {
-                    ethic = "ethic_pacifist"
-                }
+                ethos = { ethic = "ethic_pacifist" }
+            }
+            inline_script = {
+                script = forgotten_empires/toggled_code
+                code = "
+                    add_modifier = { modifier = engineered_environment_gaia days = -1 }
+                    if = {
+                        limit = { has_planet_flag = planet_earth }
+                        set_planet_entity = { entity = gaia_planet_earth_entity }
+                    }
+                    if = {
+                        limit = { has_planet_flag = pdmars }
+                        set_planet_entity = { picture = pc_wet_mars entity = gaiamars_planet_entity }
+                    }
+                    if = {
+                        limit = { has_planet_flag = pdvenus }
+                        set_planet_entity = { picture = pc_wetvenus entity = gaiavenus_planet_entity }
+                    }
+                    pd_gaia_flooded_check = yes
+                "
+                toggle = @has_planetary_diversity
             }
             planet_event = { id = ancrel.2025 } #Notification event
         }
