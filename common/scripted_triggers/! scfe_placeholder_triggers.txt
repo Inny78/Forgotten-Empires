@@ -28,3 +28,4 @@ scfe_has_werediran_chain = { always = no }
 scfe_has_ezentian_chain = { always = no }
 scfe_has_plexi_chain = { always = no }
 scfe_has_lartia_chain = { always = no }
+ag_is_black_hole_class = { is_star_class = sc_black_hole }

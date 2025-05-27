@@ -2,10 +2,7 @@
 # This = system being targeted
 can_enter_system_by_jump = {
     custom_tooltip = {
-        #		success_text = "debug: can jump"
         fail_text = cannot_jump_to_system
-
-        # Sealed system
         OR = {
             NOT = { has_star_flag = sealed_system }
             AND = {
@@ -13,17 +10,63 @@ can_enter_system_by_jump = {
                 has_star_flag = sealed_system
             }
         }
-
-        # L-Cluster
-        NOT = { has_star_flag = lcluster }
-
-        # Formless system
         NOT = { has_star_flag = formless_system }
-
         # Forgotten Empires
         NAND = {
             has_star_flag = scfe_shaded_colony_system
             root = { scfe_can_jump_in_shaded_system = no }
+        }
+        # ACOT SBTG
+        inline_script = {
+            script = forgotten_empires/toggled_code
+            code = "
+                has_star_flag = outercluster
+            "
+            toggle = @has_sbtg_mod
+        }
+        # Ancient Empire
+        inline_script = {
+            script = forgotten_empires/toggled_code
+            code = "
+                has_star_flag = ag_no_jump_in_system
+            "
+            toggle = @ag_null_edict_length
+        }
+        # L-Cluster
+        OR = {
+            NOR = {
+                has_star_flag = lcluster
+                # Gigastructural Engineering and More
+                inline_script = {
+                    script = forgotten_empires/toggled_code
+                    code = "
+                        has_star_flag = ehof_compound_system
+                        has_star_flag = giga_core_03
+                        cohesive_system = yes
+                        urmazin_system = yes
+                        everchanging_system = yes
+                        katzen_jump_blocked_system = yes
+                        has_star_flag = maginot_anti_jump_star
+                        has_star_flag = siegfried_anti_jump_star
+                    "
+                    toggle = @has_gigastructures
+                }
+            }
+            inline_script = {
+                script = forgotten_empires/toggled_code
+                code = "
+                    AND = {
+                        cohesive_system = yes
+                        ROOT = { is_eager_explorer_empire = yes }
+                        has_star_flag = ehof_system_created_by_@root
+                    }
+                "
+                toggle = @has_gigastructures
+            }
+            AND = {
+                root = { has_country_flag = entered_sealed_system }
+                has_star_flag = sealed_system
+            }
         }
     }
 }
@@ -44,14 +87,20 @@ can_terraform_planet = {
             }
         }
     }
-    custom_tooltip = {
-        fail_text = "requires_actor_not_devouring_swarm_lithoid"
-        exists = root
-        root = { is_lithoid_devouring_swarm = no }
+    inline_script = {
+        script = forgotten_empires/toggled_code
+        code = "
+			custom_tooltip = {
+				fail_text = requires_actor_not_devouring_swarm_lithoid
+				root = { is_lithoid_devouring_swarm = no }
+			}
+		"
+        toggle = @[ 1 - has_bug_branch ]
     }
-    custom_tooltip = {
-        fail_text = "legendary_leader_planet_no_terraform"
-        exists = root
+    if = {
+        limit = {
+            root = { is_wilderness_empire = no }
+        }
         this = {
             NOT = { has_planet_flag = legendary_leader_planet }
         }
@@ -109,6 +158,14 @@ can_terraform_planet = {
         fail_text = scfe_cant_terraform_special_planet
         NOT = { has_planet_flag = cant_terraform_planet }
     }
+    # Planetary Diversity Ascension Worlds
+    inline_script = {
+        script = forgotten_empires/toggled_code
+        code = "
+			pd_can_terraform_planet = yes
+		"
+        toggle = @has_planetary_diversity_ascension_worlds
+    }
 }
 
 # this = system
@@ -155,7 +212,17 @@ ai_should_restrict_system = {
         AND = {
             root = {
                 OR = {
-                    is_crisis_faction = yes
+                    AND = {
+                        is_crisis_faction = yes
+                        # Gigastructural Engineering & More
+                        inline_script = {
+                            script = forgotten_empires/toggled_code
+                            code = "
+                                is_blokkat_country_type = no
+                            "
+                            toggle = @has_gigastructures
+                        }
+                    }
                     is_country_type = awakened_fallen_empire
                 }
             }
@@ -172,6 +239,29 @@ ai_should_restrict_system = {
             has_star_flag = scfe_ai_avoid_system
             NOT = { exists = owner }
         }
+        # Ancient Empire
+        inline_script = {
+            script = forgotten_empires/toggled_code
+            code = "
+                AND = {
+                    OR = {
+                        has_star_flag = ag_zeta_crisis_psionic_storm_system
+                        has_star_flag = ag_zeta_crisis_psionic_singularity_system
+                    }
+                    root = {
+                        OR = {
+                            is_country_type = default
+                            is_country_type = fallen_empire
+                            is_country_type = awakened_fallen_empire
+                            is_crisis_faction = yes
+                            is_country_type = awakened_marauders
+                            is_country_type = ag_ancient_psi_guardian
+                        }
+                    }
+                }
+            "
+            toggle = @ag_null_edict_length
+        }
     }
 }
 
@@ -179,13 +269,56 @@ ai_should_restrict_system = {
 # root = country
 system_blocks_sensors = {
     OR = {
-        is_inside_nebula = yes
-        has_modifier = space_storm
-        has_modifier = zroni_storm
-        has_modifier = queen_scorn_storm
-        has_star_flag = lcluster
-        has_star_flag = sealed_system
-        has_star_flag = storm_system
+        AND = {
+            OR = {
+                has_modifier = space_storm
+                has_modifier = zroni_storm
+                has_modifier = queen_scorn_storm
+                has_star_flag = storm_system
+                # Sensor Expansion
+                inline_script = {
+                    script = forgotten_empires/toggled_code
+                    code = "
+            			ROOT = { NOT = { has_technology = tech_ariphaos_sensors_storm } }
+                    "
+                    toggle = @ariphaos_sensors_installed
+                }
+            }
+        }
+        AND = {
+            is_inside_nebula = yes
+            # Sensor Expansion
+            inline_script = {
+                script = forgotten_empires/toggled_code
+                code = "
+        			ROOT = { NOT = { has_technology = tech_ariphaos_sensors_nebula } }
+                "
+                toggle = @ariphaos_sensors_installed
+            }
+
+        }
+        AND = {
+            OR = {
+                has_star_flag = lcluster
+                has_star_flag = sealed_system
+                # Sensor Expansion
+                inline_script = {
+                    script = forgotten_empires/toggled_code
+                    code = "
+                        has_star_flag = surveillance_supercomputer_system
+                    "
+                    toggle = @ariphaos_sensors_installed
+                }
+            }
+            # Sensor Expansion
+            inline_script = {
+                script = forgotten_empires/toggled_code
+                code = "
+        			ROOT = { NOT = { has_technology = tech_ariphaos_sensors_sealed } }
+                "
+                toggle = @ariphaos_sensors_installed
+            }
+        }
         # Forgotten Empires
         AND = {
             exists = owner
@@ -194,6 +327,48 @@ system_blocks_sensors = {
                 has_modifier = scfe_invisibility_rune
             }
             NOT = { root = { is_same_empire = prev.owner } }
+        }
+        # Ancient Empire
+        inline_script = {
+            script = forgotten_empires/toggled_code
+            code = "
+        		has_star_flag = ag_no_sensor_system
+            "
+            toggle = @ag_null_edict_length
+        }
+        # Sensor Expansion
+        inline_script = {
+            script = forgotten_empires/toggled_code
+            code = "
+                AND = {
+                    OR = {
+                        is_star_class = sc_binary_2
+                        is_star_class = sc_neutron_star
+                    }
+                    ROOT = { NOT = { has_technology = tech_sensors_4 } }
+                }
+                AND = {
+                    OR = {
+                        is_star_class = sc_binary_1
+                        is_star_class = sc_pulsar
+                    }
+                    ROOT = { NOT = { has_technology = tech_ariphaos_sensors_pulsar } }
+                }
+                AND = {
+                    has_natural_wormhole = yes
+                    ROOT = { NOT = { has_technology = tech_ariphaos_sensors_wormhole } }
+                }
+                AND = {
+                    ag_is_black_hole_class = yes
+                    ROOT = { NOT = { has_technology = tech_ariphaos_sensors_black_hole } }
+                }
+                AND = {
+                    exists = starbase
+                    starbase = { has_starbase_building = ariphaos_sensors_jammer_starbase }
+                    ROOT = { NOT = { has_technology = tech_ariphaos_sensors_jammed } }
+                }
+            "
+            toggle = @ariphaos_sensors_installed
         }
     }
 }
