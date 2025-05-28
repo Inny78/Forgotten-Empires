@@ -7,5 +7,7 @@
 @has_bug_branch = 0
 @has_planetary_diversity_ascension_worlds = 0
 @ariphaos_sensors_installed = 0
+@expevents_compatch_var = 0
+@has_endless_frontier = 0
 
 # EOF
