@@ -10,7 +10,12 @@ planet_event = {
         if = {
             limit = {
                 has_planet_flag = scfe_roots
-                from = { NOT = { has_event_chain = scfe_roots_chain } }
+                from = {
+                    NOR = {
+                        is_wilderness_empire = yes
+                        has_event_chain = scfe_roots_chain
+                    }
+                }
             }
             # Restart the chain
             remove_global_flag = scfe_roots_started
