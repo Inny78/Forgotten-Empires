@@ -156,7 +156,10 @@ can_terraform_planet = {
     # Forgotten Empires
     custom_tooltip = {
         fail_text = scfe_cant_terraform_special_planet
-        NOT = { has_planet_flag = cant_terraform_planet }
+        NAND = {
+            is_wilderness_empire = no
+            has_planet_flag = cant_terraform_planet
+        }
         # TODO handle Wilderness empire
     }
     # Planetary Diversity Ascension Worlds
