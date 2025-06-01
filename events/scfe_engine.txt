@@ -417,6 +417,7 @@ planet_event = {
 		exists = owner
 		owner = {
 			is_ai = no
+			is_wilderness_empire = no
 			is_homicidal = no
 			NOT = { has_country_flag = scfe_rooted }
 			count_owned_planet = {
