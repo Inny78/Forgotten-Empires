@@ -17,7 +17,7 @@ scfe_znkar_dig = {
 	}
 
 	visible = {
-		scfe_dig_site_visible_trigger = yes
+		scfe_dig_site_visible_trigger_znkar = yes
 	}
 
 	on_visible = {
@@ -74,7 +74,7 @@ scfe_znkar_colossus_dig = {
 	}
 
 	visible = {
-		scfe_dig_site_visible_trigger = yes
+		scfe_dig_site_visible_trigger_znkar = yes
 	}
 
 	on_visible = {

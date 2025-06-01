@@ -10,7 +10,7 @@
  SCFE_SHADED_PROJECT_INIT_DESC: "$scfe_shaded_init.1.desc$"
 
  scfe_shaded_chain_title: "Precursors - The Shaded Empire"
- scfe_shaded_chain_desc: "We have discovered the remnants of an ancient alien civilization within this system, indicative of their activity roughly 9000 years ago. Our scientists have pieced together information that suggests these aliens, who called themselves the §SShaded Empire§!, were a secretive species that lived in a hidden system."
+ scfe_shaded_chain_desc: "We have discovered the remnants of an ancient alien civilization within this system, indicative of their activity roughly 9,000 years ago. Our scientists have pieced together information that suggests these aliens, who called themselves the §SShaded Empire§!, were a secretive species that lived in a hidden system."
  scfe_shaded_clues: "Clues found"
  scfe_shaded_detection: "Detection level"
  situation_shaded_detection: "$scfe_shaded_detection$"

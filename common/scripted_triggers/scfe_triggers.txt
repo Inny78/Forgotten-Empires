@@ -85,6 +85,34 @@ scfe_dig_site_visible_trigger = {
 	exists = from.planet
 	default_site_visible_trigger = yes
 }
+scfe_dig_site_visible_trigger_astanine = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_astanine_chain
+}
+scfe_dig_site_visible_trigger_coprean = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_coprean_chain
+}
+scfe_dig_site_visible_trigger_ghosts = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_ghosts_chain
+}
+scfe_dig_site_visible_trigger_shaded = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_shaded_chain
+}
+scfe_dig_site_visible_trigger_shamblers = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_shamblers_chain
+}
+scfe_dig_site_visible_trigger_sless = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_sless_chain
+}
+scfe_dig_site_visible_trigger_znkar = {
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_znkar_chain
+}
 
 scfe_is_general_planet = {
 	is_artificial = no

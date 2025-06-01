@@ -10,6 +10,11 @@ country_event = {
 
     option = {
         name = INTERESTING
+        enable_special_project = {
+            name = SCFE_SHADED_PROJECT_INIT
+            location = event_target:shaded_crashed_ship_location
+            owner = root
+        }
     }
 }
 country_event = {
@@ -35,7 +40,6 @@ country_event = {
         }
         else = { remove_country_flag = scfe_shaded_empire_possible }
         set_global_flag = scfe_shaded_precursor_started
-        country_event = { id = story.5 days = 30 }
     }
 
     option = {

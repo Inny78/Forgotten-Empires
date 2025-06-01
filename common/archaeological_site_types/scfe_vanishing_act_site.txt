@@ -17,7 +17,7 @@ scfe_vanishing_act_dig = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_ghosts = yes
     }
 
     on_visible = {

@@ -117,8 +117,8 @@ on_planet_transfer = {
 # From = Planet
 on_survey_planet = {
 	events = {
-		scfe_etc.2
-		scfe_etc.3
+		scfe_coprean_constitution.100
+		scfe_astanine.100
 		scfe_ziaskehorn.1
 		scfe_celestial_disturbance.3
 		scfe_celestial_disturbance.4

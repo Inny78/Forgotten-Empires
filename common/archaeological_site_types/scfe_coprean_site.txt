@@ -67,7 +67,7 @@ scfe_coprean_constitution_site_2 = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_coprean = yes
     }
 
     on_visible = {
@@ -130,7 +130,7 @@ scfe_coprean_constitution_site_3 = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_coprean = yes
     }
 
     on_visible = {
@@ -177,7 +177,7 @@ scfe_coprean_constitution_site_4 = { #https://rumorsontheinternets.org/2010/10/1
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_coprean = yes
     }
 
     on_visible = {

@@ -14,7 +14,7 @@ scfe_sless_alliance_site_1 = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_sless = yes
     }
 
     on_visible = {
@@ -54,7 +54,7 @@ scfe_sless_alliance_site_2 = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_sless = yes
     }
 
     on_visible = {
@@ -111,7 +111,7 @@ scfe_sless_alliance_site_3 = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_sless = yes
     }
 
     on_visible = {
@@ -163,7 +163,7 @@ scfe_sless_alliance_site_4 = {
     }
 
     visible = {
-        scfe_dig_site_visible_trigger = yes
+        scfe_dig_site_visible_trigger_sless = yes
     }
 
     on_visible = {
