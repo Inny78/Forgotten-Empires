@@ -279,14 +279,14 @@ system_blocks_sensors = {
                 has_modifier = zroni_storm
                 has_modifier = queen_scorn_storm
                 has_star_flag = storm_system
-                # Sensor Expansion
-                inline_script = {
-                    script = forgotten_empires/toggled_code
-                    code = "
+            }
+            # Sensor Expansion
+            inline_script = {
+                script = forgotten_empires/toggled_code
+                code = "
             			ROOT = { NOT = { has_technology = tech_ariphaos_sensors_storm } }
                     "
-                    toggle = @ariphaos_sensors_installed
-                }
+                toggle = @ariphaos_sensors_installed
             }
         }
         AND = {
