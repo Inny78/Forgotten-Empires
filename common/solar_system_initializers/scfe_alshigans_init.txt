@@ -1,0 +1,267 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Alshigans
+scfe_alshigans_init_01 = {
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_4
+        }
+    }
+
+    change_orbit = 30
+
+    planet = {
+        orbit_distance = 15
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_3
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        name = scfe_alshigans_velaen
+        count = 1
+        orbit_distance = 0
+        class = "pc_savannah"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
+
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_savannah name = scfe_alshigans_velaen location = this }
+            save_global_event_target_as = scfe_alshigans_savannah
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+            add_modifier = { modifier = scfe_savannah_ruins days = -1 }
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+
+        moon = {
+            count = 1
+            class = "pc_barren"
+            orbit_distance = 12
+            size = { min = 6 max = 8 }
+            has_ring = no
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        class = pc_gas_giant
+        orbit_distance = 0
+        size = { min = 25 max = 35 }
+        has_ring = yes
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+
+        init_effect = {
+            add_deposit = d_exotic_gases_2
+        }
+    }
+}
+scfe_alshigans_init_02 = {
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_physics_4
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_rare_crystals_2
+        }
+    }
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_2
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        name = scfe_alshigans_uuladir
+        count = 1
+        orbit_distance = 0
+        class = "pc_alpine"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
+
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_alpine name = scfe_alshigans_uuladir location = this }
+            save_global_event_target_as = scfe_alshigans_alpine
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_ALPINE_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+            add_modifier = { modifier = scfe_alpine_ruins days = -1 }
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+        moon = {
+            count = 1
+            orbit_distance = @base_moon_distance
+            class = pc_barren
+            orbit_angle = { min = 90 max = 270 }
+            size = 6
+            flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
+            init_effect = {
+                clear_deposits = yes
+                add_deposit = d_engineering_10
+                add_deposit = d_engineering_10
+            }
+        }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        class = pc_barren_cold
+        orbit_distance = 0
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+
+        init_effect = {
+            add_deposit = d_physics_3
+        }
+    }
+}
+scfe_alshigans_init_03 = {
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_3
+        }
+    }
+
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = pc_molten
+        anomaly = none
+    }
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = pc_barren
+        anomaly = none
+        init_effect = { add_deposit = d_volatile_motes_2 }
+    }
+    change_orbit = 15
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_2
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        name = scfe_alshigans_demearen
+        count = 1
+        orbit_distance = 0
+        class = "pc_tropical"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
+
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_jungle name = scfe_alshigans_demearen location = this }
+            save_global_event_target_as = scfe_alshigans_jungle
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+            add_modifier = { modifier = scfe_jungle_ruins days = -1 }
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        class = pc_barren_cold
+        orbit_distance = 0
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+
+        init_effect = {
+            add_deposit = d_engineering_3
+        }
+    }
+}

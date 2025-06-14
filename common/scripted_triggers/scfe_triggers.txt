@@ -1,6 +1,10 @@
-scfe_mod_active = { always = yes }
+scfe_mod_active = {
+	optimize_memory
+	always = yes
+}
 
 scfe_dig_site_default_spawn_rules = {
+	optimize_memory
 	solar_system = {
 		exists = star
 		NOR = {
@@ -43,6 +47,7 @@ scfe_dig_site_default_spawn_rules = {
 }
 
 scfe_is_valid_star_system = {
+	optimize_memory
 	exists = star
 	NOR = {
 		has_star_flag = sealed_system
@@ -80,48 +85,85 @@ scfe_is_valid_star_system = {
 }
 
 scfe_dig_site_visible_trigger = {
+	optimize_memory
 	is_ai = no
 	exists = from
 	exists = from.planet
 	default_site_visible_trigger = yes
 }
 scfe_dig_site_visible_trigger_astanine = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_astanine_chain
 }
 scfe_dig_site_visible_trigger_coprean = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_coprean_chain
 }
 scfe_dig_site_visible_trigger_ghosts = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_ghosts_chain
 }
+scfe_dig_site_visible_trigger_scrambler = {
+	optimize_memory
+	scfe_dig_site_visible_trigger = yes
+	has_event_chain = scfe_scrambler_chain
+}
 scfe_dig_site_visible_trigger_shaded = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_shaded_chain
 }
 scfe_dig_site_visible_trigger_shamblers = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_shamblers_chain
 }
 scfe_dig_site_visible_trigger_sless = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_sless_chain
 }
 scfe_dig_site_visible_trigger_znkar = {
+	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_znkar_chain
 }
 
 scfe_is_general_planet = {
+	optimize_memory
 	is_artificial = no
 	OR = {
 		habitable_planet = yes
 		scfe_is_uninhabitable = yes
 	}
 }
+scfe_is_alpine = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_alpine
+		# All These Worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_alpine = yes
+			"
+			toggle = @has_atw_lite
+		}
+		# Planetary Diversity
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_alpine = yes
+			"
+			toggle = @has_planetary_diversity
+		}
+	}
+}
 scfe_is_aquatic = {
+	optimize_memory
 	is_wet = yes
 	OR = {
 		is_planet_class = pc_ocean
@@ -144,7 +186,58 @@ scfe_is_aquatic = {
 		}
 	}
 }
+scfe_is_arctic = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_arctic
+		# Planetary Diversity
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_arctic = yes
+			"
+			toggle = @has_planetary_diversity
+		}
+		# All These Worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_arctic = yes
+			"
+			toggle = @has_atw_lite
+		}
+	}
+}
+scfe_is_barren = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_barren
+		# All These Worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_barren = yes
+			"
+			toggle = @has_atw_lite
+		}
+	}
+}
+scfe_is_barren_cold = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_barren_cold
+		# All These Worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_barren_cold = yes
+			"
+			toggle = @has_atw_lite
+		}
+	}
+}
 scfe_is_continental = {
+	optimize_memory
 	is_wet = yes
 	OR = {
 		is_planet_class = pc_continental
@@ -167,6 +260,7 @@ scfe_is_continental = {
 	}
 }
 scfe_is_desertic = {
+	optimize_memory
 	is_dry = yes
 	OR = {
 		is_planet_class = pc_desert
@@ -189,6 +283,7 @@ scfe_is_desertic = {
 	}
 }
 scfe_is_frozen = {
+	optimize_memory
 	OR = {
 		is_planet_class = pc_frozen
 		is_planet_class = pc_arctic
@@ -210,28 +305,8 @@ scfe_is_frozen = {
 		}
 	}
 }
-scfe_is_tundra = {
-	OR = {
-		is_planet_class = pc_tundra
-		# Planetary Diversity
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				pd_is_tundra = yes
-			"
-			toggle = @has_planetary_diversity
-		}
-		# All These Worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_tundra = yes
-			"
-			toggle = @has_atw_lite
-		}
-	}
-}
 scfe_is_gas_giant = {
+	optimize_memory
 	OR = {
 		is_planet_class = pc_gas_giant
 		# All these worlds
@@ -244,71 +319,8 @@ scfe_is_gas_giant = {
 		}
 	}
 }
-scfe_is_uninhabitable = {
-	OR = {
-		uninhabitable_regular_planet = yes
-		scfe_is_frozen = yes
-		scfe_is_barren = yes
-		scfe_is_molten = yes
-		scfe_is_barren_cold = yes
-		# All These Worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_toxic = yes
-			"
-			toggle = @has_atw_lite
-		}
-	}
-}
-scfe_is_barren = {
-	OR = {
-		is_planet_class = pc_barren
-		# All These Worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_barren = yes
-			"
-			toggle = @has_atw_lite
-		}
-	}
-}
-scfe_is_barren_cold = {
-	OR = {
-		is_planet_class = pc_barren_cold
-		# All These Worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_barren_cold = yes
-			"
-			toggle = @has_atw_lite
-		}
-	}
-}
-scfe_is_arctic = {
-	OR = {
-		is_planet_class = pc_arctic
-		# Planetary Diversity
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				pd_is_arctic = yes
-			"
-			toggle = @has_planetary_diversity
-		}
-		# All These Worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_arctic = yes
-			"
-			toggle = @has_atw_lite
-		}
-	}
-}
 scfe_is_gaia = {
+	optimize_memory
 	OR = {
 		is_planet_class = pc_gaia
 		# All These Worlds
@@ -330,6 +342,7 @@ scfe_is_gaia = {
 	}
 }
 scfe_is_molten = {
+	optimize_memory
 	OR = {
 		is_planet_class = pc_molten
 		# All These Worlds
@@ -342,7 +355,44 @@ scfe_is_molten = {
 		}
 	}
 }
+scfe_is_nuked = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_nuked
+		# All these worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_nuked = yes
+			"
+			toggle = @has_atw_lite
+		}
+		# Planetary Diversity
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				pd_is_planet_class_nuked = yes
+			"
+			toggle = @has_planetary_diversity
+		}
+	}
+}
+scfe_is_toxic = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_toxic
+		# All These Worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_toxic = yes
+			"
+			toggle = @has_atw_lite
+		}
+	}
+}
 scfe_is_tropical = {
+	optimize_memory
 	OR = {
 		is_planet_class = pc_tropical
 		# All These Worlds
@@ -363,28 +413,30 @@ scfe_is_tropical = {
 		}
 	}
 }
-scfe_is_alpine = {
+scfe_is_tundra = {
+	optimize_memory
 	OR = {
-		is_planet_class = pc_alpine
-		# All These Worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_alpine = yes
-			"
-			toggle = @has_atw_lite
-		}
+		is_planet_class = pc_tundra
 		# Planetary Diversity
 		inline_script = {
 			script = forgotten_empires/toggled_code
 			code = "
-				pd_is_alpine = yes
+				pd_is_tundra = yes
 			"
 			toggle = @has_planetary_diversity
+		}
+		# All These Worlds
+		inline_script = {
+			script = forgotten_empires/toggled_code
+			code = "
+				atw_is_tundra = yes
+			"
+			toggle = @has_atw_lite
 		}
 	}
 }
 scfe_is_savannah = {
+	optimize_memory
 	OR = {
 		is_planet_class = pc_savannah
 		# All These Worlds
@@ -405,9 +457,14 @@ scfe_is_savannah = {
 		}
 	}
 }
-scfe_is_toxic = {
+scfe_is_uninhabitable = {
+	optimize_memory
 	OR = {
-		is_planet_class = pc_toxic
+		uninhabitable_regular_planet = yes
+		scfe_is_frozen = yes
+		scfe_is_barren = yes
+		scfe_is_molten = yes
+		scfe_is_barren_cold = yes
 		# All These Worlds
 		inline_script = {
 			script = forgotten_empires/toggled_code
@@ -420,6 +477,7 @@ scfe_is_toxic = {
 }
 
 scfe_is_valid_moon = {
+	optimize_memory
 	AND = {
 		scfe_is_barren = yes
 		is_moon = yes
@@ -430,6 +488,7 @@ scfe_is_valid_moon = {
 	}
 }
 scfe_is_valid_colony = {
+	optimize_memory
 	AND = {
 		is_colony = yes
 		is_capital = no
@@ -437,6 +496,7 @@ scfe_is_valid_colony = {
 	}
 }
 scfe_is_valid_system = {
+	optimize_memory
 	solar_system = {
 		exists = star
 		NOR = {
@@ -466,12 +526,15 @@ scfe_is_valid_system = {
 }
 
 scfe_is_heavy_metal = {
+	optimize_memory
 	OR = {
 		is_mechanical_empire = yes
 		is_robot_empire = yes
+		is_synthetic_empire = yes
 	}
 }
 scfe_is_default_empire = {
+	optimize_memory
 	OR = {
 		is_country_type = default
 		# Scripted Triggers Undercoat
@@ -488,6 +551,7 @@ scfe_is_default_empire = {
 }
 
 scfe_is_moon_of_gas_giant = {
+	optimize_memory
 	is_scope_type = planet
 	exists = orbit
 	OR = {
@@ -495,29 +559,9 @@ scfe_is_moon_of_gas_giant = {
 		has_planet_flag = gas_giant_moon
 	}
 }
-scfe_is_nuked = {
-	OR = {
-		is_planet_class = pc_nuked
-		# All these worlds
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				atw_is_nuked = yes
-			"
-			toggle = @has_atw_lite
-		}
-		# Planetary Diversity
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-				pd_is_planet_class_nuked = yes
-			"
-			toggle = @has_planetary_diversity
-		}
-	}
-}
 
 has_woorskyr_deposit = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -525,6 +569,7 @@ has_woorskyr_deposit = {
 	}
 }
 has_koeleothan_deposit = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -532,6 +577,7 @@ has_koeleothan_deposit = {
 	}
 }
 has_quantumpearl_deposit = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -539,6 +585,7 @@ has_quantumpearl_deposit = {
 	}
 }
 has_xenograss_deposit = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -546,6 +593,7 @@ has_xenograss_deposit = {
 	}
 }
 has_beetle_deposit = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -553,6 +601,7 @@ has_beetle_deposit = {
 	}
 }
 has_xenograss_building = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -560,6 +609,7 @@ has_xenograss_building = {
 	}
 }
 has_quantumpearl_building = {
+	optimize_memory
 	any_owned_planet = {
 		exists = owner
 		is_colony = yes
@@ -571,12 +621,28 @@ has_quantumpearl_building = {
 	}
 }
 
-planet_has_woorskyr_deposit = { has_deposit = d_woorskyr_hub }
-planet_has_koeleothan_deposit = { has_deposit = d_koeleothan }
-planet_has_quantumpearl_deposit = { has_deposit = d_quantumpearl }
-planet_has_xenograss_deposit = { has_deposit = d_xenograss }
-planet_has_beetle_deposit = { has_deposit = d_beetle_swarm }
+planet_has_woorskyr_deposit = {
+	optimize_memory
+	has_deposit = d_woorskyr_hub
+}
+planet_has_koeleothan_deposit = {
+	optimize_memory
+	has_deposit = d_koeleothan
+}
+planet_has_quantumpearl_deposit = {
+	optimize_memory
+	has_deposit = d_quantumpearl
+}
+planet_has_xenograss_deposit = {
+	optimize_memory
+	has_deposit = d_xenograss
+}
+planet_has_beetle_deposit = {
+	optimize_memory
+	has_deposit = d_beetle_swarm
+}
 planet_has_strange_worlds_deposit = {
+	optimize_memory
 	OR = {
 		planet_has_woorskyr_deposit = yes
 		planet_has_koeleothan_deposit = yes
@@ -587,6 +653,7 @@ planet_has_strange_worlds_deposit = {
 }
 
 scfe_is_valid_owner = {
+	optimize_memory
 	OR = {
 		has_owner = no
 		AND = {
@@ -602,13 +669,13 @@ scfe_is_valid_owner = {
 
 # Precursor Story Pack
 scfe_sless_digsite_spawn_rules = {
+	optimize_memory
 	exists = star
 	NOR = {
 		is_same_value = root.solar_system
 		any_system_planet = {
 			OR = {
 				is_capital = yes #there should be no capital world in the system
-				has_planet_flag = precursor_world
 				has_planet_flag = scfe_sless_colony
 			}
 		}
@@ -625,13 +692,13 @@ scfe_sless_digsite_spawn_rules = {
 	}
 }
 scfe_coprean_digsite_spawn_rules = {
+	optimize_memory
 	exists = star
 	NOR = {
 		is_same_value = root.solar_system
 		any_system_planet = {
 			OR = {
 				is_capital = yes
-				has_planet_flag = precursor_world
 				has_planet_flag = scfe_coprean_colony
 			}
 		}
@@ -643,13 +710,13 @@ scfe_coprean_digsite_spawn_rules = {
 	}
 }
 scfe_astanine_digsite_spawn_rules = {
+	optimize_memory
 	exists = star
 	NOR = {
 		is_same_value = root.solar_system
 		any_system_planet = {
 			OR = {
 				is_capital = yes
-				has_planet_flag = precursor_world
 				has_planet_flag = scfe_astanine_colony
 			}
 		}
@@ -666,6 +733,7 @@ scfe_astanine_digsite_spawn_rules = {
 }
 
 scfe_is_tfpanet = {
+	optimize_memory
 	OR = {
 		has_modifier = terraforming_candidate
 		has_modifier = toxic_terraforming_candidate
@@ -673,6 +741,7 @@ scfe_is_tfpanet = {
 }
 
 is_valid_origin_for_znkar = {
+	optimize_memory
 	NOR = {
 		has_origin = origin_shoulders_of_giants
 		has_origin = origin_doomsday
@@ -693,6 +762,7 @@ is_valid_origin_for_znkar = {
 
 # Planet scope
 has_any_strange_worlds_deposit = {
+	optimize_memory
 	OR = {
 		planet_has_woorskyr_deposit = yes
 		planet_has_beetle_deposit = yes
@@ -703,6 +773,7 @@ has_any_strange_worlds_deposit = {
 }
 
 scfe_is_valid_shaded_fe = {
+	optimize_memory
 	is_ai = yes
 	OR = {
 		AND = {
@@ -719,6 +790,7 @@ scfe_is_valid_shaded_fe = {
 }
 
 scfe_is_valid_star = {
+	optimize_memory
 	NOR = {
 		is_planet_class = pc_black_hole
 		is_planet_class = pc_neutron_star
@@ -727,20 +799,24 @@ scfe_is_valid_star = {
 }
 
 scfe_can_jump_in_shaded_system = {
+	optimize_memory
 	OR = {
 		has_event_chain = scfe_shaded_chain
 		has_country_flag = scfe_shaded_colony_coordinates
 	}
 }
 scfe_has_zroni_chain = {
+	optimize_memory
 	has_country_flag = zroni_intro
 	NOT = { has_country_flag = dust_off_achievement }
 }
 scfe_has_baol_chain = {
+	optimize_memory
 	has_country_flag = baol_intro
 	NOT = { has_country_flag = green_thumb_achievement }
 }
 scfe_can_find_precursor = {
+	optimize_memory
 	is_ai = no
 	OR = {
 		has_policy_flag = scfe_precursor_policy_concurrent
@@ -773,15 +849,37 @@ scfe_can_find_precursor = {
 		}
 	}
 }
-has_sless_gene_template = { has_relic = r_scfe_sless_gene_template }
-has_diary_of_innovo = { has_relic = r_scfe_diary_of_innovo }
-has_astanine_last_projector = { has_relic = r_scfe_astanine_last_projector }
-has_alshigan_engine = { has_relic = r_scfe_alshigan_engine }
-has_znkar_distortion_generator = { has_relic = r_scfe_znkar_distortion_generator }
-has_first_empire_databank = { has_relic = r_scfe_first_empire_databank }
-has_orders_trinket = { has_relic = r_scfe_orders_trinket }
+has_sless_gene_template = {
+	optimize_memory
+	has_relic = r_scfe_sless_gene_template
+}
+has_diary_of_innovo = {
+	optimize_memory
+	has_relic = r_scfe_diary_of_innovo
+}
+has_astanine_last_projector = {
+	optimize_memory
+	has_relic = r_scfe_astanine_last_projector
+}
+has_alshigan_engine = {
+	optimize_memory
+	has_relic = r_scfe_alshigan_engine
+}
+has_znkar_distortion_generator = {
+	optimize_memory
+	has_relic = r_scfe_znkar_distortion_generator
+}
+has_first_empire_databank = {
+	optimize_memory
+	has_relic = r_scfe_first_empire_databank
+}
+has_orders_trinket = {
+	optimize_memory
+	has_relic = r_scfe_orders_trinket
+}
 
 scfe_has_any_nyblax_relic = {
+	optimize_memory
 	OR = {
 		has_relic = r_scfe_arcane_rune
 		has_relic = r_scfe_damage_rune
@@ -793,6 +891,7 @@ scfe_has_any_nyblax_relic = {
 }
 
 scfe_has_no_standard_ethic = {
+	optimize_memory
 	is_xenophobe = no
 	is_xenophile = no
 	is_authoritarian = no
@@ -804,6 +903,7 @@ scfe_has_no_standard_ethic = {
 }
 
 scfe_has_special_deposit = {
+	optimize_memory
 	OR = {
 		has_deposit = d_treasure_planet
 		has_deposit = d_black_needle_base
@@ -835,8 +935,12 @@ scfe_has_special_deposit = {
 		has_any_strange_worlds_deposit = yes
 	}
 }
-scfe_is_empty_space = { is_planet_class = pc_scfe_empty_space }
+scfe_is_empty_space = {
+	optimize_memory
+	is_planet_class = pc_scfe_empty_space
+}
 scfe_has_comms_with_alien_empire = {
+	optimize_memory
 	any_relation = {
 		has_communications = prev
 		OR = {

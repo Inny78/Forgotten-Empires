@@ -1,0 +1,237 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Precursors Story Pack
+scfe_coprean_init_01 = {
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_3
+        }
+    }
+
+    planet = {
+        orbit_distance = 35
+        count = { min = 1 max = 2 }
+        class = rl_unhabitable_planets
+        anomaly = none
+        init_effect = {
+            add_deposit = d_minerals_3
+        }
+    }
+
+    planet = {
+        count = 1
+        orbit_distance = 60
+        class = "pc_gas_giant"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = 18
+        anomaly = none
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
+
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_coprean_chain id = scfe_coprean_hidden_planet_1 name = scfe_coprean_colony_2_coordinates_poi desc = scfe_coprean_colony_2_coordinates_desc location = this }
+            save_global_event_target_as = scfe_coprean_colony_2
+            create_archaeological_site = scfe_coprean_constitution_site_2
+        }
+
+        moon = {
+            count = 1
+            class = "pc_barren"
+            orbit_distance = @base_moon_distance
+            size = { min = 6 max = 8 }
+            has_ring = no
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+        }
+    }
+
+    planet = {
+        class = pc_gas_giant
+        orbit_distance = 20
+        size = { min = 25 max = 35 }
+        has_ring = yes
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+    }
+}
+scfe_coprean_init_02 = {
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 80
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_3
+        }
+    }
+
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = rl_unhabitable_planets
+        init_effect = {
+            add_deposit = d_minerals_3
+        }
+    }
+
+    planet = {
+        count = 1
+        orbit_distance = 25
+        class = pc_toxic
+        has_ring = yes
+        orbit_angle = { min = 90 max = 270 }
+        size = 18
+    }
+
+    change_orbit = 25
+
+    planet = {
+        count = 1
+        class = pc_asteroid
+        orbit_angle = 90
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_coprean_chain id = scfe_coprean_hidden_planet_2 name = scfe_coprean_colony_3_coordinates_poi desc = scfe_coprean_colony_3_coordinates_desc location = this }
+            save_global_event_target_as = scfe_coprean_colony_3
+            create_archaeological_site = scfe_coprean_constitution_site_3
+        }
+    }
+    planet = {
+        count = 1
+        class = pc_asteroid
+        orbit_angle = 170
+    }
+    planet = {
+        count = 1
+        class = pc_asteroid
+        orbit_angle = 230
+    }
+    planet = {
+        count = 1
+        orbit_distance = 30
+        class = pc_frozen
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = 18
+    }
+}
+scfe_coprean_home_system = {
+    name = "Name_magnificent"
+    class = "rl_binary_stars"
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { unique_system scfe_coprean_home_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    prevent_anomalies = yes
+
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 60
+    }
+
+    planet = {
+        count = 1
+        class = pc_g_star
+        orbit_distance = 25
+        orbit_angle = 0
+        size = 35
+        has_ring = no
+    }
+
+    planet = {
+        count = 1
+        class = pc_a_star
+        orbit_distance = 0
+        orbit_angle = 180
+        size = 15
+        has_ring = no
+    }
+
+    change_orbit = 45
+
+    planet = {
+        name = "Name_magnasanti"
+        orbit_distance = 35
+        class = pc_barren
+        orbit_angle = { min = 90 max = 270 }
+        size = 20
+        deposit_blockers = none
+        modifiers = none
+        has_ring = no
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
+
+        change_orbit = @base_moon_distance
+
+        init_effect = {
+            save_global_event_target_as = scfe_coprean_home_planet
+            create_archaeological_site = scfe_coprean_constitution_site_4
+            set_planet_entity = { entity = "relic_world_01_entity" }
+        }
+
+        moon = {
+            name = "Name_magnasanti_a"
+            count = { min = 1 max = 1 }
+            class = pc_barren
+            size = 8
+            orbit_angle = { min = 90 max = 270 }
+            orbit_distance = 5
+        }
+    }
+
+    planet = {
+        count = 1
+        orbit_distance = 50
+        class = pc_gas_giant
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = 1
+            class = random_non_colonizable
+            orbit_angle = { min = 90 max = 270 }
+            orbit_distance = 10
+        }
+    }
+
+    planet = {
+        count = 1
+        orbit_distance = 65
+        class = pc_gas_giant
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = 2
+            class = random_non_colonizable
+            orbit_angle = { min = 90 max = 270 }
+            orbit_distance = 10
+        }
+    }
+}

@@ -1,0 +1,294 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Shaded Empire
+shaded_lead1_system = {
+    name = scfe_shaded_clue1_system_name
+    flags = { unique_system scfe_shaded_lead1 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    class = "sc_m_giant"
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 90
+    }
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    init_effect = {
+        save_global_event_target_as = scfe_shaded_lead1
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        size = { min = 20 max = 30 }
+    }
+    planet = {
+        orbit_distance = 40
+        count = 1
+        class = rl_unhabitable_planets
+        has_ring = no
+    }
+    planet = {
+        class = "pc_asteroid"
+        orbit_distance = 50
+        orbit_angle = -210
+        size = 6
+        has_ring = no
+        anomaly = none
+        flags = { shroud_storm_changed }
+        init_effect = {
+            save_global_event_target_as = scfe_shaded_asteroid_lead1
+        }
+    }
+    planet = {
+        class = "pc_asteroid"
+        orbit_distance = 0
+        orbit_angle = -95
+        size = 5
+        has_ring = no
+    }
+    planet = {
+        class = "pc_gas_giant"
+        orbit_distance = 50
+        orbit_angle = 0
+        size = 20
+        has_ring = yes
+    }
+}
+shaded_lead2_system = {
+    name = scfe_shaded_clue2_system_name
+    flags = { unique_system scfe_shaded_lead2 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    class = "sc_m"
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    init_effect = {
+        save_global_event_target_as = scfe_shaded_lead2
+        spawn_megastructure = {
+            type = "habitat_central_complex_ruined"
+            planet = event_target:scfe_shaded_habitat_planet
+            init_effect = {
+                save_global_event_target_as = scfe_shaded_habitat_lead2
+                create_ambient_object = {
+                    type = "large_debris_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 20
+                        angle = 20
+                    }
+                }
+                create_ambient_object = {
+                    type = "large_debris_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 20
+                        angle = 150
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 35
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        size = { min = 20 max = 30 }
+    }
+    planet = {
+        orbit_distance = 20
+        count = 1
+        class = pc_molten
+        has_ring = no
+    }
+    planet = {
+        orbit_distance = 25
+        count = 1
+        class = pc_barren
+        has_ring = no
+    }
+    planet = {
+        orbit_distance = 50
+        count = 1
+        class = pc_gas_giant
+        init_effect = {
+            save_event_target_as = scfe_shaded_habitat_planet
+        }
+    }
+    planet = {
+        orbit_distance = 25
+        count = 1
+        class = pc_barren_cold
+    }
+
+}
+shaded_lead3_system = {
+    name = scfe_shaded_clue3_system_name
+    flags = { unique_system scfe_shaded_lead3 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    class = "sc_g"
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    init_effect = {
+        save_global_event_target_as = scfe_shaded_lead3
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        size = { min = 20 max = 30 }
+    }
+    planet = {
+        count = { min = 1 max = 2 }
+        class = rl_unhabitable_planets
+        orbit_distance = 25
+        size = { min = 7 max = 12 }
+    }
+    planet = {
+        count = 1
+        class = rl_habitable_normal
+        orbit_distance = 30
+        size = 17
+        flags = { shroud_storm_changed }
+        init_effect = {
+            save_global_event_target_as = scfe_shaded_colony_lead3
+            add_modifier = { modifier = scfe_infrastructure }
+        }
+    }
+    planet = {
+        count = 1
+        orbit_distance = 50
+        size = 22
+        class = pc_gas_giant
+        has_ring = yes
+    }
+}
+shaded_lead4_system = {
+    name = scfe_shaded_clue4_system_name
+    flags = { unique_system scfe_shaded_lead4 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    class = "sc_a"
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    init_effect = {
+        save_global_event_target_as = scfe_shaded_lead4
+        create_turbulent_nebula_1 = yes
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        size = 30
+        init_effect = {
+            save_global_event_target_as = scfe_shaded_star_lead4
+            create_ambient_object = {
+                type = scfe_precursor_cargo_01_amb
+                scale = 2
+                entity_offset_height = 5
+                location = this
+            }
+            create_ambient_object = {
+                type = small_debris_object
+                scale = 1
+                entity_offset_height = 5
+                location = this
+            }
+            create_ambient_object = {
+                type = scfe_toxoid_science_ship_amb
+                scale = 0.75
+                entity_offset_height = 6
+                location = this
+                effect = { set_ambient_object_flag = scfe_shaded_toxoid_amb }
+            }
+        }
+    }
+}
+shaded_colony_system = {
+    name = scfe_saaldryn
+    flags = { unique_system scfe_shaded_colony_system crisis_spawn_exclude precursor_system shroud_storm_changed }
+    class = "sc_m"
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    init_effect = {
+        create_turbulent_nebula_2 = yes
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+    }
+
+    change_orbit = 50
+
+    planet = {
+        name = scfe_asdrylia
+        count = 1
+        orbit_distance = 0
+        class = "pc_gaia"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 20 max = 25 }
+        has_ring = no
+        flags = { shroud_storm_changed }
+
+        init_effect = {
+            set_planet_flag = scfe_shaded_colony
+            set_planet_flag = wp_pfe_ignore_planet_flag
+            set_planet_flag = forbid_guillis_planet_modifiers
+            set_planet_flag = suppress_archaeological_sites
+            add_modifier = { modifier = scfe_infrastructure days = -1 }
+            add_modifier = { modifier = natural_beauty days = -1 }
+            add_deposit = d_central_spire
+            save_global_event_target_as = scfe_shaded_colony
+        }
+    }
+}

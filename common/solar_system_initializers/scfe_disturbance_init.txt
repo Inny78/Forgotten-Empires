@@ -1,0 +1,143 @@
+@base_moon_distance = 10
+@distance = 50
+
+# A Celestial Disturbance
+scfe_celestial_disturbance_system = {
+    class = sc_scfe_binary_1 # The primary star, a neutron star
+    flags = { unique_system scfe_celestial_disturbance_system precursor_system scfe_ai_avoid_system shroud_storm_changed }
+    name = scfe_celestial_disturbance_system_name
+
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    init_effect = {
+        save_global_event_target_as = scfe_celestial_disturbance_system
+    }
+
+    planet = {
+        count = 1
+        class = pc_g_star
+        orbit_distance = 25
+        orbit_angle = 0
+        size = 25
+        has_ring = no
+        anomaly = none
+        flags = { scfe_celestial_disturbance_sun shroud_storm_changed }
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+        }
+    }
+
+    planet = {
+        count = 1
+        class = pc_neutron_star
+        orbit_distance = 0
+        size = 8
+        has_ring = no
+        anomaly = none
+        flags = { scfe_celestial_disturbance_neutron shroud_storm_changed }
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+        }
+    }
+
+    change_orbit = 15
+
+    planet = {
+        count = 1
+        class = pc_molten
+        has_ring = no
+        size = { min = 10 max = 14 }
+        orbit_distance = 20
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+        flags = { scfe_celestial_disturbance_molten shroud_storm_changed }
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+        }
+    }
+
+    change_orbit = 40
+
+    planet = {
+        count = 1
+        class = pc_gas_giant
+        has_ring = yes
+        size = 25
+        orbit_distance = 60
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+        flags = { scfe_celestial_disturbance_gas shroud_storm_changed }
+        init_effect = {
+            clear_deposits = yes
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = 1
+            class = pc_barren
+            size = 6
+            orbit_angle = { min = 90 max = 270 }
+            orbit_distance = 6
+            anomaly = none
+            flags = { scfe_celestial_disturbance_barren shroud_storm_changed }
+            init_effect = {
+                clear_deposits = yes
+                clear_planet_modifiers = yes
+            }
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        count = 1
+        orbit_distance = 10
+        class = pc_frozen
+        size = 17
+        orbit_angle = { min = 90 max = 270 }
+        anomaly = none
+        name = scfe_celestial_disturbance_home_name
+        flags = { wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers scfe_celestial_disturbance_homeworld shroud_storm_changed }
+
+        init_effect = {
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+            save_global_event_target_as = scfe_celestial_disturbance_homeworld
+            create_ambient_object = {
+                type = scfe_astral_scar
+                scale = 0.2
+                entity_offset_height = 5
+                location = this
+            }
+            last_created_ambient_object = {
+                save_global_event_target_as = scfe_celestial_disturbance_astral_scar
+                set_location = {
+                    target = prev
+                }
+            }
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = 1
+            class = pc_barren_cold
+            size = 5
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+            name = scfe_celestial_disturbance_home_moon_name
+            orbit_distance = 6
+            flags = { scfe_celestial_disturbance_moon shroud_storm_changed }
+            init_effect = {
+                clear_deposits = yes
+                clear_planet_modifiers = yes
+            }
+        }
+    }
+}

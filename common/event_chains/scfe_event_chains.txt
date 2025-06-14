@@ -84,3 +84,17 @@ scfe_strange_worlds_chain = {
 	picture = GFX_evt_star_chart
 
 }
+scfe_shamblers_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_shamblers_clues = { max = 3 }
+	}
+}
+scfe_scrambler_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_archaeological_dig
+	counter = {
+		scfe_shamblers_clues = { max = 3 }
+	}
+}

@@ -2,26 +2,6 @@
 
 namespace = scfe_game_start
 
-event = {
-	id = scfe_game_start.1
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = { exists = event_target:global_event_country }
-
-	immediate = {
-		if = {
-			limit = {
-				# Check if precursor menu is not active
-				has_PreSelect_active = no
-			}
-			event_target:global_event_country = {
-				country_event = { id = scfe_game_start.2 days = 10 }
-			}
-		}
-	}
-}
-
 country_event = {
 	id = scfe_game_start.2
 	hide_window = yes
@@ -143,7 +123,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = strange_world_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -152,7 +135,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = strange_world_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -161,7 +147,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = strange_world_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -170,7 +159,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = strange_world_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -207,7 +199,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = nyblax_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -216,7 +211,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = nyblax_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -225,7 +223,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = nyblax_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -234,7 +235,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = nyblax_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -243,7 +247,10 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = nyblax_system }
+				}
 				spawn_system = {
 					min_distance = 5
 					max_distance = 60
@@ -343,7 +350,7 @@ country_event = {
 	}
 }
 
-# Shaded Empire
+# Shaded Empire and Shamblers init
 country_event = {
 	id = scfe_engine.4
 	hide_window = yes
@@ -352,24 +359,30 @@ country_event = {
 
 	immediate = {
 		random_playable_country = {
-			limit = { is_ai = no }
+			limit = {
+				is_ai = no
+			}
 			set_country_flag = scfe_shaded_empire_possible
 		}
 	}
 	after = {
 		if = {
-			limit = {
-				any_country = {
-					has_country_flag = scfe_shaded_empire_possible
-				}
-			}
+			limit = { any_country = { has_country_flag = scfe_shaded_empire_possible } }
 			random_country = {
 				limit = { has_country_flag = scfe_shaded_empire_possible }
 				country_event = { id = scfe_engine.5 }
 			}
 		}
+		if = {
+			limit = { any_country = { has_country_flag = scfe_shamblers_possible } }
+			random_country = {
+				limit = { has_country_flag = scfe_shamblers_possible }
+				country_event = { id = scfe_engine.14 days = 1 }
+			}
+		}
 	}
 }
+# Shaded Empire
 country_event = {
 	id = scfe_engine.5
 	hide_window = yes
@@ -392,11 +405,6 @@ country_event = {
 					scfe_is_general_planet = yes
 				}
 				save_global_event_target_as = shaded_crashed_ship_location
-				enable_special_project = {
-					name = SCFE_SHADED_PROJECT_INIT
-					location = event_target:shaded_crashed_ship_location
-					owner = root
-				}
 			}
 		}
 	}

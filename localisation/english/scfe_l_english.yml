@@ -1,26 +1,6 @@
 ﻿l_english:
 
 # Scopes: Root = ship, From = planet
-# Start menu
- scfe_default: "§G(default)§!"
- scfe_menu.2.name: "Forgotten Empires Configuration"
- scfe_menu.2.desc: "Showing current event chains configuration."
- scfe_menu.2.a: "§BStrange Worlds§! $scfe_default$"
- scfe_menu.2.at: "§BStrange Worlds§! are set to spawn."
- scfe_menu.2.b: "No §BStrange Worlds§!"
- scfe_menu.2.c: "§BNyblax§! $scfe_default$"
- scfe_menu.2.ct: "§BNyblax§! worlds are set to spawn."
- scfe_menu.2.d: "No §BNyblax§!"
- scfe_menu.2.e: "Begin"
- scfe_menu.3.desc: "Showing current policy configuration."
- scfe_menu.3.a: "$scfe_precursor_policy_concurrent$ $scfe_default$"
- scfe_menu.3.at: "$scfe_precursor_policy_concurrent_desc$"
- scfe_menu.3.b: "$scfe_precursor_policy_consecutive$"
- scfe_menu.3.bt: "$scfe_precursor_policy_consecutive_desc$"
- scfe_menu.3.c: "$scfe_archaeology_cleanup_inactive$ $scfe_default$"
- scfe_menu.3.ct: "$scfe_archaeology_cleanup_inactive_desc$"
- scfe_menu.3.d: "$policy_scfe_archaeology_cleanup$"
- scfe_menu.3.dt: "$policy_scfe_archaeology_cleanup_desc$"
 
  mod_planet_farmers_minerals_upkeep_add: "£minerals£ $minerals$ Upkeep of £job_farmer£ [GetFarmerPlural]"
  mod_planet_pops_food_upkeep_mult: "£food£ $food$ £pop£ Pops Upkeep"

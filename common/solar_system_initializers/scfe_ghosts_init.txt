@@ -1,0 +1,153 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Ghosts
+scfe_ghost_system_01 = {
+    class = sc_g
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    flags = { unique_system scfe_ghost_system_01 precursor_system scfe_ai_avoid_system shroud_storm_changed }
+    name = scfe_ghost_izanami
+    init_effect = { save_global_event_target_as = scfe_ghost_system1 }
+
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 100
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_4
+        }
+    }
+    planet = {
+        orbit_distance = 40
+        count = 1
+        class = pc_barren
+        anomaly = none
+        flags = { scfe_ghost_planet_mining shroud_storm_changed }
+    }
+    planet = {
+        name = scfe_ghost_bchania
+        count = 1
+        orbit_distance = 30
+        class = "pc_relic"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+        flags = { scfe_ghost_planet forbid_guillis_planet_modifier shroud_storm_changed }
+        init_effect = { save_global_event_target_as = scfe_ghost_planet1 }
+    }
+    planet = {
+        count = 1
+        orbit_distance = 70
+        class = pc_gas_giant
+        has_ring = yes
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 20 max = 30 }
+        anomaly = none
+        init_effect = { add_deposit = d_exotic_gases_2 }
+    }
+}
+scfe_ghost_system_02 = {
+    class = sc_scfe_empty_space
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    flags = { unique_system scfe_ghost_system_02 precursor_system shroud_storm_changed }
+    init_effect = { save_global_event_target_as = scfe_ghost_system2 }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 20
+        anomaly = none
+        flags = { scfe_ghost_void shroud_storm_changed }
+        init_effect = { clear_deposits = yes }
+    }
+    planet = {
+        orbit_distance = 35
+        count = 1
+        class = pc_barren_cold
+        anomaly = none
+        init_effect = { add_deposit = d_rare_crystals_2 }
+    }
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = pc_barren_cold
+        anomaly = none
+    }
+    planet = {
+        name = scfe_ghost_dtarren
+        count = 1
+        orbit_distance = 40
+        class = "pc_frozen"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 16 max = 20 }
+        anomaly = none
+        flags = { scfe_ghost_planet2 forbid_guillis_planet_modifier shroud_storm_changed }
+        init_effect = { save_global_event_target_as = scfe_ghost_planet2 }
+    }
+}
+scfe_ghost_system_03 = {
+    class = sc_scfe_empty_space
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    flags = { unique_system scfe_ghost_system_03 precursor_system shroud_storm_changed }
+    init_effect = { save_global_event_target_as = scfe_ghost_system3 }
+
+    asteroid_belt = {
+        type = icy_asteroid_belt
+        radius = 120
+    }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 20
+        anomaly = none
+        flags = { scfe_ghost_void shroud_storm_changed }
+        init_effect = { clear_deposits = yes }
+    }
+    planet = {
+        count = 1
+        orbit_distance = 60
+        class = "pc_gas_giant"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = 30
+        anomaly = none
+        moon = {
+            name = scfe_ghost_kraatdaan
+            class = "pc_broken"
+            size = 10
+            orbit_distance = 10
+            orbit_angle = 300
+            has_ring = no
+            flags = { scfe_ghost_planet3 forbid_guillis_planet_modifier shroud_storm_changed }
+            init_effect = {
+                save_global_event_target_as = scfe_ghost_planet3
+                clear_deposits = yes
+                add_deposit = d_physics_10
+                add_deposit = d_physics_10
+            }
+        }
+    }
+}

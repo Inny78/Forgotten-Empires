@@ -203,7 +203,6 @@ country_event = {
                             NOT = { exists = archaeological_site }
                             is_surveyed = { status = no who = root }
                         }
-
                     }
                     random_system_planet = {
                         limit = {

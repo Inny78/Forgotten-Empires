@@ -1,4 +1,5 @@
 scfe_give_next_cloaking_tech = {
+    optimize_memory
     if = {
         limit = {
             NOT = { has_technology = tech_cloaking_1 }
@@ -21,420 +22,26 @@ scfe_give_next_cloaking_tech = {
         add_tech_progress = { tech = tech_cloaking_3 progress = 0.1 }
     }
 }
-SCFE_disable_PreSelect = { country_event = { id = scfe_game_start.2 } }
-
-# Precursor Story Pack
-# scfe_species_modify_clear_trait_pc_preference = {
-#     switch = {
-#         trigger = has_trait
-#         trait_pc_desert_preference = { modify_species = { remove_trait = trait_pc_desert_preference } }
-#         trait_pc_arid_preference = { modify_species = { remove_trait = trait_pc_arid_preference } }
-#         trait_pc_savannah_preference = { modify_species = { remove_trait = trait_pc_savannah_preference } }
-#         trait_pc_tropical_preference = { modify_species = { remove_trait = trait_pc_tropical_preference } }
-#         trait_pc_continental_preference = { modify_species = { remove_trait = trait_pc_continental_preference } }
-#         trait_pc_ocean_preference = { modify_species = { remove_trait = trait_pc_ocean_preference } }
-#         trait_pc_arctic_preference = { modify_species = { remove_trait = trait_pc_arctic_preference } }
-#         trait_pc_tundra_preference = { modify_species = { remove_trait = trait_pc_tundra_preference } }
-#         trait_pc_alpine_preference = { modify_species = { remove_trait = trait_pc_alpine_preference } }
-#     }
-# }
-# scfe_coprean_constitution_16_machine_effect = {
-#     every_owned_planet = {
-#         while = {
-#             limit = { has_district = district_city }
-#             remove_district = district_city
-#             add_district = district_nexus
-#         }
-#         while = {
-#             limit = { has_district = district_rw_city }
-#             remove_district = district_rw_city
-#             add_district = district_rw_nexus
-#         }
-#         if = {
-#             limit = { has_modifier = slave_colony }
-#             remove_modifier = slave_colony
-#         }
-#         if = {
-#             limit = { has_modifier = resort_colony }
-#             remove_modifier = resort_colony
-#         }
-#         if = {
-#             limit = { has_modifier = penal_colony }
-#             remove_modifier = penal_colony
-#         }
-#         if = {
-#             limit = { has_building = building_colony_shelter }
-#             remove_building = building_colony_shelter
-#             add_building = building_deployment_post
-#         }
-#         if = {
-#             limit = { has_building = building_capital }
-#             remove_building = building_capital
-#             add_building = building_machine_capital
-#         }
-#         if = {
-#             limit = { has_building = building_major_capital }
-#             remove_building = building_major_capital
-#             add_building = building_machine_major_capital
-#         }
-#         if = {
-#             limit = { has_building = building_system_capital }
-#             remove_building = building_system_capital
-#             add_building = building_machine_system_capital
-#         }
-#         if = {
-#             limit = { has_building = building_resort_capital }
-#             remove_building = building_resort_capital
-#             add_building = building_machine_capital
-#         }
-#         if = {
-#             limit = { has_building = building_resort_major_capital }
-#             remove_building = building_resort_major_capital
-#             add_building = building_machine_system_capital
-#         }
-#         if = {
-#             limit = { has_building = building_slave_capital }
-#             remove_building = building_slave_capital
-#             add_building = building_machine_capital
-#         }
-#         if = {
-#             limit = { has_building = building_slave_major_capital }
-#             remove_building = building_slave_major_capital
-#             add_building = building_machine_system_capital
-#         }
-#
-#         if = {
-#             limit = { has_building = building_robot_assembly_plant }
-#             remove_building = building_robot_assembly_plant
-#             add_building = building_machine_assembly_plant
-#         }
-#         if = {
-#             limit = { has_building = building_ministry_production }
-#             remove_building = building_ministry_production
-#             add_building = building_production_center
-#         }
-#         if = {
-#             limit = { has_building = building_institute }
-#             remove_building = building_institute
-#             add_building = building_supercomputer
-#         }
-#
-#         if = {
-#             limit = { has_building = building_psi_corps }
-#             remove_building = building_psi_corps
-#             add_building = building_sentinel_posts
-#         }
-#         while = {
-#             limit = { has_building = building_precinct_house }
-#             remove_building = building_precinct_house
-#             add_building = building_sentinel_posts
-#         }
-#         while = {
-#             limit = { has_building = building_hall_judgment }
-#             remove_building = building_hall_judgment
-#             add_building = building_sentinel_posts
-#         }
-#         while = {
-#             limit = { has_building = building_overseer_homes }
-#             remove_building = building_overseer_homes
-#             add_building = building_sentinel_posts
-#         }
-#
-#         while = {
-#             limit = { has_building = building_luxury_residence }
-#             remove_building = building_luxury_residence
-#             add_building = building_drone_storage
-#         }
-#         while = {
-#             limit = { has_building = building_paradise_dome }
-#             remove_building = building_paradise_dome
-#             add_building = building_drone_megastorage
-#         }
-#         while = {
-#             limit = { has_building = building_communal_housing }
-#             remove_building = building_communal_housing
-#             add_building = building_drone_storage
-#         }
-#         while = {
-#             limit = { has_building = building_communal_housing_large }
-#             remove_building = building_communal_housing_large
-#             add_building = building_drone_megastorage
-#         }
-#         if = {
-#             limit = { has_building = building_clone_vats }
-#             remove_building = building_clone_vats
-#         }
-#         while = {
-#             limit = { has_building = building_bureaucratic_1 }
-#             remove_building = building_bureaucratic_1
-#             add_building = building_uplink_node
-#         }
-#         while = {
-#             limit = { has_building = building_bureaucratic_2 }
-#             remove_building = building_bureaucratic_2
-#             add_building = building_network_junction
-#         }
-#         while = {
-#             limit = { has_building = building_bureaucratic_3 }
-#             remove_building = building_bureaucratic_3
-#             add_building = building_system_conflux
-#         }
-#         while = {
-#             limit = { has_building = building_autochthon_monument }
-#             remove_building = building_autochthon_monument
-#             add_building = building_simulation_1
-#         }
-#         while = {
-#             limit = { has_building = building_heritage_site }
-#             remove_building = building_heritage_site
-#             add_building = building_simulation_2
-#         }
-#         while = {
-#             limit = { has_building = building_hypercomms_forum }
-#             remove_building = building_hypercomms_forum
-#             add_building = building_simulation_3
-#         }
-#         if = {
-#             limit = { has_building = building_autocurating_vault }
-#             remove_building = building_autocurating_vault
-#             add_building = building_alpha_hub
-#         }
-#         while = {
-#             limit = { has_building = building_temple }
-#             remove_building = building_temple
-#             add_building = building_simulation_1
-#         }
-#         while = {
-#             limit = { has_building = building_holotemple }
-#             remove_building = building_holotemple
-#             add_building = building_simulation_2
-#         }
-#         while = {
-#             limit = { has_building = building_sacred_nexus }
-#             remove_building = building_sacred_nexus
-#             add_building = building_simulation_3
-#         }
-#         if = {
-#             limit = { has_building = building_citadel_of_faith }
-#             remove_building = building_citadel_of_faith
-#             add_building = building_alpha_hub
-#         }
-#         while = {
-#             limit = { has_building = building_corporate_monument }
-#             remove_building = building_corporate_monument
-#             add_building = building_simulation_1
-#         }
-#         while = {
-#             limit = { has_building = building_corporate_site }
-#             remove_building = building_corporate_site
-#             add_building = building_simulation_2
-#         }
-#         while = {
-#             limit = { has_building = building_corporate_forum }
-#             remove_building = building_corporate_forum
-#             add_building = building_simulation_3
-#         }
-#         if = {
-#             limit = { has_building = building_corporate_vault }
-#             remove_building = building_corporate_vault
-#             add_building = building_alpha_hub
-#         }
-#     }
-# }
-# scfe_coprean_constitution_16_hive_effect = {
-#     every_owned_planet = {
-#         while = {
-#             limit = { has_district = district_city }
-#             remove_district = district_city
-#             add_district = district_hive
-#         }
-#         while = {
-#             limit = { has_district = district_rw_city }
-#             remove_district = district_rw_city
-#             add_district = district_rw_hive
-#         }
-#         if = {
-#             limit = { has_modifier = slave_colony }
-#             remove_modifier = slave_colony
-#         }
-#         if = {
-#             limit = { has_modifier = resort_colony }
-#             remove_modifier = resort_colony
-#         }
-#         if = {
-#             limit = { has_modifier = penal_colony }
-#             remove_modifier = penal_colony
-#         }
-#         if = {
-#             limit = { has_building = building_colony_shelter }
-#             remove_building = building_colony_shelter
-#             add_building = building_hive_capital
-#         }
-#         if = {
-#             limit = { has_building = building_capital }
-#             remove_building = building_capital
-#             add_building = building_hive_capital
-#         }
-#         if = {
-#             limit = { has_building = building_major_capital }
-#             remove_building = building_major_capital
-#             add_building = building_hive_major_capital
-#         }
-#         if = {
-#             limit = { has_building = building_system_capital }
-#             remove_building = building_system_capital
-#             add_building = building_hive_major_capital
-#         }
-#
-#         if = {
-#             limit = { has_building = building_resort_capital }
-#             remove_building = building_resort_capital
-#             add_building = building_hive_capital
-#         }
-#         if = {
-#             limit = { has_building = building_resort_major_capital }
-#             remove_building = building_resort_major_capital
-#             add_building = building_hive_major_capital
-#         }
-#         if = {
-#             limit = { has_building = building_slave_capital }
-#             remove_building = building_slave_capital
-#             add_building = building_hive_capital
-#         }
-#         if = {
-#             limit = { has_building = building_slave_major_capital }
-#             remove_building = building_slave_major_capital
-#             add_building = building_hive_major_capital
-#         }
-#
-#         if = {
-#             limit = { has_building = building_ministry_production }
-#             remove_building = building_ministry_production
-#             add_building = building_production_center
-#         }
-#         if = {
-#             limit = { has_building = building_institute }
-#             remove_building = building_institute
-#             add_building = building_supercomputer
-#         }
-#
-#         if = {
-#             limit = { has_building = building_psi_corps }
-#             remove_building = building_psi_corps
-#             add_building = building_sentinel_posts
-#         }
-#         while = {
-#             limit = { has_building = building_precinct_house }
-#             remove_building = building_precinct_house
-#             add_building = building_sentinel_posts
-#         }
-#         while = {
-#             limit = { has_building = building_hall_judgment }
-#             remove_building = building_hall_judgment
-#             add_building = building_sentinel_posts
-#         }
-#         while = {
-#             limit = { has_building = building_overseer_homes }
-#             remove_building = building_overseer_homes
-#             add_building = building_sentinel_posts
-#         }
-#
-#         while = {
-#             limit = { has_building = building_luxury_residence }
-#             remove_building = building_luxury_residence
-#             add_building = building_hive_warren
-#         }
-#         while = {
-#             limit = { has_building = building_paradise_dome }
-#             remove_building = building_paradise_dome
-#             add_building = building_expanded_warren
-#         }
-#         while = {
-#             limit = { has_building = building_communal_housing }
-#             remove_building = building_communal_housing
-#             add_building = building_hive_warren
-#         }
-#         while = {
-#             limit = { has_building = building_communal_housing_large }
-#             remove_building = building_communal_housing_large
-#             add_building = building_expanded_warren
-#         }
-#         while = {
-#             limit = { has_building = building_bureaucratic_1 }
-#             remove_building = building_bureaucratic_1
-#             add_building = building_hive_node
-#         }
-#         while = {
-#             limit = { has_building = building_bureaucratic_2 }
-#             remove_building = building_bureaucratic_2
-#             add_building = building_hive_cluster
-#         }
-#         while = {
-#             limit = { has_building = building_bureaucratic_3 }
-#             remove_building = building_bureaucratic_3
-#             add_building = building_hive_confluence
-#         }
-#         while = {
-#             limit = { has_building = building_autochthon_monument }
-#             remove_building = building_autochthon_monument
-#             add_building = building_hive_node
-#         }
-#         while = {
-#             limit = { has_building = building_heritage_site }
-#             remove_building = building_heritage_site
-#             add_building = building_hive_cluster
-#         }
-#         while = {
-#             limit = { has_building = building_hypercomms_forum }
-#             remove_building = building_hypercomms_forum
-#             add_building = building_hive_confluence
-#         }
-#         while = {
-#             limit = { has_building = building_temple }
-#             remove_building = building_temple
-#             add_building = building_hive_node
-#         }
-#         while = {
-#             limit = { has_building = building_holotemple }
-#             remove_building = building_holotemple
-#             add_building = building_hive_cluster
-#         }
-#         while = {
-#             limit = { has_building = building_sacred_nexus }
-#             remove_building = building_sacred_nexus
-#             add_building = building_hive_confluence
-#         }
-#         while = {
-#             limit = { has_building = building_corporate_monument }
-#             remove_building = building_corporate_monument
-#             add_building = building_hive_node
-#         }
-#         while = {
-#             limit = { has_building = building_corporate_site }
-#             remove_building = building_corporate_site
-#             add_building = building_hive_cluster
-#         }
-#         while = {
-#             limit = { has_building = building_corporate_forum }
-#             remove_building = building_corporate_forum
-#             add_building = building_hive_confluence
-#         }
-#     }
-# }
+SCFE_disable_PreSelect = {
+    optimize_memory
+    country_event = { id = scfe_game_start.2 }
+}
 
 site_scfe_ziaskehorn_random_events = {
+    optimize_memory
     random_list = {
         25 = { fleet_event = { id = ancrel.8055 } }
         25 = { fleet_event = { id = ancrel.8070 } }
         25 = { fleet_event = { id = ancrel.8080 } }
         50 = { fleet_event = { id = scfe_ziaskehorn.21 } }
-        5000 = { fleet_event = { id = scfe_ziaskehorn.22 } }
-        1000 = { fleet_event = { id = scfe_ziaskehorn.23 } }
-        50 = { fleet_event = { id = scfe_ziaskehorn.24 } }
+        500 = { fleet_event = { id = scfe_ziaskehorn.22 } }
+        100 = { fleet_event = { id = scfe_ziaskehorn.23 } }
+        500 = { fleet_event = { id = scfe_ziaskehorn.24 } }
     }
 }
 
 site_scfe_shaded_random_events = {
+    optimize_memory
     random_list = {
         25 = { fleet_event = { id = ancrel.8055 } }
         25 = { fleet_event = { id = ancrel.8070 } }
@@ -445,6 +52,7 @@ site_scfe_shaded_random_events = {
     }
 }
 scfe_detection_level_add = {
+    optimize_memory
     if = {
         limit = {
             event_target:scfe_shaded_owner = { NOT = { has_country_flag = scfe_shaded_ignore_fe } }
@@ -459,6 +67,7 @@ scfe_detection_level_add = {
     }
 }
 scfe_select_shaded_angry_fe = {
+    optimize_memory
     if = {
         limit = { NOT = { exists = event_target:scfe_shaded_fe } }
         if = {
@@ -480,6 +89,7 @@ scfe_select_shaded_angry_fe = {
 }
 
 scfe_roots_cleanup = {
+    optimize_memory
     remove_modifier = scfe_rooted_nature
     remove_modifier = scfe_rooted_nature_maintenance
     remove_modifier = scfe_rooted_crime
@@ -487,6 +97,7 @@ scfe_roots_cleanup = {
 }
 
 site_scfe_ghosts_random_events = {
+    optimize_memory
     random_list = {
         33 = { fleet_event = { id = scfe_ghosts_site_fail.1 } }
         33 = { fleet_event = { id = scfe_ghosts_site_fail.2 } }
@@ -495,6 +106,7 @@ site_scfe_ghosts_random_events = {
 }
 
 scfe_nyblax_runes_redistribute = {
+    optimize_memory
     if = {
         limit = { has_relic = r_scfe_arcane_rune }
         remove_relic = r_scfe_arcane_rune
@@ -565,6 +177,73 @@ scfe_nyblax_runes_redistribute = {
                 NOT = { is_same_empire = root }
             }
             country_event = { id = scfe_nyblax_country.21 days = 10 random = 60 }
+        }
+    }
+}
+
+scfe_shambler_site1 = {
+    optimize_memory
+    if = {
+        limit = { has_global_flag = scfe_shamblers_precursor_started }
+        save_global_event_target_as = scfe_shamblers_colony2
+        create_point_of_interest = { id = scfe_shamblers_colony2 name = scfe_shamblers_colony2 event_chain = scfe_shamblers_chain location = this }
+        enable_special_project = {
+            name = SCFE_SHAMBLERS_PROJECT_1
+            location = this
+            owner = event_target:scfe_shamblers_owner
+        }
+    }
+    else = {
+        save_global_event_target_as = scfe_scrambler_colony2
+        create_point_of_interest = { id = scfe_scrambler_colony2 name = scfe_shamblers_colony2 event_chain = scfe_scrambler_chain location = this }
+        enable_special_project = {
+            name = SCFE_SCRAMBLER_PROJECT_1
+            location = this
+            owner = event_target:scfe_scrambler_owner
+        }
+    }
+}
+scfe_shambler_site2 = {
+    optimize_memory
+    if = {
+        limit = { has_global_flag = scfe_shamblers_precursor_started }
+        save_global_event_target_as = scfe_shamblers_colony3
+        create_point_of_interest = { id = scfe_shamblers_colony3 name = scfe_shamblers_colony3 event_chain = scfe_shamblers_chain location = this }
+        enable_special_project = {
+            name = SCFE_SHAMBLERS_PROJECT_2
+            location = this
+            owner = event_target:scfe_shamblers_owner
+        }
+    }
+    else = {
+        save_global_event_target_as = scfe_scrambler_colony3
+        create_point_of_interest = { id = scfe_scrambler_colony3 name = scfe_shamblers_colony3 event_chain = scfe_scrambler_chain location = this }
+        enable_special_project = {
+            name = SCFE_SCRAMBLER_PROJECT_2
+            location = this
+            owner = event_target:scfe_scrambler_owner
+        }
+    }
+}
+scfe_shambler_site3 = {
+    optimize_memory
+    if = {
+        limit = { has_global_flag = scfe_shamblers_precursor_started }
+        save_global_event_target_as = scfe_shamblers_colony4
+        create_point_of_interest = { id = scfe_shamblers_colony4 name = scfe_shamblers_colony4 event_chain = scfe_shamblers_chain location = this }
+        enable_special_project = {
+            name = SCFE_SHAMBLERS_PROJECT_3
+            location = this
+            owner = event_target:scfe_shamblers_owner
+        }
+    }
+    else = {
+        save_global_event_target_as = scfe_scrambler_colony4
+        create_point_of_interest = { id = scfe_scrambler_colony4 name = scfe_shamblers_colony4 event_chain = scfe_scrambler_chain location = this }
+        enable_special_project = {
+            name = SCFE_SCRAMBLER_PROJECT_3
+            location = this
+            owner = event_target:scfe_scrambler_owner
         }
     }
 }

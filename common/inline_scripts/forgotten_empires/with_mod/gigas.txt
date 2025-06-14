@@ -1,6 +1,0 @@
-inline_script = {
-    script = forgotten_empires/toggled_code
-    code = "$code$"
-
-    toggle = @has_gigastructures
-}

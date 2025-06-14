@@ -15,9 +15,9 @@ country_event = {
 		set_global_flag = scfe_host_set
 		set_global_flag = scfe_markys_enabled
 		set_global_flag = scfe_nyblax_enabled
+		set_global_flag = scfe_precursors_enabled
 		country_event = { id = scfe_menu.2 }
 	}
-
 }
 country_event = {
 	id = scfe_menu.2
@@ -55,9 +55,28 @@ country_event = {
 		set_global_flag = scfe_nyblax_enabled
 		country_event = { id = scfe_menu.2 }
 	}
-	# Start
+	# Precursors
 	option = {
 		name = scfe_menu.2.e
+		trigger = {
+			has_global_flag = scfe_precursors_enabled
+			has_PreSelect_active = no
+		}
+		remove_global_flag = scfe_precursors_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+	option = {
+		name = scfe_menu.2.f
+		trigger = {
+			NOT = { has_global_flag = scfe_precursors_enabled }
+			has_PreSelect_active = no
+		}
+		set_global_flag = scfe_precursors_enabled
+		country_event = { id = scfe_menu.2 }
+	}
+	# Start
+	option = {
+		name = scfe_menu.2.z
 		hidden_effect = {
 			country_event = { id = scfe_menu.3 }
 		}
@@ -133,6 +152,17 @@ country_event = {
 				}
 			}
 			country_event = { id = scfe_game_start.4 }
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				has_PreSelect_active = no
+				has_global_flag = scfe_precursors_enabled
+			}
+			event_target:global_event_country = {
+				country_event = { id = scfe_game_start.2 days = 10 }
+			}
 		}
 	}
 }

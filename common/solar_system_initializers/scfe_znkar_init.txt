@@ -1,0 +1,169 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Znkar
+scfe_znkar_init_01 = {
+    class = "rl_standard_stars"
+    name = scfe_znkar_kamva
+    flags = { unique_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        name = scfe_znkar_kamva
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+    }
+    planet = {
+        orbit_distance = 45
+        count = { min = 1 max = 2 }
+        class = rl_unhabitable_planets
+        init_effect = {
+            clear_deposits = yes
+            add_deposit = d_engineering_10
+            add_deposit = d_engineering_10
+        }
+    }
+    planet = {
+        name = scfe_znkar_pakrta
+        count = 1
+        orbit_distance = 20
+        class = "pc_nuked"
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 12 max = 20 }
+        anomaly = none
+        flags = { wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers scfe_znkar_nuked shroud_storm_changed }
+
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_znkar_chain id = scfe_znkar_nuked name = scfe_znkar_pakrta location = this }
+            save_global_event_target_as = scfe_znkar_nuked
+            enable_special_project = {
+                name = SCFE_ZNKAR_NUKED_PROJECT
+                location = this
+                owner = event_target:znkar_start_country
+            }
+            clear_planet_modifiers = yes
+            clear_deposits = yes
+        }
+
+        moon = {
+            name = scfe_znkar_dantiy
+            count = 1
+            class = "pc_barren"
+            orbit_distance = 12
+            size = { min = 6 max = 8 }
+            has_ring = no
+            orbit_angle = { min = 90 max = 270 }
+            anomaly = none
+            flags = { wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers scfe_znkar_nuked_moon shroud_storm_changed }
+
+            init_effect = {
+                save_global_event_target_as = scfe_znkar_nuked_moon
+                clear_deposits = yes
+                clear_planet_modifiers = yes
+            }
+        }
+    }
+}
+scfe_znkar_init_02 = {
+    class = "rl_standard_stars"
+    name = scfe_znkar_wur_den_kaar
+    flags = { unique_system precursor_system shroud_storm_changed scfe_wur_den_kaar scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+
+    planet = {
+        name = scfe_znkar_wur_den_kaar
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+    }
+    planet = {
+        class = rl_unhabitable_planets
+        count = 1
+        orbit_distance = 25
+        orbit_angle = { min = 90 max = 270 }
+        has_ring = no
+        init_effect = { add_deposit = d_engineering_3 }
+    }
+    planet = {
+        name = scfe_znkar_kaar_da_kruun
+        class = pc_broken
+        orbit_distance = 40
+        count = 1
+        size = 20
+        orbit_angle = { min = 90 max = 270 }
+        has_ring = no
+        flags = { shroud_storm_changed precursor_world }
+        init_effect = {
+            create_point_of_interest = { event_chain = scfe_znkar_chain id = scfe_znkar_broken name = scfe_znkar_kaar_da_kruun location = this }
+            save_global_event_target_as = scfe_znkar_broken
+            create_ambient_object = {
+                type = "large_debris_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+            create_ambient_object = {
+                type = "medium_debris_01_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+            create_ambient_object = {
+                type = "medium_debris_02_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+            create_ambient_object = {
+                type = "small_debris_object"
+                entity_offset_height = { min = -0 max = -25 }
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 15
+                    angle = random
+                }
+            }
+        }
+    }
+    planet = {
+        class = rl_unhabitable_planets
+        orbit_distance = 25
+        count = { min = 1 max = 2 }
+        size = { min = 8 max = 14 }
+        orbit_angle = { min = 90 max = 270 }
+        has_ring = no
+    }
+}

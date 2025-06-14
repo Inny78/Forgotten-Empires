@@ -1,0 +1,200 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Strange Worlds
+strange_init_01 = {
+    class = "rl_standard_stars"
+    flags = { unique_system strange_world_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    change_orbit = 20
+
+    planet = {
+        orbit_distance = 20
+        count = { min = 0 max = 3 }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        count = 1
+        orbit_distance = 0
+        class = "pc_ocean"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 22 max = 22 }
+        flags = { cant_terraform_planet pf_koeleothan_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
+
+        anomaly = "scfe_koeleothan_world_category"
+
+        init_effect = {
+            add_deposit = d_koeleothan
+        }
+    }
+}
+strange_init_02 = {
+    class = "rl_standard_stars"
+    flags = { unique_system strange_world_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    change_orbit = 20
+
+    planet = {
+        orbit_distance = 20
+        count = { min = 0 max = 3 }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        count = 1
+        orbit_distance = 0
+        class = "pc_desert"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 18 max = 18 }
+        flags = { cant_terraform_planet pf_quantumpearl_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
+
+        anomaly = "scfe_quantumpearl_world_category"
+
+        init_effect = {
+            add_deposit = d_quantumpearl
+        }
+    }
+}
+strange_init_03 = {
+    class = "rl_standard_stars"
+    flags = { unique_system strange_world_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    change_orbit = 20
+
+    planet = {
+        orbit_distance = 20
+        count = { min = 0 max = 3 }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        count = 1
+        orbit_distance = 0
+        class = "pc_gaia"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 14 max = 20 }
+        flags = { cant_terraform_planet pf_woorskyr_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
+        anomaly = "scfe_woorskyr_world_category"
+
+        init_effect = {
+            add_modifier = {
+                modifier = "scfe_woorskyr_tree_network"
+                days = -1
+            }
+            add_deposit = d_woorskyr_hub
+        }
+    }
+}
+strange_init_04 = {
+    class = "rl_standard_stars"
+    flags = { unique_system strange_world_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    change_orbit = 20
+
+    planet = {
+        orbit_distance = 20
+        count = { min = 0 max = 3 }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        count = 1
+        orbit_distance = 0
+        class = "pc_tundra"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 14 max = 20 }
+        flags = { cant_terraform_planet pf_xenograss_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
+        anomaly = "scfe_xenograss_world_category"
+
+        init_effect = {
+            add_deposit = d_xenograss
+        }
+    }
+}
+strange_init_05 = {
+    class = "rl_standard_stars"
+    flags = { unique_system strange_world_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    change_orbit = 20
+
+    planet = {
+        orbit_distance = 20
+        count = { min = 0 max = 3 }
+    }
+
+    change_orbit = 20
+
+    planet = {
+        count = 1
+        orbit_distance = 0
+        class = "pc_tropical"
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 16 max = 22 }
+        flags = { cant_terraform_planet pf_beetle_world wp_pfe_ignore_planet_flag forbid_guillis_planet_modifiers suppress_archaeological_sites shroud_storm_changed }
+        anomaly = "scfe_beetle_world_category"
+
+        init_effect = {
+            add_deposit = d_beetle_swarm
+        }
+    }
+}
