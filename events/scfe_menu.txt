@@ -127,7 +127,7 @@ country_event = {
 	}
 	# Start
 	option = {
-		name = scfe_menu.2.e
+		name = scfe_menu.2.z
 		hidden_effect = {
 			if = {
 				limit = { has_global_flag = scfe_precursor_policy_concurrent }
