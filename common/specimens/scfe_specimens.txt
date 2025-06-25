@@ -59,7 +59,7 @@ scfe_astanine_projector_lens = {
 
     triggered_country_modifier = {
         mult = value:aesthetic_wonder_specimens_modifiers_mult
-        planet_amenities_add = 5
+        planet_amenities_add = 500
     }
 }
 scfe_astanine_holosphere = {
@@ -340,7 +340,7 @@ scfe_znkar_lamp = {
 
     triggered_country_modifier = {
         mult = value:aesthetic_wonder_specimens_modifiers_mult
-        planet_amenities_add = 5
+        planet_amenities_add = 500
     }
 }
 # Misc
