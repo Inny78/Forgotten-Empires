@@ -21,7 +21,7 @@ scfe_savannah_ruins = {
 }
 scfe_alpine_ruins = {
 	planet_max_districts_add = 2
-	planet_max_buildings_add = 1
+	planet_buildings_minerals_produces_mult = 0.10
 	icon = "gfx/interface/icons/planet_modifiers/scfe_alpine_ruins.dds"
 	icon_frame = 1
 }
@@ -215,8 +215,7 @@ scfe_embers_of_ziaskehorn = {
 }
 scfe_infrastructure = {
 	planet_districts_cost_mult = -0.20
-	planet_max_buildings_add = 1
-	planet_building_build_speed_mult = 0.1
+	planet_building_build_speed_mult = 0.15
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	icon_frame = 1
 }
