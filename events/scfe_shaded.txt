@@ -974,14 +974,13 @@ fleet_event = {
     hide_window = yes
     is_triggered_only = yes
 
+    trigger = {
+        owner = { has_event_chain = scfe_shaded_chain }
+        from = { is_scope_type = planet has_planet_flag = scfe_shaded_colony }
+    }
+    
     immediate = {
-        if = {
-            limit = {
-                from = { is_scope_type = planet has_planet_flag = scfe_shaded_colony }
-                owner = { has_event_chain = scfe_shaded_chain }
-            }
-            owner = { country_event = { id = scfe_shaded.26 } }
-        }
+        owner = { country_event = { id = scfe_shaded.26 } }
     }
 }
 country_event = {
