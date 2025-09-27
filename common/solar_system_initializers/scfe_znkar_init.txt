@@ -5,11 +5,12 @@
 scfe_znkar_init_01 = {
     class = "rl_standard_stars"
     name = scfe_znkar_kamva
-    flags = { unique_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    flags = { unique_system precursor_system shroud_storm_changed }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
 
     planet = {
         name = scfe_znkar_kamva
@@ -74,11 +75,12 @@ scfe_znkar_init_01 = {
 scfe_znkar_init_02 = {
     class = "rl_standard_stars"
     name = scfe_znkar_wur_den_kaar
-    flags = { unique_system precursor_system shroud_storm_changed scfe_wur_den_kaar scfe_ai_avoid_system }
+    flags = { unique_system precursor_system shroud_storm_changed scfe_wur_den_kaar }
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
 
     planet = {
         name = scfe_znkar_wur_den_kaar

@@ -1,0 +1,145 @@
+scfe_scrambler_colony1_dig = {
+    desc = "scfe_shamblers_colony1_dig_desc"
+    picture = GFX_evt_archaeological_dig
+    max_instances = 1
+    stages = 4
+    weight = {
+        base = 0
+    }
+
+    potential = {
+        owner = { has_event_chain = scfe_scrambler_chain }
+    }
+
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+
+    visible = {
+        scfe_dig_site_visible_trigger_scrambler = yes
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_C1
+        event = scfe_scrambler_colony1_dig.1
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_C2
+        event = scfe_scrambler_colony1_dig.2
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_C3
+        event = scfe_scrambler_colony1_dig.3
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_C4
+        event = scfe_scrambler_colony1_dig.4
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+scfe_scrambler_colony2_dig = {
+    desc = "scfe_shamblers_colony2_dig_desc"
+    picture = GFX_evt_archaeological_dig
+    max_instances = 1
+    stages = 4
+    weight = {
+        base = 0
+    }
+
+    potential = {
+        owner = { has_event_chain = scfe_scrambler_chain }
+    }
+
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+
+    visible = {
+        scfe_dig_site_visible_trigger_scrambler = yes
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_D1
+        event = scfe_scrambler_colony2_dig.1
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_D2
+        event = scfe_scrambler_colony2_dig.2
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_D3
+        event = scfe_scrambler_colony2_dig.3
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_D4
+        event = scfe_scrambler_colony2_dig.4
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+scfe_scrambler_colony3_dig = {
+    desc = "scfe_shamblers_colony3_dig_desc"
+    picture = GFX_evt_archaeological_dig
+    max_instances = 1
+    stages = 4
+    weight = {
+        base = 0
+    }
+
+    potential = {
+        owner = { has_event_chain = scfe_scrambler_chain }
+    }
+
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+
+    visible = {
+        scfe_dig_site_visible_trigger_scrambler = yes
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E1
+        event = scfe_scrambler_colony3_dig.1
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E2
+        event = scfe_scrambler_colony3_dig.2
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E3
+        event = scfe_scrambler_colony3_dig.3
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E4
+        event = scfe_scrambler_colony3_dig.4
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}

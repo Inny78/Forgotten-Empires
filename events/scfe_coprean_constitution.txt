@@ -114,8 +114,8 @@ fleet_event = {
         set_spawn_system_batch = begin
         event_target:scfe_coprean_spawn_system = {
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 max_jumps = 5
                 initializer = "scfe_coprean_init_01"
             }
@@ -276,8 +276,8 @@ fleet_event = {
         set_spawn_system_batch = begin
         event_target:scfe_coprean_spawn_system = {
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 max_jumps = 5
                 initializer = "scfe_coprean_init_02"
             }

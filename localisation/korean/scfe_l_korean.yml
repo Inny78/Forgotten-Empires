@@ -4,6 +4,7 @@
 
  mod_planet_farmers_minerals_upkeep_add: "£minerals£ $minerals$ Upkeep of £job_farmer£ [GetFarmerPlural]"
  mod_planet_pops_food_upkeep_mult: "£food£ $food$ £pop£ Pops Upkeep"
+ mod_planet_buildings_minerals_produces_mult: "£minerals£ 광물 생산 (건물)"
 
  policy_scfe_archaeology_cleanup: "자동 고고학 정리"
  policy_scfe_archaeology_cleanup_desc: "완료된 발굴지를 자동으로 제거할 수 있습니다."

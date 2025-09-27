@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+
+ # addition to scfe_l_simp_chinese:.yml
+ mod_planet_buildings_minerals_produces_mult: "£minerals£ 矿物生产 (建筑)"

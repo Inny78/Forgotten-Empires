@@ -9,6 +9,7 @@ scfe_alshigans_init_01 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
 
     planet = {
         count = 1
@@ -91,6 +92,7 @@ scfe_alshigans_init_02 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
 
     planet = {
         count = 1
@@ -185,6 +187,7 @@ scfe_alshigans_init_03 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
 
     planet = {
         count = 1

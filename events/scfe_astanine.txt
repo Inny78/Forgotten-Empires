@@ -512,8 +512,8 @@ fleet_event = {
                     set_spawn_system_batch = begin
                     spawn_system = {
                         max_jumps = 5
-                        min_distance = 5
-                        max_distance = 60
+                        min_distance >= 40
+                        max_distance <= 60
                         initializer = "scfe_astanine_home_system"
                     }
                     set_spawn_system_batch = end

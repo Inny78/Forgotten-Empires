@@ -1,31 +1,27 @@
 # Irony this is a placeholder file please ignore it
-annihilator_system = { always = no }
-has_ariphaos_assorted_precursors = { always = no }
-atw_is_alpine = { always = no }
-atw_is_arctic = { always = no }
-atw_is_barren = { always = no }
-atw_is_barren_cold = { always = no }
-atw_is_continental = { always = no }
-atw_is_desert = { always = no }
-atw_is_frozen = { always = no }
-atw_is_gaia = { always = no }
-atw_is_gas_giant = { always = no }
-atw_is_molten = { always = no }
-atw_is_nuked = { always = no }
-atw_is_ocean_basic = { always = no }
-atw_is_savannah = { always = no }
-atw_is_toxic = { always = no }
-atw_is_tropical = { always = no }
-atw_is_tundra = { always = no }
-eev_mod_active = { always = no }
-is_ds_skycatcher = { always = no }
-is_multihive_drone = { always = no }
-is_td_multi_hiveminded = { always = no }
-has_PreSelect_active = { always = no }
-scfe_has_volgan_chain = { always = no }
-scfe_has_ixardian_chain = { always = no }
-scfe_has_werediran_chain = { always = no }
-scfe_has_ezentian_chain = { always = no }
-scfe_has_plexi_chain = { always = no }
-scfe_has_lartia_chain = { always = no }
-ag_is_black_hole_class = { is_star_class = sc_black_hole }
+annihilator_system = { optimize_memory always = no }
+has_ariphaos_assorted_precursors = { optimize_memory always = no }
+atw_is_alpine = { optimize_memory always = no }
+atw_is_arctic = { optimize_memory always = no }
+atw_is_barren = { optimize_memory always = no }
+atw_is_barren_cold = { optimize_memory always = no }
+atw_is_continental = { optimize_memory always = no }
+atw_is_desert = { optimize_memory always = no }
+atw_is_frozen = { optimize_memory always = no }
+atw_is_gaia = { optimize_memory always = no }
+atw_is_gas_giant = { optimize_memory always = no }
+atw_is_molten = { optimize_memory always = no }
+atw_is_nuked = { optimize_memory always = no }
+atw_is_ocean_basic = { optimize_memory always = no }
+atw_is_savannah = { optimize_memory always = no }
+atw_is_toxic = { optimize_memory always = no }
+atw_is_tropical = { optimize_memory always = no }
+atw_is_tundra = { optimize_memory always = no }
+eev_mod_active = { optimize_memory always = no }
+is_ds_skycatcher = { optimize_memory always = no }
+is_multihive_drone = { optimize_memory always = no }
+is_td_multi_hiveminded = { optimize_memory always = no }
+has_PreSelect_active = { optimize_memory always = no }
+scfe_has_volgan_chain = { optimize_memory always = no }
+ag_is_black_hole_class = { optimize_memory is_star_class = sc_black_hole }
+has_MAP_active = { optimize_memory always = no }

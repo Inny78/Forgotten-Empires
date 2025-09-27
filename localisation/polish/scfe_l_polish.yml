@@ -4,6 +4,7 @@
 
  mod_planet_farmers_minerals_upkeep_add: "£minerals£ $minerals$ Upkeep of £job_farmer£ [GetFarmerPlural]"
  mod_planet_pops_food_upkeep_mult: "£food£ $food$ £pop£ Pops Upkeep"
+ mod_planet_buildings_minerals_produces_mult: "£minerals£ Produkcja minerałów (Budynki)"
 
  policy_scfe_archaeology_cleanup: "Automatyczne czyszczenie archeologiczne"
  policy_scfe_archaeology_cleanup_desc: "Pozwala na automatyczne usuwanie ukończonych stanowisk archeologicznych."

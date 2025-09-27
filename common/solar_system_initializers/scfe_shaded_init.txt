@@ -4,20 +4,19 @@
 # Shaded Empire
 shaded_lead1_system = {
     name = scfe_shaded_clue1_system_name
-    flags = { unique_system scfe_shaded_lead1 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    flags = { unique_system scfe_shaded_lead1 precursor_system shroud_storm_changed }
     class = "sc_m_giant"
     asteroid_belt = {
         type = rocky_asteroid_belt
         radius = 90
     }
-
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
-
     init_effect = {
         save_global_event_target_as = scfe_shaded_lead1
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
     }
 
     planet = {
@@ -61,15 +60,14 @@ shaded_lead1_system = {
 }
 shaded_lead2_system = {
     name = scfe_shaded_clue2_system_name
-    flags = { unique_system scfe_shaded_lead2 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    flags = { unique_system scfe_shaded_lead2 precursor_system shroud_storm_changed }
     class = "sc_m"
-
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
-
     init_effect = {
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
         save_global_event_target_as = scfe_shaded_lead2
         spawn_megastructure = {
             type = "habitat_central_complex_ruined"
@@ -159,7 +157,7 @@ shaded_lead2_system = {
 }
 shaded_lead3_system = {
     name = scfe_shaded_clue3_system_name
-    flags = { unique_system scfe_shaded_lead3 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    flags = { unique_system scfe_shaded_lead3 precursor_system shroud_storm_changed }
     class = "sc_g"
 
     usage = misc_system_init
@@ -169,6 +167,7 @@ shaded_lead3_system = {
 
     init_effect = {
         save_global_event_target_as = scfe_shaded_lead3
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
     }
 
     planet = {
@@ -204,15 +203,15 @@ shaded_lead3_system = {
 }
 shaded_lead4_system = {
     name = scfe_shaded_clue4_system_name
-    flags = { unique_system scfe_shaded_lead4 precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    flags = { unique_system scfe_shaded_lead4 precursor_system shroud_storm_changed }
     class = "sc_a"
-
     usage = misc_system_init
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
 
     init_effect = {
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
         save_global_event_target_as = scfe_shaded_lead4
         create_turbulent_nebula_1 = yes
     }

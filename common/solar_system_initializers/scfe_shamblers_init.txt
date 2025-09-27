@@ -1,0 +1,199 @@
+@base_moon_distance = 10
+@distance = 50
+
+# Shamblers
+scfe_hotumai = {
+    name = scfe_hotumai
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed scfe_ai_avoid_system }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
+
+    planet = {
+        name = scfe_hotumai
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_4
+        }
+    }
+
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = pc_barren
+        anomaly = none
+        init_effect = { add_deposit = d_minerals_3 }
+    }
+
+    planet = {
+        orbit_distance = 40
+        count = 1
+        class = rl_unhabitable_planets
+    }
+
+    planet = {
+        name = scfe_hotuma_kuran
+        orbit_distance = 30
+        count = 1
+        class = rl_habitable_normal
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
+        init_effect = {
+            scfe_shambler_site1 = yes
+        }
+    }
+
+    planet = {
+        orbit_distance = 60
+        count = 1
+        class = pc_gas_giant
+        init_effect = { add_deposit = d_exotic_gases_2 }
+        has_ring = yes
+    }
+}
+scfe_kraat = {
+    name = scfe_kraat_zetar
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
+
+    planet = {
+        name = scfe_kraat_zetar
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_3
+        }
+    }
+
+    planet = {
+        orbit_distance = 20
+        count = 1
+        class = pc_barren
+        init_effect = { add_deposit = d_rare_crystals_2 }
+    }
+
+    planet = {
+        name = scfe_kraan_dehedir
+        orbit_distance = 50
+        count = 1
+        class = rl_habitable_normal
+        has_ring = no
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
+        init_effect = {
+            scfe_shambler_site2 = yes
+        }
+        moon = {
+            class = "pc_barren"
+            size = 8
+            orbit_distance = @base_moon_distance
+            orbit_angle = 320
+            has_ring = no
+        }
+    }
+
+    planet = {
+        orbit_distance = 60
+        count = 1
+        class = pc_barren_cold
+        has_ring = no
+        moon = {
+            class = "pc_frozen"
+            size = 6
+            orbit_distance = @base_moon_distance
+            orbit_angle = 320
+            has_ring = no
+        }
+    }
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = pc_barren_cold
+        has_ring = no
+    }
+}
+scfe_sudunstera = {
+    name = scfe_sudunstera
+    class = "sc_m"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
+
+    planet = {
+        name = scfe_sudunstera
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 15 max = 18 }
+        init_effect = {
+            add_deposit = d_energy_2
+        }
+    }
+
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = pc_barren
+        init_effect = { add_deposit = d_minerals_2 }
+    }
+    planet = {
+        orbit_distance = 40
+        count = 1
+        class = pc_gas_giant
+    }
+
+    planet = {
+        name = scfe_vamaleen
+        orbit_distance = 40
+        count = 1
+        class = pc_frozen
+        has_ring = yes
+        flags = { precursor_world forbid_guillis_planet_modifier shroud_storm_changed }
+        init_effect = {
+            scfe_shambler_site3 = yes
+        }
+    }
+
+    planet = {
+        orbit_distance = 50
+        count = 1
+        class = pc_gas_giant
+        has_ring = no
+    }
+    planet = {
+        orbit_distance = 40
+        count = 1
+        class = pc_gas_giant
+        has_ring = yes
+        moon = {
+            class = "pc_frozen"
+            size = 6
+            orbit_distance = @base_moon_distance
+            orbit_angle = 320
+            has_ring = no
+        }
+    }
+    planet = {
+        orbit_distance = 30
+        count = 1
+        class = pc_barren_cold
+        has_ring = no
+    }
+}

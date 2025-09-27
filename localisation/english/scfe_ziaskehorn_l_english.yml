@@ -9,7 +9,7 @@
  ziaskehorn.01.desc: "As the Flame clung to its newly found kindling, it quickly spread into the Fires of Ziaskehorn. Almost immediately, our generals felt the heat of the newly living fires spreading through their bodies. The aftermath is an array of unimaginably powerful armies, enhanced by the Fires of Ziaskehorn, able to use its power in their combats."
  ziaskehorn.02.name: "Too Much To Handle"
  ziaskehorn.02.desc: "As the Ziaskehorn Flame's power waned from our armies, it departed having taken more than it bestowed. An unquenchable fire now rages in our commanders' hearts, their minds engulfed by the Ziaskehorn Fires. All notions of restraint have been incinerated, scattered to the winds by the fervor of the once wielded power."
- ziaskehorn.02.tooltip: "All of our commanders gain the traits ['trait:leader_trait_victory_or_death'] and ['trait:leader_trait_reckless'] and lose all restraint."
+ ziaskehorn.02.tooltip: "All of our commanders gain the traits ['leader_trait:leader_trait_victory_or_death'] and ['leader_trait:leader_trait_reckless'] and lose all restraint."
  ziaskehorn_digsite: "The Fires of Ziaskehorn"
  ziaskehorn_digsite_desc: "The surface of §Y[From.Planet.GetName]§! was once inhabited, but today it is nothing more than an inhospitable, volcanic rock. The pre-FTL civilization that once lived on the planet was advanced enough to create and send a few satellites around their home.\n\nThere is, however, no sign of them. All that remains are large cities slowly melting away. Perhaps there is something to be learned from these past occupants?"
  ziaskehorn.99.name: "Life Under Lava"

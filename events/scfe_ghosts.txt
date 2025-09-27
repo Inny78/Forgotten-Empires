@@ -109,8 +109,8 @@ country_event = {
             limit = { scfe_is_valid_star_system = yes }
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 initializer = scfe_ghost_system_02
             }
             add_extra_hyperlane_to_spawned_system_effect = yes
@@ -244,8 +244,8 @@ country_event = {
             limit = { scfe_is_valid_star_system = yes }
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 initializer = scfe_ghost_system_03
             }
             add_extra_hyperlane_to_spawned_system_effect = yes

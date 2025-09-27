@@ -74,6 +74,24 @@ country_event = {
 		set_global_flag = scfe_precursors_enabled
 		country_event = { id = scfe_menu.2 }
 	}
+    option = {
+        name = scfe_menu.2.g
+        trigger = {
+            has_global_flag = scfe_midgame_precursors_enabled
+            has_PreSelect_active = no
+        }
+        set_global_flag = scfe_midgame_precursors_enabled
+        country_event = { id = scfe_menu.2 }
+    }
+    option = {
+        name = scfe_menu.2.h
+        trigger = {
+            has_PreSelect_active = no
+            NOT = { has_global_flag = scfe_midgame_precursors_enabled }
+        }
+        remove_global_flag = scfe_midgame_precursors_enabled
+        country_event = { id = scfe_menu.2 }
+    }
 	# Start
 	option = {
 		name = scfe_menu.2.z

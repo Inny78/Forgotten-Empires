@@ -1,0 +1,49 @@
+# Werediran Signal
+
+artifact_werediran_research_completed = {
+    icon = "gfx/interface/icons/modifiers/mod_intel_decryption_mult.dds"
+	intel_encryption_add = 2
+	intel_decryption_add = 1
+}
+
+FHMP_werediran_boost = {
+	icon = "gfx/interface/icons/planet_modifiers/FHMP_intense_signal.dds"
+	pop_happiness = 0.1
+	planet_jobs_produces_mult = 0.1
+}
+
+FHMP_werediran_signal = {
+	icon = "gfx/interface/icons/modifiers/mod_ghost_signal.dds"
+}
+
+FHMP_intense_signal = {
+	icon = "gfx/interface/icons/planet_modifiers/FHMP_intense_signal.dds"
+	icon_frame = 3
+	pop_amenities_usage_mult = 1
+}
+
+# Ezentian Combine
+
+artifact_ezentian_research_completed = {
+    icon = "gfx/interface/icons/modifiers/mod_ship_armor_mult.dds"
+	ship_armor_mult = 0.1
+}
+
+# Ixardian Corporation
+
+artifact_ixardian_research_completed = {
+    icon = "gfx/interface/icons/modifiers/mod_country_trade_fee.dds"
+	pop_trader_bonus_workforce_mult = 0.1
+	pop_artisan_bonus_workforce_mult = 0.1
+	country_trade_fee = -0.10
+}
+
+artifact_ixardian_research_completed_gestalt = {
+    icon = "gfx/interface/icons/modifiers/mod_country_starbase_capacity_add.dds"
+	country_starbase_capacity_add = 4
+}
+
+FHMP_Ezentian_Core_Activated = {
+    icon = "gfx/interface/icons/modifiers/mod_minerals_produces_mult.dds"
+	planet_miners_produces_mult = 2
+}

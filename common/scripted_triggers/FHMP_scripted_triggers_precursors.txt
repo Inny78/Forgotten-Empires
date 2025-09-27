@@ -1,0 +1,38 @@
+FHMP_is_valid_precursor_planet = {
+	OR = {
+        scfe_is_barren = yes
+        scfe_is_barren_cold = yes
+        scfe_is_frozen = yes
+        scfe_is_nuked = yes
+	}
+}
+
+FHMP_is_valid_werediran_planet = {
+	OR = {
+        scfe_is_tropical = yes
+        scfe_is_continental = yes
+        scfe_is_aquatic = yes
+        scfe_is_alpine = yes
+        scfe_is_tundra = yes
+        scfe_is_arctic = yes
+        scfe_is_desertic = yes
+        scfe_is_savannah = yes
+        scfe_is_arid = yes
+        scfe_is_nuked = yes
+        scfe_is_frozen = yes
+	}
+}
+
+# For Precursor Selection
+
+FHMP_PreSelect_Disabled_Reached_Max_Precursors_Check = {
+	is_variable_set = PreSelect_num_precursors_found
+	NOT = {
+		check_variable_arithmetic = {
+			which = PreSelect_num_precursors_found
+			value = 0
+		}
+	}
+}
+
+AAA_is_banished_threat = { always = no }

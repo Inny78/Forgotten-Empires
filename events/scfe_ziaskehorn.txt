@@ -327,21 +327,21 @@ country_event = {
                 if = {
                     limit = { has_trait = leader_trait_victory_or_death }
                     remove_trait = leader_trait_victory_or_death
-                    add_trait = { trait = leader_trait_victory_or_death_2 show_message = no }
+                    add_trait = { trait = leader_trait_victory_or_death_2 show_message = no consume_selection = no }
                 }
                 else_if = {
                     limit = { NOT = { has_trait = leader_trait_victory_or_death_2 } }
-                    add_trait = { trait = leader_trait_victory_or_death show_message = no }
+                    add_trait = { trait = leader_trait_victory_or_death show_message = no consume_selection = no }
                 }
                 # Adding Reckless
                 if = {
                     limit = { has_trait = leader_trait_reckless }
                     remove_trait = leader_trait_reckless
-                    add_trait = { trait = leader_trait_reckless_2 show_message = no }
+                    add_trait = { trait = leader_trait_reckless_2 show_message = no consume_selection = no }
                 }
                 else_if = {
                     limit = { NOT = { has_trait = leader_trait_reckless_2 } }
-                    add_trait = { trait = leader_trait_reckless show_message = no }
+                    add_trait = { trait = leader_trait_reckless show_message = no consume_selection = no }
                 }
             }
         }

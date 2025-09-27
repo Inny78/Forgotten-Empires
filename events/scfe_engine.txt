@@ -115,9 +115,10 @@ country_event = {
 			set_spawn_system_batch = begin
 			random_system = {
 				limit = { scfe_is_valid_star_system = yes }
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = "strange_init_01"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -125,11 +126,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = strange_world_system }
+					NOR = {
+						has_star_flag = strange_world_system
+						has_star_flag = strange_world_init
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = "strange_init_02"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -137,11 +142,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = strange_world_system }
+					NOR = {
+						has_star_flag = strange_world_system
+						has_star_flag = strange_world_init
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = "strange_init_03"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -149,11 +158,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = strange_world_system }
+					NOR = {
+						has_star_flag = strange_world_system
+						has_star_flag = strange_world_init
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = "strange_init_04"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -161,11 +174,14 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = strange_world_system }
+					NOR = {
+						has_star_flag = strange_world_system
+						has_star_flag = strange_world_init
+					}
 				}
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = "strange_init_05"
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -190,10 +206,14 @@ country_event = {
 			}
 			set_spawn_system_batch = begin
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
+				limit = {
+					scfe_is_valid_star_system = yes
+					NOT = { has_star_flag = strange_world_init }
+				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = scfe_hyrokkin
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -201,11 +221,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = nyblax_system }
+					NOR = {
+						has_star_flag = strange_world_init
+						has_star_flag = nyblax_system
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = scfe_khnum
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -213,11 +237,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = nyblax_system }
+					NOR = {
+						has_star_flag = strange_world_init
+						has_star_flag = nyblax_system
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = scfe_severing_lash
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -225,11 +253,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = nyblax_system }
+					NOR = {
+						has_star_flag = strange_world_init
+						has_star_flag = nyblax_system
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = scfe_kikimora
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -237,11 +269,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = nyblax_system }
+					NOR = {
+						has_star_flag = strange_world_init
+						has_star_flag = nyblax_system
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = scfe_mireska
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -249,11 +285,15 @@ country_event = {
 			random_system = {
 				limit = {
 					scfe_is_valid_star_system = yes
-					NOT = { has_star_flag = nyblax_system }
+					NOR = {
+						has_star_flag = strange_world_init
+						has_star_flag = nyblax_system
+					}
 				}
+				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance = 5
-					max_distance = 60
+					min_distance >= 40
+					max_distance <= 60
 					initializer = scfe_tahlin
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -357,12 +397,24 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
+    trigger = { has_global_flag = scfe_midgame_precursors_enabled }
+
 	immediate = {
-		random_playable_country = {
-			limit = {
-				is_ai = no
+		while = {
+			random_playable_country = {
+				limit = {
+					is_ai = no
+					NOR = {
+						has_country_flag = scfe_shaded_empire_possible
+						has_country_flag = scfe_shamblers_possible
+					}
+				}
+				random_list = {
+					50 = { set_country_flag = scfe_shaded_empire_possible }
+					50 = { set_country_flag = scfe_shamblers_possible }
+				}
 			}
-			set_country_flag = scfe_shaded_empire_possible
+			count = 2
 		}
 	}
 	after = {
@@ -373,13 +425,13 @@ country_event = {
 				country_event = { id = scfe_engine.5 }
 			}
 		}
-		if = {
-			limit = { any_country = { has_country_flag = scfe_shamblers_possible } }
-			random_country = {
-				limit = { has_country_flag = scfe_shamblers_possible }
-				country_event = { id = scfe_engine.14 days = 1 }
-			}
-		}
+#		if = {
+#			limit = { any_country = { has_country_flag = scfe_shamblers_possible } }
+#			random_country = {
+#				limit = { has_country_flag = scfe_shamblers_possible }
+#				country_event = { id = scfe_engine.14 days = 1 }
+#			}
+#		}
 	}
 }
 # Shaded Empire
@@ -480,8 +532,8 @@ country_event = {
 			}
 			set_spawn_system_batch = begin
 			spawn_system = {
-				min_distance = 5
-				max_distance = 60
+				min_distance >= 40
+				max_distance <= 60
 				initializer = "scfe_celestial_disturbance_system"
 			}
 			add_extra_hyperlane_to_spawned_system_effect = yes
@@ -493,23 +545,7 @@ country_event = {
 		}
 	}
 }
-# Mid-game clearing of AI avoidance flags
-event = {
-	id = scfe_engine.9
-	hide_window = yes
-	is_triggered_only = yes
 
-	trigger = {
-		any_system = { has_star_flag = scfe_ai_avoid_system }
-	}
-
-	immediate = {
-		every_system = {
-			limit = { has_star_flag = scfe_ai_avoid_system }
-			remove_star_flag = scfe_ai_avoid_system
-		}
-	}
-}
 # on outpost built: AI avoidance flag cleanup
 ship_event = {
 	id = scfe_engine.10
@@ -588,8 +624,8 @@ country_event = {
 			limit = { scfe_is_valid_star_system = yes }
 			set_spawn_system_batch = begin
 			spawn_system = {
-				min_distance = 5
-				max_distance = 60
+				min_distance >= 40
+				max_distance <= 60
 				initializer = scfe_ghost_system_01
 			}
 			add_extra_hyperlane_to_spawned_system_effect = yes

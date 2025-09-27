@@ -1,0 +1,3 @@
+﻿l_braz_por:
+ # Replaces the same entry in Ziaskehorn localization file
+ ziaskehorn.02.tooltip: "Todos os nossos comandantes ganham os traços ['leader_trait:leader_trait_victory_or_death'] e ['leader_trait:leader_trait_reckless'] e perdem toda contenção."

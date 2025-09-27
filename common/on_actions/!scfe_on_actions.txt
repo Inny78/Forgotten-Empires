@@ -1,6 +1,5 @@
 on_mid_game_pulse = {
 	events = {
-		scfe_engine.9
 	}
 }
 on_mid_game_pulse_country = {

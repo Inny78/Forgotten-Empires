@@ -4,7 +4,7 @@
 # A Celestial Disturbance
 scfe_celestial_disturbance_system = {
     class = sc_scfe_binary_1 # The primary star, a neutron star
-    flags = { unique_system scfe_celestial_disturbance_system precursor_system scfe_ai_avoid_system shroud_storm_changed }
+    flags = { unique_system scfe_celestial_disturbance_system precursor_system  shroud_storm_changed }
     name = scfe_celestial_disturbance_system_name
 
     usage = misc_system_init
@@ -13,6 +13,7 @@ scfe_celestial_disturbance_system = {
     prevent_anomalies = yes
     init_effect = {
         save_global_event_target_as = scfe_celestial_disturbance_system
+        set_timed_star_flag = { flag = scfe_ai_avoid_system years = 10 }
     }
 
     planet = {

@@ -213,7 +213,7 @@ building_woorskyr_growth_monitoring_center = {
     }
 
     planet_modifier = {
-        biological_pop_growth_speed = 0.1
+        bonus_pop_growth = 0.1
         planet_orbital_bombardment_damage = -0.1
     }
 
@@ -307,7 +307,7 @@ building_woorskyr_barkfarm = {
                 }
             }
         }
-        biological_pop_growth_speed = 0.1
+        bonus_pop_growth = 0.1
     }
 
     prerequisites = {

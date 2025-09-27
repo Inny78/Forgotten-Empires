@@ -8,9 +8,12 @@ scfe_ghost_system_01 = {
     usage_odds = 0
     max_instances = 1
     prevent_anomalies = yes
-    flags = { unique_system scfe_ghost_system_01 precursor_system scfe_ai_avoid_system shroud_storm_changed }
+    flags = { unique_system scfe_ghost_system_01 precursor_system  shroud_storm_changed }
     name = scfe_ghost_izanami
-    init_effect = { save_global_event_target_as = scfe_ghost_system1 }
+    init_effect = {
+        save_global_event_target_as = scfe_ghost_system1
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
+    }
 
     asteroid_belt = {
         type = rocky_asteroid_belt
@@ -64,7 +67,10 @@ scfe_ghost_system_02 = {
     max_instances = 1
     prevent_anomalies = yes
     flags = { unique_system scfe_ghost_system_02 precursor_system shroud_storm_changed }
-    init_effect = { save_global_event_target_as = scfe_ghost_system2 }
+    init_effect = {
+        save_global_event_target_as = scfe_ghost_system2
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
+    }
 
     planet = {
         count = 1
@@ -109,7 +115,10 @@ scfe_ghost_system_03 = {
     max_instances = 1
     prevent_anomalies = yes
     flags = { unique_system scfe_ghost_system_03 precursor_system shroud_storm_changed }
-    init_effect = { save_global_event_target_as = scfe_ghost_system3 }
+    init_effect = {
+        save_global_event_target_as = scfe_ghost_system3
+        set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 }
+    }
 
     asteroid_belt = {
         type = icy_asteroid_belt

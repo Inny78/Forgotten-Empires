@@ -100,7 +100,7 @@ country_event = {
             spawn_system = {
                 max_jumps = 5
                 min_distance = 10
-                max_distance = 60
+                max_distance <= 60
                 initializer = "scfe_znkar_init_01"
             }
             add_extra_hyperlane_to_spawned_system_effect = yes
@@ -194,7 +194,7 @@ country_event = {
                 spawn_system = {
                     max_jumps = 5
                     min_distance = 10
-                    max_distance = 60
+                    max_distance <= 60
                     initializer = "scfe_znkar_init_02"
                 }
                 add_extra_hyperlane_to_spawned_system_effect = yes

@@ -281,14 +281,14 @@ scfe_rooted_doom = {
 scfe_rooted_bleak = {
 	pop_environment_tolerance = -0.1
 	planet_farmers_food_produces_add = -1
-	district_farming_max = -4
+	district_farming_max_add = -4
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
 	icon_frame = 3
 }
 scfe_rooted_craters = {
 	pop_environment_tolerance = -0.05
 	planet_jobs_minerals_produces_mult = 0.05
-	district_mining_max = 2
+	district_mining_max_add = 2
 	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_impacts.dds"
 	icon_frame = 2
 }
@@ -351,9 +351,15 @@ scfe_planet_illusion_rune_boost= {
 	icon_frame = 1
 }
 scfe_power_rune_boost = {
+    icon = "gfx/interface/icons/modifiers/mod_ship_orbital_bombardment_mult.dds"
 	ship_orbital_bombardment_mult = 0.5
 	ship_damage_against_starbases_mult = 0.2
 }
 scfe_rune_lost = {
+    icon = "gfx/interface/icons/modifiers/mod_negative_pop_happiness.dds"
 	pop_happiness = -0.05
+}
+scfe_gene_bank_activated = {
+    icon = "gfx/interface/icons/modifiers/mod_negative_pop_happiness.dds"
+    pop_happiness = -0.05
 }

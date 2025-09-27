@@ -272,8 +272,8 @@ country_event = {
         set_spawn_system_batch = begin
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 max_jumps = 5
                 initializer = "shaded_lead1_system"
             }
@@ -294,8 +294,8 @@ country_event = {
         }
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 max_jumps = 5
                 initializer = "shaded_lead2_system"
             }
@@ -316,8 +316,8 @@ country_event = {
         }
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 max_jumps = 5
                 initializer = "shaded_lead3_system"
             }
@@ -338,8 +338,8 @@ country_event = {
         }
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 max_jumps = 5
                 initializer = "shaded_lead4_system"
             }
@@ -874,8 +874,8 @@ country_event = {
             spawn_system = {
                 min_jumps = 5
                 max_jumps = 15
-                min_distance = 5
-                max_distance = 60
+                min_distance >= 40
+                max_distance <= 60
                 direction = rimwards
                 initializer = shaded_colony_system
                 hyperlane = no

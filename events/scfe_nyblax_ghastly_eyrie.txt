@@ -175,7 +175,7 @@ fleet_event = {
     }
     option = {
         name = scfe_ghastly_eyrie.11.b
-        leader = { add_trait = { trait = leader_trait_arrested_development } }
+        leader = { add_trait = { trait = leader_trait_arrested_development consume_selection = no } }
         hidden_effect = {
             owner = { country_event = { id = scfe_ghastly_eyrie.12 }  }
         }

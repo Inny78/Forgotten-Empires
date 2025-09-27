@@ -486,6 +486,50 @@ r_scfe_orders_trinket = {
 		}
 	}
 }
+r_scfe_gene_bank = {
+    activation_duration = 3600
+    portrait = "GFX_relic_scfe_gene_bank"
+    sound = "relic_activation_yuht_cryo_core"
+
+    resources = {
+        category = relics
+        cost = {
+            unity = 2500
+        }
+    }
+
+    ai_weight = {
+        weight = 100
+    }
+
+    triggered_country_modifier = {
+        potential = { always = yes }
+        leader_lifespan_add = 10
+        BIOLOGICAL_species_trait_picks_add = 1
+        BIOLOGICAL_species_trait_points_add = 3
+        LITHOID_species_trait_picks_add = 1
+        LITHOID_species_trait_points_add = 3
+    }
+
+    score = 1000
+
+    active_effect = {
+        add_modifier = { modifier = scfe_gene_bank_activated days = 3600 }
+        custom_tooltip = relic_triumph_cooldown
+        hidden_effect = {
+            add_modifier = { modifier = "relic_activation_cooldown" days = 3600 }
+        }
+    }
+
+    # Possible check for activation
+    possible = {
+        inline_script = {
+            script = relics/activation_checks
+            RELIC = r_scfe_orders_trinket
+        }
+    }
+}
+
 # Nyblax
 r_scfe_arcane_rune = {
 	activation_duration = 3600
