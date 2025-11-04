@@ -2,7 +2,7 @@ scfe_sless_alliance_site_1 = {
     desc = "scfe_sless_alliance_site_1_desc"
     picture = GFX_evt_alien_city
     stages = 2
-    weight = { base = 0 } #scfe_sless_alliance_anomaly_1 anomaly
+    weight = { base = 0 }
 
     potential = {
         owner = { is_ai = no }

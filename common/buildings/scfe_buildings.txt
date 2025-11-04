@@ -6,7 +6,7 @@ building_woorskyr_biofuel_refinery = {
 
     building_sets = {
         mining
-        city
+        urban
     }
 
     potential = {
@@ -84,7 +84,7 @@ building_woorskyr_bioenergy_plant = {
 
     building_sets = {
         generator
-        city
+        urban
     }
 
     potential = {
@@ -156,7 +156,7 @@ building_woorskyr_growth_monitoring_center = {
 
     building_sets = {
         research
-        city
+        urban
     }
 
     potential = {
@@ -234,7 +234,7 @@ building_woorskyr_barkfarm = {
 
     building_sets = {
         farming
-        city
+        urban
     }
 
     potential = {
@@ -323,7 +323,7 @@ building_woorskyr_ship_foundry = {
 
     building_sets = {
         fortress
-        city
+        urban
     }
 
     potential = {
@@ -431,7 +431,7 @@ building_xenograss_processor = {
 
     building_sets = {
         research
-        city
+        urban
     }
 
     potential = {
@@ -513,7 +513,7 @@ building_consciousness_amplifier = {
 
     building_sets = {
         unity
-        city
+        urban
     }
 
     potential = {
@@ -597,7 +597,7 @@ building_pearl_borehole_site = {
 
     building_sets = {
         research
-        city
+        urban
     }
 
     potential = {
@@ -672,7 +672,7 @@ building_pearl_borehole_site_2 = {
 
     building_sets = {
         research
-        city
+        urban
     }
 
     potential = {
@@ -738,7 +738,7 @@ building_pearl_borehole_site_3 = {
 
     building_sets = {
         research
-        city
+        urban
     }
 
     potential = {
@@ -801,7 +801,7 @@ building_koeleothan_effect_platform = {
 
     building_sets = {
         farming
-        city
+        urban
     }
 
     potential = {
@@ -892,7 +892,7 @@ building_beetle_sensor = {
 
     building_sets = {
         fortress
-        city
+        urban
     }
 
     potential = {
@@ -1001,7 +1001,7 @@ building_beetle_sensor_2 = {
 
     building_sets = {
         fortress
-        city
+        urban
     }
 
     potential = {

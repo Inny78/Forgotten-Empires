@@ -1,0 +1,149 @@
+######################
+# AAA ARC SITES
+######################
+
+# Note that a base-game arc site must offer a reward other than Minor Artifacts (or else feature no rewards).
+
+###################
+# RANDOM ARC SITES
+###################
+# i.e. spawned via on_survey
+
+# Polus
+
+#######################
+# TOMB WORLD ARC SITES
+#######################
+# Spawned from desecration decision or by lowering shields or simply randomly on tomb worlds
+
+# Ancient Reactor
+site_AAA_ancient_reactor = {
+	desc = "site_AAA_ancient_reactor_intro"
+	picture = GFX_evt_discovered_hidden_door
+	stages = 4
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			is_planet_class = pc_nuked
+		}
+	}
+	max_instances = 1
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E1
+		event = AAA_arcsite.63
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E2
+		event = AAA_arcsite.64
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E3
+		event = AAA_arcsite.65
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E4
+		event = AAA_arcsite.66
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = AAA_tomb_world_arcsite_events }
+		}
+	}
+}
+
+# Ancient Antimatter Bomb
+# If not completed in time, it explodes, destroying any colony and shattering the world
+site_AAA_ancient_antimatter = {
+	desc = "site_AAA_ancient_antimatter_intro"
+	picture = GFX_evt_city_ruins
+	stages = 6
+	weight = {
+		base = 0 # Don't want to blow up random worlds. Should spawn as an event, or on_survey or something. Or only on random planets
+	}
+	max_instances = 1
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		AAA_antimatter_visibility = yes
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+	
+	on_create = {
+		set_saved_date = {
+			key = AAA_bomb_time
+			days_from_present = 3600
+			#expires = <int>/<variable> (time until the saved date is cleared, default is never)
+		}
+		planet = { planet_event = { id = AAA_arcsite.76 days = 3600 } } # If not completed in 10 years, the bomb goes off and destroys the planet, causing it to shatter
+		planet = { space_owner = { set_country_flag = AAA_antimatter_visibility_flag } }
+		save_global_event_target_as = AAA_bomb_site
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E1
+		event = AAA_arcsite.70
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E2
+		event = AAA_arcsite.71
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E3
+		event = AAA_arcsite.72
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E4
+		event = AAA_arcsite.73
+	}
+	
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E4
+		event = AAA_arcsite.74
+	}
+	
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E4
+		event = AAA_arcsite.75
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = AAA_tomb_world_arcsite_events }
+		}
+	}
+}

@@ -854,12 +854,6 @@ scfe_can_find_precursor = {
 				has_event_chain = cs_adAkkaria_chain
 				scfe_has_zroni_chain = yes
 				scfe_has_baol_chain = yes
-				# scfe_has_plexi_chain = yes
-				scfe_has_volgan_chain = yes
-				scfe_has_ixardian_chain = yes
-				scfe_has_werediran_chain = yes
-				scfe_has_ezentian_chain = yes
-				# scfe_has_lartia_chain = yes
 				has_event_chain = scfe_alshigans_chain
 				has_event_chain = scfe_astanine_chain
 				has_event_chain = scfe_znkar_chain
@@ -867,6 +861,10 @@ scfe_can_find_precursor = {
 				has_event_chain = scfe_sless_chain
 				has_event_chain = scfe_shaded_chain
 				has_event_chain = scfe_ghosts_chain
+                has_event_chain = plexi_chain
+                has_event_chain = FHMP_werediran_chain
+                has_event_chain = FHMP_ezentian_chain
+                has_event_chain = lartia_chain
 			}
 		}
 	}

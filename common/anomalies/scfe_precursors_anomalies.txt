@@ -1,0 +1,153 @@
+@precursor_easy = 6
+
+alshigans_1_cat = {
+    desc = alshigans_1_category_desc
+    picture = GFX_evt_ship_in_orbit
+    level = @precursor_easy
+
+    spawn_chance = {
+        modifier = {
+            add = 10
+            solar_system = { has_star_flag = precursor_alshigans }
+            is_asteroid = yes
+            NOT = { has_planet_flag = precursor_world }
+            from.owner = {
+                NOT = { has_country_flag = alshigans_1 }
+                has_country_flag = alshigans_intro
+                has_event_chain = scfe_alshigans_chain
+            }
+        }
+    }
+
+    on_spawn = {
+        set_planet_flag = precursor_world
+        from.owner = {
+            set_country_flag = alshigans_1
+            save_global_event_target_as = scfe_alshigans_owner
+        }
+        set_planet_flag = scfe_alshigans_start
+        save_global_event_target_as = scfe_alshigans_asteroid
+    }
+    on_success = scfe_precursor_init.2
+}
+astanine_1_cat = {
+    desc = astanine_1_category_desc
+    picture = GFX_evt_ship_in_orbit
+    level = @precursor_easy
+
+    spawn_chance = {
+        modifier = {
+            add = 10
+            solar_system = { has_star_flag = precursor_astanine }
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+            NOT = { has_planet_flag = precursor_world }
+            from.owner = {
+                NOT = { has_country_flag = astanine_1 }
+                has_country_flag = astanine_intro
+                has_event_chain = scfe_astanine_chain
+            }
+        }
+    }
+
+    on_spawn = {
+        set_planet_flag = precursor_world
+        from.owner = {
+            set_country_flag = astanine_1
+        }
+    }
+    on_success = scfe_precursor_init.4
+}
+coprea_1_cat = {
+    desc = coprea_1_category_desc
+    picture = GFX_evt_ship_in_orbit
+    level = @precursor_easy
+
+    spawn_chance = {
+        modifier = {
+            add = 10
+            solar_system = { has_star_flag = precursor_coprea }
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+            NOT = { has_planet_flag = precursor_world }
+            from.owner = {
+                NOT = { has_country_flag = coprea_1 }
+                has_country_flag = coprea_intro
+                has_event_chain = scfe_coprean_chain
+            }
+        }
+    }
+
+    on_spawn = {
+        set_planet_flag = precursor_world
+        from.owner = {
+            set_country_flag = coprea_1
+        }
+    }
+    on_success = scfe_precursor_init.6
+}
+sless_1_cat = {
+    desc = sless_1_category_desc
+    picture = GFX_evt_ship_in_orbit
+    level = @precursor_easy
+
+    spawn_chance = {
+        modifier = {
+            add = 10
+            solar_system = { has_star_flag = precursor_sless }
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+            NOT = { has_planet_flag = precursor_world }
+            from.owner = {
+                NOT = { has_country_flag = sless_1 }
+                has_country_flag = sless_intro
+                has_event_chain = scfe_sless_chain
+            }
+        }
+    }
+
+    on_spawn = {
+        set_planet_flag = precursor_world
+        from.owner = {
+            set_country_flag = sless_1
+        }
+    }
+    on_success = scfe_precursor_init.8
+}
+vinarii_1_cat = {
+    desc = sless_1_category_desc
+    picture = GFX_evt_ship_in_orbit
+    level = @precursor_easy
+
+    spawn_chance = {
+        modifier = {
+            add = 10
+            solar_system = { has_star_flag = precursor_vinarii }
+            OR = {
+                is_planet_class = pc_relic
+                scfe_is_barren_cold = yes
+                scfe_is_frozen = yes
+            }
+            NOT = { has_planet_flag = precursor_world }
+            from.owner = {
+                NOT = { has_country_flag = vinarii_1 }
+                has_country_flag = vinarii_intro
+                has_event_chain = scfe_ghosts_chain
+            }
+        }
+    }
+
+    on_spawn = {
+        set_planet_flag = precursor_world
+        from.owner = {
+            set_country_flag = vinarii_1
+        }
+    }
+    on_success = scfe_precursor_init.10
+}

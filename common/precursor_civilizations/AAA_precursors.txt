@@ -1,0 +1,2 @@
+precursor_lartia = { size = 100 picture = "GFX_precursor_lartia" }
+precursor_plexi = { size = 100 picture = "GFX_precursor_plexi" }

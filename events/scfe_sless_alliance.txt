@@ -18,25 +18,7 @@ planet_event = {
         add_building = building_capital
     }
 }
-#sless intro
-ship_event = {
-    id = scfe_sless.1
-    title = "scfe_sless.1.name"
-    desc = "scfe_sless.1.desc"
-    picture = GFX_evt_ancient_alien_temple
-    location = from
-    is_triggered_only = yes
-    event_chain = scfe_sless_chain
 
-    immediate = { owner = { country_event = { id = story.5 days = 30 } } }
-
-    option = {
-        name = scfe_sless.1.a
-        owner = { begin_event_chain = { event_chain = scfe_sless_chain } }
-        hidden_effect = { owner = { save_global_event_target_as = scfe_sless_owner } }
-        from = { create_archaeological_site = scfe_sless_alliance_site_1 }
-    }
-}
 #sless dig site 1
 #chapter 1
 fleet_event = {

@@ -1,0 +1,253 @@
+special_project = {
+	key = AAA_TAKE_DOWN_BANISHED_SHIELD
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	abort_trigger = {
+		fromfrom = { NOT = { is_planet_class = pc_shielded } }
+	}
+
+	on_success = {
+		ship_event = { id = AAA.4 }
+	}
+}
+special_project = {
+    key = AAA_TAKE_DOWN_BANISHED_SHIELD_FAIL
+    days_to_research = 60
+    tech_department = society_technology
+    picture = GFX_evt_shielded_planet
+    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+    }
+
+    abort_trigger = {
+        fromfrom = { NOT = { is_planet_class = pc_shielded } }
+    }
+
+    on_success = {
+        ship_event = { id = AAA.2 }
+    }
+}
+
+special_project = {
+	key = PLEXI_1_SHIELD
+	event_chain = plexi_chain
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		ship_event = { id = AAA_precursor.7 }
+	}
+}
+
+special_project = {
+	key = PLEXI_2_SHIELD
+	event_chain = plexi_chain
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+
+	on_success = {
+		ship_event = { id = AAA_precursor.16 }
+	}
+}
+
+special_project = {
+	key = PLEXI_3_SHIELD
+	event_chain = plexi_chain
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		ship_event = { id = AAA_precursor.25 }
+	}
+}
+
+special_project = {
+	key = PLEXI_HOMEWORLD_SHIELD
+	event_chain = plexi_chain
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+
+	on_success = {
+		ship_event = { id = AAA_precursor.35 }
+	}
+}
+
+# Investigate Plexian Secrets
+special_project = {
+	key = PLEXIAN_SECRETS
+	picture = GFX_evt_star_chart
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+	cost = @tier1cost3
+	sound = no
+	tech_department = society_technology
+	days_to_research = 0
+	location = no
+	timelimit = -1
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	abort_trigger = {
+	}
+
+	on_success = {
+		owner = {
+			country_event = { id = AAA_precursor.42 }
+		}
+	}
+
+	on_fail = {
+	}
+}
+# Revive Glubdrag
+special_project = {
+    key = REVIVE_GLUBDRAG
+    picture = GFX_evt_star_chart
+    icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+    cost = 25000
+    sound = no
+    tech_department = engineering_technology
+    days_to_research = 0
+    location = no
+    timelimit = -1
+    event_scope = planet_event
+
+    requirements = {
+    }
+
+    abort_trigger = {
+    }
+
+    on_progress_75 = {
+        owner = {
+            country_event = { id = AAA.109 }
+        }
+    }
+
+    on_success = {
+        owner = {
+            country_event = { id = AAA.110 }
+        }
+    }
+
+    on_fail = {
+    }
+}
+# Investigate Lartia Secrets
+special_project = {
+    key = LARTIAN_SECRETS
+    picture = GFX_evt_star_chart
+    icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+    cost = @tier1cost3
+    sound = no
+    tech_department = society_technology
+    days_to_research = 0
+    location = no
+    timelimit = -1
+    event_scope = planet_event
+
+    requirements = {
+    }
+
+    abort_trigger = {
+    }
+
+    on_success = {
+        owner = {
+            country_event = { id = AAA_precursor.69 }
+        }
+    }
+
+    on_fail = {
+    }
+}
+special_project = {
+    key = TAKE_DOWN_ISOLATOR_SHIELD
+    days_to_research = 60
+    tech_department = society_technology
+    picture = GFX_evt_shielded_planet
+    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+    }
+
+    abort_trigger = {
+        fromfrom = { NOT = { is_planet_class = pc_shielded } }
+    }
+
+    on_success = {
+        ship_event = { id = AAA.24 }
+    }
+}
+special_project = {
+    key = TAKE_DOWN_ANCIENT_SHIELD
+    days_to_research = 60
+    tech_department = society_technology
+    picture = GFX_evt_shielded_planet
+    icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    event_scope = ship_event
+
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+    }
+
+    abort_trigger = {
+        fromfrom = { NOT = { is_planet_class = pc_shielded } }
+    }
+
+    on_success = {
+        ship_event = { id = AAA.51 }
+    }
+}

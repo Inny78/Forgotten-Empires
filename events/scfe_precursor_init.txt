@@ -1,0 +1,486 @@
+namespace = scfe_precursor_init
+
+# Alshigans
+ship_event = {
+	id = scfe_precursor_init.1
+	title = scfe_alshigans_chain_title
+	desc = scfe_alshigans_chain_desc
+	picture = GFX_evt_archaeological_dig
+	location = from
+	event_chain = scfe_alshigans_chain
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+            NOT = { has_country_flag = alshigans_intro }
+            scfe_can_find_precursor = yes
+		}
+		solar_system = {
+			has_star_flag = precursor_alshigans
+			NOT = { is_same_value = root.owner.capital_scope.solar_system }
+		}
+		FROM = {
+			has_anomaly = no
+			is_star = no
+			is_astral_scar = no
+		}
+	}
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = @origin_shoulders_multiplier
+			owner = {
+				has_origin = origin_shoulders_of_giants
+				has_country_flag = origin_shoulders_closure
+			}
+		}
+	}
+
+	immediate = {
+		owner = {
+			begin_event_chain = {
+				event_chain = scfe_alshigans_chain
+				target = THIS
+			}
+			set_country_flag = alshigans_intro
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+		owner = {
+			tooltip = {
+				begin_event_chain = {
+					event_chain = scfe_alshigans_chain
+					target = THIS
+				}
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+		}
+	}
+}
+ship_event = {
+    id = scfe_precursor_init.2
+    title = crashed_ship_asteroid_category
+    desc = crashed_ship_asteroid_category_desc
+    picture = GFX_evt_archaeological_dig
+    show_sound = event_default
+    is_triggered_only = yes
+    location = from
+    event_chain = scfe_alshigans_chain
+    fire_only_once = yes
+
+    trigger = {
+        owner = { has_event_chain = scfe_alshigans_chain }
+        solar_system = {
+            has_star_flag = precursor_alshigans
+        }
+        from = {
+            is_planet_class = pc_asteroid
+            has_anomaly = no
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        from = {
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_ASTEROID_PROJECT
+                location = this
+                owner = root.owner
+            }
+        }
+    }
+}
+
+# Astanine
+ship_event = {
+    id = scfe_precursor_init.3
+    title = scfe_astanine_chain_title
+    desc = scfe_astanine_chain_desc
+    picture = GFX_evt_archaeological_dig
+    location = from
+    event_chain = scfe_astanine_chain
+
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            is_ai = no
+            NOT = { has_country_flag = astanine_intro }
+            scfe_can_find_precursor = yes
+        }
+        solar_system = {
+            has_star_flag = precursor_astanine
+            NOT = { is_same_value = root.owner.capital_scope.solar_system }
+        }
+        FROM = {
+            has_anomaly = no
+            OR = {
+                is_colonizable = yes
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+    }
+    weight_multiplier = {
+        factor = 1
+        modifier = {
+            factor = @origin_shoulders_multiplier
+            owner = {
+                has_origin = origin_shoulders_of_giants
+                has_country_flag = origin_shoulders_closure
+            }
+        }
+    }
+
+    immediate = {
+        owner = {
+            begin_event_chain = {
+                event_chain = scfe_astanine_chain
+                target = THIS
+            }
+            set_country_flag = astanine_intro
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+        owner = {
+            tooltip = {
+                begin_event_chain = {
+                    event_chain = scfe_astanine_chain
+                    target = THIS
+                }
+            }
+            if = {
+                limit = { has_ancrel = yes }
+                small_artifact_reward = yes
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_precursor_init.4
+    title = scfe_astanine_site_1
+    desc = scfe_astanine_site_1_desc
+    picture = GFX_evt_ship_in_orbit
+    show_sound = event_default
+    is_triggered_only = yes
+    event_chain = scfe_astanine_chain
+    fire_only_once = yes
+
+    trigger = {
+        owner = { has_event_chain = scfe_astanine_chain }
+        solar_system = {
+            has_star_flag = precursor_astanine
+        }
+        from = {
+            OR = {
+                is_colonizable = yes
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { create_archaeological_site = scfe_astanine_site_1 }
+    }
+}
+
+# Coprea
+ship_event = {
+    id = scfe_precursor_init.5
+    title = scfe_coprean_chain_title
+    desc = scfe_coprean_chain_desc
+    picture = GFX_evt_archaeological_dig
+    location = from
+    event_chain = scfe_coprean_chain
+
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            is_ai = no
+            NOT = { has_country_flag = coprea_intro }
+            scfe_can_find_precursor = yes
+        }
+        solar_system = {
+            has_star_flag = precursor_coprea
+            NOT = { is_same_value = root.owner.capital_scope.solar_system }
+        }
+        FROM = {
+            has_anomaly = no
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+    }
+    weight_multiplier = {
+        factor = 1
+        modifier = {
+            factor = @origin_shoulders_multiplier
+            owner = {
+                has_origin = origin_shoulders_of_giants
+                has_country_flag = origin_shoulders_closure
+            }
+        }
+    }
+
+    immediate = {
+        owner = {
+            begin_event_chain = {
+                event_chain = scfe_coprean_chain
+                target = THIS
+            }
+            set_country_flag = coprea_intro
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+        owner = {
+            tooltip = {
+                begin_event_chain = {
+                    event_chain = scfe_coprean_chain
+                    target = THIS
+                }
+            }
+            if = {
+                limit = { has_ancrel = yes }
+                small_artifact_reward = yes
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_precursor_init.6
+    title = scfe_precursor_init.6.name
+    desc = scfe_precursor_init.6.desc
+    picture = GFX_evt_small_space_battle
+    show_sound = event_space_battle
+    is_triggered_only = yes
+    event_chain = scfe_coprean_chain
+    fire_only_once = yes
+
+    trigger = {
+        owner = { has_event_chain = scfe_coprean_chain }
+        solar_system = {
+            has_star_flag = precursor_coprea
+        }
+        from = {
+            has_anomaly = no
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { create_archaeological_site = scfe_coprean_constitution_site_1 }
+    }
+}
+
+# Sless
+ship_event = {
+    id = scfe_precursor_init.7
+    title = scfe_sless_chain_title
+    desc = scfe_sless_chain_desc
+    picture = GFX_evt_archaeological_dig
+    location = from
+    event_chain = scfe_sless_chain
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            is_ai = no
+            NOT = { has_country_flag = sless_intro }
+            scfe_can_find_precursor = yes
+        }
+        solar_system = {
+            has_star_flag = precursor_sless
+            NOT = { is_same_value = root.owner.capital_scope.solar_system }
+        }
+        FROM = {
+            has_anomaly = no
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+    }
+    weight_multiplier = {
+        factor = 1
+        modifier = {
+            factor = @origin_shoulders_multiplier
+            owner = {
+                has_origin = origin_shoulders_of_giants
+                has_country_flag = origin_shoulders_closure
+            }
+        }
+    }
+
+    immediate = {
+        owner = {
+            begin_event_chain = {
+                event_chain = scfe_sless_chain
+                target = THIS
+            }
+            set_country_flag = sless_intro
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+        owner = {
+            tooltip = {
+                begin_event_chain = {
+                    event_chain = scfe_sless_chain
+                    target = THIS
+                }
+            }
+            if = {
+                limit = { has_ancrel = yes }
+                small_artifact_reward = yes
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_precursor_init.8
+    title = sless_1_cat
+    desc = scfe_sless_alliance_site_1_desc
+    picture = GFX_evt_ship_in_orbit
+    show_sound = event_default
+    is_triggered_only = yes
+    event_chain = scfe_sless_chain
+    fire_only_once = yes
+
+    trigger = {
+        owner = { has_event_chain = scfe_sless_chain }
+        solar_system = { has_star_flag = precursor_sless }
+        from = {
+            has_anomaly = no
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { create_archaeological_site = scfe_sless_alliance_site_1 }
+    }
+}
+
+# V'inarii
+ship_event = {
+    id = scfe_precursor_init.9
+    title = scfe_ghosts_chain_title
+    desc = scfe_ghosts_chain_desc
+    picture = GFX_evt_archaeological_dig
+    location = from
+    event_chain = scfe_ghosts_chain
+
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            is_ai = no
+            NOT = { has_country_flag = vinarii_intro }
+            scfe_can_find_precursor = yes
+        }
+        solar_system = {
+            has_star_flag = precursor_vinarii
+            NOT = { is_same_value = root.owner.capital_scope.solar_system }
+        }
+        FROM = {
+            has_anomaly = no
+            OR = {
+                is_planet_class = pc_relic
+                scfe_is_barren_cold = yes
+                scfe_is_frozen = yes
+            }
+        }
+    }
+    weight_multiplier = {
+        factor = 1
+        modifier = {
+            factor = @origin_shoulders_multiplier
+            owner = {
+                has_origin = origin_shoulders_of_giants
+                has_country_flag = origin_shoulders_closure
+            }
+        }
+    }
+
+    immediate = {
+        owner = {
+            begin_event_chain = {
+                event_chain = scfe_ghosts_chain
+                target = THIS
+            }
+            set_country_flag = vinarii_intro
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+        owner = {
+            tooltip = {
+                begin_event_chain = {
+                    event_chain = scfe_ghosts_chain
+                    target = THIS
+                }
+            }
+            if = {
+                limit = { has_ancrel = yes }
+                small_artifact_reward = yes
+            }
+        }
+    }
+}
+ship_event = {
+    id = scfe_precursor_init.10
+    title = scfe_ghost_planet.2.name
+    desc = scfe_ghost_planet.2.desc
+    picture = GFX_evt_scfe_city_planet
+    show_sound = event_default
+    is_triggered_only = yes
+    event_chain = scfe_ghosts_chain
+    fire_only_once = yes
+
+    trigger = {
+        owner = { has_event_chain = scfe_ghosts_chain }
+        solar_system = { has_star_flag = precursor_vinarii }
+        from = {
+            has_anomaly = no
+            OR = {
+                is_planet_class = pc_relic
+                scfe_is_barren_cold = yes
+                scfe_is_frozen = yes
+            }
+        }
+    }
+
+    option = {
+        name = INTERESTING
+        from = { create_archaeological_site = scfe_ghost_planet_dig }
+    }
+}

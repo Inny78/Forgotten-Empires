@@ -1,0 +1,21 @@
+BANISHED_SHIELD_CAT = {
+	desc = DETERIORATING_SHIELD_DESC
+	picture = GFX_evt_shielded_planet
+	level = 2
+	max_once = no
+	on_success = AAA.5
+}
+BANISHED_SHIELD_CAT_FAIL = {
+	desc = DETERIORATING_SHIELD_DESC
+	picture = GFX_evt_shielded_planet
+	level = 2
+	max_once = no
+	on_success = AAA.3
+}
+ISOLATOR_SHIELD = {
+    desc = DETERIORATING_SHIELD_DESC
+    picture = GFX_evt_shielded_planet
+    level = 2
+    max_once = no
+    on_success = AAA.23
+}

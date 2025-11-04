@@ -1,0 +1,154 @@
+##################################
+# GLUBDRAG CREATION
+##################################
+
+AAA_legend_creator = {
+	create_country = {
+		name = random
+		type = faction
+		auto_delete = yes
+		flag = {
+			icon = {
+				category = "special"
+				file = "unknown.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors = {
+				"red"
+				"red"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			save_event_target_as = leader_country
+		}
+	}
+	event_target:leader_country = {
+		create_species = {
+			name = UNKNOWN
+			class = $SPECIES_CLASS$
+			portrait = $LEADER_PORTRAIT$
+			traits = {
+				trait = "trait_robot_custom_made"
+			}
+			allow_negative_traits = no
+			effect = {
+				save_event_target_as = leader_species
+			}
+		}
+		create_leader = {
+			class = $CLASS$
+			species = event_target:leader_species
+			name = $NAME$
+			skill = $LEVEL$
+			gender = $GENDER$
+			event_leader = no # Leader is allowed to lead factions and win elections
+			background_ethic = ethic_$ETHIC$
+			skip_background_generation = yes
+			custom_description = $DESC$
+			custom_catch_phrase = $CATCH_PHRASE$
+			immortal = $IMMORTAL$
+			hide_age = no #$IMMORTAL$ # Right now it will always match immortal
+			background_planet = event_target:plexi_homeworld_planet
+			background_job = drone_historical_curator
+
+			randomize_traits = no
+			effect = {
+				set_skill = $LEVEL$
+				save_event_target_as = ethic_leader
+				set_leader_flag = legendary_leader #renowned_leader
+				set_leader_flag = is_in_recruit_window
+				set_variable = { which = leader_pending_negative_traits_unmodified value = 1 }
+			}
+		}
+	}
+	event_target:ethic_leader = {
+		set_owner = root
+		# This is a hack to make the leader not be added to player country.
+		# We must call ethic_leader_hire on the hire event
+		# We must call ethic_leader_kill on the dismiss event
+		exile_leader_as = ethic_leader_exile
+	}
+}
+
+AAA_hire_event_leader_effect = {
+
+	clone_leader = {
+		target = event_target:$LEADER$
+		background_planet = event_target:plexi_homeworld_planet
+	}
+	last_created_leader = {
+		set_leader_flag = legendary_leader
+		set_leader_flag = immune_to_negative_traits
+		set_leader_flag = Glubdrag
+		set_variable = {
+			which = AAA_curiosity
+			value = 10
+		}
+	}
+
+	AAA_hire_event_leader_message = {
+		LEADER = $LEADER$
+	}
+}
+
+AAA_hire_event_leader_message = {
+	create_message = {
+		type = MESSAGE_RECRUITED_LEADER
+		localization =  MESSAGE_RECRUITED_LEADER_DESC
+		days = @toast_message_days
+		target = event_target:$LEADER$
+		variable = {
+			type = name
+			localization = LEADER
+			scope = event_target:$LEADER$
+		}
+		variable = {
+			key = "border"
+			value = "GFX_border_legendary" #TODO Add real rarity frame gfx
+		}
+	}
+}
+
+AAA_MAP_Precursor_Selection_Effect = {
+	capital_scope = {
+		solar_system = {
+			while = {
+				count = 40
+				closest_system = {
+					limit = {
+						NOR = {
+							has_star_flag = $FLAG$
+							has_star_flag = empire_home_system
+						}
+					}
+					set_star_flag = $FLAG$
+				}
+			}
+		}
+	}
+}
+# Generic Events for Tomb World Arcsites
+AAA_tomb_world_arcsite_events = {
+    random_list = {
+        10 = { fleet_event = { id = AAA_random_arcsite.1 } } # Excessive radiation levels ( - 3 clues )
+        10 = { fleet_event = { id = AAA_random_arcsite.2 } } # Unstable Ruins ( - 2 clues, scientist gets maimed )
+        10 = { site_laser_grid_trap = yes }
+        10 = { site_sentry_guns_trap = yes }
+        10 = { site_guardian_droids_trap = yes }
+        10 = {
+            fleet_event = { id = ancrel.8070 }
+            modifier = {
+                factor = 2
+                leader = { has_trait = leader_trait_percussive_maintainer }
+            }
+        }
+        #10 = { fleet_event = { id = AAA_random_arcsite.3 } } # Ancient Security Activated ( scientist dies)
+        #10 = { fleet_event = { id = AAA_random_arcsite.4 } } # Ancient Security Activated ( - 4 clues)
+        #10 = { fleet_event = { id = AAA_random_arcsite.5 } } # Ancient Security Activated ( -1 clue)
+    }
+}

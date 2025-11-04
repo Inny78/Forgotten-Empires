@@ -1,12 +1,11 @@
 spriteTypes = {
-	
 	# Plexi Log
 	SpriteType = {
 		name = "GFX_relic_plexi_log"
-		texturefile = "gfx/interface/icons/relics/r_plexi_log.dds"			
+		texturefile = "gfx/interface/icons/relics/r_plexi_log.dds"
 		effectFile = "gfx/FX/buttonstate.shader"
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_plexi_log_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_plexi_log_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -17,10 +16,8 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		legacy_lazy_load = no
-		
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_plexi_log_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_plexi_log_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -36,10 +33,10 @@ spriteTypes = {
 	# Eztarta
 	SpriteType = {
 		name = "GFX_relic_eztarta"
-		texturefile = "gfx/interface/icons/relics/r_eztarta.dds"			
+		texturefile = "gfx/interface/icons/relics/r_eztarta.dds"
 		effectFile = "gfx/FX/buttonstate.shader"
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_eztarta_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_eztarta_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -50,10 +47,8 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		legacy_lazy_load = no
-		
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_eztarta_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_eztarta_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -69,10 +64,10 @@ spriteTypes = {
 	# Isolator
 	SpriteType = {
 		name = "GFX_relic_isolator"
-		texturefile = "gfx/interface/icons/relics/r_isolator.dds"			
+		texturefile = "gfx/interface/icons/relics/r_isolator.dds"
 		effectFile = "gfx/FX/buttonstate.shader"
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_isolator_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_isolator_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -83,10 +78,8 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		legacy_lazy_load = no
-		
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_isolator_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_isolator_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -102,10 +95,10 @@ spriteTypes = {
 	# Plexi Log
 	SpriteType = {
 		name = "GFX_relic_AAA_machine_log"
-		texturefile = "gfx/interface/icons/relics/r_AAA_machine_log.dds"			
+		texturefile = "gfx/interface/icons/relics/r_AAA_machine_log.dds"
 		effectFile = "gfx/FX/buttonstate.shader"
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_AAA_machine_log_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_AAA_machine_log_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
@@ -116,10 +109,8 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		legacy_lazy_load = no
-		
 		animation = {
-			animationmaskfile = "gfx/interface/icons/relics/r_AAA_machine_log_shine.dds"			
+			animationmaskfile = "gfx/interface/icons/relics/r_AAA_machine_log_shine.dds"
 			animationtexturefile = "gfx/interface/icons/relics/shine_overlay_02.dds" 	# <- the animated file
 			animationrotation = 185.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)

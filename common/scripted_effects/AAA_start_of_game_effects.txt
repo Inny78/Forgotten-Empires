@@ -1,0 +1,38 @@
+# This is called after game start
+
+AAA_determine_shielded_planet_class = {
+	random_list = {
+		20 = {
+			change_pc = {
+				class = pc_nuked
+				inherit_entity = yes
+			}
+			set_planet_flag = AAA_shielded_tomb_world
+			complex_trigger_modifier = {
+				trigger = check_galaxy_setup_value
+				parameters = {
+					setting = habitable_worlds_scale
+				}
+				mode = factor
+			}
+		}
+		10 = {
+			change_pc = {
+				class = pc_broken
+				inherit_entity = yes
+			}
+			set_planet_flag = AAA_shielded_broken_world
+		}
+		50 = {
+			change_pc = {
+				class = pc_barren
+				inherit_entity = yes
+			}
+			set_planet_flag = AAA_shielded_barren_world
+		}
+	}
+	change_pc = {
+		class = pc_shielded
+		inherit_entity = yes
+	}
+}

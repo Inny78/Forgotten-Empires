@@ -1,0 +1,7 @@
+spriteTypes = {
+	# Glubdrags trait
+	spriteType = {
+		name = "GFX_leader_trait_AAA_glubdrag"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/AAA_glubdrag.dds"
+	}
+}

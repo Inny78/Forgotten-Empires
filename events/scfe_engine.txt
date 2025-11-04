@@ -24,71 +24,6 @@ country_event = {
 				}
 			}
 		}
-		random_playable_country = {
-			limit = {
-				is_ai = no
-				NOT = { has_country_flag = scfe_znkar_possible}
-			}
-			random_list = {
-				50 = { }
-				50 = { set_country_flag = scfe_alshigan_possible }
-			}
-		}
-		# Precursor Story Pack
-		while = {
-			random_playable_country = {
-				limit = {
-					is_ai = no
-					inline_script = {
-						script = forgotten_empires/toggled_code
-						code = "
-							NOT = { has_origin = origin_incohesive }
-						"
-						toggle = @has_gigastructures
-					}
-					NOR = {
-						has_country_flag = scfe_precursor_set_sless
-						has_country_flag = scfe_precursor_set_coprean
-						has_country_flag = scfe_precursor_set_astanine
-						has_country_flag = scfe_alshigan_possible
-						has_country_flag = scfe_znkar_possible
-					}
-				}
-				random_list = {
-					1 = {
-						modifier = {
-							factor = 0
-							any_country = {
-								is_ai = no
-								has_country_flag = scfe_precursor_set_sless
-							}
-						}
-						set_country_flag = scfe_precursor_set_sless
-					}
-					1 = {
-						modifier = {
-							factor = 0
-							any_country = {
-								is_ai = no
-								has_country_flag = scfe_precursor_set_coprean
-							}
-						}
-						set_country_flag = scfe_precursor_set_coprean
-					}
-					1 = {
-						modifier = {
-							factor = 0
-							any_country = {
-								is_ai = no
-								has_country_flag = scfe_precursor_set_astanine
-							}
-						}
-						set_country_flag = scfe_precursor_set_astanine
-					}
-				}
-			}
-			count = 3
-		}
 	}
 }
 event = {
@@ -119,7 +54,7 @@ country_event = {
 				spawn_system = {
 					min_distance >= 40
 					max_distance <= 60
-					initializer = "strange_init_01"
+					initializer = strange_init_01
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
@@ -135,7 +70,7 @@ country_event = {
 				spawn_system = {
 					min_distance >= 40
 					max_distance <= 60
-					initializer = "strange_init_02"
+					initializer = strange_init_02
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
@@ -151,7 +86,7 @@ country_event = {
 				spawn_system = {
 					min_distance >= 40
 					max_distance <= 60
-					initializer = "strange_init_03"
+					initializer = strange_init_03
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
@@ -167,7 +102,7 @@ country_event = {
 				spawn_system = {
 					min_distance >= 40
 					max_distance <= 60
-					initializer = "strange_init_04"
+					initializer = strange_init_04
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
@@ -182,7 +117,7 @@ country_event = {
 				spawn_system = {
 					min_distance >= 40
 					max_distance <= 60
-					initializer = "strange_init_05"
+					initializer = strange_init_05
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
@@ -371,25 +306,6 @@ country_event = {
 	}
 }
 
-# Alshigans
-country_event = {
-	id = scfe_engine.3
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-		years_passed > 25
-		has_country_flag = scfe_alshigan_possible
-		scfe_can_find_precursor = yes
-		is_multiplayer = no
-	}
-
-	immediate = {
-		remove_country_flag = scfe_alshigan_possible
-		set_country_flag = scfe_alshigans_possible
-	}
-}
-
 # Shaded Empire and Shamblers init
 country_event = {
 	id = scfe_engine.4
@@ -411,7 +327,7 @@ country_event = {
 				}
 				random_list = {
 					50 = { set_country_flag = scfe_shaded_empire_possible }
-					50 = { set_country_flag = scfe_shamblers_possible }
+					#50 = { set_country_flag = scfe_shamblers_possible }
 				}
 			}
 			count = 2
@@ -534,7 +450,7 @@ country_event = {
 			spawn_system = {
 				min_distance >= 40
 				max_distance <= 60
-				initializer = "scfe_celestial_disturbance_system"
+				initializer = scfe_celestial_disturbance_system
 			}
 			add_extra_hyperlane_to_spawned_system_effect = yes
 			set_spawn_system_batch = end
@@ -596,44 +512,6 @@ event = {
 				}
 			}
 			country_event = { id = scfe_unseen.1 days = 200 random = 100 }
-		}
-	}
-}
-event = {
-	id = scfe_engine.12
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		years_passed >= 30
-		NOT = { has_global_flag = scfe_ghosts_start }
-	}
-
-	immediate = {
-		set_global_flag = scfe_ghosts_start
-		event_target:global_event_country = { country_event = { id = scfe_engine.13 days = 300 random = 300 } }
-	}
-}
-country_event = {
-	id = scfe_engine.13
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		random_system = {
-			limit = { scfe_is_valid_star_system = yes }
-			set_spawn_system_batch = begin
-			spawn_system = {
-				min_distance >= 40
-				max_distance <= 60
-				initializer = scfe_ghost_system_01
-			}
-			add_extra_hyperlane_to_spawned_system_effect = yes
-			set_spawn_system_batch = end
-		}
-		every_playable_country = {
-			limit = { is_ai = no }
-			country_event = { id = scfe_ghost_init.1 days = 1 }
 		}
 	}
 }

@@ -2,7 +2,7 @@ scfe_coprean_constitution_site_1 = {
     desc = "scfe_coprean_constitution_site_1_desc"
     picture = GFX_evt_scfe_coprean_constitution_site_1
     stages = 3
-    weight = { base = 0 } #check scfeetc.2 to see real spawn chance
+    weight = { base = 0 }
 
     potential = {
         owner = { is_ai = no }

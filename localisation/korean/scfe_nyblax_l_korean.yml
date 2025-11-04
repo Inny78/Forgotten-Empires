@@ -87,7 +87,7 @@
  scfe_ghastly_eyrie.11.name: "The Sacrifice"
  scfe_ghastly_eyrie.11.desc: "The Shakzems are waiting for an answer. Who should we sacrifice?"
  scfe_ghastly_eyrie.11.a: "It wouldn't be right if the captain didn't sacrifice himself."
- scfe_ghastly_eyrie.11.b: "§Y[Root.GetLeaderName]§! is too important, sacrifice somebody else."
+ scfe_ghastly_eyrie.11.b: "§Y[Root.Leader.GetName]§! is too important, sacrifice somebody else."
  scfe_ghastly_eyrie.12.name: "The Arcane Rune"
  scfe_ghastly_eyrie.12.desc: "Our officer was placed inside an ancient device, where their life force was drained to complete the ritual. As soon as the sacrifice was made, the machine collapsed, and the Shakzem remnants vanished, leaving the rune behind.\n\nWhether the Shakzem were truly spirits or merely advanced holographic projections created by the device remains unclear. In the end, however - at the cost of our officer - we have obtained §YThe Arcane Rune§!."
  scfe_ghastly_eyrie.12.a: "A worthy sacrifice."
@@ -142,7 +142,7 @@
  scfe_narrow_maze.5.a: "It seems we got to it first!"
  # Quad
  scfe_quad_init.1.name: "Arrhythmic Heartbeat"
- scfe_quad_init.1.desc: "Upon entering the §HKikimora§! system, our science ship have detected a powerful heartbeat signal emanating from §HM'Cholou§!. §Y[Root.GetLeaderName]§! is keen to investigate the planet."
+ scfe_quad_init.1.desc: "Upon entering the §HKikimora§! system, our science ship have detected a powerful heartbeat signal emanating from §HM'Cholou§!. §Y[Root.Leader.GetName]§! is keen to investigate the planet."
  scfe_quad_init.1.a: "Proceed."
  # Quad dig site
  scfe_quad_site: "M'Cholou Digsite"

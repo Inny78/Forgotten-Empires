@@ -1,0 +1,30 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_specimen_AAA_plexian_star_chart"
+		texturefile = "gfx/interface/icons/specimens/AAA_plexian_star_chart.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_AAA_plexian_tombstone"
+		texturefile = "gfx/interface/icons/specimens/AAA_plexian_tombstone.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_AAA_old_warhead"
+		texturefile = "gfx/interface/icons/specimens/AAA_old_warhead.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_AAA_dust"
+		texturefile = "gfx/interface/icons/specimens/AAA_dust.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_AAA_floating_mini_galaxy"
+		texturefile = "gfx/interface/icons/specimens/AAA_floating_mini_galaxy.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_AAA_organic_remains"
+		texturefile = "gfx/interface/icons/specimens/AAA_organic_remains.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_AAA_data_cube"
+		texturefile = "gfx/interface/icons/specimens/AAA_data_cube.dds"
+	}
+}

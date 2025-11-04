@@ -34,5 +34,3 @@ FHMP_PreSelect_Disabled_Reached_Max_Precursors_Check = {
 		}
 	}
 }
-
-AAA_is_banished_threat = { always = no }

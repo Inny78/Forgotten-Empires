@@ -2,38 +2,6 @@ namespace = scfe_coprean_constitution
 
 # initialization
 
-ship_event = {
-    id = scfe_coprean_constitution.100
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-        owner = {
-            is_ai = no
-            has_country_flag = scfe_precursor_set_coprean
-            scfe_can_find_precursor = yes
-        }
-        from = {
-            solar_system = {
-                scfe_is_valid_system = yes
-            }
-            has_anomaly = no
-            OR = {
-                scfe_is_barren = yes
-                scfe_is_barren_cold = yes
-            }
-            NOR = {
-                exists = archaeological_site
-                has_planet_flag = precursor_world
-                has_global_flag = scfe_precursor_coprean_start
-            }
-        }
-    }
-
-    immediate = {
-        from = { create_archaeological_site = scfe_coprean_constitution_site_1 }
-    }
-}
 
 #digsite 1
 #chapter 1
@@ -59,9 +27,6 @@ fleet_event = {
     option = {
         name = scfe_coprean_constitution.1.a
         small_artifact_reward = yes
-        owner = {
-            begin_event_chain = { event_chain = scfe_coprean_chain }
-        }
         hidden_effect = {
             owner = { save_global_event_target_as = scfe_coprean_owner }
         }

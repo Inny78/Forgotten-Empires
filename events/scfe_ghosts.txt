@@ -1,99 +1,7 @@
 # Ancient Ghosts
 
-namespace = scfe_ghost_init
-
-country_event = {
-    id = scfe_ghost_init.1
-    title = scfe_ghost_init.1.name
-    desc = scfe_ghost_point0_desc
-    picture = GFX_evt_communication_event
-    show_sound = event_default
-    is_triggered_only = yes
-
-    option = {
-        name = INTERESTING
-        begin_event_chain = { event_chain = scfe_ghost_system_chain target = root }
-        create_point_of_interest = {
-            event_chain = scfe_ghost_system_chain
-            id = scfe_ghost_point0
-            name = scfe_ghost_point0
-            desc = scfe_ghost_point0_desc
-            location = event_target:scfe_ghost_system1
-        }
-    }
-}
-
 namespace = scfe_ghost_planet
 
-ship_event = {
-    id = scfe_ghost_planet.1
-    title = scfe_ghost_planet.1.name
-    desc = scfe_ghost_planet.1.desc
-    picture = GFX_evt_ship_travel
-    show_sound = event_default
-    is_triggered_only = yes
-    event_chain = scfe_ghosts_chain
-
-    trigger = {
-        owner = { is_ai = no }
-        from = { has_star_flag = scfe_ghost_system_01 }
-        NOT = { has_global_flag = scfe_ghosts_started }
-    }
-
-    immediate = {
-        from = { remove_star_flag = scfe_ghost_system_01 }
-        set_global_flag = scfe_ghosts_started
-        owner = { country_event = { id = story.5 days = 30 } }
-    }
-
-    option = {
-        name = INTERESTING
-        owner = {
-            begin_event_chain = { event_chain = scfe_ghosts_chain target = root.owner }
-            create_point_of_interest = {
-                event_chain = scfe_ghosts_chain
-                id = scfe_ghost_point1
-                name = scfe_ghost_point1
-                location = event_target:scfe_ghost_planet1
-            }
-        }
-        hidden_effect = {
-            owner = { set_country_flag = scfe_vinarii_intro }
-            every_playable_country = {
-                limit = { is_ai = no }
-                end_event_chain = scfe_ghost_system_chain
-            }
-        }
-    }
-}
-fleet_event = {
-    id = scfe_ghost_planet.2
-    title = scfe_ghost_planet.2.name
-    desc = scfe_ghost_planet.2.desc
-    picture = GFX_evt_scfe_city_planet
-    show_sound = event_default
-    is_triggered_only = yes
-    fire_only_once = yes
-    location = event_target:scfe_ghost_planet1
-    event_chain = scfe_ghosts_chain
-
-    trigger = {
-        from = { is_scope_type = planet has_planet_flag = scfe_ghost_planet }
-        exists = event_target:scfe_ghost_planet1
-        owner = { is_ai = no has_event_chain = scfe_ghosts_chain }
-    }
-
-    option = {
-        name = scfe_ghost_planet.2.a
-        from = {
-            create_archaeological_site = scfe_ghost_planet_dig
-            hidden_effect = { remove_planet_flag = scfe_ghost_planet }
-        }
-        hidden_effect = {
-            owner = { remove_point_of_interest = scfe_ghost_point1 }
-        }
-    }
-}
 country_event = {
     id = scfe_ghost_planet.3
     title = scfe_ghost_planet.3.name
@@ -393,8 +301,6 @@ country_event = {
     }
     after = {
         hidden_effect = {
-            clear_global_event_target = scfe_ghost_system1
-            clear_global_event_target = scfe_ghost_planet1
             clear_global_event_target = scfe_ghost_system2
             clear_global_event_target = scfe_ghost_planet2
             clear_global_event_target = scfe_ghost_system3
@@ -842,34 +748,6 @@ fleet_event = {
 }
 namespace = scfe_ghost_planet
 # Safeguards
-ship_event = {
-    id = scfe_ghost_planet.202
-    title = scfe_ghost_planet.2.name
-    desc = scfe_ghost_planet.2.desc
-    picture = GFX_evt_scfe_city_planet
-    show_sound = event_default
-    is_triggered_only = yes
-    fire_only_once = yes
-    location = event_target:scfe_ghost_planet1
-    event_chain = scfe_ghosts_chain
-
-    trigger = {
-        exists = event_target:scfe_ghost_planet1
-        owner = { is_ai = no has_event_chain = scfe_ghosts_chain }
-        from = { has_planet_flag = scfe_ghost_planet }
-    }
-
-    option = {
-        name = scfe_ghost_planet.2.a
-        from = {
-            create_archaeological_site = scfe_ghost_planet_dig
-            hidden_effect = { remove_planet_flag = scfe_ghost_planet }
-        }
-        hidden_effect = {
-            owner = { remove_point_of_interest = scfe_ghost_point1 }
-        }
-    }
-}
 ship_event = {
     id = scfe_ghost_planet.204
     title = scfe_ghost_planet.4.name

@@ -2,7 +2,7 @@ scfe_astanine_site_1 = {
     desc = "scfe_astanine_site_1_desc"
     picture = GFX_evt_ship_in_orbit
     stages = 3
-    weight = { base = 0 } #check scfe_etc.3 to see real spawn chance
+    weight = { base = 0 }
 
     potential = {
         owner = { is_ai = no }
@@ -22,8 +22,8 @@ scfe_astanine_site_1 = {
     }
 
     on_create = {
+        set_global_flag = scfe_precursor_astanine_start
         root.planet = {
-            set_global_flag = scfe_precursor_astanine_start
             set_planet_flag = precursor_world
             set_planet_flag = scfe_astanine_colony
         }

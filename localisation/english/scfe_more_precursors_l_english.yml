@@ -32,7 +32,7 @@
  FHMP.53.name: "A Place For Trade"
  FHMP.53.desc: "After further studies of the items left behind on [from.Planet.GetName], our [Root.Owner.GetScientistPlural] has concluded that the building was once a bustling center of trade, owned by The Ixardian Corporation, where the Ixardians would provide wares and services to the natives of the [from.Planet.GetPlanetMoon] in exchange for energy credits, a currency which somehow still existed back then."
  FHMP.54.name: "A Trail Of Credits"
- FHMP.54.desc: "While most of the equipment belonging to the ancient traders has long since stopped working, one of the computer terminals appears to be in a working condition, and was presumably used to transfer energy credits to what we assume is their headquarters or home empire. By inserting a miniscule amount of energy credits into the machine, our [Root.Owner.GetScientistPlural] has been able to track the emitted signals to [event_target:new_ixardian_digsite.solar_system.GetName], a system not too far from here."
+ FHMP.54.desc: "While most of the equipment belonging to the ancient traders has long since stopped working, one of the computer terminals appears to be in a working condition, and was presumably used to transfer energy credits to what we assume is their headquarters or home empire. By inserting a miniscule amount of energy credits into the machine, our [Root.Owner.GetScientistPlural] has been able to track the emitted signals to [new_ixardian_digsite.solar_system.GetName], a system not too far from here."
 
  # Emergency Escape
  ixardian_digsite_2: "Abandoned Colony"
@@ -44,13 +44,13 @@
  FHMP.56.desc: "During the investigation of the ruins on [from.Planet.GetName], the [root.GetName] has begun recieving transmissions from the planet, eminating from somewhere else in the system. After translating the message, it was revealed to be an evacuation notice sent to the Ixardians who worked on the [from.Planet.GetPlanetMoon], telling them to evacuate immediately.\nThe message does not reveal the reason for the evacuation, but there's no signs of the Ixardians having returned to the [from.Planet.GetPlanetMoon] after their evacuation."
  FHMP.56.a: "Disconcerting"
  FHMP.57.name: "Tracing The Signal"
- FHMP.57.desc: "Our [Root.Owner.GetScientistPlural] has succesfully traced the transmissions to [event_target:new_ixardian_digsite.GetName], a [event_target:new_ixardian_digsite.GetPlanetMoon] where we have found the remains of a crashed Ixardian starbase. How it ended up there is unknown, but it would be unwise to ignore it."
+ FHMP.57.desc: "Our [Root.Owner.GetScientistPlural] has succesfully traced the transmissions to [new_ixardian_digsite.GetName], a [new_ixardian_digsite.GetPlanetMoon] where we have found the remains of a crashed Ixardian starbase. How it ended up there is unknown, but it would be unwise to ignore it."
  FHMP.57.a: "Ok"
  FHMP.58.name: "Incoming Transmission"
- FHMP.58.desc: "We have recieved a transmission originating from [event_target:transmitting_planet.GetName]"
+ FHMP.58.desc: "We have recieved a transmission originating from [transmitting_planet.GetName]"
  FHMP.58.a: "Ok"
  FHMP.59.name: ""
- FHMP.59.desc: "Activity detected on [event_target:old_ixardian_digsite.GetName].\n\nReestablishing Contact with §RERROR: Data Corrupted§!.\n\nReestablishing Contact with §RERROR: Data Corrupted§!.\n\nReestablishing Contact with §RERROR: Data Corrupted§!."
+ FHMP.59.desc: "Activity detected on [old_ixardian_digsite.GetName].\n\nReestablishing Contact with §RERROR: Data Corrupted§!.\n\nReestablishing Contact with §RERROR: Data Corrupted§!.\n\nReestablishing Contact with §RERROR: Data Corrupted§!."
  FHMP.59.a: "End Transmission"
 
  # Crashed Starbase
@@ -72,7 +72,7 @@
  FHMP.63.name: "Changed Focus"
  FHMP.63.desc: "After further investigation of the factory, our [Root.Owner.GetScientistPlural] are certain that the factory's production equipment was repurposed from production of civilian goods to military weapons. This radical shift in Ixardian Behavior appears to have happened at the very end of the Ixardian Corporation's lifetime, suggesting the change happened due to an external threat to the megacorporation."
  FHMP.64.name: "Battle Plans"
- FHMP.64.desc: "Our excavation team on [From.Planet.GetName] has managed to find an intact database in the weapons factory, and retrieved its contents. Besides the expected production data, showing how many wares they made each day, the database also has a hastily made battle plan of sorts, showing the Ixardian space, as well as that of serveral others. Of particular note is the [event_target:ixardian_first_system.GetName] system, which lies in the territory of an empire called the 'Tirian Purifiers' and is marked as 'evacuated'. The map also shows the Ixardian Corporations home system, or headquarters as they called it."
+ FHMP.64.desc: "Our excavation team on [From.Planet.GetName] has managed to find an intact database in the weapons factory, and retrieved its contents. Besides the expected production data, showing how many wares they made each day, the database also has a hastily made battle plan of sorts, showing the Ixardian space, as well as that of serveral others. Of particular note is the [ixardian_first_system.GetName] system, which lies in the territory of an empire called the 'Tirian Purifiers' and is marked as 'evacuated'. The map also shows the Ixardian Corporations home system, or headquarters as they called it."
 
  # Home system located
 
@@ -175,7 +175,7 @@
  FHMP.104.a: "Curious"
  #FHMP.104.b: "We must uncover their secrets by any means necessary"
  FHMP.105.name: "Incoming Transmission"
- FHMP.105.desc: "We have recieved a transmission from the [event_target:FHMP_werediran_system_2.GetName] system."
+ FHMP.105.desc: "We have recieved a transmission from the [FHMP_werediran_system_2.GetName] system."
  FHMP.105.a: "Curious"
  FHMP.106.name: ""
  FHMP.106.desc: "Come."
@@ -185,7 +185,7 @@
  werediran_digsite_2: "Mysterious Signal"
  werediran_digsite_2_intro: "We have recieved a signal from somewhere on this planet. We should investigate it."
  FHMP.107.name: "Identical Tower"
- FHMP.107.desc: "After tracking down the source of the signal, our team was surprised to see a radio tower identical to the one we found on [event_target:werediran_planet_1.GetName], which should be impossible, considering the one on [event_target:werediran_planet_1.GetName] was made by primitives incapable of interstellar travel."
+ FHMP.107.desc: "After tracking down the source of the signal, our team was surprised to see a radio tower identical to the one we found on [werediran_planet_1.GetName], which should be impossible, considering the one on [werediran_planet_1.GetName] was made by primitives incapable of interstellar travel."
  FHMP.108.name: "Primitive Technology"
  FHMP.108.desc: "The tower on this [from.Planet.GetPlanetMoon] also appears to have been made around 500 000 years ago, by primitives in an atomic-age society, judging by the city ruins found in the vicinity. This, however, does not seem to have been a hindrance to the tower builders, who had managed to complete the advanced construction. What happened to the soicety is unknown, but our leading [Root.Owner.GetArchaeologistPlural] believe their grand project distracted them from more important concerns, ultimately leading to their downfall."
  FHMP.109.name: "The Signal"
@@ -193,7 +193,7 @@
  FHMP.110.name: "Recorded Transmission"
  FHMP.110.desc: "After extracting the rest of the information, we have found serveral logs detailing the findings of the tower builders, including a recording of a transmission almost identical to the one we recieved from this system, confirming that it was the Werediran Signal.\n\nMany of our leading [Root.Owner.GetScientistPlural] believes it's likely we'll recieve more of these transmissions from other systems if more towers exist."
  FHMP.111.name: "Incoming Transmission"
- FHMP.111.desc: "We have recieved a transmission from the [event_target:FHMP_werediran_system_3.GetName] system."
+ FHMP.111.desc: "We have recieved a transmission from the [FHMP_werediran_system_3.GetName] system."
  FHMP.112.name: ""
  FHMP.112.desc: "Come.\n\nTo.\n\n\n\nMe."
 
@@ -208,9 +208,9 @@
  #FHMP.114.name: ""
  #FHMP.114.desc: "§SEntry 2351: We got a signal! at 3810, day 2351, we recieved a weak signal coming from the Everala-system, unlike anything we've gotten before.\n\nA sensation, truly! Sungabb has already contacted every media channel he can, and they should be here in an hour!\n\n§! "
  FHMP.115.name: "Instructions"
- FHMP.115.desc: "After recovering the data from the terminals, it has been revealed that the inhabitants of this world had gotten transmissions, not unlike the ones we have been getting since finding the tower on [event_target:werediran_planet_1.GetName], although those they recieved were much more frequent. This greatly motivated their civilization to invent a way to travel the stars, according to the ancient logs."
+ FHMP.115.desc: "After recovering the data from the terminals, it has been revealed that the inhabitants of this world had gotten transmissions, not unlike the ones we have been getting since finding the tower on [werediran_planet_1.GetName], although those they recieved were much more frequent. This greatly motivated their civilization to invent a way to travel the stars, according to the ancient logs."
  FHMP.116.name: "Blueprints Recovered"
- FHMP.116.desc: "During exploration of the listening post, our excavation team has stumbled upon quite a find: A blueprint on a data drive, detailing how to build an amplifying tower just like the one we found on [event_target:werediran_planet_1.GetName], although due to the higher technology level of this blueprint, we have been able to learn much more from it, including how to make one ourselves, which several of our top [Root.Owner.GetScientistPlural] have been pushing for. They hope it will allow us to pinpoint the signal's source.\n\nThe purpose of amplifying the Werediran Signal was, however, not revealed, although it's clear that it wasn't the natives on this planet that made these blueprints, rather they recieved them."
+ FHMP.116.desc: "During exploration of the listening post, our excavation team has stumbled upon quite a find: A blueprint on a data drive, detailing how to build an amplifying tower just like the one we found on [werediran_planet_1.GetName], although due to the higher technology level of this blueprint, we have been able to learn much more from it, including how to make one ourselves, which several of our top [Root.Owner.GetScientistPlural] have been pushing for. They hope it will allow us to pinpoint the signal's source.\n\nThe purpose of amplifying the Werediran Signal was, however, not revealed, although it's clear that it wasn't the natives on this planet that made these blueprints, rather they recieved them."
 
  # Event Chain
  FHMP_werediran_chain_title: "The Werediran Signal"
@@ -236,7 +236,7 @@
  #FHMP.118.desc: "[Owner.FHMPFinalSignal]"
  FHMP.118.a: "Terminate Transmission"
  FHMP.119.name: "Signal Source Located"
- FHMP.119.desc: "After intense study of the recieved signals, scientists on §Y[Root.Capital.GetName]§! have managed to deduce the exact galactic coordinates of the signal's source system, a system called [event_target:werediran_home_system.GetName]. Transmissions are now constantly emanating from the system, and we should launch an expedition to this system before anyone beats us to it."
+ FHMP.119.desc: "After intense study of the recieved signals, scientists on §Y[Root.Capital.GetName]§! have managed to deduce the exact galactic coordinates of the signal's source system, a system called [werediran_home_system.GetName]. Transmissions are now constantly emanating from the system, and we should launch an expedition to this system before anyone beats us to it."
  FHMP_signal_5_speech: "Come to me.\n\nFollow me."
  FHMP_signal_4_speech: "Come to me."
  FHMP_signal_3_speech: "...Come...to..me..."
@@ -283,7 +283,7 @@
  FHMP_random_arcsite.2.desc: "During Excavation, all equipment experienced a sudden malfunction at the same time. Most of it needs to be replaced."
  FHMP_random_arcsite.2.a: "Disconcerting"
  FHMP_random_arcsite.3.name: "Vanished"
- FHMP_random_arcsite.3.desc: "After investigation of the ruins on [fromfrom.Planet.GetName], lead scientist [event_target:dead_scientist.GetName] failed to return to camp. No one knows where [event_target:dead_scientist.GetSheHe] went, or why [event_target:dead_scientist.GetSheHe] failed to return to the camp, but no traces of [event_target:dead_scientist.GetSheHe] can be found, and as such has been presumed killed in action."
+ FHMP_random_arcsite.3.desc: "After investigation of the ruins on [fromfrom.Planet.GetName], lead scientist [dead_scientist.GetName] failed to return to camp. No one knows where [dead_scientist.GetSheHe] went, or why [dead_scientist.GetSheHe] failed to return to the camp, but no traces of [dead_scientist.GetSheHe] can be found, and as such has been presumed killed in action."
  FHMP_random_arcsite.3.a: "Tragic"
  FHMP_random_arcsite.4.name: "Visions"
  FHMP_random_arcsite.4.desc: "Today, chief archaeologist [From.Leader.GetName] reported having a vision where a glowing orb told [From.Leader.GetHerHim] about the ruin's past. While what the vision told was true, and what [From.Leader.GetName] learned from it has been very helpful, [From.Leader.GetSheHe] has been freaked out by this event and refused to leave the camp for the rest of the day."
@@ -356,7 +356,7 @@
  FHMP.153.name: "Signs Of Battle"
  FHMP.153.desc: "Contrary to what we believed at first, not all of the scrap metal and destroyed structures stem from the mining operation, as a lot of it has been determined to have been destroyed by lasers and other weapons of war.\n\nPerhaps the mining operation was just collateral damage, or maybe it was the target of a military operation, in any case this new discovery means that there might be shipwrecks or other remains from the battle other places in this system, that we may have overlooked earlier."
  FHMP.154.name: "Crashed Ship"
- FHMP.154.desc: "After a bit of searching, we have found the remains of a crashed ship on the [event_target:new_ezentian_digsite.GetPlanetMoon] [event_target:new_ezentian_digsite.GetName]. It has no visible exterior weapons and is much larger than the average civilian ship."
+ FHMP.154.desc: "After a bit of searching, we have found the remains of a crashed ship on the [new_ezentian_digsite.GetPlanetMoon] [new_ezentian_digsite.GetName]. It has no visible exterior weapons and is much larger than the average civilian ship."
  FHMP.154.a: "Curious"
 
  # Crashed Ship
@@ -365,7 +365,7 @@
  ezentian_digsite_2_intro: "This ancient ship crashed on this [Planet.GetPlanetMoon] a long time ago. While it is in disrepair, it surprisingly appears to have survived the crash in one piece."
 
  FHMP.155.name: "Mining Ship"
- FHMP.155.desc: "After finding and gaining access to the ship's bridge, [Root.Leader.GetName] recovered many files from the ship's surviving terminals. The recovered data classifies the ship as an Ezentian Colossus-Class Mobile-Mining Platform, featuring a 'high-grade mining beam'. How it worked is as of yet unknown, although it's possible that it has something to do with the hole found on [event_target:FHMP_first_digsite_planet.GetName]."
+ FHMP.155.desc: "After finding and gaining access to the ship's bridge, [Root.Leader.GetName] recovered many files from the ship's surviving terminals. The recovered data classifies the ship as an Ezentian Colossus-Class Mobile-Mining Platform, featuring a 'high-grade mining beam'. How it worked is as of yet unknown, although it's possible that it has something to do with the hole found on [FHMP_first_digsite_planet.GetName]."
  FHMP.156.name: "Planet Destroyer"
  FHMP.156.desc: "After much searching, the crew of the [Root.GetName] has found the 'mining beam', a device created by the Ezentians to access the valuable minerals and metals in a planet's core. By analyzing its construction, it has been determined that it is in fact just an enourmous thermic energy beam, designed in a way to crack open planets. A terrifying weapon for sure, although this one is beyond repair."
  FHMP.156.a: "Perhaps that is for the best"
@@ -376,8 +376,8 @@
  FHMP.157.a: "That's all we need"
  FHMP.157.a.tooltip: "Begins the '§YPrecursors - The Ezenti§!' Event Chain."
  FHMP.159.name: "Ezentian Remains"
- FHMP.159.desc: "We have detected ancient remains of the $FHMP_ezentian_empire$ in the [event_target:FHMP_target_planet.solar_system.GetName] system."
- FHMP.159.a.tooltip: "Create an archaeological site on [event_target:FHMP_target_planet.GetName]."
+ FHMP.159.desc: "We have detected ancient remains of the $FHMP_ezentian_empire$ in the [FHMP_target_planet.solar_system.GetName] system."
+ FHMP.159.a.tooltip: "Create an archaeological site on [FHMP_target_planet.GetName]."
 
  # Event Chain
 
@@ -454,7 +454,7 @@
  FHMP.183.name: "The War"
  FHMP.183.desc: "The mural text continues on about how the federation, calling themselves the 'Galactic Defense Force' made a pre-emptive strike against the $FHMP_ezentian_empire$, disrupting their mining operations and destroying their colossi. This quickly escalated to a galaxy-wide war with the federation on one side and the $FHMP_ezentian_empire$ on the other."
  FHMP.184.name: "The Ezentian Defeat"
- FHMP.184.desc: "After defeating the $FHMP_ezentian_empire$ in the battle for the [event_target:FHMP_ezentian_battle_planet_target.GetName] system, the Galactic Defense Force entered the Ezentian system where they bombarded the ringworlds the $FHMP_ezentian_empire$ had spent the last few decades building, their grand project. Although they celebrated their victory, a few of the federation members felt guilty for destroying the $FHMP_ezentian_empire$, having doubts about whether or not this attack was justified.\n\nThe mural was made by some of these empires in secret, and later they also restored this section of the ringworld to its former glory, although time has taken its toll since then."
+ FHMP.184.desc: "After defeating the $FHMP_ezentian_empire$ in the battle for the [FHMP_ezentian_battle_planet_target.GetName] system, the Galactic Defense Force entered the Ezentian system where they bombarded the ringworlds the $FHMP_ezentian_empire$ had spent the last few decades building, their grand project. Although they celebrated their victory, a few of the federation members felt guilty for destroying the $FHMP_ezentian_empire$, having doubts about whether or not this attack was justified.\n\nThe mural was made by some of these empires in secret, and later they also restored this section of the ringworld to its former glory, although time has taken its toll since then."
  FHMP.185.name: "The Last Remains Of The $FHMP_ezentian_empire$"
  FHMP.185.desc: "To prevent anyone from making any more colossus-class ships, the Galactic Defense Force destroyed almost all of the colossi they could find, including all research on the subject. There's instructions on the mural on where to find one of the few remaining colossi cores that were hidden before the Galactic Defense Force found it.\n\nThe last line of the mural simply says '§YWe're Sorry§!."
  FHMP.185.a: "Find the core and bring it back to [Root.Owner.capital_scope.GetName]"
@@ -479,7 +479,7 @@
 
  # Relic (Colossus Core)
  #FHMP.187.name: "More Resources"
- #FHMP.187.desc: "We have activated the Colossus Core on §Y[event_target:targeted_planet.GetName]§!, granting us access to even more of the [event_target:targeted_planet.GetPlanetMoon]'s resources!"
+ #FHMP.187.desc: "We have activated the Colossus Core on §Y[targeted_planet.GetName]§!, granting us access to even more of the [targeted_planet.GetPlanetMoon]'s resources!"
  r_ezentian_core: "Ezentian Colossus Core"
  FHMP_Ezentian_Core_Activated: "Activated Colossus Core"
  FHMP_Ezentian_Core_Activated_desc: "The Ezentian Colossus Core's incredible power has allowed our miners to access deposits of minerals they would normally not be able to."
@@ -497,11 +497,11 @@
  ################################
 
  MAP_precursor_events.5.name: "Abnormal Architecture"
- MAP_precursor_events.5.desc: "During a re-survey of §Y[event_target:MAP_ixardian_digsite.GetName]§!, we have found evidence that an ancient alien civilization was once active on this [event_target:MAP_ixardian_digsite.GetPlanetMoon]. Among the ruins of a once grand city, a single building still stands, made from a wholly different, and much stronger, material than the rest, making it the only one to have stood the test of time.\n\nThe artifacts left behind by the former owners reveal that it once belonged to a spacefaring empire who called themselves the §YIxardian Corporation§!.\n\nJudging by the age of these artifacts, our [GetScientistPlural] believe they were active in this region of space some 800 000 years ago."
+ MAP_precursor_events.5.desc: "During a re-survey of §Y[MAP_ixardian_digsite.GetName]§!, we have found evidence that an ancient alien civilization was once active on this [MAP_ixardian_digsite.GetPlanetMoon]. Among the ruins of a once grand city, a single building still stands, made from a wholly different, and much stronger, material than the rest, making it the only one to have stood the test of time.\n\nThe artifacts left behind by the former owners reveal that it once belonged to a spacefaring empire who called themselves the §YIxardian Corporation§!.\n\nJudging by the age of these artifacts, our [GetScientistPlural] believe they were active in this region of space some 800 000 years ago."
  MAP_precursor_events.6.name: "Strange Signal"
- MAP_precursor_events.6.desc: "We have recieved a signal from [event_target:MAP_werediran_digsite.GetName], although the transmission, if it can even be classified as one, was comprised entirely out of static. Whatever is transmitting this signal, it surely is worth investigating."
+ MAP_precursor_events.6.desc: "We have recieved a signal from [MAP_werediran_digsite.GetName], although the transmission, if it can even be classified as one, was comprised entirely out of static. Whatever is transmitting this signal, it surely is worth investigating."
  MAP_precursor_events.7.name: "Broken Planet"
- MAP_precursor_events.7.desc: "In spite of our advanced technological progress in the field of orbital surveying, we have discovered that what we first assumed to be a fairly normal barren world, [event_target:MAP_ezentian_digsite.GetName], is in fact a broken world. A huge chunk of the planet appears to have been blasted from the planet, exposing the planet's core to space.\n\nIt would be a good idea to investigate what happened here."
+ MAP_precursor_events.7.desc: "In spite of our advanced technological progress in the field of orbital surveying, we have discovered that what we first assumed to be a fairly normal barren world, [MAP_ezentian_digsite.GetName], is in fact a broken world. A huge chunk of the planet appears to have been blasted from the planet, exposing the planet's core to space.\n\nIt would be a good idea to investigate what happened here."
 
  ################################
  # Specimens

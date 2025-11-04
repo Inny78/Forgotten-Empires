@@ -16,6 +16,7 @@ country_event = {
 		set_global_flag = scfe_markys_enabled
 		set_global_flag = scfe_nyblax_enabled
 		set_global_flag = scfe_precursors_enabled
+        set_global_flag = scfe_midgame_precursors_enabled
 		country_event = { id = scfe_menu.2 }
 	}
 }
@@ -56,40 +57,23 @@ country_event = {
 		country_event = { id = scfe_menu.2 }
 	}
 	# Precursors
-	option = {
-		name = scfe_menu.2.e
-		trigger = {
-			has_global_flag = scfe_precursors_enabled
-			has_PreSelect_active = no
-		}
-		remove_global_flag = scfe_precursors_enabled
-		country_event = { id = scfe_menu.2 }
-	}
-	option = {
-		name = scfe_menu.2.f
-		trigger = {
-			NOT = { has_global_flag = scfe_precursors_enabled }
-			has_PreSelect_active = no
-		}
-		set_global_flag = scfe_precursors_enabled
-		country_event = { id = scfe_menu.2 }
-	}
     option = {
         name = scfe_menu.2.g
         trigger = {
             has_global_flag = scfe_midgame_precursors_enabled
             has_PreSelect_active = no
         }
-        set_global_flag = scfe_midgame_precursors_enabled
+        remove_global_flag = scfe_midgame_precursors_enabled
         country_event = { id = scfe_menu.2 }
     }
     option = {
         name = scfe_menu.2.h
         trigger = {
-            has_PreSelect_active = no
+            has_global_flag = scfe_precursors_enabled
             NOT = { has_global_flag = scfe_midgame_precursors_enabled }
+            has_PreSelect_active = no
         }
-        remove_global_flag = scfe_midgame_precursors_enabled
+        set_global_flag = scfe_midgame_precursors_enabled
         country_event = { id = scfe_menu.2 }
     }
 	# Start

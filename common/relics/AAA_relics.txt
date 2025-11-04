@@ -1,0 +1,272 @@
+@activation_cost = 3000
+@triumph_duration_long = 7200
+@triumph_duration = 3600
+@triumph_duration_short = 1800
+@triumph_duration_veryshort = 900
+
+# Rework: Produces unity and society research directly, multiplied by amount of logs. Start with 3 - 5 logs already deciphered. Gains more effects the more logs you have, up to 100. When you get 100 you get the option to revive Glubdrag (However this will reduce the unity the relic produces). Glubdrag can either be put into a robot body or a cloned one. If you have genetic ascension you will have the option to make a new clone if he dies. You can only upload to robotic if you have synthetic ascension.
+r_plexi_log = {
+	activation_duration = @triumph_duration_short
+	portrait = "GFX_relic_plexi_log"
+	sound = "relic_activation_generic"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 500
+		}
+		produces = {
+			unity = 2
+			#society_research = 2
+			mult = plexi_log_usage
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = AAA_refused_glubdrag
+				}
+			}
+			society_research = 300
+		}
+	}
+
+	ai_weight = {
+		weight = 120
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = AAA_shield_log
+			#check_variable = {
+			#	which = plexi_log_usage
+			#	value > 19
+			#}
+			#plexi_log_usage > 9
+			#always = yes
+		}
+		planet_orbital_bombardment_damage = -0.15
+		#mult = plexi_log_usage
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = AAA_teacher_log
+			#check_variable = {
+			#	which = plexi_log_usage
+			#	value > 19
+			#}
+			#plexi_log_usage > 9
+			#always = yes
+		}
+		species_leader_exp_gain = 0.01
+		mult = plexi_log_usage
+	}
+
+	score = 1000
+
+	active_effect = {
+		#custom_tooltip = relic_plexi_log_active
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration_veryshort
+			}
+			#country_event = { id = AAA.9 }
+			if = {
+				limit = {
+					check_variable = {
+						which = plexi_log_usage
+						value < 50
+					}
+				}
+				custom_tooltip = relic_plexi_log_active
+				change_variable = {
+					which = plexi_log_usage
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						check_variable = {
+							which = plexi_log_usage
+							value = 20
+						}
+					}
+				}
+				hidden_effect = {
+					fire_on_action = { on_action = AAA_log_events }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = plexi_log_usage
+						value = 45
+					}
+				}
+				hidden_effect = {
+					country_event = { id = AAA.153 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = plexi_log_usage
+						value = 50
+					}
+				}
+				hidden_effect = {
+					country_event = { id = AAA.105 }
+				}
+			}
+			#else = {
+			#	custom_tooltip = relic_plexi_log_active_completed
+			#	hidden_effect = {
+			#		#country_event = { id AAA.X } # Revive Glubdrag
+			#		add_modifier = {
+			#			modifier = "AAA_completed_log"
+			#			days = @triumph_duration_veryshort
+			#		}
+			#	}
+			#}
+		}
+		custom_tooltip = relic_triumph_cooldown_veryshort
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_plexi_log
+		}
+		custom_tooltip = {
+			fail_text = "AAA_log_already_completed"
+			check_variable = {
+				which = plexi_log_usage
+				value < 50
+			}
+		}
+	}
+}
+
+r_eztarta = {
+    activation_duration = @triumph_duration_long
+    portrait = "GFX_relic_eztarta"
+    sound = "relic_activation_generic"
+
+    resources = {
+        category = relics
+        # Activation cost
+        cost = {
+            unity = 3000
+        }
+    }
+
+    ai_weight = {
+        weight = 120
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_colony_development_speed_mult = 0.5
+    }
+
+    score = 1000
+
+    active_effect = {
+        custom_tooltip = relic_eztarta_active
+        custom_tooltip = AAA_relic_triumph_cooldown_long
+        hidden_effect = {
+            add_modifier = {
+                modifier = "relic_activation_cooldown"
+                days = @triumph_duration_long
+            }
+            country_event = { id = AAA.10 }
+        }
+    }
+
+    # Possible check for activation
+    possible = {
+        inline_script = {
+            script = relics/activation_checks
+            RELIC = r_eztarta
+        }
+    }
+}
+
+r_isolator = {
+    activation_duration = @triumph_duration
+    portrait = "GFX_relic_isolator"
+    sound = "relic_activation_generic"
+
+    resources = {
+        category = relics
+        # Activation cost
+        cost = {
+            unity = @activation_cost
+        }
+    }
+
+    ai_weight = {
+        weight = 120
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_orbital_bombardment_damage = -0.5
+    }
+
+    score = 200
+
+    active_effect = {
+        add_modifier = {
+            modifier = "isolator_activation"
+            days = @triumph_duration
+        }
+        custom_tooltip = relic_triumph_cooldown
+        hidden_effect = {
+            add_modifier = {
+                modifier = "relic_activation_cooldown"
+                days = @triumph_duration
+            }
+        }
+    }
+
+    # Possible check for activation
+    possible = {
+        inline_script = {
+            script = relics/activation_checks
+            RELIC = r_isolator
+        }
+    }
+}
+
+r_AAA_machine_log = {
+    activation_duration = @triumph_duration_short
+    portrait = "GFX_relic_AAA_machine_log"
+    sound = "relic_activation_generic"
+
+    can_be_stolen = no
+
+    resources = {
+        category = relics
+        produces = {
+            unity = 2
+#            mult = AAA_completed_arcsites
+        }
+    }
+
+    # Possible check for activation
+    possible = {
+        custom_tooltip = {
+            fail_text = "AAA_relic_has_no_activate"
+            always = no
+        }
+    }
+}

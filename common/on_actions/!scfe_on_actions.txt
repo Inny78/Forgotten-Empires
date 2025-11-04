@@ -9,7 +9,6 @@ on_mid_game_pulse_country = {
 }
 on_five_year_pulse_country = {
 	events = {
-		scfe_engine.3
 	}
 }
 on_decade_pulse_country = {
@@ -21,13 +20,11 @@ on_decade_pulse = {
 	events = {
 		scfe_engine.1
 		scfe_engine.11
-		scfe_engine.12
 	}
 }
 on_entering_system_first_time = {
 	events = {
 		scfe_lonely_shroud.1
-		scfe_alshigans_init.1
 		scfe_biggest_show_init.1
 		scfe_soul_of_the_art_init.1
 		scfe_tomb_of_dead_whales_init.1
@@ -36,7 +33,6 @@ on_entering_system_first_time = {
 		scfe_astanine.12
 		scfe_shaded.22
 		scfe_celestial_disturbance.1
-		scfe_ghost_planet.1
 		scfe_ghost_planet.5
 		scfe_ghost_planet.11
 		scfe_ghastly_eyrie_init.1
@@ -73,22 +69,16 @@ on_colony_2_years_old = {
 	}
 }
 on_colony_3_years_old = {
-	events = {
-	}
 	random_events = {
 		8 = scfe_when_the_world_sings.1 # When the world sings
 	}
 }
 on_colony_4_years_old = {
-	events = {
-	}
 	random_events = {
 		10 = scfe_when_the_world_sings.1 # When the world sings
 	}
 }
 on_colony_5_years_old = {
-	events = {
-	}
 	random_events = {
 		10 = scfe_when_the_world_sings.1 # When the world sings
 		10 = scfe_subterranean_init.1
@@ -116,8 +106,6 @@ on_planet_transfer = {
 # From = Planet
 on_survey_planet = {
 	events = {
-		scfe_coprean_constitution.100
-		scfe_astanine.100
 		scfe_ziaskehorn.1
 		scfe_celestial_disturbance.3
 		scfe_celestial_disturbance.4
@@ -127,13 +115,24 @@ on_survey_planet = {
 		scfe_celestial_disturbance.8
 		scfe_celestial_disturbance.9
 		scfe_shaded.225
-		scfe_ghost_planet.202
 		scfe_ghost_planet.204
 		scfe_ghost_planet.206
 		scfe_ghost_planet.212
+        scfe_precursor_init.2
+        scfe_precursor_init.4
+        scfe_precursor_init.6
+        scfe_precursor_init.8
+        scfe_precursor_init.10
 		scfe_sless.204
 		scfe_sless.209
 	}
+    random_events = {
+        12 = scfe_precursor_init.1
+        12 = scfe_precursor_init.3
+        12 = scfe_precursor_init.5
+        12 = scfe_precursor_init.7
+        12 = scfe_precursor_init.9
+    }
 }
 
 #From = Planet/Starbase/Megastructure scope
@@ -141,7 +140,6 @@ on_survey_planet = {
 on_fleet_enter_orbit = {
 	events = {
 		scfe_shaded.25
-		scfe_ghost_planet.2
 		scfe_ghost_planet.4
 		scfe_ghost_planet.6
 		scfe_ghost_planet.12

@@ -391,7 +391,7 @@
  scfe_astanine.2.desc: "Our explorers have reached the peculiar building, bypassing the dormant defenses. However, the door leading underground within the building remains securely locked. Attempts to hack the lock with our decryption computers have so far been unsuccessful. This endeavor may require more time."
  scfe_astanine.2.a: "Hack the security."
  scfe_astanine.3.name: "An Ancient Projector"
- scfe_astanine.3.desc: "Countless attempts have finally yielded results: our leader §G[Root.GetLeaderName]§! resorted to using explosives to create an entryway through the door. [Root.Leader.GetHeSheCap] stepped through the breach and discovered a malfunctioning projector, capable of casting images across myriad locations. Beneath the projector, our team leader uncovered coordinates and an intriguing manuscript. The text revealed that this planet was once a colony of the Astanine, a species with the technological prowess to create such an advanced device. The narrative, however, abruptly ends. Lingering questions remain: Why did the projector fail? What fate befell the inhabitants? These newfound coordinates may hold the answers."
+ scfe_astanine.3.desc: "Countless attempts have finally yielded results: our leader §G[Root.Leader.GetName]§! resorted to using explosives to create an entryway through the door. [Root.Leader.GetHeSheCap] stepped through the breach and discovered a malfunctioning projector, capable of casting images across myriad locations. Beneath the projector, our team leader uncovered coordinates and an intriguing manuscript. The text revealed that this planet was once a colony of the Astanine, a species with the technological prowess to create such an advanced device. The narrative, however, abruptly ends. Lingering questions remain: Why did the projector fail? What fate befell the inhabitants? These newfound coordinates may hold the answers."
  scfe_astanine.3.a: "Made by the Astanine...?"
 
  scfe_astanine_colony_2_coordinates_poi: "1. Coordinates to an Astanine Territory"
@@ -404,7 +404,7 @@
  scfe_astanine.4.desc: "Countless unfinished projectors were found inside, completely frozen in time. The coordinates pointed us to the location where the projector had been manufactured! More could be learned about the species by studying the data found in the facility."
  scfe_astanine.4.a: "Search for production records."
  scfe_astanine.5.name: "Whereabout of the Projector"
- scfe_astanine.5.desc: "Our team leader §G[Root.GetLeaderName]§! successfully penetrated the main computer's defenses, accessing crucial records. The facility was a hub for producing projectors for various planets, including those previously explored. These devices were not mere illusions; they served as planetary defenses, projecting counterfeit metropolises to mask the true ones. The Astanine cleverly situated themselves in seemingly minor cities or underground, gaining a strategic advantage against espionage and orbital attacks. Additionally, these projectors were integral to their daily life, creating holographic vistas. The records also revealed coordinates of planets where these projectors were distributed.  This information could significantly advance our understanding of the Astanine, especially if we can locate and explore the planet where the last of the projectors ended up."
+ scfe_astanine.5.desc: "Our team leader §G[Root.Leader.GetName]§! successfully penetrated the main computer's defenses, accessing crucial records. The facility was a hub for producing projectors for various planets, including those previously explored. These devices were not mere illusions; they served as planetary defenses, projecting counterfeit metropolises to mask the true ones. The Astanine cleverly situated themselves in seemingly minor cities or underground, gaining a strategic advantage against espionage and orbital attacks. Additionally, these projectors were integral to their daily life, creating holographic vistas. The records also revealed coordinates of planets where these projectors were distributed.  This information could significantly advance our understanding of the Astanine, especially if we can locate and explore the planet where the last of the projectors ended up."
  scfe_astanine.5.a: "Check the coordinates."
 
  scfe_astanine_colony_3_coordinates_poi: "2. Coordinates to an Astanine World"
@@ -414,7 +414,7 @@
  scfe_astanine_site_3_desc: "Unlike other Astanine planets, this one appears shattered. What led them to acquire the last projector, what ravaged this world so thoroughly? Approaching the planet's fractured crust is advised for further investigation."
 
  scfe_astanine.6.name: "Hidden World of the Astanine"
- scfe_astanine.6.desc: "Contrary to initial observations, this planet is intact! A gamma-ray scan during a close flyby unveiled its hidden facets. Upon landing on its translucent crust, §G[Root.GetLeaderName]§! began to approach an illuminated building."
+ scfe_astanine.6.desc: "Contrary to initial observations, this planet is intact! A gamma-ray scan during a close flyby unveiled its hidden facets. Upon landing on its translucent crust, §G[Root.Leader.GetName]§! began to approach an illuminated building."
  scfe_astanine.6.a: "What's going on?"
  scfe_astanine.7.name: "Hidden Facility of the Astanine"
  scfe_astanine.7.desc: "The facility housed a projector and multiple computers designed to simulate a devastated planet. It seems the last of the Astanines who resided here have perished over time. Our next steps are to deactivate the projector and examine the computer archives for more insights."
@@ -427,17 +427,17 @@
  scfe_astanine.8.desc: "Our team unearthed footage on the computers depicting the final stand of the Astanine. In an unanticipated assault, their archenemy, the Tistra, struck a neighboring planet. Utilizing their superior technology, the Tistra established formidable fortifications, forcing the Astanine to retreat. Astanine strongholds fell sequentially to the Tistra, while a valiant faction of Astanine warriors made a last stand near this planet. When our scientists played the footage, a startling tactic was revealed. The Astanine admiral ingeniously used holographic images to replicate their fleet, leading the vast Tistra armada to mistakenly attack their own forces, precipitating the Tistra's downfall. This raises a perplexing question: Why did this planet suffer devastation despite the Astanine's victory? Eager for answers, our team is now delving deeper for more clues."
  scfe_astanine.8.a: "Strange indeed."
  scfe_astanine.9.name: "Division of the Astanine"
- scfe_astanine.9.desc: "§G[Root.GetLeaderName]§! discovered a discarded flyer in the trash near the projection machine. Its message unveils a rift among the Astanine following the battle:\n§HIf you find this, make haste to §!§RRedacted§!§H at once! Exercise caution: trust NO ONE, not family, friends, or anyone else... distrust is paramount!§!\nAfter considerable effort, our scientists managed to reconstruct the obscured coordinates on the flyer. Visiting this location could be highly informative."
+ scfe_astanine.9.desc: "§G[Root.Leader.GetName]§! discovered a discarded flyer in the trash near the projection machine. Its message unveils a rift among the Astanine following the battle:\n§HIf you find this, make haste to §!§RRedacted§!§H at once! Exercise caution: trust NO ONE, not family, friends, or anyone else... distrust is paramount!§!\nAfter considerable effort, our scientists managed to reconstruct the obscured coordinates on the flyer. Visiting this location could be highly informative."
  scfe_astanine.9.a: "Divide and Conquer..."
 
  scfe_astanine_colony_4_coordinates_poi: "3. Coordinates to a Territory of Divided Astanine"
  scfe_astanine_colony_4_coordinates_desc: "We have successfully recovered coordinates in a flyer released by a divided group of Astanine."
 
  scfe_astanine_site_4: "Rebels of the Astanine"
- scfe_astanine_site_4_desc: "§Y[From.Planet.GetName]§! is eerily quiet and deserted, a stark contrast to its history as an ancient rebel stronghold. Given our growing understanding of the projectors encountered thus far, §G[Root.GetLeaderName]§! recommends scanning for their distinctive signals."
+ scfe_astanine_site_4_desc: "§Y[From.Planet.GetName]§! is eerily quiet and deserted, a stark contrast to its history as an ancient rebel stronghold. Given our growing understanding of the projectors encountered thus far, §G[Root.Leader.GetName]§! recommends scanning for their distinctive signals."
 
  scfe_astanine.10.name: "Signal of rebels"
- scfe_astanine.10.desc: "We've successfully located the unique signal of the projectors! Buried nearly 12 kilometers beneath the surface, accessing this base poses a significant challenge. §G[Root.GetLeaderName]§! has called for an excavator to facilitate our descent to this deep underground facility."
+ scfe_astanine.10.desc: "We've successfully located the unique signal of the projectors! Buried nearly 12 kilometers beneath the surface, accessing this base poses a significant challenge. §G[Root.Leader.GetName]§! has called for an excavator to facilitate our descent to this deep underground facility."
  scfe_astanine.10.a: "Request Authorized."
  scfe_astanine.10.b: "Send robots to excavate."
  scfe_astanine.10.c: "Search the place emitting unique waves. There should be an entrance."

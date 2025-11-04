@@ -1,0 +1,637 @@
+######################
+# PRECURSOR ARC SITES
+######################
+# i.e. spawned via on_survey
+
+# Plexi First Digsite
+plexi_digsite_1 = {
+	desc = "plexi_digsite_1_intro"
+	picture = GFX_evt_relic_shipyard
+	stages = 3
+	weight = 0 #set by AAA_precursor.1
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+		has_country_flag = plexi_intro
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_E1
+		event = AAA_precursor.2
+	}
+
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_E2
+		event = AAA_precursor.3
+	}
+
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_E3
+		event = AAA_precursor.4
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+# Plexi Second Digsite
+plexi_digsite_2 = {
+	desc = "plexi_digsite_2_intro"
+	picture = GFX_evt_city_ruins
+	stages = 4
+	weight = 0 #set by AAA_precursor.7
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+		has_country_flag = plexi_intro
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_E1
+		event = AAA_precursor.10
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E2
+		event = AAA_precursor.11
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E3
+		event = AAA_precursor.12
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E4
+		event = AAA_precursor.13
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+# Plexi third Digsite
+plexi_digsite_3 = {
+	desc = "plexi_digsite_3_intro"
+	picture = GFX_evt_relic_world_building
+	stages = 4
+	weight = 0 #set by AAA_precursor.16
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+		has_country_flag = plexi_intro
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E1
+		event = AAA_precursor.17
+	}
+
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E2
+		event = AAA_precursor.18
+	}
+
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_E3
+		event = AAA_precursor.19
+	}
+
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_E4
+		event = AAA_precursor.20
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+# Plexi fourth Digsite
+plexi_digsite_4 = {
+	desc = "plexi_digsite_4_intro"
+	picture = GFX_evt_city_ruins
+	stages = 4
+	weight = 0 #set by AAA_precursor.25
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+		has_country_flag = plexi_intro
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_E1
+		event = AAA_precursor.26
+	}
+
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_E2
+		event = AAA_precursor.27
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E3
+		event = AAA_precursor.28
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E4
+		event = AAA_precursor.29
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+# Plexi Homeworld Digsite
+plexi_digsite_5 = {
+	desc = "plexi_digsite_5_intro"
+	picture = GFX_evt_mysterious_signal
+	stages = 6
+	weight = 0 #set by AAA_precursor.35
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+	visible = {
+		default_site_visible_trigger = yes
+		has_country_flag = plexi_intro
+	}
+
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E1
+		event = AAA_precursor.36
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E2
+		event = AAA_precursor.37
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E3
+		event = AAA_precursor.38
+	}
+
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E4
+		event = AAA_precursor.39
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_E4
+		event = AAA_precursor.40
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_E4
+		event = AAA_precursor.41
+	}
+
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+###################
+# RANDOM ARC SITES
+###################
+# i.e. spawned via on_survey
+
+# Spaceship Debris
+site_AAA_ship_debris = {
+    desc = site_AAA_ship_debris_intro
+    picture = GFX_evt_crashed_station
+    stages = 3
+
+    weight = {
+        base = 0
+        modifier = {
+            add = 30
+            is_planet_class = pc_barren
+        }
+        modifier = {
+            add = 10
+            is_planet_class = pc_barren_cold
+        }
+    }
+    max_instances = 3
+    allow = { #fleet scope | from = arcsite
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = { #country scope
+        default_site_visible_trigger = yes
+    }
+
+    stage = {
+        difficulty = { min = 1 max = 2 }
+        icon = GFX_archaeology_runes_A1
+        event = AAA_arcsite.42
+    }
+    stage = {
+        difficulty = { min = 2 max = 3 }
+        icon = GFX_archaeology_runes_A2
+        event = AAA_arcsite.47
+    }
+    stage = {
+        difficulty = { min = 3 max = 4 }
+        icon = GFX_archaeology_runes_A3
+        event = AAA_arcsite.52
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = {
+                RANDOM_EVENTS = site_spaceship_random_events
+            }
+        }
+    }
+}
+
+# Lartia Crashed Ship
+site_lartia_ship = {
+    desc = "site_AAA_scavengers_ship_intro"
+    picture = GFX_evt_relic_shipyard
+    stages = 6
+    weight = 0 #set via initialiser
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        default_site_visible_trigger = yes
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 1
+        icon = GFX_archaeology_runes_E1
+        event = AAA_arcsite.1
+    }
+
+    stage = {
+        difficulty = 1
+        icon = GFX_archaeology_runes_E2
+        event = AAA_arcsite.2
+    }
+
+    stage = {
+        difficulty = 1
+        icon = GFX_archaeology_runes_E3
+        event = AAA_arcsite.3
+    }
+
+    stage = {
+        difficulty = 1
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.4
+    }
+    stage = {
+        difficulty = 1
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.7
+    }
+    stage = {
+        difficulty = 1
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.8
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# Lartia Digsite
+site_lartia = {
+    desc = "site_ruins_of_lartia_intro"
+    picture = GFX_evt_city_ruins
+    stages = 6
+    weight = 0 #set via initialiser
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        default_site_visible_trigger = yes
+        has_country_flag = lartia_intro
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E1
+        event = AAA_arcsite.15
+    }
+
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E2
+        event = AAA_arcsite.16
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E3
+        event = AAA_arcsite.17
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.18
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.21
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.24
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# The Isolator
+isolator_digsite = {
+    desc = "site_isolator_intro"
+    picture = GFX_evt_gaia
+    stages = 6
+    weight = 0 #set via event
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        default_site_visible_trigger = yes
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E1
+        event = AAA_arcsite.36
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E2
+        event = AAA_arcsite.37
+    }
+
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E3
+        event = AAA_arcsite.38
+    }
+
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.39
+    }
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.40
+    }
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E4
+        event = AAA_arcsite.41
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# Lartia First Digsite
+lartia_digsite_1 = {
+    desc = "lartia_digsite_1_intro"
+    picture = GFX_evt_relic_shipyard
+    stages = 3
+    weight = 0 #set by AAA_precursor.51
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        default_site_visible_trigger = yes
+        has_country_flag = lartia_intro
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_E1
+        event = AAA_precursor.52
+    }
+
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_E2
+        event = AAA_precursor.53
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E3
+        event = AAA_precursor.54
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# Lartia Second Digsite
+lartia_digsite_2 = {
+    desc = "lartia_digsite_2_intro"
+    picture = GFX_evt_crashed_station
+    stages = 3
+    weight = 0 #set by AAA_precursor.55
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        default_site_visible_trigger = yes
+        has_country_flag = lartia_intro
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E1
+        event = AAA_precursor.56
+    }
+
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E1
+        event = AAA_precursor.57
+    }
+
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E2
+        event = AAA_precursor.58
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}
+
+# Lartia Third Digsite Debris System
+lartia_digsite_3 = {
+    desc = "lartia_digsite_3_intro"
+    picture = GFX_evt_ruined_system
+    stages = 5
+    weight = 0 #set by Initializer
+    allow = {
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        default_site_visible_trigger = yes
+        has_country_flag = lartia_intro
+    }
+
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+
+    stage = {
+        difficulty = 4
+        icon = GFX_archaeology_runes_E1
+        event = AAA_precursor.62
+    }
+
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E1
+        event = AAA_precursor.63
+    }
+
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E2
+        event = AAA_precursor.64
+    }
+
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E2
+        event = AAA_precursor.65
+    }
+
+    stage = {
+        difficulty = 5
+        icon = GFX_archaeology_runes_E3
+        event = AAA_precursor.66
+    }
+
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+        }
+    }
+}

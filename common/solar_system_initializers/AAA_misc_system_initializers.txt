@@ -1,0 +1,602 @@
+
+@base_moon_distance = 10
+
+# shield system basic 1
+AAA_shielded_init_01 = {
+	class = "rl_standard_stars"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 4
+
+	flags = { AAA_shielded_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 22 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 22 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 5 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+}
+
+# shield system Basic 2
+AAA_shielded_init_02 = {
+	class = "rl_standard_stars"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 95
+	}
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 4
+
+	flags = { AAA_shielded_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 30
+	
+	planet = {
+		count = 2
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 1 max = 4 }
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 22 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 22 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+}
+
+# Shielded system Basic 3 (Gas Giants)
+AAA_shielded_init_03 = {
+	class = "rl_standard_stars"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 3
+	
+	flags = { AAA_shielded_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 10
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+	}
+
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 60
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+			class = pc_shattered
+		}
+		moon = {
+			count = { min = 0 max = 2 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+			modifiers = none
+			class = pc_shielded
+			flags = { suppress_archaeological_sites AAA_shielded_planet }
+			init_effect = {
+				prevent_anomaly = yes
+				AAA_determine_shielded_planet_class = yes
+			}
+		}
+		moon = {
+			count = { min = 0 max = 2 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+			class = pc_shattered
+		}
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+	}
+}
+
+# Shielded System Basic 4
+AAA_shielded_init_04 = {
+	class = "rl_standard_stars"
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 120
+	}
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 4
+	
+	flags = { AAA_shielded_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 120
+
+	planet = {
+		count = { min = 3 max = 6 }
+		class = pc_ice_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+
+	change_orbit = -80
+
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 15
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+	}
+
+	change_orbit = 80
+
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+	}
+}
+
+# Shielded System Binary 1 (clustered)
+AAA_shielded_init_05 = {
+	class = "rl_binary_stars"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 4
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 4
+	
+	flags = { AAA_shielded_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 25
+		orbit_angle = 0
+		size = { min = 30 max = 35 }
+		has_ring = no
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		size = { min = 15 max = 25 }
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 25 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 25 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+}
+
+# Shielded System Trinary 1 (clustered)
+AAA_shielded_init_06 = {
+	class = "rl_trinary_stars"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 4
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 3
+	
+	flags = { AAA_shielded_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 25
+		orbit_angle = 0
+		size = { min = 25 max = 30 }
+		has_ring = no
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = { min = 0 max = 20 }
+		orbit_angle = 120
+		size = { min = 25 max = 30 }
+		has_ring = no
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = { min = 0 max = 20 }
+		orbit_angle = 120
+		size = { min = 25 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 25 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 25
+		class = pc_shielded
+		modifiers = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 25 }
+		flags = { suppress_archaeological_sites AAA_shielded_planet }
+		init_effect = {
+			prevent_anomaly = yes
+			AAA_determine_shielded_planet_class = yes
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_shattered
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			class = pc_shattered
+		}
+	}
+}

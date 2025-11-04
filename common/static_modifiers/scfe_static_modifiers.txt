@@ -299,44 +299,53 @@ scfe_rooted_death = {
 }
 # The Subterranean Enigma
 scfe_subterranean_knowledge_1 = {
+    icon ="gfx/interface/icons/modifiers/mod_planet_districts_cost_mult.dds"
 	planet_districts_minerals_cost_mult = -0.05
 	empire_size_districts_mult = -0.1
 }
 scfe_subterranean_knowledge_2 = {
+    icon ="gfx/interface/icons/modifiers/mod_planet_districts_cost_mult.dds"
 	planet_districts_minerals_cost_mult = -0.1
 	empire_size_districts_mult = -0.1
 }
 scfe_subterranean_bombardment_1 = {
+    icon = "gfx/interface/icons/modifiers/mod_ship_orbital_bombardment_army_damage_mult.dds"
 	ship_orbital_bombardment_army_damage_mult = 0.2
 }
 scfe_subterranean_bombardment_2 = {
+    icon = "gfx/interface/icons/modifiers/mod_ship_orbital_bombardment_army_damage_mult.dds"
 	ship_orbital_bombardment_army_damage_mult = 0.1
 	ship_orbital_bombardment_pop_damage_mult = 0.1
 }
 # Ghosts
 scfe_orders_trinket_activated = {
+    icon = "gfx/interface/icons/modifiers/mod_planet_army_build_speed_mult.dds"
 	planet_army_build_speed_mult = 0.25
 	army_damage_taken_mult = -0.1
 	army_morale_damage_taken_mult = -0.1
 }
 scfe_vinarii_mastery = {
+    icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
 	planet_pops_food_upkeep_mult = -0.1
 	colony_start_urban_districts_add = 1
 	planet_colony_development_speed_mult = 0.1
 }
 # Nyblax
 scfe_invisibility_rune = {
+    icon = "gfx/interface/icons/modifiers/mod_ship_evasion_mult.dds"
 	ship_evasion_mult = 0.25
 	ship_disengage_chance_mult = 0.25
 	army_disengage_chance_mult = 0.25
 }
 scfe_invisibility_rune_fc = {
+    icon = "gfx/interface/icons/modifiers/mod_ship_evasion_mult.dds"
 	ship_evasion_mult = 0.25
 	ship_disengage_chance_mult = 0.25
 	army_disengage_chance_mult = 0.25
 	ship_cloaking_strength_add = 2
 }
 scfe_regeneration_rune = {
+    icon = "gfx/interface/icons/modifiers/mod_bonus_pop_growth_mult.dds"
 	bonus_pop_growth_mult = 0.25
 	country_food_produces_mult = 0.20
 }
@@ -358,8 +367,4 @@ scfe_power_rune_boost = {
 scfe_rune_lost = {
     icon = "gfx/interface/icons/modifiers/mod_negative_pop_happiness.dds"
 	pop_happiness = -0.05
-}
-scfe_gene_bank_activated = {
-    icon = "gfx/interface/icons/modifiers/mod_negative_pop_happiness.dds"
-    pop_happiness = -0.05
 }

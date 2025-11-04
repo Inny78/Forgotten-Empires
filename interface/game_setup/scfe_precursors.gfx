@@ -1,0 +1,32 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_precursor_alshigans"
+        textureFile = "gfx/interface/game_setup/precursors/precursor_alshigans.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_precursor_astanine"
+        textureFile = "gfx/interface/game_setup/precursors/precursor_astanine.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_precursor_coprean"
+        textureFile = "gfx/interface/game_setup/precursors/precursor_coprean.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_precursor_sless_alliance"
+        textureFile = "gfx/interface/game_setup/precursors/precursor_sless_alliance.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_precursor_vinarii"
+        textureFile = "gfx/interface/game_setup/precursors/precursor_vinarii.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_precursor_znkar"
+        textureFile = "gfx/interface/game_setup/precursors/precursor_znkar.dds"
+        alwaystransparent = yes
+    }
+}

@@ -1,10 +1,15 @@
 cb_shaded_payback = {
     show_in_diplomacy = yes
     show_notification = yes
+    potential = {
+        has_country_flag = scfe_shaded_campaign_target
+        exists = event_target:shaded_campaign_instigator
+    }
     is_valid = {
-        has_country_flag = scfe_shaded_campaign_instigator
+        has_country_flag = scfe_shaded_campaign_target
+        exists = event_target:shaded_campaign_instigator
         from = {
-            has_country_flag = scfe_shaded_campaign_instigator
+            is_same_empire = event_target:shaded_campaign_instigator
         }
     }
 }
