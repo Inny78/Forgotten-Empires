@@ -15,7 +15,7 @@ ship_event = {
 		owner = {
 			is_ai = no
             NOT = { has_country_flag = alshigans_intro }
-            scfe_can_find_precursor = yes
+            scfe_has_precursor_intro = no
 		}
 		solar_system = {
 			has_star_flag = precursor_alshigans
@@ -114,7 +114,7 @@ ship_event = {
         owner = {
             is_ai = no
             NOT = { has_country_flag = astanine_intro }
-            scfe_can_find_precursor = yes
+            scfe_has_precursor_intro = no
         }
         solar_system = {
             has_star_flag = precursor_astanine
@@ -212,7 +212,7 @@ ship_event = {
         owner = {
             is_ai = no
             NOT = { has_country_flag = coprea_intro }
-            scfe_can_find_precursor = yes
+            scfe_has_precursor_intro = no
         }
         solar_system = {
             has_star_flag = precursor_coprea
@@ -308,7 +308,7 @@ ship_event = {
         owner = {
             is_ai = no
             NOT = { has_country_flag = sless_intro }
-            scfe_can_find_precursor = yes
+            scfe_has_precursor_intro = no
         }
         solar_system = {
             has_star_flag = precursor_sless
@@ -403,7 +403,7 @@ ship_event = {
         owner = {
             is_ai = no
             NOT = { has_country_flag = vinarii_intro }
-            scfe_can_find_precursor = yes
+            scfe_has_precursor_intro = no
         }
         solar_system = {
             has_star_flag = precursor_vinarii

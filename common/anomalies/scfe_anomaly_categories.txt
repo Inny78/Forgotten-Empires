@@ -187,7 +187,6 @@ scfe_war_torn_category = {
 						"
 						toggle = @has_gigastructures
 					}
-					scfe_can_find_precursor = no
 				}
 			}
 		}
@@ -332,4 +331,29 @@ scfe_inasir_category = {
 		}
 	}
 	on_success = scfe_inasir.1
+}
+# Stare at it
+scfe_stare_category = {
+    desc = scfe_stare_category_desc
+    picture = GFX_evt_ship_in_orbit
+    level = 8
+    max_once_global = yes
+    spawn_chance = {
+        modifier = {
+            add = 10
+            years_passed > 30
+            is_moon = no
+            OR = {
+                scfe_is_barren = yes
+                scfe_is_barren_cold = yes
+            }
+        }
+        modifier = {
+            factor = 0
+            from.owner = {
+                is_ai = yes
+            }
+        }
+    }
+    on_success = scfe_stare.1
 }

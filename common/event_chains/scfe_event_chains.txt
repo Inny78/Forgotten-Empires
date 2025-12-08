@@ -80,6 +80,11 @@ scfe_strange_worlds_chain = {
 	picture = GFX_evt_star_chart
 
 }
+scfe_stare_chain = {
+    icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+    picture = GFX_evt_huge_monument
+}
+
 # scfe_shamblers_chain = {
 # 	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
 # 	picture = GFX_evt_archaeological_dig

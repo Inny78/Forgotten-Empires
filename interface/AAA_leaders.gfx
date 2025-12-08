@@ -1,9 +1,0 @@
-spriteTypes = {	
-	### RECRUITMENT MESSAGE ICONS ###
-
-	spriteType = {
-		name = "GFX_message_leader_recruitment_glubdrag"
-		texturefile = "gfx/interface/icons/message/message_leader_recruitment_glubdrag.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
-	}
-}

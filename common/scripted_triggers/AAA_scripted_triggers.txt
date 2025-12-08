@@ -1,3 +1,0 @@
-AAA_antimatter_visibility = {
-    has_country_flag = AAA_antimatter_visibility_flag
-}

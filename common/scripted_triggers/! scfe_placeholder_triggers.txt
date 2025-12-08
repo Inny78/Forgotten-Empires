@@ -21,7 +21,12 @@ eev_mod_active = { optimize_memory always = no }
 is_ds_skycatcher = { optimize_memory always = no }
 is_multihive_drone = { optimize_memory always = no }
 is_td_multi_hiveminded = { optimize_memory always = no }
-has_PreSelect_active = { optimize_memory always = no }
-scfe_has_volgan_chain = { optimize_memory always = no }
-ag_is_black_hole_class = { optimize_memory is_star_class = sc_black_hole }
 has_MAP_active = { optimize_memory always = no }
+has_PreSelect_active = { optimize_memory always = no }
+ag_is_black_hole_class = { optimize_memory is_star_class = sc_black_hole }
+scfe_has_volgan_chain = { optimize_memory always = no }
+scfe_has_plexi_chain = { optimize_memory always = no }
+scfe_has_lartia_chain = { optimize_memory always = no }
+#scfe_has_ixardian_chain = { optimize_memory always = no }
+#scfe_has_werediran_chain = { optimize_memory always = no }
+#scfe_has_ezentian_chain = { optimize_memory always = no }

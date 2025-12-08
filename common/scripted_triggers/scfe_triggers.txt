@@ -106,20 +106,10 @@ scfe_dig_site_visible_trigger_ghosts = {
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_ghosts_chain
 }
-scfe_dig_site_visible_trigger_scrambler = {
-	optimize_memory
-	scfe_dig_site_visible_trigger = yes
-	has_event_chain = scfe_scrambler_chain
-}
 scfe_dig_site_visible_trigger_shaded = {
 	optimize_memory
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_shaded_chain
-}
-scfe_dig_site_visible_trigger_shamblers = {
-	optimize_memory
-	scfe_dig_site_visible_trigger = yes
-	has_event_chain = scfe_shamblers_chain
 }
 scfe_dig_site_visible_trigger_sless = {
 	optimize_memory
@@ -131,6 +121,16 @@ scfe_dig_site_visible_trigger_znkar = {
 	scfe_dig_site_visible_trigger = yes
 	has_event_chain = scfe_znkar_chain
 }
+# scfe_dig_site_visible_trigger_shamblers = {
+#     optimize_memory
+#     scfe_dig_site_visible_trigger = yes
+#     has_event_chain = scfe_shamblers_chain
+# }
+# scfe_dig_site_visible_trigger_scrambler = {
+#     optimize_memory
+#     scfe_dig_site_visible_trigger = yes
+#     has_event_chain = scfe_scrambler_chain
+# }
 
 scfe_is_general_planet = {
 	optimize_memory
@@ -840,34 +840,54 @@ scfe_has_baol_chain = {
 scfe_can_find_precursor = {
 	optimize_memory
 	is_ai = no
-	OR = {
-		has_policy_flag = scfe_precursor_policy_concurrent
-		AND = {
-			has_policy_flag = scfe_precursor_policy_consecutive
-			NOR = {
-				has_event_chain = vultaum_chain
-				has_event_chain = yuht_chain
-				has_event_chain = first_league_chain
-				has_event_chain = irassian_chain
-				has_event_chain = cybrex_chain
-				has_event_chain = cs_inetian_chain
-				has_event_chain = cs_adAkkaria_chain
-				scfe_has_zroni_chain = yes
-				scfe_has_baol_chain = yes
-				has_event_chain = scfe_alshigans_chain
-				has_event_chain = scfe_astanine_chain
-				has_event_chain = scfe_znkar_chain
-				has_event_chain = scfe_coprean_chain
-				has_event_chain = scfe_sless_chain
-				has_event_chain = scfe_shaded_chain
-				has_event_chain = scfe_ghosts_chain
-                has_event_chain = plexi_chain
-                has_event_chain = FHMP_werediran_chain
-                has_event_chain = FHMP_ezentian_chain
-                has_event_chain = lartia_chain
-			}
-		}
-	}
+    NOR = {
+        has_event_chain = vultaum_chain
+        has_event_chain = yuht_chain
+        has_event_chain = first_league_chain
+        has_event_chain = irassian_chain
+        has_event_chain = cybrex_chain
+        has_event_chain = cs_inetian_chain
+        has_event_chain = cs_adAkkaria_chain
+        scfe_has_zroni_chain = yes
+        scfe_has_baol_chain = yes
+        has_event_chain = scfe_alshigans_chain
+        has_event_chain = scfe_astanine_chain
+        has_event_chain = scfe_znkar_chain
+        has_event_chain = scfe_coprean_chain
+        has_event_chain = scfe_sless_chain
+        has_event_chain = scfe_shaded_chain
+        has_event_chain = scfe_ghosts_chain
+        scfe_has_plexi_chain = yes
+        scfe_has_werediran_chain = yes
+        scfe_has_ezentian_chain = yes
+        scfe_has_lartia_chain = yes
+        scfe_has_volgan_chain = yes
+        # Clean that
+        has_event_chain = plexi_chain
+        has_event_chain = FHMP_werediran_chain
+        has_event_chain = FHMP_ezentian_chain
+        has_event_chain = lartia_chain
+    }
+}
+scfe_has_precursor_intro = {
+    is_ai = no
+    has_precursor_intro = yes
+    OR = {
+        has_country_flag = alshigans_intro
+        has_country_flag = astanine_intro
+        has_country_flag = coprea_intro
+        has_country_flag = sless_intro
+        has_country_flag = vinarii_intro
+        # Forgotten History
+        has_country_flag = plexi_intro
+        has_country_flag = lartia_intro
+        # More Precursors
+        has_country_flag = ixardian_intro
+        has_country_flag = werediran_intro
+        has_country_flag = ezentian_intro
+        # Unavoidable Changes
+        has_country_flag = volgan_intro
+    }
 }
 has_sless_gene_template = {
 	optimize_memory
@@ -969,4 +989,24 @@ scfe_has_comms_with_alien_empire = {
 			is_country_type = awakened_fallen_empire
 		}
 	}
+}
+scfe_precursor_can_spawn_this_week = {
+    optimize_memory
+    OR = {
+        # Concurrent discoveries allowed
+        AND = {
+            has_policy_flag = scfe_precursor_policy_concurrent
+            owner = { NOT = { has_country_flag = scfe_weekly_precursor } }
+        }
+        # No concurrent discoveries allowed, no event chain ongoing
+        AND = {
+            NOT = { has_policy_flag = scfe_precursor_policy_concurrent }
+            scfe_can_find_precursor = yes
+            owner = { NOT = { has_country_flag = scfe_weekly_precursor } }
+        }
+        # Vanilla behavior
+        AND = {
+            has_precursor_intro = no
+        }
+    }
 }

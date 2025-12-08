@@ -5,7 +5,7 @@ tech_koeleothan_utilization = {
 	is_rare = yes
 	tier = 2
 	weight = @tier2weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -24,7 +24,7 @@ tech_koeleothan_utilization = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -48,7 +48,7 @@ tech_quantumpearls_exploitation = {
 	is_rare = yes
 	tier = 2
 	weight = @tier2weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -67,7 +67,7 @@ tech_quantumpearls_exploitation = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -91,7 +91,7 @@ tech_xenograss_harvesting = {
 	is_rare = yes
 	tier = 2
 	weight = @tier2weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -110,7 +110,7 @@ tech_xenograss_harvesting = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -160,7 +160,7 @@ tech_woorskyr_habitation = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -209,7 +209,7 @@ tech_woorskyr_bark_farm = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -235,7 +235,7 @@ tech_woorskyr_biofuel_refinery = {
 	icon = tech_woorskyr_habitation
 	weight = @tier2weight1
 	prerequisites = { tech_woorskyr_habitation }
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -254,7 +254,7 @@ tech_woorskyr_biofuel_refinery = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -280,7 +280,7 @@ tech_woorskyr_bioenergy_plant = {
 	icon = tech_woorskyr_habitation
 	weight = @tier2weight1
 	prerequisites = { tech_woorskyr_habitation }
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -299,7 +299,7 @@ tech_woorskyr_bioenergy_plant = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -325,7 +325,7 @@ tech_woorskyr_growth_monitoring_center = {
 	icon = tech_woorskyr_habitation
 	weight = @tier2weight1
 	prerequisites = { tech_woorskyr_habitation }
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -344,7 +344,7 @@ tech_woorskyr_growth_monitoring_center = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -370,7 +370,7 @@ tech_woorskyr_ship_foundry = {
 	icon = tech_woorskyr_habitation
 	weight = @tier2weight1
 	prerequisites = { tech_woorskyr_bark_farm tech_xenograss_harvesting }
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -389,7 +389,7 @@ tech_woorskyr_ship_foundry = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -413,7 +413,7 @@ tech_beetle_exploitation = {
 	is_rare = yes
 	tier = 2
 	weight = @tier2weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 3
@@ -432,7 +432,7 @@ tech_beetle_exploitation = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 3
@@ -457,7 +457,7 @@ tech_beetle_exploitation_2 = {
 	prerequisites = { "tech_beetle_exploitation" }
 	tier = 3
 	weight = @tier2weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -472,7 +472,7 @@ tech_beetle_exploitation_2 = {
 			is_spiritualist = no
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 1.25

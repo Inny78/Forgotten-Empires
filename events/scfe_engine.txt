@@ -284,7 +284,6 @@ country_event = {
 		has_country_flag = scfe_znkar_possible
 		years_passed > 35
 		has_met_primitives = yes
-		scfe_can_find_precursor = yes
 		AND = {
 			exists = home_planet
 			home_planet = {

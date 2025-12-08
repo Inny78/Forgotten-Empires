@@ -1,168 +1,84 @@
-special_project = {
-    key = SCFE_SHAMBLERS_PROJECT_INIT
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_shamblers_chain
+# special_project = {
+#     key = SCFE_SHAMBLERS_PROJECT_INIT
+#     cost = 0
+#     days_to_research = 100
+#     tech_department = engineering_technology
+#     picture = GFX_evt_star_chart
+#     location = yes
+#     event_scope = ship_event
+#     event_chain = scfe_shamblers_chain
 
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#         skill > 3
+#     }
+#     fail_trigger = { }
 
-    on_success = {
-        owner = { country_event = { id = scfe_shamblers.1 } }
-    }
-}
-special_project = {
-    key = SCFE_SHAMBLERS_PROJECT_1
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_shamblers_chain
+#     on_success = {
+#         owner = { country_event = { id = scfe_shamblers.1 } }
+#     }
+# }
+# special_project = {
+#     key = SCFE_SHAMBLERS_PROJECT_1
+#     cost = 0
+#     days_to_research = 100
+#     tech_department = engineering_technology
+#     picture = GFX_evt_star_chart
+#     location = yes
+#     event_scope = ship_event
+#     event_chain = scfe_shamblers_chain
 
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#         skill > 3
+#     }
+#     fail_trigger = { }
 
-    on_success = {
-        owner = { country_event = { id = scfe_shamblers.4 } }
-    }
-}
-special_project = {
-    key = SCFE_SHAMBLERS_PROJECT_2
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_shamblers_chain
+#     on_success = {
+#         owner = { country_event = { id = scfe_shamblers.4 } }
+#     }
+# }
+# special_project = {
+#     key = SCFE_SHAMBLERS_PROJECT_2
+#     cost = 0
+#     days_to_research = 100
+#     tech_department = engineering_technology
+#     picture = GFX_evt_star_chart
+#     location = yes
+#     event_scope = ship_event
+#     event_chain = scfe_shamblers_chain
 
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#         skill > 3
+#     }
+#     fail_trigger = { }
 
-    on_success = {
-        owner = { country_event = { id = scfe_shamblers.7 } }
-    }
-}
-special_project = {
-    key = SCFE_SHAMBLERS_PROJECT_3
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_shamblers_chain
+#     on_success = {
+#         owner = { country_event = { id = scfe_shamblers.7 } }
+#     }
+# }
+# special_project = {
+#     key = SCFE_SHAMBLERS_PROJECT_3
+#     cost = 0
+#     days_to_research = 100
+#     tech_department = engineering_technology
+#     picture = GFX_evt_star_chart
+#     location = yes
+#     event_scope = ship_event
+#     event_chain = scfe_shamblers_chain
 
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
+#     requirements = {
+#         shipclass_science_ship = 1
+#         leader = scientist
+#         skill > 3
+#     }
+#     fail_trigger = { }
 
-    on_success = {
-        owner = { country_event = { id = scfe_shamblers.10 } }
-    }
-}
-special_project = {
-    key = SCFE_SCRAMBLER_PROJECT_INIT
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_scrambler_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
-
-    on_success = {
-        owner = { country_event = { id = scfe_scrambler.1 } }
-    }
-}
-special_project = {
-    key = SCFE_SCRAMBLER_PROJECT_1
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_scrambler_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
-
-    on_success = {
-        owner = { country_event = { id = scfe_scrambler.4 } }
-    }
-}
-special_project = {
-    key = SCFE_SCRAMBLER_PROJECT_2
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_scrambler_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
-
-    on_success = {
-        owner = { country_event = { id = scfe_scrambler.7 } }
-    }
-}
-special_project = {
-    key = SCFE_SCRAMBLER_PROJECT_3
-    cost = 0
-    days_to_research = 100
-    tech_department = engineering_technology
-    picture = GFX_evt_star_chart
-    location = yes
-    event_scope = ship_event
-    event_chain = scfe_scrambler_chain
-
-    requirements = {
-        shipclass_science_ship = 1
-        leader = scientist
-        skill > 3
-    }
-    fail_trigger = { }
-
-    on_success = {
-        owner = { country_event = { id = scfe_scrambler.10 } }
-    }
-}
+#     on_success = {
+#         owner = { country_event = { id = scfe_shamblers.10 } }
+#     }
+# }
