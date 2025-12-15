@@ -48,13 +48,7 @@ scfe_alshigans_init_01 = {
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
 
         init_effect = {
-            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_savannah name = scfe_alshigans_velaen location = this }
             save_global_event_target_as = scfe_alshigans_savannah
-            enable_special_project = {
-                name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
-                location = this
-                owner = event_target:scfe_alshigans_owner
-            }
             add_modifier = { modifier = scfe_savannah_ruins days = -1 }
             add_modifier = { modifier = scfe_infrastructure days = -1 }
         }
@@ -141,13 +135,7 @@ scfe_alshigans_init_02 = {
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
 
         init_effect = {
-            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_alpine name = scfe_alshigans_uuladir location = this }
             save_global_event_target_as = scfe_alshigans_alpine
-            enable_special_project = {
-                name = SCFE_ALSHIGANS_ALPINE_PROJECT
-                location = this
-                owner = event_target:scfe_alshigans_owner
-            }
             add_modifier = { modifier = scfe_alpine_ruins days = -1 }
             add_modifier = { modifier = scfe_infrastructure days = -1 }
         }
@@ -242,13 +230,7 @@ scfe_alshigans_init_03 = {
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
 
         init_effect = {
-            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_jungle name = scfe_alshigans_demearen location = this }
             save_global_event_target_as = scfe_alshigans_jungle
-            enable_special_project = {
-                name = SCFE_ALSHIGANS_JUNGLE_PROJECT
-                location = this
-                owner = event_target:scfe_alshigans_owner
-            }
             add_modifier = { modifier = scfe_jungle_ruins days = -1 }
             add_modifier = { modifier = scfe_infrastructure days = -1 }
         }

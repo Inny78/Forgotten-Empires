@@ -69,10 +69,6 @@ ship_event = {
 	specimen = scfe_alshigan_pen
 	event_chain = scfe_alshigans_chain
 
-	trigger = {
-		is_multiplayer = no
-	}
-
 	option = {
 		name = INTERESTING
 		owner = {
@@ -217,24 +213,31 @@ country_event = {
 	is_triggered_only = yes
 	event_chain = scfe_alshigans_chain
 
+    immediate = {
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            set_spawn_system_batch = begin
+            spawn_system = {
+                max_jumps = 15
+                min_distance >= 40
+                max_distance <= 60
+                initializer = "scfe_alshigans_init_01"
+            }
+            add_extra_hyperlane_to_spawned_system_effect = yes
+            set_spawn_system_batch = end
+        }
+    }
+
 	option = {
 		name = INTERESTING
-	}
-	after = {
-		hidden_effect = {
-			random_system_within_border = {
-				limit = { scfe_is_valid_star_system = yes }
-				set_spawn_system_batch = begin
-				spawn_system = {
-					max_jumps = 15
-					min_distance >= 40
-					max_distance <= 60
-					initializer = "scfe_alshigans_init_01"
-				}
-				add_extra_hyperlane_to_spawned_system_effect = yes
-				set_spawn_system_batch = end
-			}
-		}
+        event_target:scfe_alshigans_savannah = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_savannah name = scfe_alshigans_velaen location = this }
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_SAVANNAH_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+        }
 	}
 }
 
@@ -248,24 +251,31 @@ country_event = {
 	is_triggered_only = yes
 	event_chain = scfe_alshigans_chain
 
+    immediate = {
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            set_spawn_system_batch = begin
+            spawn_system = {
+                max_jumps = 10
+                min_distance >= 40
+                max_distance <= 60
+                initializer = "scfe_alshigans_init_02"
+            }
+            add_extra_hyperlane_to_spawned_system_effect = yes
+            set_spawn_system_batch = end
+        }
+    }
+
 	option = {
 		name = INTERESTING
-	}
-	after = {
-		hidden_effect = {
-			random_system_within_border = {
-				limit = { scfe_is_valid_star_system = yes }
-				set_spawn_system_batch = begin
-				spawn_system = {
-					max_jumps = 10
-					min_distance >= 40
-					max_distance <= 60
-					initializer = "scfe_alshigans_init_02"
-				}
-				add_extra_hyperlane_to_spawned_system_effect = yes
-				set_spawn_system_batch = end
-			}
-		}
+        event_target:scfe_alshigans_alpine = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_alpine name = scfe_alshigans_uuladir location = this }
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_ALPINE_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+        }
 	}
 }
 
@@ -279,24 +289,31 @@ country_event = {
 	is_triggered_only = yes
 	event_chain = scfe_alshigans_chain
 
+    immediate = {
+        random_system_within_border = {
+            limit = { scfe_is_valid_star_system = yes }
+            set_spawn_system_batch = begin
+            spawn_system = {
+                max_jumps = 10
+                min_distance >= 40
+                max_distance <= 60
+                initializer = "scfe_alshigans_init_03"
+            }
+            add_extra_hyperlane_to_spawned_system_effect = yes
+            set_spawn_system_batch = end
+        }
+    }
+
 	option = {
 		name = INTERESTING
-	}
-	after = {
-		hidden_effect = {
-			random_system_within_border = {
-				limit = { scfe_is_valid_star_system = yes }
-				set_spawn_system_batch = begin
-				spawn_system = {
-					max_jumps = 10
-					min_distance >= 40
-					max_distance <= 60
-					initializer = "scfe_alshigans_init_03"
-				}
-				add_extra_hyperlane_to_spawned_system_effect = yes
-				set_spawn_system_batch = end
-			}
-		}
+        event_target:scfe_alshigans_jungle = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_jungle name = scfe_alshigans_demearen location = this }
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_JUNGLE_PROJECT
+                location = this
+                owner = event_target:scfe_alshigans_owner
+            }
+        }
 	}
 }
 
@@ -310,50 +327,51 @@ country_event = {
 	is_triggered_only = yes
 	event_chain = scfe_alshigans_chain
 
+    immediate = {
+        event_target:scfe_alshigans_asteroid = {
+            closest_system = {
+                min_steps = 2
+                max_steps = 20
+                limit = {
+                    scfe_is_valid_system = yes
+                    OR = {
+                        has_owner = no
+                        AND = {
+                            exists = space_owner
+                            space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
+                        }
+                    }
+                    any_system_planet = {
+                        scfe_is_barren = yes
+                        is_moon = yes
+                        has_anomaly = no
+                        NOT = { exists = archaeological_site }
+                    }
+                }
+                random_system_planet = {
+                    limit = {
+                        scfe_is_barren = yes
+                        is_moon = yes
+                        has_anomaly = no
+                        NOT = { exists = archaeological_site }
+                    }
+                    set_name = scfe_alshigans_yutela
+                    save_global_event_target_as = scfe_alshigans_moon
+                }
+            }
+        }
+    }
+
 	option = {
 		name = INTERESTING
-	}
-	after = {
-		hidden_effect = {
-			event_target:scfe_alshigans_asteroid = {
-				closest_system = {
-					min_steps = 2
-					max_steps = 20
-					limit = {
-						scfe_is_valid_system = yes
-						OR = {
-							has_owner = no
-							AND = {
-								exists = space_owner
-								space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-							}
-						}
-						any_system_planet = {
-							scfe_is_barren = yes
-							is_moon = yes
-							has_anomaly = no
-							NOT = { exists = archaeological_site }
-						}
-					}
-					random_system_planet = {
-						limit = {
-							scfe_is_barren = yes
-							is_moon = yes
-							has_anomaly = no
-							NOT = { exists = archaeological_site }
-						}
-						enable_special_project = {
-							name = SCFE_ALSHIGANS_MOON_PROJECT
-							location = this
-							owner = root
-						}
-						set_name = scfe_alshigans_yutela
-						save_global_event_target_as = scfe_alshigans_moon
-						create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_moon name = scfe_alshigans_yutela location = this }
-					}
-				}
-			}
-		}
+        event_target:scfe_alshigans_moon = {
+            create_point_of_interest = { event_chain = scfe_alshigans_chain id = scfe_alshigans_moon name = scfe_alshigans_yutela location = this }
+            enable_special_project = {
+                name = SCFE_ALSHIGANS_MOON_PROJECT
+                location = this
+                owner = root
+            }
+        }
 	}
 }
 
