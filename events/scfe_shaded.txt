@@ -266,7 +266,6 @@ country_event = {
     immediate = {
         # Leads
         random_system_within_border = {
-            limit = { scfe_is_valid_star_system = yes }
             save_event_target_as = scfe_shaded_spawn_system
         }
         set_spawn_system_batch = begin
@@ -289,7 +288,6 @@ country_event = {
             }
         }
         random_system_within_border = {
-            limit = { scfe_is_valid_star_system = yes }
             save_event_target_as = scfe_shaded_spawn_system
         }
         event_target:scfe_shaded_spawn_system = {
@@ -311,7 +309,6 @@ country_event = {
             }
         }
         random_system_within_border = {
-            limit = { scfe_is_valid_star_system = yes }
             save_event_target_as = scfe_shaded_spawn_system
         }
         event_target:scfe_shaded_spawn_system = {
@@ -333,7 +330,6 @@ country_event = {
             }
         }
         random_system_within_border = {
-            limit = { scfe_is_valid_star_system = yes }
             save_event_target_as = scfe_shaded_spawn_system
         }
         event_target:scfe_shaded_spawn_system = {
@@ -869,7 +865,6 @@ country_event = {
 
     immediate = {
         random_system_within_border = {
-            limit = { scfe_is_valid_star_system = yes }
             set_spawn_system_batch = begin
             spawn_system = {
                 min_jumps = 5

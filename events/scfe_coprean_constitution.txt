@@ -72,7 +72,6 @@ fleet_event = {
         from = { set_site_progress_locked = yes }
         owner = {
             random_system_within_border = {
-                limit = { scfe_is_valid_star_system = yes }
                 save_event_target_as = scfe_coprean_spawn_system
             }
         }
@@ -234,7 +233,6 @@ fleet_event = {
         from = { set_site_progress_locked = yes }
         owner = {
             random_system_within_border = {
-                limit = { scfe_is_valid_star_system = yes }
                 save_event_target_as = scfe_coprean_spawn_system
             }
         }

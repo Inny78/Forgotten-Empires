@@ -49,7 +49,6 @@ country_event = {
 			limit = { has_global_flag = scfe_markys_enabled }
 			set_spawn_system_batch = begin
 			random_system = {
-				limit = { scfe_is_valid_star_system = yes }
 				set_star_flag = strange_world_init
 				spawn_system = {
 					min_distance >= 40
@@ -60,7 +59,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_system
 						has_star_flag = strange_world_init
@@ -76,7 +74,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_system
 						has_star_flag = strange_world_init
@@ -92,7 +89,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_system
 						has_star_flag = strange_world_init
@@ -108,7 +104,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_system
 						has_star_flag = strange_world_init
@@ -142,7 +137,6 @@ country_event = {
 			set_spawn_system_batch = begin
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOT = { has_star_flag = strange_world_init }
 				}
 				set_star_flag = strange_world_init
@@ -155,7 +149,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_init
 						has_star_flag = nyblax_system
@@ -171,7 +164,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_init
 						has_star_flag = nyblax_system
@@ -187,7 +179,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_init
 						has_star_flag = nyblax_system
@@ -203,7 +194,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_init
 						has_star_flag = nyblax_system
@@ -219,7 +209,6 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					scfe_is_valid_star_system = yes
 					NOR = {
 						has_star_flag = strange_world_init
 						has_star_flag = nyblax_system
@@ -443,7 +432,6 @@ country_event = {
 			limit = {
 				is_rim_system = yes
 				is_fe_cluster = no
-				scfe_is_valid_star_system = yes
 			}
 			set_spawn_system_batch = begin
 			spawn_system = {

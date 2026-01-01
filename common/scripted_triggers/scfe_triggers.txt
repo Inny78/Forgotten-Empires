@@ -46,44 +46,6 @@ scfe_dig_site_default_spawn_rules = {
 	NOT = { exists = archaeological_site }
 }
 
-scfe_is_valid_star_system = {
-	optimize_memory
-	exists = star
-	NOR = {
-		has_star_flag = sealed_system
-		has_star_flag = empire_cluster
-		has_star_flag = precursor_system
-		has_special_star_flag_trigger = yes
-		is_fe_cluster = yes
-		is_marauder_cluster = yes
-		has_star_flag = drone_home_system
-		has_star_flag = chosen_system
-		has_star_flag = extragalactic_cluster
-		has_star_flag = mem_sadrell_extant_cluster
-		has_star_flag = outercluster
-		inline_script = {
-			script = forgotten_empires/toggled_code
-			code = "
-					has_star_flag = giga_grox_system
-					has_star_flag = giga_system_six
-					has_star_flag = giga_no_lanes
-					giga_is_core_system = yes
-					cohesive_system = yes
-					compound_cluster = yes
-					annihilator_system = yes
-					urmazin_system = yes
-				"
-			toggle = @has_gigastructures
-		}
-		any_system_planet = {
-			OR = {
-				has_planet_flag = hatchling_egg
-				has_planet_flag = suppress_archaeological_sites
-			}
-		}
-	}
-}
-
 scfe_dig_site_visible_trigger = {
 	optimize_memory
 	is_ai = no
