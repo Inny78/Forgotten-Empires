@@ -28,7 +28,6 @@ scfe_alshigans_init_01 = {
         orbit_distance = 15
         count = 1
         class = rl_unhabitable_planets
-        anomaly = none
         init_effect = {
             add_deposit = d_minerals_3
         }
@@ -44,7 +43,6 @@ scfe_alshigans_init_01 = {
         has_ring = no
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
-        anomaly = none
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
 
         init_effect = {
@@ -72,7 +70,6 @@ scfe_alshigans_init_01 = {
         size = { min = 25 max = 35 }
         has_ring = yes
         orbit_angle = { min = 90 max = 270 }
-        anomaly = none
 
         init_effect = {
             add_deposit = d_exotic_gases_2
@@ -105,7 +102,6 @@ scfe_alshigans_init_02 = {
         orbit_distance = 0
         count = 1
         class = rl_unhabitable_planets
-        anomaly = none
         init_effect = {
             add_deposit = d_rare_crystals_2
         }
@@ -116,7 +112,6 @@ scfe_alshigans_init_02 = {
         orbit_distance = 0
         count = 1
         class = rl_unhabitable_planets
-        anomaly = none
         init_effect = {
             add_deposit = d_minerals_2
         }
@@ -148,8 +143,7 @@ scfe_alshigans_init_02 = {
             flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
             init_effect = {
                 clear_deposits = yes
-                add_deposit = d_engineering_10
-                add_deposit = d_engineering_10
+                add_deposit = d_engineering_5
             }
         }
     }
@@ -194,7 +188,6 @@ scfe_alshigans_init_03 = {
         orbit_distance = 0
         count = 1
         class = pc_molten
-        anomaly = none
     }
     change_orbit = 15
 
@@ -202,15 +195,15 @@ scfe_alshigans_init_03 = {
         orbit_distance = 0
         count = 1
         class = pc_barren
-        anomaly = none
-        init_effect = { add_deposit = d_volatile_motes_2 }
+        init_effect = {
+            add_deposit = d_volatile_motes_2
+        }
     }
     change_orbit = 15
     planet = {
         orbit_distance = 0
         count = 1
         class = rl_unhabitable_planets
-        anomaly = none
         init_effect = {
             add_deposit = d_minerals_2
         }
@@ -226,13 +219,95 @@ scfe_alshigans_init_03 = {
         has_ring = no
         orbit_angle = { min = 90 max = 270 }
         size = { min = 12 max = 20 }
-        anomaly = none
         flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
 
         init_effect = {
             save_global_event_target_as = scfe_alshigans_jungle
             add_modifier = { modifier = scfe_jungle_ruins days = -1 }
             add_modifier = { modifier = scfe_infrastructure days = -1 }
+        }
+    }
+
+    change_orbit = 25
+
+    planet = {
+        class = pc_barren_cold
+        orbit_distance = 0
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+
+        init_effect = {
+            add_deposit = d_engineering_3
+        }
+    }
+}
+
+scfe_alshigans_init_04 = {
+    class = "rl_standard_stars"
+    flags = { unique_system precursor_system shroud_storm_changed }
+    usage = misc_system_init
+    usage_odds = 0
+    max_instances = 1
+    prevent_anomalies = yes
+    
+    init_effect = { set_timed_star_flag = { flag = scfe_ai_avoid_system days = 300 } }
+
+    planet = {
+        count = 1
+        class = star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = { min = 20 max = 30 }
+        init_effect = {
+            add_deposit = d_energy_3
+        }
+    }
+
+    change_orbit = 15
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = pc_molten
+        init_effect = {
+            add_deposit = d_rare_crystals_2
+        }
+    }
+    change_orbit = 20
+
+    planet = {
+        orbit_distance = 0
+        count = 1
+        class = pc_barren
+    }
+
+    change_orbit = 25
+
+    planet = {
+        count = 1
+        orbit_distance = 0
+        class = pc_barren
+        has_ring = no
+        orbit_angle = { min = 90 max = 270 }
+        size = { min = 15 max = 18 }
+        flags = { forbid_guillis_planet_modifiers shroud_storm_changed }
+        init_effect = {
+            clear_deposits = yes
+            add_deposit = d_engineering_10
+            add_deposit = d_engineering_10
+        }
+
+        moon = {
+            name = scfe_alshigans_yutela
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+            flags = { forbid_guillis_planet_modifiers shroud_storm_changed precursor_world }
+
+            init_effect = {
+                save_global_event_target_as = scfe_alshigans_moon
+            }
         }
     }
 

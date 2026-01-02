@@ -4,8 +4,8 @@ namespace = scfe_astanine
 #chapter 1
 fleet_event = {
     id = scfe_astanine.1
-    title = "scfe_astanine.1.name"
-    desc = "scfe_astanine.1.desc"
+    title = scfe_astanine.1.name
+    desc = scfe_astanine.1.desc
     picture = GFX_evt_alien_city
     show_sound = event_ghost_town
     archaeology = yes
@@ -32,8 +32,8 @@ fleet_event = {
 #chapter 2
 fleet_event = {
     id = scfe_astanine.2
-    title = "scfe_astanine.2.name"
-    desc = "scfe_astanine.2.desc"
+    title = scfe_astanine.2.name
+    desc = scfe_astanine.2.desc
     picture = GFX_evt_discovered_hidden_door
     show_sound = event_big_door_opening
     archaeology = yes
@@ -55,8 +55,8 @@ fleet_event = {
 #chapter 3
 fleet_event = {
     id = scfe_astanine.3
-    title = "scfe_astanine.3.name"
-    desc = "scfe_astanine.3.desc"
+    title = scfe_astanine.3.name
+    desc = scfe_astanine.3.desc
     picture = GFX_evt_archaeologists_escaping
     show_sound = event_ship_explosion
     archaeology = yes
@@ -108,8 +108,8 @@ fleet_event = {
         owner = {
             create_point_of_interest = {
                 id = scfe_astanine_hidden_planet_1
-                name = "scfe_astanine_colony_2_coordinates_poi"
-                desc = "scfe_astanine_colony_2_coordinates_desc"
+                name = scfe_astanine_colony_2_coordinates_poi
+                desc = scfe_astanine_colony_2_coordinates_desc
                 event_chain = scfe_astanine_chain
                 location = event_target:scfe_astanine_colony_2
             }
@@ -125,8 +125,8 @@ fleet_event = {
 #chapter 1
 fleet_event = {
     id = scfe_astanine.4
-    title = "scfe_astanine.4.name"
-    desc = "scfe_astanine.4.desc"
+    title = scfe_astanine.4.name
+    desc = scfe_astanine.4.desc
     picture = GFX_evt_ship_offloading_cargo
     show_sound = event_finding_loot
     archaeology = yes
@@ -149,8 +149,8 @@ fleet_event = {
 #chapter 2
 fleet_event = {
     id = scfe_astanine.5
-    title = "scfe_astanine.5.name"
-    desc = "scfe_astanine.5.desc"
+    title = scfe_astanine.5.name
+    desc = scfe_astanine.5.desc
     picture = GFX_evt_star_chart
     show_sound = event_administrative_work
     archaeology = yes
@@ -205,8 +205,8 @@ fleet_event = {
         owner = {
             create_point_of_interest = {
                 id = scfe_astanine_hidden_planet_2
-                name = "scfe_astanine_colony_3_coordinates_poi"
-                desc = "scfe_astanine_colony_3_coordinates_desc"
+                name = scfe_astanine_colony_3_coordinates_poi
+                desc = scfe_astanine_colony_3_coordinates_desc
                 event_chain = scfe_astanine_chain
                 location = event_target:scfe_astanine_colony_3
             }
@@ -222,8 +222,8 @@ fleet_event = {
 #chapter 1
 fleet_event = {
     id = scfe_astanine.6
-    title = "scfe_astanine.6.name"
-    desc = "scfe_astanine.6.desc"
+    title = scfe_astanine.6.name
+    desc = scfe_astanine.6.desc
     picture = GFX_evt_big_landing_ship
     show_sound = event_mystic_reveal
     archaeology = yes
@@ -246,8 +246,8 @@ fleet_event = {
 #chapter 2
 fleet_event = {
     id = scfe_astanine.7
-    title = "scfe_astanine.7.name"
-    desc = "scfe_astanine.7.desc"
+    title = scfe_astanine.7.name
+    desc = scfe_astanine.7.desc
     picture = GFX_evt_synth_sabotage
     show_sound = event_power_down
     archaeology = yes
@@ -295,8 +295,8 @@ fleet_event = {
 #chapter 3
 fleet_event = {
     id = scfe_astanine.8
-    title = "scfe_astanine.8.name"
-    desc = "scfe_astanine.8.desc"
+    title = scfe_astanine.8.name
+    desc = scfe_astanine.8.desc
     picture = GFX_evt_victorious_army
     show_sound = event_bad_omen
     specimen = scfe_astanine_holosphere
@@ -320,8 +320,8 @@ fleet_event = {
 #chapter 4
 fleet_event = {
     id = scfe_astanine.9
-    title = "scfe_astanine.9.name"
-    desc = "scfe_astanine.9.desc"
+    title = scfe_astanine.9.name
+    desc = scfe_astanine.9.desc
     picture = GFX_evt_ancient_records
     show_sound = event_radio_chatter
     archaeology = yes
@@ -372,8 +372,8 @@ fleet_event = {
         owner = {
             create_point_of_interest = {
                 id = scfe_astanine_hidden_planet_3
-                name = "scfe_astanine_colony_4_coordinates_poi"
-                desc = "scfe_astanine_colony_4_coordinates_desc"
+                name = scfe_astanine_colony_4_coordinates_poi
+                desc = scfe_astanine_colony_4_coordinates_desc
                 event_chain = scfe_astanine_chain
                 location = event_target:scfe_astanine_colony_4
             }
@@ -389,8 +389,8 @@ fleet_event = {
 #chapter 1
 fleet_event = {
     id = scfe_astanine.10
-    title = "scfe_astanine.10.name"
-    desc = "scfe_astanine.10.desc"
+    title = scfe_astanine.10.name
+    desc = scfe_astanine.10.desc
     picture = GFX_evt_archaeology_camp
     show_sound = event_alien_signal
     archaeology = yes
@@ -459,8 +459,8 @@ fleet_event = {
 #chapter 2
 fleet_event = {
     id = scfe_astanine.11
-    title = "scfe_astanine.11.name"
-    desc = "scfe_astanine.11.desc"
+    title = scfe_astanine.11.name
+    desc = scfe_astanine.11.desc
     picture = GFX_evt_underground_city
     show_sound = event_planetary_riot
     archaeology = yes
@@ -471,19 +471,39 @@ fleet_event = {
         from = { set_site_progress_locked = yes }
         owner = {
             if = {
-                limit = { NOT = { exists = event_target:scfe_astanine_home_planet } }
+                limit = {
+                    any_system_within_border = { has_star_flag = precursor_astanine }
+                }
                 random_system_within_border = {
-                    limit = { any_system_planet = { has_planet_flag = scfe_astanine_colony } }
-                    set_spawn_system_batch = begin
-                    spawn_system = {
-                        max_jumps = 5
-                        min_distance >= 40
-                        max_distance <= 60
-                        initializer = "scfe_astanine_home_system"
-                    }
-                    set_spawn_system_batch = end
+                    limit = { has_star_flag = precursor_astanine }
+                    save_event_target_as = astanine_spawn_system
                 }
             }
+            else = {
+                random_system_within_border = {
+                    save_event_target_as = astanine_spawn_system
+                }
+            }
+        }
+        event_target:astanine_spawn_system = {
+            set_spawn_system_batch = begin
+            spawn_system = {
+                min_distance >= 40
+                max_distance <= 60
+                max_jumps = 0
+                initializer = scfe_astanine_home_system
+            }
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
+            set_spawn_system_batch = end
         }
     }
 
@@ -501,8 +521,8 @@ fleet_event = {
         owner = {
             create_point_of_interest = {
                 id = scfe_astanine_hidden_planet_4
-                name = "scfe_astanine_colony_5_coordinates_poi"
-                desc = "scfe_astanine_colony_5_coordinates_desc"
+                name = scfe_astanine_colony_5_coordinates_poi
+                desc = scfe_astanine_colony_5_coordinates_desc
                 event_chain = scfe_astanine_chain
                 location = event_target:scfe_astanine_home_planet
             }
@@ -517,8 +537,8 @@ fleet_event = {
 #scfe_astanine_home_system first enter event
 ship_event = {
     id = scfe_astanine.12
-    title = "scfe_astanine.12.name"
-    desc = "scfe_astanine.12.desc"
+    title = scfe_astanine.12.name
+    desc = scfe_astanine.12.desc
     picture = GFX_evt_mega_art_installation
     location = from
     is_triggered_only = yes
@@ -536,8 +556,8 @@ ship_event = {
 #chapter 1
 fleet_event = {
     id = scfe_astanine.13
-    title = "scfe_astanine.13.name"
-    desc = "scfe_astanine.13.desc"
+    title = scfe_astanine.13.name
+    desc = scfe_astanine.13.desc
     picture = GFX_evt_underground_civilization
     show_sound = event_scanner
     archaeology = yes
@@ -560,8 +580,8 @@ fleet_event = {
 #chapter 2
 fleet_event = {
     id = scfe_astanine.14
-    title = "scfe_astanine.14.name"
-    desc = "scfe_astanine.14.desc"
+    title = scfe_astanine.14.name
+    desc = scfe_astanine.14.desc
     picture = GFX_evt_small_space_battle
     show_sound = event_space_battle
     archaeology = yes
@@ -584,8 +604,8 @@ fleet_event = {
 #chapter 3
 fleet_event = {
     id = scfe_astanine.15
-    title = "scfe_astanine.15.name"
-    desc = "scfe_astanine.15.desc"
+    title = scfe_astanine.15.name
+    desc = scfe_astanine.15.desc
     picture = GFX_evt_ruined_system
     show_sound = event_wind_ruins
     archaeology = yes
@@ -622,8 +642,8 @@ fleet_event = {
 #chapter 4
 fleet_event = {
     id = scfe_astanine.16
-    title = "scfe_astanine.16.name"
-    desc = "scfe_astanine.16.desc"
+    title = scfe_astanine.16.name
+    desc = scfe_astanine.16.desc
     picture = GFX_evt_ancient_artifact
     show_sound = event_conversation
     archaeology = yes
@@ -664,8 +684,8 @@ fleet_event = {
 #SCFE_PRECURSOR_ASTANINE_SECRETS effect event
 country_event = {
     id = scfe_astanine.17
-    title = "scfe_astanine.17.name"
-    desc = "scfe_astanine.17.desc"
+    title = scfe_astanine.17.name
+    desc = scfe_astanine.17.desc
     picture = GFX_evt_board_meeting
     is_triggered_only = yes
 

@@ -17,9 +17,9 @@ on_decade_pulse_country = {
 	}
 }
 on_decade_pulse = {
-	events = {
-		scfe_engine.1
-		scfe_engine.11
+	random_events = {
+		20 = scfe_engine.1
+		20 = scfe_engine.11
 	}
 }
 on_entering_system_first_time = {
@@ -56,7 +56,6 @@ on_entering_system = {
 on_colonized = {
 	events = {
 		scfe_lonely_shroud.4
-		scfe_sless.100
 		scfe_strange_on_actions.7
 	}
 }

@@ -17,8 +17,8 @@ ship_event = {
 		name = CURIOUS
 		owner = {
 			add_event_chain_counter = {
-				event_chain = "scfe_alshigans_chain"
-				counter = "scfe_alshigans_artifacts"
+				event_chain = scfe_alshigans_chain
+				counter = scfe_alshigans_artifacts
 				amount = 1
 			}
 			if = {
@@ -47,8 +47,8 @@ ship_event = {
 		owner = {
 			hidden_effect = { remove_point_of_interest = scfe_alshigans_savannah }
 			add_event_chain_counter = {
-				event_chain = "scfe_alshigans_chain"
-				counter = "scfe_alshigans_artifacts"
+				event_chain = scfe_alshigans_chain
+				counter = scfe_alshigans_artifacts
 				amount = 1
 			}
 			small_artifact_reward = yes
@@ -74,8 +74,8 @@ ship_event = {
 		owner = {
 			hidden_effect = { remove_point_of_interest = scfe_alshigans_alpine }
 			add_event_chain_counter = {
-				event_chain = "scfe_alshigans_chain"
-				counter = "scfe_alshigans_artifacts"
+				event_chain = scfe_alshigans_chain
+				counter = scfe_alshigans_artifacts
 				amount = 1
 			}
 			add_monthly_resource_mult = {
@@ -107,8 +107,8 @@ ship_event = {
 		owner = {
 			hidden_effect = { remove_point_of_interest = scfe_alshigans_jungle }
 			add_event_chain_counter = {
-				event_chain = "scfe_alshigans_chain"
-				counter = "scfe_alshigans_artifacts"
+				event_chain = scfe_alshigans_chain
+				counter = scfe_alshigans_artifacts
 				amount = 1
 			}
 			add_monthly_resource_mult = {
@@ -138,8 +138,8 @@ ship_event = {
 		name = CONTINUE
 		owner = {
 			add_event_chain_counter = {
-				event_chain = "scfe_alshigans_chain"
-				counter = "scfe_alshigans_artifacts"
+				event_chain = scfe_alshigans_chain
+				counter = scfe_alshigans_artifacts
 				amount = 1
 			}
 		}
@@ -161,7 +161,7 @@ ship_event = {
 	option = {
 		name = DISTURBING
 		owner = {
-			end_event_chain = "scfe_alshigans_chain"
+			end_event_chain = scfe_alshigans_chain
 			add_monthly_resource_mult = {
 				resource = physics_research
 				value = @tier2researchreward
@@ -214,15 +214,38 @@ country_event = {
 	event_chain = scfe_alshigans_chain
 
     immediate = {
-        random_system_within_border = {
+        if = {
+            limit = {
+                any_system_within_border = { has_star_flag = precursor_alshigans }
+            }
+            random_system_within_border = {
+                limit = { has_star_flag = precursor_alshigans }
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        else = {
+            random_system_within_border = {
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                max_jumps = 15
                 min_distance >= 40
                 max_distance <= 60
-                initializer = "scfe_alshigans_init_01"
+                max_jumps = 0
+                initializer = scfe_alshigans_init_01
             }
-            add_extra_hyperlane_to_spawned_system_effect = yes
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
             set_spawn_system_batch = end
         }
     }
@@ -251,15 +274,38 @@ country_event = {
 	event_chain = scfe_alshigans_chain
 
     immediate = {
-        random_system_within_border = {
+        if = {
+            limit = {
+                any_system_within_border = { has_star_flag = precursor_alshigans }
+            }
+            random_system_within_border = {
+                limit = { has_star_flag = precursor_alshigans }
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        else = {
+            random_system_within_border = {
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                max_jumps = 10
                 min_distance >= 40
                 max_distance <= 60
-                initializer = "scfe_alshigans_init_02"
+                max_jumps = 0
+                initializer = scfe_alshigans_init_02
             }
-            add_extra_hyperlane_to_spawned_system_effect = yes
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
             set_spawn_system_batch = end
         }
     }
@@ -288,15 +334,38 @@ country_event = {
 	event_chain = scfe_alshigans_chain
 
     immediate = {
-        random_system_within_border = {
+        if = {
+            limit = {
+                any_system_within_border = { has_star_flag = precursor_alshigans }
+            }
+            random_system_within_border = {
+                limit = { has_star_flag = precursor_alshigans }
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        else = {
+            random_system_within_border = {
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                max_jumps = 10
                 min_distance >= 40
                 max_distance <= 60
-                initializer = "scfe_alshigans_init_03"
+                max_jumps = 0
+                initializer = scfe_alshigans_init_03
             }
-            add_extra_hyperlane_to_spawned_system_effect = yes
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
             set_spawn_system_batch = end
         }
     }
@@ -325,37 +394,39 @@ country_event = {
 	event_chain = scfe_alshigans_chain
 
     immediate = {
-        event_target:scfe_alshigans_asteroid = {
-            closest_system = {
-                min_steps = 2
-                max_steps = 20
-                limit = {
-                    scfe_is_valid_system = yes
-                    OR = {
-                        has_owner = no
-                        AND = {
-                            exists = space_owner
-                            space_owner = { is_same_empire = event_target:scfe_alshigans_owner }
-                        }
-                    }
-                    any_system_planet = {
-                        scfe_is_barren = yes
-                        is_moon = yes
-                        has_anomaly = no
-                        NOT = { exists = archaeological_site }
-                    }
-                }
-                random_system_planet = {
-                    limit = {
-                        scfe_is_barren = yes
-                        is_moon = yes
-                        has_anomaly = no
-                        NOT = { exists = archaeological_site }
-                    }
-                    set_name = scfe_alshigans_yutela
-                    save_global_event_target_as = scfe_alshigans_moon
+        if = {
+            limit = {
+                any_system_within_border = { has_star_flag = precursor_alshigans }
+            }
+            random_system_within_border = {
+                limit = { has_star_flag = precursor_alshigans }
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        else = {
+            random_system_within_border = {
+                save_event_target_as = alshigan_spawn_system
+            }
+        }
+        event_target:alshigan_spawn_system = {
+            set_spawn_system_batch = begin
+            spawn_system = {
+                min_distance >= 40
+                max_distance <= 60
+                max_jumps = 0
+                initializer = scfe_alshigans_init_04
+            }
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
                 }
             }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
+            set_spawn_system_batch = end
         }
     }
 

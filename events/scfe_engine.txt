@@ -310,7 +310,7 @@ country_event = {
 					is_ai = no
 					NOR = {
 						has_country_flag = scfe_shaded_empire_possible
-						has_country_flag = scfe_shamblers_possible
+						#has_country_flag = scfe_shamblers_possible
 					}
 				}
 				random_list = {

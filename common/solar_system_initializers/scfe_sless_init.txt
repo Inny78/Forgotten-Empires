@@ -46,7 +46,7 @@ scfe_sless_system_1 = {
         has_ring = no
         flags = { precursor_world shroud_storm_changed scfe_sless_colony1 }
         init_effect = {
-            save_event_target_as = scfe_sless_colony_2
+            save_global_event_target_as = scfe_sless_colony_2
         }
     }
     planet = {
@@ -99,7 +99,7 @@ scfe_sless_system_2 = {
         has_ring = no
         flags = { precursor_world shroud_storm_changed scfe_sless_colony2 }
         init_effect = {
-            save_event_target_as = scfe_sless_colony_3
+            save_global_event_target_as = scfe_sless_colony_3
         }
     }
 
