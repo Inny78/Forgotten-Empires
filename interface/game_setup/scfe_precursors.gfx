@@ -24,9 +24,4 @@ spriteTypes = {
         textureFile = "gfx/interface/game_setup/precursors/precursor_vinarii.dds"
         alwaystransparent = yes
     }
-    spriteType = {
-        name = "GFX_precursor_znkar"
-        textureFile = "gfx/interface/game_setup/precursors/precursor_znkar.dds"
-        alwaystransparent = yes
-    }
 }

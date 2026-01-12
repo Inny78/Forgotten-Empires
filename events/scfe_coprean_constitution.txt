@@ -78,8 +78,8 @@ fleet_event = {
         set_spawn_system_batch = begin
         event_target:scfe_coprean_spawn_system = {
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 5
                 initializer = "scfe_coprean_init_01"
             }
@@ -239,8 +239,8 @@ fleet_event = {
         set_spawn_system_batch = begin
         event_target:scfe_coprean_spawn_system = {
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 5
                 initializer = "scfe_coprean_init_02"
             }
@@ -331,18 +331,38 @@ fleet_event = {
         from = { set_site_progress_locked = yes }
         owner = {
             if = {
-                limit = { NOT = { exists = event_target:scfe_coprean_home_planet } }
-                random_system_within_border = {
-                    limit = { any_system_planet = { has_planet_flag = scfe_coprean_colony } }
-                    set_spawn_system_batch = begin
-                    spawn_system = {
-                        max_jumps = 5
-                        min_distance = 10
-                        max_distance = 40
-                        initializer = "scfe_coprean_home_system"
-                    }
-                    set_spawn_system_batch = end
+                limit = {
+                    any_system_within_border = { has_star_flag = precursor_coprea }
                 }
+                random_system_within_border = {
+                    limit = { has_star_flag = precursor_coprea }
+                    save_event_target_as = coprea_spawn_system
+                }
+            }
+            else = {
+                random_system_within_border = {
+                    save_event_target_as = coprea_spawn_system
+                }
+            }
+            event_target:coprea_spawn_system = {
+                set_spawn_system_batch = begin
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 30
+                    max_jumps = 0
+                    initializer = scfe_coprean_home_system
+                }
+                if = {
+                    limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                    add_hyperlane = {
+                        from = this
+                        to = last_created_system
+                    }
+                }
+                else = {
+                    add_extra_hyperlane_to_spawned_system_effect = yes
+                }
+                set_spawn_system_batch = end
             }
         }
     }

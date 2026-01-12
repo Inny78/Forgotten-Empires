@@ -11,18 +11,45 @@ country_event = {
     is_triggered_only = yes
     event_chain = scfe_ghosts_chain
 
-    option = {
-        name = scfe_lead_explore
-        random_system_within_border = {
+    immediate = {
+        if = {
+            limit = {
+                any_system_within_border = { has_star_flag = precursor_vinarii }
+            }
+            random_system_within_border = {
+                limit = { has_star_flag = precursor_vinarii }
+                save_event_target_as = vinarii_spawn_system
+            }
+        }
+        else = {
+            random_system_within_border = {
+                save_event_target_as = vinarii_spawn_system
+            }
+        }
+        event_target:vinarii_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
+                max_jumps = 0
                 initializer = scfe_ghost_system_02
             }
-            add_extra_hyperlane_to_spawned_system_effect = yes
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
             set_spawn_system_batch = end
         }
+    }
+
+    option = {
+        name = scfe_lead_explore
         create_point_of_interest = {
             event_chain = scfe_ghosts_chain
             id = scfe_ghost_point2
@@ -145,19 +172,51 @@ country_event = {
     is_triggered_only = yes
     event_chain = scfe_ghosts_chain
 
-    option = {
-        name = scfe_lead_explore
-        random_system_within_border = {
+    immediate = {
+        if = {
+            limit = {
+                any_system_within_border = { has_star_flag = precursor_vinarii }
+            }
+            random_system_within_border = {
+                limit = { has_star_flag = precursor_vinarii }
+                save_event_target_as = vinarii_spawn_system
+            }
+        }
+        else = {
+            random_system_within_border = {
+                save_event_target_as = vinarii_spawn_system
+            }
+        }
+        event_target:vinarii_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
+                max_jumps = 0
                 initializer = scfe_ghost_system_03
             }
-            add_extra_hyperlane_to_spawned_system_effect = yes
+            if = {
+                limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+                add_hyperlane = {
+                    from = this
+                    to = last_created_system
+                }
+            }
+            else = {
+                add_extra_hyperlane_to_spawned_system_effect = yes
+            }
             set_spawn_system_batch = end
         }
-        create_point_of_interest = { event_chain = scfe_ghosts_chain id = scfe_ghost_point3 name = scfe_ghost_point3 location = event_target:scfe_ghost_system3 }
+    }
+
+    option = {
+        name = scfe_lead_explore
+        create_point_of_interest = {
+            event_chain = scfe_ghosts_chain
+            id = scfe_ghost_point3
+            name = scfe_ghost_point3
+            location = event_target:scfe_ghost_system3
+        }
     }
     after = {
         if = {

@@ -820,15 +820,8 @@ scfe_can_find_precursor = {
         has_event_chain = scfe_shaded_chain
         has_event_chain = scfe_ghosts_chain
         scfe_has_plexi_chain = yes
-        scfe_has_werediran_chain = yes
-        scfe_has_ezentian_chain = yes
         scfe_has_lartia_chain = yes
         scfe_has_volgan_chain = yes
-        # Clean that
-        has_event_chain = plexi_chain
-        has_event_chain = FHMP_werediran_chain
-        has_event_chain = FHMP_ezentian_chain
-        has_event_chain = lartia_chain
     }
 }
 scfe_has_precursor_intro = {

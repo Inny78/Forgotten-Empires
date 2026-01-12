@@ -271,8 +271,8 @@ country_event = {
         set_spawn_system_batch = begin
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 5
                 initializer = "shaded_lead1_system"
             }
@@ -292,8 +292,8 @@ country_event = {
         }
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 5
                 initializer = "shaded_lead2_system"
             }
@@ -313,8 +313,8 @@ country_event = {
         }
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 5
                 initializer = "shaded_lead3_system"
             }
@@ -334,8 +334,8 @@ country_event = {
         }
         event_target:scfe_shaded_spawn_system = {
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 5
                 initializer = "shaded_lead4_system"
             }
@@ -869,8 +869,8 @@ country_event = {
             spawn_system = {
                 min_jumps = 5
                 max_jumps = 15
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 direction = rimwards
                 initializer = shaded_colony_system
                 hyperlane = no
@@ -1189,7 +1189,7 @@ country_event = {
             fallen_empire_humiliate_effect = yes
             end_event_chain = scfe_shaded_chain
             hidden_effect = {
-                clear_global_event_target = scfe_shaded_crash
+                clear_global_event_target = shaded_crashed_ship_location
                 clear_global_event_target = scfe_shaded_owner
             }
         }

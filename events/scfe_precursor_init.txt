@@ -45,6 +45,7 @@ ship_event = {
 				target = THIS
 			}
 			set_country_flag = alshigans_intro
+            save_global_event_target_as = scfe_alshigans_owner
 		}
 	}
 
@@ -148,6 +149,7 @@ ship_event = {
             }
             set_country_flag = astanine_intro
         }
+        save_global_event_target_as = scfe_astanine_owner
     }
 
     option = {
@@ -244,6 +246,7 @@ ship_event = {
                 target = THIS
             }
             set_country_flag = coprea_intro
+            save_global_event_target_as = scfe_coprean_owner
         }
     }
 

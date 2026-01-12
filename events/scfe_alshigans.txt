@@ -231,8 +231,8 @@ country_event = {
         event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 0
                 initializer = scfe_alshigans_init_01
             }
@@ -291,8 +291,8 @@ country_event = {
         event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 0
                 initializer = scfe_alshigans_init_02
             }
@@ -351,8 +351,8 @@ country_event = {
         event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 0
                 initializer = scfe_alshigans_init_03
             }
@@ -411,8 +411,8 @@ country_event = {
         event_target:alshigan_spawn_system = {
             set_spawn_system_batch = begin
             spawn_system = {
-                min_distance >= 40
-                max_distance <= 60
+                min_distance = 10
+                max_distance = 30
                 max_jumps = 0
                 initializer = scfe_alshigans_init_04
             }

@@ -51,8 +51,8 @@ country_event = {
 			random_system = {
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = strange_init_01
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -66,8 +66,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = strange_init_02
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -81,8 +81,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = strange_init_03
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -96,8 +96,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = strange_init_04
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -110,8 +110,8 @@ country_event = {
 					}
 				}
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = strange_init_05
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -141,8 +141,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = scfe_hyrokkin
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -156,8 +156,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = scfe_khnum
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -171,8 +171,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = scfe_severing_lash
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -186,8 +186,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = scfe_kikimora
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -201,8 +201,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = scfe_mireska
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -216,8 +216,8 @@ country_event = {
 				}
 				set_star_flag = strange_world_init
 				spawn_system = {
-					min_distance >= 40
-					max_distance <= 60
+					min_distance = 10
+					max_distance = 30
 					initializer = scfe_tahlin
 				}
 				add_extra_hyperlane_to_spawned_system_effect = yes
@@ -435,8 +435,8 @@ country_event = {
 			}
 			set_spawn_system_batch = begin
 			spawn_system = {
-				min_distance >= 40
-				max_distance <= 60
+				min_distance = 10
+				max_distance = 30
 				initializer = scfe_celestial_disturbance_system
 			}
 			add_extra_hyperlane_to_spawned_system_effect = yes
