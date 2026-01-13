@@ -271,7 +271,7 @@ fleet_event = {
 			destroy_archaeological_site = this
 			planet = { change_pc = pc_shattered }
 			hidden_effect = {
-				owner = { save_event_target_as = reversia_country }
+				root.owner = { save_event_target_as = reversia_country }
 				planet = {
 					reset_planet = yes
 					clear_planet_modifiers = yes
