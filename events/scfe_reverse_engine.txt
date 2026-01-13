@@ -162,6 +162,7 @@ fleet_event = {
 	is_triggered_only = yes
 	immediate = {
 		from = { set_site_progress_locked = yes }
+		owner = { save_event_target_as = reversia_country }
 	}
 	after = {
 		from = { set_site_progress_locked = no }
