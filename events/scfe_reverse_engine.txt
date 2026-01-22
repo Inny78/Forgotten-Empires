@@ -268,7 +268,6 @@ fleet_event = {
 	after = {
 		from = {
 			set_site_progress_locked = no
-			destroy_archaeological_site = this
 			planet = { change_pc = pc_shattered }
 			hidden_effect = {
 				root.owner = { save_event_target_as = reversia_country }
@@ -279,6 +278,7 @@ fleet_event = {
 					set_planet_flag = cant_terraform_planet
 				}
 			}
+			destroy_archaeological_site = this
 		}
 		owner = { country_event = { id = scfe_reverse_engine.2 days = 5 } }
 	}
