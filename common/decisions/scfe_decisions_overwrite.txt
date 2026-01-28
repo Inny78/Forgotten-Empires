@@ -54,7 +54,6 @@ decision_baol_life_seed = {
             inline_script = {
                 script = forgotten_empires/toggled_code
                 code = "
-                    add_modifier = { modifier = engineered_environment_gaia days = -1 }
                     if = {
                         limit = { has_planet_flag = planet_earth }
                         set_planet_entity = { entity = gaia_planet_earth_entity }
@@ -71,10 +70,8 @@ decision_baol_life_seed = {
                 "
                 toggle = @has_planetary_diversity
             }
-            planet_event = { id = ancrel.2025 } #Notification event
-			planet_event = {
-				id = shroud.10010 		# Patron Objective Counter: po_terraform_planet
-			}
+            planet_event = { id = ancrel.2025 }
+			planet_event = { id = shroud.10010 }
         }
     }
 
